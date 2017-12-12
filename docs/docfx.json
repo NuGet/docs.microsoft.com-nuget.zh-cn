@@ -33,6 +33,7 @@
     "overwrite": [],
     "externalReference": [],
         "globalMetadata": {
+            "bilingual_type": "hover over",
             "breadcrumb_path": "~/_breadcrumb/toc.yml",
             "ROBOTS": "INDEX,FOLLOW",
             "searchScope": ["NuGet"],
