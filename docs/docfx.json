@@ -1,0 +1,45 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.md",
+          "**/**.yml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "nuget/**",
+          "**/includes/**",
+          "archive/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "**/*.png",
+          "**/*.jpg",
+          "**/*.svg",
+          "**/*.json",
+          "**/*.xml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "nuget/**",
+          "**/includes/**"
+        ]
+      }
+    ],
+    "overwrite": [],
+    "externalReference": [],
+        "globalMetadata": {
+            "breadcrumb_path": "~/_breadcrumb/toc.yml",
+            "ROBOTS": "INDEX,FOLLOW",
+            "searchScope": ["NuGet"],
+            "uhfHeaderId": "MSDocsHeader-NuGet"
+            },
+    "fileMetadata": {},
+    "template": [],
+    "dest": "nuget"
+  }
+}
