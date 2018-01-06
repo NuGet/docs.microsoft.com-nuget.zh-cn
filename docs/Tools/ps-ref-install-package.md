@@ -13,15 +13,15 @@ keywords: "NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powersh
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d51cce6223cd2d89c555ca9d6e936eaadf3757bb
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 4d7645297d2cd48f39a8e2ec168040710f6fc7a3
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="install-package-package-manager-console-in-visual-studio"></a>安装包 （在 Visual Studio 中的包管理器控制台）
 
-*本主题介绍中的命令[NuGet 包管理器控制台](Package-Manager-Console.md)Windows 上的 Visual Studio 中。泛型的 PowerShell Install-package 命令，请参阅[PowerShell PackageManagement 引用](https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-6)。*
+*本主题介绍中的命令[NuGet 包管理器控制台](Package-Manager-Console.md)Windows 上的 Visual Studio 中。泛型的 PowerShell Install-package 命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*
 
 到项目中安装包及其依赖项。
 

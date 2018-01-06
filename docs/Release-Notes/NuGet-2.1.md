@@ -13,11 +13,11 @@ keywords: "NuGet 2.1 发行说明，bug 修复的已知问题，添加了一些�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c45cfb9f6a46a1efd9fe4531602191973da66290
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: dafe575eedbfed215c0b1c86795bea281de97252
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-21-release-notes"></a>NuGet 2.1 发行说明
 
@@ -80,7 +80,7 @@ NuGet 2.1 提供更精细地控制通过包文件夹的位置`repositoryPath`中
 在此示例中，共享`Nuget.Config`文件指定无论深度创建下方 C:\myteam，每个项目的共享的包文件夹。 请注意，是否你的解决方案根目录下有现有的包文件夹，你将需要将其删除之前 NuGet 会将包放置在新位置。
 
 ## <a name="support-for-portable-libraries"></a>对可移植库的支持
-[可移植库](http://msdn.microsoft.com/library/gg597391.aspx)是一项功能首次引入，可生成程序集的可在不修改不同 Microsoft 在平台上，从版本的.net Framework 对 Windows Phone 和 Xbox 甚至 Silverlight 的.NET 4360 （但在此期间，NuGet 不支持 Xbox 可移植运行库目标）。  通过扩展[打包约定](../create-packages/supporting-multiple-target-frameworks.md)framework 版本和配置文件，NuGet 2.1 现在支持可移植库，使您用于创建包来让复合 framework 和配置文件目标`lib`文件夹。
+[可移植库](/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)是一项功能首次引入，可生成程序集的可在不修改不同 Microsoft 在平台上，从版本的.net Framework 对 Windows Phone 和 Xbox 甚至 Silverlight 的.NET 4360 （但在此期间，NuGet 不支持 Xbox 可移植运行库目标）。  通过扩展[打包约定](../create-packages/supporting-multiple-target-frameworks.md)framework 版本和配置文件，NuGet 2.1 现在支持可移植库，使您用于创建包来让复合 framework 和配置文件目标`lib`文件夹。
 
 作为示例，请考虑以下可移植类库的可用目标平台。
 

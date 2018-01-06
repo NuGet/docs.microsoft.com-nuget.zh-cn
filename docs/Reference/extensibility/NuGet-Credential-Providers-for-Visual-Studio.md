@@ -13,11 +13,11 @@ keywords: "NuGet 的凭据提供程序，使用的源进行身份验证，使用
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2b2fac23102865a08509acc1cc3d09f0cd375f26
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 8d7360205387d4813f95560018e2ac68f71f5603
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>NuGet 的凭据提供程序与 Visual Studio 中的源进行身份验证
 
@@ -88,5 +88,5 @@ Visual Studio 的每个 NuGet 凭据提供程序必须：
 | bool isRetry | 如果凭据已以前请求过此 uri，但提供的凭据不允许授权的访问，则为 true。 |
 | 非交互式 bool | 如果为 true，则凭据提供程序必须取消所有用户提示，并改为使用默认值。 |
 | CancellationToken cancellationToken | 此取消标记应检查以确定操作要求输入凭据已被取消。 |
-  
-**返回值**： 凭据对象实现[`System.Net.ICredentials`接口](https://msdn.microsoft.com/library/system.net.icredentials.aspx)。
+
+**返回值**： 凭据对象实现[`System.Net.ICredentials`接口](/dotnet/api/system.net.icredentials?view=netstandard-2.0)。

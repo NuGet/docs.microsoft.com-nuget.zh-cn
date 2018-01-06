@@ -14,17 +14,17 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3423e30eae07ff0c70a010576b8e701be027b847
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 53fccbb86f2920d870b5383070d043e25045a626
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="errors-and-warnings"></a>错误和警告
 
 在 NuGet 4.3.0，错误和警告本主题中所述进行编号，并提供详细的信息来帮助您解决所涉及的问题。 
 
-错误和警告在此处列出是仅适用于[PackageReference 基于](../Consume-Packages/Package-References-in-Project-Files.md)项目和 NuGet 4.3.0。 NuGet 也服从 MSBuild 属性，以禁止显示警告或将它们提升到错误。 有关详细信息，请参阅[如何： 禁止显示编译器警告](https://docs.microsoft.com/visualstudio/ide/how-to-suppress-compiler-warnings)Visual Studio 文档中。
+错误和警告在此处列出是仅适用于[PackageReference 基于](../Consume-Packages/Package-References-in-Project-Files.md)项目和 NuGet 4.3.0。 NuGet 也服从 MSBuild 属性，以禁止显示警告或将它们提升到错误。 有关详细信息，请参阅[如何： 禁止显示编译器警告](/visualstudio/ide/how-to-suppress-compiler-warnings)Visual Studio 文档中。
 
 **错误**
 
@@ -295,7 +295,7 @@ ms.lasthandoff: 12/14/2017
 | --- | --- |
 | **问题** | 读取源时出错时`IgnoreFailedSources`设置为 true，将其转换为非致命性警告。 这可能包含的任何消息，并为泛型。 |
 | **常见原因** | 源无效。 |
-| **示例消息** | 无 |
+| **示例消息** | 不可用 |
 
 ## <a name="nuget-internal-errors-and-warnings"></a>NuGet 内部错误和警告
 

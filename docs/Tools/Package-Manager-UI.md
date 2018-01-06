@@ -17,17 +17,17 @@ keywords: "NuGet UI 中，NuGet 包管理器 UI 中，NuGet 在 Visual Studio �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 88e987054f3c59a327f71b15330a99eb350449e5
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 0f08e5a36499c4481c4e0cd70738d67d65cd980a
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-package-manager-ui"></a>NuGet 包管理器 UI
 
-在 Windows 上的 Visual Studio 中的 NuGet 包管理器 UI，可轻松地安装、 卸载和更新为项目和解决方案的 NuGet 程序包。 Visual Studio 中适用于 Mac 的体验，请参阅[中你的项目包括 NuGet 包](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。 程序包管理器 UI 不包括 Visual Studio 代码。
+在 Windows 上的 Visual Studio 中的 NuGet 包管理器 UI，可轻松地安装、 卸载和更新为项目和解决方案的 NuGet 程序包。 Visual Studio 中适用于 Mac 的体验，请参阅[中你的项目包括 NuGet 包](/visualstudio/mac/nuget-walkthrough)。 程序包管理器 UI 不包括 Visual Studio 代码。
 
-在本主题中：
+本主题内容：
 
 - [查找和安装包 （浏览选项卡）](#finding-and-installing-a-package)
 - [卸载程序包 （已安装选项卡）](#uninstalling-a-package)

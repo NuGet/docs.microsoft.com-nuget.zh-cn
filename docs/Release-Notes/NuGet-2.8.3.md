@@ -13,11 +13,11 @@ keywords: "NuGet 2.8.3 发行说明，bug 修复的已知问题，添加了一�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8c0b38ea4975300af701b66266a9883eb54412c1
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: d6fbebaf02cede52a701abd31e843a077f8acbb7
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-283-release-notes"></a>NuGet 2.8.3 发行说明
 
@@ -25,4 +25,4 @@ ms.lasthandoff: 12/14/2017
 
 NuGet 2.8.3 已于 2014 年 10 月 17 日发布。 它是一项次要更新我们 2.8.1 一些 VSIX 目标修补程序。
 
-在此版本中，为已添加了 NuGet 包管理器对话框的支持[ASP.NET vNext](http://www.asp.net/vnext)， [DevExtreme](http://js.devexpress.com/)和[BizTalk (.btproj)](http://msdn.microsoft.com/library/aa577497.aspx)项目类型。 它还包括可靠性与启用程序包还原和保存包管理器选项的方案相关的 bug 修复。
+在此版本中，为已添加了 NuGet 包管理器对话框的支持[ASP.NET vNext](http://www.asp.net/vnext)， [DevExtreme](http://js.devexpress.com/)和[BizTalk (.btproj)](/biztalk/core/developing-biztalk-server-applications)项目类型。 它还包括可靠性与启用程序包还原和保存包管理器选项的方案相关的 bug 修复。

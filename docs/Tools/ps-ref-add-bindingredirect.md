@@ -13,11 +13,11 @@ keywords: "NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powersh
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 7bf8cdb938195f4747932b38ef0d5bb6c34b9137
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 6a3232af925f75713168421e68f2773060c5ebaa
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="add-bindingredirect-package-manager-console-in-visual-studio"></a>添加-BindingRedirect （Visual Studio 中的包管理器控制台）
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 12/14/2017
 
 检查项目输出路径中的所有程序集，并在必要时，将绑定重定向添加到应用程序或 web 配置文件。 安装程序包时，将自动运行此命令。
 
-绑定重定向和为何使用它们的详细信息，请参阅[重定向程序集版本](https://docs.microsoft.com/dotnet/framework/configure-apps/redirect-assembly-versions).NET 文档中。
+绑定重定向和为何使用它们的详细信息，请参阅[重定向程序集版本](/dotnet/framework/configure-apps/redirect-assembly-versions).NET 文档中。
 
 ## <a name="syntax"></a>语法
 

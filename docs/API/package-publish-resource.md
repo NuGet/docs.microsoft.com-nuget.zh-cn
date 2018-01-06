@@ -17,16 +17,15 @@ keywords: "NuGet API 推送包 NuGet API 删除包、 NuGet API 不列出包，N
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 1fa3c0e1698a11208d9ef29fdf26a4980cb60cf5
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 87970a701c63bce2b74c619069ec1d231ea77ab5
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="push-and-delete"></a>推送和删除
 
-可以推送和删除 （或不列出，具体取决于服务器实现） 包使用 NuGet V3 API。
-这两种操作基于注销`PackagePublish`资源位于[服务索引](service-index.md)。
+可以推送、 删除 （或不列出，具体取决于服务器实现），和 relist 使用 NuGet V3 API 的包。 这些操作基于注销`PackagePublish`资源位于[服务索引](service-index.md)。
 
 ## <a name="versioning"></a>版本管理
 
@@ -44,9 +43,12 @@ PackagePublish/2.0.0 | 初始版本
 
 ## <a name="http-methods"></a>HTTP 方法
 
-`PUT`和`DELETE`此资源支持 HTTP 方法。 有关每个终结点支持的方法，请参阅下面。
+`PUT`，`POST`和`DELETE`此资源支持 HTTP 方法。 有关每个终结点支持的方法，请参阅下面。
 
 ## <a name="push-a-package"></a>推送包
+
+> [!Note]
+> nuget.org 具有[其他要求](NuGet-Protocols.md)与推送终结点进行交互。
 
 nuget.org 支持使用以下 API 的推送新包。 如果已存在具有提供的 ID 和版本的包，nuget.org 将拒绝推送。 其他包源可能支持替换现有包。
 
@@ -56,9 +58,9 @@ PUT https://www.nuget.org/api/v2/package
 
 ### <a name="request-parameters"></a>请求参数
 
-名称           | 内     | 类型   | 必需 | 说明
+name           | 内     | 类型   | 必需 | 说明
 -------------- | ------ | ------ | -------- | -----
-X NuGet ApiKey | Header | string | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
+X NuGet ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
 
 API 密钥是由用户从包源收到以及配置到客户端不透明的字符串。 没有特定字符串格式都将托管，但 API 密钥的长度不应超过合理的大小为 HTTP 标头值。
 
@@ -90,15 +92,40 @@ DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 
 ### <a name="request-parameters"></a>请求参数
 
-名称           | 内     | 类型   | 必需 | 说明
+name           | 内     | 类型   | 必需 | 说明
 -------------- | ------ | ------ | -------- | -----
-Id             | URL    | string | 是      | 要删除的包 ID
-VERSION        | URL    | string | 是      | 要删除的包的版本
-X NuGet ApiKey | Header | string | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
+Id             | URL    | 字符串 | 是      | 要删除的包 ID
+VERSION        | URL    | 字符串 | 是      | 要删除的包的版本
+X NuGet ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
 
 ### <a name="response"></a>响应
 
 状态代码 | 含义
 ----------- | -------
 204         | 删除此包，
+404         | 利用所提供的任何包`ID`和`VERSION`存在
+
+## <a name="relist-a-package"></a>Relist 包
+
+如果某个包未列出，则可以使该包在使用"relist"终结点的搜索结果中再次可见。 此终结点都具有相同形式[删除 （不列出） 终结点](#delete-a-package)但使用`POST`HTTP 方法，而不是`DELETE`方法。
+
+如果包已列出，请求仍会成功。
+
+```
+POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
+```
+
+### <a name="request-parameters"></a>请求参数
+
+name           | 内     | 类型   | 必需 | 说明
+-------------- | ------ | ------ | -------- | -----
+Id             | URL    | 字符串 | 是      | 要 relist 包的 ID
+VERSION        | URL    | 字符串 | 是      | 要 relist 的包的版本
+X NuGet ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
+
+### <a name="response"></a>响应
+
+状态代码 | 含义
+----------- | -------
+204         | 包现在列出
 404         | 利用所提供的任何包`ID`和`VERSION`存在

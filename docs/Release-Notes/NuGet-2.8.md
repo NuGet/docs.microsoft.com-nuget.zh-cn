@@ -13,11 +13,11 @@ keywords: "NuGet 2.8 发行说明，bug 修复的已知问题，添加了一些�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0bb35e9d6ef6f3dde7919cd502b32ba5a550c689
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 182e7d1e2224c431631cddd14fdbea8dd9e14278
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-28-release-notes"></a>NuGet 2.8 发行说明
 
@@ -96,7 +96,7 @@ NuGet 2.8 已于 2014 年 1 月 29 日发布。
 
 ## <a name="development-dependencies"></a>开发依赖关系
 
-可以为 NuGet 包-包括用于优化开发过程的工具提供多种不同类型的功能。 这些组件，它们可有助于开发新的包，而不应该将更高版本时，新的包的依赖项发布。 NuGet 2.8 使包来标识自身中`.nuspec`文件作为 developmentDependency。 安装时，此元数据将也添加到`packages.config`已在其中安装了包的项目文件。 时，`packages.config`文件更高版本的 NuGet 依赖项期间分析`nuget.exe pack`，它将排除这些依赖项标记为开发依赖关系。
+可以为 NuGet 包-包括用于优化开发过程的工具提供多种不同类型的功能。 这些组件，它们可有助于开发新的包，而不应该将新包的依赖项更高版本发布时。 NuGet 2.8 使包来标识自身中`.nuspec`文件作为 developmentDependency。 安装时，此元数据将也添加到`packages.config`已在其中安装了包的项目文件。 时，`packages.config`文件更高版本的 NuGet 依赖项期间分析`nuget.exe pack`，它将排除这些依赖项标记为开发依赖关系。
 
 ## <a name="individual-packagesconfig-files-for-different-platforms"></a>针对不同平台的单独 packages.config 文件
 

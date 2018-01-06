@@ -13,11 +13,11 @@ keywords: "NuGet 包管理器控制台，NuGet powershell，管理 NuGet 包"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d9df514c6f92a3ea0841503d86c44271e70f95f2
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: cc11963a9b9bfe9aa456d8cd4c8397e1084f660b
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-manager-console"></a>程序包管理器控制台
 
@@ -43,7 +43,7 @@ NuGet Package Manager Console 内置于 Visual Studio 在 Windows 2012 和更高
     Install-Package Elmah -ProjectName MyProject
     ```
 
-在本主题中：
+本主题内容：
 
 - [打开控制台](#opening-the-console-and-console-controls)
 - [安装的包](#installing-a-package)
@@ -62,7 +62,7 @@ NuGet Package Manager Console 内置于 Visual Studio 在 Windows 2012 和更高
 
 ## <a name="opening-the-console-and-console-controls"></a>打开的控制台和控制台控件
 
-1. 打开 Visual Studio 中使用控制台**工具 > NuGet 包管理器 > 程序包管理器控制台**命令。 在控制台中，可以排列和定位你的喜好的 Visual Studio 窗口 (请参阅[自定义 Visual Studio 中的窗口布局](https://docs.microsoft.com/visualstudio/ide/customizing-window-layouts-in-visual-studio))。
+1. 打开 Visual Studio 中使用控制台**工具 > NuGet 包管理器 > 程序包管理器控制台**命令。 在控制台中，可以排列和定位你的喜好的 Visual Studio 窗口 (请参阅[自定义 Visual Studio 中的窗口布局](/visualstudio/ide/customizing-window-layouts-in-visual-studio))。
 
 1. 默认情况下，控制台命令运行针对特定的包源和项目中控件的窗口的顶部设置：
 
@@ -171,7 +171,7 @@ Find-Package jquery -AllVersions -ExactMatch
 
 此外，如果你缺少 NuGet 包管理器在 Visual Studio 2015 及更早版本，请检查**工具 > 扩展和更新...**和搜索 NuGet 包管理器扩展。 如果你无法使用 Visual Studio 中的扩展安装程序，你可以下载直接从扩展[https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)。
 
-程序包管理器控制台不是当前适用于 Visual Studio for mac。 等效命令，但是，这些功能通过[NuGet CLI](nuget-exe-CLI-reference.md)。 适用于 Mac 的 visual Studio 也用于管理 NuGet 包存在一些 UI。 请参阅[中你的项目包括 NuGet 包](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
+程序包管理器控制台不是当前适用于 Visual Studio for mac。 等效命令，但是，这些功能通过[NuGet CLI](nuget-exe-CLI-reference.md)。 适用于 Mac 的 visual Studio 也用于管理 NuGet 包存在一些 UI。 请参阅[中你的项目包括 NuGet 包](/visualstudio/mac/nuget-walkthrough)。
 
 程序包管理器控制台不包括 Visual Studio 代码。
 

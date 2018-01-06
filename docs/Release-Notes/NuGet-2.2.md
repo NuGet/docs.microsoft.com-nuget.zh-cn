@@ -13,11 +13,11 @@ keywords: "NuGet 2.2 发行说明，bug 修复的已知问题，添加了一些�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 690e76a0686a5e7bb699410edef4a6e62ccd2a32
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 1f6080e01777431c4dfb2278db167bd3bc9a67ea
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-22-release-notes"></a>NuGet 2.2 发行说明
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 12/14/2017
 NuGet 2.2 已于 2012 年 12 月 12 日发布。
 
 ## <a name="visual-studio-quick-launch"></a>Visual Studio 快速启动
-已添加到 Visual Studio 2012 中的新功能之一是[快速启动对话框](http://msdn.microsoft.com/library/hh417697.aspx)。 NuGet 2.2 扩展此对话框中，使其能够与在快速启动中输入搜索词初始化包管理器对话框。 例如，现在在快速启动中输入 jquery 将包括在结果中要搜索匹配 jquery 的 NuGet 包的选项。
+已添加到 Visual Studio 2012 中的新功能之一是[快速启动对话框](/visualstudio/ide/reference/quick-launch-environment-options-dialog-box)。 NuGet 2.2 扩展此对话框中，使其能够与在快速启动中输入搜索词初始化包管理器对话框。 例如，现在在快速启动中输入 jquery 将包括在结果中要搜索匹配 jquery 的 NuGet 包的选项。
 
 ![NuGet 在 Visual Studio 快速启动](./media/quick-launch.png)
 

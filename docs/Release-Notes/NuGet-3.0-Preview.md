@@ -13,11 +13,11 @@ keywords: "NuGet 3.0 预览版发行说明，bug 修复的已知问题，添加�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 564c3ed2590d34a4c4584394853e70ab84354cac
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: ae137af6f9722c454458fdcb4f20760c08d6e8bb
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-30-preview-release-notes"></a>NuGet 3.0 预览版发行说明
 

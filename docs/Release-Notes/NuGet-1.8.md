@@ -13,11 +13,11 @@ keywords: "NuGet 1.8 发行说明，bug 修复的已知问题，添加了一些�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 875cb752fed102c24da255a336d3f16729ca082c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 350f0d9590c1e0ef1a843fd783203b158059efa7
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-18-release-notes"></a>NuGet 1.8 发行说明
 
@@ -72,7 +72,7 @@ NuGet 1.8 现在支持创建单独的包的本地化资源，类似于.NET frame
 
 第二种方法是将环境变量"EnableNuGetPackageRestore"设置为"true"的值。  此方法适用于无人参与的计算机，如 CI 或生成服务器。
 
-现在，如上面所述，我们仅具有在 NuGet 1.8 中排列此功能的基础工作。  实际上，这意味着，虽然我们已添加所有启用的功能的逻辑，但是它当前中没有强制执行此版本。 它将被启用，但是，在下一个版本的 NuGet，因此我们想要让你知道它越早越好，以便你可以相应地配置你的环境，并因此不会影响我们启动时强制实施同意约束。
+现在，如上面所述，我们仅具有在 NuGet 1.8 中排列此功能的基础工作。  实际上，这意味着，虽然我们已添加所有启用的功能的逻辑，但是它当前不强制执行在此版本中。 它将被启用，但是，在下一个版本的 NuGet，因此我们想要让你知道它越早越好，以便你可以相应地配置你的环境，并因此不会影响我们启动时强制实施同意约束。
 
 有关更多详细信息，请参阅[团队博客文章](http://blog.nuget.org/20120518/package-restore-and-consent.html)有关此功能。
 

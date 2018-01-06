@@ -17,17 +17,17 @@ keywords: "NuGet V3 API、 NuGet V2 API、 NuGet JSON、 NuGet 注册 API，NuGe
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: a9515d90ad66d8840f575bba542f0cf887c41718
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 05ed17f12f413d29d97a253d7d55f154d4910834
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-api"></a>NuGet API
 
 NuGet API 是一套用于下载包、 提取元数据、 发布新的程序包和执行大多数官方 NuGet 客户端中提供其他操作的 HTTP 终结点。
 
-在 Visual Studio、 nuget.exe 和.NET CLI NuGet 客户端使用此 API 执行 NuGet 操作如[ `dotnet restore` ](https://docs.microsoft.com/dotnet/articles/core/preview3/tools/dotnet-restore)，在 Visual Studio UI 中，搜索和[ `nuget.exe push` ](../tools/cli-ref-push.md)。
+在 Visual Studio、 nuget.exe 和.NET CLI NuGet 客户端使用此 API 执行 NuGet 操作如[ `dotnet restore` ](/dotnet/articles/core/preview3/tools/dotnet-restore)，在 Visual Studio UI 中，搜索和[ `nuget.exe push` ](../tools/cli-ref-push.md)。
 
 请注意，在某些情况下，nuget.org 具有由其他包源中不强制执行的附加要求。 这些差异记录通过[nuget.org 协议](nuget-protocols.md)。
 
@@ -64,9 +64,9 @@ API 是 NuGet 的 HTTP 协议版本 3。 此协议有时称为"V3 API。" 这些
 [`SearchQueryService`](search-query-service-resource.md)               | 是      | 筛选器和搜索的关键字的包。
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | 是      | 获取包元数据。
 [`PackageBaseAddress`](package-base-address-resource.md)               | 是      | 获取包的内容 (.nupkg)。
-[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | no       | 按子字符串中发现的包 Id 和版本。
-[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | no       | 构造访问"报告滥用行为"网页的 URL。
-[`Catalog`](catalog-resource.md)                                       | no       | 所有包事件的完整记录。
+[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | 否       | 按子字符串中发现的包 Id 和版本。
+[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | 否       | 构造访问"报告滥用行为"网页的 URL。
+[`Catalog`](catalog-resource.md)                                       | 否       | 所有包事件的完整记录。
 
 一般情况下，使用 JSON API 资源返回的所有非二进制数据进行序列化。 为该资源，分别定义了返回服务索引中每个资源的响应架构。 有关每个资源的详细信息，请参阅上面列出的主题。
 
@@ -110,7 +110,7 @@ DELETE | 删除或 unlists 资源。
 
 ## <a name="http-request-headers"></a>HTTP 请求标头
 
-名称                     | 描述
+name                     | 描述
 ------------------------ | -----------
 X NuGet ApiKey           | 所需的推送和删除，请参阅[`PackagePublish`资源](package-publish-resource.md)
 X NuGet 客户端版本   | **弃用**和替换为`X-NuGet-Protocol-Version`

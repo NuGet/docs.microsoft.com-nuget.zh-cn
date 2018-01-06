@@ -13,15 +13,15 @@ keywords: "NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powersh
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 679e89e9cfb16dbe484f133b0b6431313b9d87ac
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 0899198a354a56615a48a1f7f428674a205f386b
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>卸载程序包 （在 Visual Studio 中的包管理器控制台）
 
-*本主题介绍中的命令[NuGet 包管理器控制台](Package-Manager-Console.md)Windows 上的 Visual Studio 中。泛型的 PowerShell 卸载程序包命令，请参阅[PowerShell PackageManagement 引用](https://docs.microsoft.com/powershell/module/packagemanagement/?view=powershell-6)。*
+*本主题介绍中的命令[NuGet 包管理器控制台](Package-Manager-Console.md)Windows 上的 Visual Studio 中。泛型的 PowerShell 卸载程序包命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*
 
 从项目中，有选择性地删除其依赖项中删除包。 如果其他程序包依赖于此包，该命令将失败，除非指定选项 – Force。
 

@@ -17,11 +17,11 @@ keywords: "NuGet 平面容器、 NuGet 包基址、 NuGet nupkg API，NuGet API 
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 756001ff7376a8dd8d66bd2136408e90e6a85d19
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: a581f9854410bc1a84d65310b38928a1d889ece2
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-content"></a>包内容
 
@@ -58,11 +58,11 @@ GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>请求参数
 
-名称     | 内     | 类型    | 必需 | 说明
+name     | 内     | 类型    | 必需 | 说明
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | URL    | string  | 是      | 包 ID 小写
+LOWER_ID | URL    | 字符串  | 是      | 包 ID 小写
 
-`LOWER_ID`值是小写使用由实现的规则的所需的包 ID。NET 的[ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx)方法。
+`LOWER_ID`值是小写使用由实现的规则的所需的包 ID。NET 的[ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant)方法。
 
 ### <a name="response"></a>响应
 
@@ -70,7 +70,7 @@ LOWER_ID | URL    | string  | 是      | 包 ID 小写
 
 如果包源具有一个或多个版本，则返回状态代码 200。 响应正文是具有以下属性的 JSON 对象：
 
-名称     | 类型             | 必需 | 说明
+name     | 类型             | 必需 | 说明
 -------- | ---------------- | -------- | -----
 版本 | 字符串数组 | 是      | 包 Id 可用
 
@@ -98,12 +98,12 @@ GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
 
 ### <a name="request-parameters"></a>请求参数
 
-名称          | 内     | 类型   | 必需 | 说明
+name          | 内     | 类型   | 必需 | 说明
 ------------- | ------ | ------ | -------- | -----
-LOWER_ID      | URL    | string | 是      | 包 ID 小写
-LOWER_VERSION | URL    | string | 是      | 包版本、 规范化和小写
+LOWER_ID      | URL    | 字符串 | 是      | 包 ID 小写
+LOWER_VERSION | URL    | 字符串 | 是      | 包版本、 规范化和小写
 
-同时`LOWER_ID`和`LOWER_VERSION`小写使用由实现的规则。NET 的[ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx)方法。
+同时`LOWER_ID`和`LOWER_VERSION`小写使用由实现的规则。NET 的[ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant)方法。
 
 `LOWER_VERSION`所需的包版本进行了规范化使用 NuGet 的版本[规范化规则](../reference/package-versioning.md#normalized-version-numbers)。 这意味着必须在此情况下排除 SemVer 2.0.0 规范允许该生成元数据。
 
@@ -133,12 +133,12 @@ GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
 
 ### <a name="request-parameters"></a>请求参数
 
-名称          | 内     | 类型    | 必需 | 说明
+name          | 内     | 类型    | 必需 | 说明
 ------------- | ------ | ------- | -------- | -----
-LOWER_ID      | URL    | string  | 是      | 包 ID 小写
+LOWER_ID      | URL    | 字符串  | 是      | 包 ID 小写
 LOWER_VERSION | URL    | 整数 | 是      | 包版本、 规范化和小写
 
-同时`LOWER_ID`和`LOWER_VERSION`小写使用由实现的规则。NET 的[ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx)方法。
+同时`LOWER_ID`和`LOWER_VERSION`小写使用由实现的规则。NET 的[ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant)方法。
 
 `LOWER_VERSION`所需的包版本进行了规范化使用 NuGet 的版本[规范化规则](../reference/package-versioning.md#normalized-version-numbers)。 这意味着必须在此情况下排除 SemVer 2.0.0 规范允许该生成元数据。
 
