@@ -14,17 +14,17 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 91efd4b4cd2ec0bee4425ab66e0152e580e7975c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: d002f55a75b3daaa2fed7a94e88582dd4f04e05f
+ms.sourcegitcommit: 1ebfff1263992c54de75366a1b1c26dbae6c0318
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
 `.nuspec` 文件是包含包元数据的 XML 清单。 此清单同时用于生成包以及为使用者提供信息。 清单始终包含在包中。
 
-在本主题中：
+本主题内容：
 
 - [常规形式和架构](#general-form-and-schema)
 - [替换令牌](#replacement-tokens)（用于 Visual Studio 项目时）
@@ -68,7 +68,7 @@ ms.lasthandoff: 12/14/2017
 
 | 特性 | 必需 | 描述 |
 | --- | --- | --- | 
-| **minClientVersion** | No | (2.5+) 指定可安装此包的最低 NuGet 客户端版本，并由 nuget.exe 和 Visual Studio 包管理器强制实施。 只要包依赖于特定 NuGet 客户端版本中添加的 `.nuspec` 文件的特定功能，就会使用此功能。 例如，使用 `developmentDependency` 特性的包应为 `minClientVersion` 指定“2.8”。 同样，使用 `contentFiles` 元素（请参阅下一部分）的包应将 `minClientVersion` 设置为“3.3”。 另请注意，早于 2.5 的 NuGet 客户端无法识别此标记，所以无论 `minClientVersion` 包含什么内容，它们总是拒绝安装该包。 |
+| **minClientVersion** | 否 | (2.5+) 指定可安装此包的最低 NuGet 客户端版本，并由 nuget.exe 和 Visual Studio 包管理器强制实施。 只要包依赖于特定 NuGet 客户端版本中添加的 `.nuspec` 文件的特定功能，就会使用此功能。 例如，使用 `developmentDependency` 特性的包应为 `minClientVersion` 指定“2.8”。 同样，使用 `contentFiles` 元素（请参阅下一部分）的包应将 `minClientVersion` 设置为“3.3”。 另请注意，早于 2.5 的 NuGet 客户端无法识别此标记，所以无论 `minClientVersion` 包含什么内容，它们总是拒绝安装该包。 |
 
 ### <a name="required-metadata-elements"></a>所需的元数据元素
 
@@ -85,7 +85,7 @@ ms.lasthandoff: 12/14/2017
 
 ### <a name="optional-metadata-elements"></a>可选元数据元素
 
-这些元素必须出现在 `<metadata>` 元素中。
+这些元素可能出现在 `<metadata>` 元素中。
 
 #### <a name="single-elements"></a>单个元素
 
@@ -142,7 +142,7 @@ nuget pack MyProject.csproj
 
 除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
 
-| 标记 | 值来源 | 值
+| 标记 | 值来源 | “值”
 | --- | --- | ---
 | **$id$** | 项目文件 | 项目文件中的 AssemblyName |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
@@ -321,7 +321,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 > [!Important]
 > 当包安装到项目中时，NuGet 自动将程序集引用添加到包的 DLL，不包括命名为 `.resources.dll` 的内容，因为它们被假定为本地化的附属程序集。 为此，请避免对包含基本包代码的文件使用 `.resources.dll`。
 
-若要绕过此自动行为，并显式控制包中包含的文件，请将 `<files>` 元素作为 `<package>` 的子元素（和 `<metadata>` 的同级元素），并使用单独的 `<file>` 元素标识每个文件。 例如: 
+若要绕过此自动行为，并显式控制包中包含的文件，请将 `<files>` 元素作为 `<package>` 的子元素（和 `<metadata>` 的同级元素），并使用单独的 `<file>` 元素标识每个文件。 例如:
 
 ```xml
 <files>
@@ -561,7 +561,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 - `TxM` 是 NuGet 支持的任何合法目标框架名字对象（请参阅[目标框架](../schema/target-frameworks.md)）。
 - 任何文件夹结构都可以附加到此语法的末尾。
 
-例如: 
+例如:
 
     Language- and framework-agnostic:
         /contentFiles/any/any/config.xml
