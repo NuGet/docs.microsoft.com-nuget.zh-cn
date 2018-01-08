@@ -17,11 +17,11 @@ keywords: "NuGet API 包元数据、 NuGet API 注册，NuGet API 未列出的�
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 15d3c836a5748497fe33dadc17e5a44846b4a8c0
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 1aabe6ae5c661e12b2639700813946e7a9a58b24
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-metadata"></a>包元数据
 
@@ -76,7 +76,7 @@ HTTP 方法位于注册资源支持的所有 Url`GET`和`HEAD`。
 
 ### <a name="registration-pages-and-leaves"></a>注册页并使
 
-尽管不是绝对必需的服务器实现，用于存储注册叶片值在单独的注册页文档中，它是建议的做法，以节省客户端的内存。 而不是内联的所有注册将保留在索引或立即将使存储在页文档，则我们建议服务器实现定义某些启发式方法上的包版本数基于这两种方法之间进行选择或包的累计大小离开。
+尽管它不是严格需要的服务器实现，用于存储注册叶片值在单独的注册页文档中，它是建议的做法，以节省客户端的内存。 而不是内联的所有注册将保留在索引或立即将使存储在页文档，则我们建议服务器实现定义某些启发式方法上的包版本数基于这两种方法之间进行选择或包的累计大小离开。
 
 存储所有的包版本 （会保留） 中注册索引存储上的 HTTP 请求数所必需的提取包元数据，但意味着必须下载较大的文档和必须分配更多的客户端内存。 另一方面，如果服务器实现立即将注册使存储在单独页面文档中，客户端必须执行更多的 HTTP 请求获取所需的信息。
 
@@ -88,17 +88,17 @@ GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>请求参数
 
-名称     | 内     | 类型    | 必需 | 说明
+name     | 内     | 类型    | 必需 | 说明
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | URL    | string  | 是      | 包 ID 小写
+LOWER_ID | URL    | 字符串  | 是      | 包 ID 小写
 
-`LOWER_ID`值是小写使用由实现的规则的所需的包 ID。NET 的[ `System.String.ToLowerInvariant()` ](https://msdn.microsoft.com/en-us/library/system.string.tolowerinvariant.aspx)方法。
+`LOWER_ID`值是小写使用由实现的规则的所需的包 ID。NET 的[ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant)方法。
 
 ### <a name="response"></a>响应
 
 响应是一个 JSON 文档具有一个根对象具有以下属性：
 
-名称  | 类型             | 必需 | 说明
+name  | 类型             | 必需 | 说明
 ----- | ---------------- | -------- | -----
 count | 整数          | 是      | 在索引中的注册页面数
 项 | 对象的数组 | 是      | 注册页的数组
@@ -109,14 +109,14 @@ count | 整数          | 是      | 在索引中的注册页面数
 
 在注册索引中发现的注册页对象具有以下属性：
 
-名称   | 类型             | 必需 | 说明
+name   | 类型             | 必需 | 说明
 ------ | ---------------- | -------- | -----
-@id    | string           | 是      | 到注册页 URL
+@id    | 字符串           | 是      | 到注册页 URL
 count  | 整数          | 是      | 在页中离开注册的数
-项  | 对象的数组 | no       | 注册使和与其相关联的元数据的数组
-较低  | string           | 是      | 中的页 （含） 的最低 SemVer 2.0.0 版本
-父 | string           | no       | 注册索引到 URL
-上限  | string           | 是      | （含） 页中的最高 SemVer 2.0.0 版本
+项  | 对象的数组 | 否       | 注册使和与其相关联的元数据的数组
+较低  | 字符串           | 是      | 中的页 （含） 的最低 SemVer 2.0.0 版本
+父 | 字符串           | 否       | 注册索引到 URL
+上限  | 字符串           | 是      | （含） 页中的最高 SemVer 2.0.0 版本
 
 `lower`和`upper`需要的特定页版本的元数据时，边界的 page 对象非常有用。
 这些边界可用来提取所需的唯一注册页。 版本字符串遵守[NuGet 的版本规则](../reference/package-versioning.md)。 版本字符串被规范化，并且不包含生成元数据。 因为 NuGet 生态系统中的所有版本，与使用实现的版本字符串比较[SemVer 2.0.0's 版本优先规则](http://semver.org/spec/v2.0.0.html#spec-item-11)。
@@ -133,11 +133,11 @@ count  | 整数          | 是      | 在页中离开注册的数
 
 注册页中找到的注册叶对象具有以下属性：
 
-名称           | 类型   | 必需 | 说明
+name           | 类型   | 必需 | 说明
 -------------- | ------ | -------- | -----
-@id            | string | 是      | 注册叶到 URL
+@id            | 字符串 | 是      | 注册叶到 URL
 catalogEntry   | object | 是      | 包含包元数据的目录项
-packageContent | string | 是      | 包内容 (.nupkg) 到 URL
+packageContent | 字符串 | 是      | 包内容 (.nupkg) 到 URL
 
 每个注册叶对象表示单个包版本与关联的数据。
 
@@ -145,24 +145,24 @@ packageContent | string | 是      | 包内容 (.nupkg) 到 URL
 
 `catalogEntry`注册叶对象中的属性具有以下属性：
 
-名称                     | 类型                       | 必需 | 说明
+name                     | 类型                       | 必需 | 说明
 ------------------------ | -------------------------- | -------- | -----
-@id                      | string                     | 是      | 指向用于生成此对象的文档的 URL
-作者                  | 字符串或字符串数组 | no       | 
-dependencyGroups         | 对象的数组           | no       | 包内容 (.nupkg) 到 URL
-说明              | string                     | no       | 
-iconUrl                  | string                     | no       | 
-id                       | string                     | 是      | 程序包的 ID
-licenseUrl               | string                     | no       | 
-列出                   | boolean                    | no       | 应被视为列出如果不存在
-MinClientVersion         | string                     | no       | 
-projectUrl               | string                     | no       | 
-发布                | string                     | no       | 包含 ISO 8601 时间戳的发布包的时间的字符串
-requireLicenseAcceptance | boolean                    | no       | 
-摘要                  | string                     | no       | 
-标记                     | 字符串或字符串数组  | no       | 
-标题                    | string                     | no       | 
-版本                  | string                     | 是      | 包的版本
+@id                      | 字符串                     | 是      | 指向用于生成此对象的文档的 URL
+作者                  | 字符串或字符串数组 | 否       | 
+dependencyGroups         | 对象的数组           | 否       | 包内容 (.nupkg) 到 URL
+说明              | 字符串                     | 否       | 
+iconUrl                  | 字符串                     | 否       | 
+id                       | 字符串                     | 是      | 程序包的 ID
+licenseUrl               | 字符串                     | 否       | 
+列出                   | boolean                    | 否       | 应被视为列出如果不存在
+MinClientVersion         | 字符串                     | 否       | 
+projectUrl               | 字符串                     | 否       | 
+发布                | 字符串                     | 否       | 包含 ISO 8601 时间戳的发布包的时间的字符串
+requireLicenseAcceptance | boolean                    | 否       | 
+摘要                  | 字符串                     | 否       | 
+标记                     | 字符串或字符串数组  | 否       | 
+标题                    | 字符串                     | 否       | 
+version                  | 字符串                     | 是      | 包的版本
 
 `dependencyGroups`属性是一个数组，这些对象表示的目标框架按分组的包的依赖关系。 如果包不具有任何依赖关系，`dependencyGroups`属性缺少，空数组，或`dependencies`的所有组的属性为空或缺失。
 
@@ -170,10 +170,10 @@ requireLicenseAcceptance | boolean                    | no       |
 
 每个依赖关系组对象具有以下属性：
 
-名称            | 类型             | 必需 | 说明
+name            | 类型             | 必需 | 说明
 --------------- | ---------------- | -------- | -----
-targetFramework | string           | no       | 这些依赖关系是适用于目标框架
-依赖项    | 对象的数组 | no       |
+targetFramework | 字符串           | 否       | 这些依赖关系是适用于目标框架
+依赖项    | 对象的数组 | 否       |
 
 `targetFramework`字符串使用格式由 NuGet 的.NET 库实现[NuGet.Frameworks](https://www.nuget.org/packages/NuGet.Frameworks/)。 如果没有`targetFramework`指定的依赖关系组适用于所有目标框架。
 
@@ -183,11 +183,11 @@ targetFramework | string           | no       | 这些依赖关系是适用于�
 
 每个包依赖项具有以下属性：
 
-名称         | 类型   | 必需 | 说明
+name         | 类型   | 必需 | 说明
 ------------ | ------ | -------- | -----
-id           | string | 是      | 包依赖项的 ID
-range        | object | no       | 允许[版本范围](../reference/package-versioning.md#version-ranges-and-wildcards)依赖关系
-注册 | string | no       | 此依赖关系的注册索引到 URL
+id           | 字符串 | 是      | 包依赖项的 ID
+range        | object | 否       | 允许[版本范围](../reference/package-versioning.md#version-ranges-and-wildcards)依赖关系
+注册 | 字符串 | 否       | 此依赖关系的注册索引到 URL
 
 如果`range`排除属性或空字符串，则客户端应默认为版本范围`(, )`。 即允许任何版本的依赖项。
 
@@ -209,14 +209,14 @@ GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
 
 当`items`注册索引中未提供数组，HTTP GET 请求的`@id`值会返回 JSON 文档具有一个作为其根对象。 该对象具有以下属性：
 
-名称   | 类型             | 必需 | 说明
+name   | 类型             | 必需 | 说明
 ------ | ---------------- | -------- | -----
-@id    | string           | 是      | 到注册页 URL
+@id    | 字符串           | 是      | 到注册页 URL
 count  | 整数          | 是      | 在页中离开注册的数
 项  | 对象的数组 | 是      | 注册使和与其相关联的元数据的数组
-较低  | string           | 是      | 中的页 （含） 的最低 SemVer 2.0.0 版本
-父 | string           | 是      | 注册索引到 URL
-上限  | string           | 是      | （含） 页中的最高 SemVer 2.0.0 版本
+较低  | 字符串           | 是      | 中的页 （含） 的最低 SemVer 2.0.0 版本
+父 | 字符串           | 是      | 注册索引到 URL
+上限  | 字符串           | 是      | （含） 页中的最高 SemVer 2.0.0 版本
 
 注册叶对象的形状是与注册索引中的相同[上面](#registration-leaf-object-in-a-page)。
 
@@ -238,14 +238,14 @@ GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-u
 
 注册叶是具有以下属性的根对象的 JSON 文档：
 
-名称           | 类型    | 必需 | 说明
+name           | 类型    | 必需 | 说明
 -------------- | ------- | -------- | -----
-@id            | string  | 是      | 注册叶到 URL
-catalogEntry   | string  | no       | 生成这些叶的目录项 URL
-列出         | boolean | no       | 应被视为列出如果不存在
-packageContent | string  | no       | 包内容 (.nupkg) 到 URL
-发布      | string  | no       | 包含 ISO 8601 时间戳的发布包的时间的字符串
-注册   | string  | no       | 注册索引到 URL
+@id            | 字符串  | 是      | 注册叶到 URL
+catalogEntry   | 字符串  | 否       | 生成这些叶的目录项 URL
+列出         | boolean | 否       | 应被视为列出如果不存在
+packageContent | 字符串  | 否       | 包内容 (.nupkg) 到 URL
+发布      | 字符串  | 否       | 包含 ISO 8601 时间戳的发布包的时间的字符串
+注册   | 字符串  | 否       | 注册索引到 URL
 
 > [!Note]
 > 在 nuget.org，`published`值设置为包时未列出的 1900 年。
