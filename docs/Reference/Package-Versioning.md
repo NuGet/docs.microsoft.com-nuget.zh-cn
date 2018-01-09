@@ -14,11 +14,11 @@ ms.reviewer:
 - anandr
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 25b74ab629cab0fff7114bf1621606de5fc18dd2
-ms.sourcegitcommit: 89bb9d429c19ff69084c35acad09daea3e16d56b
+ms.openlocfilehash: cb5624a2fd99e8afd8a8226fd786343f485041c4
+ms.sourcegitcommit: c27e565de485cbe836e6c2a66e44a50b35b487ff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="package-versioning"></a>包版本控制
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 12/14/2017
 
 创建包时，则指定可选的预发行版文本后缀的特定版本号。 另一方面，在使用包，可以指定确切的版本号或一系列可接受的版本。
 
-在本主题中：
+本主题内容：
 
 - [版本基础知识](#version-basics)包括预发行后缀。
 - [版本范围和通配符](#version-ranges-and-wildcards)
@@ -59,8 +59,8 @@ ms.lasthandoff: 12/14/2017
 话虽如此，但包开发人员通常遵循识别的命名约定：
 
 - `-alpha`: Alpha 版本中，通常用于工作进度和实验。
-- `-beta`: Beta 版中，通常是功能完整的下一计划的版本中，但也可能包含已知的 bug 的一个。
-- `-rc`： 候选发布版，通常为可能最终的发行版 (stable) 除非重要的 bug 中显现出来。
+- `-beta`：Beta 版本，通常指可用于下一计划版本的功能完整的版本，但可能包含已知 bug。
+- `-rc`：候选发布，通常可能为最终（稳定）版本，除非出现重大 bug。
 
 > [!Note]
 > NuGet 4.3.0+ 支持[SemVer 2.0.0](http://semver.org/spec/v2.0.0.html)，它支持使用点表示法的预发行版号作为 in *1.0.1-build.23*。 与之前 4.3.0 的 NuGet 版本不支持点表示法。 你可以使用窗体为*1.0.1-build23*。
@@ -95,7 +95,8 @@ ms.lasthandoff: 12/14/2017
 如果将 SemVer 2.0.0 版特定包上载到 nuget.org 中时，包已向旧客户端不可见并且可用于仅以下 NuGet 客户端：
 
 - NuGet 4.3.0+
-- Visual Studio 2017 15.3 以上版本 
+- Visual Studio 2017 15.3 以上版本
+- Visual Studio 2015 [NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)
 - dotnet.exe (.NET SDK 2.0.0+)
 
 第三方客户端：
