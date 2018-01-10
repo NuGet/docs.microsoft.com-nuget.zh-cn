@@ -17,11 +17,11 @@ keywords: "NuGet UI 中，NuGet 包管理器 UI 中，NuGet 在 Visual Studio �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0f08e5a36499c4481c4e0cd70738d67d65cd980a
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: fb2166b727dd01de0f7096535fdbc71c5ab0e2a3
+ms.sourcegitcommit: cde52deee5691d3e8bcb96f46f9645c7ba579af8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="nuget-package-manager-ui"></a>NuGet 包管理器 UI
 
@@ -39,7 +39,7 @@ ms.lasthandoff: 01/05/2018
 > [!Note]
 > 如果您缺少 Visual Studio 2015 中的 NuGet 包管理器，请检查**工具 > 扩展和更新...**并搜索*NuGet 包管理器*扩展。 如果你无法使用 Visual Studio 中的扩展安装程序，下载直接从扩展[https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)。
 >
-> 在 Visual Studio 2017，NuGet 和 NuGet 包管理器将自动安装与任意。提供与.NET 相关的工作负荷。 通过选择将其安装 individuall**各个组件 > 代码工具 > NuGet 包管理器**在 Visual Studio 2017 安装程序中的选项。
+> 在 Visual Studio 2017，NuGet 和 NuGet 包管理器将自动安装与任意。提供与.NET 相关的工作负荷。 通过选择单独安装它**各个组件 > 代码工具 > NuGet 包管理器**在 Visual Studio 2017 安装程序中的选项。
 
 ## <a name="finding-and-installing-a-package"></a>查找和安装的包
 
