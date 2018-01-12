@@ -14,11 +14,11 @@ ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: 7d380b7f2ff52ec39a2ac9a2b939ee51db6054f3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 89a55716ccbc9043cfce4c7f38ec8ab9a0e2f768
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>转换源代码和配置文件
 
@@ -27,20 +27,19 @@ ms.lasthandoff: 12/14/2017
 > [!Note]
 > 当使用[配置文件中的包引用](../Consume-Packages/Package-References-in-Project-Files.md)在项目中安装包时，不会应用源和配置文件转换。 
 
-安装包时，“源代码转化”会对包的 `content` 文件夹中的文件应用单向令牌替换，其中令牌表示 Visual Studio [项目属性](https://msdn.microsoft.com/library/vslangproj.projectproperties_properties.aspx)。 这样就可以将文件插入到项目的命名空间中，或者自定义通常转到 ASP.NET 项目的 `global.asax` 中的代码。
+安装包时，“源代码转化”会对包的 `content` 文件夹中的文件应用单向令牌替换，其中令牌表示 Visual Studio [项目属性](/dotnet/api/vslangproj.projectproperties?redirectedfrom=MSDN&view=visualstudiosdk-2017#properties_)。 这样就可以将文件插入到项目的命名空间中，或者自定义通常转到 ASP.NET 项目的 `global.asax` 中的代码。
 
 通过“配置文件转换”可以修改目标项目中已存在的文件，例如 `web.config` 和 `app.config`。 例如，包可能需要将某个项添加到配置文件中的 `modules` 部分。 此转换通过将特殊文件包含在描述要添加到配置文件的部分的包中完成。 卸载包时，会接着反转相同的更改，使其变为双向转换。
-
 
 ## <a name="specifying-source-code-transformations"></a>指定源代码转换
 
 1. 需要从包插入到项目的文件必须位于包的 `content` 文件夹中。 例如，如果希望将一个名为 `ContosoData.cs` 的文件安装在目标项目的 `Models` 文件夹中，则它必须位于包的 `content\Models` 文件夹中。
 
-2. 若要指示 NuGet 在安装时应用令牌替换，请将 `.pp` 追加到源代码文件名。 安装后，文件不会具有 `.pp` 扩展名。
+1. 若要指示 NuGet 在安装时应用令牌替换，请将 `.pp` 追加到源代码文件名。 安装后，文件不会具有 `.pp` 扩展名。
 
     例如，若要在 `ContosoData.cs` 中转换，请在包 `ContosoData.cs.pp` 中命名文件。 安装后，它将以 `ContosoData.cs` 形式出现。
 
-3. 在源代码文件中，使用 `$token$` 形式的不区分大小写令牌指示 NuGet 应使用项目属性替换的值：
+1. 在源代码文件中，使用 `$token$` 形式的不区分大小写令牌指示 NuGet 应使用项目属性替换的值：
 
     ```cs
     namespace $rootnamespace$.Models
@@ -58,8 +57,7 @@ ms.lasthandoff: 12/14/2017
 
     安装后，NuGet 将 `$rootnamespace$` 替换为 `Fabrikam`（假设目标项目的根命名空间为 `Fabrikam`）。
 
-`$rootnamespace$` 令牌是最常用的项目属性；其他所有项目属性列在 MSDN 上的[项目属性](https://msdn.microsoft.com/library/vslangproj.projectproperties_properties.aspx)文档中。 请注意，有些属性可能特定于某一项目类型。
-
+`$rootnamespace$` 令牌是最常用的项目属性；其他所有项目属性列在 MSDN 上的[项目属性](/dotnet/api/vslangproj.projectproperties?redirectedfrom=MSDN&view=visualstudiosdk-2017#properties_)文档中。 请注意，有些属性可能特定于某一项目类型。
 
 ## <a name="specifying-config-file-transformations"></a>指定配置文件转换
 
@@ -91,7 +89,6 @@ ms.lasthandoff: 12/14/2017
 
 若要在包安装期间将 `MyNuModule` 元素添加到 `modules` 部分，请在包的 `content` 文件夹中创建 `web.config.transform` 文件，如下所示：
 
-    
 ```xml
 <configuration>
     <system.webServer>
@@ -125,10 +122,9 @@ NuGet 安装包后，`web.config` 将显示为：
 
 若要查看安装和卸载包的影响，请在 Visual Studio 中创建新的 ASP.NET 项目（模板位于“新建项目”对话框的“Visual C#”>“Web”下），并选择一个空的 ASP.NET 应用程序。 打开 `web.config` 查看其初始状态。 然后右键单击项目，选择“管理 NuGet 包”，在 nuget.org 上浏览 ELMAH 并安装最新版本。 注意对 `web.config` 进行的所有更改。 然后，卸载包，将会看见 `web.config` 还原到之前的状态。
 
-
 ### <a name="xdt-transforms"></a>XDT 转换
 
-有了 NuGet 2.6 和更高版本，可以使用 [XDT 语法](https://msdn.microsoft.com/library/dd465326.aspx)修改配置文件。 还可以通过在 `$` 分隔符内包含属性名称（不区分大小写），让 NuGet 将令牌替换为[项目属性](https://msdn.microsoft.com/library/vslangproj.projectproperties_properties.aspx)。
+有了 NuGet 2.6 和更高版本，可以使用 [XDT 语法](https://msdn.microsoft.com/library/dd465326.aspx)修改配置文件。 还可以通过在 `$` 分隔符内包含属性名称（不区分大小写），让 NuGet 将令牌替换为[项目属性](/dotnet/api/vslangproj.projectproperties?redirectedfrom=MSDN&view=visualstudiosdk-2017#properties_)。
 
 例如，以下 `app.config.install.xdt` 文件会将 `appSettings` 元素插入到包含项目 `FullPath`、`FileName` 和 `ActiveConfigurationSettings` 值的 `app.config` 中：
 

@@ -13,11 +13,11 @@ keywords: "NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powersh
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4d7645297d2cd48f39a8e2ec168040710f6fc7a3
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 5da523d8b517a6867a86998dceaa1eba7b55b5fc
+ms.sourcegitcommit: 51eae111f0fec4fbb21e5e702629beaa3e8abc2b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="install-package-package-manager-console-in-visual-studio"></a>安装包 （在 Visual Studio 中的包管理器控制台）
 
@@ -73,10 +73,10 @@ Install-Package Glimpse -Version 1.0.0 -Project MvcApplication1
 # Installs Ninject.Mvc3 but not its dependencies from c:\temp\packages
 Install-Package Ninject.Mvc3 -IgnoreDependencies -Source c:\temp\packages
 
-# Installs the package listed on the online packages.config into the current project.
+# Installs the package listed on the online packages.config into the current project
 Install-package https://raw.githubusercontent.com/json-ld.net/master/src/JsonLD/packages.config
 
-# Installs jquery 1.10.2 package, using the .nupkg file under local path of c:\temp\packages.
+# Installs jquery 1.10.2 package, using the .nupkg file under local path of c:\temp\packages
 Install-package c:\temp\packages\jQuery.1.10.2.nupkg
 
 # Installs the specific online package

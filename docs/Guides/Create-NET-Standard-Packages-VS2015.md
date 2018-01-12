@@ -13,17 +13,17 @@ keywords: "创建包, .NET Standard 包, .NET Standard 映射表"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: a912c27e1873d60426f2147995f69e2dcc433ca9
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: e02888bf552997afe25e967f13e021e78e40d48d
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="create-net-standard-packages-with-visual-studio-2015"></a>使用 Visual Studio 2015 创建 .NET Standard 包
 
 适用于 NuGet 3.x。有关使用 NuGet 4.x+ 的详细信息，请参阅[使用 Visual Studio 2017 创建 .NET Standard 包](../guides/create-net-standard-packages-vs2017.md)。
 
-[.NET Standard 库](https://docs.microsoft.com/dotnet/articles/standard/library)是一套正式的 .NET API 规范，有望在所有 .NET 运行时推出，借此在 .NET 生态系统中建立更强的一致性。 .NET Standard 库为要实现的所有 .NET 平台定义一组统一的、与工作负荷无关的 BCL（基类库）API。 它使得开发人员可以生成跨所有 .NET 运行时可用的 PCL，并减少（如果不能消除）共享代码中平台特定的条件编译指令。
+[.NET Standard 库](/dotnet/articles/standard/library)是一套正式的 .NET API 规范，有望在所有 .NET 运行时推出，借此在 .NET 生态系统中建立更强的一致性。 .NET Standard 库为要实现的所有 .NET 平台定义一组统一的、与工作负荷无关的 BCL（基类库）API。 它使得开发人员可以生成跨所有 .NET 运行时可用的 PCL，并减少（如果不能消除）共享代码中平台特定的条件编译指令。
 
 本指南将指导你创建一个面向 .NET Standard 库 1.4 的 nuget 包。 将在 .NET Framework 4.6.1、通用 Windows 平台 10、.NET Core 和 Mono/Xamarin 上可用。 有关详细信息，请参阅本主题后面的 [.NET Standard 映射表](#net-standard-mapping-table)。
 
@@ -242,7 +242,7 @@ nuget pack AppLogger.nuspec
 
 若要创建库的本地化版本，可为不同的区域设置创建单独的包，也可将本地化的资源程序集包含到一个包中。 以下是如何为德语和意大利语执行后一种方法的操作步骤：
 
-1. 在 `lib` 下的每个目标框架文件夹中，为英语（默认）以外的每种受支持语言创建文件夹。 在这些文件夹中，可放置资源程序集和本地化的 IntelliSense XML 文件。 例如: 
+1. 在 `lib` 下的每个目标框架文件夹中，为英语（默认）以外的每种受支持语言创建文件夹。 在这些文件夹中，可放置资源程序集和本地化的 IntelliSense XML 文件。 例如:
 
         lib
         ├───netstandard1.4
@@ -311,7 +311,7 @@ nuget pack AppLogger.nuspec
 |平台名称 |Alias|
 |--------------|-----|
 |.NET Standard | netstandard| 1.0| 1.1| 1.2| 1.3| 1.4| 1.5| 1.6|
-|.NET Core | netcoreapp| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| 1.0|
+|.NET 核心 | netcoreapp| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| 1.0|
 |.NET Framework| net| 4.5| 4.5.1| 4.6| 4.6.1| 4.6.2| 4.6.3|
 |Mono/Xamarin 平台| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;| &#x2192;|
 |通用 Windows 平台| uap| &#x2192;| &#x2192;| &#x2192;| &#x2192;|10.0|
@@ -329,5 +329,5 @@ nuget pack AppLogger.nuspec
 - [支持多个 .NET Framework 版本](../create-packages/supporting-multiple-target-frameworks.md)
 - [将 MSBuild 属性和目标包含到包中](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
 - [创建本地化包](../create-packages/creating-localized-packages.md)
-- [.NET Standard 库文档](https://docs.microsoft.com/dotnet/articles/standard/library)
-- [从 .NET Framework 移植到 .NET Core](https://docs.microsoft.com/dotnet/articles/core/porting/index)
+- [.NET Standard 库文档](/dotnet/articles/standard/library)
+- [从 .NET Framework 移植到 .NET Core](/dotnet/articles/core/porting/index)

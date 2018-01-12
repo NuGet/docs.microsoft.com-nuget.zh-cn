@@ -13,17 +13,17 @@ keywords: "创建包, .NET Standard 包, .NET Core"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 82e413119b12503336becd6019e4fa3e4ac0b1f3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 5b48ad2f062fd3a9b99985dbda6f89e6039dac4d
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="create-net-standard-20-packages-with-visual-studio-2017"></a>使用 Visual Studio 2017 创建 .NET Standard 2.0 包
 
 *在提供 Visual Studio 2017 Update 3 的情况下适用于 NuGet 4.x+ 和 MSBuild 15.3+。对于更早版本的 Visual Studio 2017，可以更改 \<TargetFramework\> 属性使这些说明适用于 .NET Standard 1.4 到 1.6。还可参阅[使用 Visual Studio 2015 创建 .NET Standard 包](../guides/create-net-standard-packages-vs2015.md)，了解如何使用 NuGet 3.x+。*
 
-[.NET Standard 库](https://docs.microsoft.com/dotnet/articles/standard/library)是一套正式的 .NET API 规范，有望在所有 .NET 运行时推出，借此在 .NET 生态系统中建立更强的一致性。 .NET Standard 库为要实现的所有 .NET 平台定义一组统一的、与工作负荷无关的 BCL（基类库）API。 它使得开发人员可以生成跨所有 .NET 运行时可用的 PCL，并减少（如果不能消除）共享代码中平台特定的条件编译指令。
+[.NET Standard 库](/dotnet/articles/standard/library)是一套正式的 .NET API 规范，有望在所有 .NET 运行时推出，借此在 .NET 生态系统中建立更强的一致性。 .NET Standard 库为要实现的所有 .NET 平台定义一组统一的、与工作负荷无关的 BCL（基类库）API。 它使得开发人员可以生成跨所有 .NET 运行时可用的 PCL，并减少（如果不能消除）共享代码中平台特定的条件编译指令。
 
 本指南将指导你使用 Visual Studio 2017 Update 3 和 NuGet 4.0 创建面向 .NET Standard 2.0 库的 NuGet 包。
 
@@ -113,5 +113,5 @@ ms.lasthandoff: 12/14/2017
 
 - [项目文件中的包引用](../consume-packages/package-references-in-project-files.md)介绍直接在项目文件中描述包的所有详细信息。
 - [作为 MSBuild 目标的 NuGet 包和还原](../schema/msbuild-targets.md)介绍使用 `msbuild /t:pack` 创建包的所有选项。
-- [.NET Standard 库文档](https://docs.microsoft.com/dotnet/articles/standard/library)
-- [从 .NET Framework 移植到 .NET Core](https://docs.microsoft.com/dotnet/articles/core/porting/index)
+- [.NET Standard 库文档](/dotnet/articles/standard/library)
+- [从 .NET Framework 移植到 .NET Core](/dotnet/articles/core/porting/index)

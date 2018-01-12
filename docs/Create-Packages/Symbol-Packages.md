@@ -14,17 +14,17 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b1a29fe6e9a3dec6847dbed07761e28fb8eb9b19
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 2bdb8a2c946618b0c297c70bf7fcf6a9038b2a02
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="creating-symbol-packages"></a>创建符号包
 
 除了为 nuget.org 或其他源生成包之外，NuGet 还支持创建关联的符号包并将其发布到 [SymbolSource 存储库](http://www.symbolsource.org/Public)。
 
-然后，包使用者可将 `http://srv.symbolsource.org/pdb/Public` 添加到 Visual Studio 中的符号源，它允许在 Visual Studio 调试程序中单步执行包代码。 有关该过程的详细信息，请参阅[在 Visual Studio 调试程序中指定符号 (.pdb) 和源文件](https://docs.microsoft.com/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger)。
+然后，包使用者可将 `http://srv.symbolsource.org/pdb/Public` 添加到 Visual Studio 中的符号源，它允许在 Visual Studio 调试程序中单步执行包代码。 有关该过程的详细信息，请参阅[在 Visual Studio 调试程序中指定符号 (.pdb) 和源文件](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger)。
 
 
 ## <a name="creating-a-symbol-package"></a>创建符号包
@@ -134,6 +134,6 @@ nuget pack MyProject.csproj -Symbols
 
 在此情况下，向 nuget.org 发布主包后，NuGet 将 `MyPackage.symbols.nupkg`（如果存在）发布到 https://nuget.smbsrc.net/（symbolsource.org 的推送 URL）。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
  - <a href="https://www.symbolsource.org/Public/Wiki/Using" target="_blank">使用 SymbolSource</a> (symbolsource.org)

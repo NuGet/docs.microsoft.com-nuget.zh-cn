@@ -13,17 +13,19 @@ keywords: "nuget 源引用，源命令"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 52c46dba168e7395d50cb8d8f9775839389e614c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 2eca8557840c467a60f5f708efe242cd83609164
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="sources-command-nuget-cli"></a>源命令 (NuGet CLI)
 
 **适用于：**包消耗、 发布&bullet;**受支持的版本：**所有
 
 管理的源位于列表`%AppData%\NuGet\NuGet.Config`或指定的配置文件。
+
+请注意，nuget.org 的源 URL 是`https://api.nuget.org/v3/index.json`。
 
 ## <a name="usage"></a>用法
 
@@ -32,7 +34,6 @@ nuget sources <operation> -Name <name> -Source <source>
 ```
 
 其中`<operation>`是之一*列表、 添加、 删除、 启用、 禁用*或*更新*，`<name>`是源，名称和`<source>`是源的 URL。
-
 
 ## <a name="options"></a>选项
 

@@ -13,15 +13,15 @@ keywords: "NuGet API, Visual Studio 中的 NuGet, NuGet 编程接口"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 1d5c4cba1474f4215c6cc83497e347b2145f21ef
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: e1279f5c0c36bfdf99a6bae240c779fd0c39f04c
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-api-in-visual-studio"></a>Visual Studio 中的 NuGet API
 
-除了 Visual Studio 中的包管理器 UI 和控制台，NuGet 还会通过 [Managed Extensibility Framework (MEF)](http://msdn.microsoft.com/library/dd460648.aspx) 导出一些有用服务。 此接口允许 Visual Studio 中的其他组件与 NuGet 交互，可用于安装和卸载包，以及获取有关已安装包的信息。
+除了 Visual Studio 中的包管理器 UI 和控制台，NuGet 还会通过 [Managed Extensibility Framework (MEF)](/dotnet/framework/mef/index) 导出一些有用服务。 此接口允许 Visual Studio 中的其他组件与 NuGet 交互，可用于安装和卸载包，以及获取有关已安装包的信息。
 
 从 NuGet 3.3+ 开始，NuGet 会导出以下所有服务，它们全部驻留于 `NuGet.VisualStudio.dll` 程序集中的 `NuGet.VisualStudio` 命名空间：
 
@@ -47,7 +47,7 @@ ms.lasthandoff: 12/14/2017
 > [!Warning]
 > 除了公共接口，请不要在代码中使用任何其他类型，也不要引用任何其他 NuGet 程序集，包括 `NuGet.Core.dll`。
 
-1. 要使用服务，请通过 [MEF 导入属性](https://msdn.microsoft.com/library/dd460648.aspx#Imports%20and%20Exports%20with%20Attributes)，或通过[IComponentModel 服务](http://msdn.microsoft.com/library/microsoft.visualstudio.componentmodelhost.icomponentmodel.aspx)将其导入。
+1. 要使用服务，请通过 [MEF 导入属性](/dotnet/framework/mef/index#imports-and-exports-with-attributes)，或通过[IComponentModel 服务](/dotnet/api/microsoft.visualstudio.componentmodelhost.icomponentmodel?redirectedfrom=MSDN&view=visualstudiosdk-2017)将其导入。
 
     ```cs
     //Using the Import attribute

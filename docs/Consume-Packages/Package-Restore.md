@@ -13,17 +13,17 @@ keywords: "NuGet 包还原, NuGet 包安装, 安装包, 还原包, 依赖项版�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c2567f45b6bb36cdd94c4ce6f1418cb1c7ceac5e
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 4e819a2bb34bbe70f0f11d5adeed82b976a8cb65
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-restore"></a>包还原
 
 为了提升为更干净的开发环境并减少存储库大小，NuGet“包还原”在生成项目前会安装所有引用的包。 这种广泛使用的功能确保了所有依赖项在项目中均可用，无需那些包存储在源代码管理中（有关如何配置存储库排除包二进制文件的信息，请参阅[包与源代码管理](../consume-packages/packages-and-source-control.md)。
 
-在本主题中：
+本主题内容：
 - [包还原快速指南](#quick-guide-to-package-restore)
 - [包还原概述](#package-restore-overview)
 - [启用和禁用包还原](#enabling-and-disabling-package-restore)
@@ -64,7 +64,7 @@ ms.lasthandoff: 12/14/2017
 | 命令 | 适用方案 |
 | --- | --- | 
 | `nuget restore` | NuGet 所有版本和所有引用类型。 请参阅以下[命令行还原](#command-line-restore)。 | 
-| `dotnet restore` | 与 .NET Core 项目的 `nuget restore` 相同。 请参阅 [dotnet restore](https://docs.microsoft.com/dotnet/articles/core/tools/dotnet-restore)。 |
+| `dotnet restore` | 与 .NET Core 项目的 `nuget restore` 相同。 请参阅 [dotnet restore](/dotnet/articles/core/tools/dotnet-restore)。 |
 | `msbuild /t:restore` | 仅有[项目文件中的包引用](../Consume-Packages/Package-References-in-Project-Files.md)的 Nuget 4.x+ 和 MSBuild 15.1+。 `nuget restore` 和 `dotnet restore` 均对适用项目使用此命令。 请参阅[NuGet 打包和还原为 MSBuild 目标 - 还原目标](../schema/msbuild-targets.md#restore-target)。|
 
 Visual Studio 自身同样在不同时间还原包：
@@ -120,19 +120,19 @@ Visual Studio 自身同样在不同时间还原包：
 
 NuGet 通过任意方法还原包时，它将遵守 `packages.config`、`project.json` 或项目文件中指定的任何约束：
 
-- `packages.config`：在依赖项的 `allowedVersion` 属性中指定版本范围。 请参阅[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions)。 例如: 
+- `packages.config`：在依赖项的 `allowedVersion` 属性中指定版本范围。 请参阅[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions)。 例如:
 
     ```xml
     <package id="Newtonsoft.json" version="6.0.4" allowedVersions="[6,7)" />
     ```
 
-- `project.json` 使用依赖项的版本号直接指定版本范围。 例如: 
+- `project.json` 使用依赖项的版本号直接指定版本范围。 例如:
 
     ```json
     "Newtonsoft.json": "[6, 7)"
     ```
 
-- 项目文件中的包引用：使用依赖项的版本号直接指定版本范围。 例如: 
+- 项目文件中的包引用：使用依赖项的版本号直接指定版本范围。 例如:
  
     ```xml
     <PackageReference Include="Newtonsoft.json" Version="[6, 7)" />  

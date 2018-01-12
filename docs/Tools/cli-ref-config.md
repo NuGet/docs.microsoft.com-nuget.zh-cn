@@ -13,11 +13,11 @@ keywords: "nuget 配置引用，config 命令"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 12a8b51dd11b9bc3a496e02e869cdeb95e67b9e3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: f49751d9747687177e3b6c1890ee9d2919be8d0e
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="config-command-nuget-cli"></a>config 命令 (NuGet CLI)
 
@@ -33,6 +33,8 @@ nuget config -AsPath <name> [options]
 ```
 
 其中`<name>`和`<value>`指定在配置中设置的键 / 值对。 根据需要，可以指定任意数量的对。 若要删除一个值，指定的名称和`=`登录，但没有值。
+
+有关允许的密钥名称，请参阅[NuGet 配置文件引用](../Schema/nuget-config-file.md)。
 
 在 NuGet 3.4 +`<value>`可以使用[环境变量](cli-ref-environment-variables.md)。
 

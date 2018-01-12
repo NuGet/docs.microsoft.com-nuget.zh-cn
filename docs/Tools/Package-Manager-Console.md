@@ -8,16 +8,17 @@ ms.topic: article
 ms.prod: nuget
 ms.technology: 
 ms.assetid: 2b92b119-6861-406c-82af-9d739af230e4
+f1_keywords: vs.nuget.packagemanager.console
 description: "使用 Visual Studio 中的 NuGet 程序包管理器控制台，用于处理包的说明。"
 keywords: "NuGet 包管理器控制台，NuGet powershell，管理 NuGet 包"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: cc11963a9b9bfe9aa456d8cd4c8397e1084f660b
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: b8f1df23d1a43412868c14e508ee5221d48dcc7c
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="package-manager-console"></a>程序包管理器控制台
 

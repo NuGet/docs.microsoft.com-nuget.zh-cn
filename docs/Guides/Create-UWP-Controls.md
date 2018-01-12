@@ -13,11 +13,11 @@ keywords: "NuGet UWP 控件, Visual Studio XAML 设计器, Blend 设计器, 自�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f51dbabd406199752e4f9d612b498f59ffb54021
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 8756ce472c11a05370914841245295361b3f179b
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="creating-uwp-controls-as-nuget-packages"></a>以 NuGet 包形式创建 UWP 控件
 
@@ -105,7 +105,7 @@ UWP 包有 TargetPlatformVersion (TPV) 和 TargetPlatformMinVersion (TPMinV)，�
 \ref\uap10.0\*
 ```
 
-要强制实施正确的 TPMinV check，请创建一个 [MSBuild 目标文件](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets)并将其打包在生成文件夹下（使用特定程序集名称替换“your_assembly_name”）：
+要强制实施正确的 TPMinV check，请创建一个 [MSBuild 目标文件](/visualstudio/msbuild/msbuild-targets)并将其打包在生成文件夹下（使用特定程序集名称替换“your_assembly_name”）：
 
 ```
 \build
@@ -133,7 +133,7 @@ UWP 包有 TargetPlatformVersion (TPV) 和 TargetPlatformMinVersion (TPMinV)，�
 
 ## <a name="add-design-time-support"></a>添加设计时支持
 
-要配置控件属性在属性检查器中显示的位置、添加自定义装饰器等，请将 `design.dll` 文件放在目标平台对应的 `lib\<platform>\Design` 文件夹中。 此外，要确保[“编辑模板”>“编辑副本”](https://docs.microsoft.com/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)功能正常工作，必须包含 `Generic.xaml` 及其在 `<AssemblyName>\Themes` 文件夹中合并的资源字典。 （此文件对控件的运行时行为不产生影响。）
+要配置控件属性在属性检查器中显示的位置、添加自定义装饰器等，请将 `design.dll` 文件放在目标平台对应的 `lib\<platform>\Design` 文件夹中。 此外，要确保[“编辑模板”>“编辑副本”](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)功能正常工作，必须包含 `Generic.xaml` 及其在 `<AssemblyName>\Themes` 文件夹中合并的资源字典。 （此文件对控件的运行时行为不产生影响。）
 
 
 ```
@@ -172,7 +172,7 @@ UWP 包有 TargetPlatformVersion (TPV) 和 TargetPlatformMinVersion (TPMinV)，�
 \tools
 ```
 
-可能还要创作 [MSBuild 目标文件](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets)确保资产复制到使用的项目的输出文件夹：
+可能还要创作 [MSBuild 目标文件](/visualstudio/msbuild/msbuild-targets)确保资产复制到使用的项目的输出文件夹：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

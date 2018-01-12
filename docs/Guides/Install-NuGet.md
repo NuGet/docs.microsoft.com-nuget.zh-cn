@@ -13,11 +13,11 @@ keywords: "nuget.exe CLI, NuGet 客户端工具, NuGet 包管理器, NuGet 包�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b1abb30458c9ebfb0ffb28be254efd9709a9627f
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 2f67c298d269149bba9f36ad9e026d5443c39b6a
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="installing-nuget-client-tools"></a>安装 NuGet 客户端工具
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 12/14/2017
 1. [NuGet CLI](#nuget-cli) 是适用于 Windows 的命令行实用工具，可提供所有 NuGet 功能；它也可以使用 Mono 或通过 .NET Core CLI (`dotnet`) 在 Mac OSX 和 Linux 上运行。
 1. [Visual Studio 中的 NuGet 包管理器](#nuget-package-manager-in-visual-studio)（仅限于 Windows）是用于管理包的 GUI 工具，它包括 PowerShell 控制台，通过该控制台可直接在 Visual Studio 中使用某些 NuGet 命令。 包管理器 UI 和控制台均包括在 Visual Studio（Windows 上）2012 及更高版本中，并且可为早期版本手动安装。
 
-    对于 Visual Studio for Mac，NuGet 功能是直接内置的。 请参阅[在项目中添加 NuGet 包](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)，获取有关演练。
+    对于 Visual Studio for Mac，NuGet 功能是直接内置的。 请参阅[在项目中添加 NuGet 包](/visualstudio/mac/nuget-walkthrough)，获取有关演练。
 
     Visual Studio Code 目前没有任何内置 NuGet 支持。 请使用 NuGet CLI 或 [dotnet CLI](../Tools/dotnet-Commands.md)。
 
@@ -53,7 +53,7 @@ NuGet CLI 和包管理器均支持以下操作：
 
 > [!Note]
 > 另一个很好的工具是 [NuGet 包资源管理器](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)，它是可直观浏览、创建和编辑 NuGet 包的独立开源工具。 它非常有用，例如，无需每次重新生成包即可对包结构进行实验性更改。
-> 用于开发 .NET Core 应用程序的跨平台 [.NET Core CLI](https://docs.microsoft.com/dotnet/articles/core/tools/index#installation) 工具链支持多个 NuGet 命令，如删除、局部变量、推送、打包和还原。 
+> 用于开发 .NET Core 应用程序的跨平台 [.NET Core CLI](/dotnet/articles/core/tools/index#installation) 工具链支持多个 NuGet 命令，如删除、局部变量、推送、打包和还原。 
 
 ## <a name="nuget-cli"></a>NuGet CLI
 

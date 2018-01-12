@@ -13,11 +13,11 @@ keywords: "Visual Studio 中的 NuGet, 自定义项目类型, Visual Studio 项�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 39212361e7cb2c214c3e83cef604d40cd057fd7e
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 9c8cad46f18578bec41bd9280985e42972a9b3c1
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-support-for-the-visual-studio-project-system"></a>NuGet 对 Visual Studio 项目系统的支持
 
@@ -121,9 +121,8 @@ case __VSHPROPID8.VSHPROPID_ProjectCapabilitiesChecker:
     return VSConstants.S_OK;
 ```
 
-
 ## <a name="dte-support"></a>DTE 支持
 
-NuGet 通过调用到 [DTE](https://msdn.microsoft.com/library/mt452175.aspx)（Visual Studio 的顶级自动化接口），使项目系统添加引用、内容项和 MSBuild 导入。 DTE 是一组可能已经实现的 COM 接口。
+NuGet 通过调用到 [DTE](/dotnet/api/envdte.dte?view=visualstudiosdk-2017)（Visual Studio 的顶级自动化接口），使项目系统添加引用、内容项和 MSBuild 导入。 DTE 是一组可能已经实现的 COM 接口。
 
 如果项目类型基于 CPS，则已实现 DTE。

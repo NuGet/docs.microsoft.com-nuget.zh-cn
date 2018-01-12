@@ -13,11 +13,11 @@ keywords: "创建包, 适用于 Xamarin 的包, 跨平台包"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8ee825a6299d7de375fd2f242cf456da13b777d9
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: f372856232f151efcf972881cffbe7d4bb7ed6ee
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="create-cross-platform-packages"></a>创建跨平台包
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 12/14/2017
 
 ## <a name="create-the-project-structure-and-abstraction-code"></a>创建项目结构和抽象代码
 
-1. 下载并运行适用于 Visual Studio 的 [适用于 Xamarin 的插件模板扩展组件](https://visualstudiogallery.msdn.microsoft.com/afead421-3fbf-489a-a4e8-4a244ecdbb1e)。 使用这些模板可轻松创建本演练所需的项目结构。
+1. 下载并运行适用于 Visual Studio 的 [适用于 Xamarin 的插件模板扩展组件](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates)。 使用这些模板可轻松创建本演练所需的项目结构。
 1. 在 Visual Studio 中，选择“文件”>“新建”>“项目”，搜索 `Plugin`，选择“适用于 Xamarin 的插件”模板，将名称更改为“LoggingLibrary”，然后单击“确定”。
 
     ![Visual Studio 中的新空白应用（Xamarin.Forms 可移植）](media/CrossPlatform-NewProject.png)
