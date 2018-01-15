@@ -14,11 +14,11 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4d1d2e6850f22306d715b1c2071ee45b0eb050dc
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 36e1f0cd6e4284a6bd272ce3c85749e9ed72cbcd
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="target-frameworks"></a>目标框架
 
@@ -40,7 +40,7 @@ NuGet 在各个地方使用目标框架引用，以特别标识和隔离包的�
 
 NuGet 客户端支持下表中的框架。 等效项显示在括号内 []。 请注意，某些工具（如 `dotnet`）可能会在某些文件中使用规范的 TFM 变体。 例如，`dotnet pack` 在 `.nuspec` 文件中使用 `.NETCoreApp2.0`，而非 `netcoreapp2.0` 文件。 各种 NuGet 客户端工具正确处理这些变体，但是在直接编辑文件时，应始终使用规范的 TFM。
 
-| 名称           | 缩写 | TFM/TxM |
+| name           | 缩写 | TFM/TxM |
 | -------------  | ------------ | --------- |
 |.NET Framework  | net          | net11     |
 |                |              | net20     |
@@ -53,7 +53,7 @@ NuGet 客户端支持下表中的框架。 等效项显示在括号内 []。 请
 |                |              | net46      |
 |                |              | net461     |
 |                |              | net462     |
-|Windows 应用商店   | netcore      | netcore [netcore45] |
+|Microsoft Store（Windows 应用商店） | netcore      | netcore [netcore45] |
 |                |              | netcore45 [win, win8] |
 |                |              | netcore451 [win81] |
 |                |              | netcore50 |
@@ -122,7 +122,7 @@ Tizen | tizen | tizen3 |
 
 ## <a name="net-platform-standard"></a>NET 平台标准
 
-[.NET 平台标准](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md)简化了二进制兼容框架之间的引用，允许单个目标框架引用其他框架的组合。 （有关背景信息，请参阅 [.NET 入门](https://docs.microsoft.com/dotnet/articles/standard/index)。）
+[.NET 平台标准](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/net-platform-standard.md)简化了二进制兼容框架之间的引用，允许单个目标框架引用其他框架的组合。 （有关背景信息，请参阅 [.NET 入门](/dotnet/articles/standard/index)。）
 
 [NuGet 获取最新框架工具](https://aka.ms/s2m3th)模拟用于从基于项目框架的包中的许多可用框架资产中选择一个框架的 NuGet 逻辑。
 
@@ -282,7 +282,7 @@ NuGet 3.3 及更早版本应该使用 `dotnet` 系列的名字对象；v3.4 及�
 
 另外，面向 Xamarin 的 NuGet 包可以使用 Xamarin 定义的其他框架。 请参阅[创建适用于 Xamarin 的 NuGet 包](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/)。
 
-| 名称 | 描述 | .NET Standard |
+| name | 描述 | .NET Standard |
 | --- | --- | ---
 | monoandroid | Mono 支持 Android OS | netstandard1.4 |
 | monotouch | Mono 支持 iOS | netstandard1.4 |

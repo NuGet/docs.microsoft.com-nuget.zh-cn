@@ -13,11 +13,11 @@ keywords: "NuGet 包创建, NuGet 包发布, NuGet 教程"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 36a7c2b1d056dddf07a59737de1c3e94294689ac
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: ab5235537d869047075b93f9d8255ae9e61dfedd
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="create-and-publish-a-package"></a>创建和发布包
 
@@ -52,7 +52,7 @@ ms.lasthandoff: 12/14/2017
     nuget spec
     ```
 
-1. 在文本编辑器中打开文件。 清单看起来类似于下面的代码，其中 $`<token>`$ 形式的令牌在打包过程中被替换为项目的 Properties/AssemblyInfo.cs 文件中的值。 有关令牌的更多详细信息，请参阅[创建 .nuspec 文件](../create-packages/creating-a-package.md#creating-the-nuspec-file)。
+1. 在文本编辑器中打开文件。 清单看起来类似于下面的代码，其中 `<token>` 形式的令牌（例如，`$id$`）在打包过程中被替换为项目的 Properties/AssemblyInfo.cs 文件中的值。 有关令牌的更多详细信息，请参阅[创建 .nuspec 文件](../create-packages/creating-a-package.md#creating-the-nuspec-file)。
 
     ```xml
     <?xml version="1.0"?>
@@ -115,7 +115,6 @@ nuget pack AppLogger.csproj
 > [!Warning]
 > 发布到 nuget.org 的包对其他开发人员公开可见。 若要专门托管包，请参阅[托管包](../hosting-packages/overview.md)。
 
-
 1. 在 [nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F) 上创建免费帐户，如果已有帐户，请登录。 创建新帐户会发送确认电子邮件。 必须先确认该帐户，才能上传包。
 
 1. 登录后，选择用户名（在右上角），然后选择“API 密钥”。
@@ -134,7 +133,7 @@ nuget pack AppLogger.csproj
     ```
     nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://api.nuget.org/v3/index.json
     ```
-    
+
 1. nuget.exe 会显示发布过程的结果：
 
     ```

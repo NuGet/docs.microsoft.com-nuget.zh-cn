@@ -13,11 +13,11 @@ keywords: "NuGet 包删除, NuGet 包取消列出, 禁止使用包"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 331979bdc3703ddbeff18e2bd0e6b0a17551e68b
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 9e388171f83fae7deb4f20033184dfa91bfab3da
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="deleting-packages"></a>删除包
 

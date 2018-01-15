@@ -13,11 +13,11 @@ keywords: "NuGet 包依赖项, NuGet 版本控制, 依赖项版本, 版本关系
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 44c69c07990fed72b439698d22021ebcbb2eed89
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 93a3d077a6dd1946485fc8c48f97c8009280890c
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet 如何解析包依赖项
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 12/14/2017
 
 当多个包具有相同的依赖项时，同一个包 ID 会在关系图中多次出现且可能具有不同的版本约束。 但是，一个项目中只能使用给定包的一个版本，因此 NuGet 必须选择要使用的版本。 确切流程取决于要使用的包引用格式。
 
-在本主题中：
+本主题内容：
 - [利用 PackageReference 和 project.json 解析依赖项](#dependency-resolution-with-packagereference-and-projectjson)
 - [利用 packages.config 解析依赖项](#dependency-resolution-with-packagesconfig)
 - [排除引用](#excluding-references)，当一个项目中指定的依赖项与另一个项目生成的程序集发生冲突时，则必须执行此操作。
@@ -151,6 +151,12 @@ ms.lasthandoff: 12/14/2017
             }
         }
     }
+    ```
+
+- 通过[项目文件中的包引用](../consume-packages/package-references-in-project-files.md)（仅 NuGet 4.0+），在依赖项中添加 `ExcludeAssets="All"`：
+
+    ```xml
+    <PackageReference Include="packageC" Version="1.0.0" ExcludeAssets="All" />
     ```
 
 ## <a name="dependency-updates-during-package-install"></a>在安装包期间更新依赖项 

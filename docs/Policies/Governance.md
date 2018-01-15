@@ -13,11 +13,11 @@ keywords: "NuGet 治理, NuGet 仁慈独裁者, 提交者职责, 参与者职责
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: db2ed774b35d5698a88f9afba43fd30692001f6a
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 0437b7d41f965da6a7ad44a7d0675916ed655fe1
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-governance"></a>NuGet 治理
 
@@ -64,7 +64,7 @@ NuGet 核心团队自任命为仁慈独裁者或项目领导。 但是，由于�
 - [NuGet 客户端和 NuGet 库的参与说明](https://github.com/NuGet/Home/wiki/Contributing-to-NuGet)
 - [NuGet Docs 的参与说明](https://github.com/NuGet/NuGetDocs/wiki/Contributing-to-NuGet-Documentation)
 
-### <a name="users"></a>Users
+### <a name="users"></a>用户
 
 用户是作为包使用者和/或创建者需要并使用 NuGet 的社区成员。 用户是社区最重要的成员：没有他们，项目就没有用。 任何人都可成为用户；没有特定要求。
 

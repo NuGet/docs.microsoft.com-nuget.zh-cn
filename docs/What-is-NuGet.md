@@ -13,15 +13,15 @@ keywords: "NuGet 包管理器, 使用, 包创建, 包托管"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 29dcedf33a54e249fe0b6acf588e4aafde28304f
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 2bc6a9e154df287fee6a7e00cc1349dfa2100643
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 简介
 
-适用于任何现代开发平台的基本工具可充当一种机制，通过这种机制，开发人员可以创建、共享和使用有用的代码库。 这种库通常称为“包”，因为它们包含编译代码（如 DLL）以及使用这些库的项目中可能需要的其他内容。
+适用于任何现代开发平台的基本工具可充当一种机制，通过这种机制，开发人员可以创建、共享和使用有用的代码。 通常，此类代码捆绑到“包”中，其中包含编译的代码（如 DLL）以及在使用这些包的项目中所需的其他内容。
 
 对于 .NET，共享代码的机制则为 NuGet，其定义如何创建、托管和使用面向 .NET 的包，并针对每个角色提供适用工具。 
 
@@ -45,7 +45,7 @@ ms.lasthandoff: 12/14/2017
 | --- | --- | --- | --- |
 | [nuget.exe CLI](Tools/nuget-exe-CLI-Reference.md) | 全部 | 创建、使用 | 提供所有 NuGet 功能，包括一些专门适用于包创建者、仅适用于使用者和适用于两者的命令。 例如，包创建者使用 `nuget pack` 命令通过各种程序集和相关文件创建包，包使用者使用 `nuget install` 在项目中包含包，而所有人都可使用 `nuget config` 设置 NuGet 配置变量。  |
 | [包管理器 UI](Tools/Package-Manager-UI.md) | Windows 版 Visual Studio | 使用 | 提供用于在 .NET 项目中安装和管理包的易用 UI。 | 
-| [管理 NuGet UI](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | 使用 | 提供用于在 .NET 项目中安装和管理包的易用 UI。 |
+| [管理 NuGet UI](/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | 使用 | 提供用于在 .NET 项目中安装和管理包的易用 UI。 |
 | [包管理器控制台](Tools/Package-Manager-Console.md) | Windows 版 Visual Studio | 使用 | 提供用于在 .NET 项目中安装和管理包的 [PowerShell 命令](Tools/Powershell-Reference.md)。 | 
 | [dotnet CLI](Tools/dotnet-Commands.md) | 全部 | 创建、使用 | 直接在 .NET Core 工具链中提供特定 NuGet CLI 功能。 |
 | [MSBuild](Schema/msbuild-targets.md) | Windows | 创建、使用 | 支持创建包和还原项目中直接通过 MSBuild 工具链使用的包。 |

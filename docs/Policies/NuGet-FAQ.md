@@ -13,15 +13,15 @@ keywords: "NuGet 问答, 问题和解答, 常见问题, NuGet 版本, 包版本"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 105fa6e1cad3d163b673376c74ce9c835a0b5059
-ms.sourcegitcommit: 122bf7ce308365ea45da018b0768f0536de76a1f
+ms.openlocfilehash: d19a24a2d1955e996e18d44fee346865d36493f8
+ms.sourcegitcommit: e5b7cf6675be9891341c196afe822cea6f71d60c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
-在本主题中：
+本主题内容：
 
 - [入门](#getting-started)
 - [Visual Studio 中的 NuGet](#nuget-in-visual-studio)
@@ -57,9 +57,9 @@ NuGet 是否支持 Mono？
 **NuGet 在不同 Visual Studio 产品中的受支持情况**
 
 - Windows 版 Visual Studio 支持[包管理器 UI](../tools/Package-Manager-UI.md) 和[包管理器控制台](../tools/Package-Manager-Console.md)。
-- Visual Studio for Mac 具有内置 NuGet 功能，如[在项目中包括 NuGet 包](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)中所述。
+- Visual Studio for Mac 具有内置 NuGet 功能，如[在项目中包括 NuGet 包](/visualstudio/mac/nuget-walkthrough)中所述。
 - Visual Studio Code（所有平台）与 NuGet 不存在任何直接集成。 请使用 [NuGet CLI](../tools/nuget-exe-CLI-Reference.md) 或 [dotnet CLI](../tools/dotnet-commands.md)。
-- Visual Studio Team Services 提供[还原 NuGet 包的生成步骤](https://docs.microsoft.com/vsts/build-release/tasks/package/nuget)。 还可以[在 Team Services 上托管私有 NuGet 包源](https://www.visualstudio.com/docs/package/nuget/publish)。
+- Visual Studio Team Services 提供[还原 NuGet 包的生成步骤](/vsts/build-release/tasks/package/nuget)。 还可以[在 Team Services 上托管私有 NuGet 包源](https://www.visualstudio.com/docs/package/nuget/publish)。
 
 **如何查看安装的 NuGet 工具的确切版本？**
 
@@ -101,7 +101,7 @@ NuGet 对多种项目模板提供完整支持，如 Windows、Web、Cloud、Shar
 
 如何在包管理器控制台中访问 DTE 对象？
 
-Visual Studio 自动化对象模型中的顶层对象称为 DTE （开发工具环境）对象。 控制台通过名为 `$DTE` 的变量提供此对象。 有关详细信息，请参阅 Visual Studio 扩展性文档中的[自动化模型概述](https://docs.microsoft.com/visualstudio/extensibility/internals/automation-model-overview)。
+Visual Studio 自动化对象模型中的顶层对象称为 DTE （开发工具环境）对象。 控制台通过名为 `$DTE` 的变量提供此对象。 有关详细信息，请参阅 Visual Studio 扩展性文档中的[自动化模型概述](/visualstudio/extensibility/internals/automation-model-overview)。
 
 我尝试将 $DTE 变量强制转换为类型 DTE2，但出现错误：无法将类型“EnvDTE.DTEClass”的“EnvDTE.DTEClass”值转换为类型“EnvDTE80.DTE2”。为什么会这样？
 
@@ -177,9 +177,9 @@ Visual Studio 自动化对象模型中的顶层对象称为 DTE （开发工具�
 
 ## <a name="managing-packages-on-nugetorg"></a>在 nuget.org 上管理包
 
-在上传包元数据后是否可以再对其进行编辑？**为什么推荐做法是编辑 nuspec 并上传新包，再更改包元数据？**
+在上传包元数据后是否可以再对其进行编辑？为什么需要编辑 nuspec 并上传新包才能更改包元数据？
 
-NuGet 会执行包签名。 包签名的设计原则是已签名包的内容不得改变，nuspec 也包括在内。 编辑包元数据会使 nuspec 发生更改，导致现有签名无效。 我们建议在创建包后修改现有工作流，这样则无需编辑包元数据。
+NuGet 要求对所有的包签名。 包签名的设计原则是已签名包的内容不得改变，nuspec 也包括在内。 编辑包元数据会使 nuspec 发生更改，导致现有签名无效。 我们建议在创建包后修改现有工作流，这样则无需编辑包元数据。
 
 请注意，列出的包依赖项从包本身自动生成，并且无法进行编辑。
 

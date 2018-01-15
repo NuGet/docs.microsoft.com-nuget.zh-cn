@@ -14,11 +14,11 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d002f55a75b3daaa2fed7a94e88582dd4f04e05f
-ms.sourcegitcommit: 1ebfff1263992c54de75366a1b1c26dbae6c0318
+ms.openlocfilehash: cd5b7c79ad0af07b167e062d4a2f5142ef2d718a
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -172,8 +172,8 @@ nuget pack MyProject.csproj
 `<metadata>` 中的 `<dependencies>` 元素包含任意数量的 `<dependency>` 元素，用来标识顶级包所依赖的其他包。 每个 `<dependency>` 的特性如下所示：
 
 | 特性 | 描述 |
-| --- | --- | 
-| `id` | （必需）依赖项的包 ID。 |
+| --- | --- |
+| `id` | （必须）依赖项的包 ID，如“EntityFramework”和“NUnit”，同时也是 nuget.org 在包页面上显示的包名称。 |
 | `version` | （必需）可接受作为依赖项的版本范围。 有关准确语法，请参阅[包版本控制](../reference/package-versioning.md#version-ranges-and-wildcards)。 |
 | include | 包括/排除标记的逗号分隔列表（见下文），指示要包含在最终包中的依赖项。 默认值为 `none`。 |
 | exclude | 包括/排除标记的逗号分隔列表（见下文），指示要排除在最终包外的依赖项。 默认值为 `all`。 用 `exclude` 指定的标记优先于用 `include` 指定的标记。 例如，`include="runtime, compile" exclude="compile"` 和 `include="runtime"` 相同。 |
@@ -254,7 +254,7 @@ nuget pack MyProject.csproj
 </references>
 ```
 
-显式引用通常用于仅设计时程序集。 例如，在使用 [Code Contracts](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/code-contracts)（代码协定）时，协定程序集需要放在运行时程序集的旁边进行补充，以便 Visual Studio 能够找到它们，但协定程序集不需要被项目引用或复制到项目的 `bin` 文件夹。
+显式引用通常用于仅设计时程序集。 例如，在使用 [Code Contracts](/dotnet/framework/debug-trace-profile/code-contracts)（代码协定）时，协定程序集需要放在运行时程序集的旁边进行补充，以便 Visual Studio 能够找到它们，但协定程序集不需要被项目引用或复制到项目的 `bin` 文件夹。
 
 同样，显式引用可用于单元测试框架（如 XUnit），其工具程序集需要位于运行时程序集的旁边，但不需要包含为项目引用。
 

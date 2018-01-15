@@ -13,11 +13,11 @@ keywords: "NuGet 包创建, 创建包, nuspec 清单, NuGet 包约定, NuGet 包
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: e7a2c4d02afb2387161c22fe5bd443eb0991ea8c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 6675d21a2900a1b61e17c08518b328732f4472c5
+ms.sourcegitcommit: 1cb047b24b3b69d80e808c23b2ace0d98d2dfdcc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="creating-nuget-packages"></a>创建 NuGet 包
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 12/14/2017
 
 包以编译的代码（程序集）、符号和/或需要作为包传送的其他文件开头（请参阅[概述和工作流](Overview-and-Workflow.md)）。 尽管可以使用项目文件中信息的描述保持编译程序集和包的同步，但此流程独立于编译或生成进入包的文件。
 
-在本主题中：
+本主题内容：
 
 - [确定要打包的程序集](#deciding-which-assemblies-to-package)
 - [`.nuspec` 文件的角色和结构](#the-role-and-structure-of-the-nuspec-file)
@@ -284,7 +284,7 @@ nuget spec [<package-name>]
 
 - `Dependency` 类型包将生成或运行时资产添加到库和应用程序，并且可以在任何项目类型中安装（假设它们相互兼容）。
 
-- `DotnetCliTool` 类型包是 [.NET CLI](https://docs.microsoft.com/dotnet/articles/core/tools/index) 的扩展，并且从命令行中调用。 该包仅在 .NET Core 项目中安装并且不影响还原操作。 [.NET Core 扩展性](https://docs.microsoft.com/dotnet/articles/core/tools/extensibility#per-project-based-extensibility)文档中提供更多有关这些项目扩展的详细信息。
+- `DotnetCliTool` 类型包是 [.NET CLI](/dotnet/articles/core/tools/index) 的扩展，并且从命令行中调用。 该包仅在 .NET Core 项目中安装并且不影响还原操作。 [.NET Core 扩展性](/dotnet/articles/core/tools/extensibility#per-project-based-extensibility)文档中提供更多有关这些项目扩展的详细信息。
 
     安装 DotnetCliTool 包时，Visual Studio 将包置于 `project.json` `tools` 节点而不是 `dependencies` 节点中。
 

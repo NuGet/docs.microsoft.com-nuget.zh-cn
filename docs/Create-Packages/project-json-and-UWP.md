@@ -13,11 +13,11 @@ keywords: "NuGet 依赖项, NuGet 和 UWP, UWP 和 project.json, NuGet project.j
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 40507e541997cea368052c373a4124d9c4a00a51
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: ae49c017365e1a63622fde318d5c94b64ed1ea2e
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="projectjson-and-uwp"></a>project.json 和 UWP
 
@@ -70,7 +70,7 @@ ms.lasthandoff: 12/14/2017
 
 NuGet 包可能包含 `.targets` 和 `.props` 文件，这些文件被导入到包安装到的任何 MSBuild 项目中。 在 NuGet 2.x 中，此操作是通过向 `.csproj` 文件注入 `<Import>` 语句而完成的；在 NuGet 3.0 中，没有特定的“安装到项目”操作。 而是包还原过程写入 `[projectname].nuget.props` 和 `[projectname].NuGet.targets` 两个文件。
 
-MSBuild 知道查找这两个文件，并在项目生成过程开始和结束时自动导入它们。 此行为与 NuGet 2.x 非常相似，但有一个主要区别：在此情况下，无法保证目标/道属性文件的顺序。 但是，MSBuild 通过 `<Target>` 定义的 `BeforeTargets` 和 `AfterTargets` 特性（请参阅 [Target 元素 (MSBuild)](https://docs.microsoft.com/visualstudio/msbuild/target-element-msbuild)）提供了对目标进行排序的方法。
+MSBuild 知道查找这两个文件，并在项目生成过程开始和结束时自动导入它们。 此行为与 NuGet 2.x 非常相似，但有一个主要区别：在此情况下，无法保证目标/道属性文件的顺序。 但是，MSBuild 通过 `<Target>` 定义的 `BeforeTargets` 和 `AfterTargets` 特性（请参阅 [Target 元素 (MSBuild)](/visualstudio/msbuild/target-element-msbuild)）提供了对目标进行排序的方法。
 
 
 ## <a name="lib-and-ref"></a>Lib 和引用
@@ -93,7 +93,7 @@ Lib 结构示例：
 
 大多数包创建者都不需要 `ref` 文件夹。 这对以下包非常有用：需要为编译和 IntelliSense 提供一致的外围应用，但对不同的 TxM 具有不同的实现。 最大的用例是 `System.*` 包，这些包是在 NuGet 上提供 .NET Core 的过程中生成的。 这些包具有各种实现，这些实现由一组一致的引用程序集统一。
 
-从表面上讲，`ref` 文件夹中包含的程序集是传递给编译器的引用程序集。 对于使用过 csc.exe 的用户来说，这些是我们传递给 [C# /reference 选项](https://docs.microsoft.com/dotnet/articles/csharp/language-reference/compiler-options/reference-compiler-option) 开关的程序集。
+从表面上讲，`ref` 文件夹中包含的程序集是传递给编译器的引用程序集。 对于使用过 csc.exe 的用户来说，这些是我们传递给 [C# /reference 选项](/dotnet/articles/csharp/language-reference/compiler-options/reference-compiler-option) 开关的程序集。
 
 `ref` 文件夹的结构与 `lib` 的结构相同，例如：
 
@@ -121,7 +121,7 @@ Lib 结构示例：
 
 ## <a name="runtimes"></a>运行时
 
-运行时文件夹包含在特定“运行时”上运行所需的程序集和本机库，通常由操作系统和 CPU 体系结构定义。 这些运行时使用[运行时标识符 (RID)](https://docs.microsoft.com/dotnet/core/rid-catalog) 进行标识，如 `win`、`win-x86`、`win7-x86`、`win8-64` 等。
+运行时文件夹包含在特定“运行时”上运行所需的程序集和本机库，通常由操作系统和 CPU 体系结构定义。 这些运行时使用[运行时标识符 (RID)](/dotnet/core/rid-catalog) 进行标识，如 `win`、`win-x86`、`win7-x86`、`win8-64` 等。
 
 ## <a name="native-light-up"></a>本机启动
 

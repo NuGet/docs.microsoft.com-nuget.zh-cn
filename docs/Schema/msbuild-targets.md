@@ -11,11 +11,11 @@ ms.assetid: 86f7e724-2509-4d7d-aa8d-4a3fb913ded6
 description: "NuGet 包和还原可作为 MSBuild 目标直接用于 NuGet 4.0+。"
 keywords: "NuGet 和 MSBuild, NuGet 包目标, NuGet 还原目标"
 ms.reviewer: karann-msft
-ms.openlocfilehash: def01380e5bc3bf878e72dd437f52cd033641ca5
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: d4778a21a96de6d76d7a20ff9a305960dd6c2bf1
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -25,7 +25,7 @@ NuGet 4.0 + 可直接用于 `.csproj` 文件中的信息，无需单独的 `.nus
 
 如下所述，对于 MSBuild 15.1+，NuGet 还是具有 `pack` 目标和 `restore` 目标的一等 MSBuild 公民。 借助这些目标，你可以像使用任何其他 MSBuild 任务或目标一样使用 NuGet。 （对于 Nuget 3.x 及更早版本，通过 NuGet CLI 使用 [pack](../tools/cli-ref-pack.md) 和 [restore](../tools/cli-ref-restore.md) 命令。）
 
-在本主题中：
+本主题内容：
 
 - [目标生成顺序](#target-build-order)
 - [包目标](#pack-target)
@@ -66,7 +66,7 @@ NuGet 4.0 + 可直接用于 `.csproj` 文件中的信息，无需单独的 `.nus
 | 标题 | 标题 | PackageId| |
 | 描述 | 描述 | “包描述” | |
 | Copyright | Copyright | 空 | |
-| requireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
+| requireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
 | LicenseUrl | PackageLicenseUrl | 空 | |
 | ProjectUrl | PackageProjectUrl | 空 | |
 | IconUrl | PackageIconUrl | 空 | |
@@ -193,7 +193,7 @@ NuGet 4.0 + 可直接用于 `.csproj` 文件中的信息，无需单独的 `.nus
 
 这与 `IncludeSymbols` 相同，但它还会连同 `.pdb` 文件复制源文件。 类型为 `Compile` 的所有文件都会复制到 `src\<ProjectName>\`，并保留生成包中的相对路径文件夹结构。 对于将 `TreatAsPackageReference` 设置为 `false` 的任何 `ProjectReference` 的源文件也是如此。
 
-如果类型为 Compile 的文件位于项目文件夹外，则仅将其添加到了 `src\<ProjectName>\`。
+如果类型为 Compile 的文件位于项目文件夹外，则它只添加到了 `src\<ProjectName>\`。
 
 ### <a name="istool"></a>IsTool
 

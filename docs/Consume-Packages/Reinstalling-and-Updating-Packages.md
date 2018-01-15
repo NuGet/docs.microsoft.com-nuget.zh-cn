@@ -13,11 +13,11 @@ keywords: "NuGet 包安装, NuGet 包重新安装, NuGet 包还原, 更新包, �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 898a431af4ed2e090b87d97bf43cec965b72d3c3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 6a198b371c86166e2bcdee7f6cf2a6c971bea0a3
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>如何重新安装和更新包
 
@@ -31,7 +31,8 @@ ms.lasthandoff: 12/14/2017
 | 包管理器 UI | 在“更新”选项卡上，选择一个或多个包并选择“更新” | 在“已安装”选项卡上，选择一个包，记录其名称，然后选择“卸载”。 切换到“浏览”选项卡，搜索包名称并选中，然后选择“安装”。 |
 | nuget.exe CLI | `nuget update` 命令 | 对于所有包，删除包文件夹，然后运行 `nuget install`。 对于单个包，删除包文件夹并使用 `nuget install <id>` 再安装一个。 |
 
-在本主题中：
+本文内容：
+
 - [何时重新安装包](#when-to-reinstall-a-package)
 - [约束升级版本](#constraining-upgrade-versions)
 

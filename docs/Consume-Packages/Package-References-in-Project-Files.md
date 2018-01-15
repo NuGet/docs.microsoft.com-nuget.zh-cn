@@ -13,11 +13,11 @@ keywords: "NuGet 包依赖项, 包引用, 项目文件, PackageReference, packag
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c8fc9e558557af444d9a35ace36d043a5f6382a7
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 275957c94e4a4bb45f359cd48816acf4f286ebad
+ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -96,16 +96,16 @@ ms.lasthandoff: 12/14/2017
 
 以下是这些标记的允许值，其中用分号分隔多个值（但 `all` 和 `none` 必须单独显示）：
 
-| 值 | 描述 |
+| “值” | 描述 |
 | --- | ---
-| compile | `lib` 文件夹中的内容 |
-| runtime | `runtime` 文件夹中的内容 |
+| 编译 | `lib` 文件夹中的内容 |
+| Runtime — 运行时 | `runtime` 文件夹中的内容 |
 | contentFiles | `contentfiles` 文件夹中的内容 |
-| build | `build` 文件夹中的属性和目标 |
+| 生成 | `build` 文件夹中的属性和目标 |
 | analyzers | .NET 分析器 |
-| native | `native` 文件夹中的内容 |
-| none | 不使用以上任何内容。 |
-| all | 以上都是（除 `none` 之外） |
+| 本机 | `native` 文件夹中的内容 |
+| 无 | 不使用以上任何内容。 |
+| 全部 | 以上都是（除 `none` 之外） |
 
 在以下示例中，项目将使用除包中的内容文件之外的所有项，并且除内容文件和分析器之外的所有项均会流入上级项目。
 

@@ -13,13 +13,15 @@ keywords: "安装 NuGet, NuGet包使用, 安装 NuGet 包, NuGet 包引用, 使�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: bcccc7139de31a8d07e9ed52abfd12fe9e6d687b
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 639f4883f5ce904a44d8aa23d76c93ed79ea4b9d
+ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="install-and-use-a-package"></a>安装并使用包
+
+NuGet 包是其他开发者提供的在项目中使用的可重用代码单元。 请参阅[什么是 NuGet？](../What-is-NuGet.md)，了解背景信息。
 
 [!INCLUDE [install-methods](../includes/install-methods.md)]
 
