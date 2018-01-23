@@ -14,11 +14,11 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 53fccbb86f2920d870b5383070d043e25045a626
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 29eb72cbb6c095cd3aeb524fd8b28416ec5dc798
+ms.sourcegitcommit: 6ccb963e065680ab2e7df1d8dd5492897fd56b04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="errors-and-warnings"></a>错误和警告
 
@@ -30,9 +30,9 @@ ms.lasthandoff: 01/05/2018
 
 | Group | 错误号 |
 | --- | --- |
-| [无效的输入的错误](#invalid-input-errors) | [NU1001](#nu1001)， [NU1002](#nu1002)， [NU1003](#nu1003) |
-| [缺少的包和项目错误](#missing-package-and-project-errors) | [NU1100](#nu1100)， [NU1101](#nu1101)， [NU1102](#nu1102)， [NU1103](#nu1103)， [NU1104](#nu1104)， [NU1105](#nu1105)， [NU1106](#nu1106)， [NU1107](#nu1107) (以前 NU1607) [NU1108](#nu1107) (以前 NU1606) |
-| [兼容性错误](#compatibility-errors) | [NU1201](#nu1201)， [NU1202](#nu1202)， [NU1203](#nu1203)， [NU1401](#nu1401) |
+| [无效的输入的错误](#invalid-input-errors) | [NU1001](#nu1001), [NU1002](#nu1002), [NU1003](#nu1003) |
+| [缺少的包和项目错误](#missing-package-and-project-errors) | [NU1100](#nu1100)， [NU1101](#nu1101)， [NU1102](#nu1102)， [NU1103](#nu1103)， [NU1104](#nu1104)， [NU1105](#nu1105)， [NU1106](#nu1106)， [NU1107](#nu1107) (以前 NU1607) [NU1108](#nu1108) (以前 NU1606) |
+| [兼容性错误](#compatibility-errors) | [NU1201](#nu1201), [NU1202](#nu1202), [NU1203](#nu1203), [NU1401](#nu1401) |
 
 **警告**
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 01/05/2018
 | [冲突解决程序冲突警告](#resolver-conflict-warnings) | [NU1608](#nu1608) |
 | [包回退警告](#package-fallback-warnings) | [NU1701](#nu1701) |
 | [源警告](#feed-warnings) | [NU1801](#nu1801) |
-| [NuGet 内部错误和警告](#nuget-internal-errors-and-warnings) | [NU1000](#nu1000)， [NU1500](#nu1500) |
+| [NuGet 内部错误和警告](#nuget-internal-errors-and-warnings) | [NU1000](#nu1000), [NU1500](#nu1500) |
 
 ## <a name="invalid-input-errors"></a>无效的输入的错误
 
@@ -75,7 +75,7 @@ ms.lasthandoff: 01/05/2018
 
 ## <a name="missing-package-and-project-errors"></a>缺少的包和项目错误
 
-[NU1100](#nu1100) | [NU1101](#nu1101) | [NU1102](#nu1102) | [NU1103](#nu1103) | [NU1104](#nu1104)  |  [NU1105](#nu1105) | [NU1106](#nu1106)
+[NU1100](#nu1100) | [NU1101](#nu1101) | [NU1102](#nu1102) | [NU1103](#nu1103) | [NU1104](#nu1104) | [NU1105](#nu1105) | [NU1106](#nu1106)
 
 ### <a name="nu1100"></a>NU1100
 
@@ -133,7 +133,7 @@ ms.lasthandoff: 01/05/2018
 | **常见原因** | 包包含的包而不是开放式的范围的确切版本上的依赖项。 |
 | **示例消息** | *无法满足 {id} 互相冲突的请求: {冲突路径} Framework: {目标关系图}* |
 
-< a name ="NU1107 ></a>
+<a name="nu1107"></a> 
 
 ### <a name="nu1107-previously-nu1607"></a>NU1107 (以前 NU1607)
 
@@ -143,7 +143,7 @@ ms.lasthandoff: 01/05/2018
 | **常见原因** | 依赖项与上的约束的确切版本的包不允许其他包以根据需要增大版本号。 |
 | **示例消息** | *NuGet.Versioning 检测到的版本冲突。若要解决此问题的项目中直接引用包。<br/>NuGet.Packaging 3.5.0-> （= 3.5.0） NuGet.Versioning<br/> NuGet.Configuration 4.0.0-> 的 NuGet.Versioning （= 4.0.0）* |
 
-< a name ="NU1108 ></a>
+<a name="nu1108"></a>
 
 ### <a name="nu1108-previously-nu1606"></a>NU1108 (以前 NU1606)
 
@@ -263,8 +263,6 @@ ms.lasthandoff: 01/05/2018
 
 ## <a name="resolver-conflict-warnings"></a>冲突解决程序冲突警告
 
-[NU1608](#nu1608)
-
 ### <a name="nu1608"></a>NU1608
 
 | | |
@@ -275,8 +273,6 @@ ms.lasthandoff: 01/05/2018
 
 ## <a name="package-fallback-warnings"></a>包回退警告
 
-[NU1701](#nu1701)
-
 ### <a name="nu1701"></a>NU1701
 
 | | |
@@ -286,8 +282,6 @@ ms.lasthandoff: 01/05/2018
 | **示例消息** | *包 NuGet.Versioning 已还原可移植 net45 + win8 改为使用项目目标框架 netstandard1.5。此程序包并不一定与你的项目完全兼容。* |
 
 ## <a name="feed-warnings"></a>源警告
-
-[NU1801](#nu1801)
 
 ### <a name="nu1801"></a>NU1801
 
