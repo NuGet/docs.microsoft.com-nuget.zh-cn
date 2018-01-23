@@ -9,7 +9,6 @@
 ## [创建 UWP 包](Guides/Create-UWP-Packages.md)
 ## [以 NuGet 包形式创建 UWP 控件](Guides/Create-UWP-Controls.md)
 ## [创建跨平台包](Guides/Create-Cross-Platform-Packages.md)
-## [使用 API 的所有包的查询](Guides/api/query-for-all-published-packages.md)
 # 创建包
 ## [概述和工作流](Create-Packages/Overview-and-Workflow.md)
 ## [创建包](Create-Packages/Creating-a-Package.md)
@@ -86,6 +85,7 @@
 ### [nuget.exe 凭据提供程序](Reference/extensibility/nuget-exe-Credential-Providers.md)
 # API
 ## [概述](API/overview.md)
+## [如何：使用 API 查询所有包](Guides/api/query-for-all-published-packages.md)
 ## [服务索引](API/service-index.md)
 ## [推送和删除](API/package-publish-resource.md)
 ## [搜索](API/search-query-service-resource.md)
