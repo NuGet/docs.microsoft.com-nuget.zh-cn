@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 96b07019-c2e1-4f40-9290-f65ad71af3b1
 description: "包注册基 URL 允许提取有关包的元数据。"
 keywords: "NuGet API 包元数据、 NuGet API 注册，NuGet API 未列出的包"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 1aabe6ae5c661e12b2639700813946e7a9a58b24
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: c098d70d58011bad7f9829f0c95c87c1339dd362
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="package-metadata"></a>包元数据
 
@@ -82,9 +81,7 @@ HTTP 方法位于注册资源支持的所有 Url`GET`和`HEAD`。
 
 Nuget.org 使用如下所述的试探法： 如果有 128 个或以上版本的包，则会将叶分成大小 64 的页。 如果有不超过 128 个版本，所有内联都离开到注册索引。
 
-```
-GET {@id}/{LOWER_ID}/index.json
-```
+    GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>请求参数
 
@@ -155,7 +152,7 @@ iconUrl                  | 字符串                     | 否       |
 id                       | 字符串                     | 是      | 程序包的 ID
 licenseUrl               | 字符串                     | 否       | 
 列出                   | boolean                    | 否       | 应被视为列出如果不存在
-MinClientVersion         | 字符串                     | 否       | 
+minClientVersion         | 字符串                     | 否       | 
 projectUrl               | 字符串                     | 否       | 
 发布                | 字符串                     | 否       | 包含 ISO 8601 时间戳的发布包的时间的字符串
 requireLicenseAcceptance | boolean                    | 否       | 
@@ -193,11 +190,9 @@ range        | object | 否       | 允许[版本范围](../reference/package-ve
 
 ### <a name="sample-request"></a>示例请求
 
-```
-GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
-```
+    GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
 
-### <a name="sample-response"></a>示例响应 
+### <a name="sample-response"></a>示例响应
 
 [!code-JSON [package-registration-index.json](./_data/package-registration-index.json)]
 
@@ -222,9 +217,7 @@ count  | 整数          | 是      | 在页中离开注册的数
 
 ## <a name="sample-request"></a>示例请求
 
-```
-GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
-```
+    GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
 
 ## <a name="sample-response"></a>示例响应
 
@@ -252,9 +245,7 @@ packageContent | 字符串  | 否       | 包内容 (.nupkg) 到 URL
 
 ### <a name="sample-request"></a>示例请求
 
-```
-GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
-```
+    GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
 
 ### <a name="sample-response"></a>示例响应
 

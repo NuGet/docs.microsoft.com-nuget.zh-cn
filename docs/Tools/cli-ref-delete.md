@@ -3,21 +3,20 @@ title: "NuGet CLI 删除命令 |Microsoft 文档"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: c213a07a-711d-47e0-9ee6-1d582e6cdb69
 description: "Nuget.exe delete 命令的引用"
 keywords: "nuget 删除引用，则删除包命令"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 92af9dc356f3932347864976496e0ba1216496c9
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 3890e33ab0fc425e1c2ee39631ade57ea9b92bc9
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="delete-command-nuget-cli"></a>删除命令 (NuGet CLI)
 
@@ -27,7 +26,7 @@ ms.lasthandoff: 12/14/2017
 
 ## <a name="usage"></a>用法
 
-```
+```cli
 nuget delete <packageID> <packageVersion> [options]
 ```
 
@@ -38,18 +37,18 @@ nuget delete <packageID> <packageVersion> [options]
 | 选项 | 描述 |
 | --- | --- |
 | ApiKey | 目标存储库的 API 密钥。 如果不存在，请在指定某一*%AppData%\NuGet\NuGet.Config*使用。 |
-| ConfigFile | *（2.5 +)* NuGet 要应用的配置文件。 如果未指定， *%AppData%\NuGet\NuGet.Config*使用。 |
+| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， *%AppData%\NuGet\NuGet.Config*使用。 |
 | ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助命令的信息。 |
-| 非交互式 | 取消显示提示用户输入或确认。 |
+| NonInteractive | 取消显示提示用户输入或确认。 |
 | 源 | 指定服务器 URL。 Nuget.org 的 URL 是`https://api.nuget.org/v3/index.json`。 对于专用源，用替换主机名，例如， *%hostname%/api/v3*。 |
-| 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细 （2.5 +）*。 |
+| 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>示例
 
-```
+```cli
 nuget delete MyPackage 1.0
 
 nuget delete MyPackage 1.0 -Source http://package.contoso.com/source -apikey A1B2C3

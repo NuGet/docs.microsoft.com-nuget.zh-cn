@@ -3,21 +3,20 @@ title: "NuGet CLI 包命令 |Microsoft 文档"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 12/08/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 55e9e4d2-8039-4e9b-bdd9-c8b3eb0e894b
 description: "Nuget.exe 包命令参考"
 keywords: "nuget 包引用，包命令"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0dbecb8f01acf781ab8d2e77e8df7fa405f74cf1
-ms.sourcegitcommit: d576d84fb4b6a178eb2ac11f55deb08ac771ba1c
+ms.openlocfilehash: 732a712f88c6267caae361673a05af0781877cf4
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="pack-command-nuget-cli"></a>包 (NuGet CLI) 命令
 
@@ -30,7 +29,7 @@ ms.lasthandoff: 01/16/2018
 
 ## <a name="usage"></a>用法
 
-```
+```cli
 nuget pack <nuspecPath | projectPath> [options]
 ```
 
@@ -57,7 +56,7 @@ nuget pack <nuspecPath | projectPath> [options]
 | 后缀 | *(3.4.4+)*将后缀追加到内部生成的版本号，通常用于追加生成或其他预发行标识符。 例如，使用`-suffix nightly`将创建具有版本数字类似的包`1.2.3-nightly`。 后缀必须以字母以避免警告、 错误和使用不同版本的 NuGet 和 NuGet 包管理器不兼容的潜在问题开头。 |
 | 符号 | 指定包中包含源和符号。 如果用于`.nuspec`文件，这将创建常规的 NuGet 包文件和相应符号包。 |
 | 工具 | 指定应将项目的输出文件放在`tool`文件夹。 |
-| 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细 （2.5 +）*。 |
+| 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。 |
 | 版本 | 重写从版本号`.nuspec`文件。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
@@ -83,7 +82,7 @@ nuget pack <nuspecPath | projectPath> [options]
 
 ## <a name="examples"></a>示例
 
-```
+```cli
 nuget pack
 
 nuget pack foo.nuspec

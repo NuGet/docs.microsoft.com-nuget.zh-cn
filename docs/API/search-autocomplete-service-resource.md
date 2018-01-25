@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: ead5cf7a-e51e-4cbb-8798-58226f4c853f
 description: "搜索记忆式键入功能服务支持交互式发现的包 Id 和版本。"
 keywords: "NuGet 记忆式键入功能 API、 NuGet 搜索包 ID、 子字符串包 ID"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 313ceb630947b46c34b98e14044ecf121b725087
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 7c984ca61799293d7832851b80cf3fefc4734288
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="autocomplete"></a>自动完成
 
@@ -51,19 +50,17 @@ HTTP 方法位于注册资源支持的所有 Url`GET`和`HEAD`。
 
 仅未列出的版本的包将不会出现在结果中。
 
-```
-GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
-```
+    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
 
 ### <a name="request-parameters"></a>请求参数
 
-名称        | 内     | 类型    | 必需 | 说明
+name        | 内     | 类型    | 必需 | 说明
 ----------- | ------ | ------- | -------- | -----
-q           | URL    | string  | no       | 要针对包 Id 进行比较的字符串
-skip        | URL    | 整数 | no       | 要分页的跳过的结果数
-take        | URL    | 整数 | no       | 要为分页返回的结果数
-预发行版  | URL    | boolean | no       | `true`或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
-semVerLevel | URL    | string  | no       | SemVer 1.0.0 版本字符串 
+q           | URL    | 字符串  | 否       | 要针对包 Id 进行比较的字符串
+skip        | URL    | 整数 | 否       | 要分页的跳过的结果数
+take        | URL    | 整数 | 否       | 要为分页返回的结果数
+预发行版  | URL    | boolean | 否       | `true`或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
+semVerLevel | URL    | 字符串  | 否       | SemVer 1.0.0 版本字符串 
 
 自动完成查询`q`分析由服务器实现定义的方式。 nuget.org 支持查询个前缀的包 ID 令牌，它们是由拆分生成的 ID 的段原始由 camel 大小写和符号字符。
 
@@ -83,16 +80,14 @@ semVerLevel | URL    | string  | no       | SemVer 1.0.0 版本字符串
 
 根 JSON 对象具有以下属性：
 
-名称      | 类型             | 必需 | 说明
+name      | 类型             | 必需 | 说明
 --------- | ---------------- | -------- | -----
 totalHits | 整数          | 是      | 匹配项，而不考虑的总数目`skip`和`take`
 数据      | 字符串数组 | 是      | 由请求的包 Id 匹配
 
 ### <a name="sample-request"></a>示例请求
 
-```
 GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
-```
 
 ### <a name="sample-response"></a>示例响应
 
@@ -104,17 +99,15 @@ GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
 
 未列出的包版本将不会出现在结果中。
 
-```
-GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
-```
+    GET {@id}?id={ID}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
 
 ### <a name="request-parameters"></a>请求参数
 
-名称        | 内     | 类型    | 必需 | 说明
+name        | 内     | 类型    | 必需 | 说明
 ----------- | ------ | ------- | -------- | -----
-id          | URL    | string  | 是      | 要提取的版本的包 ID
-预发行版  | URL    | boolean | no       | `true`或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
-semVerLevel | URL    | string  | no       | SemVer 2.0.0 的版本字符串 
+id          | URL    | 字符串  | 是      | 要提取的版本的包 ID
+预发行版  | URL    | boolean | 否       | `true`或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
+semVerLevel | URL    | 字符串  | 否       | SemVer 2.0.0 的版本字符串 
 
 如果`prerelease`未提供排除预发行包。
 
@@ -126,7 +119,7 @@ semVerLevel | URL    | string  | no       | SemVer 2.0.0 的版本字符串
 
 根 JSON 对象具有以下属性：
 
-名称      | 类型             | 必需 | 说明
+name      | 类型             | 必需 | 说明
 --------- | ---------------- | -------- | -----
 数据      | 字符串数组 | 是      | 由请求匹配的程序包版本
 
@@ -134,9 +127,7 @@ semVerLevel | URL    | string  | no       | SemVer 2.0.0 的版本字符串
 
 ### <a name="sample-request"></a>示例请求
 
-```
-GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
-```
+    GET https://api-v2v3search-0.nuget.org/autocomplete?id=nuget.protocol&prerelease=true
 
 ### <a name="sample-response"></a>示例响应
 

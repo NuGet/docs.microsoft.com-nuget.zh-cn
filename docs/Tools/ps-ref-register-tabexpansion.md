@@ -7,17 +7,16 @@ ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 8314ec69-ee8c-4933-84ef-e6d8a412d268
 description: "Visual Studio 中的 NuGet 包管理器控制台中注册 TabExpansion PowerShell 命令参考。"
 keywords: "NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考，注册 TabExpansion"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 498b8638c81b800e5f20f7604b36e6af76da0283
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 5691c07f9efef4bfd12680421f3b02c5a523eb6f
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="register-tabexpansion-package-manager-console-in-visual-studio"></a>注册 TabExpansion （Visual Studio 中的包管理器控制台）
 
@@ -35,7 +34,7 @@ Register-TabExpansion [-Name] <String> [-Definition] <Object> [<CommonParameters
 
 | 参数 | 描述 |
 | --- | --- |
-| 名称 | （必需）要注册扩展到该命令。 -Name 是可选的交换机本身。 |
+| name | （必需）要注册扩展到该命令。 -Name 是可选的交换机本身。 |
 | 定义 | （必需）描述在语法中的自变量的对象`@{'<parameter>' = {'<value1>', '<value2>', ...}}`其中`<parameter>`是要修改的参数和每个名称`<value>`提供特定的扩展。 接受单引号和双引号。 |
 
 任何这些参数接受管道输入或通配符字符。

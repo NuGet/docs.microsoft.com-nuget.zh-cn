@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 1eaa403a-5c13-4c05-9352-2f791b98aa7e
 description: "发布服务允许客户端发布新的包以及不列出或删除现有包。"
 keywords: "NuGet API 推送包 NuGet API 删除包、 NuGet API 不列出包，NuGet API 上载包、 NuGet API 创建包"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 5fbcd82b09ebd56ae21103640e7c39b482059525
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: f8051ca57fccae77917567d8c9f2f8a120a8d884
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="push-and-delete"></a>推送和删除
 
@@ -52,15 +51,13 @@ PackagePublish/2.0.0 | 初始版本
 
 nuget.org 支持使用以下 API 的推送新包。 如果已存在具有提供的 ID 和版本的包，nuget.org 将拒绝推送。 其他包源可能支持替换现有包。
 
-```
-PUT https://www.nuget.org/api/v2/package
-```
+    PUT https://www.nuget.org/api/v2/package
 
 ### <a name="request-parameters"></a>请求参数
 
 name           | 内     | 类型   | 必需 | 说明
 -------------- | ------ | ------ | -------- | -----
-X NuGet ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
+X-NuGet-ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
 
 API 密钥是由用户从包源收到以及配置到客户端不透明的字符串。 没有特定字符串格式都将托管，但 API 密钥的长度不应超过合理的大小为 HTTP 标头值。
 
@@ -86,9 +83,7 @@ API 密钥是由用户从包源收到以及配置到客户端不透明的字符�
 
 nuget.org 解释为包删除请求的"不列出"。 这意味着包仍可用于现有的包的使用者，但包不会再出现在搜索结果中或在 web 界面。 有关这种做法的详细信息，请参阅[删除包](../policies/deleting-packages.md)策略。 其他服务器实现可以自由地解释为硬删除此信号、 软删除，或不列出。 例如， [NuGet.Server](https://www.nuget.org/packages/NuGet.Server) （仅支持较旧的 V2 API 的服务器实现） 支持为 unlist 或硬删除基于配置选项处理此请求。
 
-```
-DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
-```
+    DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 
 ### <a name="request-parameters"></a>请求参数
 
@@ -96,7 +91,7 @@ name           | 内     | 类型   | 必需 | 说明
 -------------- | ------ | ------ | -------- | -----
 Id             | URL    | 字符串 | 是      | 要删除的包 ID
 VERSION        | URL    | 字符串 | 是      | 要删除的包的版本
-X NuGet ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
+X-NuGet-ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
 
 ### <a name="response"></a>响应
 
@@ -111,9 +106,7 @@ X NuGet ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER
 
 如果包已列出，请求仍会成功。
 
-```
-POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
-```
+    POST https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 
 ### <a name="request-parameters"></a>请求参数
 
@@ -121,7 +114,7 @@ name           | 内     | 类型   | 必需 | 说明
 -------------- | ------ | ------ | -------- | -----
 Id             | URL    | 字符串 | 是      | 要 relist 包的 ID
 VERSION        | URL    | 字符串 | 是      | 要 relist 的包的版本
-X NuGet ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
+X-NuGet-ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
 
 ### <a name="response"></a>响应
 

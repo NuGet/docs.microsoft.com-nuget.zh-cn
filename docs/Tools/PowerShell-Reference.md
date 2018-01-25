@@ -3,21 +3,20 @@ title: "NuGet PowerShell 参考 |Microsoft 文档"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/2/2017
+ms.date: 10/02/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: cd08b869-44c6-480e-90f7-494a6d08e6d0
 description: "对 Visual Studio 中的 NuGet 包管理器控制台中可用的 PowerShell 命令的完整引用。"
 keywords: "NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 64450a8bcca7f6028d4ce389d51ac35e9209cfae
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 0cbd9b13b34bd93fea6c6684c03bca9cff5d9e5e
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="powershell-reference"></a>PowerShell 参考
 
@@ -41,7 +40,7 @@ ms.lasthandoff: 01/05/2018
 | [Add-BindingRedirect](ps-ref-add-bindingredirect.md) | 检查项目输出路径中的所有程序集并将添加绑定重定向到`app.config`或`web.config`在必要时。 | 全部 |
 | [Get-Project](ps-ref-get-project.md) | 显示的默认值或指定的项目的信息。 | 3.0+ |
 | [Open-PackagePage](ps-ref-open-packagepage.md) | 将启动默认浏览器中使用项目、 许可证或指定包的报告滥用行为 URL。 | 在 3.0 + 弃用 |
-| [注册 TabExpansion](ps-ref-register-tabexpansion.md) | 注册一个命令，使你可以创建自定义的扩展的常用的参数值的参数选项卡扩展。 | 全部 |
+| [Register-TabExpansion](ps-ref-register-tabexpansion.md) | 注册一个命令，使你可以创建自定义的扩展的常用的参数值的参数选项卡扩展。 | 全部 |
 | [Sync-Package](ps-ref-sync-package.md) | 安装从包的版本的 get 指定项目和同步到解决方案中项目的其余部分的版本。 | 3.0+ |
 | [Uninstall-Package](ps-ref-uninstall-package.md) | 从项目中，有选择性地删除其依赖项中删除包。 | 全部 |
 

@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: ed433790-99bf-4b71-92a8-17314bd49867
 description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.6 的发行说明。"
 keywords: "NuGet 1.6 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 7824d62cb73c54205175ec742cfc26d1ca3aa741
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 114b03cede24dee520ace1d8aa920a648ad16af1
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
  # <a name="nuget-16-release-notes"></a>NuGet 1.6 发行说明
 
@@ -28,7 +27,7 @@ NuGet 1.6 已于 2011 年 12 月 13 日发布。
 ## <a name="known-installation-issue"></a>已知的安装问题
 如果你运行的 VS 2010 SP1，你可能尝试升级 NuGet，如果安装了较旧版本时遇到安装错误。
 
-解决方法是只需卸载 NuGet，然后从 VS 扩展库安装它。  请参阅[http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019)有关详细信息。
+解决方法是只需卸载 NuGet，然后从 VS 扩展库安装它。  有关详细信息，请参阅 [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019)。
 
 注意： 如果 Visual Studio 不会使您可以卸载的扩展 （卸载按钮为禁用），然后你可能需要重新启动 Visual Studio 中使用"以管理员身份运行"。
 

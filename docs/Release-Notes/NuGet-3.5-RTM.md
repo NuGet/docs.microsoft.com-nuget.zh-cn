@@ -7,19 +7,18 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 082a96b9-607b-4225-864d-e1cea537f591
 description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.5 的发行说明。"
 keywords: "NuGet 3.5 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0a0f039d2529e1d41bbc0c7f9ac3f76f51f96ce5
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: ee78ceb2ff032c05c0f8ef9a6623b94cc56ee0a9
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
-#<a name="nuget-35-release-notes"></a>NuGet 3.5 发行说明
+# <a name="nuget-35-release-notes"></a>NuGet 3.5 发行说明
 
 [NuGet 3.5 RC 发行说明](../release-notes/nuget-3.5-RC.md) | [NuGet 4.0 RC 发行说明](../release-notes/nuget-4.0-RC.md)
 
@@ -145,7 +144,7 @@ ms.lasthandoff: 12/14/2017
 
 * Nuget 安装的所有包源，但包缺少 1 从源失败- [# 2322年](https://github.com/NuGet/Home/issues/2322)
 
-* [PerfWatson]UIDelay: nuget.packagemanagement.visualstudio.dll ！NuGet.PackageManagement.VisualStudio.VSMSBuildNuGetProjectSystem+*lt;&gt;c__DisplayClass_0 +&lt;&lt;AddReference&gt;b__&gt;d.MoveNext- [# 2285年](https://github.com/NuGet/Home/issues/2285)
+* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VSMSBuildNuGetProjectSystem+*lt;&gt;c__DisplayClass_0+&lt;&lt;AddReference&gt;b__&gt;d.MoveNext - [#2285](https://github.com/NuGet/Home/issues/2285)
 
 * 如果单个源失败授权-安装块[# 2034年](https://github.com/NuGet/Home/issues/2034)
 
@@ -185,7 +184,7 @@ ms.lasthandoff: 12/14/2017
 
 * 适用于的 nuget 包`project.json`忽略摘要、 作者、 所有者等-之类的 packOptions 标记[#3161](https://github.com/NuGet/Home/issues/3161)
 
-* 通过 NuGet.Packaging.PhysicalPackageFile.GetStream-NullReferenceException [#3160](https://github.com/NuGet/Home/issues/3160)
+* NullReferenceException via NuGet.Packaging.PhysicalPackageFile.GetStream - [#3160](https://github.com/NuGet/Home/issues/3160)
 
 * NuGet 包将忽略输出中的依赖关系`.nuspec`为`project.json`  -  [#3145](https://github.com/NuGet/Home/issues/3145)
 
@@ -274,7 +273,7 @@ ms.lasthandoff: 12/14/2017
 
 * 启用包中的 SemVer 2.0.0 [#3356](https://github.com/NuGet/Home/issues/3356)
 
-## <a name="dcrs"></a>DCRs
+## <a name="dcrs"></a>DCR
 
 * nuget.exe 推送的超时参数不起作用- [# 2785年](https://github.com/NuGet/Home/issues/2785)
 

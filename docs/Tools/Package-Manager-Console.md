@@ -3,28 +3,27 @@ title: "NuGet 程序包管理器控制台指南 |Microsoft 文档"
 author: kraigb
 hms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/23/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 2b92b119-6861-406c-82af-9d739af230e4
 f1_keywords: vs.nuget.packagemanager.console
 description: "使用 Visual Studio 中的 NuGet 程序包管理器控制台，用于处理包的说明。"
 keywords: "NuGet 包管理器控制台，NuGet powershell，管理 NuGet 包"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b8f1df23d1a43412868c14e508ee5221d48dcc7c
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: b89c51812cee0f64c6f5c39cd9d86bc4a0be068e
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="package-manager-console"></a>程序包管理器控制台
 
 NuGet Package Manager Console 内置于 Visual Studio 在 Windows 2012 和更高版本。 （不包含在 Visual Studio 用于 Mac 或 Visual Studio Code。）
 
-控制台，你可以使用[NuGet PowerShell 命令](../tools/powershell-reference.md)若要查找，安装、 卸载和更新 NuGet 程序包。 使用控制台是在包管理器 UI 不提供了如何执行操作的情况下必需的。
+控制台，你可以使用[NuGet PowerShell 命令](../tools/powershell-reference.md)若要查找，安装、 卸载和更新 NuGet 程序包。 使用控制台是在包管理器 UI 不提供了如何执行操作的情况下必需的。 若要使用`nuget.exe`命令在控制台中，请参阅[使用控制台中的 CLI nuget.exe](#using-the-nugetexe-cli-in-the-console)。
 
 例如，查找和安装的包，可使用三个简单步骤：
 
@@ -43,17 +42,6 @@ NuGet Package Manager Console 内置于 Visual Studio 在 Windows 2012 和更高
     # Install the Elmah package to the project named MyProject.
     Install-Package Elmah -ProjectName MyProject
     ```
-
-本主题内容：
-
-- [打开控制台](#opening-the-console-and-console-controls)
-- [安装的包](#installing-a-package)
-- [卸载包](#uninstalling-a-package)
-- [查找包](#finding-a-package)
-- [更新程序包](#updating-a-package)
-- [控制台可用性](#availability-of-the-console)
-- [扩展包管理器控制台](#extending-the-package-manager-console)
-- [设置 NuGet PowerShell 配置文件](#setting-up-a-nuget-powershell-profile)
 
 > [!Important]
 > 在控制台中可用的所有操作也都可以与[NuGet CLI](../tools/nuget-exe-cli-reference.md)。 但是，控制台命令在 Visual Studio 和已保存的项目/解决方案的上下文中运行，并且通常完成多个其等效的 CLI 命令。 例如，安装通过控制台的包将引用添加到项目而 CLI 命令不运行。 为此，通常在 Visual Studio 中工作的开发人员喜欢使用 CLI 到控制台。
@@ -96,8 +84,8 @@ Install-Package Elmah -ProjectName UtilitiesLib
 - 与默示协议的控制台窗口中显示适用的许可条款。 如果你不同意这些条款，你应立即卸载程序包。
 - 在正在使用的任何引用格式添加到项目的引用。 引用随后将出现在解决方案资源管理器和适用的参考格式文件。 但是，请注意，采用 PackageReference，则需要先保存该项目才能直接看到项目文件中的更改。
 - 缓存包：
-    - PackageReference： 在缓存包`%USERPROFILE%\.nuget\packages`和锁定文件即`project.assets.json`更新。
-    - `packages.config`： 创建`packages`在程序包文件入子文件夹中的解决方案根目录和副本的文件夹。 `package.config`更新文件。
+  - PackageReference： 在缓存包`%USERPROFILE%\.nuget\packages`和锁定文件即`project.assets.json`更新。
+  - `packages.config`： 创建`packages`在程序包文件入子文件夹中的解决方案根目录和副本的文件夹。 `package.config`更新文件。
 - 更新`app.config`和/或`web.config`如果包使用[源和配置文件转换](../create-packages/source-and-config-file-transformations.md)。
 - 如果项目中尚不存在，请安装任何依赖项。 中所述，这可能会更新在过程中，包版本[依赖项解析](../consume-packages/dependency-resolution.md)。
 - 如果可用，请在 Visual Studio 窗口中显示包的自述文件。
@@ -186,9 +174,7 @@ Find-Package jquery -AllVersions -ExactMatch
 
 PowerShell 配置文件，可以提供常用的命令，只要你使用 PowerShell。 NuGet 支持通常在以下位置找到 NuGet 特定配置文件：
 
-```
-%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
-```
+    %UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
 
 若要查找配置文件，请键入`$profile`在控制台中：
 
@@ -198,3 +184,12 @@ C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```
 
 有关更多详细信息，请参阅[Windows PowerShell 配置文件](https://technet.microsoft.com/library/bb613488.aspx)。
+
+## <a name="using-the-nugetexe-cli-in-the-console"></a>使用 nuget.exe CLI 在控制台中
+
+若要使[ `nuget.exe` CLI](nuget-exe-CLI-Reference.md)可用在程序包管理器控制台中，安装[NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/)从控制台的包：
+
+```ps
+# Other versions are available, see http://www.nuget.org/packages/NuGet.CommandLine/
+Install-Package NuGet.CommandLine -Version 4.4.1
+```

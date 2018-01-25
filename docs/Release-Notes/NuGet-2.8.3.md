@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 2c573368-c9e7-4284-9715-e71d4bba85dd
 description: "发行说明，了解 NuGet 2.8.3 包括已知问题、 bug 修复、 增加的功能，以及 DCRs。"
 keywords: "NuGet 2.8.3 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d6fbebaf02cede52a701abd31e843a077f8acbb7
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 35ea9e24777c805942d67e872e5548d90041e15d
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-283-release-notes"></a>NuGet 2.8.3 发行说明
 

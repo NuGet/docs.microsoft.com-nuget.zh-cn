@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 4110a36a-cffe-4038-8da4-e841bce6e94b
 description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.3 的发行说明。"
 keywords: "NuGet 3.3 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f35f7621db324957b0af8329cf9faa11493835e2
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: c83f87231497e14c36f1b8100b7bec720bb63b1c
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-33-release-notes"></a>NuGet 3.3 发行说明
 
@@ -46,7 +45,7 @@ NuGet 3.3 已释放 2015 年 11 月 30 日与大量的用户界面更新和命�
 
 在此版本中，我们将介绍`add`和`init`命令来初始化基于文件夹的存储库中所述[nuget.exe 引用](../tools/nuget-exe-cli-reference.md)。 存储库构造并维护与此文件夹结构将[提供显著的性能优势](http://blog.nuget.org/20150922/Accelerate-Package-Source.html)我们的博客上所述。
 
-## <a name="contentfiles"></a>文件
+## <a name="contentfiles"></a>ContentFiles
 
 中现在支持内容`project.json`托管通过新的项目`contentFiles`文件夹和`.nuspec``contentFiles`元素表示法。  与项目系统的交互的包作者可以更直接指定此内容。  有关如何配置中的文件的详细信息`.nuspec`在找不到文档[.nuspec 引用](../schema/nuspec.md)。
 

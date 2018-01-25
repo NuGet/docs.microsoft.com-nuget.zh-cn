@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: ec68b5d1-a684-4995-b1a6-6210dbb24875
 description: "包基址是一个简单接口提取包本身。"
 keywords: "NuGet 平面容器、 NuGet 包基址、 NuGet nupkg API，NuGet API 包版本中，NuGet API 未列出的包、 NuGet API 下载 nuspec"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: a581f9854410bc1a84d65310b38928a1d889ece2
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: c2e631dc0bba95ac849430d77142f27ef591f741
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="package-content"></a>包内容
 
@@ -52,9 +51,7 @@ HTTP 方法位于注册资源支持的所有 Url`GET`和`HEAD`。
 > [!Note]
 > 此列表包含两个列和未列出的包版本。
 
-```
-GET {@id}/{LOWER_ID}/index.json
-```
+    GET {@id}/{LOWER_ID}/index.json
 
 ### <a name="request-parameters"></a>请求参数
 
@@ -80,9 +77,7 @@ name     | 类型             | 必需 | 说明
 
 ### <a name="sample-request"></a>示例请求
 
-```
-GET https://api.nuget.org/v3-flatcontainer/owin/index.json
-```
+    GET https://api.nuget.org/v3-flatcontainer/owin/index.json
 
 ### <a name="sample-response"></a>示例响应
 
@@ -92,9 +87,7 @@ GET https://api.nuget.org/v3-flatcontainer/owin/index.json
 
 如果客户端知道包 ID 和版本，并且想要下载包内容，只需构造以下 URL:
 
-```
-GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
-```
+    GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.{LOWER_VERSION}.nupkg
 
 ### <a name="request-parameters"></a>请求参数
 
@@ -115,9 +108,7 @@ LOWER_VERSION | URL    | 字符串 | 是      | 包版本、 规范化和小写
 
 ### <a name="sample-request"></a>示例请求
 
-```
-GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg
-```
+    GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg
 
 ### <a name="sample-response"></a>示例响应
 
@@ -127,9 +118,7 @@ Newtonsoft.Json 9.0.1.nupkg 二进制流。
 
 如果客户端知道包 ID 和版本，并且想要下载包清单，只需构造以下 URL:
 
-```
-GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
-```
+    GET {@id}/{LOWER_ID}/{LOWER_VERSION}/{LOWER_ID}.nuspec
 
 ### <a name="request-parameters"></a>请求参数
 
@@ -150,9 +139,7 @@ LOWER_VERSION | URL    | 整数 | 是      | 包版本、 规范化和小写
 
 ### <a name="sample-request"></a>示例请求
 
-```
-GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/6.0.4/newtonsoft.json.nuspec
-```
+    GET https://api.nuget.org/v3-flatcontainer/newtonsoft.json/6.0.4/newtonsoft.json.nuspec
 
 ### <a name="sample-response"></a>示例响应
 

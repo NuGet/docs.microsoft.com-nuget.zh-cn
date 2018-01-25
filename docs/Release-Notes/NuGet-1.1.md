@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 0e7688f7-09d2-4477-9fdf-0e27f572a4de
 description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.1 的发行说明。"
 keywords: "NuGet 1.1 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 593848b3e5e063816fbbec8b4d11e6fc789d05cd
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 68c3415fe328fe6d9db91757a7fc180da8489a9f
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-10-and-11-release-notes"></a>NuGet 1.0 和 1.1 发行说明
 

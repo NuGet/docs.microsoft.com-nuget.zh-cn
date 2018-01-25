@@ -11,17 +11,16 @@ ms.date: 10/30/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: cfd338b5-6253-48c0-88ba-17c6b98fc935
 description: "目录是创建和删除在 nuget.org 上的所有包的索引。"
 keywords: "NuGet V3 API 目录，nuget.org 事务日志复制 NuGet.org、 克隆 NuGet.org，NuGet.org 的仅限追加的记录"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 4c98b7cbd92575f6905e98a5bca5602a4d8ac0dd
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: d1a24be68a60085a40361c374ffb34dc221f09c4
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="catalog"></a>Catalog
 
@@ -73,9 +72,7 @@ Catalog/3.0.0 | 初始版本
 
 以下请求获取目录索引。
 
-```
-GET {@id}
-```
+    GET {@id}
 
 目录索引是包含具有以下属性的对象的 JSON 文档：
 
@@ -107,9 +104,7 @@ count           | 整数 | 是      | 在目录页中的项的数目
 
 ### <a name="sample-request"></a>示例请求
 
-```
-GET https://api.nuget.org/v3/catalog0/index.json
-```
+    GET https://api.nuget.org/v3/catalog0/index.json
 
 ### <a name="sample-response"></a>示例响应
 
@@ -161,9 +156,7 @@ nuget:version   | 字符串  | 是      | 与此叶包版本
 
 ### <a name="sample-request"></a>示例请求
 
-```
-GET https://api.nuget.org/v3/catalog0/page2926.json
-```
+    GET https://api.nuget.org/v3/catalog0/page2926.json
 
 ### <a name="sample-response"></a>示例响应
 
@@ -178,8 +171,8 @@ GET https://api.nuget.org/v3/catalog0/page2926.json
 name                    | 类型                       | 必需 | 说明
 ----------------------- | -------------------------- | -------- | -----
 @type                   | 字符串或字符串数组 | 是      | 目录项的类型
-目录： commitId        | 字符串                     | 是      | 与此目录项关联的提交 ID
-目录： commitTimeStamp | 字符串                     | 是      | 此目录项的提交时间戳
+catalog:commitId        | 字符串                     | 是      | 与此目录项关联的提交 ID
+catalog:commitTimeStamp | 字符串                     | 是      | 此目录项的提交时间戳
 id                      | 字符串                     | 是      | 目录项的包 ID
 发布               | 字符串                     | 是      | 包的目录项目发布的日期
 version                 | 字符串                     | 是      | 目录项的包版本
@@ -217,7 +210,7 @@ isPrerelease            | boolean                    | 是      | 是否预发�
 语言                | 字符串                     | 否       |
 licenseUrl              | 字符串                     | 否       |
 列出                  | boolean                    | 否       | 该程序包是否将列
-MinClientVersion        | 字符串                     | 否       |
+minClientVersion        | 字符串                     | 否       |
 packageHash             | 字符串                     | 是      | 使用编码的包的哈希[标准 base 64](https://tools.ietf.org/html/rfc4648#section-4)
 packageHashAlgorithm    | 字符串                     | 是      |
 packageSize             | 整数                    | 是      | 包.nupkg 以字节为单位的大小
@@ -242,9 +235,7 @@ verbatimVersion         | 字符串                     | 否       | 因为它�
 
 #### <a name="sample-request"></a>示例请求
 
-```
 GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
-```
 
 #### <a name="sample-response"></a>示例响应
 
@@ -265,9 +256,7 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 #### <a name="sample-request"></a>示例请求
 
-```
-GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
-```
+获取 https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
 
 #### <a name="sample-response"></a>示例响应
 

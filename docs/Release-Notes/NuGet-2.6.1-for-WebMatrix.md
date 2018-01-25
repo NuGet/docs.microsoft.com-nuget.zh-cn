@@ -13,11 +13,11 @@ keywords: "NuGet 2.6.1 WebMatrix 发行说明、 bug 修复、 已知的问题�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f859fd8ef74f3246d997790e40f70ad25aadeb71
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 9c37ddc998378b8aaa477dd5df814bab6f0b3c58
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-261-for-webmatrix-release-notes"></a>NuGet 2.6.1 for WebMatrix 发行说明
 

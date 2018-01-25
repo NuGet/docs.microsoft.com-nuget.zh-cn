@@ -7,17 +7,16 @@ ms.date: 12/12/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 3cf592de-39f2-4e7f-a597-62635fdcedfa
 description: "nuget.exe 凭据提供程序将具有源，身份验证，并实现为遵循特定的约定的命令行可执行文件。"
 keywords: "nuget.exe 凭据提供程序，凭据提供程序 API，将具有源进行身份验证，使用库进行身份验证"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 82ab4d6e9be0736e008f5bd27d46e1db166d7bb4
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 88ce0106ad4e628ba8120f94b7951c7746ab67f3
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="authenticating-feeds-with-nugetexe-credential-providers"></a>进行身份验证与 nuget.exe 凭据提供程序的源
 
@@ -59,7 +58,7 @@ nuget.exe 凭据提供程序可以采用下列 3 种方法：
 | 参数/开关 |描述|
 |----------------|-----------|
 | Uri {value} | 包源 URI 需要凭据。|
-| 非交互式 | 如果存在，则提供程序不会颁发交互式提示。 |
+| NonInteractive | 如果存在，则提供程序不会颁发交互式提示。 |
 | IsRetry | 如果存在，则表明此尝试是以前失败的尝试的重试。 提供程序通常使用此标志，以确保它们绕过任何现有的缓存，并尽可能提示输入新凭据。|
 | 详细级别 {value} | 如果存在，以下值之一:"正常"、"静默"详细"。 如果没有提供值时，默认为"normal"。 提供程序应使用此的可选日志记录级别用于指示写入标准错误流发出。 |
 

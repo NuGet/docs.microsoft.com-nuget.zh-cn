@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 11ca2092-67dc-41a9-a7af-afe610d8febb
 description: "搜索服务允许客户端到包按关键字的查询和某些包字段上的筛选结果。"
 keywords: "NuGet 搜索 API，NuGet 发现包，API 到查询 NuGet 程序包，API 来浏览 NuGet 包"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 8b37c1bfb66290de49641a8b6197cb83cd35318a
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 612ce0f46b654335a29bb36a64b27525994162ed
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="search"></a>搜索
 
@@ -51,19 +50,17 @@ HTTP 方法位于注册资源支持的所有 Url`GET`和`HEAD`。
 
 未列出的包应永远不会出现在搜索结果。
 
-```
-GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
-```
+    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}
 
 ### <a name="request-parameters"></a>请求参数
 
-名称        | 内     | 类型    | 必需 | 说明
+name        | 内     | 类型    | 必需 | 说明
 ----------- | ------ | ------- | -------- | -----
-q           | URL    | string  | no       | 为用于筛选器程序包搜索词
-skip        | URL    | 整数 | no       | 要分页的跳过的结果数
-take        | URL    | 整数 | no       | 要为分页返回的结果数
-预发行版  | URL    | boolean | no       | `true`或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
-semVerLevel | URL    | string  | no       | SemVer 1.0.0 版本字符串 
+q           | URL    | 字符串  | 否       | 为用于筛选器程序包搜索词
+skip        | URL    | 整数 | 否       | 要分页的跳过的结果数
+take        | URL    | 整数 | 否       | 要为分页返回的结果数
+预发行版  | URL    | boolean | 否       | `true`或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
+semVerLevel | URL    | 字符串  | 否       | SemVer 1.0.0 版本字符串 
 
 搜索查询`q`分析由服务器实现定义的方式。 nuget.org 支持基本筛选[各种字段](../consume-packages/finding-and-choosing-packages.md#search-syntax)。 如果没有`q`提供应返回所有包，skip 和 take 强加的边界内。 这使 NuGet Visual Studio 体验中的"浏览"选项卡。
 
@@ -83,7 +80,7 @@ semVerLevel | URL    | string  | no       | SemVer 1.0.0 版本字符串
 
 根 JSON 对象具有以下属性：
 
-名称      | 类型             | 必需 | 说明
+name      | 类型             | 必需 | 说明
 --------- | ---------------- | -------- | -----
 totalHits | 整数          | 是      | 匹配项，而不考虑的总数目`skip`和`take`
 数据      | 对象的数组 | 是      | 由请求匹配的搜索结果
@@ -93,39 +90,37 @@ totalHits | 整数          | 是      | 匹配项，而不考虑的总数目`sk
 在每个项`data`数组是组成一组共享相同的包 id。 程序包版本的 JSON 对象
 该对象具有以下属性：
 
-名称           | 类型                       | 必需 | 说明
+name           | 类型                       | 必需 | 说明
 -------------- | -------------------------- | -------- | -----
-id             | string                     | 是      | 匹配的程序包的 ID
-版本        | string                     | 是      | 完整的 SemVer 2.0.0 的版本字符串 （可能包含生成元数据） 的包
-说明    | string                     | no       | 
+id             | 字符串                     | 是      | 匹配的程序包的 ID
+version        | 字符串                     | 是      | 完整的 SemVer 2.0.0 的版本字符串 （可能包含生成元数据） 的包
+说明    | 字符串                     | 否       | 
 版本       | 对象的数组           | 是      | 所有匹配的包版本`prerelease`参数
-作者        | 字符串或字符串数组 | no       | 
-iconUrl        | string                     | no       | 
-licenseUrl     | string                     | no       | 
-所有者         | 字符串或字符串数组 | no       | 
-projectUrl     | string                     | no       | 
-注册   | string                     | no       | 到关联的绝对 URL[注册索引](registration-base-url-resource.md#registration-index)
-摘要        | string                     | no       | 
-标记           | 字符串或字符串数组 | no       | 
-标题          | string                     | no       | 
-totalDownloads | 整数                    | no       | 此值可以推断出的总和中的下载`versions`数组
-验证       | boolean                    | no       | JSON 布尔值，该值指示包是否[验证](../reference/id-prefix-reservation.md)
+作者        | 字符串或字符串数组 | 否       | 
+iconUrl        | 字符串                     | 否       | 
+licenseUrl     | 字符串                     | 否       | 
+所有者         | 字符串或字符串数组 | 否       | 
+projectUrl     | 字符串                     | 否       | 
+注册   | 字符串                     | 否       | 到关联的绝对 URL[注册索引](registration-base-url-resource.md#registration-index)
+摘要        | 字符串                     | 否       | 
+标记           | 字符串或字符串数组 | 否       | 
+标题          | 字符串                     | 否       | 
+totalDownloads | 整数                    | 否       | 此值可以推断出的总和中的下载`versions`数组
+验证       | boolean                    | 否       | JSON 布尔值，该值指示包是否[验证](../reference/id-prefix-reservation.md)
 
 在 nuget.org，验证的包是其中一个具有匹配保留的 ID 前缀的包 ID 和拥有的保留的命名空间的所有者之一。 有关详细信息，请参阅[文档 ID 前缀保留有关](../reference/id-prefix-reservation.md)。
 
 搜索结果对象中包含的元数据中获取最新的包版本。 在每个项`versions`数组是具有以下属性的 JSON 对象：
 
-名称      | 类型    | 必需 | 说明
+name      | 类型    | 必需 | 说明
 --------- | ------- | -------- | -----
-@id       | string  | 是      | 到关联的绝对 URL[注册叶](registration-base-url-resource.md#registration-leaf)
-版本   | string  | 是      | 完整的 SemVer 2.0.0 的版本字符串 （可能包含生成元数据） 的包
+@id       | 字符串  | 是      | 到关联的绝对 URL[注册叶](registration-base-url-resource.md#registration-leaf)
+version   | 字符串  | 是      | 完整的 SemVer 2.0.0 的版本字符串 （可能包含生成元数据） 的包
 下载 | 整数 | 是      | 此特定包版本的下载的次数
 
 ### <a name="sample-request"></a>示例请求
 
-```
-GET https://api-v2v3search-0.nuget.org/query?q=NuGet.Versioning&prerelease=false
-```
+    GET https://api-v2v3search-0.nuget.org/query?q=NuGet.Versioning&prerelease=false
 
 ### <a name="sample-response"></a>示例响应
 

@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: e4856d0a-b408-4c60-ac51-f80ea06d9f79
 description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.4 的发行说明。"
 keywords: "NuGet 1.4 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c4c27861c8697c75a06712b8ca6243b3b206cbb3
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: a69f4f5c7172817d711fa5e995cf6db3875c4810
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-14-release-notes"></a>NuGet 1.4 的发行说明
 
@@ -150,10 +149,10 @@ NuGet 1.4 有 88 总共工作固定的项。 71 的那些已标记为 bug。
 * [问题 1036年](http://nuget.codeplex.com/workitem/1036)： 添加`NuGet Pack SomeProject.csproj`后无法再生成事件将导致无限循环。
 * [问题 961](http://nuget.codeplex.com/workitem/961):`-Source`标志支持相对路径。
 
-# <a name="nuget-14-update"></a>NuGet 1.4 更新
+## <a name="nuget-14-update"></a>NuGet 1.4 更新
 不久前 NuGet 1.4 的发行，我们发现了几个重要修复的问题。
 为 1.4 此更新的特定版本号是 1.4.20615.9020。
 
-## <a name="bug-fixes"></a>Bug 修复
+### <a name="bug-fixes"></a>Bug 修复
 * [问题 1220年](http://nuget.codeplex.com/workitem/1220)： 更新包并不执行`install.ps1` / `uninstall.ps1`多个项目时的所有项目中
 * [问题 1156年](http://nuget.codeplex.com/workitem/1156)： 包管理器控制台停滞在 W2K3/XP （如果未安装 Powershell 2）

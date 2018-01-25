@@ -7,18 +7,17 @@ ms.date: 12/08/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 6ee3c826-dd3a-4fa9-863f-1fd80bc4230f
 description: "指定版本号和其他包 NuGet 包依赖，和如何安装依赖关系后的范围的准确详细信息。"
 keywords: "版本控制、 NuGet 包依赖项、 NuGet 依赖项版本、 NuGet 版本数字、 NuGet 程序包版本、 版本范围、 版本规范、 规范化的版本号"
 ms.reviewer:
 - anandr
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: cb5624a2fd99e8afd8a8226fd786343f485041c4
-ms.sourcegitcommit: c27e565de485cbe836e6c2a66e44a50b35b487ff
+ms.openlocfilehash: 70472d7d97d073009237a047e0fdf528b221dfd0
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="package-versioning"></a>包版本控制
 
@@ -42,12 +41,11 @@ ms.lasthandoff: 01/09/2018
 - *-后缀*（可选）： 连字符后跟表示的预发行版本字符串 (以下[语义版本控制或 SemVer 1.0 约定](http://semver.org/spec/v1.0.0.html))。
 
 **示例：**
-```
-1.0.1
-6.11.1231
-4.3.1-rc
-2.2.44-beta1
-```
+
+    1.0.1
+    6.11.1231
+    4.3.1-rc
+    2.2.44-beta1
 
 > [!Important]
 > nuget.org 拒绝任何缺少的确切的版本号的程序包上载。 必须在指定的版本`.nuspec`或用于创建包的项目文件。
@@ -67,16 +65,14 @@ ms.lasthandoff: 01/09/2018
 
 当解决包引用和多个包版本的差异仅在于后缀，NuGet 首先，选择不带后缀的版本，然后应用优先预发行版本按反向字母顺序。 例如，将显示的确切顺序选择以下版本：
 
-```
-1.0.1
-1.0.1-zzz
-1.0.1-rc
-1.0.1-open
-1.0.1-beta
-1.0.1-alpha2
-1.0.1-alpha
-1.0.1-aaa
-```
+    1.0.1
+    1.0.1-zzz
+    1.0.1-rc
+    1.0.1-open
+    1.0.1-beta
+    1.0.1-alpha2
+    1.0.1-alpha
+    1.0.1-aaa
 
 ## <a name="semantic-versioning-200"></a>语义版本控制 2.0.0
 
@@ -95,7 +91,7 @@ ms.lasthandoff: 01/09/2018
 如果将 SemVer 2.0.0 版特定包上载到 nuget.org 中时，包已向旧客户端不可见并且可用于仅以下 NuGet 客户端：
 
 - NuGet 4.3.0+
-- Visual Studio 2017 15.3 以上版本
+- Visual Studio 2017 version 15.3+
 - Visual Studio 2015 [NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)
 - dotnet.exe (.NET SDK 2.0.0+)
 
@@ -115,7 +111,7 @@ ms.lasthandoff: 01/09/2018
 |----------|--------------|-------------|
 | 1.0 | 1.0 ≤ x | 非独占的最低版本 |
 | (1.0,) | 1.0 < x | 独占的最低版本 |
-| [1.0] | x = = 1.0 | 精确版本匹配 |
+| [1.0] | x == 1.0 | 精确版本匹配 |
 | (,1.0] | x ≤ 1.0 | 非独占的最高版本 |
 | (,1.0) | x < 1.0 | 独占的最高版本 |
 | [1.0,2.0] | 1.0 ≤ x ≤ 2.0 | 非独占的确切范围 |
@@ -123,7 +119,7 @@ ms.lasthandoff: 01/09/2018
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | 混合的非独占最小值和独占最高版本 |
 | (1.0)    | 无效 | 无效 |
 
-使用 PackageReference 时或`project.json`包引用格式，NuGet 还支持使用通配符表示法， \*、 主要、 次要、 修补程序，和的数的预发行后缀部分。 不支持通配符`packages.config`格式。
+使用 PackageReference 格式时，NuGet 还支持使用通配符表示法， \*、 主要、 次要、 修补程序，和的数的预发行后缀部分。 不支持通配符`packages.config`格式。
 
 > [!Note]
 > 在解析版本范围时，将不包括预发行版本。 预发布版本*是*时使用通配符，包括 (\*)。 版本范围*[1.0,2.0]*，例如，不包括 2.0 beta，但通配符表示法_2.0-*_未。 请参阅[发出 912](https://github.com/NuGet/Home/issues/912)有关预发行通配符的进一步讨论。
@@ -228,18 +224,14 @@ ms.lasthandoff: 01/09/2018
 
 - 前导零会从版本号：
 
-    ```
-    1.00 is treated as 1.0
-    1.01.1 is treated as 1.1.1
-    1.00.0.1 is treated as 1.0.0.1
-    ```
+        1.00 is treated as 1.0
+        1.01.1 is treated as 1.1.1
+        1.00.0.1 is treated as 1.0.0.1
 
 - 将省略的版本号的第四个部分中零
 
-    ```
-    1.0.0.0 is treated as 1.0.0
-    1.0.01.0 is treated as 1.0.1
-    ```
+        1.0.0.0 is treated as 1.0.0
+        1.0.01.0 is treated as 1.0.1
 
 此正则化不会影响包本身; 中的版本号它会影响仅如何 NuGet 版本时匹配解析的依赖关系。
 

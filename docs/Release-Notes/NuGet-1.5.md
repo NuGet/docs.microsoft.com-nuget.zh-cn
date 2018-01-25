@@ -7,19 +7,18 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 3ec1ff28-18fc-4d53-bd43-208619a7270a
 description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.5 的发行说明。"
 keywords: "NuGet 1.5 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 29792f4c7399155bcf5fb3361d7f10ddd1b18ca1
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 261cfbbd262bad28f142b0c3dff8a541641d9fda
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
- # <a name="nuget-15-release-notes"></a>NuGet 1.5 的发行说明
+# <a name="nuget-15-release-notes"></a>NuGet 1.5 的发行说明
 
 [NuGet 1.4 的发行说明](../release-notes/nuget-1.4.md) | [NuGet 1.6 发行说明](../release-notes/nuget-1.6.md)
 
@@ -35,6 +34,7 @@ ASP.NET MVC 3 项目模板包含一组调用项目模板时，获取安装的 Nu
 有关此功能的详细信息，请参阅此[功能的开发人员的博客文章](http://blogs.msdn.com/b/marcinon/archive/2011/07/08/project-templates-and-preinstalled-nuget-packages.aspx)。
 
 ### <a name="explicit-assembly-references"></a>显式程序集引用
+
 添加一个新`<references />`用于显式指定的程序集内的元素应引用包。
 
 例如，如果你将以下代码添加：

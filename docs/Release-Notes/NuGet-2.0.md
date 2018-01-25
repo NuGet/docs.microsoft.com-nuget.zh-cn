@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 51c7e94f-0084-4c62-bfba-7dfd81675361
 description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 2.0 的发行说明。"
 keywords: "NuGet 2.0 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 41eed1a7c6ad91d63813fb74986aa498765f3dea
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: eaa3c8db1cce72ff93671a1df63698748cdfab70
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-20-release-notes"></a>NuGet 2.0 发行说明
 
@@ -38,7 +37,7 @@ NuGet 2.0 已于 2012 年 6 月 19 日发布。
 
 ## <a name="group-dependencies-by-target-frameworks"></a>由目标框架的组依赖项
 
-依赖项而异的包从版本 2.0 开始，基于目标项目的框架配置文件。 这使用更新完成`.nuspec`架构。 `<dependencies>`元素现在可以包含一套`<group>`元素。 每个组包含零个或多`<dependency>`元素和`targetFramework`属性。 如果目标框架与目标项目框架配置文件兼容，位于组内的所有依赖项是一起安装。 例如: 
+依赖项而异的包从版本 2.0 开始，基于目标项目的框架配置文件。 这使用更新完成`.nuspec`架构。 `<dependencies>`元素现在可以包含一套`<group>`元素。 每个组包含零个或多`<dependency>`元素和`targetFramework`属性。 如果目标框架与目标项目框架配置文件兼容，位于组内的所有依赖项是一起安装。 例如:
 
 ```xml
 <dependencies>
@@ -75,7 +74,7 @@ NuGet 2.0 已于 2012 年 6 月 19 日发布。
 
 ## <a name="grouping-content-files-and-powershell-scripts-by-target-framework"></a>由目标 framework 分组内容文件和 PowerShell 脚本
 
-程序集引用，除了内容文件和 PowerShell 脚本也可以由目标框架分组。 在中找到的相同文件夹结构`lib`用于指定目标框架的文件夹现在可将应用到相同的方式`content`和`tools`文件夹。 例如: 
+程序集引用，除了内容文件和 PowerShell 脚本也可以由目标框架分组。 在中找到的相同文件夹结构`lib`用于指定目标框架的文件夹现在可将应用到相同的方式`content`和`tools`文件夹。 例如:
 
     \content
         \net11

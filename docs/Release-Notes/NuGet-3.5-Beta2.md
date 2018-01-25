@@ -7,19 +7,18 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 0b76064f-0607-438a-bbf8-dd862690f48e
 description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.5 Beta 2 的发行说明。"
 keywords: "NuGet 3.5 Beta 2 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6dd388e52308d2f3cd32d4d6c66c2868f0ae2a41
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 4073b669c19f9e96ebd35ba269919b5f42313e7c
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
-# <a name="35-beta2-release-notes"></a>3.5 beta2 之前发行说明
+# <a name="nuget-35-beta2-release-notes"></a>NuGet 3.5 beta2 之前发行说明
 
 [NuGet 3.5 Beta 发行说明](../release-notes/nuget-3.5-Beta.md) | [NuGet 3.5 RC 发行说明](../release-notes/nuget-3.5-RC.md)
 
@@ -28,8 +27,6 @@ NuGet 3.5 Beta 2 RTM Visual Studio 2013 和 nuget.exe 2016 年 6 月 27 日发�
 [完整的版本记录](https://github.com/NuGet/NuGet.Client/compare/release-3.5.0-beta...release-3.5.0-beta2)
 
 [问题列表](https://github.com/Nuget/Home/issues?q=is%3Aissue+milestone%3A%223.5+Beta2%22+is%3Aclosed)
-
-# <a name="notable-changes"></a>重大更改
 
 ## <a name="bug-fixes"></a>Bug 修复
 

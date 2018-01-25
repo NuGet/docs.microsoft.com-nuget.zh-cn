@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 77ba98d8-3d66-4126-b2b6-813ddd8ef192
 description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 2.8 的发行说明。"
 keywords: "NuGet 2.8 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 182e7d1e2224c431631cddd14fdbea8dd9e14278
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 39b885adc9e23eb815f65639875c4a4c27d61a4c
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-28-release-notes"></a>NuGet 2.8 发行说明
 

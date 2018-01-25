@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: d99bbf29-2b9a-4dc5-a823-5eb4f9e30f7f
 description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 2.6 的发行说明。"
 keywords: "NuGet 2.6 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b34c0049a5ba42f6bcd5b36fa5b0ba261e27ecd5
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: c2df9721e6941c110948af1a2d4ec4b7aeb476dd
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-26-release-notes"></a>NuGet 2.6 发行说明
 
@@ -38,7 +37,7 @@ NuGet 2.6 是提供对 Visual Studio 2013 的支持的第一个版本。 如 Vis
 1. [NuGet 包管理器](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManager)（适用于 Visual Studio 2010 和 2012年）
 1. [用于 Visual Studio 2013 的 NuGet 程序包管理器](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManagerforVisualStudio2013)
 
-此拆分， [nuget.org](https://nuget.org)主页的"安装 NuGet"按钮现在你将转到[安装 NuGet](../guides/install-nuget.md)页上，你可以在其中找到有关安装不同的 NuGet 客户端的详细信息。
+此拆分， [nuget.org](https://nuget.org)主页的"安装 NuGet"按钮将转到[安装 NuGet](../install-nuget-client-tools.md)页上，你可以在其中找到有关安装不同的 NuGet 客户端的详细信息。
 
 <a name="xdt"></a>
 
@@ -71,8 +70,8 @@ NuGet 2.6 扩展通过搜索 %programdata%/nuget/config 路径下的文件夹层
 
 1. %ProgramData%\NuGet\Config\*.config
 2. %ProgramData%\NuGet\Config\{IDE}\*.config
-3. %ProgramData%\NuGet\Config\{IDE}\{版本}\*.config
-4. %ProgramData%\NuGet\Config\{IDE}\{版本}\{SKU}\*.config
+3. %ProgramData%\NuGet\Config\{IDE}\{Version}\*.config
+4. %ProgramData%\NuGet\Config\{IDE}\{Version}\{SKU}\*.config
 
 在此列表中，{IDE} 占位符是特定于在其中运行 NuGet，IDE，因此，对于 Visual Studio 中，它将是"visual Studio"。 {版本} 和 {SKU} 占位符 （例如由 IDE"11.0"和"WDExpress"、"VWDExpress"和"Pro"，分别)。 然后，该文件夹可以包含许多不同 *.config 文件。
 因此，acme 开发组件公司，作为其产品安装程序的一部分，可通过创建以下文件路径中将仅在 Visual Studio 2012 Professional 和 Ultimate 版本中可见的自定义包源：
@@ -101,11 +100,11 @@ Visual Studio 2013 中，其中一个文件安装在使用此功能：
 从 NuGet 2.6 针对安装操作将立即发送数据。  NuGet 库上的包统计信息将公开该数据作为单独的安装操作，与"-依赖项"后缀。
 
 * 安装
-* 安装依赖项
+* Install-Dependency
 * 更新
-* 更新依赖项
+* Update-Dependency
 * 重新安装
-* 重新安装依赖项
+* Reinstall-Dependency
 
 除了不同的操作名称，还会安装记录依赖的包 id。  NuGet 库到未来的更新将公开报表，允许包作者，若要全面了解如何开发人员要安装其包中的数据。
 

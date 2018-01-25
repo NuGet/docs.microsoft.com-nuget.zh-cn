@@ -11,17 +11,16 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 8c81f1ac-18c7-44d1-b2e3-584fe85dee6f
 description: "NuGet API 是一组可用于下载包，提取元数据，发布新的包等的 HTTP 终结点。"
 keywords: "NuGet V3 API、 NuGet V2 API、 NuGet JSON、 NuGet 注册 API，NuGet API 平面容器、 NuGet nupkg API、 NuGet 元数据 API、 NuGet 搜索 API、 NuGet 推送 API，NuGe 发布 API，NuGet 删除 API，NuGet 不列出 API，NuGet 协议"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 05ed17f12f413d29d97a253d7d55f154d4910834
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: c28b0912be6dbccab06078100cb71821c3658e08
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -112,9 +111,9 @@ DELETE | 删除或 unlists 资源。
 
 name                     | 描述
 ------------------------ | -----------
-X NuGet ApiKey           | 所需的推送和删除，请参阅[`PackagePublish`资源](package-publish-resource.md)
-X NuGet 客户端版本   | **弃用**和替换为`X-NuGet-Protocol-Version`
-X NuGet 协议版本 | 在某些情况下，仅在 nuget.org 上的需要，请参阅[nuget.org 协议](NuGet-Protocols.md)
+X-NuGet-ApiKey           | 所需的推送和删除，请参阅[`PackagePublish`资源](package-publish-resource.md)
+X-NuGet-Client-Version   | **弃用**和替换为`X-NuGet-Protocol-Version`
+X-NuGet-Protocol-Version | 在某些情况下，仅在 nuget.org 上的需要，请参阅[nuget.org 协议](NuGet-Protocols.md)
 
 ## <a name="authentication"></a>身份验证
 

@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 330577fa-7965-4433-98ad-b4b4575e1452
 description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.2 RC 的发行说明。"
 keywords: "NuGet 3.2 RC 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4b5f83f521cb326f5b3a5e6c202cdcb77acde5e2
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: b19f62217ed79689ce067107dd64dfffe2c59291
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-32-rc-release-notes"></a>NuGet 3.2 RC 发行说明
 

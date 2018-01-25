@@ -7,16 +7,15 @@ ms.date: 10/30/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: ba1d9742-9f1c-42ff-8c30-8e953e23c501
 description: "不断发展与 NuGet 客户端交互 nuget.org 协议。"
 ms.reviewer:
 - kraigb
 - karann-msft
-ms.openlocfilehash: 0bc71795d120256b9eb14ca64141f0b69f01e620
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 488a86a36a6bc83c91f0182bf437ddb83e707e31
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nugetorg-protocols"></a>nuget.org 协议
 
@@ -39,9 +38,7 @@ ms.lasthandoff: 01/05/2018
 
 要求客户端传递以下标头，当他们开展 API 调用发布到**推送**nuget.org 的包：
 
-```
-X-NuGet-Protocol-Version: 4.1.0
-```
+    X-NuGet-Protocol-Version: 4.1.0
 
 请注意，`X-NuGet-Client-Version`标头具有相似的语义，但已保留以仅供官方 NuGet 客户端。 第三方客户端应使用`X-NuGet-Protocol-Version`标头和值。
 
@@ -53,9 +50,7 @@ X-NuGet-Protocol-Version: 4.1.0
 
 此 API 用于获取 nuget.org 作者，以验证归他/她的包的作用域的验证密钥。
 
-```
-POST api/v2/package/create-verification-key/{ID}/{VERSION}
-```
+    POST api/v2/package/create-verification-key/{ID}/{VERSION}
 
 #### <a name="request-parameters"></a>请求参数
 
@@ -63,11 +58,11 @@ name           | 内     | 类型   | 必需 | 说明
 -------------- | ------ | ------ | -------- | -----
 Id             | URL    | 字符串 | 是      | 为其请求验证作用域键包 identidier
 VERSION        | URL    | 字符串 | 否       | 包版本
-X NuGet ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
+X-NuGet-ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
 
 #### <a name="response"></a>响应
 
-```
+```json
 {
     "Key": "{Verify scope key from nuget.org}",
     "Expires": "{Date}"
@@ -78,9 +73,7 @@ X NuGet ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER
 
 此 API 用于验证包归 nuget.org 作者作用域的验证密钥。
 
-```
-GET api/v2/verifykey/{ID}/{VERSION}
-```
+    GET api/v2/verifykey/{ID}/{VERSION}
 
 #### <a name="request-parameters"></a>请求参数
 
@@ -88,7 +81,7 @@ name           | 内     | 类型   | 必需 | 说明
 -------------  | ------ | ------ | -------- | -----
 Id             | URL    | 字符串 | 是      | 为其请求验证作用域键包标识符
 VERSION        | URL    | 字符串 | 否       | 包版本
-X NuGet ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {VERIFY_SCOPE_KEY}`
+X-NuGet-ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {VERIFY_SCOPE_KEY}`
 
 > [!Note]
 > 此验证作用域 API 密钥将在一天的时间之后过期或首次使用，无论哪个操作发生第一次。

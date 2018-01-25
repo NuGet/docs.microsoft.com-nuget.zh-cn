@@ -3,21 +3,20 @@ title: "NuGet CLI 规范命令 |Microsoft 文档"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 85611449-87e6-489b-8c6c-fe1d7be76c13
 description: "Nuget.exe spec 命令参考"
 keywords: "nuget 规范引用、 spec 命令"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c32b23e66c8eb4db1c8fa6dc615589219c00239f
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: cc7e772e737a0f74929d13e2b126f7796b6d0dc7
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="spec-command-nuget-cli"></a>spec 命令 (NuGet CLI)
 
@@ -27,7 +26,7 @@ ms.lasthandoff: 12/14/2017
 
 ## <a name="usage"></a>用法
 
-```
+```cli
 nuget spec [<packageID>] [options]
 ```
 
@@ -41,14 +40,14 @@ nuget spec [<packageID>] [options]
 | 强制 | 将覆盖任何现有`.nuspec`文件。 |
 | ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助命令的信息。 |
-| 非交互式 | 取消显示提示用户输入或确认。 |
-| 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细 （2.5 +）*。 |
+| NonInteractive | 取消显示提示用户输入或确认。 |
+| 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
 
 ## <a name="examples"></a>示例
 
-```
+```cli
 nuget spec
 
 nuget spec MyPackage

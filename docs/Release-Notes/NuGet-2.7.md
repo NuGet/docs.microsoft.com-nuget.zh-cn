@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: ba2edaad-4795-47a0-a572-d0e1716bd540
 description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 2.7 的发行说明。"
 keywords: "NuGet 2.7 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 502cb5e68f905e9ad8f4003bb0690d3e676f6bb7
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: b0e12f7e2cffa6e721dd13c117b7b3727cfcb5d7
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-27-release-notes"></a>NuGet 2.7 发行说明
 
@@ -103,7 +102,7 @@ NuGet 2.7 引入 nuget.exe 的新功能：`nuget.exe restore`
 
 此新的 Restore 命令允许你轻松地通过接受的解决方案文件或文件夹作为自变量来还原使用单个命令，解决方案的所有包。 此外，在当前文件夹中没有单个解决方案时，会进行隐式该自变量。 这意味着所有以下各项工作从包含单个解决方案文件 (MySolution.sln) 的文件夹：
 
-1. nuget.exe 还原 MySolution.sln
+1. nuget.exe restore MySolution.sln
 1. nuget.exe 还原。
 1. nuget.exe 还原
 

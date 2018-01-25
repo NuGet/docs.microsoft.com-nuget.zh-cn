@@ -3,21 +3,20 @@ title: "NuGet 命令行界面 (CLI) 参考 |Microsoft 文档"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 10/24/2017
+ms.date: 01/23/2018
 ms.topic: reference
 ms.prod: nuget
 ms.technology: 
-ms.assetid: d777c424-0cf3-4bc0-8abd-7ca16c22192b
 description: "Nuget.exe CLI 命令行参考索引"
 keywords: "nuget.exe 引用索引、 nuget.exe 命令行界面、 nuget.exe CLI、 nuget 命令"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 5dba358b1dda46f551721461e0460219f8210f9a
-ms.sourcegitcommit: bdcd2046b1b187d8b59716b9571142c02181c8fb
+ms.openlocfilehash: 8b1ee17702f5a54a77dc2cd663e13729a9b4a39f
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-cli-reference"></a>NuGet CLI 参考
 
@@ -31,11 +30,16 @@ NuGet 命令行界面 (CLI)， `nuget.exe`，提供了 NuGet 功能安装、 创
 
 [!INCLUDE[install-cli](../includes/install-cli.md)]
 
+> [!Tip]
+> 若要在 Visual Studio 进行 NuGet CLI 程序包管理器控制台中可用，请参阅[使用控制台中的 CLI nuget.exe](package-manager-console.md#using-the-nugetexe-cli-in-the-console)。
+
 ## <a name="availability"></a>可用性
 
+请参阅[功能可用性](../install-nuget-client-tools.md#feature-availability)的准确详细信息。
+
 - 在 Windows 上的所有命令都都可用。
-- 所有命令都使用[Mono 上运行的 nuget.exe](../guides/install-nuget.md#mac-osx-and-linux)为指明除外`pack`， `restore`，和`update`。
-- `pack`， `restore`， `delete`， `locals`，和`push`命令也是适用于 Mac 和 Linux 通过[dotnet CLI](dotnet-Commands.md)。
+- 所有命令都使用 nuget.exe Mono 上运行除特别指明为外`pack`， `restore`，和`update`。
+- `pack`， `restore`， `delete`， `locals`，和`push`命令也是通过 dotnet CLI 在 Mac 和 Linux 上可用。
 
 ## <a name="commands-and-applicability"></a>命令和适用性
 
@@ -51,7 +55,6 @@ NuGet 命令行界面 (CLI)， `nuget.exe`，提供了 NuGet 功能安装、 创
 | [restore](cli-ref-restore.md) | 使用 | 2.7+ | 还原引用使用的包引用格式的所有包。 Mono 上运行时，不支持还原使用 PackageReference 格式的包。 |
 | [setapikey](cli-ref-setapikey.md) | 发布消耗 | 全部 | 该包源需要访问密钥时，将保存给定的包源的 API 密钥。 |
 | [spec](cli-ref-spec.md) | 创建 | 全部 | 生成`.nuspec`文件，请使用令牌，如果从 Visual Studio 项目中生成文件。 |
-
 
 | 辅助命令 | 适当的角色 | NuGet 版本 | 描述 |
 | --- | --- | --- | --- |

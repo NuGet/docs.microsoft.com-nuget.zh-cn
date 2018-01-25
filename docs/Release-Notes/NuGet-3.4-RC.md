@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: 239d3d95-5a72-4fac-8389-b6deac27884d
 description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.4 RC 的发行说明。"
 keywords: "NuGet 3.4 RC 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 86c37d516eede2ac5e6e5e842f687a8f3b17c0a4
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 749068683d6e2a3fd9dd29c69d9ff50137acdd46
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-34-rc-release-notes"></a>NuGet 3.4 RC 发行说明
 
@@ -25,9 +24,9 @@ ms.lasthandoff: 12/14/2017
 
 NuGet 3.4 RC 2016 年 3 月 3 日与 Visual Studio 2015 Update 2 RC 一起发布，并且用几原则思想的生成：
 
-*  跨平台支持
-*  性能改进
-*  小的 UI 改进
+* 跨平台支持
+* 性能改进
+* 小的 UI 改进
 
 下列功能是此 RC 中提供了更多计划 3.4 的最终版本。
 

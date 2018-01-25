@@ -7,17 +7,16 @@ ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: b514da09-da1f-416b-9bfc-692f08fb6957
 description: "发行说明，了解 NuGet 上面 3.4.2 包括已知问题、 bug 修复、 增加的功能，以及 DCRs。"
 keywords: "NuGet 上面 3.4.2 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6761c59b6dc85b9a8503041928c2707549006d9c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: 892a965e67762af2ae42c2d6ee75d2838104d1c2
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="nuget-342-release-notes"></a>NuGet 上面 3.4.2 发行说明
 
@@ -36,7 +35,7 @@ NuGet 上面 3.4.2 已于 2016 年 4 月 8，以解决在 3.4 和 3.4.1 中识�
 * 除了此更改后，我们已解决问题，我们已达到网络，两次时提取更新计数的 VS UI。 这是部分负责 3.4/3.4.1 方面具有丰富经验某些超时问题客户。
 * 添加了对 no_proxy 设置支持
 
-##<a name="fixes"></a>修补程序
+## <a name="fixes"></a>修补程序
 
 * 修复了问题 nuget.org 源所在 NuGet 的设置或配置中缺少更新到 3.4.1 后。
 * 修复了问题中 3.4.1 FindPackagesById 大小写更改将 Artifactory 处中断。
