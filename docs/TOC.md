@@ -1,9 +1,9 @@
-# [什么是 NuGet？](What-is-NuGet.md)
+# [什么是 NuGet？](what-is-nuget.md)
+# [安装 NuGet 客户端工具](install-nuget-client-tools.md)
 # 快速入门
 ## [创建和发布包](Quickstart/Create-and-Publish-a-Package.md)
 ## [使用包](Quickstart/Use-a-Package.md)
 # 参考线
-## [安装 NuGet 客户端工具](Guides/Install-NuGet.md)
 ## [创建 NET 标准包 (Visual Studio 2017)](Guides/Create-NET-Standard-Packages-VS2017.md)
 ## [创建 NET 标准包 (Visual Studio 2015)](Guides/Create-NET-Standard-Packages-VS2015.md)
 ## [创建 UWP 包](Guides/Create-UWP-Packages.md)
@@ -19,8 +19,6 @@
 ## [本机包](Create-Packages/Native-Packages.md)
 ## [符号包](Create-Packages/Symbol-Packages.md)
 ## [发布包](Create-Packages/Publish-a-package.md)
-## [project.json 和 UWP](Create-Packages/project-json-and-UWP.md)
-## [project.json 影响](Create-Packages/project-json-Impact.md)
 # 使用包
 ## [概述和工作流](Consume-Packages/Overview-and-Workflow.md)
 ## [查找和选择包](Consume-Packages/Finding-and-Choosing-Packages.md)
@@ -71,7 +69,6 @@
 # 参考
 ## [.nuspec](Schema/nuspec.md)
 ## [packages.config](Schema/packages-config.md)
-## [project.json](Schema/project-json.md)
 ## [包版本控制](reference/package-versioning.md)
 ## [Nuget.Config 文件](Schema/nuget-config-file.md)
 ## [MSBuild 目标](Schema/msbuild-targets.md)
@@ -83,6 +80,10 @@
 ## 扩展性
 ### [适用于 Visual Studio 的 NuGet 凭据提供程序](Reference/extensibility/Nuget-Credential-Providers-for-Visual-Studio.md)
 ### [nuget.exe 凭据提供程序](Reference/extensibility/nuget-exe-Credential-Providers.md)
+## 存档内容
+### [project.json 引用格式](archive/project-json.md)
+### [project.json 和 UWP](archive/project-json-and-UWP.md)
+### [project.json impact](archive/project-json-impact.md)
 # API
 ## [概述](API/overview.md)
 ## [如何：使用 API 查询所有包](Guides/api/query-for-all-published-packages.md)
