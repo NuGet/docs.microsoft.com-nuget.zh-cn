@@ -3,21 +3,20 @@ title: "NuGet 包中的预发行版本 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 8/14/2017
+ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: df6a366a-22c1-47bb-8017-18231311ce88
 description: "用于生成预发行包的指南"
 keywords: "版本控制, NuGet 包版本控制, NuGet 预发行版本, NuGet 预发行包, 预览包版本, RC 包版本, Beta 包版本, NuGet 语义化版本控制"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 07cb9b9bdeeea6f283e95a11a06d7f2043c9b17c
-ms.sourcegitcommit: d0ba99bfe019b779b75731bafdca8a37e35ef0d9
+ms.openlocfilehash: f07b4a0428685b036640a7153190fd8454885608
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="building-pre-release-packages"></a>生成预发行包
 
@@ -47,7 +46,6 @@ ms.lasthandoff: 12/14/2017
 
 做好发布稳定版本的准备后，只需删除后缀，该包便优先于任何预发行版本。 同样，请参阅[包版本控制](../reference/package-versioning.md#pre-release-versions)。
 
-
 ## <a name="installing-and-updating-pre-release-packages"></a>安装和更新预发行包
 
 默认情况下，NuGet 在处理包时不会包括预发行版本，但按照下文所述方法可更改此行为：
@@ -61,7 +59,6 @@ ms.lasthandoff: 12/14/2017
 - **包管理器控制台**：将 `-IncludePrerelease` 开关与 `Find-Package`、`Get-Package`、`Install-Package`、`Sync-Package` 和 `Update-Package` 命令配合使用。 请参阅 [PowerShell 参考](../tools/powershell-reference.md)。
 
 - **NuGet CLI**：将 `-prerelease` 开关与 `install`、`update`、`delete` 和 `mirror` 命令配合使用。 请参阅 [NuGet CLI 参考](../tools/nuget-exe-cli-reference.md)
-
 
 ## <a name="semantic-versioning"></a>语义化版本控制
 
@@ -86,16 +83,14 @@ ms.lasthandoff: 12/14/2017
 
 但是，无论使用何种后缀，NuGet 都会按照反向字母顺序向它们赋予优先级：
 
-```
-1.0.1
-1.0.1-zzz
-1.0.1-rc
-1.0.1-open
-1.0.1-beta12
-1.0.1-beta05
-1.0.1-beta
-1.0.1-alpha2
-1.0.1-alpha
-```
+    1.0.1
+    1.0.1-zzz
+    1.0.1-rc
+    1.0.1-open
+    1.0.1-beta12
+    1.0.1-beta05
+    1.0.1-beta
+    1.0.1-alpha2
+    1.0.1-alpha
 
 如上所示，没有任何后缀的版本始终优先于预发行版本。 另请注意，如果在可能使用两位数（或更多数字）的预发行版本标记中使用数字后缀，请使用前导零，如 beta01 和 beta05，以便确保数字增大时，可以正确地进行排序。

@@ -3,21 +3,20 @@ title: "删除 nuget.org 的 NuGet 包 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 1/9/2017
+ms.date: 01/18/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
-ms.assetid: a348ca2e-0a5d-40ad-ba33-9bb37e1d980b
 description: "用于取消列出 nuget.org 的包的策略；除非包违反其他策略，否则不支持永久删除。"
 keywords: "NuGet 包删除, NuGet 包取消列出, 禁止使用包"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9e388171f83fae7deb4f20033184dfa91bfab3da
-ms.sourcegitcommit: a40c1c1cc05a46410f317a72f695ad1d80f39fa2
+ms.openlocfilehash: 6169e46e55176757bc1ad471a3d80885cb50e403
+ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="deleting-packages"></a>删除包
 
