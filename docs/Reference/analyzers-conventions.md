@@ -13,10 +13,10 @@ ms.reviewer:
 - karann-msft
 - unniravindranathan
 ms.openlocfilehash: e44cfa609c14422d50769e512108844cbd2f96a4
-ms.sourcegitcommit: 24997b5345a997501fff846c9bd73610245ae0a6
-ms.translationtype: HT
+ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="analyzer-nuget-formats"></a>分析器 NuGet 格式
 

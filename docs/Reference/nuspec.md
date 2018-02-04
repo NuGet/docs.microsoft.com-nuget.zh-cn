@@ -1,0 +1,683 @@
+---
+title: "适用于 NuGet 的 .nuspec 文件引用 | Microsoft Docs"
+author: kraigb
+ms.author: kraigb
+manager: ghogen
+ms.date: 08/29/2017
+ms.topic: reference
+ms.prod: nuget
+ms.technology: 
+description: ".nuspec 文件包含生成包时使用的，并向包使用者提供信息的包元数据。"
+keywords: "nuspec 引用, NuGet 包元数据, NuGet 包清单, nuspec 架构"
+ms.reviewer:
+- anangaur
+- karann-msft
+- unniravindranathan
+ms.openlocfilehash: 56cb9d5b40bbfbd722e611e0e86945eddbe9d19a
+ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/01/2018
+---
+# <a name="nuspec-reference"></a>.nuspec 引用
+
+`.nuspec` 文件是包含包元数据的 XML 清单。 此清单同时用于生成包以及为使用者提供信息。 清单始终包含在包中。
+
+本主题内容：
+
+- [常规形式和架构](#general-form-and-schema)
+- [替换令牌](#replacement-tokens)（用于 Visual Studio 项目时）
+- [依赖项](#dependencies)
+- [显式程序集引用](#explicit-assembly-references)
+- [Framework 程序集引用](#framework-assembly-references)
+- [包括程序集文件](#including-assembly-files)
+- [包括内容文件](#including-content-files)
+- [示例](#examples)
+
+## <a name="general-form-and-schema"></a>常规形式和架构
+
+当前 `nuspec.xsd` 架构文件可在 [NuGet GitHub 存储库](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Packaging/compiler/resources/nuspec.xsd)中找到。
+
+在此构架中，`.nuspec` 文件具有以下常规形式：
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <!-- Required elements-->
+        <id></id>
+        <version></version>
+        <description></description>
+        <authors></authors>
+
+        <!-- Optional elements -->
+        <!-- ... -->
+    </metadata>
+    <!-- Optional 'files' node -->
+</package>
+```
+
+有关架构的清晰可视表示形式，请在 Visual Studio 中以“设计”模式打开架构文件，然后单击“XML 架构资源管理器”链接。 或者，将该文件作为代码打开，在编辑器中右键单击，然后选择“显示 XML 架构资源管理器”。 无论哪种方式，都会获得如下所示的视图（大多数部件都处于扩展状态）：
+
+![nuspec.xsd 打开时的 Visual Studio 架构资源管理器](media/SchemaExplorer.png)
+
+### <a name="metadata-attributes"></a>元数据特性
+
+`<metadata>` 元素支持下表中介绍的特性。
+
+| 特性 | 必需 | 描述 |
+| --- | --- | --- | 
+| **minClientVersion** | 否 | 指定可安装此包的最低 NuGet 客户端版本，并由 nuget.exe 和 Visual Studio 程序包管理器强制实施。 只要包依赖于特定 NuGet 客户端版本中添加的 `.nuspec` 文件的特定功能，就会使用此功能。 例如，使用 `developmentDependency` 特性的包应为 `minClientVersion` 指定“2.8”。 同样，使用 `contentFiles` 元素（请参阅下一部分）的包应将 `minClientVersion` 设置为“3.3”。 另请注意，早于 2.5 的 NuGet 客户端无法识别此标记，所以无论 `minClientVersion` 包含什么内容，它们总是拒绝安装该包。 |
+
+### <a name="required-metadata-elements"></a>所需的元数据元素
+
+尽管以下元素是包的最低要求，但应该考虑添加[可选元数据元素](#optional-metadata-elements)以改善开发人员对包的整体体验。
+
+这些元素必须出现在 `<metadata>` 元素中。
+
+| 元素 | 描述 |
+| --- | --- |
+| **id** | 不区分大小写的包标识符，在 nuget.org 或包驻留的任意库中必须是唯一的。 ID 不得包含空格或对 URL 无效的字符，通常遵循 .NET 命名空间规则。 有关指南，请参阅[选择唯一的包标识符](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
+| **version** | 遵循 major.minor.patch 模式的包版本。 版本号可能包括预发布后缀，如[包版本控制](../reference/package-versioning.md#pre-release-versions)中所述。 |
+| description | 用于 UI 显示的包的详细说明。 |
+| **authors** | 包创建者的逗号分隔列表，与 nuget.org 上的配置文件名称一致。这些信息显示在 nuget.org 上的 NuGet 库中，并用于交叉引用同一作者的包。 |
+
+### <a name="optional-metadata-elements"></a>可选元数据元素
+
+这些元素可能出现在 `<metadata>` 元素中。
+
+#### <a name="single-elements"></a>单个元素
+
+| 元素 | 描述 |
+| --- | --- |
+| **title** | 明了易用的包标题，通常用在 UI 显示中，如 nuget.org 上和 Visual Studio 中包管理器上的那样。 如果未指定，则使用包 ID。 |
+| **owners** | 使用 nuget.org 上的配置文件名称的包创建者的逗号分隔列表。这通常和 `authors` 中的列表相同，将包上传到 nuget.org 时被忽略。请参阅[在 nuget.org 上管理包所有者](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)。 |
+| **projectUrl** | 包的主页 URL，通常显示在 UI 中以及 nuget.org 中。 |
+| **licenseUrl** | 包的许可证 URL，通常显示在 UI 和 nuget.org 中。 |
+| **iconUrl** | 64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的图像，可使用原始文件 URL，如 `https://github.com/<username>/<repository>/raw/<branch>/<logo.png>`。 |
+| **requireLicenseAcceptance** | 一个布尔值，用于指定客户端是否必须提示使用者接受包许可证后才可安装包。 |
+| **developmentDependency** | (2.8+) 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。 |
+| **summary** | 用于 UI 显示的包的简要说明。 如果省略，则使用 `description` 的截断版本。 |
+| **releaseNotes** | (1.5+) 此版本包中所作更改的说明，通常代替包说明用在 UI 中，如 Visual Studio 包管理器的“更新”选项卡。 |
+| **copyright** | (1.5+) 包的版权详细信息。 |
+| language | 包的区域设置 ID。 请参阅[创建本地化包](../create-packages/creating-localized-packages.md)。 |
+| **tags** | 以空格分隔的标记和关键字列表，描述包并通过搜索和筛选辅助包的可发现性。 |
+| **serviceable** | (3.3+) 仅限内部使用。 |
+
+#### <a name="collection-elements"></a>集合元素
+
+| 元素 | 描述 |
+| --- | --- |
+**packageTypes** | *（3.5 +)*的零个或多集合`<packageType>`元素，用于指定如果不是传统的依赖项包的包的类型。 每个 packageType 都具有 name 和 version 特性。 请参阅[设置包类型](../create-packages/creating-a-package.md#setting-a-package-type)。 |
+| **dependencies** | 零个或多个 `<dependency>` 元素的集合，用来指定包的依赖项。 每个 dependency 都具有 id、version、include (3.x+) 和 exclude (3.x+) 特性。 请参阅下面的[依赖项](#dependencies)。 |
+| **frameworkAssemblies** | (1.2+) 零个或多个 `<frameworkAssembly>` 元素的集合，用来标识此包要求的 .NET Framework 程序集引用，从而确保引用添加到使用该包的项目。 每个 frameworkAssembly 都具有 assemblyName 和 targetFramework 特性。 请参阅下面的[指定 Framework 程序集引用 GAC](#specifying-framework-assembly-references-gac)。 |
+| **references** | (1.5+) 零个或多个 `<reference>` 元素的集合，用来指定包的 `lib` 文件夹中添加为项目引用的程序集。 每个 reference 都具有 file 特性。 `<references>` 也可包含具有 targetFramework 特性的 `<group>` 元素，然后包含 `<reference>` 元素。 如果省略，则包含 `lib` 中的全部引用。 请参阅下面的[指定显式程序集引用](#specifying-explicit-assembly-references)。 |
+| **contentFiles** | (3.3+) `<files>` 元素的集合，用来标识包含在使用项目中的内容文件。 这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件。 请参阅下面的[指定包含在包中的文件](#specifying-files-to-include-in-the-package)。 |
+
+### <a name="files-element"></a>Files 元素
+
+`<package>` 节点可能包含 `<files>` 节点作为 `<metadata>` 的同级或 `<metadata>` 的 `<contentFiles>` 子级，以指定要包含在包中的程序集和内容文件。 有关详细信息，请参阅本主题后面的[包含程序集文件](#including-assembly-files)和[包含内容文件](#including-content-files)。
+
+## <a name="replacement-tokens"></a>替换令牌
+
+创建包时，[`nuget pack` 命令](../tools/cli-ref-pack.md)使用来自项目文件的值或 `pack` 命令的 `-properties` 开关来替换 `.nuspec` 文件的 `<metadata>` 节点中带 $ 分隔符的令牌。
+
+在命令行中，可使用 `nuget pack -properties <name>=<value>;<name>=<value>` 指定令牌值。 例如，可使用 `.nuspec` 中的 `$owners$` 和 `$desc$` 令牌，并在封装时提供值，如下所示：
+
+```ps
+nuget pack MyProject.csproj -properties
+    owners=janedoe,harikm,kimo,xiaop;desc="Awesome app logger utility"
+```
+
+如要使用项目中的值，请指定下表中描述的令牌（AssemblyInfo 指的是 `Properties` 中的文件，如 `AssemblyInfo.cs` 或 `AssemblyInfo.vb`）。
+
+若要使用这些令牌，请通过项目文件而不仅仅是 `.nuspec` 来运行 `nuget pack`。 例如，使用以下命令时，`.nuspec` 文件中的 `$id$` 和 `$version$` 令牌会被替换为项目的 `AssemblyName` 和 `AssemblyVersion` 值：
+
+```ps
+nuget pack MyProject.csproj
+```
+
+通常情况下，如果已有项目，最初会使用自动包含一些标准令牌的 `nuget spec MyProject.csproj` 创建 `.nuspec`。 然而，如果项目缺少要求的 `.nuspec` 元素的值，那么 `nuget pack` 失败。 此外，如果更改项目值，请确定在创建包之前重新生成，可通过 pack 命令的 `build` 开关方便地完成此操作。
+
+除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
+
+| 标记 | 值来源 | “值”
+| --- | --- | ---
+| **$id$** | 项目文件 | 项目文件中的 AssemblyName |
+| **$version$** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
+| **$author$** | AssemblyInfo | AssemblyCompany |
+| **$description$** | AssemblyInfo | AssemblyDescription |
+| **$copyright$** | AssemblyInfo | AssemblyCopyright |
+| **$configuration$** | 程序集 DLL | 用于生成程序集的配置，默认为 Debug。 请注意，若要使用 Release 配置创建包，应始终在命令行上使用 `-properties Configuration=Release`。 |
+
+包含[程序集文件](#including-assembly-files)和[内容文件](#including-content-files)时，令牌也可用于解析路径。 这些令牌与 MSBuild 属性具有相同的名称，因此可根据当前生成配置来选择要包含的文件。 例如，如果在 `.nuspec` 文件中使用以下令牌：
+
+```xml
+<files>
+    <file src="bin\$configuration$\$id$.pdb" target="lib\net40" />
+</files>
+```
+
+在 MSBuild 中生成具有 `Release` 配置且 `AssemblyName` 为 `LoggingLibrary` 的程序集，包中 `.nuspec` 文件中的结果行如下所示：
+
+```xml
+<files>
+    <file src="bin\Release\LoggingLibrary.pdb" target="lib\net40" />
+</files>
+```
+
+## <a name="dependencies"></a>依赖项
+
+`<metadata>` 中的 `<dependencies>` 元素包含任意数量的 `<dependency>` 元素，用来标识顶级包所依赖的其他包。 每个 `<dependency>` 的特性如下所示：
+
+| 特性 | 描述 |
+| --- | --- |
+| `id` | （必须）依赖项的包 ID，如“EntityFramework”和“NUnit”，同时也是 nuget.org 在包页面上显示的包名称。 |
+| `version` | （必需）可接受作为依赖项的版本范围。 有关准确语法，请参阅[包版本控制](../reference/package-versioning.md#version-ranges-and-wildcards)。 |
+| include | 包括/排除标记的逗号分隔列表（见下文），指示要包含在最终包中的依赖项。 默认值为 `none`。 |
+| exclude | 包括/排除标记的逗号分隔列表（见下文），指示要排除在最终包外的依赖项。 默认值为 `all`。 用 `exclude` 指定的标记优先于用 `include` 指定的标记。 例如，`include="runtime, compile" exclude="compile"` 和 `include="runtime"` 相同。 |
+
+| 包括/排除标记 | 受影响的目标文件夹 |
+| --- | --- |
+| contentFiles | 内容  |
+| Runtime — 运行时 | 运行时、资源和 FrameworkAssemblies  |
+| 编译 | lib |
+| 生成 | 生成（MSBuild 属性和目标） |
+| 本机 | 本机 |
+| 无 | 无文件夹 |
+| 全部 | 全部文件夹 |
+
+例如，以下行指示 `PackageA` 版本 1.1.0 或更高版本，以及 `PackageB` 版本 1.x 的依赖项。
+
+```xml
+<dependencies>
+    <dependency id="PackageA" version="1.1.0" />
+    <dependency id="PackageB" version="[1,2)" />
+</dependencies>
+```
+
+以下行指示相同包上的依赖项，但指定包括 `PackageA` 的 `contentFiles` 和 `build` 文件夹，以及除 `PackageB` 的 `native` 和 `compile` 文件夹以外的所有文件夹。
+
+```xml
+<dependencies>
+    <dependency id="PackageA" version="1.1.0" include="contentFiles, build" />
+    <dependency id="PackageB" version="[1,2)" exclude="native, compile" />
+</dependencies>
+```
+
+注意：使用 `nuget spec` 从项目创建 `.nuspec` 时，该项目中存在的依赖项会自动包含在生成的 `.nuspec` 文件中。
+
+### <a name="dependency-groups"></a>依赖项组
+
+版本 2.0+
+
+作为单个简单列表的替代方法，可使用 `<dependencies>` 中的 `<group>` 元素根据目标项目的框架配置文件指定依赖项。
+
+每个组都有一个名为 `targetFramework` 的特性，并包含零个或多个 `<dependency>` 元素。 当目标框架与项目的框架配置文件兼容时，将会一起安装这些依赖项。
+
+无 `targetFramework` 特性的 `<group>` 元素被用作依赖项的默认列表或回退列表。 有关确切的框架标识符，请参阅[目标框架](../reference/target-frameworks.md)。
+
+> [!Important]
+> 组格式不能与简单列表混合使用。
+
+以下示例显示了 `<group>` 元素的不同变体：
+
+```xml
+<dependencies>
+    <group>
+        <dependency id="RouteMagic" version="1.1.0" />
+    </group>
+
+    <group targetFramework="net40">
+        <dependency id="jQuery" />
+        <dependency id="WebActivator" />
+    </group>
+
+    <group targetFramework="sl30">
+    </group>
+</dependencies>
+```
+
+<a name="specifying-explicit-assembly-references"></a>
+
+## <a name="explicit-assembly-references"></a>显式程序集引用
+
+`<references>` 元素显式指定目标项目在使用包时应引用的程序集。 当此元素存在时，NuGet 仅对列出的程序集添加引用，而不会对包的 `lib` 文件夹中的任何其他程序集添加引用。
+
+例如，以下 `<references>` 元素指示 NuGet 仅对 `xunit.dll` 和 `xunit.extensions.dll` 添加引用，即使包中还有其他程序集：
+
+```xml
+<references>
+    <reference file="xunit.dll" />
+    <reference file="xunit.extensions.dll" />
+</references>
+```
+
+显式引用通常用于仅设计时程序集。 例如，在使用 [Code Contracts](/dotnet/framework/debug-trace-profile/code-contracts)（代码协定）时，协定程序集需要放在运行时程序集的旁边进行补充，以便 Visual Studio 能够找到它们，但协定程序集不需要被项目引用或复制到项目的 `bin` 文件夹。
+
+同样，显式引用可用于单元测试框架（如 XUnit），其工具程序集需要位于运行时程序集的旁边，但不需要包含为项目引用。
+
+### <a name="reference-groups"></a>引用组
+
+作为单个简单列表的替代方法，可使用 `<references>` 中的 `<group>` 元素根据目标项目的框架配置文件指定引用。
+
+每个组都有一个名为 `targetFramework` 的特性，并包含零个或多个 `<reference>` 元素。 当目标框架与项目的框架配置文件兼容时，会将引用添加到项目中。
+
+无 `targetFramework` 特性的 `<group>` 元素被用作引用的默认列表或回退列表。 有关确切的框架标识符，请参阅[目标框架](../reference/target-frameworks.md)。
+
+> [!Important]
+> 组格式不能与简单列表混合使用。
+
+以下示例显示了 `<group>` 元素的不同变体：
+
+```xml
+<references>
+    <group>
+    <reference file="a.dll" />
+    </group>
+
+    <group targetFramework="net45">
+        <reference file="b45.dll" />
+    </group>
+
+    <group targetFramework="netcore45">
+    <reference file="bcore45.dll" />
+    </group>
+</references>
+```
+
+<a name="specifying-framework-assembly-references-gac"></a>
+
+## <a name="framework-assembly-references"></a>Framework 程序集引用
+
+Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定计算机的全局程序集缓存 (GAC) 中。 通过在 `<frameworkAssemblies>` 元素中标识这些程序集，包可确保在项目尚未具有此类引用的情况下，将必需的引用添加到项目中。 当然，此类程序集不直接包含在包中。
+
+`<frameworkAssemblies>` 元素包含零个或多个 `<frameworkAssembly>` 元素，这些元素指定以下特性：
+
+| 特性 | 描述 |
+| --- | --- |
+| **assemblyName** | （必需）完全限定程序集名称。 |
+| **targetFramework** | （可选）指定此引用适用的目标框架。 如果省略，则表示该引用适用于全部框架。 有关确切的框架标识符，请参阅[目标框架](../reference/target-frameworks.md)。 |
+
+以下示例显示了对全部目标框架的 `System.Net` 的引用，以及对仅用于 .NET Framework 4.0 的 `System.ServiceModel` 的引用：
+
+```xml
+<frameworkAssemblies>
+    <frameworkAssembly assemblyName="System.Net"  />
+
+    <frameworkAssembly assemblyName="System.ServiceModel" targetFramework="net40" />
+</frameworkAssemblies>
+```
+
+<a name="specifying-files-to-include-in-the-package"></a>
+
+## <a name="including-assembly-files"></a>包含程序集文件
+
+如果遵循[创建包](../create-packages/creating-a-package.md)中介绍的约定，则不必在 `.nuspec` 文件中显式指定文件列表。 `nuget pack` 命令自动选取所需的文件。
+
+> [!Important]
+> 当包安装到项目中时，NuGet 自动将程序集引用添加到包的 DLL，不包括命名为 `.resources.dll` 的内容，因为它们被假定为本地化的附属程序集。 为此，请避免对包含基本包代码的文件使用 `.resources.dll`。
+
+若要绕过此自动行为，并显式控制包中包含的文件，请将 `<files>` 元素作为 `<package>` 的子元素（和 `<metadata>` 的同级元素），并使用单独的 `<file>` 元素标识每个文件。 例如:
+
+```xml
+<files>
+    <file src="bin\Debug\*.dll" target="lib" />
+    <file src="bin\Debug\*.pdb" target="lib" />
+    <file src="tools\**\*.*" exclude="**\*.log" />
+</files>
+```
+
+在 NuGet 2.x 及更早版本中，如果项目使用 `packages.config`，在安装包时，`<files>` 元素也用于包含不可变的内容文件。 使用 NuGet 3.3 + 和项目 PackageReference，`<contentFiles>`改为使用元素。 有关详细信息，请参阅下面的[包含内容文件](#including-content-files)。
+
+### <a name="file-element-attributes"></a>文件元素特性
+
+每个 `<file>` 元素指定以下特性：
+
+| 特性 | 描述 |
+| --- | --- |
+| **src** | 文件或要包含的文件位置，受 `exclude` 特性指定排除规则约束。 路径是相对于 `.nuspec` 文件的路径，除非指定了绝对路径。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
+| **target** | 放置源文件的包中文件夹的相对路径，必须以 `lib`、`content`、`build` 或 `tools` 开头。 请参阅[从基于约定的工作目录创建 .nuspec](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)。 |
+| **exclude** | 要从 `src` 位置排除的文件或文件模式的分号分隔列表。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
+
+### <a name="examples"></a>示例
+
+**单个程序集**
+
+    Source file:
+        library.dll
+
+    .nuspec entry:
+        <file src="library.dll" target="lib" />
+
+    Packaged result:
+        lib\library.dll
+
+**特定于目标框架的单个程序集**
+
+    Source file:
+        library.dll
+
+    .nuspec entry:
+        <file src="assemblies\net40\library.dll" target="lib\net40" />
+
+    Packaged result:
+        lib\net40\library.dll
+
+**使用通配符的 DLL 集**
+
+    Source files:
+        bin\release\libraryA.dll
+        bin\release\libraryB.dll
+
+    .nuspec entry:
+        <file src="bin\release\*.dll" target="lib" />
+
+    Packaged result:
+        lib\libraryA.dll
+        lib\libraryB.dll
+
+**适用于不同框架的 DLL**
+
+    Source files:
+        lib\net40\library.dll
+        lib\net20\library.dll
+
+    .nuspec entry (using ** recursive search):
+        <file src="lib\**" target="lib" />
+
+    Packaged result:
+        lib\net40\library.dll
+        lib\net20\library.dll
+
+**排除文件**
+
+    Source files:
+        \tools\*.bak
+        \tools\*.log
+        \tools\build\*.log
+
+    .nuspec entries:
+        <file src="tools\*.*" target="tools" exclude="tools\*.bak" />
+        <file src="tools\**\*.*" target="tools" exclude="**\*.log" />
+
+    Package result:
+        (no files)
+
+## <a name="including-content-files"></a>包含内容文件
+
+内容文件是包需要包含在项目中的不可变文件。 不可变文件指的是使用项目不会修改的文件。 内容文件示例包括：
+
+- 作为资源嵌入的图像
+- 已编译的源文件
+- 需要包含在项目的生成输出中的脚本
+- 需要包含在项目中，但不需要进行任何项目特定的更改的包的配置文件
+
+内容文件使用 `<files>` 元素包含在包中，并在 `target` 特性中指定 `content` 文件夹。 此类文件时使用 PackageReference，而是使用项目中安装此包，但是，将忽略`<contentFiles>`元素。
+
+为了最大限度地兼容使用项目，一个包最好在两个元素中指定内容文件。
+
+### <a name="using-the-files-element-for-content-files"></a>对内容文件使用文件元素
+
+对于内容文件，只需使用与程序集文件相同的格式，但应在 `target` 属性中将 `content` 指定为基本文件夹，如以下示例所示。
+
+**基本内容文件**
+
+    Source files:
+        css\mobile\style1.css
+        css\mobile\style2.css
+
+    .nuspec entry:
+        <file src="css\mobile\*.css" target="content\css\mobile" />
+
+    Packaged result:
+        content\css\mobile\style1.css
+        content\css\mobile\style2.css
+
+**具有目录结构的内容文件**
+
+    Source files:
+        css\mobile\style.css
+        css\mobile\wp7\style.css
+        css\browser\style.css
+
+    .nuspec entry:
+        <file src="css\**\*.css" target="content\css" />
+
+    Packaged result:
+        content\css\mobile\style.css
+        content\css\mobile\wp7\style.css
+        content\css\browser\style.css
+
+**特定于目标框架的内容文件**
+
+    Source file:
+        css\cool\style.css
+
+    .nuspec entry
+        <file src="css\cool\style.css" target="Content" />
+
+    Packaged result:
+        content\style.css
+
+**复制到名称中带点的文件夹的内容文件**
+
+在此情况下，NuGet 发现 `target` 中的扩展名与 `src` 中的扩展名不匹配，因此将 `target` 中名称的该部分作为文件夹：
+
+    Source file:
+        images\picture.png
+
+    .nuspec entry:
+        <file src="images\picture.png" target="Content\images\package.icons" />
+
+    Packaged result:
+        content\images\package.icons\picture.png
+
+**不具有扩展名的内容文件**
+
+若要包含不具有扩展名的文件，请使用 `*` 或 `**` 通配符：
+
+    Source file:
+        flags\installed
+
+    .nuspec entry:
+        <file src="flags\**" target="flags" />
+
+    Packaged result:
+        flags\installed
+
+**具有深层路径和深层目标的内容文件**
+
+在此情况下，由于源文件和目标文件的扩展名匹配，NuGet 假定目标是文件名而不是文件夹：
+
+    Source file:
+        css\cool\style.css
+
+    .nuspec entry:
+        <file src="css\cool\style.css" target="Content\css\cool" />
+        or:
+        <file src="css\cool\style.css" target="Content\css\cool\style.css" />
+
+    Packaged result:
+        content\css\cool\style.css
+
+**重命名包中的内容文件**
+
+    Source file:
+        ie\css\style.css
+
+    .nuspec entry:
+        <file src="ie\css\style.css" target="Content\css\ie.css" />
+
+    Packaged result:
+        content\css\ie.css
+
+**排除文件**
+
+    Source file:
+        docs\*.txt (multiple files)
+
+    .nuspec entry:
+        <file src="docs\*.txt" target="content\docs" exclude="docs\admin.txt" />
+        or
+        <file src="*.txt" target="content\docs" exclude="admin.txt;log.txt" />
+
+    Packaged result:
+        All .txt files from docs except admin.txt (first example)
+        All .txt files from docs except admin.txt and log.txt (second example)
+
+<a name="using-contentfiles-element-for-content-files"></a>
+
+### <a name="using-the-contentfiles-element-for-content-files"></a>对内容文件使用 contentFiles 元素
+
+*NuGet 4.0 + 与 PackageReference*
+
+默认情况下，包将内容放置在 `contentFiles` 文件夹中（见下文），`nuget pack` 使用默认特性将全部文件包含在该文件夹中。 在此情况下，根本没有必要在 `.nuspec` 中包含 `contentFiles` 节点。
+
+若要控制包含哪些文件，`<contentFiles>` 元素指定是 `<files>` 元素的集合，可标识包含的确切文件。
+
+这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件：
+
+| 特性 | 描述 |
+| --- | --- |
+| **include** | （必需）文件或要包含的文件位置，受 `exclude` 特性指定的排除规则约束。 路径是相对于 `.nuspec` 文件的路径，除非指定了绝对路径。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
+| **exclude** | 要从 `src` 位置排除的文件或文件模式的分号分隔列表。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
+| **buildAction** | 生成操作，用于分配到 MSBuild 的内容项（如 `Content`、`None`、`Embedded Resource`、`Compile` 等）。默认值为 `Compile`。 |
+| **copyToOutput** | 一个布尔值，用于指示是否将内容项复制到生成输出文件夹。 默认值为 false。 |
+| **flatten** | 一个布尔值，用于指示是将内容项复制到生成输出中的单个文件夹 (true)，还是保留包中的文件夹结构 (false)。 此标志仅适用时 copyToOutput 标志设置为 true。 默认值为 false。 |
+
+安装包时，NuGet 从上到下应用 `<contentFiles>` 的子元素。 如果多个条目与相同的文件匹配，那么应用全部条目。 如果相同特性发生冲突，则最上面的条目将替代靠下的条目。
+
+#### <a name="package-folder-structure"></a>包文件夹结构
+
+包项目应使用以下模式构建内容结构：
+
+    /contentFiles/{codeLanguage}/{TxM}/{any?}
+
+- `codeLanguages` 可以是 `cs`、`vb`、`fs`、`any` 或给定 `$(ProjectLanguage)` 的小写等效形式
+- `TxM` 是 NuGet 支持的任何合法目标框架名字对象（请参阅[目标框架](../reference/target-frameworks.md)）。
+- 任何文件夹结构都可以附加到此语法的末尾。
+
+例如:
+
+    Language- and framework-agnostic:
+        /contentFiles/any/any/config.xml
+
+    net45 content for all languages
+        /contentFiles/any/net45/config.xml
+
+    C#-specific content for net45 and up
+        /contentFiles/cs/net45/sample.cs
+
+空文件夹可以使用 `.` 来选择不提供特定语言和 TxM 组合的内容，例如：
+
+    /contentFiles/vb/any/code.vb
+    /contentFiles/cs/any/.
+
+#### <a name="example-contentfiles-section"></a>contentFiles 部分示例
+
+```xml
+<contentFiles>
+    <!-- Embed image resources -->
+    <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
+    <files include="any/any/images/ui.png" buildAction="EmbeddedResource" />
+
+    <!-- Embed all image resources under contentFiles/cs/ -->
+    <files include="cs/**/*.png" buildAction="EmbeddedResource" />
+
+    <!-- Copy config.xml to the root of the output folder -->
+    <files include="cs/uap/config/config.xml" buildAction="None" copyToOutput="true" flatten="true" />
+
+    <!-- Copy run.cmd to the output folder and keep the directory structure -->
+    <files include="cs/commands/run.cmd" buildAction="None" copyToOutput="true" flatten="false" />
+
+    <!-- Include everything in the scripts folder except exe files -->
+    <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />
+</contentFiles>
+```
+
+## <a name="example-nuspec-files"></a>.nuspec 文件示例
+
+**未指定依赖项或文件的简单 `.nuspec`**
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+    <id>sample</id>
+    <version>1.2.3</version>
+    <authors>Kim Abercrombie, Franck Halmaert</authors>
+    <description>Sample exists only to show a sample .nuspec file.</description>
+    <language>en-US</language>
+    <projectUrl>http://xunit.codeplex.com/</projectUrl>
+    <licenseUrl>http://xunit.codeplex.com/license</licenseUrl>
+    </metadata>
+</package>
+```
+
+**具有依赖项的 `.nuspec`**
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+    <id>sample</id>
+    <version>1.0.0</version>
+    <authors>Microsoft</authors>
+    <dependencies>
+        <dependency id="another-package" version="3.0.0" />
+        <dependency id="yet-another-package" version="1.0.0" />
+    </dependencies>
+    </metadata>
+</package>
+```
+
+**具有文件的 `.nuspec`**
+
+```xml
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+    <id>routedebugger</id>
+    <version>1.0.0</version>
+    <authors>Jay Hamlin</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Route Debugger is a little utility I wrote...</description>
+    </metadata>
+    <files>
+    <file src="bin\Debug\*.dll" target="lib" />
+    </files>
+</package>
+```
+
+**具有 Framework 程序集的 `.nuspec`**
+
+```xml
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+    <id>PackageWithGacReferences</id>
+    <version>1.0</version>
+    <authors>Author here</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+        A package that has framework assemblyReferences depending
+        on the target framework.
+    </description>
+    <frameworkAssemblies>
+        <frameworkAssembly assemblyName="System.Web" targetFramework="net40" />
+        <frameworkAssembly assemblyName="System.Net" targetFramework="net40-client, net40" />
+        <frameworkAssembly assemblyName="Microsoft.Devices.Sensors" targetFramework="sl4-wp" />
+        <frameworkAssembly assemblyName="System.Json" targetFramework="sl3" />
+    </frameworkAssemblies>
+    </metadata>
+</package>
+```
+
+在此示例中，为特定的项目目标安装了以下内容：
+
+- .NET4 -> `System.Web``System.Net`
+- .NET4 Client Profile -> `System.Net`
+- Silverlight 3 -> `System.Json`
+- Silverlight 4 -> `System.Windows.Controls.DomainServices`
+- WindowsPhone -> `Microsoft.Devices.Sensors`
