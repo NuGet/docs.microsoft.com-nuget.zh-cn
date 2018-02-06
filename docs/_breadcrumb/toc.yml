@@ -8,10 +8,10 @@
       items:
         - name: 快速入门
           tocHref: /nuget/quickstart/
-          topicHref: /nuget/quickstart/create-and-publish-a-package
+          topicHref: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
         - name: 参考线
           tocHref: /nuget/guides/
-          topicHref: /nuget/guides/install-nuget
+          topicHref: /nuget/guides/create-net-standard-packages-vs2017
         - name: 创建包
           tocHref: /nuget/create-packages/
           topicHref: /nuget/create-packages/overview-and-workflow
@@ -26,7 +26,7 @@
           topicHref: /nuget/tools/nuget-exe-cli-reference
         - name: 参考
           tocHref: /nuget/reference/
-          topicHref: /nuget/schema/nuspec
+          topicHref: /nuget/reference/nuspec
         - name: API
           tocHref: /nuget/api/
           topicHref: /nuget/api/overview
