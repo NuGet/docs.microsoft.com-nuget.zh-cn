@@ -13,10 +13,10 @@ ms.reviewer:
 - karann-msft
 - unniravindranathan
 ms.openlocfilehash: 4cb3f04954fac1b4a39284be187776ab4a19b364
-ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
+ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 02/02/2018
 ---
 # <a name="nugetserver"></a>NuGet.Server
 

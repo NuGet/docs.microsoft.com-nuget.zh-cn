@@ -13,10 +13,10 @@ ms.reviewer:
 - karann-msft
 - unniravindranathan
 ms.openlocfilehash: 7c1e457c034f239fbea4e75f24851ea38182a294
-ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
+ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 02/02/2018
 ---
 # <a name="an-overview-of-the-nuget-ecosystem"></a>NuGet 生态系统概述
 

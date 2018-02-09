@@ -13,10 +13,10 @@ ms.reviewer:
 - karann-msft
 - unniravindranathan
 ms.openlocfilehash: 71f4eca411d520630ca7d77165b8f03cd32af290
-ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
+ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 02/02/2018
 ---
 # <a name="creating-native-packages"></a>创建本机包
 
