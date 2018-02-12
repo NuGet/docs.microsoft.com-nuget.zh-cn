@@ -12,11 +12,11 @@ keywords: "dotnet.exe CLI, nuget.exe CLI, NuGet 客户端工具, NuGet 包管理
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 07ca66b44a981f7fcc108e1b4d97c0cf5e206a6f
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: ec8de83c9e05981016215e487888ab68a616d977
+ms.sourcegitcommit: dbcb872ec10430e1d761f34b851650e31c87a96d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="installing-nuget-client-tools"></a>安装 NuGet 客户端工具
 
@@ -59,7 +59,7 @@ NuGet CLI `nuget.exe` 是适用于 Windows 的命令行实用工具，可提供�
 > 可以使用 `nuget update -self` 将现有 nuget.exe 更新到最新版本。
 
 > [!Note]
-> `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe` 中始终提供推荐的最新 NuGet CLI。 为了实现与旧版持续集成系统的兼容性，以前的 URL `https://nuget.org/nuget.exe` 始终提供 2.8.6 CLI 工具。
+> `https://dist.nuget.org/win-x86-commandline/latest/nuget.exe` 中始终提供推荐的最新 NuGet CLI。 为了实现与旧版持续集成系统的兼容性，以前的 URL `https://nuget.org/nuget.exe` 当前提供 2.8.6 CLI 工具。 [此内容已弃用](https://github.com/NuGet/NuGetGallery/issues/5381)。
 
 ## <a name="visual-studio"></a>Visual Studio
 
