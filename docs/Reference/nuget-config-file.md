@@ -12,11 +12,11 @@ keywords: "NuGet.Config 文件, NuGet 配置引用, NuGet 配置选项"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9a183b67ae18f4fa5c042f1806f8abcc9b799b77
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: df602cb561a19f0eac085695de80db1fbaa1a313
+ms.sourcegitcommit: 33436d122873249dbb20616556cd8c6783f38909
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="nugetconfig-reference"></a>NuGet.Config 引用
 
@@ -48,7 +48,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 包含杂项配置设置，可使用 [`nuget config` 命令](../tools/cli-ref-config.md)设置。
 
-注意：`dependencyVersion` 和 `repositoryPath` 仅适用于使用 `packages.config` 的项目。 `globalPackagesFolder`仅适用于使用 PackageReference 格式的项目。
+注意：`dependencyVersion` 和 `repositoryPath` 仅适用于使用 `packages.config` 的项目。 `globalPackagesFolder` 仅适用于使用 PackageReference 格式的项目。
 
 | 键 | “值” |
 | --- | --- |
@@ -131,7 +131,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 ### <a name="packagesources"></a>packageSources
 
-列出所有已知包源。
+列出所有已知包源。 在还原操作期间和与使用 PackageReference 格式任何项目，将忽略顺序。 NuGet 遵循的顺序的源安装和使用的项目与更新操作`packages.config`。
 
 | 键 | “值” |
 | --- | --- |
