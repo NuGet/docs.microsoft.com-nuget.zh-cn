@@ -16,17 +16,17 @@ keywords:
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 08/15/2017
+ms.date: 02/12/2018
 ms.topic: hub-page
 ms.prod: nuget
 ms.technology: 
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: 58cd4b41c555b38334b10b3bb5aa2e22a430a5d4
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 901327a37f378e16210d4e0272fa3d5638af9bff
+ms.sourcegitcommit: 33436d122873249dbb20616556cd8c6783f38909
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/12/2018
 ---
 <div id="main" class="v2">
 <div class="container">
@@ -58,7 +58,7 @@ ms.lasthandoff: 02/01/2018
                             </a>
                         </li>
                         <li>
-                            <a href="quickstart/use-a-package.md">
+                            <a href="quickstart/install-and-use-a-package-using-the-dotnet-cli.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -68,8 +68,8 @@ ms.lasthandoff: 02/01/2018
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>快速入门</h3>
-                                            <p>通过创建简单包和使用包的重点演练，体验 NuGet。</p>
+                                            <h3>快速入门：使用包</h3>
+                                            <p>了解如何在项目中安装和使用 NuGet 包（演练适用于 .Net CLI 和 Visual Studio）。</p>
                                         </div>
                                     </div>
                                 </div>
@@ -77,18 +77,18 @@ ms.lasthandoff: 02/01/2018
                             </a>
                         </li>
                         <li>
-                            <a href="install-nuget-client-tools.md">
+                            <a href="quickstart/create-and-publish-a-package-using-the-dotnet-cli.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-guides.svg" alt="Guides: experience NuGet's tools and capabilities with installation and package creation walkthroughs." />
+                                                <img src="media/hub/nuget-get-started-guides.svg" alt="Guides: experience NuGet's tools and capabilities for creating a package." />
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>参考线</h3>
-                                            <p>通过安装和包创建演练，体验 NuGet 的工具和功能。</p>
+                                            <h3>快速入门：创建包</h3>
+                                            <p>尝试使用 NuGet 工具和功能创建包（演练适用于 .Net CLI 和 Visual Studio）。</p>
                                         </div>
                                     </div>
                                 </div>
