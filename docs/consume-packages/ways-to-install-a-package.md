@@ -3,7 +3,7 @@ title: "安装 NuGet 包的方式 | Microsoft 文档"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 01/30/2018
+ms.date: 02/12/2018
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: 
@@ -12,11 +12,11 @@ keywords: "安装 NuGet, NuGet 包使用, 安装 NuGet 包, NuGet 包引用"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9e48bbe813168e773bc46b7fe25af29785ff75df
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 3bae03e148a366388c10d08e83c89dac6ff56d06
+ms.sourcegitcommit: 33436d122873249dbb20616556cd8c6783f38909
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="different-ways-to-install-a-nuget-package"></a>安装 NuGet 包的不同方式
 
@@ -35,7 +35,10 @@ ms.lasthandoff: 02/01/2018
 
 1. 获取包：
     - 检查请求的包是否已存在于缓存中（请参阅[管理 NuGet 缓存](managing-the-nuget-cache.md)）。
-    - 如果包不在缓存中，请尝试从配置文件中列出的源下载包，从列表中的第一个开始。 此行为允许你在 nuget.org 上查找包之前使用专用包源（请参阅[配置 NuGet 行为](configuring-nuget-behavior.md)）。
+    - 如果包不在缓存中，请尝试从[配置文件](Configuring-NuGet-Behavior.md)中列出的源下载包。
+      - 对于使用 `packages.config` 引用格式的项目，NuGet 会使用配置中的源顺序。
+      - 对于使用 PackageReference 格式的项目，NuGet 会先检查本地文件夹的源，再检查网络共享中的源，最后检查 HTTP (Internet) 源。
+      - 一般情况下，NuGet 检查源的顺序不具有特别意义，因为具有特定标识符和版本号的任意给定包在找到的源方面完全相同。
     - 如果该包是从其中一个源成功获取的，NuGet 会将其添加到缓存中。 否则，安装将失败。
 
 1. 将该包扩展到项目中。
