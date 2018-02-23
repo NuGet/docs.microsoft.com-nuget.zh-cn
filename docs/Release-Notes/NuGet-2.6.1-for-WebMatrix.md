@@ -13,23 +13,23 @@ keywords: "NuGet 2.6.1 WebMatrix 发行说明、 bug 修复、 已知的问题�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6150fc34dd05c2e7ce132d2d6744b823daeb1a07
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 633b71011dd1bc897ad95fd706337cef3aeef34c
+ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="nuget-261-for-webmatrix-release-notes"></a>NuGet 2.6.1 for WebMatrix 发行说明
 
 [NuGet 2.6 发行说明](../release-notes/nuget-2.6.md) | [NuGet 2.7 发行说明](../release-notes/nuget-2.7.md)
 
-NuGet 团队在 2014 年 3 月 26 日为 WebMatrix 中发布更新的 NuGet 包管理器扩展。  此更新可以从安装[WebMatrix 扩展库](http://extensions.webmatrix.com/packages/NuGetPackageManager/)使用以下步骤：
+NuGet 团队在 2014 年 3 月 26 日为 WebMatrix 中发布更新的 NuGet 包管理器扩展。  此更新可以从安装[WebMatrix 扩展库](https://blogs.iis.net/webmatrix/retiring-the-webmatrix-extensions-gallery)使用以下步骤：
 
 1. 打开 WebMatrix 3
-2. 单击主页功能区中的扩展图标
-3. 选择更新选项卡
-4. 单击以更新到 2.6.1 的 NuGet 包管理器
-6. 关闭并重新启动 WebMatrix 3
+1. 单击主页功能区中的扩展图标
+1. 选择更新选项卡
+1. 单击以更新到 2.6.1 的 NuGet 包管理器
+1. 关闭并重新启动 WebMatrix 3
 
 ## <a name="notable-changes"></a>重大更改
 

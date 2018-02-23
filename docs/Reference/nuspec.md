@@ -13,11 +13,11 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 56cb9d5b40bbfbd722e611e0e86945eddbe9d19a
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: c52d0a7c0da507cb9688c8a7b2c4eaf54a8ca5c2
+ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -94,7 +94,7 @@ ms.lasthandoff: 02/01/2018
 | **owners** | 使用 nuget.org 上的配置文件名称的包创建者的逗号分隔列表。这通常和 `authors` 中的列表相同，将包上传到 nuget.org 时被忽略。请参阅[在 nuget.org 上管理包所有者](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)。 |
 | **projectUrl** | 包的主页 URL，通常显示在 UI 中以及 nuget.org 中。 |
 | **licenseUrl** | 包的许可证 URL，通常显示在 UI 和 nuget.org 中。 |
-| **iconUrl** | 64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的图像，可使用原始文件 URL，如 `https://github.com/<username>/<repository>/raw/<branch>/<logo.png>`。 |
+| **iconUrl** | 64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的映像，可使用原始文件 URL 喜欢*https://github.com/\<用户名\>/\<存储库\>/raw/\<分支\>/ \<logo.png\>*。 |
 | **requireLicenseAcceptance** | 一个布尔值，用于指定客户端是否必须提示使用者接受包许可证后才可安装包。 |
 | **developmentDependency** | (2.8+) 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。 |
 | **summary** | 用于 UI 显示的包的简要说明。 如果省略，则使用 `description` 的截断版本。 |
@@ -108,7 +108,7 @@ ms.lasthandoff: 02/01/2018
 
 | 元素 | 描述 |
 | --- | --- |
-**packageTypes** | *（3.5 +)*的零个或多集合`<packageType>`元素，用于指定如果不是传统的依赖项包的包的类型。 每个 packageType 都具有 name 和 version 特性。 请参阅[设置包类型](../create-packages/creating-a-package.md#setting-a-package-type)。 |
+**packageTypes** | *(3.5+)* 如果不是传统的依赖项包，则为指定包类型的包括零个或多个 `<packageType>` 元素的集合。 每个 packageType 都具有 name 和 version 特性。 请参阅[设置包类型](../create-packages/creating-a-package.md#setting-a-package-type)。 |
 | **dependencies** | 零个或多个 `<dependency>` 元素的集合，用来指定包的依赖项。 每个 dependency 都具有 id、version、include (3.x+) 和 exclude (3.x+) 特性。 请参阅下面的[依赖项](#dependencies)。 |
 | **frameworkAssemblies** | (1.2+) 零个或多个 `<frameworkAssembly>` 元素的集合，用来标识此包要求的 .NET Framework 程序集引用，从而确保引用添加到使用该包的项目。 每个 frameworkAssembly 都具有 assemblyName 和 targetFramework 特性。 请参阅下面的[指定 Framework 程序集引用 GAC](#specifying-framework-assembly-references-gac)。 |
 | **references** | (1.5+) 零个或多个 `<reference>` 元素的集合，用来指定包的 `lib` 文件夹中添加为项目引用的程序集。 每个 reference 都具有 file 特性。 `<references>` 也可包含具有 targetFramework 特性的 `<group>` 元素，然后包含 `<reference>` 元素。 如果省略，则包含 `lib` 中的全部引用。 请参阅下面的[指定显式程序集引用](#specifying-explicit-assembly-references)。 |
@@ -328,7 +328,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 </files>
 ```
 
-在 NuGet 2.x 及更早版本中，如果项目使用 `packages.config`，在安装包时，`<files>` 元素也用于包含不可变的内容文件。 使用 NuGet 3.3 + 和项目 PackageReference，`<contentFiles>`改为使用元素。 有关详细信息，请参阅下面的[包含内容文件](#including-content-files)。
+在 NuGet 2.x 及更早版本中，如果项目使用 `packages.config`，在安装包时，`<files>` 元素也用于包含不可变的内容文件。 通过 NuGet 3.3+ 和项目 PackageReference，将改为使用 `<contentFiles>` 元素。 有关详细信息，请参阅下面的[包含内容文件](#including-content-files)。
 
 ### <a name="file-element-attributes"></a>文件元素特性
 
@@ -413,7 +413,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 - 需要包含在项目的生成输出中的脚本
 - 需要包含在项目中，但不需要进行任何项目特定的更改的包的配置文件
 
-内容文件使用 `<files>` 元素包含在包中，并在 `target` 特性中指定 `content` 文件夹。 此类文件时使用 PackageReference，而是使用项目中安装此包，但是，将忽略`<contentFiles>`元素。
+内容文件使用 `<files>` 元素包含在包中，并在 `target` 特性中指定 `content` 文件夹。 但是，使用 PackageReference（而不是使用 `<contentFiles>` 元素）将包安装到项目中时，将忽略这些文件。
 
 为了最大限度地兼容使用项目，一个包最好在两个元素中指定内容文件。
 
@@ -530,7 +530,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 
 ### <a name="using-the-contentfiles-element-for-content-files"></a>对内容文件使用 contentFiles 元素
 
-*NuGet 4.0 + 与 PackageReference*
+*NuGet 4.0+ 与 PackageReference*
 
 默认情况下，包将内容放置在 `contentFiles` 文件夹中（见下文），`nuget pack` 使用默认特性将全部文件包含在该文件夹中。 在此情况下，根本没有必要在 `.nuspec` 中包含 `contentFiles` 节点。
 
@@ -544,7 +544,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 | **exclude** | 要从 `src` 位置排除的文件或文件模式的分号分隔列表。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 | **buildAction** | 生成操作，用于分配到 MSBuild 的内容项（如 `Content`、`None`、`Embedded Resource`、`Compile` 等）。默认值为 `Compile`。 |
 | **copyToOutput** | 一个布尔值，用于指示是否将内容项复制到生成输出文件夹。 默认值为 false。 |
-| **flatten** | 一个布尔值，用于指示是将内容项复制到生成输出中的单个文件夹 (true)，还是保留包中的文件夹结构 (false)。 此标志仅适用时 copyToOutput 标志设置为 true。 默认值为 false。 |
+| **flatten** | 一个布尔值，用于指示是将内容项复制到生成输出中的单个文件夹 (true)，还是保留包中的文件夹结构 (false)。 此标志仅在 copyToOutput 标志设置为 true 时才有效。 默认值为 false。 |
 
 安装包时，NuGet 从上到下应用 `<contentFiles>` 的子元素。 如果多个条目与相同的文件匹配，那么应用全部条目。 如果相同特性发生冲突，则最上面的条目将替代靠下的条目。
 

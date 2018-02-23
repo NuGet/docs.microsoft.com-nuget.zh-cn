@@ -11,17 +11,17 @@ description: "NuGet 包和还原可作为 MSBuild 目标直接用于 NuGet 4.0+�
 keywords: "NuGet 和 MSBuild, NuGet 包目标, NuGet 还原目标"
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: 6c488f49e12b014e7bd197d57041745387a4d7b4
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 4d448af3d31e0907cba223c0ccec55604e94f055
+ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
 NuGet 4.0+
 
-借助 PackageReference 格式中，NuGet 4.0 + 可以存储直接在项目文件，而无需使用单独内的所有清单元数据`.nuspec`文件。
+使用 PackageReference 格式，NuGet 4.0+ 可以将所有清单元数据直接存储在项目文件中，而不是使用单独的 `.nuspec` 文件。
 
 如下所述，对于 MSBuild 15.1+，NuGet 还是具有 `pack` 目标和 `restore` 目标的一等 MSBuild 公民。 借助这些目标，你可以像使用任何其他 MSBuild 任务或目标一样使用 NuGet。 （对于 Nuget 3.x 及更早版本，通过 NuGet CLI 使用 [pack](../tools/cli-ref-pack.md) 和 [restore](../tools/cli-ref-restore.md) 命令。）
 
@@ -42,7 +42,7 @@ NuGet 4.0+
 
 ## <a name="pack-target"></a>包目标
 
-当使用的包目标，也就是说， `msbuild /t:pack`，MSBuild 项目文件从绘制其输入。 下表描述了可以添加到在第一个项目文件的 MSBuild 属性`<PropertyGroup>`节点。 在 Visual Studio 2017 及更高版本中，通过右键单击项目并选择上下文菜单上的“编辑 {project_name}”，即可轻松进行这些编辑。 为方便起见，表由 [`.nuspec` 文件](../reference/nuspec.md)中的等效属性组织。
+如果使用包目标，即 `msbuild /t:pack`，MSBuild 会从项目文件中描述其输入。 下表描述了可以添加到项目文件第一个 `<PropertyGroup>` 节点中的 MSBuild 属性。 在 Visual Studio 2017 及更高版本中，通过右键单击项目并选择上下文菜单上的“编辑 {project_name}”，即可轻松进行这些编辑。 为方便起见，表由 [`.nuspec` 文件](../reference/nuspec.md)中的等效属性组织。
 
 请注意，`.nuspec` 的 `Owners` 和 `Summary` 属性不受 MSBuild 支持。
 
@@ -50,8 +50,8 @@ NuGet 4.0+
 |--------|--------|--------|--------|
 | Id | PackageId | AssemblyName | MSBuild 的 $(AssemblyName) |
 | 版本 | PackageVersion | 版本 | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
-| VersionPrefix | PackageVersionPrefix | 空 | 设置 PackageVersion 覆盖 PackageVersionPrefix |
-| VersionSuffix | PackageVersionSuffix | 空 | MSBuild 的 $(VersionSuffix)。 设置 PackageVersion 覆盖 PackageVersionSuffix |
+| VersionPrefix | PackageVersionPrefix | 空 | 设置 PackageVersion 会覆盖 PackageVersionPrefix |
+| VersionSuffix | PackageVersionSuffix | 空 | MSBuild 的 $(VersionSuffix)。 设置 PackageVersion 会覆盖 PackageVersionSuffix |
 | 作者 | 作者 | 当前用户的用户名 | |
 | Owners | 不可用 | NuSpec 中不存在 | |
 | 标题 | 标题 | PackageId| |
@@ -63,8 +63,10 @@ NuGet 4.0+
 | IconUrl | PackageIconUrl | 空 | |
 | Tags | PackageTags | 空 | 使用分号分隔标记。 |
 | ReleaseNotes | PackageReleaseNotes | 空 | |
-| RepositoryUrl | RepositoryUrl | 空 | |
-| RepositoryType | RepositoryType | 空 | |
+| 存储库/Url | RepositoryUrl | 空 | 用于克隆或检索源代码存储库 URL。 示例： *https://github.com/NuGet/NuGet.Client.git* |
+| 存储库/类型 | RepositoryType | 空 | 存储库类型。 示例： *git*， *tfs*。 |
+| 存储库/分支 | RepositoryBranch | 空 | 可选存储库分支信息。 *RepositoryUrl*还必须指定要包含此属性。 示例： *master* (NuGet 4.7.0+) |
+| 存储库/提交 | RepositoryCommit | 空 | 针对构建的可选的存储库提交或变更集以指示哪些源包。 *RepositoryUrl*还必须指定要包含此属性。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | 摘要 | 不支持 | | |
 
@@ -90,6 +92,8 @@ NuGet 4.0+
 - IsTool
 - RepositoryUrl
 - RepositoryType
+- RepositoryBranch
+- RepositoryCommit
 - NoPackageAnalysis
 - MinClientVersion
 - IncludeBuildOutput
@@ -170,7 +174,7 @@ NuGet 4.0+
 其他可在任何上述项上设置的特定于包的元数据包括 ```<PackageCopyToOutput>``` 和 ```<PackageFlatten>```，后者在输出 nuspec 中的 ```contentFiles``` 条目上设置 ```CopyToOutput``` 和 ```Flatten``` 值。
 
 > [!Note]
-> 除了内容项`<Pack>`和`<PackagePath>`还可以在编译、 EmbeddedResource、 隐藏、 页、 资源、 初始屏幕、 DesignData、 DesignDataWithDesignTimeCreateableTypes 生成操作的文件上设置元数据CodeAnalysisDictionary、 AndroidAsset、 AndroidResource、 BundleResource 或 None。
+> 除了“Content”项，`<Pack>` 和 `<PackagePath>` 元数据还可以在具有 Compile、EmbeddedResource、ApplicationDefinition、Page、Resource、SplashScreen、DesignData、DesignDataWithDesignTimeCreateableTypes、CodeAnalysisDictionary、AndroidAsset、AndroidResource、BundleResource 或 None 生成操作的文件上进行设置。
 >
 > 使用通配模式时，对于将包的文件名追加到包路径，包路径必须以文件夹分隔符结尾，否则包路径将被视为包括文件名的完整路径。
 
