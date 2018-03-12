@@ -11,11 +11,11 @@ description: "NuGet 包和还原可作为 MSBuild 目标直接用于 NuGet 4.0+�
 keywords: "NuGet 和 MSBuild, NuGet 包目标, NuGet 还原目标"
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: 4d448af3d31e0907cba223c0ccec55604e94f055
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.openlocfilehash: 798b3550718294072d86b6e4827ec5017178d2cc
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -55,7 +55,7 @@ NuGet 4.0+
 | 作者 | 作者 | 当前用户的用户名 | |
 | Owners | 不可用 | NuSpec 中不存在 | |
 | 标题 | 标题 | PackageId| |
-| 描述 | 描述 | “包描述” | |
+| 描述 | PackageDescription | “包描述” | |
 | Copyright | Copyright | 空 | |
 | requireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
 | LicenseUrl | PackageLicenseUrl | 空 | |
@@ -222,6 +222,9 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 1. 运行还原
 1. 下载包
 1. 编写资产文件、目标和属性
+
+> [!Note]
+> `restore` MSBuild 目标仅适用于项目使用`PackageReference`项，并不会还原使用引用的包`packages.config`文件。
 
 ### <a name="restore-properties"></a>还原属性
 

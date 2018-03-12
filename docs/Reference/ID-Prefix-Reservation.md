@@ -13,15 +13,15 @@ ms.reviewer:
 - ananguar
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: bee215fcc88b03dbdde6c15d1583898bdf205952
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: f74ea3c772a129f4b9cd286a77cf3e88eba2d33b
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="package-id-prefix-reservation"></a>包 ID 前缀保留
 
-包所有者是可以保留，并通过保留 ID 前缀来保护其标识。 包使用者会提供其他信息时使用包，它们使用的包不在其标识属性欺骗性。 
+包所有者可以保留，并通过保留 ID 前缀来保护其标识。 包使用者会提供其他信息时使用包，它们使用的包不在其标识属性欺骗性。 
 
 [nuget.org](https://www.nuget.org/)和 Visual Studio 2017 15.4 或更高版本的包，只要包与匹配的保留的 ID 提交由所有者具有保留的包 ID 前缀，前缀的命名模式显示可视的指示器。 下引用介绍 ID 前缀保留的需要，以及如何所有者可以将应用 ID 前缀。
 

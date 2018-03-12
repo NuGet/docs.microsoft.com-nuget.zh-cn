@@ -12,11 +12,11 @@ keywords: "NuGet.Config 文件, NuGet 配置引用, NuGet 配置选项"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: df602cb561a19f0eac085695de80db1fbaa1a313
-ms.sourcegitcommit: 33436d122873249dbb20616556cd8c6783f38909
+ms.openlocfilehash: c76ebcb06adc5e5b862647de6b6f4e19bde87b91
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="nugetconfig-reference"></a>NuGet.Config 引用
 
@@ -87,7 +87,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 ## <a name="packagerestore-section"></a>packageRestore 节
 
-*2.7+ 中已忽略*
+*忽略在所有当前版本 （2.7 +）*
 
 在生成期间控制包还原。
 
