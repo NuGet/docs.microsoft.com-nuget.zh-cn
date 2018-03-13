@@ -26,6 +26,7 @@
 ## [预发行包](create-packages/prerelease-packages.md)
 ## [本机包](create-packages/native-packages.md)
 ## [符号包](create-packages/symbol-packages.md)
+## [给包签名](create-packages/sign-a-package.md)
 ## [发布包](create-packages/publish-a-package.md)
 ## 参考线
 ### [创建 UWP 包](guides/create-uwp-packages.md)
@@ -51,9 +52,11 @@
 ### [push](tools/cli-ref-push.md)
 ### [restore](tools/cli-ref-restore.md)
 ### [setapikey](tools/cli-ref-setapikey.md)
+### [sign](tools/cli-ref-sign.md)
 ### [sources](tools/cli-ref-sources.md)
 ### [spec](tools/cli-ref-spec.md)
 ### [update](tools/cli-ref-update.md)
+### [verify](tools/cli-ref-verify.md)
 ### [环境变量](tools/cli-ref-environment-variables.md)
 ## [包管理器 UI](tools/package-manager-ui.md)
 ## [包管理器控制台](tools/package-manager-console.md)
@@ -79,6 +82,7 @@
 ## [错误和警告](reference/errors-and-warnings.md)
 ## [ID 前缀保留](reference/id-prefix-reservation.md)
 ## [NuGet 客户端 SDK](reference/nuget-client-sdk.md)
+## [签名包引用](reference/signed-packages-reference.md)
 ## 扩展性
 ### [适用于 Visual Studio 的 NuGet 凭据提供程序](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [nuget.exe 凭据提供程序](reference/extensibility/nuget-exe-credential-providers.md)
@@ -108,9 +112,9 @@
 ## [生态系统](policies/ecosystem.md)
 ## [争议的解决](policies/dispute-resolution.md)
 ## [删除包](policies/deleting-packages.md)
-# [GitHub 存储库](https://github.com/NuGet)
 # 发行说明
 ## [已知问题](release-notes/known-issues.md)
+## [NuGet 4.6 RTM](release-notes/NuGet-4.6-RTM.md)
 ## [NuGet 4.5 RTM](release-notes/NuGet-4.5-RTM.md)
 ## [NuGet 4.4 RTM](release-notes/NuGet-4.4-RTM.md)
 ## [NuGet 4.3 RTM](release-notes/NuGet-4.3-RTM.md)
