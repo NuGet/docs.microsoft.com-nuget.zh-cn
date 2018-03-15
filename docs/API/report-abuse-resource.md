@@ -12,15 +12,15 @@ ms.topic: reference
 ms.prod: nuget
 ms.technology: 
 description: "报告滥用行为 URL 模板允许客户端在其用户界面中显示的报告滥用行为链接。"
-keywords: "NuGet API 报告滥用行为、 NuGet API 文件合规、 NuGet.org 报表 URL 模板"
+keywords: "NuGet API 报告滥用行为、 NuGet API 文件合规、 nuget.org 报表 URL 模板"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: c12be294c71547fbce421c72aa091e0eee15aacd
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: efbe5704e6e6028f9382fea3fe5ec453f573a2e9
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="report-abuse-url-template"></a>报告滥用行为 URL 模板
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 02/02/2018
 @type 值                       | 说明
 --------------------------------- | -----
 ReportAbuseUriTemplate/3.0.0-beta | 初始版本
-ReportAbuseUriTemplate/3.0.0-rc   | 别名`ReportAbuseUriTemplate/3.0.0-beta`
+ReportAbuseUriTemplate/3.0.0-rc   | 别名 `ReportAbuseUriTemplate/3.0.0-beta`
 
 ## <a name="url-template"></a>URL 模板
 
@@ -58,7 +58,7 @@ name        | 类型    | 必需 | 说明
 `{id}`      | 字符串  | 否       | 将包 ID 与报表有关的滥用行为
 `{version}` | 字符串  | 否       | 包版本到有关报告滥用行为
 
-`{id}`和`{version}`由服务器实施解释的值必须是区分大小 insenstive 和对版本进行了规范化是否不敏感。
+`{id}`和`{version}`由服务器实施解释的值必须是区分大小写和对版本进行了规范化是否不敏感。
 
 例如，nuget.org 的报告滥用行为模板类似如下所示：
 

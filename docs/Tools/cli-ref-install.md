@@ -12,11 +12,11 @@ keywords: "nuget 安装引用，安装包命令"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9e824b08486704371eebefb964f86315d82fc222
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 8d5f53c833fb42c9fe37d0629eab33e8f0bc70d7
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-command-nuget-cli"></a>安装命令 (NuGet CLI)
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/14/2018
 > [!Tip]
 > 若要下载的项目上下文之外直接程序包，请访问包的页面上[nuget.org](https://www.nuget.org)和选择**下载**链接。
 
-如果未不指定任何源，这些文件中列出全局配置， `%APPDATA%\NuGet\NuGet.Config`，使用。 请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)有关其他详细信息。
+如果未不指定任何源，这些文件中列出全局配置， `%APPDATA%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux) 使用。 请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)有关其他详细信息。
 
 如果未不指定任何特定的包，`install`安装在项目中列出的所有包`packages.config`文件，使它类似于[ `restore` ](cli-ref-restore.md)。
 
@@ -47,7 +47,7 @@ nuget install <packageID | configFilePath> [options]
 
 | 选项 | 描述 |
 | --- | --- |
-| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， *%AppData%\NuGet\NuGet.Config*使用。 |
+| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
 | DependencyVersion | *（4.4 +)*指定特定版本，重写默认依赖项解析行为。 |
 | DisableParallelProcessing | 禁用并行安装多个包。 |
 | ExcludeVersion | 将包安装到名为仅的包名称和不的版本号的文件夹。 |

@@ -12,11 +12,11 @@ keywords: "nuget 镜像引用，镜像命令"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 80b8f9a3b74030ffd3f1c7b784204d98be67d684
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 0c1969cc04b2e2cead5e9dadf9739fdabdf65f6c
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="mirror-command-nuget-cli"></a>镜像命令 (NuGet CLI)
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 02/14/2018
 镜像包和到目标存储库及其依赖项从指定的源存储库。
 
 > [!NOTE]
-> 若要在 3.2 之前启用 NuGet 版本为此命令，请转到[https://nuget.codeplex.com/releases](https://nuget.codeplex.com/releases)，选择最新稳定版本，下载`NuGet.ServerExtensions.dll`和`Nuget-Signed.exe`到你的本地磁盘和重命名`Nuget-Signed.exe`到`nuget.exe`.
+> 若要在 3.2 之前启用 NuGet 版本为此命令，请转到[ https://nuget.codeplex.com/releases ](https://nuget.codeplex.com/releases)，选择最新稳定版本，下载`NuGet.ServerExtensions.dll`和`Nuget-Signed.exe`到你的本地磁盘和重命名`Nuget-Signed.exe`到`nuget.exe`。
 
 ## <a name="usage"></a>用法
 
@@ -43,12 +43,12 @@ nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [op
 
 | 选项 | 描述 |
 | --- | --- |
-| ApiKey | 目标存储库的 API 密钥。 如果不存在，请在指定某一*%AppData%\NuGet\NuGet.Config*使用。 |
+| ApiKey | 目标存储库的 API 密钥。 如果不存在，请在配置文件中指定使用一个 (`%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux))。 |
 | 帮助 | 显示的帮助命令的信息。 |
 | NoCache | 防止 NuGet 使用从本地计算机缓存的包。 |
 | Noop | 记录操作即告完成的内容，但不会执行操作;假定推送操作的成功。 |
 | 预发行版 | 在镜像的操作中包含预发行程序包。 |
-| 源 | 要镜像的包源的列表。 如果不指定任何源，则在定义*%AppData%\NuGet\NuGet.Config*使用，如果未指定任何默认为 nuget.org。 |
+| 源 | 要镜像的包源的列表。 如果未不指定任何源，在定义的配置文件 （请参阅上面的 ApiKey） 使用，如果未指定任何默认为 nuget.org。 |
 | 超时 | 指定超时，以秒为单位，以便将推送到服务器。 默认值为 300 秒 （5 分钟）。 |
 | 版本 | 要安装的包的版本。 如果未指定，正在镜像的最新版本。 |
 

@@ -12,17 +12,17 @@ keywords: "nuget 列表引用包列表的命令"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 5a1f68aaffd26a0f903aa3a7a4a450a0121191c3
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 7e0945b9e64a15a839f62bde0a0ef8f3d83335d4
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="list-command-nuget-cli"></a>(NuGet CLI) 中的列表命令
 
 **适用于：**包消耗、 发布&bullet;**受支持的版本：**所有
 
-显示从给定的源的包的列表。 如果未不指定任何源，在全局配置文件中，定义所有源`%AppData%\NuGet\NuGet.Config`，使用。 如果`NuGet.Config`然后指定任何源`list`使用默认的源 (nuget.org)。
+显示从给定的源的包的列表。 如果未不指定任何源，在全局配置文件中，定义所有源`%AppData%\NuGet\NuGet.Config`(Windows) 或`~/.nuget/NuGet/NuGet.Config`，使用。 如果`NuGet.Config`然后指定任何源`list`使用默认的源 (nuget.org)。
 
 ## <a name="usage"></a>用法
 
@@ -30,14 +30,14 @@ ms.lasthandoff: 02/02/2018
 nuget list [search terms] [options]
 ```
 
-其中可选的搜索词将筛选显示的列表。 搜索条款将应用到的包、 标记和包说明的名称。
+其中可选的搜索词将筛选显示的列表。 搜索条款将应用到的包、 标记和包说明的名称，就像它们在 nuget.org 上使用它们时。
 
 ## <a name="options"></a>选项
 
 | 选项 | 描述 |
 | --- | --- |
 | AllVersions | 列出所有版本的包。 默认情况下，显示仅最新的包版本。 |
-| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， *%AppData%\NuGet\NuGet.Config*使用。 |
+| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
 | ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助命令的信息。 |
 | IncludeDelisted | *（3.2 +)*显示未列出的程序包。 |
@@ -53,5 +53,7 @@ nuget list [search terms] [options]
 ```cli
 nuget list
 
-nuget list -Verbosity detailed -AllVersions
+nuget list chinese korean -Verbosity detailed
+
+nuget list couchbase -AllVersions
 ```

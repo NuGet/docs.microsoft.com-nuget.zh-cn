@@ -12,11 +12,11 @@ keywords: "nuget 推送引用，推送命令"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: df8ef42f650a20b92a281fff3e597ac8d484544e
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 095e81406df3db5fbfc6c5202362894b2c6d7cf8
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="push-command-nuget-cli"></a>推送命令 (NuGet CLI)
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/14/2018
 
 推送到包源的包，将其发布。
 
-NuGet 的默认配置通过加载获取`%AppData%\NuGet\NuGet.Config`，然后加载任何`Nuget.Config`或`.nuget\Nuget.Config`文件从驱动器的根目录开始和结束当前目录中 (请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md))
+NuGet 的默认配置通过加载获取`%AppData%\NuGet\NuGet.Config`(Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux)，然后加载任何`Nuget.Config`或`.nuget\Nuget.Config`文件从驱动器的根目录开始和结束当前目录中 (请参阅[配置NuGet 行为](../consume-packages/configuring-nuget-behavior.md))
 
 ## <a name="usage"></a>用法
 
@@ -41,8 +41,8 @@ nuget push <packagePath> [options]
 
 | 选项 | 描述 |
 | --- | --- |
-| ApiKey | 目标存储库的 API 密钥。 如果不存在，请在指定某一*%AppData%\NuGet\NuGet.Config*使用。 |
-| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， *%AppData%\NuGet\NuGet.Config*使用。 |
+| ApiKey | 目标存储库的 API 密钥。 如果不存在，则使用在配置文件中指定。 |
+| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
 | DisableBuffering | 禁用时将推送到的 http （s） 服务器以减少内存使用情况进行缓冲。 注意： 当使用此选项时，集成的 Windows 身份验证可能无法工作。 |
 | ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助命令的信息。 |

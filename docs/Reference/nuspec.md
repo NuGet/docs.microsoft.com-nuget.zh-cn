@@ -13,11 +13,11 @@ ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c52d0a7c0da507cb9688c8a7b2c4eaf54a8ca5c2
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.openlocfilehash: 90693b09fce966e3bc28ca24360a3fb4e1f73386
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -94,7 +94,7 @@ ms.lasthandoff: 02/20/2018
 | **owners** | 使用 nuget.org 上的配置文件名称的包创建者的逗号分隔列表。这通常和 `authors` 中的列表相同，将包上传到 nuget.org 时被忽略。请参阅[在 nuget.org 上管理包所有者](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)。 |
 | **projectUrl** | 包的主页 URL，通常显示在 UI 中以及 nuget.org 中。 |
 | **licenseUrl** | 包的许可证 URL，通常显示在 UI 和 nuget.org 中。 |
-| **iconUrl** | 64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的映像，可使用原始文件 URL 喜欢*https://github.com/\<用户名\>/\<存储库\>/raw/\<分支\>/ \<logo.png\>*。 |
+| **iconUrl** | 64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的映像，可使用原始文件 URL 喜欢 *https://github.com/\<用户名\>/\<存储库\>/raw/\<分支\>/ \<logo.png\>*。 |
 | **requireLicenseAcceptance** | 一个布尔值，用于指定客户端是否必须提示使用者接受包许可证后才可安装包。 |
 | **developmentDependency** | (2.8+) 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。 |
 | **summary** | 用于 UI 显示的包的简要说明。 如果省略，则使用 `description` 的截断版本。 |
@@ -143,9 +143,10 @@ nuget pack MyProject.csproj
 
 | 标记 | 值来源 | “值”
 | --- | --- | ---
-| **$id$** | 项目文件 | 项目文件中的 AssemblyName |
+| **$id$** | 项目文件 | 从项目文件的 AssemblyName （标题） |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
 | **$author$** | AssemblyInfo | AssemblyCompany |
+| **$title$** | AssemblyInfo | AssemblyTitle |
 | **$description$** | AssemblyInfo | AssemblyDescription |
 | **$copyright$** | AssemblyInfo | AssemblyCopyright |
 | **$configuration$** | 程序集 DLL | 用于生成程序集的配置，默认为 Debug。 请注意，若要使用 Release 配置创建包，应始终在命令行上使用 `-properties Configuration=Release`。 |
@@ -543,7 +544,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 | **include** | （必需）文件或要包含的文件位置，受 `exclude` 特性指定的排除规则约束。 路径是相对于 `.nuspec` 文件的路径，除非指定了绝对路径。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 | **exclude** | 要从 `src` 位置排除的文件或文件模式的分号分隔列表。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 | **buildAction** | 生成操作，用于分配到 MSBuild 的内容项（如 `Content`、`None`、`Embedded Resource`、`Compile` 等）。默认值为 `Compile`。 |
-| **copyToOutput** | 一个布尔值，用于指示是否将内容项复制到生成输出文件夹。 默认值为 false。 |
+| **copyToOutput** | 布尔值，该值指示是否将内容项复制到生成 （或发布） 输出文件夹。 默认值为 false。 |
 | **flatten** | 一个布尔值，用于指示是将内容项复制到生成输出中的单个文件夹 (true)，还是保留包中的文件夹结构 (false)。 此标志仅在 copyToOutput 标志设置为 true 时才有效。 默认值为 false。 |
 
 安装包时，NuGet 从上到下应用 `<contentFiles>` 的子元素。 如果多个条目与相同的文件匹配，那么应用全部条目。 如果相同特性发生冲突，则最上面的条目将替代靠下的条目。

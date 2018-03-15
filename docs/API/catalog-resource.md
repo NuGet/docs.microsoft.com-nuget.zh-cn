@@ -12,15 +12,15 @@ ms.topic: reference
 ms.prod: nuget
 ms.technology: 
 description: "目录是创建和删除在 nuget.org 上的所有包的索引。"
-keywords: "NuGet V3 API 目录，nuget.org 事务日志复制 NuGet.org、 克隆 NuGet.org，NuGet.org 的仅限追加的记录"
+keywords: "NuGet V3 API 目录，nuget.org 事务日志复制 nuget.org，克隆 nuget.org 的 nuget.org 的仅限追加的记录"
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: d1a24be68a60085a40361c374ffb34dc221f09c4
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: be30b21d488c323c439a59fff290a95adaefd902
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="catalog"></a>Catalog
 
@@ -50,7 +50,7 @@ Catalog/3.0.0 | 初始版本
 
 ## <a name="catalog-index"></a>目录索引
 
-目录索引是拥有的目录项，排序 cronologically 列表的已知位置中的文档。 它是目录资源的入口点。
+目录索引是众所周知的位置具有目录项，按时间顺序排序的列表中的文档。 它是目录资源的入口点。
 
 索引组成目录页。 每个目录页包含目录项。 每个目录项表示时间有关的某个点单个包的事件。 目录项可以表示已创建，未列出的、 重新列，或已删除程序包源中的包。 通过处理按时间顺序的目录项，客户端可以生成 V3 包源上存在的每个包的最新视图。
 
@@ -128,7 +128,7 @@ count           | 整数          | 是      | 在页中的项的数目
 
 在每个元素`items`数组是具有一些有关的目录项的最小的详细信息的对象。 这些项对象不包含的所有目录项的数据。 在页中的项的顺序`items`未定义数组。 项目可以使用的内存中的客户端经过排序其`commitTimeStamp`属性。
 
-在页中的目录项的数目由服务器实现定义。 对于 nuget.org，有最多 550 项在每个页中，尽管实际数的时间可能会更小，以某些页 dependong 上的点处的下一步提交批的大小。
+在页中的目录项的数目由服务器实现定义。 对于 nuget.org，有最多 550 项在每个页中，尽管可能及时更小，以具体的点处的下一步提交批的大小取决于一些页的实际数目。
 
 引入新的项，`count`是递增和新的目录项对象会显示在`items`数组。
 
@@ -164,7 +164,7 @@ nuget:version   | 字符串  | 是      | 与此叶包版本
 
 ## <a name="catalog-leaf"></a>目录叶
 
-目录叶及时包含有关特定包 ID 和在某一时刻的版本的元数据。 这是提取使用的文档`@id`值在目录页中找到。 目录叶的 URL 不应为 predictedable 和应使用仅目录页被发现。
+目录叶及时包含有关特定包 ID 和在某一时刻的版本的元数据。 这是提取使用的文档`@id`值在目录页中找到。 目录叶的 URL 不应为可预测，并且应使用仅目录页发现。
 
 编录叶文档是具有以下属性的 JSON 对象：
 
@@ -226,12 +226,12 @@ verbatimVersion         | 字符串                     | 否       | 因为它�
 
 `created`时间戳是包源，这通常是目录项的提交时间戳之前短暂地先接收包的时间。
 
-`packageHashAlgorithm`是一个字符串由服务器实现 represeting 用于生成的哈希算法定义`packageHash`。 始终使用 nuget.org`packageHashAlgorithm`值`SHA512`。
+`packageHashAlgorithm`是由表示用于生成的哈希算法的服务器实现定义的字符串`packageHash`。 始终使用 nuget.org`packageHashAlgorithm`值`SHA512`。
 
 `published`时间戳是上次列出包的时间。
 
 > [!Note]
-> 在 nuget.org，`published`值设置为包时未列出的 1900 年。
+> 在 nuget.org，`published`值设置为 1900 年包时未列出。
 
 #### <a name="sample-request"></a>示例请求
 
@@ -256,7 +256,7 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 #### <a name="sample-request"></a>示例请求
 
-获取 https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
+GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
 
 #### <a name="sample-response"></a>示例响应
 
@@ -307,7 +307,7 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 ### <a name="dependent-cursors"></a>依赖的游标
 
-假设有两个目录客户端具有 inherant 依赖项，其中一个客户端的输出取决于另一个客户端的输出。 
+假设有两个目录客户端具有的固有的依赖关系，其中一个客户端的输出取决于另一个客户端的输出。 
 
 #### <a name="example"></a>示例
 
@@ -317,7 +317,7 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 #### <a name="algorithm"></a>算法
 
-若要实现此限制，简单，请修改上述要算法：
+若要实现此限制，只需修改以上为算法：
 
 1. 从本地存储区中提取的记录的光标值。
 1. 下载和反序列化的目录索引。

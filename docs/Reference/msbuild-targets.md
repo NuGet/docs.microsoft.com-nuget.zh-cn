@@ -3,7 +3,7 @@ title: "作为 MSBuild 目标的 NuGet 包和还原 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 04/03/2017
+ms.date: 03/13/2018
 ms.topic: article
 ms.prod: nuget
 ms.technology: 
@@ -11,11 +11,11 @@ description: "NuGet 包和还原可作为 MSBuild 目标直接用于 NuGet 4.0+�
 keywords: "NuGet 和 MSBuild, NuGet 包目标, NuGet 还原目标"
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: 798b3550718294072d86b6e4827ec5017178d2cc
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.openlocfilehash: bb0ade1b0f5f81d7c8822d3c2b2f9dd45745fb8d
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -42,7 +42,9 @@ NuGet 4.0+
 
 ## <a name="pack-target"></a>包目标
 
-如果使用包目标，即 `msbuild /t:pack`，MSBuild 会从项目文件中描述其输入。 下表描述了可以添加到项目文件第一个 `<PropertyGroup>` 节点中的 MSBuild 属性。 在 Visual Studio 2017 及更高版本中，通过右键单击项目并选择上下文菜单上的“编辑 {project_name}”，即可轻松进行这些编辑。 为方便起见，表由 [`.nuspec` 文件](../reference/nuspec.md)中的等效属性组织。
+对于标准.NET 项目使用 PackageReference 格式，并使用`msbuild /t:pack`绘制从项目文件以在创建 NuGet 包时使用的输入。
+
+下表描述了可以添加到项目文件第一个 `<PropertyGroup>` 节点中的 MSBuild 属性。 在 Visual Studio 2017 及更高版本中，通过右键单击项目并选择上下文菜单上的“编辑 {project_name}”，即可轻松进行这些编辑。 为方便起见，表由 [`.nuspec` 文件](../reference/nuspec.md)中的等效属性组织。
 
 请注意，`.nuspec` 的 `Owners` 和 `Summary` 属性不受 MSBuild 支持。
 
@@ -194,7 +196,7 @@ NuGet 4.0+
 
 ### <a name="packing-using-a-nuspec"></a>使用 .nuspec 打包
 
-可以使用 `.nuspec` 文件打包项目，前提是拥有可导入 `NuGet.Build.Tasks.Pack.targets` 的项目文件，以便可执行包任务。 以下三个 MSBuild 属性与使用 `.nuspec` 的打包相关：
+你可以使用`.nuspec`文件打包你的项目，前提是具有一个 SDK 项目文件导入`NuGet.Build.Tasks.Pack.targets`，以便可以执行包任务。 你仍需要将项目还原之前可以包 nuspec 文件。 项目文件的目标框架是不相关和封装 nuspec 时不使用。 以下三个 MSBuild 属性与使用 `.nuspec` 的打包相关：
 
 1. `NuspecFile`：用于打包的 `.nuspec` 文件的相对或绝对路径。
 1. `NuspecProperties`：键=值对的分号分隔列表。 由于 MSBuild 命令行分析工作的方式，必须指定多个属性，如下所示：`/p:NuspecProperties=\"key1=value1;key2=value2\"`。  
@@ -212,6 +214,23 @@ dotnet pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nuspec
 msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
 ```
 
+请注意，封装 nuspec 使用 dotnet.exe 或 msbuild 也会导致到默认情况下生成项目。 这可以避免通过传递```--no-build```dotnet.exe，等同于设置属性```<NoBuild>true</NoBuild> ```在项目文件中，以及设置```<IncludeBuildOutput>false</IncludeBuildOutput> ```项目文件中
+
+是要包 nuspec 文件的 csproj 文件的示例：
+
+```
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <NoBuild>true</NoBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NuspecFile>PATH_TO_NUSPEC_FILE</NuspecFile>
+    <NuspecProperties>add nuspec properties here</NuspecProperties>
+    <NuspecBasePath>optional to provide</NuspecBasePath>
+  </PropertyGroup>
+</Project>
+```
+
 ## <a name="restore-target"></a>还原目标
 
 `MSBuild /t:restore`（`nuget restore` 和 `dotnet restore` 与 .NET Core 项目一起使用）会还原项目文件中引用的包，如下所示：
@@ -223,8 +242,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 1. 下载包
 1. 编写资产文件、目标和属性
 
-> [!Note]
-> `restore` MSBuild 目标仅适用于项目使用`PackageReference`项，并不会还原使用引用的包`packages.config`文件。
+`restore`目标工作原理**仅**对于使用 PackageReference 格式的项目。 与其**不**工作的项目使用`packages.config`进行格式设置; 使用[nuget 还原](../tools/cli-ref-restore.md)相反。
 
 ### <a name="restore-properties"></a>还原属性
 

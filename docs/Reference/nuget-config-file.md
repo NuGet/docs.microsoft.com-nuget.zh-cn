@@ -12,11 +12,11 @@ keywords: "NuGet.Config 文件, NuGet 配置引用, NuGet 配置选项"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c76ebcb06adc5e5b862647de6b6f4e19bde87b91
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.openlocfilehash: 6a5be1ebcca0accafcdaf32f0b1b7ca66ec53425
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="nugetconfig-reference"></a>NuGet.Config 引用
 
@@ -86,8 +86,6 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 ```
 
 ## <a name="packagerestore-section"></a>packageRestore 节
-
-*忽略在所有当前版本 （2.7 +）*
 
 在生成期间控制包还原。
 
@@ -159,7 +157,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 **示例：**
 
-在配置文件中，`<packageSourceCredentials>` 元素包含每个适用源名称的子节点（名称中的空格被替换为 `_x0020+`）。 也就是说，对于名为“Contoso”和“测试源”的源，使用加密密码时，配置文件包含以下内容：
+在配置文件中，`<packageSourceCredentials>` 元素包含每个适用源名称的子节点（名称中的空格被替换为 `_x0020_`）。 也就是说，对于名为“Contoso”和“测试源”的源，使用加密密码时，配置文件包含以下内容：
 
 ```xml
 <packageSourceCredentials>

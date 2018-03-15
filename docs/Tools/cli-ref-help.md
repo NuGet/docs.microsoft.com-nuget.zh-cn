@@ -12,11 +12,11 @@ keywords: "nuget 帮助参考，帮助命令"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b4255c353e412cf1d1a59590ee816b7887c90653
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 281c6ccc7c58d153280441430be063d9ee89955d
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="help-or--command-nuget-cli"></a>帮助或？ 命令 (NuGet CLI)
 
@@ -41,7 +41,7 @@ nuget ? [command] [options]
 | 选项 | 描述 |
 | --- | --- |
 | 全部 | 获取所有可用的命令; 帮助打印的详细的信息如果将给特定的命令被忽略。 |
-| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， *%AppData%\NuGet\NuGet.Config*使用。 |
+| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
 | ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助帮助命令本身的信息。 |
 | Markdown | 打印 markdown 格式一起使用时的详细的帮助`-All`。 否则将忽略。 |

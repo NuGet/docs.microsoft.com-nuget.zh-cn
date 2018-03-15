@@ -12,11 +12,11 @@ keywords: "nuget 还原引用，请还原包命令"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0ad5156a065e20dfced99da6b2e2860dbd748ad5
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 2416ad652244e0ea60651147ad74a1513cdb75ff
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="restore-command-nuget-cli"></a>restore 命令 (NuGet CLI)
 
@@ -38,7 +38,7 @@ nuget restore <projectPath> [options]
 
 | 选项 | 描述 |
 | --- | --- |
-| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， *%AppData%\NuGet\NuGet.Config*使用。 |
+| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
 | DirectDownload | *（4.0 +)*直接而不填充缓存与任何二进制文件或元数据将下载包。 |
 | DisableParallelProcessing | 禁用还原并行的多个包。 |
 | FallbackSource | *（3.2 +)*要用作回退机制，以防主键中找不到包的包源的列表或默认源。 |

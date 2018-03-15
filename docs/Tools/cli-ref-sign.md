@@ -12,11 +12,11 @@ keywords: "nuget 符号引用，登录命令"
 ms.reviewer:
 - karann
 - rmpablos
-ms.openlocfilehash: 109b0f6aca0ebaae2ea56fbb45226bc1b14f2ea1
-ms.sourcegitcommit: df7158169e84900d135416cd5e52f937df0beb52
+ms.openlocfilehash: f600a0830472703f40ef62f1b1538c53671703a9
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="sign-command-nuget-cli"></a>登录命令 (NuGet CLI)
 
@@ -44,7 +44,7 @@ nuget sign <package(s)> [options]
 | CertificateStoreLocation | 指定与 X.509 证书存储用于搜索该证书的名称。 默认值为"CurrentUser"，使用当前用户的 X.509 证书存储区。 指定通过-CertificateSubjectName 或-CertificateFingerprint 选项证书时，应使用此选项。 |
 | CertificateStoreName | 指定要用于搜索该证书的 X.509 证书存储区的名称。 默认值为"My"，个人证书的 X.509 证书存储。 指定通过-CertificateSubjectName 或-CertificateFingerprint 选项证书时，应使用此选项。 |
 | CertificateSubjectName | 指定用于搜索的证书的本地证书存储区的证书的使用者名称。  搜索不使用所提供的值，将查找所有证书使用者名称为包含该字符串，而不考虑其他使用者值不区分大小写的字符串比较。  可以通过-CertificateStoreName 和-CertificateStoreLocation 选项指定的证书存储区。 |
-| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， *%AppData%\NuGet\NuGet.Config*使用。 |
+| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
 | ForceEnglishOutput | 强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | HashAlgorithm | 要用于对包进行签名的哈希算法。 默认值为 SHA256。 |
 | 帮助 | 显示的帮助命令的信息。 |

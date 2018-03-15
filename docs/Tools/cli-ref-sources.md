@@ -12,18 +12,17 @@ keywords: "nuget 源引用，源命令"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 1e8204f5e1bf712f65d8efb14ca2a4bd802e3f90
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.openlocfilehash: 139a9494e1ea898c90ce79d5990530fbe08642bd
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="sources-command-nuget-cli"></a>源命令 (NuGet CLI)
 
 **适用于：**包消耗、 发布&bullet;**受支持的版本：**所有
 
-管理位于用户作用域配置文件或指定的配置文件的源的列表。 用户作用域配置文件位于`%APPDATA%\NuGet\NuGet.Config`在 Windows 和`~/.nuget/NuGet.Config`Mac/Linux 中。
-
+管理位于用户作用域配置文件或指定的配置文件的源的列表。 用户作用域配置文件位于`%APPDATA%\NuGet\NuGet.Config`(Windows) 和`~/.nuget/NuGet/NuGet.Config`(Mac/Linux)。
 
 请注意，nuget.org 的源 URL 是 `https://api.nuget.org/v3/index.json`。
 
@@ -39,7 +38,7 @@ nuget sources <operation> -Name <name> -Source <source>
 
 | 选项 | 描述 |
 | --- | --- |
-| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， *%AppData%\NuGet\NuGet.Config*使用。 |
+| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
 | ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 格式 | 适用于`list`操作并可以是`Detailed`（默认值） 或`Short`。 |
 | 帮助 | 显示的帮助命令的信息。 |
