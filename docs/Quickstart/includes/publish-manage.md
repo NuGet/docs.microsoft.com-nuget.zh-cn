@@ -1,6 +1,6 @@
 从 nuget.org 上的配置文件中，选择“管理包”，查看刚刚发布的包。 同样也会收到确认电子邮件。 请注意，包可能需要一些时间才能编入索引并显示在可供他人查看的搜索结果中。 在该时间段，包页面会显示以下消息：
 
-    ![This package has not been indexed yet. It will appear in search results and will be available for install/restore after indexing is complete.](../media/QS_Create-03-NotIndexed.png)
+![此包未编制索引。 它将显示在搜索结果中，并可在索引编制完成后用于安装/还原。](../media/QS_Create-03-NotIndexed.png)
 
 就是这么简单！ 刚刚已将第一个 NuGet 包发布到 nuget.org，其他开发人员可在自己的项目中使用它。
 

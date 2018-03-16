@@ -12,11 +12,11 @@ keywords: "安装 NuGet, NuGet包使用, 安装 NuGet 包, NuGet 包引用, 使�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 11b417644a46008f91fdcd5e0ba0a1fcf0bdc0e0
-ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
+ms.openlocfilehash: accc6d7bb5abff43ffaa083fa55c13cd5b10ce10
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="install-and-use-a-package-using-the-dotnet-cli"></a>使用 dotnet CLI 安装并使用包
 
@@ -27,7 +27,7 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 > [!Tip]
 > **nuget.org 入门**：浏览 nuget.org 是 .NET 开发人员通常在自己的应用程序中查找可重用组件的方式。 你可以直接搜索 nuget.org 或根据本文中的介绍，在 Visual Studio 中查找和安装包。
 
-## <a name="pre-requisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 - [.NET Core SDK](https://www.microsoft.com/net/download/)，提供 `dotnet` 命令行工具。
 
