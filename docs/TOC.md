@@ -3,8 +3,9 @@
 # 快速入门
 ## [安装并使用包 (dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md)
 ## [安装并使用包 (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)
-## [创建并发布包 (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
-## [创建并发布包 (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
+## [创建并发布 NET Standard 包 (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
+## [创建并发布 NET Standard 包 (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)
+## [创建并发布 NET Framework 包 (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)
 # 使用包
 ## [概述和工作流](consume-packages/overview-and-workflow.md)
 ## [查找和选择包](consume-packages/finding-and-choosing-packages.md)
