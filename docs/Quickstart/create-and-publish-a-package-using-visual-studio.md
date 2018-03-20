@@ -1,28 +1,28 @@
 ---
-title: "使用 Visual Studio 创建和发布 NuGet 包的介绍性指南 | Microsoft 文档"
+title: "使用 Visual Studio 创建和发布 .NET Standard NuGet 包的介绍性指南 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 02/02/2018
+ms.date: 03/18/2018
 ms.topic: get-started-article
 ms.prod: nuget
 ms.technology: 
-description: "使用 Visual Studio 2017 创建和发布 NuGet 包的演练教程。"
+description: "使用 Visual Studio 2017 创建和发布 .NET Standard NuGet 包的演练教程。"
 keywords: "NuGet 包创建, NuGet 包发布, NuGet 教程, Visual Studio 创建 NuGet 包, msbuild 包"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: a4d60fdc0f27f9c4080266e212ac1cfe470ba925
-ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
+ms.openlocfilehash: 733fee616601e1d15d8fb5814b5bfb7905ff4a33
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="create-and-publish-a-package-using-visual-studio"></a>使用 Visual Studio 创建和发布包
+# <a name="create-and-publish-a-package-using-visual-studio-net-standard"></a>使用 Visual Studio 创建和发布包 (.NET Standard)
 
-从 Visual Studio 的 .NET 类库创建 NuGet 包，然后使用 CLI 工具将其发布到 nuget.org，这是一个很简单的过程。
+从 Visual Studio 的 .NET Standard 类库创建 NuGet 包，然后使用 CLI 工具将其发布到 nuget.org，这是一个很简单的过程。
 
-## <a name="pre-requisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 1. 通过任何与 .NET 相关的工作负载从 [visualstudio.com](https://www.visualstudio.com/) 安装任意版本的 Visual Studio 2017。 安装 .NET 工作负载时，Visual Studio 2017 会自动包含 NuGet 功能。
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 02/09/2018
 
 ## <a name="create-a-class-library-project"></a>创建类库项目
 
-你可以使用现有的 .NET 类库项目用于要打包的代码，或者创建一个简单的项目，如下所示：
+可以使用现有的 .NET Standard 类库项目用于要打包的代码，或者创建一个简单的项目，如下所示：
 
 1. 在 Visual Studio 中，选择“文件”>“新建”>“项目”，展开“Visual C# > .NET Standard”节点，选择“类库 (.NET Standard)”模板，将项目命名为“AppLogger”，然后单击“确定”。
 
@@ -60,7 +60,7 @@ namespace AppLogger
 
 ## <a name="configure-package-properties"></a>配置包属性
 
-1. 选择“项目”>“属性”菜单命令，然后选择“包”选项卡：
+1. 选择“项目”>“属性”菜单命令，然后选择“包”选项卡。（“包”选项卡仅出现在 .NET Standard 类库项目中；如果要面向 .NET Framework，请参阅[创建和发布 .NET Framework 包](create-and-publish-a-package-using-visual-studio-net-framework.md)。）
 
     ![Visual Studio 项目中的 NuGet 包属性](media/qs_create-vs-01-package-properties.png)
 
@@ -95,7 +95,7 @@ namespace AppLogger
 
 ### <a name="alternate-option-pack-with-msbuild"></a>备用选项：使用 MSBuild 打包
 
-作为使用“打包”菜单命令的备选项，当项目包含必要的包数据时，NuGet 4.x+ 和 MSBuild 15.1+ 支持 `pack` 目标：
+作为使用“打包”菜单命令的备选项，当项目包含必要的包数据时，NuGet 4.x+ 和 MSBuild 15.1+ 支持 `pack` 目标。 打开命令提示符，导航到项目文件夹并运行以下命令。 （用户通常习惯从“开始”菜单中启动“适用于 Visual Studio 的开发人员命令提示符”，因为它将使用 MSBuild 的所有必需路径进行配置。）
 
 ```cli
 msbuild /t:pack /p:Configuration=Release

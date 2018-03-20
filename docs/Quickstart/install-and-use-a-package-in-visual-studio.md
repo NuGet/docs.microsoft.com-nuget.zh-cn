@@ -12,11 +12,11 @@ keywords: "安装 NuGet, NuGet包使用, 安装 NuGet 包, NuGet 包引用, 使�
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c0030877803ac7403f26e27ac3c5a0303d69c489
-ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
+ms.openlocfilehash: ff905fec6d6af4fa40fd4331cb970121b6eb0879
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-and-use-a-package-in-visual-studio"></a>在 Visual Studio 中安装和使用包
 
@@ -27,7 +27,7 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 > [!Tip]
 > **nuget.org 入门**：浏览 nuget.org 是 .NET 开发人员通常在自己的应用程序中查找可重用组件的方式。 你可以直接搜索 nuget.org 或根据本文中的介绍，在 Visual Studio 中查找和安装包。
 
-## <a name="pre-requisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 - 具有通用 Windows 平台开发工作负载的 Visual Studio 2017，或
 - 适用于通用 Windows 应用的 Visual Studio 2015 Update 3
@@ -40,7 +40,7 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 
 ## <a name="add-the-newtonsoftjson-nuget-package"></a>添加 Newtonsoft.Json Nuget 包
 
-若要安装此程序包，可以使用程序包管理器 UI 或程序包管理器控制台。
+若要安装此程序包，可以使用程序包管理器 UI 或程序包管理器控制台。 安装包时，NuGet 会将依赖项记录在项目文件或 `packages.config` 文件中。 有关详细信息，请参阅[包使用概述和工作流](../consume-packages/Overview-and-Workflow.md)。
 
 ### <a name="package-manager-ui"></a>包管理器 UI
 

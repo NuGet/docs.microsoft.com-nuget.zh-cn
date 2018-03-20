@@ -1,5 +1,5 @@
 ---
-title: "使用 dotnet CLI 创建和发布 NuGet 包的介绍性指南 | Microsoft 文档"
+title: "使用 dotnet CLI 创建和发布 NuGet 包 | Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -12,17 +12,17 @@ keywords: "NuGet 包创建, NuGet 包发布, NuGet 教程, dotnet 发布 NuGet �
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c9f46cafafcdc238e43979d6f05521e19bf3d7f6
-ms.sourcegitcommit: eabd401616a98dda2ae6293612acb3b81b584967
+ms.openlocfilehash: 086de5378fe4ae928e6bd00cd3a87afd7c366a01
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="create-and-publish-a-package"></a>创建和发布包
 
 从 .NET 类库创建 NuGet 包并使用 `dotnet` 命令行接口 (CLI) 将其发布到 nuget.org 是很简单的过程。
 
-## <a name="pre-requisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 1. 安装包括 `dotnet` CLI 的 [.NET Core SDK](https://www.microsoft.com/net/download/)。
 
@@ -95,7 +95,6 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 [!INCLUDE[publish-errors](includes/publish-errors.md)]
 
-
 ### <a name="manage-the-published-package"></a>管理已发布的包
 
 [!INCLUDE[publish-manage](includes/publish-manage.md)]
@@ -107,3 +106,4 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 - [支持多个目标框架](../create-packages/supporting-multiple-target-frameworks.md)
 - [包版本控制](../reference/package-versioning.md)
 - [创建本地化包](../create-packages/creating-localized-packages.md)
+- [给包签名](../create-packages/Sign-a-package.md)

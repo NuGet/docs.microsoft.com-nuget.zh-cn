@@ -12,18 +12,18 @@ keywords: "NuGet 包本地化, NuGet 附属程序集, 创建本地化包, NuGet 
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 1ce8cff07bf629fcdeeaace901a185f2446b077a
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: 5946ba6b43d3c418a1624aeb27d12b385d66b2fb
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="creating-localized-nuget-packages"></a>创建本地化 NuGet 包
 
 有两种方法可创建库的本地化版本：
 
 1. 将所有本地化资源程序集包含在一个包中。
-1. 遵循一组严格的约定，创建单独的本地化附属包（NuGet 1.8 及更高版本）。
+1. 遵循一组严格的约定，创建单独的本地化附属包。
 
 两种方法各有优缺点，如以下部分中所述。
 

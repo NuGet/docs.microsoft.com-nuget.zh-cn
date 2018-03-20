@@ -1,5 +1,5 @@
 ---
-title: "创建跨平台的 NuGet 包（适用于 iOS、Android 和 Windows）| Microsoft Docs"
+title: "为 Xamarin 创建 NuGet 包（适用于 iOS、Android 和 Windows）| Microsoft Docs"
 author: kraigb
 ms.author: kraigb
 manager: ghogen
@@ -12,26 +12,26 @@ keywords: "创建包, 适用于 Xamarin 的包, 跨平台包"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2f0131e4f447e2e0ab5a1d17e476a425eaa01b61
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 3e1460de060980365a5eaa2ef91c052cc359bb70
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="create-cross-platform-packages"></a>创建跨平台包
+# <a name="create-packages-for-xamarin"></a>为 Xamarin 创建包
 
 跨平台包包含在 iOS、Android 和 Windows 上使用本机 API 的代码，具体取决于运行时操作系统。 虽然这很简单，但最好让开发人员通过通用的 API 外围应用从 PCL 或 .NET Standard 库中使用包。
 
 在本演练中，将创建可在 iOS、Android 和 Windows 的移动项目中使用的跨平台 NuGet 包。
 
-1. [先决条件](#pre-requisites)
+1. [先决条件](#prerequisites)
 1. [创建项目结构和抽象代码](#create-the-project-structure-and-abstraction-code)
 1. [编写平台特定的代码](#write-your-platform-specific-code)
 1. [创建并更新 .nuspec 文件](#create-and-update-the-nuspec-file)
 1. [打包组件](#package-the-component)
 1. [相关主题](#related-topics)
 
-## <a name="pre-requisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 1. 在通用 Windows 平台 (UWP) 和 Xamarin 中使用 Visual Studio 2015。 可以从 [visualstudio.com](https://www.visualstudio.com/) 免费安装 Community 版；当然，也可以使用 Professional 和 Enterprise 版。 若要包含 UWP 和 Xamarin 工具，请选择自定义安装并选中相应的选项。
 1. NuGet CLI。 从 [nuget.org/downloads](https://nuget.org/downloads) 下载 nuget.exe 的最新版本，将其保存到选择的位置。 然后将该位置添加到 PATH 环境变量（如果尚未添加）。
@@ -112,9 +112,9 @@ namespace Plugin.LoggingLibrary.Abstractions
 
 1. 打开命令提示符，导航到 `.sln` 文件下一级的 `LoggingLibrary` 文件夹，然后运行 NuGet `spec` 命令，创建初始 `Package.nuspec` 文件：
 
-```cli
-nuget spec
-```
+    ```cli
+    nuget spec
+    ```
 
 1. 将该文件重命名为 `LoggingLibrary.nuspec` 并在编辑器中打开。
 1. 将文件更新为与以下内容匹配，并将 YOUR_NAME 替换为适当的值。 具体而言，`<id>` 值在 nuget.org 中必须是唯一的（请参阅[创建包](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)中所述的命名约定）。 另请注意，还必须更新创建者和说明标记，否则在打包步骤中会出现错误。

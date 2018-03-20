@@ -12,11 +12,11 @@ keywords: "版本控制, NuGet 包版本控制, NuGet 预发行版本, NuGet 预
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f07b4a0428685b036640a7153190fd8454885608
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: 03f744a96841a8c49d9f1dde89620b85de968d6f
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="building-pre-release-packages"></a>生成预发行包
 
@@ -79,7 +79,7 @@ ms.lasthandoff: 02/02/2018
 - `-rc`：候选发布，通常可能为最终（稳定）版本，除非出现重大 bug。
 
 > [!Note]
-> NuGet 不支持采用点表示法的[兼容 SemVer (v2.0.0)](http://semver.org/spec/v2.0.0.html) 的预发行版编号，如 `1.0.1-build.23`。 虽然可以使用 `1.0.1-build23` 之类的形式，但这始终被视为预发行版本。
+> NuGet 4.3.0+ 支持[语义化版本控制 v2.0.0](http://semver.org/spec/v2.0.0.html)，后者支持采用点表示法的预发布号，如 `1.0.1-build.23` 中所示。 NuGet 4.3.0 之前的版本不支持点表示法。 在 NuGet 的早期版本中，可以使用 `1.0.1-build23` 之类的格式，但这始终被视为预发布版本。
 
 但是，无论使用何种后缀，NuGet 都会按照反向字母顺序向它们赋予优先级：
 

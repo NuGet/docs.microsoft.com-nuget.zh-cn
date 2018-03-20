@@ -12,11 +12,11 @@ keywords: "NuGet 已知问题, NuGet 问题"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2b9190c058215d9e63894de45c0c55c8ddae0e0f
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: ac00e3f11c54290a31319e7f2946fd965a0a9288
+ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="known-issues-with-nuget"></a>NuGet 的已知问题
 
@@ -45,7 +45,7 @@ $PAT = "Your personal access token" $Feed = "Your url" .\nuget.exe sources add -
 
 ![没有源的 NuGet 配置](./media/knownIssue-34-NoSources.PNG)
 
-`%AppData%\NuGet\` 文件夹中的 `NuGet.Config` 文件意外被清空。 若要解决此问题，请执行以下步骤：关闭 Visual Studio 2015，删除 `%AppData%\NuGet\` 文件夹中的 `NuGet.Config` 文件，然后重启 Visual Studio。  将生成新的 `NuGet.Config` 文件，并且你能够继续操作。
+`%AppData%\NuGet\` (Windows) 或 `~/.nuget/` (Mac/Linux) 文件夹中的 `NuGet.Config` 文件意外被清空。 若要解决此问题，请执行以下操作：关闭 Visual Studio（适用于 Windows），删除 `NuGet.Config` 文件，然后再次尝试操作。 NuGet 生成了新的 `NuGet.Config` 文件，你应该可以继续操作。
 
 ## <a name="error-installing-packages-with-nuget-27"></a>在 NuGet 2.7 中安装包时出现错误
 

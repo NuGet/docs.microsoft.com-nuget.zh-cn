@@ -12,11 +12,11 @@ keywords: "dotnet.exe CLI, nuget.exe CLI, NuGet 客户端工具, NuGet 包管理
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: ec8de83c9e05981016215e487888ab68a616d977
-ms.sourcegitcommit: dbcb872ec10430e1d761f34b851650e31c87a96d
+ms.openlocfilehash: 462557e939e769f26fe05d6f9e2994eaf43c6e11
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="installing-nuget-client-tools"></a>安装 NuGet 客户端工具
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 02/03/2018
 |:------------- |:-------------|:-----|
 | [dotnet.exe](#dotnetexe-cli) | 包含在 .NET Core SDK 中，并在所有平台上提供核心 NuGet 功能。 | [.NET Core SDK](https://www.microsoft.com/net/download/) |
 | [nuget.exe](#nugetexe-cli) | 提供 Windows 上的所有 NuGet 功能以及 Mac 和 Linux 上在 [Mono](http://www.mono-project.com/docs/getting-started/install/) 下运行的大多数功能。 | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
-| [Visual Studio](#visual-studio) | 通过程序包管理器 UI 和程序包管理器控制台提供 NuGet 功能。 | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
+| [Visual Studio](#visual-studio) | 通过包管理器 UI 和包管理器控制台提供 NuGet 功能；包含在与 .NET 相关的工作负荷中。 | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 [MSBuild CLI](reference/msbuild-targets.md) 还提供了还原和创建包的功能，该功能主要在生成服务器上使用。 否则，MSBuild 不是与 NuGet 一起使用的通用工具。
 
@@ -67,10 +67,10 @@ NuGet CLI `nuget.exe` 是适用于 Windows 的命令行实用工具，可提供�
 - Visual Studio for Mac：特定 NuGet 功能是直接内置的。 请参阅[在项目中添加 NuGet 包](/visualstudio/mac/nuget-walkthrough)，获取有关演练。 对于其他功能，请使用 `dotnet.exe` 或 `nuget.exe` CLI 工具。
 
 - Windows 上的 Visual Studio：Visual Studio 2012 及更高版本中都包括“NuGet 包管理器”。 该程序包管理器提供[程序包管理器 UI](tools/package-manager-ui.md) 和[程序包管理器控制台](tools/package-manager-console.md)，通过它可以运行大部分的 NuGet 操作。
+  - Visual Studio 2017 安装程序包括具有任何采用 .NET 的工作负荷的 NuGet 包管理器。 若要单独安装，或验证是否已安装包管理器，运行 Visual Studio 2017 安装程序，并检查“各个组件”>“代码工具”>“NuGet 包管理器”下的选项。
   - 程序包管理器 UI 和控制台对于 Windows 上的 Visual Studio 是唯一的。 目前，它们在 Visual Studio for Mac 上不可用。
   - Visual Studio 不会自动包含 `nuget.exe` CLI，必须按照前面所述单独安装。
   - 程序包管理器控制台命令只能在 Windows 的 Visual Studio 中工作，不能在其他 PowerShell 环境中使用。
-  - Visual Studio 2017 安装程序包括具有任何采用 .NET 的工作负荷的 NuGet 包管理器。 若要单独安装，或验证是否已安装包管理器，运行 Visual Studio 2017 安装程序，并检查“各个组件”>“代码工具”>“NuGet 包管理器”下的选项。
   - 对于 Visual Studio 2010 及更早版本，请安装“适用于 Visual Studio 的 NuGet 包管理器”扩展。
   - 适用于 Visual Studio 2013 和 2015 的 NuGet 扩展也可以从 [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html) 下载。
   - 如果希望预览即将推出的 NuGet 功能，请安装 [Visual Studio 2017 预览版](https://www.visualstudio.com/vs/preview/)，该版本与 Visual Studio 稳定版本并行工作。 若要报告问题或分享对预览版的看法，请在 [NuGet GitHub 存储库](https://github.com/Nuget/Home/issues)上打开问题。

@@ -12,11 +12,11 @@ keywords: "创建包, 适用于 UWP 的包, Windows 运行时组件"
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6d35b484ff708d7174c19791ab1ad7904bea0d2f
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.openlocfilehash: af650b6cd67855a67d0f49cdbd9f510bf90a60f6
+ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="create-uwp-packages"></a>创建 UWP 包
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 02/14/2018
 
 在本演练中，将创建一个具有本机 UWP 组件（包括 XAML 控件）的 NuGet 包，以便在托管项目和本机项目中使用。
 
-## <a name="pre-requisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 1. Visual Studio 2017 或 Visual Studio 2015。 可以从 [visualstudio.com](https://www.visualstudio.com/) 免费安装 2017 Community 版；也可以使用 Professional 和 Enterprise 版。
 
@@ -156,7 +156,7 @@ Windows 运行时组件需要描述其所有公共可用类型的元数据，这
 
 ### <a name="adding-targets"></a>添加 .targets
 
-接下来，可能使用 NuGet 包的 C++ 和 JavaScript 项目需要一个 .targets 文件来标识必要的程序集和 winmd 文件。 （C# 和 Visual Basic 项目自动执行此操作。）通过将下方文本复制到 `ImageEnhancer.targets` 创建此文件，并将其保存在与 `.nuspec` 文件相同的文件夹中：
+接下来，可能使用 NuGet 包的 C++ 和 JavaScript 项目需要一个 .targets 文件来标识必要的程序集和 winmd 文件。 （C# 和 Visual Basic 项目自动执行此操作。）通过将下方文本复制到 `ImageEnhancer.targets` 创建此文件，并将其保存在与 `.nuspec` 文件相同的文件夹中。 _注意_ ：此 `.targets` 文件需要与包 ID（例如 `.nupspec` 文件中的 `<Id>` 元素）名称相同：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
