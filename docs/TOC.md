@@ -17,7 +17,6 @@
 ## [管理 NuGet 缓存](consume-packages/managing-the-nuget-cache.md)
 ## [配置 NuGet 行为](consume-packages/configuring-nuget-behavior.md)
 ## [依赖项解析](consume-packages/dependency-resolution.md)
-## [项目文件中的包引用](consume-packages/package-references-in-project-files.md)
 # 创建包
 ## [概述和工作流](create-packages/overview-and-workflow.md)
 ## [创建包](create-packages/creating-a-package.md)
@@ -74,6 +73,7 @@
 ## [dotnet 命令](tools/dotnet-Commands.md)
 # 参考
 ## [.nuspec](reference/nuspec.md)
+## [项目文件中的包引用](consume-packages/package-references-in-project-files.md)
 ## [packages.config](reference/packages-config.md)
 ## [包版本控制](reference/package-versioning.md)
 ## [Nuget.Config 文件](reference/nuget-config-file.md)
