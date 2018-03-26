@@ -1,22 +1,22 @@
 ---
-title: "NuGet PackageReference 格式（项目文件中的包引用）| Microsoft 文档"
+title: NuGet PackageReference 格式（项目文件中的包引用）| Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 07/17/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "详细介绍项目文件中 NuGet 4.0+、VS2017 和 .NET Core 2.0 支持的 NuGet PackageReference"
-keywords: "NuGet 包依赖项, 包引用, 项目文件, PackageReference, packages.config, VS2017, Visual Studio 2017, NuGet 4, .NET Core 2.0"
+ms.technology: ''
+description: 详细介绍项目文件中 NuGet 4.0+、VS2017 和 .NET Core 2.0 支持的 NuGet PackageReference
+keywords: NuGet 包依赖项, 包引用, 项目文件, PackageReference, packages.config, VS2017, Visual Studio 2017, NuGet 4, .NET Core 2.0
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 679871a280c158c863e0daf790af1b7cef509943
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.openlocfilehash: e1880c9b294e19ef1b71c7b17b02df8ff1cf1b73
+ms.sourcegitcommit: 718e6cb88e45fa07c85d653f216bf92eaaf81625
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 02/20/2018
 
 利用 PackageReference，还可以使用 MSBuild 条件按目标框架、配置、平台或其他分组选择包引用。 它还允许对依赖项和内容流实行精细控制。 （有关更多详细信息，请参阅[NuGet 打包和还原为 MSBuild 目标](../reference/msbuild-targets.md)。）
 
-默认情况下，PackageReference 用于 .NET Core 项目、.NET Standard 项目以及面向 Windows 10 Build 15063（创意者更新）及更高版本的 UWP 项目。 .NET 完整框架项目支持 PackageReference，但当前默认为 `packages.config`。 若要使用 PackageReference，请将 `packages.config` 中的依赖项迁移到项目文件中，然后删除 packages.config。
+默认情况下，PackageReference 用于 .NET Core 项目、.NET Standard 项目，以及面向 Windows 10 Build 15063（创意者更新）及更高版本的 UWP 项目（C++ UWP 项目除外）。 .NET 完整框架项目支持 PackageReference，但当前默认为 `packages.config`。 若要使用 PackageReference，请将 `packages.config` 中的依赖项迁移到项目文件中，然后删除 packages.config。
 
 ## <a name="adding-a-packagereference"></a>添加 PackageReference
 
@@ -94,7 +94,7 @@ ms.lasthandoff: 02/20/2018
 | “值” | 描述 |
 | --- | ---
 | 编译 | `lib` 文件夹中的内容 |
-| Runtime — 运行时 | `runtime` 文件夹中的内容 |
+| Runtime — 运行时 | `runtimes` 文件夹中的内容 |
 | contentFiles | `contentfiles` 文件夹中的内容 |
 | 生成 | `build` 文件夹中的属性和目标 |
 | analyzers | .NET 分析器 |
