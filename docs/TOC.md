@@ -14,7 +14,7 @@
 ### [疑难解答](consume-packages/package-restore-troubleshooting.md)
 ## [重新安装并更新包](consume-packages/reinstalling-and-updating-packages.md)
 ## [包与源代码管理](consume-packages/packages-and-source-control.md)
-## [管理 NuGet 缓存](consume-packages/managing-the-nuget-cache.md)
+## [管理全局包和缓存文件夹](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ## [配置 NuGet 行为](consume-packages/configuring-nuget-behavior.md)
 ## [依赖项解析](consume-packages/dependency-resolution.md)
 # 创建包
@@ -31,8 +31,8 @@
 ## 参考线
 ### [创建 UWP 包](guides/create-uwp-packages.md)
 ### [以 NuGet 包形式创建 UWP 控件](guides/create-uwp-controls.md)
-### [创建 NET 标准包 (Visual Studio 2015)](guides/create-net-standard-packages-vs2015.md)
-### [为 Xamarin 创建包](guides/create-packages-for-xamarin.md)
+### [使用 Visual Studio 2015 创建 NET Standard/NET Framework 包](guides/create-net-standard-packages-vs2015.md)
+### [使用 Visual Studio 2015 为 Xamarin 创建包](guides/create-packages-for-xamarin.md)
 # 承载包
 ## [概述](hosting-packages/overview.md)
 ## [本地源](hosting-packages/local-feeds.md)
@@ -88,7 +88,7 @@
 ### [适用于 Visual Studio 的 NuGet 凭据提供程序](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
 ### [nuget.exe 凭据提供程序](reference/extensibility/nuget-exe-credential-providers.md)
 ## 存档内容
-### [project.json 引用格式](archive/project-json.md)
+### [project.json 管理格式](archive/project-json.md)
 ### [project.json 和 UWP](archive/project-json-and-uwp.md)
 ### [project.json impact](archive/project-json-impact.md)
 # API
