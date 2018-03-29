@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI 还原命令 |Microsoft 文档"
+title: NuGet CLI 还原命令 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "有关 nuget.exe 的还原命令的引用"
-keywords: "nuget 还原引用，请还原包命令"
+ms.technology: ''
+description: 有关 nuget.exe 的还原命令的引用
+keywords: nuget 还原引用，请还原包命令
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2416ad652244e0ea60651147ad74a1513cdb75ff
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 64f12fdedc8fbfcee15c1dcddc445148f458c030
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="restore-command-nuget-cli"></a>restore 命令 (NuGet CLI)
 
@@ -46,15 +49,15 @@ nuget restore <projectPath> [options]
 | 帮助 | 显示的帮助命令的信息。 |
 | MSBuildPath | *（4.0 +)*指定 MSBuild 使用执行命令，优先于的路径`-MSBuildVersion`。 |
 | MSBuildVersion | *（3.2 +)*指定要用于此命令的 MSBuild 的版本。 支持的值为 4、 12、 14、 15。 默认情况下，选择你的路径中的 MSBuild，否则，它默认为最高的已安装版本的 MSBuild。 |
-| NoCache | 防止 NuGet 使用从本地计算机缓存的包。 |
+| NoCache | 防止 NuGet 使用缓存的包。 请参阅[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)。 |
 | NonInteractive | 取消显示提示用户输入或确认。 |
-| OutputDirectory | 指定在其中安装包的文件夹。 如果未不指定任何文件夹，则使用当前文件夹。 |
+| OutputDirectory | 指定在其中安装包的文件夹。 如果未不指定任何文件夹，则使用当前文件夹。 在使用进行还原时需要`packages.config`文件除非`PackagesDirectory`或`SolutionDirectory`使用。|
 | PackageSaveMode | 指定要保存包安装完成后的文件类型： 之一`nuspec`， `nupkg`，或`nuspec;nupkg`。 |
-| PackagesDirectory | 与 `OutputDirectory` 相同。 |
+| PackagesDirectory | 与 `OutputDirectory` 相同。 在使用进行还原时需要`packages.config`文件除非`OutputDirectory`或`SolutionDirectory`使用。 |
 | Project2ProjectTimeOut | 超时 （秒） 来解析项目到项目引用。 |
 | 递归 | *（4.0 +)*还原 UWP 和.NET 核心项目的所有引用项目。 不适用于使用项目`packages.config`。 |
 | RequireConsent | 验证还原程序包启用了之前下载和安装包。 有关详细信息，请参阅[程序包还原](../consume-packages/package-restore.md)。 |
-| SolutionDirectory | 指定的解决方案文件夹。 不还原解决方案的包时才有效。 |
+| SolutionDirectory | 指定的解决方案文件夹。 不还原解决方案的包时才有效。 在使用进行还原时需要`packages.config`文件除非`PackagesDirectory`或`OutputDirectory`使用。 |
 | 源 | 指定包源的列表 （作为 Url) 要用于还原。 如果省略，则该命令使用在配置文件中提供的源，请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)。 |
 | 详细级别 |> 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。 |
 

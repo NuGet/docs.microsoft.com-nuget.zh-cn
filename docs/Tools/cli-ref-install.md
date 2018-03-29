@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI 安装命令 |Microsoft 文档"
+title: NuGet CLI 安装命令 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe 安装命令的引用"
-keywords: "nuget 安装引用，安装包命令"
+ms.technology: ''
+description: Nuget.exe 安装命令的引用
+keywords: nuget 安装引用，安装包命令
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8d5f53c833fb42c9fe37d0629eab33e8f0bc70d7
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 121d7b50767f1d466d6d0d8494f324b02d8ff6f1
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-command-nuget-cli"></a>安装命令 (NuGet CLI)
 
@@ -27,7 +30,7 @@ ms.lasthandoff: 03/15/2018
 > [!Tip]
 > 若要下载的项目上下文之外直接程序包，请访问包的页面上[nuget.org](https://www.nuget.org)和选择**下载**链接。
 
-如果未不指定任何源，这些文件中列出全局配置， `%APPDATA%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux) 使用。 请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)有关其他详细信息。
+如果未不指定任何源，这些文件中列出全局配置， `%appdata%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux) 使用。 请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)有关其他详细信息。
 
 如果未不指定任何特定的包，`install`安装在项目中列出的所有包`packages.config`文件，使它类似于[ `restore` ](cli-ref-restore.md)。
 
@@ -55,7 +58,7 @@ nuget install <packageID | configFilePath> [options]
 | ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 框架 | *（4.4 +)*用于选择依赖关系的目标框架。 默认值为任何如果未指定。 |
 | 帮助 | 显示的帮助命令的信息。 |
-| NoCache | 防止 NuGet 使用从本地计算机缓存的包。 |
+| NoCache | 防止 NuGet 使用缓存的包。 请参阅[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)。 |
 | NonInteractive | 取消显示提示用户输入或确认。 |
 | OutputDirectory | 指定在其中安装包的文件夹。 如果未不指定任何文件夹，则使用当前文件夹。 |
 | PackageSaveMode | 指定要保存包安装完成后的文件类型： 之一`nuspec`， `nupkg`，或`nuspec;nupkg`。 |

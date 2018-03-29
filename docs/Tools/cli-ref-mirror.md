@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI 镜像命令 |Microsoft 文档"
+title: NuGet CLI 镜像命令 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe 镜像命令参考"
-keywords: "nuget 镜像引用，镜像命令"
+ms.technology: ''
+description: Nuget.exe 镜像命令参考
+keywords: nuget 镜像引用，镜像命令
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 0c1969cc04b2e2cead5e9dadf9739fdabdf65f6c
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 512bd72d568cda81eb7c6a1555c36ead66b5c438
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="mirror-command-nuget-cli"></a>镜像命令 (NuGet CLI)
 
@@ -45,7 +48,7 @@ nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [op
 | --- | --- |
 | ApiKey | 目标存储库的 API 密钥。 如果不存在，请在配置文件中指定使用一个 (`%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux))。 |
 | 帮助 | 显示的帮助命令的信息。 |
-| NoCache | 防止 NuGet 使用从本地计算机缓存的包。 |
+| NoCache | 防止 NuGet 使用缓存的包。 请参阅[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)。 |
 | Noop | 记录操作即告完成的内容，但不会执行操作;假定推送操作的成功。 |
 | 预发行版 | 在镜像的操作中包含预发行程序包。 |
 | 源 | 要镜像的包源的列表。 如果未不指定任何源，在定义的配置文件 （请参阅上面的 ApiKey） 使用，如果未指定任何默认为 nuget.org。 |

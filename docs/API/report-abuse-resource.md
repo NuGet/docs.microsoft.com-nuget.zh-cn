@@ -1,5 +1,5 @@
 ---
-title: "报告滥用行为 URL 模板，NuGet API |Microsoft 文档"
+title: 报告滥用行为 URL 模板，NuGet API |Microsoft 文档
 author:
 - joelverhagen
 - kraigb
@@ -10,17 +10,20 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "报告滥用行为 URL 模板允许客户端在其用户界面中显示的报告滥用行为链接。"
-keywords: "NuGet API 报告滥用行为、 NuGet API 文件合规、 nuget.org 报表 URL 模板"
+ms.technology: ''
+description: 报告滥用行为 URL 模板允许客户端在其用户界面中显示的报告滥用行为链接。
+keywords: NuGet API 报告滥用行为、 NuGet API 文件合规、 nuget.org 报表 URL 模板
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: efbe5704e6e6028f9382fea3fe5ec453f573a2e9
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ded861e3eaf73e45b8d4bd80b96d54bfeb38e9d6
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="report-abuse-url-template"></a>报告滥用行为 URL 模板
 
@@ -53,7 +56,7 @@ ReportAbuseUriTemplate/3.0.0-rc   | 别名 `ReportAbuseUriTemplate/3.0.0-beta`
 
 ### <a name="url-placeholders"></a>URL 占位符
 
-name        | 类型    | 必需 | 说明
+名称        | 类型    | 必需 | 说明
 ----------- | ------- | -------- | -----
 `{id}`      | 字符串  | 否       | 将包 ID 与报表有关的滥用行为
 `{version}` | 字符串  | 否       | 包版本到有关报告滥用行为

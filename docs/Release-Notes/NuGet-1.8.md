@@ -1,22 +1,25 @@
 ---
-title: "NuGet 1.8 发行说明 |Microsoft 文档"
+title: NuGet 1.8 发行说明 |Microsoft 文档
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.8 的发行说明。"
-keywords: "NuGet 1.8 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
+ms.technology: ''
+description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.8 的发行说明。
+keywords: NuGet 1.8 发行说明，bug 修复的已知问题，添加了一些功能，DCRs
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 139c30e29d8148eab7298329a07d8e412259e595
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: b94382f79143cac6bd5deccb5e5253ba8c6f60ec
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-18-release-notes"></a>NuGet 1.8 发行说明
 
@@ -27,7 +30,7 @@ NuGet 1.8 已于 2012 年 5 月 23 日发布。
 ## <a name="known-installation-issue"></a>已知的安装问题
 如果你运行的 VS 2010 SP1，你可能尝试升级 NuGet，如果安装了较旧版本时遇到安装错误。
 
-解决方法是只需卸载 NuGet，然后从 VS 扩展库安装它。  请参阅[http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019)有关详细信息，或[转到 VS 修补程序直接](http://bit.ly/vsixcertfix)。
+解决方法是只需卸载 NuGet，然后从 VS 扩展库安装它。  请参阅[ http://support.microsoft.com/kb/2581019 ](http://support.microsoft.com/kb/2581019)有关详细信息，或[转到 VS 修补程序直接](http://bit.ly/vsixcertfix)。
 
 注意： 如果 Visual Studio 不会使您可以卸载的扩展 （卸载按钮为禁用），然后你可能需要重新启动 Visual Studio 中使用"以管理员身份运行"。
 
@@ -60,7 +63,7 @@ NuGet 1.8 现在支持创建单独的包的本地化资源，类似于.NET frame
 
 一个现有的 bug，需要注意的附属包是 NuGet 不会复制到的本地化的资源`bin`适用于网站项目的文件夹。  将在下一个版本的 NuGet 中修复此问题。
 
-有关演示如何创建和使用附属包的完整示例，请参阅[https://github.com/NuGet/SatellitePackageSample](https://github.com/NuGet/SatellitePackageSample)。
+有关演示如何创建和使用附属包的完整示例，请参阅[ https://github.com/NuGet/SatellitePackageSample ](https://github.com/NuGet/SatellitePackageSample)。
 
 ### <a name="package-restore-consent"></a>包还原同意
 在 NuGet 1.8，我们放置支持包还原，以保护用户个人信息的一个重要约束奠定基础。 此约束要求开发人员生成项目和使用程序包还原显式同意程序包还原的解决方案的联机从配置的包源中下载的程序包。

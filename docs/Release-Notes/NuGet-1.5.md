@@ -1,22 +1,25 @@
 ---
-title: "NuGet 1.5 发行说明 |Microsoft 文档"
+title: NuGet 1.5 发行说明 |Microsoft 文档
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.5 的发行说明。"
-keywords: "NuGet 1.5 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
+ms.technology: ''
+description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.5 的发行说明。
+keywords: NuGet 1.5 发行说明，bug 修复的已知问题，添加了一些功能，DCRs
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9f93000cd5e86cb8f3798e32daf6a4ded0d4e9c3
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: abb044bab5fdc8748b529a2f0072a7271a3674dd
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-15-release-notes"></a>NuGet 1.5 的发行说明
 

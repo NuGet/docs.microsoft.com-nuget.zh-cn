@@ -1,22 +1,25 @@
 ---
-title: "NuGet 1.2 发行说明 |Microsoft 文档"
+title: NuGet 1.2 发行说明 |Microsoft 文档
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.2 的发行说明。"
-keywords: "NuGet 1.2 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
+ms.technology: ''
+description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.2 的发行说明。
+keywords: NuGet 1.2 发行说明，bug 修复的已知问题，添加了一些功能，DCRs
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9c8fff67eb61ab673eb62113e0cc46c0868be237
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 0d95f41c5bc5d490764c9f128ee621e1037cef66
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-12-release-notes"></a>NuGet 1.2 发行说明
 

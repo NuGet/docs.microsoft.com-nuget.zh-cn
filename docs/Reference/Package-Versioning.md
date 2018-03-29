@@ -1,23 +1,26 @@
 ---
-title: "NuGet 程序包版本引用 |Microsoft 文档"
+title: NuGet 程序包版本引用 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 12/08/2017
+ms.date: 03/23/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "指定版本号和其他包 NuGet 包依赖，和如何安装依赖关系后的范围的准确详细信息。"
-keywords: "版本控制、 NuGet 包依赖项、 NuGet 依赖项版本、 NuGet 版本数字、 NuGet 程序包版本、 版本范围、 版本规范、 规范化的版本号"
+ms.technology: ''
+description: 指定版本号和其他包 NuGet 包依赖，和如何安装依赖关系后的范围的准确详细信息。
+keywords: 版本控制、 NuGet 包依赖项、 NuGet 依赖项版本、 NuGet 版本数字、 NuGet 程序包版本、 版本范围、 版本规范、 规范化的版本号
 ms.reviewer:
 - anandr
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 70472d7d97d073009237a047e0fdf528b221dfd0
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 678ad79d9106a9f592ae4f47bc93cc117496e2c9
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="package-versioning"></a>包版本控制
 
@@ -61,7 +64,7 @@ ms.lasthandoff: 02/02/2018
 - `-rc`：候选发布，通常可能为最终（稳定）版本，除非出现重大 bug。
 
 > [!Note]
-> NuGet 4.3.0+ 支持[SemVer 2.0.0](http://semver.org/spec/v2.0.0.html)，它支持使用点表示法的预发行版号作为 in *1.0.1-build.23*。 与之前 4.3.0 的 NuGet 版本不支持点表示法。 你可以使用窗体为*1.0.1-build23*。
+> NuGet 4.3.0+ 支持[SemVer 2.0.0](http://semver.org/spec/v2.0.0.html)，它支持使用点表示法的预发行版号作为 in *1.0.1-build.23*。 NuGet 4.3.0 之前的版本不支持点表示法。 你可以使用窗体为*1.0.1-build23*。
 
 当解决包引用和多个包版本的差异仅在于后缀，NuGet 首先，选择不带后缀的版本，然后应用优先预发行版本按反向字母顺序。 例如，将显示的确切顺序选择以下版本：
 
@@ -109,8 +112,8 @@ ms.lasthandoff: 02/02/2018
 
 | Notation | 已应用的规则 | 描述 |
 |----------|--------------|-------------|
-| 1.0 | 1.0 ≤ x | 非独占的最低版本 |
-| (1.0,) | 1.0 < x | 独占的最低版本 |
+| 1.0 | x ≥ 1.0 | 非独占的最低版本 |
+| (1.0,) | x > 1.0 | 独占的最低版本 |
 | [1.0] | x == 1.0 | 精确版本匹配 |
 | (,1.0] | x ≤ 1.0 | 非独占的最高版本 |
 | (,1.0) | x < 1.0 | 独占的最高版本 |

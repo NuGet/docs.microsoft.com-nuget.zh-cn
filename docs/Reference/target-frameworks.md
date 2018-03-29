@@ -1,23 +1,26 @@
 ---
-title: "NuGet 的目标框架引用 | Microsoft Docs"
+title: NuGet 的目标框架引用 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/11/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 目标框架引用标识并隔离包的框架依赖组件。"
-keywords: "NuGet 包定向, .NET ramework 目标, .NET framework 版本"
+ms.technology: ''
+description: NuGet 目标框架引用标识并隔离包的框架依赖组件。
+keywords: NuGet 包定向, .NET ramework 目标, .NET framework 版本
 ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 7e3621f01312e3b4fdbef116e5044869416b851c
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 0a9c45ef31e27c2242edce48e2cf272e5280dcff
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="target-frameworks"></a>目标框架
 
@@ -38,7 +41,7 @@ NuGet 在各个地方使用目标框架引用，以特别标识和隔离包的�
 
 NuGet 客户端支持下表中的框架。 等效项显示在括号内 []。 请注意，某些工具（如 `dotnet`）可能会在某些文件中使用规范的 TFM 变体。 例如，`dotnet pack` 在 `.nuspec` 文件中使用 `.NETCoreApp2.0`，而非 `netcoreapp2.0` 文件。 各种 NuGet 客户端工具正确处理这些变体，但是在直接编辑文件时，应始终使用规范的 TFM。
 
-| name           | 缩写 | TFM/TxM |
+| 名称           | 缩写 | TFM/TxM |
 | -------------  | ------------ | --------- |
 |.NET Framework  | net          | net11     |
 |                |              | net20     |
@@ -280,7 +283,7 @@ NuGet 3.3 及更早版本应该使用 `dotnet` 系列的名字对象；v3.4 及�
 
 另外，面向 Xamarin 的 NuGet 包可以使用 Xamarin 定义的其他框架。 请参阅[创建适用于 Xamarin 的 NuGet 包](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/)。
 
-| name | 描述 | .NET Standard |
+| 名称 | 描述 | .NET Standard |
 | --- | --- | ---
 | monoandroid | Mono 支持 Android OS | netstandard1.4 |
 | monotouch | Mono 支持 iOS | netstandard1.4 |

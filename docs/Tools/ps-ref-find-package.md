@@ -1,22 +1,25 @@
 ---
-title: "NuGet Find-package PowerShell 参考 |Microsoft 文档"
+title: NuGet Find-package PowerShell 参考 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 6/1/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Visual Studio 中的 NuGet 包管理器控制台中查找包 PowerShell 命令参考。"
-keywords: "NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考，查找包"
+ms.technology: ''
+description: Visual Studio 中的 NuGet 包管理器控制台中查找包 PowerShell 命令参考。
+keywords: NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考，查找包
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4303421c5f11177f3e5fc051a450934df47ab117
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 32b15ff415e77c3e063ded637a614fc8a04d5a0c
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="find-package-package-manager-console-in-visual-studio"></a>查找包 （在 Visual Studio 中的包管理器控制台）
 

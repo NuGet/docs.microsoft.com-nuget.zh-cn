@@ -1,22 +1,25 @@
 ---
-title: "NuGet 注册 TabExpansion PowerShell 参考 |Microsoft 文档"
+title: NuGet 注册 TabExpansion PowerShell 参考 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Visual Studio 中的 NuGet 包管理器控制台中注册 TabExpansion PowerShell 命令参考。"
-keywords: "NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考，注册 TabExpansion"
+ms.technology: ''
+description: Visual Studio 中的 NuGet 包管理器控制台中注册 TabExpansion PowerShell 命令参考。
+keywords: NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考，注册 TabExpansion
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9e363b8a7fa7e25d24331eb3e4eb87141e6a3b97
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: c7b95c46c55b95a8d743f9661ef9c63433b0192d
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="register-tabexpansion-package-manager-console-in-visual-studio"></a>注册 TabExpansion （Visual Studio 中的包管理器控制台）
 
@@ -34,7 +37,7 @@ Register-TabExpansion [-Name] <String> [-Definition] <Object> [<CommonParameters
 
 | 参数 | 描述 |
 | --- | --- |
-| name | （必需）要注册扩展到该命令。 -Name 是可选的交换机本身。 |
+| 名称 | （必需）要注册扩展到该命令。 -Name 是可选的交换机本身。 |
 | 定义 | （必需）描述在语法中的自变量的对象`@{'<parameter>' = {'<value1>', '<value2>', ...}}`其中`<parameter>`是要修改的参数和每个名称`<value>`提供特定的扩展。 接受单引号和双引号。 |
 
 任何这些参数接受管道输入或通配符字符。

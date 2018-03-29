@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI help 命令 |Microsoft 文档"
+title: NuGet CLI help 命令 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe help 命令的引用"
-keywords: "nuget 帮助参考，帮助命令"
+ms.technology: ''
+description: Nuget.exe help 命令的引用
+keywords: nuget 帮助参考，帮助命令
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 281c6ccc7c58d153280441430be063d9ee89955d
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 440861e53b4a9ff73a9d3e8a2a3dad7dbddc9584
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="help-or--command-nuget-cli"></a>帮助或？ 命令 (NuGet CLI)
 

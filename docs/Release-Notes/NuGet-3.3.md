@@ -1,22 +1,25 @@
 ---
-title: "NuGet 3.3 发行说明 |Microsoft 文档"
+title: NuGet 3.3 发行说明 |Microsoft 文档
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.3 的发行说明。"
-keywords: "NuGet 3.3 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
+ms.technology: ''
+description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.3 的发行说明。
+keywords: NuGet 3.3 发行说明，bug 修复的已知问题，添加了一些功能，DCRs
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 4d077fb53abd8033aad6da01ad090297109aa68c
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ab5e1ca550297c608017cb56dff32f4bd4bbb885
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-33-release-notes"></a>NuGet 3.3 发行说明
 
@@ -65,4 +68,4 @@ NuGet 命令行已更新以包括有关如何管理工作站上的本地缓存�
 
 ## <a name="known-issues"></a>已知问题
 
-我们继续在我们的 GitHub 问题列表，可在上跟踪问题： [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)
+我们将继续在我们的 GitHub 问题列表，可在上跟踪问题： [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)

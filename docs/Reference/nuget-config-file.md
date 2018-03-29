@@ -1,22 +1,25 @@
 ---
-title: "NuGet.Config 文件引用 | Microsoft Docs"
+title: NuGet.Config 文件引用 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 10/25/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "NuGet.Config 文件引用，包括配置、bindingRedirects、packageRestore、解决方案和 packageSource 节。"
-keywords: "NuGet.Config 文件, NuGet 配置引用, NuGet 配置选项"
+ms.technology: ''
+description: NuGet.Config 文件引用，包括配置、bindingRedirects、packageRestore、解决方案和 packageSource 节。
+keywords: NuGet.Config 文件, NuGet 配置引用, NuGet 配置选项
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6a5be1ebcca0accafcdaf32f0b1b7ca66ec53425
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: e2a9d4f10ac6af4e5bc7386d4f78e18c2a5752c4
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nugetconfig-reference"></a>NuGet.Config 引用
 
@@ -48,13 +51,13 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 包含杂项配置设置，可使用 [`nuget config` 命令](../tools/cli-ref-config.md)设置。
 
-注意：`dependencyVersion` 和 `repositoryPath` 仅适用于使用 `packages.config` 的项目。 `globalPackagesFolder` 仅适用于使用 PackageReference 格式的项目。
+`dependencyVersion` 和`repositoryPath`仅适用于使用的项目`packages.config`。 `globalPackagesFolder` 仅适用于使用 PackageReference 格式的项目。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | dependencyVersion（仅限于 `packages.config`） | 包安装、还原和更新的默认 `DependencyVersion` 值（未直接指定 `-DependencyVersion` 开关时）。 NuGet 包管理器 UI 也使用此值。 值为 `Lowest`、`HighestPatch`、`HighestMinor`、`Highest`。 |
-| globalPackagesFolder（未使用 `packages.config` 的项目） | 默认全局包文件夹的位置。 默认值为 `%USERPROFILE%\.nuget\packages` (Windows) 或 `~/.nuget/packages` (Mac/Linux)。 相对路径可在项目特定的 `Nuget.Config` 文件中使用。 |
-| repositoryPath（仅限于 `packages.config`） | 安装 NuGet 包的位置，而非默认的 `$(Solutiondir)/packages` 文件夹。 相对路径可在项目特定的 `Nuget.Config` 文件中使用。 |
+| globalPackagesFolder （仅限使用 PackageReference 项目） | 默认全局包文件夹的位置。 默认值为 `%userprofile%\.nuget\packages` (Windows) 或 `~/.nuget/packages` (Mac/Linux)。 相对路径可在项目特定的 `Nuget.Config` 文件中使用。 此设置被重写通过 NUGET_PACKAGES 环境变量将优先。 |
+| repositoryPath（仅限于 `packages.config`） | 安装 NuGet 包的位置，而非默认的 `$(Solutiondir)/packages` 文件夹。 相对路径可在项目特定的 `Nuget.Config` 文件中使用。 此设置被重写通过 NUGET_PACKAGES 环境变量将优先。 |
 | defaultPushSource | 如果操作未找到任何其他包源，则会标识应用作默认值的包源 URL 或路径。 |
 | http_proxy http_proxy.user http_proxy.password no_proxy | 连接到包源时要使用的代理设置；`http_proxy` 应为 `http://<username>:<password>@<domain>` 格式。 密码已加密，且不能手动添加。 对于 `no_proxy`，该值是绕过代理服务器的域的列表（以逗号分隔）。 可将 http_proxy 和 no_proxy 环境变量交替用于这些值。 有关其他详细信息，请参阅 [NuGet 代理设置](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com)。 |
 
@@ -64,7 +67,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 <config>
     <add key="dependencyVersion" value="Highest" />
     <add key="globalPackagesFolder" value="c:\packages" />
-    <add key="repositoryPath" value="c:\repo" />
+    <add key="repositoryPath" value="c:\installed_packages" />
     <add key="http_proxy" value="http://company-squid:3128@contoso.com" />
 </config>
 ```
@@ -73,7 +76,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 在安装包时，配置 NuGet 是否执行自动绑定重定向。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | skip | 指示是否跳过自动绑定重定向的布尔。 默认值为 false。 |
 
@@ -89,7 +92,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 在生成期间控制包还原。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | enabled | 指示 NuGet 是否可执行自动还原的布尔。 还可以使用 `True` 的值设置 `EnableNuGetPackageRestore` 环境变量，而不是在配置文件中设置此密钥。 |
 | 自动 | 指示 NuGet 是否应在生成期间检查缺少的包。 |
@@ -107,7 +110,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 控制解决方案的 `packages` 文件夹是否包括在源代码管理中。 此节仅适用于解决方案文件夹中的 `Nuget.Config` 文件。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | disableSourceControlIntegration | 指示在使用源代码管理时是否忽略包文件夹的布尔。 默认值为 False。 |
 
@@ -131,7 +134,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 列出所有已知包源。 在还原操作期间和与使用 PackageReference 格式任何项目，将忽略顺序。 NuGet 遵循的顺序的源安装和使用的项目与更新操作`packages.config`。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | （要分配给包源的名称） | 包源的路径或 URL。 |
 
@@ -149,7 +152,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 存储源的用户名和密码，通常通过 `nuget sources` 使用 `-username` 和 `-password` 开关指定。 默认情况下密码会进行加密，除非还使用了 `-storepasswordincleartext` 选项。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | username | 纯文本形式的源用户名。 |
 | 密码 | 源的加密密码。 |
@@ -191,7 +194,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 存储使用 API 密钥身份验证的源的密钥，如使用 [`nuget setapikey` 命令](../tools/cli-ref-setapikey.md) 设置。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | （源 URL） | 加密的 API 密钥。 |
 
@@ -207,7 +210,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 标识当前已禁用的源。 可能为空。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | （源名称） | 指示源是否禁用的布尔。 |
 
@@ -228,7 +231,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 标识到当前活动的源或指示所有源的聚合。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | （源名称）或 `All` | 如果密钥是源的名称，则值为源路径或 URL。 如果为 `All`，值应为 `(Aggregate source)`，从而组合其他未禁用的所有包源。 |
 

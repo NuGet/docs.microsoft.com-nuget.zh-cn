@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI 删除命令 |Microsoft 文档"
+title: NuGet CLI 删除命令 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe delete 命令的引用"
-keywords: "nuget 删除引用，则删除包命令"
+ms.technology: ''
+description: Nuget.exe delete 命令的引用
+keywords: nuget 删除引用，则删除包命令
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: b5d53b83cdccaa8e284b844786b0ec27e7afb63a
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 9445042c46ef41721def1fbbb8dcebf4afc14d1b
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="delete-command-nuget-cli"></a>删除命令 (NuGet CLI)
 

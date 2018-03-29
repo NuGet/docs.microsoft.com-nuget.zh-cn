@@ -1,23 +1,26 @@
 ---
-title: "ID 前缀保留引用 |Microsoft 文档"
+title: ID 前缀保留引用 |Microsoft 文档
 author: diverdan92
 ms.author: diverdan92
 manager: unniravindranathan
 ms.date: 10/09/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "包 ID 前缀保留功能说明和作者指南。"
-keywords: "NuGet 包 ID、 前缀、 保留"
+ms.technology: ''
+description: 包 ID 前缀保留功能说明和作者指南。
+keywords: NuGet 包 ID、 前缀、 保留
 ms.reviewer:
 - ananguar
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: f74ea3c772a129f4b9cd286a77cf3e88eba2d33b
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 7b1956612bd48a1c59503418f1a4d7d9dee900f5
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="package-id-prefix-reservation"></a>包 ID 前缀保留
 

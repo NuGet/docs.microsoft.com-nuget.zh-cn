@@ -1,5 +1,5 @@
 ---
-title: "服务索引、 NuGet API |Microsoft 文档"
+title: 服务索引、 NuGet API |Microsoft 文档
 author:
 - joelverhagen
 - kraigb
@@ -10,17 +10,20 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "服务索引是 NuGet HTTP API 的入口点，并枚举服务器的功能。"
-keywords: "NuGet API 入口点，NuGetA PI 终结点发现"
+ms.technology: ''
+description: 服务索引是 NuGet HTTP API 的入口点，并枚举服务器的功能。
+keywords: NuGet API 入口点，NuGetA PI 终结点发现
 ms.reviewer:
 - karann
 - unnir
-ms.openlocfilehash: 8de0bc15edc358d091d84da54b8b67c085f29645
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 1c1dea25067cc582a14a0dd22c2f3f7f70d40a02
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="service-index"></a>服务索引
 
@@ -48,7 +51,7 @@ nuget.org 的服务索引位于`https://api.nuget.org/v3/index.json`。
 
 资源是中的对象`resources`数组。 它表示包源已进行版本管理功能。 资源具有以下属性：
 
-name          | 类型   | 必需 | 说明
+名称          | 类型   | 必需 | 说明
 ------------- | ------ | -------- | -----
 @id           | 字符串 | 是      | 资源的 URL
 @type         | 字符串 | 是      | 一个字符串常量，代表资源类型

@@ -1,28 +1,31 @@
 ---
-title: "NuGet CLI 源命令 |Microsoft 文档"
+title: NuGet CLI 源命令 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "参考 nuget.exe 源命令"
-keywords: "nuget 源引用，源命令"
+ms.technology: ''
+description: 参考 nuget.exe 源命令
+keywords: nuget 源引用，源命令
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 139a9494e1ea898c90ce79d5990530fbe08642bd
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: f682a5209556ec6741473ccf2648e8f38bb568b9
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="sources-command-nuget-cli"></a>源命令 (NuGet CLI)
 
 **适用于：**包消耗、 发布&bullet;**受支持的版本：**所有
 
-管理位于用户作用域配置文件或指定的配置文件的源的列表。 用户作用域配置文件位于`%APPDATA%\NuGet\NuGet.Config`(Windows) 和`~/.nuget/NuGet/NuGet.Config`(Mac/Linux)。
+管理位于用户作用域配置文件或指定的配置文件的源的列表。 用户作用域配置文件位于`%appdata%\NuGet\NuGet.Config`(Windows) 和`~/.nuget/NuGet/NuGet.Config`(Mac/Linux)。
 
 请注意，nuget.org 的源 URL 是 `https://api.nuget.org/v3/index.json`。
 

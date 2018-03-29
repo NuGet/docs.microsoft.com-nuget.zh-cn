@@ -1,23 +1,26 @@
 ---
-title: "签名包引用 |Microsoft 文档"
+title: 签名包引用 |Microsoft 文档
 author: rido-min
 ms.author: rido-min
 manager: unniravindranathan
 ms.date: 03/06/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "签名包功能说明。"
-keywords: "NuGet 包签名、 签名、 证书"
+ms.technology: ''
+description: 签名包功能说明。
+keywords: NuGet 包签名、 签名、 证书
 ms.reviewer:
 - ananguar
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 9bf9885aaf42bedb681a5d916202fa8b26749a0c
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: a2a338596f7d98ded11da6fb02bafba3521249ab
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="signed-packages"></a>已签名的软件包
 
@@ -34,7 +37,7 @@ NuGet 包可以包含数字签名，它提供针对篡改的内容的保护。 �
 有关创建签名的包的详细信息，请参阅[签名包](../create-packages/Sign-a-package.md)和[nuget 登录命令](../tools/cli-ref-sign.md)。
 
 > [!Important]
-> nuget.org 目前不接受已签名的软件包。 可以用于发布到自定义源的程序包进行签名。
+> nuget.org 目前不接受已签名的软件包。 可以对发布到自定义源的包进行签名。
 
 ## <a name="certificate-requirements"></a>证书要求
 

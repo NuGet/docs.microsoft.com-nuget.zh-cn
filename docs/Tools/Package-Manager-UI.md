@@ -1,27 +1,30 @@
 ---
-title: "NuGet 程序包管理器用户界面参考 |Microsoft 文档"
+title: NuGet 程序包管理器用户界面参考 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/08/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-description: "使用 Visual Studio 中的 NuGet 包管理器用户界面，用于使用 NuGet 包的说明。"
-keywords: "NuGet UI 中，NuGet 包管理器 UI 中，NuGet 在 Visual Studio 中，管理 NuGet 包、 NuGet 用户界面、 Visual Studio 中的包管理器"
+description: 使用 Visual Studio 中的 NuGet 包管理器用户界面，用于使用 NuGet 包的说明。
+keywords: NuGet UI 中，NuGet 包管理器 UI 中，NuGet 在 Visual Studio 中，管理 NuGet 包、 NuGet 用户界面、 Visual Studio 中的包管理器
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 35bb856ccff43c77af7eac67da4614d83dcdc533
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ad36c2ab0c6e62c7fe624b35d92e852303ecfdfb
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-package-manager-ui"></a>NuGet 包管理器 UI
 
@@ -37,7 +40,7 @@ ms.lasthandoff: 03/08/2018
 - [包管理器选项控件](#package-manager-options-control)
 
 > [!Note]
-> 如果您缺少 Visual Studio 2015 中的 NuGet 包管理器，请检查**工具 > 扩展和更新...**并搜索*NuGet 包管理器*扩展。 如果你无法使用 Visual Studio 中的扩展安装程序，下载直接从扩展[https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)。
+> 如果您缺少 Visual Studio 2015 中的 NuGet 包管理器，请检查**工具 > 扩展和更新...**并搜索*NuGet 包管理器*扩展。 如果你无法使用 Visual Studio 中的扩展安装程序，下载直接从扩展[ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html)。
 >
 > 在 Visual Studio 2017，NuGet 和 NuGet 包管理器将自动安装与任意。提供与.NET 相关的工作负荷。 通过选择单独安装它**各个组件 > 代码工具 > NuGet 包管理器**在 Visual Studio 2017 安装程序中的选项。
 
@@ -125,7 +128,7 @@ ms.lasthandoff: 03/08/2018
 
     ![包源选项](media/options.png)
 
-1. 若要添加的源，选择 **+** ，编辑的名称，输入的 URL 或路径中的**源**控件，并选择**更新**。 源现在将显示在选择器下拉列表中。
+1. 若要添加的源，选择**+**，编辑的名称，输入的 URL 或路径中的**源**控件，并选择**更新**。 源现在将显示在选择器下拉列表中。
 1. 若要更改包源，选择它，请在编辑**名称**和**源**框中，然后选择**更新**。
 1. 若要禁用的包源，请清除列表中的名称左边的框。
 1. 若要删除的包源，选择它，然后选择**X**按钮。

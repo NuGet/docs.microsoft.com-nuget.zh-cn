@@ -1,22 +1,25 @@
 ---
-title: "NuGet CLI setapikey 命令 |Microsoft 文档"
+title: NuGet CLI setapikey 命令 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe setapikey 命令参考"
-keywords: "nuget setapikey 引用，setapikey 命令"
+ms.technology: ''
+description: Nuget.exe setapikey 命令参考
+keywords: nuget setapikey 引用，setapikey 命令
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: ca6caddbf1404bcaa1ca068c9556f7cf0c651947
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 696ccf9df5af487d3bf75925c1c1e0d1d1bf7f7b
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="setapikey-command-nuget-cli"></a>setapikey 命令 (NuGet CLI)
 
@@ -36,7 +39,7 @@ nuget setapikey <key> -Source <url> [options]
 
 | 选项 | 描述 |
 | --- | --- |
-| ConfigFile | 要修改的 NuGet 配置文件。 如果未指定， *%AppData%\NuGet\NuGet.Config*使用。 |
+| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
 | ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助命令的信息。 |
 | NonInteractive | 取消显示提示用户输入或确认。 |

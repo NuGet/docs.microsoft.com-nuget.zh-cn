@@ -1,26 +1,31 @@
 ---
-title: "NuGet 发行说明 | Microsoft Docs"
+title: NuGet 发行说明 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 发行说明及所有版本已知问题的目录。"
-keywords: "NuGet 发行说明, NuGet 已知问题"
+ms.technology: ''
+description: NuGet 发行说明及所有版本已知问题的目录。
+keywords: NuGet 发行说明, NuGet 已知问题
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3e50ff1506c35745e0e12bab90db7d15c22ec880
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 643c3eb13a13271b4adc199c1544194e5d79ab9d
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="release-notes"></a>发行说明
 
 [已知问题](../release-notes/known-issues.md)
+
+[NuGet 4.6 RTM](../release-notes/nuget-4.6-rtm.md)
 
 [NuGet 4.5 RTM](../release-notes/nuget-4.5-rtm.md)
 

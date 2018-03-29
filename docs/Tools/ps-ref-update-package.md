@@ -1,22 +1,25 @@
 ---
-title: "NuGet 更新包 PowerShell 参考 |Microsoft 文档"
+title: NuGet 更新包 PowerShell 参考 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "在 Visual Studio 中的 NuGet 包管理器控制台中的更新包 PowerShell 命令参考。"
-keywords: "NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考，更新包"
+ms.technology: ''
+description: 在 Visual Studio 中的 NuGet 包管理器控制台中的更新包 PowerShell 命令参考。
+keywords: NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考，更新包
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 293d9a7fdcce633eb5a97e5f76398deb5c13bdb4
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 05772159d62f73e7d25f71ad36809f5ae8ef6aae
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>更新包 （在 Visual Studio 中的包管理器控制台）
 
@@ -47,7 +50,7 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 | ProjectName | 项目包含要更新的包，将使用默认值的所有项目的名称。 |
 | 版本 | 要用于升级，默认为最新版本的版本。 NuGet 3.0 + 中的版本值必须是之一*最低、 最高、 HighestMinor*，或*HighestPatch* （等效于-安全）。 |
 | 安全 | 将使用相同的主要和次要版本与当前安装的包的唯一版本升级的约束。 |
-| 源 | 要搜索的程序包源 URL 或文件夹路径。 本地文件夹路径可以是绝对的或相对于当前文件夹。 如果省略，`Uninstall-Package`搜索当前选定的程序包源。 |
+| 源 | 要搜索的程序包源 URL 或文件夹路径。 本地文件夹路径可以是绝对的或相对于当前文件夹。 如果省略，`Update-Package`搜索当前选定的程序包源。 |
 | IncludePrerelease | 包括预发行程序包更新。 |
 | 重新安装 | Resintalls 使用其当前安装的版本包。 请参阅[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md)。 |
 | FileConflictAction | 当系统询问是覆盖还是忽略所引用的项目的现有文件时要执行操作。 可能的值为*覆盖，忽略，无、 OverwriteAll*，和*IgnoreAll* （3.0 +）。 |

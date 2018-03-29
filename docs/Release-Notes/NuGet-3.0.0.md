@@ -1,22 +1,25 @@
 ---
-title: "NuGet 3.0 发行说明 |Microsoft 文档"
+title: NuGet 3.0 发行说明 |Microsoft 文档
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "发行说明，了解 NuGet 3.0.0 包括已知问题、 bug 修复、 增加的功能，以及 DCRs。"
-keywords: "NuGet 3.0.0 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
+ms.technology: ''
+description: 发行说明，了解 NuGet 3.0.0 包括已知问题、 bug 修复、 增加的功能，以及 DCRs。
+keywords: NuGet 3.0.0 发行说明，bug 修复的已知问题，添加了一些功能，DCRs
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 65251b28093d2ac275053b8bfef6620e16e3fb4a
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: fc669e4a8440c295f08eef461186eef5f505df42
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-30-release-notes"></a>NuGet 3.0 发行说明
 

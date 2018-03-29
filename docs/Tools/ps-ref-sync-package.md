@@ -1,22 +1,25 @@
 ---
-title: "NuGet 同步包 PowerShell 参考 |Microsoft 文档"
+title: NuGet 同步包 PowerShell 参考 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Visual Studio 中的 NuGet 包管理器控制台中同步包 PowerShell 命令参考。"
-keywords: "NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考，同步包"
+ms.technology: ''
+description: Visual Studio 中的 NuGet 包管理器控制台中同步包 PowerShell 命令参考。
+keywords: NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考，同步包
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8e4b627cff01a353440c47883b98cd93f9edd6cb
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 0297015c3f1b8a8aced2545b4c4c3e6ccb1c7146
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="sync-package-package-manager-console-in-visual-studio"></a>同步包 （在 Visual Studio 中的包管理器控制台）
 

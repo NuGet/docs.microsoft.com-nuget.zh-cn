@@ -1,21 +1,25 @@
 ---
-title: "作为 MSBuild 目标的 NuGet 包和还原 | Microsoft Docs"
+title: 作为 MSBuild 目标的 NuGet 包和还原 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 03/13/2018
+ms.date: 03/23/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 包和还原可作为 MSBuild 目标直接用于 NuGet 4.0+。"
-keywords: "NuGet 和 MSBuild, NuGet 包目标, NuGet 还原目标"
+ms.technology: ''
+description: NuGet 包和还原可作为 MSBuild 目标直接用于 NuGet 4.0+。
+keywords: NuGet 和 MSBuild, NuGet 包目标, NuGet 还原目标
 ms.reviewer:
 - karann-msft
-ms.openlocfilehash: bb0ade1b0f5f81d7c8822d3c2b2f9dd45745fb8d
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+- unniravindranathan
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: a9c2c2229d717dff8472dce0ba568e4a21900b19
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -70,7 +74,7 @@ NuGet 4.0+
 | 存储库/分支 | RepositoryBranch | 空 | 可选存储库分支信息。 *RepositoryUrl*还必须指定要包含此属性。 示例： *master* (NuGet 4.7.0+) |
 | 存储库/提交 | RepositoryCommit | 空 | 针对构建的可选的存储库提交或变更集以指示哪些源包。 *RepositoryUrl*还必须指定要包含此属性。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
-| 摘要 | 不支持 | | |
+| 总结 | 不支持 | | |
 
 ### <a name="pack-target-inputs"></a>包目标输入
 
@@ -110,7 +114,7 @@ NuGet 4.0+
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
-作为 [NuGet 问题 2582](https://github.com/NuGet/Home/issues/2582) 更改的一部分，`PackageIconUrl` 最终将更改为 `PackageIconUri` 并且可成为包括在生成包根目录下的图标文件的相对路径。
+更改的一部分[NuGet 问题 352](https://github.com/NuGet/Home/issues/352)，`PackageIconUrl`最终将更改为`PackageIconUri`和可以是到图标文件，它将包括在得到的包的根目录的相对路径。
 
 ### <a name="output-assemblies"></a>输出程序集
 
@@ -231,6 +235,61 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 </Project>
 ```
 
+### <a name="advanced-extension-points-to-create-customized-package"></a>高级扩展点，以创建自定义的程序包
+
+`pack`目标提供了两个扩展点，在内部，目标 framework 特定生成中运行。 包括目标框架特定内容和程序集放在一个程序包支持的扩展点：
+
+- `TargetsForTfmSpecificBuildOutput` 目标： 用于中的文件`lib`文件夹或使用指定的文件夹`BuildOutputTargetFolder`。
+- `TargetsForTfmSpecificContentInPackage` 目标： 用于外部文件`BuildOutputTargetFolder`。
+
+#### <a name="targetsfortfmspecificbuildoutput"></a>TargetsForTfmSpecificBuildOutput
+
+编写自定义的目标和指定的值为`$(TargetsForTfmSpecificBuildOutput)`属性。 需要转到任何文件`BuildOutputTargetFolder`(默认情况下的为 lib)，目标应将这些文件写入到 ItemGroup`BuildOutputInPackage`并设置以下两个元数据值：
+
+- `FinalOutputPath`: 该文件; 绝对路径如果未提供，标识用于评估源路径。
+- `TargetPath`: （可选) 时该文件必须转到子文件夹内设置`lib\<TargetFramework>`，像在其各自的区域性文件夹下，该转到附属程序集一样。 默认值为文件的名称。
+
+示例:
+
+```
+<PropertyGroup>
+  <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetMyPackageFiles</TargetsForTfmSpecificBuildOutput>
+</PropertyGroup>
+
+<Target Name="GetMyPackageFiles">
+  <ItemGroup>
+    <BuildOutputInPackage Include="$(OutputPath)cs\$(AssemblyName).resources.dll">
+        <TargetPath>cs</TargetPath>
+    </BuildOutputInPackage>
+  </ItemGroup>
+</Target>
+```
+
+#### <a name="targetsfortfmspecificcontentinpackage"></a>TargetsForTfmSpecificContentInPackage
+
+编写自定义的目标和指定的值为`$(TargetsForTfmSpecificContentInPackage)`属性。 对于要在包中包含任何文件，目标应写入这些文件 ItemGroup`TfmSpecificPackageFile`并设置以下可选元数据：
+
+- `PackagePath`： 该文件应在包中的输出路径。 如果多个文件添加到相同的包路径，NuGet 将发出警告。
+- `BuildAction`: 生成操作以分配给文件，仅当时才需要的包路径中`contentFiles`文件夹。 默认值为"None"。
+
+示例：
+```
+<PropertyGroup>
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomContentTarget</TargetsForTfmSpecificContentInPackage>
+</PropertyGroup>
+
+<Target Name=""CustomContentTarget"">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include=""abc.txt"">
+        <PackagePath>mycontent/$(TargetFramework)</PackagePath>
+      </TfmSpecificPackageFile>
+      <TfmSpecificPackageFile Include=""Extensions/ext.txt"" Condition=""'$(TargetFramework)' == 'net46'"">
+        <PackagePath>net46content</PackagePath>
+      </TfmSpecificPackageFile>  
+    </ItemGroup>
+  </Target>  
+```
+
 ## <a name="restore-target"></a>还原目标
 
 `MSBuild /t:restore`（`nuget restore` 和 `dotnet restore` 与 .NET Core 项目一起使用）会还原项目文件中引用的包，如下所示：
@@ -254,7 +313,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 | RestorePackagesPath | 用户包文件夹路径。 |
 | RestoreDisableParallel | 将下载限制为一次一个。 |
 | RestoreConfigFile | 要应用的 `Nuget.Config` 文件的路径。 |
-| RestoreNoCache | 如果为“true”，则避免使用 web 缓存。 |
+| RestoreNoCache | 如果为 true，则避免使用缓存的包。 请参阅[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)。 |
 | RestoreIgnoreFailedSources | 如果为“true”，则忽略失败或丢失的包源。 |
 | RestoreTaskAssemblyFile | `NuGet.Build.Tasks.dll` 的路径。 |
 | RestoreGraphProjectInput | 要还原的以分号分隔的项目列表，其中应包含绝对路径。 |
@@ -282,7 +341,7 @@ msbuild /t:restore /p:RestoreConfigFile=<path>
 
 | 文件 | 描述 |
 |--------|--------|
-| `project.assets.json` | 以前为 `project.lock.json` |
+| `project.assets.json` | 包含的所有包引用的依赖项关系图。 |
 | `{projectName}.projectFileExtension.nuget.g.props` | 包中包含的对 MSBuild 属性的引用 |
 | `{projectName}.projectFileExtension.nuget.g.targets` | 包中包含的对 MSBuild 目标的引用 |
 

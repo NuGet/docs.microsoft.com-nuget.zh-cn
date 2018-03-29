@@ -1,23 +1,26 @@
 ---
-title: "适用于 NuGet 的 .nuspec 文件引用 | Microsoft Docs"
+title: 适用于 NuGet 的 .nuspec 文件引用 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 08/29/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: ".nuspec 文件包含生成包时使用的，并向包使用者提供信息的包元数据。"
-keywords: "nuspec 引用, NuGet 包元数据, NuGet 包清单, nuspec 架构"
+ms.technology: ''
+description: .nuspec 文件包含生成包时使用的，并向包使用者提供信息的包元数据。
+keywords: nuspec 引用, NuGet 包元数据, NuGet 包清单, nuspec 架构
 ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 90693b09fce966e3bc28ca24360a3fb4e1f73386
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 3cc9ab4e352de9b3fabbfd92303f0d528d804c20
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -141,7 +144,7 @@ nuget pack MyProject.csproj
 
 除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
 
-| 标记 | 值来源 | “值”
+| 标记 | 值来源 | 值
 | --- | --- | ---
 | **$id$** | 项目文件 | 从项目文件的 AssemblyName （标题） |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
@@ -319,7 +322,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 > [!Important]
 > 当包安装到项目中时，NuGet 自动将程序集引用添加到包的 DLL，不包括命名为 `.resources.dll` 的内容，因为它们被假定为本地化的附属程序集。 为此，请避免对包含基本包代码的文件使用 `.resources.dll`。
 
-若要绕过此自动行为，并显式控制包中包含的文件，请将 `<files>` 元素作为 `<package>` 的子元素（和 `<metadata>` 的同级元素），并使用单独的 `<file>` 元素标识每个文件。 例如:
+若要绕过此自动行为，并显式控制包中包含的文件，请将 `<files>` 元素作为 `<package>` 的子元素（和 `<metadata>` 的同级元素），并使用单独的 `<file>` 元素标识每个文件。 例如：
 
 ```xml
 <files>
@@ -559,7 +562,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 - `TxM` 是 NuGet 支持的任何合法目标框架名字对象（请参阅[目标框架](../reference/target-frameworks.md)）。
 - 任何文件夹结构都可以附加到此语法的末尾。
 
-例如:
+例如：
 
     Language- and framework-agnostic:
         /contentFiles/any/any/config.xml

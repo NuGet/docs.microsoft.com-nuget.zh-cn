@@ -1,5 +1,5 @@
 ---
-title: "概述、 NuGet API |Microsoft 文档"
+title: 概述、 NuGet API |Microsoft 文档
 author:
 - joelverhagen
 - kraigb
@@ -10,17 +10,20 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "NuGet API 是一组可用于下载包，提取元数据，发布新的包等的 HTTP 终结点。"
-keywords: "NuGet V3 API、 NuGet V2 API、 NuGet JSON、 NuGet 注册 API，NuGet API 平面容器、 NuGet nupkg API、 NuGet 元数据 API、 NuGet 搜索 API、 NuGet 推送 API，NuGe 发布 API，NuGet 删除 API，NuGet 不列出 API，NuGet 协议"
+ms.technology: ''
+description: NuGet API 是一组可用于下载包，提取元数据，发布新的包等的 HTTP 终结点。
+keywords: NuGet V3 API、 NuGet V2 API、 NuGet JSON、 NuGet 注册 API，NuGet API 平面容器、 NuGet nupkg API、 NuGet 元数据 API、 NuGet 搜索 API、 NuGet 推送 API，NuGe 发布 API，NuGet 删除 API，NuGet 不列出 API，NuGet 协议
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: c28b0912be6dbccab06078100cb71821c3658e08
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 7053a971c80a94cf035e8f149c332b36e66a9ea9
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -32,8 +35,7 @@ NuGet API 是一套用于下载包、 提取元数据、 发布新的程序包�
 
 ## <a name="service-index"></a>服务索引
 
-API 的入口点是一个已知位置中的 JSON 文档。 此文档被称为**服务索引**。
-Nuget.org 的服务索引的位置是`https://api.nuget.org/v3/index.json`。
+API 的入口点是一个已知位置中的 JSON 文档。 此文档被称为**服务索引**。 Nuget.org 的服务索引的位置是`https://api.nuget.org/v3/index.json`。
 
 此 JSON 文档包含的列表*资源*其提供不同的功能和满足不同用例。
 
@@ -109,11 +111,12 @@ DELETE | 删除或 unlists 资源。
 
 ## <a name="http-request-headers"></a>HTTP 请求标头
 
-name                     | 描述
+名称                     | 描述
 ------------------------ | -----------
 X-NuGet-ApiKey           | 所需的推送和删除，请参阅[`PackagePublish`资源](package-publish-resource.md)
-X-NuGet-Client-Version   | **弃用**和替换为`X-NuGet-Protocol-Version`
+X-NuGet-Client-Version   | **弃用**和替换为 `X-NuGet-Protocol-Version`
 X-NuGet-Protocol-Version | 在某些情况下，仅在 nuget.org 上的需要，请参阅[nuget.org 协议](NuGet-Protocols.md)
+X-NuGet-Session-Id       | *可选*。 NuGet 客户端 v4.7 + 标识属于同一 NuGet 客户端会话的 HTTP 请求。 有关`PackageReference`存在还原操作是否为单个会话 id，其他情况下自动完成，如和`packages.config`还原可能有几个不同的会话 id 的由于代码被分解的因子。
 
 ## <a name="authentication"></a>身份验证
 

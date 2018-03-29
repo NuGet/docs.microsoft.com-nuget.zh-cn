@@ -1,22 +1,25 @@
 ---
-title: "NuGet 2.1 发行说明 |Microsoft 文档"
+title: NuGet 2.1 发行说明 |Microsoft 文档
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 2.1 的发行说明。"
-keywords: "NuGet 2.1 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
+ms.technology: ''
+description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 2.1 的发行说明。
+keywords: NuGet 2.1 发行说明，bug 修复的已知问题，添加了一些功能，DCRs
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 405f5a0bddd5472cc760da77412c5fa066da1558
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 06116a86887b5561ad4e2ecad8090222d16cd333
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-21-release-notes"></a>NuGet 2.1 发行说明
 

@@ -1,22 +1,25 @@
 ---
-title: "NuGet 1.0 和 1.1 发行说明 |Microsoft 文档"
+title: NuGet 1.0 和 1.1 发行说明 |Microsoft 文档
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.1 的发行说明。"
-keywords: "NuGet 1.1 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
+ms.technology: ''
+description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.1 的发行说明。
+keywords: NuGet 1.1 发行说明，bug 修复的已知问题，添加了一些功能，DCRs
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6a596e61f144e7269f703f2dba3dddb4fd338e6a
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: dd320df2d725e58182cd908ce621571ea018b350
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-10-and-11-release-notes"></a>NuGet 1.0 和 1.1 发行说明
 
@@ -49,7 +52,7 @@ NuGet 命令行工具需要：
 
 * 先卸载较旧生成。 你需要以管理员身份为此运行 VS。
 * 删除你具有的所有现有馈送。
-* 添加新的订阅源指向[http://go.microsoft.com/fwlink/?LinkId=206669](http://go.microsoft.com/fwlink/?LinkId=206669)。
+* 添加新的订阅源指向[ http://go.microsoft.com/fwlink/?LinkId=206669 ](http://go.microsoft.com/fwlink/?LinkId=206669)。
 
 ## <a name="nuget-11"></a>NuGet 1.1
 
@@ -135,7 +138,7 @@ NuGet 命令行工具需要：
 
 以下是在 CTP 2 中所做的最重大更改：
 
-* 切换到 OData 服务终结点从 ATOM 馈送的包： 如果你升级到 CTP2 版本的 NuGet，请务必为程序包源中添加下面的 URL: https://feed.nuget.org/ctp2/odata/v1/。
+* 切换到 OData 服务终结点从 ATOM 馈送的包： 如果你升级到 CTP2 版本的 NuGet，请务必为程序包源中添加下面的 URL: `https://feed.nuget.org/ctp2/odata/v1/`。
 * 重命名为添加程序包命令*安装包*。
 * 更新`.nuspec`格式。 `.nuspec`格式现在包括*iconUrl*字段用于指定将仅显示在包对话框中添加一个 32 x 32 png 图标。 因此请务必设置，若要将你的包区分开来。 `.nuspec`格式还包括新*projectUrl*字段可以用于指向提供有关你的包的详细信息的网页。
 

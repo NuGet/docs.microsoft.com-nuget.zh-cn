@@ -1,18 +1,21 @@
 ---
-title: "NuGet 错误和警告参考 |Microsoft 文档"
+title: NuGet 错误和警告参考 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 03/06/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "针对警告和错误各种 NuGet 操作过程中从 NuGet 发出的完整参考。"
-keywords: "NuGet 错误、 NuGet 警告诊断"
+ms.technology: ''
+description: 针对警告和错误各种 NuGet 操作过程中从 NuGet 发出的完整参考。
+keywords: NuGet 错误、 NuGet 警告诊断
 ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
+ms.workload:
+- dotnet
+- aspnet
 f1_keywords:
 - NU1000
 - NU1001
@@ -50,11 +53,11 @@ f1_keywords:
 - NU3008
 - NU3018
 - NU3028
-ms.openlocfilehash: 59bbe37d1a965e5167800148603869645fc5e0b2
-ms.sourcegitcommit: df21fe770900644d476d51622a999597a6f20ef8
+ms.openlocfilehash: 020e31dc8646c43b86bcee555f1772e8b1db7761
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="errors-and-warnings"></a>错误和警告
 
@@ -136,7 +139,7 @@ ms.lasthandoff: 03/12/2018
 | --- | --- |
 | **问题** | 找到的包标识符，但在任何源上找不到指定的依赖范围内的版本。 可能由包和不是用户指定的范围。 |
 | **示例消息** | *找不到版本包 NuGet.Versioning (> = 9.0.1)<br/> -于 nuget.org 中的找到 30 版本 [最接近的版本： 4.0.0]<br/> -dotnet buildtools 中找到的 10 版本 [最接近的版本： 4.0.0-rc-2129]<br/> -找到 9在 NuGetVolatile 版本 [最接近的版本： 3.0.0-beta-00032]<br/> -0 版本位于 dotnet 核心<br/>-0 版本位于 dotnet roslyn* |
-| **解决方案** | 编辑项目文件或`packages.config`更正包版本。 此外检查[NuGet 配置](../consume-packages/Configuring-NuGet-Behavior.md)标识的包源你希望使用。 你可能需要更改 requeted 版本，如果此包被直接引用该项目。 |
+| **解决方案** | 编辑项目文件以更正包版本。 此外检查[NuGet 配置](../consume-packages/Configuring-NuGet-Behavior.md)标识的包源你希望使用。 你可能需要更改 requeted 版本，如果此包被直接引用该项目。 |
 
 ### <a name="nu1103"></a>NU1103
 
@@ -144,7 +147,7 @@ ms.lasthandoff: 03/12/2018
 | --- | --- |
 | **问题** | 项目指定了依赖项的范围，稳定版本，但不稳定版本找该范围内。 预发行版本未找到，但不是允许。 |
 | **示例消息** | *找不到稳定的包 NuGet.Versioning 随版本 (> = 3.0.0)<br/> -dotnet buildtools 中找到的 10 版本 [最接近的版本： 4.0.0-rc-2129]<br/> -NuGetVolatile 中的找到 9 版本 [最接近的版本： 3.0.0-beta-00032]<br/> -0 版本位于 dotnet 核心<br/>-0 版本位于 dotnet roslyn* |
-| **解决方案** |  编辑项目文件中的版本范围或`packages.config`以包括预发行版本。 请参阅[包版本控制](../reference/Package-Versioning.md)。 |
+| **解决方案** |  编辑项目文件以包括预发行版本中的版本范围。 请参阅[包版本控制](../reference/Package-Versioning.md)。 |
 
 ### <a name="nu1104"></a>NU1104
 
@@ -167,8 +170,8 @@ ms.lasthandoff: 03/12/2018
 | | |
 | --- | --- |
 | **问题** | 无法解析依赖项约束。 |
-| **示例消息** | *无法满足 {id} 互相冲突的请求: {冲突路径} Framework: {目标关系图}* 
-| **解决方案** | 编辑项目文件或`packages.config`指定的依赖项而不是准确的版本更自由范围。 |
+| **示例消息** | *无法满足 {id} 互相冲突的请求: {冲突路径} Framework: {目标关系图}* |
+| **解决方案** | 编辑项目文件以指定的依赖项而不是准确的版本更自由范围。 |
 |
 
 <a name="nu1107"></a>
@@ -179,7 +182,7 @@ ms.lasthandoff: 03/12/2018
 | --- | --- |
 | **问题** | 无法解析包之间的依赖关系约束。 |
 | **示例消息** | *NuGet.Versioning 检测到的版本冲突。若要解决此问题的项目中直接引用包。<br/>NuGet.Packaging 3.5.0-> （= 3.5.0） NuGet.Versioning<br/> NuGet.Configuration 4.0.0-> 的 NuGet.Versioning （= 4.0.0）* |
-| **解决方案** | 依赖项与上的约束的确切版本的包不允许其他包以根据需要增大版本号。 直接添加到项目的引用 (在项目文件或`packages.config`) 与所需的确切版本。 |
+| **解决方案** | 依赖项与上的约束的确切版本的包不允许其他包以根据需要增大版本号。 添加具有所需的确切版本对直接 （在项目文件中） 项目的引用。 |
 
 <a name="nu1108"></a>
 

@@ -1,24 +1,27 @@
 ---
-title: "NuGet 程序包管理器控制台指南 |Microsoft 文档"
+title: NuGet 程序包管理器控制台指南 |Microsoft 文档
 author: kraigb
 hms.author: kraigb
 manager: ghogen
 ms.date: 01/23/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
+ms.technology: ''
 f1_keywords:
 - vs.nuget.packagemanager.console
-description: "使用 Visual Studio 中的 NuGet 程序包管理器控制台，用于处理包的说明。"
-keywords: "NuGet 包管理器控制台，NuGet powershell，管理 NuGet 包"
+description: 使用 Visual Studio 中的 NuGet 程序包管理器控制台，用于处理包的说明。
+keywords: NuGet 包管理器控制台，NuGet powershell，管理 NuGet 包
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 60c7edd0497e162cc511424e9acfbbfd6f53fd46
-ms.sourcegitcommit: a40a6ce6897b2d9411397b2e29b1be234eb6e50c
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: af22a524f6b4a41a4c24077fe396846da6fb1ff8
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="package-manager-console"></a>程序包管理器控制台
 
@@ -80,19 +83,10 @@ Install-Package Elmah -ProjectName UtilitiesLib
 
 请参阅[安装包](../tools/ps-ref-install-package.md)。
 
-安装的包执行下列操作：
+在控制台中安装的包执行相同的步骤，如所述[安装包时，会发生什么情况](../consume-packages/ways-to-install-a-package.md#what-happens-when-a-package-is-installed)，添加了以下内容：
 
-- 与默示协议的控制台窗口中显示适用的许可条款。 如果你不同意这些条款，你应立即卸载程序包。
-- 在正在使用的任何引用格式添加到项目的引用。 引用随后将出现在解决方案资源管理器和适用的参考格式文件。 但是，请注意，采用 PackageReference，则需要先保存该项目才能直接看到项目文件中的更改。
-- 缓存包：
-  - PackageReference： 在缓存包`%USERPROFILE%\.nuget\packages`和锁定文件即`project.assets.json`更新。
-  - `packages.config`： 创建`packages`在程序包文件入子文件夹中的解决方案根目录和副本的文件夹。 `package.config`更新文件。
-- 更新`app.config`和/或`web.config`如果包使用[源和配置文件转换](../create-packages/source-and-config-file-transformations.md)。
-- 如果项目中尚不存在，请安装任何依赖项。 中所述，这可能会更新在过程中，包版本[依赖项解析](../consume-packages/dependency-resolution.md)。
-- 如果可用，请在 Visual Studio 窗口中显示包的自述文件。
-
-> [!Tip]
-> 安装的包的主要优势之一`Install-Package`在控制台中的命令时，它将对项目的引用，就像使用程序包管理器 UI。 与此相反， `nuget install` CLI 命令仅下载包，并不会自动添加引用。
+- 控制台显示在其窗口并默示协议适用的许可条款。 如果你不同意这些条款，你应立即卸载程序包。
+- 此外对包的引用添加到项目文件，并出现在**解决方案资源管理器**下**引用**节点，您必须先保存该项目才能直接看到项目文件中的更改。
 
 ## <a name="uninstalling-a-package"></a>卸载包
 
@@ -111,12 +105,9 @@ Uninstall-Package Elmah -Force
 
 卸载程序包执行下列操作：
 
-- 将对包从项目 （和正在使用的任何引用格式） 的引用。 引用不再出现在解决方案资源管理器。 (你可能需要重新生成该项目才能看到它从删除**Bin**文件夹。)
+- 将对包从项目 （和正在使用的任何管理格式） 的引用。 引用不再显示在**解决方案资源管理器**。 (你可能需要重新生成该项目才能看到它从删除**Bin**文件夹。)
 - 反转对所做任何更改`app.config`或`web.config`时已安装了包。
 - 如果没有剩余的包使用这些依赖关系，依赖以前安装中删除项。
-
-> [!Tip]
-> 如`Install-Package`、`Uninstall-Package`命令具有与管理在项目中，引用的好处`nuget uninstall`CLI 命令。
 
 ## <a name="updating-a-package"></a>更新程序包
 
@@ -159,7 +150,7 @@ Find-Package jquery -AllVersions -ExactMatch
 
 在 Visual Studio 2017，NuGet 和 NuGet 包管理器将自动安装时选择任何。提供与.NET 相关的工作负荷;你就可以还单独安装它，通过检查**各个组件 > 代码工具 > NuGet 包管理器**在 Visual Studio 2017 安装程序中的选项。
 
-此外，如果你缺少 NuGet 包管理器在 Visual Studio 2015 及更早版本，请检查**工具 > 扩展和更新...**和搜索 NuGet 包管理器扩展。 如果你无法使用 Visual Studio 中的扩展安装程序，你可以下载直接从扩展[https://dist.nuget.org/index.html](https://dist.nuget.org/index.html)。
+此外，如果你缺少 NuGet 包管理器在 Visual Studio 2015 及更早版本，请检查**工具 > 扩展和更新...**和搜索 NuGet 包管理器扩展。 如果你无法使用 Visual Studio 中的扩展安装程序，你可以下载直接从扩展[ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html)。
 
 程序包管理器控制台不是当前适用于 Visual Studio for mac。 等效命令，但是，这些功能通过[NuGet CLI](nuget-exe-CLI-reference.md)。 适用于 Mac 的 visual Studio 也用于管理 NuGet 包存在一些 UI。 请参阅[中你的项目包括 NuGet 包](/visualstudio/mac/nuget-walkthrough)。
 
