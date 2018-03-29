@@ -1,30 +1,33 @@
 ---
-title: "NuGet 同步包 PowerShell 参考 |Microsoft 文档"
+title: NuGet 同步包 PowerShell 参考 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Visual Studio 中的 NuGet 包管理器控制台中同步包 PowerShell 命令参考。"
-keywords: "NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考，同步包"
+ms.technology: ''
+description: Visual Studio 中的 NuGet 包管理器控制台中同步包 PowerShell 命令参考。
+keywords: NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考，同步包
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8e4b627cff01a353440c47883b98cd93f9edd6cb
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 0297015c3f1b8a8aced2545b4c4c3e6ccb1c7146
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="sync-package-package-manager-console-in-visual-studio"></a><span data-ttu-id="5c47d-104">同步包 （在 Visual Studio 中的包管理器控制台）</span><span class="sxs-lookup"><span data-stu-id="5c47d-104">Sync-Package (Package Manager Console in Visual Studio)</span></span>
+# <a name="sync-package-package-manager-console-in-visual-studio"></a><span data-ttu-id="0d044-104">同步包 （在 Visual Studio 中的包管理器控制台）</span><span class="sxs-lookup"><span data-stu-id="0d044-104">Sync-Package (Package Manager Console in Visual Studio)</span></span>
 
-<span data-ttu-id="5c47d-105">*版本 3.0 +;仅在内可用[NuGet 包管理器控制台](package-manager-console.md)Windows 上的 Visual Studio 中。*</span><span class="sxs-lookup"><span data-stu-id="5c47d-105">*Version 3.0+; available only within the [NuGet Package Manager Console](package-manager-console.md) in Visual Studio on Windows.*</span></span>
+<span data-ttu-id="0d044-105">*版本 3.0 +;仅在内可用[NuGet 包管理器控制台](package-manager-console.md)Windows 上的 Visual Studio 中。*</span><span class="sxs-lookup"><span data-stu-id="0d044-105">*Version 3.0+; available only within the [NuGet Package Manager Console](package-manager-console.md) in Visual Studio on Windows.*</span></span>
 
-<span data-ttu-id="5c47d-106">获取从安装包的版本指定 （或默认值） 项目，并同步到解决方案中项目的其余部分的版本。</span><span class="sxs-lookup"><span data-stu-id="5c47d-106">Gets the version of installed package from specified (or default) project and synchronizes the version to the rest of projects in the solution.</span></span>
+<span data-ttu-id="0d044-106">获取从安装包的版本指定 （或默认值） 项目，并同步到解决方案中项目的其余部分的版本。</span><span class="sxs-lookup"><span data-stu-id="0d044-106">Gets the version of installed package from specified (or default) project and synchronizes the version to the rest of projects in the solution.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="5c47d-107">语法</span><span class="sxs-lookup"><span data-stu-id="5c47d-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="0d044-107">语法</span><span class="sxs-lookup"><span data-stu-id="0d044-107">Syntax</span></span>
 
 ```ps
 Sync-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-Version] <string>]
@@ -32,27 +35,27 @@ Sync-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-Ver
     [-WhatIf] [<CommonParameters>]
 ```
 
-## <a name="parameters"></a><span data-ttu-id="5c47d-108">参数</span><span class="sxs-lookup"><span data-stu-id="5c47d-108">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="0d044-108">参数</span><span class="sxs-lookup"><span data-stu-id="0d044-108">Parameters</span></span>
 
-| <span data-ttu-id="5c47d-109">参数</span><span class="sxs-lookup"><span data-stu-id="5c47d-109">Parameter</span></span> | <span data-ttu-id="5c47d-110">描述</span><span class="sxs-lookup"><span data-stu-id="5c47d-110">Description</span></span> |
+| <span data-ttu-id="0d044-109">参数</span><span class="sxs-lookup"><span data-stu-id="0d044-109">Parameter</span></span> | <span data-ttu-id="0d044-110">描述</span><span class="sxs-lookup"><span data-stu-id="0d044-110">Description</span></span> |
 | --- | --- |
-| <span data-ttu-id="5c47d-111">Id</span><span class="sxs-lookup"><span data-stu-id="5c47d-111">Id</span></span> | <span data-ttu-id="5c47d-112">（必需）要同步的包标识符。-Id 开关本身是可选的。</span><span class="sxs-lookup"><span data-stu-id="5c47d-112">(Required) The identifier of the package to sync. The -Id switch itself is optional.</span></span> |
-| <span data-ttu-id="5c47d-113">IgnoreDependencies</span><span class="sxs-lookup"><span data-stu-id="5c47d-113">IgnoreDependencies</span></span> | <span data-ttu-id="5c47d-114">安装仅此包不及其依赖项。</span><span class="sxs-lookup"><span data-stu-id="5c47d-114">Install only this package and not its dependencies.</span></span> |
-| <span data-ttu-id="5c47d-115">ProjectName</span><span class="sxs-lookup"><span data-stu-id="5c47d-115">ProjectName</span></span> | <span data-ttu-id="5c47d-116">要同步包从，默认为默认项目的项目。</span><span class="sxs-lookup"><span data-stu-id="5c47d-116">The project to sync the package from, defaulting to the default  project.</span></span> |
-| <span data-ttu-id="5c47d-117">版本</span><span class="sxs-lookup"><span data-stu-id="5c47d-117">Version</span></span> | <span data-ttu-id="5c47d-118">若要同步，包的版本默认为当前安装的版本。</span><span class="sxs-lookup"><span data-stu-id="5c47d-118">The version of the package to sync, defaulting to the currently installed version.</span></span> |
-| <span data-ttu-id="5c47d-119">源</span><span class="sxs-lookup"><span data-stu-id="5c47d-119">Source</span></span> | <span data-ttu-id="5c47d-120">要搜索的程序包源 URL 或文件夹路径。</span><span class="sxs-lookup"><span data-stu-id="5c47d-120">The URL or folder path for the package source to search.</span></span> <span data-ttu-id="5c47d-121">本地文件夹路径可以是绝对的或相对于当前文件夹。</span><span class="sxs-lookup"><span data-stu-id="5c47d-121">Local folder paths can be absolute, or relative to the current folder.</span></span> <span data-ttu-id="5c47d-122">如果省略，`Sync-Package`搜索当前选定的程序包源。</span><span class="sxs-lookup"><span data-stu-id="5c47d-122">If omitted, `Sync-Package` searches the currently selected package source.</span></span> |
-| <span data-ttu-id="5c47d-123">IncludePrerelease</span><span class="sxs-lookup"><span data-stu-id="5c47d-123">IncludePrerelease</span></span> | <span data-ttu-id="5c47d-124">在同步中包括预发行程序包。</span><span class="sxs-lookup"><span data-stu-id="5c47d-124">Includes prerelease packages in the sync.</span></span> |
-| <span data-ttu-id="5c47d-125">FileConflictAction</span><span class="sxs-lookup"><span data-stu-id="5c47d-125">FileConflictAction</span></span> | <span data-ttu-id="5c47d-126">当系统询问是覆盖还是忽略所引用的项目的现有文件时要执行操作。</span><span class="sxs-lookup"><span data-stu-id="5c47d-126">The action to take when asked to overwrite or ignore existing files referenced by the project.</span></span> <span data-ttu-id="5c47d-127">可能的值为*覆盖，忽略，无、 OverwriteAll*，和*（3.0 +）* *IgnoreAll*。</span><span class="sxs-lookup"><span data-stu-id="5c47d-127">Possible values are *Overwrite, Ignore, None, OverwriteAll*, and *(3.0+)* *IgnoreAll*.</span></span> |
-| <span data-ttu-id="5c47d-128">DependencyVersion</span><span class="sxs-lookup"><span data-stu-id="5c47d-128">DependencyVersion</span></span> | <span data-ttu-id="5c47d-129">版本的依赖项包若要使用，可以是下列项之一：</span><span class="sxs-lookup"><span data-stu-id="5c47d-129">The version of the dependency packages to use, which can be one of the following:</span></span><br/><ul><li><span data-ttu-id="5c47d-130">*最低*（默认值）： 最低版本</span><span class="sxs-lookup"><span data-stu-id="5c47d-130">*Lowest* (default): the lowest version</span></span></li><li><span data-ttu-id="5c47d-131">*HighestPatch*： 具有的最低主要、 越小越小、 最高的修补程序版本</span><span class="sxs-lookup"><span data-stu-id="5c47d-131">*HighestPatch*: the version with the lowest major, lowest minor, highest patch</span></span></li><li><span data-ttu-id="5c47d-132">*HighestMinor*： 具有最低主要版本、 最高次，最高的修补程序</span><span class="sxs-lookup"><span data-stu-id="5c47d-132">*HighestMinor*: the version with the lowest major, highest minor, highest patch</span></span></li><li><span data-ttu-id="5c47d-133">*最高*（默认值为更新包不带任何参数）： 最高的版本</span><span class="sxs-lookup"><span data-stu-id="5c47d-133">*Highest* (default for Update-Package with no parameters): the highest version</span></span></li></ul><span data-ttu-id="5c47d-134">你可以设置默认值使用[ `dependencyVersion` ](../reference/nuget-config-file.md#config-section)中设置`Nuget.Config`文件。</span><span class="sxs-lookup"><span data-stu-id="5c47d-134">You can set the default value using the [`dependencyVersion`](../reference/nuget-config-file.md#config-section) setting in the `Nuget.Config` file.</span></span> |
-| <span data-ttu-id="5c47d-135">WhatIf</span><span class="sxs-lookup"><span data-stu-id="5c47d-135">WhatIf</span></span> | <span data-ttu-id="5c47d-136">显示不实际执行同步运行命令时，会发生什么情况。</span><span class="sxs-lookup"><span data-stu-id="5c47d-136">Shows what would happen when running the command without actually performing the sync.</span></span> |
+| <span data-ttu-id="0d044-111">Id</span><span class="sxs-lookup"><span data-stu-id="0d044-111">Id</span></span> | <span data-ttu-id="0d044-112">（必需）要同步的包标识符。-Id 开关本身是可选的。</span><span class="sxs-lookup"><span data-stu-id="0d044-112">(Required) The identifier of the package to sync. The -Id switch itself is optional.</span></span> |
+| <span data-ttu-id="0d044-113">IgnoreDependencies</span><span class="sxs-lookup"><span data-stu-id="0d044-113">IgnoreDependencies</span></span> | <span data-ttu-id="0d044-114">安装仅此包不及其依赖项。</span><span class="sxs-lookup"><span data-stu-id="0d044-114">Install only this package and not its dependencies.</span></span> |
+| <span data-ttu-id="0d044-115">ProjectName</span><span class="sxs-lookup"><span data-stu-id="0d044-115">ProjectName</span></span> | <span data-ttu-id="0d044-116">要同步包从，默认为默认项目的项目。</span><span class="sxs-lookup"><span data-stu-id="0d044-116">The project to sync the package from, defaulting to the default  project.</span></span> |
+| <span data-ttu-id="0d044-117">版本</span><span class="sxs-lookup"><span data-stu-id="0d044-117">Version</span></span> | <span data-ttu-id="0d044-118">若要同步，包的版本默认为当前安装的版本。</span><span class="sxs-lookup"><span data-stu-id="0d044-118">The version of the package to sync, defaulting to the currently installed version.</span></span> |
+| <span data-ttu-id="0d044-119">源</span><span class="sxs-lookup"><span data-stu-id="0d044-119">Source</span></span> | <span data-ttu-id="0d044-120">要搜索的程序包源 URL 或文件夹路径。</span><span class="sxs-lookup"><span data-stu-id="0d044-120">The URL or folder path for the package source to search.</span></span> <span data-ttu-id="0d044-121">本地文件夹路径可以是绝对的或相对于当前文件夹。</span><span class="sxs-lookup"><span data-stu-id="0d044-121">Local folder paths can be absolute, or relative to the current folder.</span></span> <span data-ttu-id="0d044-122">如果省略，`Sync-Package`搜索当前选定的程序包源。</span><span class="sxs-lookup"><span data-stu-id="0d044-122">If omitted, `Sync-Package` searches the currently selected package source.</span></span> |
+| <span data-ttu-id="0d044-123">IncludePrerelease</span><span class="sxs-lookup"><span data-stu-id="0d044-123">IncludePrerelease</span></span> | <span data-ttu-id="0d044-124">在同步中包括预发行程序包。</span><span class="sxs-lookup"><span data-stu-id="0d044-124">Includes prerelease packages in the sync.</span></span> |
+| <span data-ttu-id="0d044-125">FileConflictAction</span><span class="sxs-lookup"><span data-stu-id="0d044-125">FileConflictAction</span></span> | <span data-ttu-id="0d044-126">当系统询问是覆盖还是忽略所引用的项目的现有文件时要执行操作。</span><span class="sxs-lookup"><span data-stu-id="0d044-126">The action to take when asked to overwrite or ignore existing files referenced by the project.</span></span> <span data-ttu-id="0d044-127">可能的值为*覆盖，忽略，无、 OverwriteAll*，和*（3.0 +）* *IgnoreAll*。</span><span class="sxs-lookup"><span data-stu-id="0d044-127">Possible values are *Overwrite, Ignore, None, OverwriteAll*, and *(3.0+)* *IgnoreAll*.</span></span> |
+| <span data-ttu-id="0d044-128">DependencyVersion</span><span class="sxs-lookup"><span data-stu-id="0d044-128">DependencyVersion</span></span> | <span data-ttu-id="0d044-129">版本的依赖项包若要使用，可以是下列项之一：</span><span class="sxs-lookup"><span data-stu-id="0d044-129">The version of the dependency packages to use, which can be one of the following:</span></span><br/><ul><li><span data-ttu-id="0d044-130">*最低*（默认值）： 最低版本</span><span class="sxs-lookup"><span data-stu-id="0d044-130">*Lowest* (default): the lowest version</span></span></li><li><span data-ttu-id="0d044-131">*HighestPatch*： 具有的最低主要、 越小越小、 最高的修补程序版本</span><span class="sxs-lookup"><span data-stu-id="0d044-131">*HighestPatch*: the version with the lowest major, lowest minor, highest patch</span></span></li><li><span data-ttu-id="0d044-132">*HighestMinor*： 具有最低主要版本、 最高次，最高的修补程序</span><span class="sxs-lookup"><span data-stu-id="0d044-132">*HighestMinor*: the version with the lowest major, highest minor, highest patch</span></span></li><li><span data-ttu-id="0d044-133">*最高*（默认值为更新包不带任何参数）： 最高的版本</span><span class="sxs-lookup"><span data-stu-id="0d044-133">*Highest* (default for Update-Package with no parameters): the highest version</span></span></li></ul><span data-ttu-id="0d044-134">你可以设置默认值使用[ `dependencyVersion` ](../reference/nuget-config-file.md#config-section)中设置`Nuget.Config`文件。</span><span class="sxs-lookup"><span data-stu-id="0d044-134">You can set the default value using the [`dependencyVersion`](../reference/nuget-config-file.md#config-section) setting in the `Nuget.Config` file.</span></span> |
+| <span data-ttu-id="0d044-135">WhatIf</span><span class="sxs-lookup"><span data-stu-id="0d044-135">WhatIf</span></span> | <span data-ttu-id="0d044-136">显示不实际执行同步运行命令时，会发生什么情况。</span><span class="sxs-lookup"><span data-stu-id="0d044-136">Shows what would happen when running the command without actually performing the sync.</span></span> |
 
-<span data-ttu-id="5c47d-137">任何这些参数接受管道输入或通配符字符。</span><span class="sxs-lookup"><span data-stu-id="5c47d-137">None of these parameters accept pipeline input or wildcard characters.</span></span>
+<span data-ttu-id="0d044-137">任何这些参数接受管道输入或通配符字符。</span><span class="sxs-lookup"><span data-stu-id="0d044-137">None of these parameters accept pipeline input or wildcard characters.</span></span>
 
-## <a name="common-parameters"></a><span data-ttu-id="5c47d-138">通用参数</span><span class="sxs-lookup"><span data-stu-id="5c47d-138">Common Parameters</span></span>
+## <a name="common-parameters"></a><span data-ttu-id="0d044-138">通用参数</span><span class="sxs-lookup"><span data-stu-id="0d044-138">Common Parameters</span></span>
 
-<span data-ttu-id="5c47d-139">`Sync-Package` 支持以下[常见的 PowerShell 参数](http://go.microsoft.com/fwlink/?LinkID=113216)： 调试、 错误操作、 ErrorVariable、 OutBuffer、 OutVariable、 PipelineVariable、 Verbose、 WarningAction 和 WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="5c47d-139">`Sync-Package` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.</span></span>
+<span data-ttu-id="0d044-139">`Sync-Package` 支持以下[常见的 PowerShell 参数](http://go.microsoft.com/fwlink/?LinkID=113216)： 调试、 错误操作、 ErrorVariable、 OutBuffer、 OutVariable、 PipelineVariable、 Verbose、 WarningAction 和 WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="0d044-139">`Sync-Package` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="5c47d-140">示例</span><span class="sxs-lookup"><span data-stu-id="5c47d-140">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="0d044-140">示例</span><span class="sxs-lookup"><span data-stu-id="0d044-140">Examples</span></span>
 
 ```ps
 # Sync the Elmah package installed in the default project into the other projects in the solution

@@ -1,56 +1,59 @@
 ---
-title: "NuGet CLI help 命令 |Microsoft 文档"
+title: NuGet CLI help 命令 |Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe help 命令的引用"
-keywords: "nuget 帮助参考，帮助命令"
+ms.technology: ''
+description: Nuget.exe help 命令的引用
+keywords: nuget 帮助参考，帮助命令
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 281c6ccc7c58d153280441430be063d9ee89955d
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 440861e53b4a9ff73a9d3e8a2a3dad7dbddc9584
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="help-or--command-nuget-cli"></a><span data-ttu-id="297b2-104">帮助或？</span><span class="sxs-lookup"><span data-stu-id="297b2-104">help or ?</span></span> <span data-ttu-id="297b2-105">命令 (NuGet CLI)</span><span class="sxs-lookup"><span data-stu-id="297b2-105">command (NuGet CLI)</span></span>
+# <a name="help-or--command-nuget-cli"></a><span data-ttu-id="ba2bb-104">帮助或？</span><span class="sxs-lookup"><span data-stu-id="ba2bb-104">help or ?</span></span> <span data-ttu-id="ba2bb-105">命令 (NuGet CLI)</span><span class="sxs-lookup"><span data-stu-id="ba2bb-105">command (NuGet CLI)</span></span>
 
-<span data-ttu-id="297b2-106">**适用于：**所有&bullet;**受支持的版本**： 所有</span><span class="sxs-lookup"><span data-stu-id="297b2-106">**Applies to:** all &bullet; **Supported versions**: all</span></span>
+<span data-ttu-id="ba2bb-106">**适用于：**所有&bullet;**受支持的版本**： 所有</span><span class="sxs-lookup"><span data-stu-id="ba2bb-106">**Applies to:** all &bullet; **Supported versions**: all</span></span>
 
-<span data-ttu-id="297b2-107">显示常规帮助信息和帮助有关特定命令的信息。</span><span class="sxs-lookup"><span data-stu-id="297b2-107">Displays general help information and help information about specific commands.</span></span>
+<span data-ttu-id="ba2bb-107">显示常规帮助信息和帮助有关特定命令的信息。</span><span class="sxs-lookup"><span data-stu-id="ba2bb-107">Displays general help information and help information about specific commands.</span></span>
 
-## <a name="usage"></a><span data-ttu-id="297b2-108">用法</span><span class="sxs-lookup"><span data-stu-id="297b2-108">Usage</span></span>
+## <a name="usage"></a><span data-ttu-id="ba2bb-108">用法</span><span class="sxs-lookup"><span data-stu-id="ba2bb-108">Usage</span></span>
 
 ```cli
 nuget help [command] [options]
 nuget ? [command] [options]
 ```
 
-<span data-ttu-id="297b2-109">其中 [命令] 标识要显示帮助其特定的命令。</span><span class="sxs-lookup"><span data-stu-id="297b2-109">where [command] identifies a specific command for which to display help.</span></span>
+<span data-ttu-id="ba2bb-109">其中 [命令] 标识要显示帮助其特定的命令。</span><span class="sxs-lookup"><span data-stu-id="ba2bb-109">where [command] identifies a specific command for which to display help.</span></span>
 
 > [!Warning]
-> <span data-ttu-id="297b2-110">使用某些命令，请注意指定*帮助*第一，作为家`nuget help install`，因为包 nuget.org 上名为"帮助"。如果你可以用以下命令`nuget install help`，不会获取有关安装命令的帮助，但将改为安装名为帮助的程序包。</span><span class="sxs-lookup"><span data-stu-id="297b2-110">With some commands, be mindful to specify *help* first, as with `nuget help install`, because there is a package named "help" on nuget.org. If you give the command `nuget install help`, you won't get help on the install command but will instead install the package named help.</span></span>
+> <span data-ttu-id="ba2bb-110">使用某些命令，请注意指定*帮助*第一，作为家`nuget help install`，因为包 nuget.org 上名为"帮助"。如果你可以用以下命令`nuget install help`，不会获取有关安装命令的帮助，但将改为安装名为帮助的程序包。</span><span class="sxs-lookup"><span data-stu-id="ba2bb-110">With some commands, be mindful to specify *help* first, as with `nuget help install`, because there is a package named "help" on nuget.org. If you give the command `nuget install help`, you won't get help on the install command but will instead install the package named help.</span></span>
 
-## <a name="options"></a><span data-ttu-id="297b2-111">选项</span><span class="sxs-lookup"><span data-stu-id="297b2-111">Options</span></span>
+## <a name="options"></a><span data-ttu-id="ba2bb-111">选项</span><span class="sxs-lookup"><span data-stu-id="ba2bb-111">Options</span></span>
 
-| <span data-ttu-id="297b2-112">选项</span><span class="sxs-lookup"><span data-stu-id="297b2-112">Option</span></span> | <span data-ttu-id="297b2-113">描述</span><span class="sxs-lookup"><span data-stu-id="297b2-113">Description</span></span> |
+| <span data-ttu-id="ba2bb-112">选项</span><span class="sxs-lookup"><span data-stu-id="ba2bb-112">Option</span></span> | <span data-ttu-id="ba2bb-113">描述</span><span class="sxs-lookup"><span data-stu-id="ba2bb-113">Description</span></span> |
 | --- | --- |
-| <span data-ttu-id="297b2-114">全部</span><span class="sxs-lookup"><span data-stu-id="297b2-114">All</span></span> | <span data-ttu-id="297b2-115">获取所有可用的命令; 帮助打印的详细的信息如果将给特定的命令被忽略。</span><span class="sxs-lookup"><span data-stu-id="297b2-115">Print detailed help for all available commands; ignored if a specific command is given.</span></span> |
-| <span data-ttu-id="297b2-116">ConfigFile</span><span class="sxs-lookup"><span data-stu-id="297b2-116">ConfigFile</span></span> | <span data-ttu-id="297b2-117">要应用的 NuGet 配置文件。</span><span class="sxs-lookup"><span data-stu-id="297b2-117">The NuGet configuration file to apply.</span></span> <span data-ttu-id="297b2-118">如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。</span><span class="sxs-lookup"><span data-stu-id="297b2-118">If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.</span></span>|
-| <span data-ttu-id="297b2-119">ForceEnglishOutput</span><span class="sxs-lookup"><span data-stu-id="297b2-119">ForceEnglishOutput</span></span> | <span data-ttu-id="297b2-120">*（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。</span><span class="sxs-lookup"><span data-stu-id="297b2-120">*(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.</span></span> |
-| <span data-ttu-id="297b2-121">帮助</span><span class="sxs-lookup"><span data-stu-id="297b2-121">Help</span></span> | <span data-ttu-id="297b2-122">显示的帮助帮助命令本身的信息。</span><span class="sxs-lookup"><span data-stu-id="297b2-122">Displays help information for the help command itself.</span></span> |
-| <span data-ttu-id="297b2-123">Markdown</span><span class="sxs-lookup"><span data-stu-id="297b2-123">Markdown</span></span> | <span data-ttu-id="297b2-124">打印 markdown 格式一起使用时的详细的帮助`-All`。</span><span class="sxs-lookup"><span data-stu-id="297b2-124">Print detailed help in markdown format when used with `-All`.</span></span> <span data-ttu-id="297b2-125">否则将忽略。</span><span class="sxs-lookup"><span data-stu-id="297b2-125">Ignored otherwise.</span></span> |
-| <span data-ttu-id="297b2-126">NonInteractive</span><span class="sxs-lookup"><span data-stu-id="297b2-126">NonInteractive</span></span> | <span data-ttu-id="297b2-127">取消显示提示用户输入或确认。</span><span class="sxs-lookup"><span data-stu-id="297b2-127">Suppresses prompts for user input or confirmations.</span></span> |
-| <span data-ttu-id="297b2-128">详细级别</span><span class="sxs-lookup"><span data-stu-id="297b2-128">Verbosity</span></span> | <span data-ttu-id="297b2-129">指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。</span><span class="sxs-lookup"><span data-stu-id="297b2-129">Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.</span></span> |
+| <span data-ttu-id="ba2bb-114">全部</span><span class="sxs-lookup"><span data-stu-id="ba2bb-114">All</span></span> | <span data-ttu-id="ba2bb-115">获取所有可用的命令; 帮助打印的详细的信息如果将给特定的命令被忽略。</span><span class="sxs-lookup"><span data-stu-id="ba2bb-115">Print detailed help for all available commands; ignored if a specific command is given.</span></span> |
+| <span data-ttu-id="ba2bb-116">ConfigFile</span><span class="sxs-lookup"><span data-stu-id="ba2bb-116">ConfigFile</span></span> | <span data-ttu-id="ba2bb-117">要应用的 NuGet 配置文件。</span><span class="sxs-lookup"><span data-stu-id="ba2bb-117">The NuGet configuration file to apply.</span></span> <span data-ttu-id="ba2bb-118">如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。</span><span class="sxs-lookup"><span data-stu-id="ba2bb-118">If not specified, `%AppData%\NuGet\NuGet.Config` (Windows) or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) is used.</span></span>|
+| <span data-ttu-id="ba2bb-119">ForceEnglishOutput</span><span class="sxs-lookup"><span data-stu-id="ba2bb-119">ForceEnglishOutput</span></span> | <span data-ttu-id="ba2bb-120">*（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。</span><span class="sxs-lookup"><span data-stu-id="ba2bb-120">*(3.5+)* Forces nuget.exe to run using an invariant, English-based culture.</span></span> |
+| <span data-ttu-id="ba2bb-121">帮助</span><span class="sxs-lookup"><span data-stu-id="ba2bb-121">Help</span></span> | <span data-ttu-id="ba2bb-122">显示的帮助帮助命令本身的信息。</span><span class="sxs-lookup"><span data-stu-id="ba2bb-122">Displays help information for the help command itself.</span></span> |
+| <span data-ttu-id="ba2bb-123">Markdown</span><span class="sxs-lookup"><span data-stu-id="ba2bb-123">Markdown</span></span> | <span data-ttu-id="ba2bb-124">打印 markdown 格式一起使用时的详细的帮助`-All`。</span><span class="sxs-lookup"><span data-stu-id="ba2bb-124">Print detailed help in markdown format when used with `-All`.</span></span> <span data-ttu-id="ba2bb-125">否则将忽略。</span><span class="sxs-lookup"><span data-stu-id="ba2bb-125">Ignored otherwise.</span></span> |
+| <span data-ttu-id="ba2bb-126">NonInteractive</span><span class="sxs-lookup"><span data-stu-id="ba2bb-126">NonInteractive</span></span> | <span data-ttu-id="ba2bb-127">取消显示提示用户输入或确认。</span><span class="sxs-lookup"><span data-stu-id="ba2bb-127">Suppresses prompts for user input or confirmations.</span></span> |
+| <span data-ttu-id="ba2bb-128">详细级别</span><span class="sxs-lookup"><span data-stu-id="ba2bb-128">Verbosity</span></span> | <span data-ttu-id="ba2bb-129">指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。</span><span class="sxs-lookup"><span data-stu-id="ba2bb-129">Specifies the amount of detail displayed in the output: *normal*, *quiet*, *detailed*.</span></span> |
 
-<span data-ttu-id="297b2-130">另请参阅[环境变量](cli-ref-environment-variables.md)</span><span class="sxs-lookup"><span data-stu-id="297b2-130">Also see [Environment variables](cli-ref-environment-variables.md)</span></span>
+<span data-ttu-id="ba2bb-130">另请参阅[环境变量](cli-ref-environment-variables.md)</span><span class="sxs-lookup"><span data-stu-id="ba2bb-130">Also see [Environment variables](cli-ref-environment-variables.md)</span></span>
 
-## <a name="examples"></a><span data-ttu-id="297b2-131">示例</span><span class="sxs-lookup"><span data-stu-id="297b2-131">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="ba2bb-131">示例</span><span class="sxs-lookup"><span data-stu-id="ba2bb-131">Examples</span></span>
 
 ```cli
 nuget help
