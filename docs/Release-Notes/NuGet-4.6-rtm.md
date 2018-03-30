@@ -1,23 +1,26 @@
 ---
-title: "NuGet 4.6 RTM 发行说明 | Microsoft Docs"
+title: NuGet 4.6 RTM 发行说明 | Microsoft Docs
 author: anangaur
 ms.author: anangaur
 manager: unnir
 ms.date: 3/7/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 4.6.0 的发行说明，包括已知问题、bug 修复、新增功能和 DCR。"
-keywords: "NuGet 4.6.0 发行说明, bug 修复, 已知问题, 新增功能, DCR"
+ms.technology: ''
+description: NuGet 4.6.0 的发行说明，包括已知问题、bug 修复、新增功能和 DCR。
+keywords: NuGet 4.6.0 发行说明, bug 修复, 已知问题, 新增功能, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: 32bfe8a7d5d60a0ad24444749beff64edcaab305
-ms.sourcegitcommit: fa31ae10b5a5add7184bf7420554aade8adce6ed
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 004ad16018443292840b00fa88aa78350e371414
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-46-rtm-release-notes"></a>NuGet 4.6 RTM 发行说明
 

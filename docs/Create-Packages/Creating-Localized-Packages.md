@@ -1,22 +1,25 @@
 ---
-title: "如何创建本地化 NuGet 包 | Microsoft Docs"
+title: 如何创建本地化 NuGet 包 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/18/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "详细介绍创建本地化 NuGet 包的两种方法：将所有程序集包含在一个包中，或者发布单独的程序集。"
-keywords: "NuGet 包本地化, NuGet 附属程序集, 创建本地化包, NuGet 本地化约定"
+ms.technology: ''
+description: 详细介绍创建本地化 NuGet 包的两种方法：将所有程序集包含在一个包中，或者发布单独的程序集。
+keywords: NuGet 包本地化, NuGet 附属程序集, 创建本地化包, NuGet 本地化约定
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 5946ba6b43d3c418a1624aeb27d12b385d66b2fb
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 39ff6d300ec1a1f7941cad5953599f25f55117f4
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="creating-localized-nuget-packages"></a>创建本地化 NuGet 包
 

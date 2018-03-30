@@ -1,22 +1,25 @@
 ---
-title: "NuGet 4.0 RC 发行说明 | Microsoft Docs"
+title: NuGet 4.0 RC 发行说明 | Microsoft Docs
 author: anangaur
 ms.author: anangaur
 manager: unniravindranathan
 ms.date: 03/03/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 4.0 RTM 的发行说明，包括已知问题、bug 修复、新增功能和 DCR。"
-keywords: "NuGet 4.0 RTM 发行说明, bug 修复, 已知问题, 新增功能, DCR"
+ms.technology: ''
+description: NuGet 4.0 RTM 的发行说明，包括已知问题、bug 修复、新增功能和 DCR。
+keywords: NuGet 4.0 RTM 发行说明, bug 修复, 已知问题, 新增功能, DCR
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: d1ab89f0decb64a64d04dc293e5273b577e8398b
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 75ce757c209afd74f8d4f45d58d4e13a23b3b743
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-40-rtm-release-notes"></a>NuGet 4.0 RTM 发行说明
 

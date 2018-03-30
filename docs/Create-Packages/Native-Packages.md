@@ -1,26 +1,29 @@
 ---
-title: "创建本机 NuGet 包 | Microsoft Docs"
+title: 创建本机 NuGet 包 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/09/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "详细介绍如何创建用于 C++ 项目中的包含 C++ 代码（而不是托管代码）的本机 NuGet 包。"
-keywords: "NuGet 本机包, NuGet C++ 包, 本机代码包, 面向 C++ 项目"
+ms.technology: ''
+description: 详细介绍如何创建用于 C++ 项目中的包含 C++ 代码（而不是托管代码）的本机 NuGet 包。
+keywords: NuGet 本机包, NuGet C++ 包, 本机代码包, 面向 C++ 项目
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 71f4eca411d520630ca7d77165b8f03cd32af290
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: ed33f906f11a80c0d033292f7de151e93b8368fd
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="creating-native-packages"></a>创建本机包
 
-本机包包含本机 C++ 代码（而不是托管代码），因此可用于 C++ 项目中。 （请参阅“使用”部分中的[本机 C++ 包](../consume-packages/finding-and-choosing-packages.md#native-cpp-packages)。）
+本机包包含本机 C++ 代码（而不是托管代码），因此可用于 C++ 项目中。 （请参阅“使用”部分中的[本机 C++ 包](../consume-packages/finding-and-choosing-packages.md#native-c-packages)。）
 
 若要用于 C++ 项目中，包必须面向 `native` 框架。 目前不存在与此框架关联的任何版本号，因为 NuGet 对所有 C++ 项目的处理方式相同。
 

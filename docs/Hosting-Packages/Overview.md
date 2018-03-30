@@ -1,23 +1,26 @@
 ---
-title: "承载自己的 NuGet 源概述 | Microsoft Docs"
+title: 承载自己的 NuGet 源概述 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 08/25/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "概述了本地或远程承载自己的 NuGet 包源或库的打开。"
-keywords: "NuGet 源, NuGet 库, 自定义包源, NuGet.Server"
+ms.technology: ''
+description: 概述了本地或远程承载自己的 NuGet 包源或库的打开。
+keywords: NuGet 源, NuGet 库, 自定义包源, NuGet.Server
 ms.reviewer:
 - karann-msft
 - unniravindranathan
 - anangaur
-ms.openlocfilehash: 738190e20603046d075faa3f50402601890583c1
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 242404caa12f17ea359a13d574379b34f13f2e40
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>承载自己的 NuGet 源
 

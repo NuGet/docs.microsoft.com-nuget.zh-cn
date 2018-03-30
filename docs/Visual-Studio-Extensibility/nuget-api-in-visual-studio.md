@@ -1,22 +1,25 @@
 ---
-title: "Visual Studio 中的 NuGet API | Microsoft Docs"
+title: Visual Studio 中的 NuGet API | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/09/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 通过 Visual Studio 中的 Managed Extensibility Framework 导出的 API 的界面引用"
-keywords: "NuGet API, Visual Studio 中的 NuGet, NuGet 编程接口"
+ms.technology: ''
+description: NuGet 通过 Visual Studio 中的 Managed Extensibility Framework 导出的 API 的界面引用
+keywords: NuGet API, Visual Studio 中的 NuGet, NuGet 编程接口
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 05e461acb46fa22f5269a148f43f62017006a48e
-ms.sourcegitcommit: 33436d122873249dbb20616556cd8c6783f38909
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 1b23535ae3ec1ea490b513a11906ff1338d1997c
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="nuget-api-in-visual-studio"></a>Visual Studio 中的 NuGet API
 
