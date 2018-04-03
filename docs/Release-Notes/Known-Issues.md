@@ -1,22 +1,25 @@
 ---
-title: "NuGet 已知问题 | Microsoft Docs"
+title: NuGet 已知问题 | Microsoft Docs
 author: karann-msft
 ms.author: karann-msft
 manager: ghogen
 ms.date: 11/11/2016
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet 的已知问题，包括身份验证、包安装和工具。"
-keywords: "NuGet 已知问题, NuGet 问题"
+ms.technology: ''
+description: NuGet 的已知问题，包括身份验证、包安装和工具。
+keywords: NuGet 已知问题, NuGet 问题
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: ac00e3f11c54290a31319e7f2946fd965a0a9288
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: c36da5dc73dddbd540a36d171583cbf542e0678f
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="known-issues-with-nuget"></a>NuGet 的已知问题
 
@@ -227,7 +230,7 @@ Windows Phone 工具不支持 Visual Studio Extension Manager。 若要卸载 Nu
 
 ## <a name="changing-the-capitalization-of-nuget-package-ids-breaks-package-restore"></a>更改 NuGet 包 ID 的大写会中断包还原
 
-正如在[此 GitHub 问题](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932)上详细讨论的，可通过 NuGet 支持来完成 NuGet 包的大写更改，但对于在本地包缓存中现有不同包的用户来说，包还原期间会导致复杂情况。 建议仅在有办法与包的现有用户交流生成时包还原可能发生的中断情况时，才请求更改事例。
+正如在[此 GitHub 问题](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932)上详细讨论的，可通过 NuGet 支持来完成 NuGet 包的大写更改，但对于在 global-packages 文件夹中现有不同包的用户来说，包还原期间会导致复杂情况。 建议仅在有办法与包的现有用户交流生成时包还原可能发生的中断情况时，才请求更改事例。
 
 ## <a name="reporting-issues"></a>报告问题
 

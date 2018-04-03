@@ -1,26 +1,29 @@
 ---
-title: "NuGet project.json 存档内容 | Microsoft 文档"
+title: NuGet project.json 存档内容 | Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/17/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "从 NuGet 文档的其他区域中删除了 project.json 内容的其他位。"
-keywords: "NuGet project.json 文件"
+ms.technology: ''
+description: 从 NuGet 文档的其他区域中删除了 project.json 内容的其他位。
+keywords: NuGet project.json 文件
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 42a40c6c637839c13effc9e476ac5702a92cfd2a
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 16361fe16d8ecc7064af4b6d636435a31a5663dc
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="projectjson-archive"></a>project.json 存档
 
-NuGet 3.x 引入了 `project.json` 引用格式，并用于某些项目类型。 该格式已被弃用，引入 PackageReference 格式，其中项目文件中直接列出了依赖项。
+NuGet 3.x 引入了 `project.json` 管理格式，并用于某些项目类型。 该格式已被弃用，引入 PackageReference 格式，其中项目文件中直接列出了依赖项。
 
 另请参见：
 
@@ -28,11 +31,11 @@ NuGet 3.x 引入了 `project.json` 引用格式，并用于某些项目类型。
 - [project.json 对包作者的影响](project-json-impact.md)
 - [project.json 和 UWP](project-json-and-uwp.md)
 
-## <a name="projectjson-reference-format"></a>project.json 引用格式
+## <a name="projectjson-management-format"></a>project.json 管理格式
 
 *最初在[包还原](../what-is-nuget.md)中。*
 
-在引用格式列表中：
+在管理格式列表中：
 
 - [`project.json`](project-json.md)：*（已弃用）*一种 JSON 文件，用于维护项目依赖项的列表，同时将包的整体信息图存储在关联文件 `project.lock.json` 中。 此格式已被弃用，被 PackageReference 取代。
 
@@ -66,7 +69,7 @@ PackageReference 的行为也适用于 `project.json`。 NuGet 还原将依赖�
 
 ## <a name="managing-dependency-assets"></a>管理依赖项资产
 
-*最初在[依赖项解析](../consume-packages/dependency-resolution.md#managing-dependency-assets)中。*
+*最初在[依赖项解析](../consume-packages/dependency-resolution.md#managing-dependency-assets)。*
 
 使用 `project.json` 格式时，可以控制依赖项中的哪些资产可流入顶层项目。 有关详细信息，请参阅 [project.json](project-json.md)。
 
@@ -138,7 +141,7 @@ PackageReference 的行为也适用于 `project.json`。 NuGet 还原将依赖�
 
 *最初在 [NuGet.Config 引用](../reference/nuget-config-file.md)中。*
 
-`globalPackagesFolder` 仅适用于 `project.json`
+`globalPackagesFolder` 仅适用于 `project.json` （添加的说明：也适用于 PackageReference。）
 
 ### <a name="nuspec-file-reference"></a>nuspec 文件引用
 
@@ -150,7 +153,7 @@ PackageReference 的行为也适用于 `project.json`。 NuGet 还原将依赖�
 
 *最初在[程序包管理器 UI 引用](../tools/package-manager-ui.md)中。*
 
-使用 `project.json` 引用格式的项目仅显示“显示预览窗口”选项。
+使用 `project.json` 管理格式的项目仅显示“显示预览窗口”选项。
 
 ### <a name="visual-studio-templates"></a>Visual Studio 模板
 

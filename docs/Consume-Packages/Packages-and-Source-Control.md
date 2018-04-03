@@ -1,26 +1,29 @@
 ---
-title: "NuGet 包和源代码管理 | Microsoft Docs"
+title: NuGet 包和源代码管理 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 07/17/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "介绍有关以下内容的注意事项：如何在版本控制和源代码管理系统中处理 NuGet 包，以及如何使用 Git 和 TFVC 省略包。"
-keywords: "NuGet 源代码管理, NuGet 版本控制, NuGet 和 Git, NuGet 和 TFS, NuGet 和 TFVC, 省略包, 源代码管理存储库, 版本控制存储库"
+ms.technology: ''
+description: 介绍有关以下内容的注意事项：如何在版本控制和源代码管理系统中处理 NuGet 包，以及如何使用 Git 和 TFVC 省略包。
+keywords: NuGet 源代码管理, NuGet 版本控制, NuGet 和 Git, NuGet 和 TFS, NuGet 和 TFVC, 省略包, 源代码管理存储库, 版本控制存储库
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 6261625d5d7eaa748f9ad15510b7b2af3c814e44
-ms.sourcegitcommit: b0af28d1c809c7e951b0817d306643fcc162a030
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 43fc1653616091b0f974903147645c0c99c8f57b
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>在源代码管理系统中省略 NuGet 包
 
-开发人员通常省略源代码管理存储库中的 NuGet 包，且改为依赖[包还原](../consume-packages/package-restore.md)在生成前重新安装项目的依赖项。
+开发人员通常省略源代码管理存储库中的 NuGet 包，且改为依赖[包还原](package-restore.md)在生成前重新安装项目的依赖项。
 
 以下是依赖包还原的原因：
 
@@ -29,11 +32,11 @@ ms.lasthandoff: 02/14/2018
 1. 清理任何未使用包文件夹的解决方案会变得更困难，因为需要确保不删除仍在使用的任何包文件夹。
 1. 通过省略包，可以在代码和所依赖的其他包之间维护清晰的所有权边界。 许多 NuGet 包已在其自己的源代码管理存储库中进行了维护。
 
-尽管包还原是 NuGet 的默认行为，但省略源代码管理中的包（即项目中的 `packages` 文件夹）仍需进行一些手动操作，详情请见以下部分。
+尽管包还原是 NuGet 的默认行为，但省略源代码管理中的包&mdash;即项目中的 `packages` 文件夹&mdash;仍需进行一些手动操作，详情请见本文。
 
 ## <a name="omitting-packages-with-git"></a>使用 Git 省略包
 
-使用 [.gitignore 文件](https://git-scm.com/docs/gitignore)避免在源代码管理中包括 `packages` 文件夹。 有关参考，请参阅 [Visual Studio 项目的 `.gitignore` 示例](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore)。
+使用 [.gitignore 文件](https://git-scm.com/docs/gitignore)忽略 NuGet 包 (`.nupkg`)、`packages` 文件夹、`project.assets.json` 及其他内容。 有关参考，请参阅 [Visual Studio 项目的示例 `.gitignore`](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore)：
 
 以下是 `.gitignore` 文件的重要部分：
 
@@ -41,20 +44,24 @@ ms.lasthandoff: 02/14/2018
 # Ignore NuGet Packages
 *.nupkg
 
-# Ignore the packages folder
-**/packages/*
+# The packages folder can be ignored because of Package Restore
+**/[Pp]ackages/*
 
-# Include packages/build/, which is used as an MSBuild target
-!**/packages/build/
+# except build/, which is used as an MSBuild target.
+!**/[Pp]ackages/build/
 
-# Uncomment if necessary; generally it's regenerated when needed
-#!**/packages/repositories.config
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/[Pp]ackages/repositories.config
+
+# NuGet v3's project.json files produces more ignorable files
+*.nuget.props
+*.nuget.targets
 
 # Ignore other intermediate files that NuGet might create. project.lock.json is used in conjunction
-# with project.json; project.assets.json is used in conjunction with the PackageReference format.
+# with project.json (NuGet v3); project.assets.json is used in conjunction with the PackageReference
+# format (NuGet v4 and .NET Core).
 project.lock.json
 project.assets.json
-*.nuget.props
 ```
 
 ## <a name="omitting-packages-with-team-foundation-version-control"></a>使用 Team Foundation 版本控制省略包
@@ -92,7 +99,7 @@ project.assets.json
    # with additional folder names if it's not in the same folder as .tfignore.   
    packages
 
-   # Include package target files which may be required for MSBuild, again prefixing the folder name as needed.
+   # Exclude package target files which may be required for MSBuild, again prefixing the folder name as needed.
    !packages/*.targets
 
    # Omit temporary files

@@ -1,35 +1,38 @@
 ---
-title: "使用 Visual Studio 2015 创建 .NET Standard NuGet 包 | Microsoft Docs"
+title: 使用 Visual Studio 2015 创建 .NET Standard 和 .NET Framework NuGet 包 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 02/02/2018
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
-ms.technology: 
-description: "从头到尾介绍如何使用 NuGet 3.x 和 Visual Studio 2015 创建 .NET Standard NuGet 包。"
-keywords: "创建包, .NET Standard 包, .NET Standard 映射表"
+ms.technology: ''
+description: 从头到尾介绍如何使用 NuGet 3.x 和 Visual Studio 2015 创建 .NET Standard 和 .NET Framework NuGet 包。
+keywords: 创建包，.NET Standard 包，.NET Framework 包
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: abf6a56cbc84bdd066e31e77c7883825a8456144
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: dbe0a0788b5fc9ba37f7db601bd51c3e4f78f5b8
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="create-net-standard-packages-with-visual-studio-2015"></a>使用 Visual Studio 2015 创建 .NET Standard 包
+# <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>使用 Visual Studio 2015 创建 NET Standard 和 .NET Framework 包
 
-适用于 NuGet 3.x。有关使用 NuGet 4.x+ 的详细信息，请参阅[使用 Visual Studio 2017 创建和发布包](../quickstart/create-and-publish-a-package-using-visual-studio.md)
+注意：建议使用 Visual Studio 2017 来开发 .NET Standard 库。 Visual Studio 2015 可以工作，但 .NET Core 工具仅处于预览状态。 有关使用 NuGet 4.x+ 和 Visual Studio 2017 的详细信息，请参阅[使用 Visual Studio 2017 创建和发布包](../quickstart/create-and-publish-a-package-using-visual-studio.md)。
 
 [.NET Standard 库](/dotnet/articles/standard/library)是一套正式的 .NET API 规范，有望在所有 .NET 运行时推出，借此在 .NET 生态系统中建立更强的一致性。 .NET Standard 库为要实现的所有 .NET 平台定义一组统一的、与工作负荷无关的 BCL（基类库）API。 它使得开发人员可以生成跨所有 .NET 运行时可用的代码，并减少（如果不能消除）共享代码中平台特定的条件编译指令。
 
-本指南将指导你创建一个面向 .NET Standard 库 1.4 的 NuGet 包。 此类库可在 .NET Framework 4.6.1、通用 Windows 平台 10、.NET Core 和 Mono/Xamarin 上使用。 有关详细信息，请参阅本主题后面的 [.NET Standard 映射表](#net-standard-mapping-table)。
+本指南将为你逐步介绍如何创建面向 .NET Standard 库 1.4 的 NuGet 包或面向 .NET Framework 4.6 的包。 .NET Standard 1.4 库可在 .NET Framework 4.6.1、通用 Windows 平台 10、.NET Core 和 Mono/Xamarin 上使用。 有关详细信息，请参阅 [.NET Standard 映射表](/dotnet/standard/net-standard#net-implementation-support)（.NET 文档）。 如果需要，可以选择其他版本的 .NET Standard 库。
 
 ## <a name="prerequisites"></a>系统必备
 
 1. Visual Studio 2015 Update 3
-1. [.NET Core SDK](https://www.microsoft.com/net/download/)
+1. （仅适用于 .NET Standard）[.NET Core SDK](https://www.microsoft.com/net/download/)
 1. NuGet CLI。 从 [nuget.org/downloads](https://nuget.org/downloads) 下载 nuget.exe 的最新版本，将其保存到选择的位置。 然后将该位置添加到 PATH 环境变量（如果尚未添加）。
 
     > [!Note]
@@ -37,13 +40,13 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="create-the-class-library-project"></a>创建类库项目
 
-1. 在 Visual Studio 中，选择“文件”>“新建”>“项目”，展开“Visual C#”>“Windows”节点，选择“类库(可移植)”，将名称更改为“AppLogger”，然后单击“确定”。
+1. 在 Visual Studio 中，选择“文件”>“新建”>“项目”，展开“Visual C#”>“Windows”节点，选择“类库(可移植)”，将名称更改为“AppLogger”，然后选择“确定”。
 
     ![创建新类库项目](media/NetStandard-NewProject.png)
 
-1. 在“添加可移植类库”对话框中，选择 `.NET Framework 4.6` 和 `ASP.NET Core 1.0` 选项。
+1. 在显示的“添加可移植类库”对话框中，选择 `.NET Framework 4.6` 和 `ASP.NET Core 1.0` 选项。 （如果面向 .NET Framework，则可以选择任何相应选项。）
 
-1. 右键单击解决方案资源管理器中的 `AppLogger (Portable)`，选择“属性”，选择“库”选项卡，然后单击“目标”部分中的“目标 .NET 平台标准”。 这将提示进行确认，之后可从下拉列表中选择 `.NET Standard 1.4`：
+1. 如果面向 .NET Standard，右键单击解决方案资源管理器中的 `AppLogger (Portable)`，选择“属性”，选择“库”选项卡，然后选择“目标”部分中的“目标 .NET 平台标准”。 此操作将提示进行确认，在确认后可以从下拉列表中选择 `.NET Standard 1.4`（或其他可用版本）：
 
     ![将目标设置为 .NET Standard 1.4](media/NetStandard-ChangeTarget.png)
 
@@ -96,11 +99,23 @@ ms.lasthandoff: 03/15/2018
 
 1. 将引用程序集添加到 `.nuspec` 文件，也就是库的 DLL 和 IntelliSense XML 文件：
 
+    如果面向 .NET Standard，则条目类似于以下内容：
+
     ```xml
     <!-- Insert below <metadata> element -->
     <files>
         <file src="bin\Release\AppLogger.dll" target="lib\netstandard1.4\AppLogger.dll" />
         <file src="bin\Release\AppLogger.xml" target="lib\netstandard1.4\AppLogger.xml" />
+    </files>
+    ```
+
+    如果面向 .NET Framework ，则条目类似于以下内容：
+
+    ```xml
+    <!-- Insert below <metadata> element -->
+    <files>
+        <file src="bin\Release\AppLogger.dll" target="lib\net46\AppLogger.dll" />
+        <file src="bin\Release\AppLogger.xml" target="lib\net46\AppLogger.xml" />
     </files>
     ```
 
@@ -146,7 +161,7 @@ ms.lasthandoff: 03/15/2018
 nuget pack AppLogger.nuspec
 ```
 
-将生成 `AppLogger.YOUR_NAME.1.0.0.nupkg`。 在类似 [NuGet 包资源管理器](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)的工具中打开此文件并展开所有节点，即可看到以下内容：
+这将生成 `AppLogger.YOUR_NAME.1.0.0.nupkg`。 在类似 [NuGet 包资源管理器](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)的工具中打开此文件并展开所有节点，即可看到以下内容（显示为 .NET Standard）：
 
 ![显示 AppLogger 包的 NuGet 包资源管理器](media/NetStandard-PackageExplorer.png)
 
@@ -156,19 +171,6 @@ nuget pack AppLogger.nuspec
 若要使你的包可供其他开发人员使用，请按照[发布包](../create-packages/publish-a-package.md)中的说明进行操作。
 
 请注意，`pack` 要求在 Mac OS X 上使用 Mono 4.4.2，但不能在 Linux 系统上使用。 在 Mac 上，还必须将 `.nuspec` 文件中的 Windows 路径名转换为 Unix 样式的路径。
-
-## <a name="net-standard-mapping-table"></a>.NET Standard 映射表
-
-| 平台名称 | Alias |
-| --- | --- |
-| .NET Standard | netstandard | 1.0 | 1.1 | 1.2 | 1.3 | 1.4 | 1.5 | 1.6 |
-| .NET 核心 | netcoreapp | &#x2192; | &#x2192; | &#x2192; | &#x2192; | &#x2192; | &#x2192; | 1.0 |
-| .NET Framework | net | 4.5 | 4.5.1 | 4.6 | 4.6.1 | 4.6.2 | 4.6.3 |
-| Mono/Xamarin 平台 | &#x2192; | &#x2192; | &#x2192; | &#x2192; | &#x2192; | &#x2192; |
-| 通用 Windows 平台 | uap | &#x2192; | &#x2192; | &#x2192; | &#x2192; |10.0 |
-| Windows | win| &#x2192; | 8.0 | 8.1 |
-| Windows Phone | wpa| &#x2192;| &#x2192; | 8.1 |
-| Windows Phone Silverlight | wp | 8.0 |
 
 ## <a name="related-topics"></a>相关主题
 

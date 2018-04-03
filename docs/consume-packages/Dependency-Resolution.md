@@ -1,22 +1,25 @@
 ---
-title: "NuGet 包依赖项解析 | Microsoft Docs"
+title: NuGet 包依赖项解析 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 08/14/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "详细说明解析 NuGet 包的依赖项以及在 NuGet 2.x 和 NuGet 3.x+ 上安装依赖项的流程。"
-keywords: "NuGet 包依赖项, NuGet 版本控制, 依赖项版本, 版本关系图, 版本解析, 传递还原"
+ms.technology: ''
+description: 详细说明解析 NuGet 包的依赖项以及在 NuGet 2.x 和 NuGet 3.x+ 上安装依赖项的流程。
+keywords: NuGet 包依赖项, NuGet 版本控制, 依赖项版本, 版本关系图, 版本解析, 传递还原
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: aa2537a2538d0ea665944784ef183dc12faa9b38
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: d387acd369c88a64abaa2cb94a913fe211df8da1
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet 如何解析包依赖项
 
@@ -24,7 +27,7 @@ ms.lasthandoff: 03/08/2018
 
 这些直接依赖项可能本身也具有依赖项，并可能继续延伸到任意深度。 这便形成了所谓的“依赖项关系图”，用于说明各级包之间的关系。
 
-当多个包具有相同的依赖项时，同一个包 ID 会在关系图中多次出现且可能具有不同的版本约束。 但是，一个项目中只能使用给定包的一个版本，因此 NuGet 必须选择要使用的版本。 确切流程取决于要使用的包引用格式。
+当多个包具有相同的依赖项时，同一个包 ID 会在关系图中多次出现且可能具有不同的版本约束。 但是，一个项目中只能使用给定包的一个版本，因此 NuGet 必须选择要使用的版本。 确切流程取决于要使用的包管理格式。
 
 ## <a name="dependency-resolution-with-packagereference"></a>利用 PackageReference 解析依赖项
 
@@ -109,7 +112,7 @@ ms.lasthandoff: 03/08/2018
 
 默认情况下，NuGet 2.8 会查找最低的修补程序版本（请参阅 [NuGet 2.8 发行说明](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies)）。 可以通过 `Nuget.Config` 中的 `DependencyVersion` 属性和命令行上的 `-DependencyVersion` 开关控制此设置。  
 
-用于解析依赖项的 `packages.config` 进程会随着依赖项关系图的规模增大而愈加复杂。 每次安装新包都需要遍历整个关系图，并且可能引发版本冲突。 发生冲突时，安装将停止，此时项目处于不确定状态，很可能导致项目文件本身发生更改。 使用其他包引用格式时则不会出现此问题。
+用于解析依赖项的 `packages.config` 进程会随着依赖项关系图的规模增大而愈加复杂。 每次安装新包都需要遍历整个关系图，并且可能引发版本冲突。 发生冲突时，安装将停止，此时项目处于不确定状态，很可能导致项目文件本身发生更改。 使用其他包管理格式时则不会出现此问题。
 
 ## <a name="managing-dependency-assets"></a>管理依赖项资产
 
@@ -121,7 +124,7 @@ ms.lasthandoff: 03/08/2018
 
 对于有些方案，同一项目中可能多次引用具有相同名称的程序集，并因此生成设计时和生成时错误。 例如，某个项目既包含自定义版本的 `C.dll`，又引用同样包含 `C.dll` 的包 C。 同时，该项目还依赖于同样依赖于包 C 和 `C.dll` 的包 B。 在此情况下，NuGet 无法确定要使用哪一个 `C.dll`，但你也不能直接删除包 C 上的项目依赖项，因为包 B 也依赖于此依赖项。
 
-要解决此问题，必须直接引用所需的 `C.dll`（或使用其他引用正确对象的包），然后在包 C 上添加不包括其所有资产的依赖项。 此方法如下所示，具体取决于当前使用的包引用格式：
+要解决此问题，必须直接引用所需的 `C.dll`（或使用其他引用正确对象的包），然后在包 C 上添加不包括其所有资产的依赖项。 此方法如下所示，具体取决于当前使用的包管理格式：
 
 - [PackageReference](../consume-packages/package-references-in-project-files.md)：在依赖项中添加 `Exclude="All"`：
 

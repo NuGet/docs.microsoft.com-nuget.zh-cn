@@ -1,23 +1,25 @@
 ---
-title: "如何创建 NuGet 包 | Microsoft Docs"
+title: 如何创建 NuGet 包 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/12/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-ms.assetid: 456797cb-e3e4-4b88-9b01-8b5153cee802
-description: "设计和创建 NuGet 包流程的详细指南，包含文件和版本控制等关键决策点。"
-keywords: "NuGet 包创建, 创建包, nuspec 清单, NuGet 包约定, NuGet 包版本"
+ms.technology: ''
+description: 设计和创建 NuGet 包流程的详细指南，包含文件和版本控制等关键决策点。
+keywords: NuGet 包创建, 创建包, nuspec 清单, NuGet 包约定, NuGet 包版本
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 613e3eb9d08a0da96340f32b13c486508fa32439
-ms.sourcegitcommit: df21fe770900644d476d51622a999597a6f20ef8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 7bb7e16a317aff908effe0b6c603ea53c9e8a563
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="creating-nuget-packages"></a>创建 NuGet 包
 
@@ -131,7 +133,7 @@ ms.lasthandoff: 03/12/2018
 
 有关声明依赖项并指定版本号的详细信息，请参阅[包版本控制](../reference/package-versioning.md)。 还可以使用 `dependency` 元素上的 `include` 和 `exclude` 特性直接在包中结合依赖项的资产。 请参阅 [.nuspec 引用 - 依赖项](../reference/nuspec.md#dependencies)。
 
-因为清单包含在从清单创建的包中，所以可以通过检查现有包查找任意数目的其他示例。 计算机上的全局包缓存是一个不错的源，其位置由以下命令返回：
+因为清单包含在从清单创建的包中，所以可以通过检查现有包查找任意数目的其他示例。 计算机上的 global-packages 文件夹是一个不错的源，其位置由以下命令返回：
 
 ```cli
 nuget locals -list global-packages
@@ -351,7 +353,9 @@ nuget spec [<package-name>]
 
 在包中包含 MSBuild 属性和目标是 [NuGet 2.5 中引入的功能](../release-notes/NuGet-2.5.md#automatic-import-of-msbuild-targets-and-props-files)，因此建议将 `minClientVersion="2.5"` 属性添加到 `metadata` 元素，以指示使用该包所需的最低 NuGet 客户端版本。
 
-当 NuGet 使用 `\build` 文件安装包时，它在指向 `.targets` 和 `.props` 文件的项目文件中添加 MSBuild `<Import>` 元素。 （`.props` 添加到项目文件顶部；`.targets` 添加到底部。）
+当 NuGet 使用 `\build` 文件安装包时，它在指向 `.targets` 和 `.props` 文件的项目文件中添加 MSBuild `<Import>` 元素。 （`.props` 添加到项目文件顶部；`.targets` 添加到底部。）为每个目标框架添加了单独的条件 MSBuild `<Import>` 元素。
+
+可将跨框架目标的 MSBuild `.props` 和 `.targets` 文件置于 `\buildCrossTargeting` 文件夹中。 在包安装期间，NuGet 将相应的 `<Import>` 元素添加到项目文件中，前提是目标框架未设置（MSBuild 属性 `$(TargetFramework)` 必须为空）。
 
 对于 NuGet 3.x，目标不添加到项目，而是通过 `project.lock.json` 提供。
 
@@ -372,7 +376,7 @@ nuget spec [<package-name>]
 </Target>
 ```
 
-请注意，在使用 `packages.config` 引用格式时，将引用从包添加到程序集会导致 NuGet 和 Visual Studio 检查 COM 互操作程序集并在项目文件中将 `EmbedInteropTypes` 设为 true。 在这种情况下，目标被替代。
+请注意，在使用 `packages.config` 管理格式时，将引用从包添加到程序集会导致 NuGet 和 Visual Studio 检查 COM 互操作程序集并在项目文件中将 `EmbedInteropTypes` 设为 true。 在这种情况下，目标被替代。
 
 此外，默认情况下，[生成资产不以可传递的方式流动](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets)。 当此处所述的创作的包作为可传递的依赖项从项目拉取到项目引用时，它们会以不同的方式工作。 包使用者通过将 PrivateAssets 默认值修改为不包含生成使其流动。
 

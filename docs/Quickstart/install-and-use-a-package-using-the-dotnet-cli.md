@@ -1,28 +1,31 @@
 ---
-title: "通过 dotnet CLI 使用 NuGet 包的介绍性指南 | Microsoft 文档"
+title: 通过 dotnet CLI 使用 NuGet 包的介绍性指南 | Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/23/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
-ms.technology: 
-description: "有关如何在 .NET Core 项目中安装并使用 NuGet 包的演练教程。"
-keywords: "安装 NuGet, NuGet包使用, 安装 NuGet 包, NuGet 包引用, 使用 NuGet 包"
+ms.technology: ''
+description: 有关如何在 .NET Core 项目中安装并使用 NuGet 包的演练教程。
+keywords: 安装 NuGet, NuGet包使用, 安装 NuGet 包, NuGet 包引用, 使用 NuGet 包
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: accc6d7bb5abff43ffaa083fa55c13cd5b10ce10
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 87a37a733ebbbbf9bc161247b657a69f30ed4fb3
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-and-use-a-package-using-the-dotnet-cli"></a>使用 dotnet CLI 安装并使用包
 
 NuGet 包包含其他开发人员提供的在项目中使用的可重用代码。 请参阅[什么是 NuGet？](../What-is-NuGet.md)，了解背景信息。 使用如本文所述的适用于常用 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) 包的 `dotnet add package` 命令将包安装到 .NET Core 项目中。
 
-安装完成后，请引用具有 `using <namespace>` 的代码中的包，其中 \<namespace\> 特定于正在使用的包。 建立引用后，可通过相应的 API 调用包。
+安装完成后，请引用具有 `using <namespace>` 的代码中的包，其中 \<namespace\> 特定于正在使用的包。 然后，可以使用包的 API。
 
 > [!Tip]
 > **nuget.org 入门**：浏览 nuget.org 是 .NET 开发人员通常在自己的应用程序中查找可重用组件的方式。 你可以直接搜索 nuget.org 或根据本文中的介绍，在 Visual Studio 中查找和安装包。

@@ -1,55 +1,76 @@
 ---
-title: "安装 NuGet 包的方式 | Microsoft 文档"
+title: 安装 NuGet 包的方式 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 02/12/2018
-ms.topic: get-started-article
+ms.topic: overview
 ms.prod: nuget
-ms.technology: 
-description: "介绍将 NuGet 包安装到项目中的过程，包括磁盘上和适用的项目文件会发生的情况。"
-keywords: "安装 NuGet, NuGet 包使用, 安装 NuGet 包, NuGet 包引用"
+ms.technology: ''
+description: 介绍将 NuGet 包安装到项目中的过程，包括磁盘上和适用的项目文件会发生的情况。
+keywords: 安装 NuGet, NuGet 包使用, 安装 NuGet 包, NuGet 包引用
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3bae03e148a366388c10d08e83c89dac6ff56d06
-ms.sourcegitcommit: 33436d122873249dbb20616556cd8c6783f38909
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: b8cce7bd6c1bd73eb018b8891ddd72b2f4432d55
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="different-ways-to-install-a-nuget-package"></a>安装 NuGet 包的不同方式
 
-使用以下任一方法下载和安装 NuGet 包（如果尚未安装，请参阅[安装 NuGet 客户端工具](../install-nuget-client-tools.md)）：
+使用下表中的任一方法下载和安装 NuGet 包（如果尚未安装，请参阅[安装 NuGet 客户端工具](../install-nuget-client-tools.md)）。 可能从缓存中检索包而不是下载包。
 
 | 方法 | 描述 |
 | --- | --- |
-| dotnet.exe CLI<br/>`dotnet install <package_name>` | （所有平台）下载用 \<package_name\> 识别的包，将其内容展开到当前目录下的文件夹中，然后添加对项目文件的引用。 同时还要下载和安装依赖项。<ul><li>[安装并使用包 (dotnet CLI)](../quickstart/install-and-use-a-package-using-the-dotnet-cli.md)</li><li>[dotnet 命令](../tools/dotnet-commands.md)</li></ul> |
-| 包管理器 UI (Visual Studio) | （Windows 和 Mac）提供 UI，你可以通过此 UI 浏览、选择包，并将包及其依赖项安装到项目中。 将对已安装的程序包引用添加到项目文件。<ul><li>[安装并使用包 (Visual Studio)](../quickstart/install-and-use-a-package-in-visual-studio.md)</li><li>[程序包管理器 UI 引用 (Windows)](../tools/package-manager-ui.md)</li><li>[在项目中包括 NuGet 包 (Mac)](/visualstudio/mac/nuget-walkthrough)</li></ul> |
-| 程序包管理器控制台 (Visual Studio)<br/>`Install-Package <package_name>` | （仅限 Windows）下载并将用 \<package_name\> 识别的包安装到解决方案的指定项目中，然后添加对项目文件的引用。 同时还要下载和安装依赖项。<ul><li>[安装并使用包 (Visual Studio)](../quickstart/install-and-use-a-package-in-visual-studio.md)</li><li>[程序包管理器控制台指南](../tools/package-manager-console.md)</li></ul> |
-| nuget.exe CLI<br/>`nuget install <package_name>` | （所有平台）下载用 \<package_name\> 识别的包，将其内容展开到当前目录下的文件夹中；还可以下载 `packages.config` 文件中列出的所有包。 同时还要下载和安装依赖项，但对项目文件未进行任何更改。<ul><li>[安装命令](../tools/cli-ref-install.md)</li></ul> |
+| dotnet.exe CLI<br/>`dotnet add package <package_name>` | （所有平台）检索用 \<package_name\> 识别的包，将其内容展开到当前目录下的文件夹中，然后添加对项目文件的引用。 同时还要检索和安装依赖项。<ul><li>[安装并使用包 (dotnet CLI)](../quickstart/install-and-use-a-package-using-the-dotnet-cli.md)</li><li>[dotnet add package 命令](/dotnet/core/tools/dotnet-add-package)</li></ul> |
+| 包管理器 UI (Visual Studio) | （Windows 和 Mac）提供 UI，用户可以通过此 UI 浏览、选择包，并从指定包源将包及其依赖项安装到项目中。 将对已安装的程序包引用添加到项目文件。<ul><li>[安装并使用包 (Visual Studio)](../quickstart/install-and-use-a-package-in-visual-studio.md)</li><li>[程序包管理器 UI 引用 (Windows)](../tools/package-manager-ui.md)</li><li>[在项目中包括 NuGet 包 (Mac)](/visualstudio/mac/nuget-walkthrough)</li></ul> |
+| 程序包管理器控制台 (Visual Studio)<br/>`Install-Package <package_name>` | （仅限 Windows）检索并将用 \<package_name\> 识别的包从所选源安装到解决方案的指定项目中，然后添加对项目文件的引用。 同时还要检索和安装依赖项。<ul><li>[安装并使用包 (Visual Studio)](../quickstart/install-and-use-a-package-in-visual-studio.md)</li><li>[程序包管理器控制台指南](../tools/package-manager-console.md)</li></ul> |
+| nuget.exe CLI<br/>`nuget install <package_name>` | （所有平台）检索用 \<package_name\> 识别的包，将其内容展开到当前目录下的文件夹中；还可以检索 `packages.config` 文件中列出的所有包。 同时还要检索和安装依赖项，但对项目文件或 `packages.config` 不作任何更改。<ul><li>[安装命令](../tools/cli-ref-install.md)</li></ul> |
 
-## <a name="general-install-process"></a>常规安装过程
+## <a name="what-happens-when-a-package-is-installed"></a>安装包时会发生什么情况
 
-一般情况下，NuGet 会执行以下操作，然后要求安装一个包：
+简而言之，不同的 NuGet 工具通常会对项目文件或 `packages.config` 中的包创建引用，然后执行包还原，从而有效安装包。 `nuget install` 除外，它仅将包展开到 `packages` 文件夹，而不修改任何其他文件。
+
+一般流程如下：
+
+1. （除 `nuget.exe` 之外的所有工具）将包标识符和版本记录到项目文件或 `packages.config`中。
 
 1. 获取包：
-    - 检查请求的包是否已存在于缓存中（请参阅[管理 NuGet 缓存](managing-the-nuget-cache.md)）。
-    - 如果包不在缓存中，请尝试从[配置文件](Configuring-NuGet-Behavior.md)中列出的源下载包。
-      - 对于使用 `packages.config` 引用格式的项目，NuGet 会使用配置中的源顺序。
-      - 对于使用 PackageReference 格式的项目，NuGet 会先检查本地文件夹的源，再检查网络共享中的源，最后检查 HTTP (Internet) 源。
+    - 检查包是否（通过标识符和版本号）已安装在 global-packages 文件夹中，如[管理全局包和缓存文件夹](managing-the-global-packages-and-cache-folders.md)中所述。
+
+    - 如果包不在 global-packages 文件夹中，请尝试从[配置文件](Configuring-NuGet-Behavior.md)中列出的源检索包。 对于在线源，请首先尝试从缓存中检索包，除非通过 `nuget.exe` 命令指定 `-NoCache` 或通过 `dotnet restore` 指定 `--no-cache`。 （Visual Studio 和 `dotnet add package` 始终使用缓存。）如果从缓存中使用包，“缓存”将出现在输出中。 缓存有 30 分钟的到期时间。
+
+    - 如果包不在缓存中，请尝试从配置中列出的源下载包。 如果下载包，则会在输出中出现“GET”和“OK”。
+
+    - 如果无法从任何源成功获取包，安装将失败，并显示诸如 [NU1103](../reference/errors-and-warnings.md#nu1103) 之类的错误。 注意，来自 `nuget.exe` 命令的错误仅显示最后检查的源，但意味着无法从任何源获取包。
+
+    获取包时，NuGet 配置中的源顺序可能适用：
+      - 对于使用 PackageReference 格式的项目，NuGet 将首先检查源本地文件夹和网络共享，然后再检查 HTTP 源。
+      - 对于使用 `packages.config` 管理格式的项目，NuGet 会使用配置中的源顺序。 还原操作除外，这种情况下将忽略源排序，NuGet 会使用任何最先响应的源中的包。
       - 一般情况下，NuGet 检查源的顺序不具有特别意义，因为具有特定标识符和版本号的任意给定包在找到的源方面完全相同。
-    - 如果该包是从其中一个源成功获取的，NuGet 会将其添加到缓存中。 否则，安装将失败。
 
-1. 将该包扩展到项目中。
-    - 展开意味着将包的内容解压缩到适当的子文件夹中。 子文件夹中还放置了 `.nupkg` 本身的副本。
-    - 如果将包安装到 Visual Studio 或 .NET Core 项目中，则只展开与项目目标框架相关的文件。 使用 nuget.exe 命令行进行安装时，所有程序集都将展开。
+1. （除 `nuget.exe` 之外的所有工具）保存包副本和 http-cache 文件夹中的其他信息，如[管理全局包和缓存文件夹](managing-the-global-packages-and-cache-folders.md)中所述。
 
-1. 如果将包安装在 Visual Studio 或 dotnet CLI 中，则将引用添加到相应的项目文件（或者对于 Visual Studio 中的某些项目类型为 `packages.config`）。
+1. 如下载，请将包安装到每个用户的 global-packages 文件夹中。 NuGet 创建每个包标识符的子文件夹，然后创建每个已安装包版本的子文件夹。
 
-## <a name="related-topics"></a>相关主题
+1. 更新其他项目文件和文件夹：
+
+    - 对于使用 PackageReference 的项目，更新存储在 `obj/project.assets.json` 中的包依赖项关系图。 包内容本身不会复制到任何项目文件夹中。
+    - 对于使用 `packages.config` 的项目，将展开包中与项目目标框架匹配的那些部分复制到项目的 `packages` 文件夹。 （在使用 `nuget install` 时，将复制整个展开包，因为 `nuget.exe` 不检查项目文件来标识目标框架。）
+    - 如果包使用[源和配置文件转换](../create-packages/source-and-config-file-transformations.md)，则更新 `app.config` 和/或 `web.config`。
+
+1. 安装任何低级别的依赖项（如果项目中尚不存在）。 此过程可能会更新过程中的包版本，如[依赖项解析](../consume-packages/dependency-resolution.md)中所述。
+
+1. （仅适用于 Visual Studio）如果可用，请在 Visual Studio 窗口中显示包的自述文件。
+
+## <a name="related-articles"></a>相关文章
 
 - [包使用的概述和工作流](../consume-packages/overview-and-workflow.md)
 - [查找和选择包](../consume-packages/finding-and-choosing-packages.md)
+- [管理 NuGet 缓存和 global-packages 文件夹](managing-the-global-packages-and-cache-folders.md)
 - [配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)
-- [管理 NuGet 缓存](managing-the-nuget-cache.md)

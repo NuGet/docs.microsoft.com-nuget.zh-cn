@@ -1,22 +1,25 @@
 ---
-title: "对 Visual Studio 中的 NuGet 包还原进行故障排除 | Microsoft Docs"
+title: 对 Visual Studio 中的 NuGet 包还原进行故障排除 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
-ms.date: 03/13/2018
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "介绍 Visual Studio 中常见的 NuGet 还原错误以及相应的故障排除方法。"
-keywords: "NuGet 包还原, 还原包, 故障排除, 故障排除"
+ms.technology: ''
+description: 介绍 Visual Studio 中常见的 NuGet 还原错误以及相应的故障排除方法。
+keywords: NuGet 包还原, 还原包, 故障排除, 故障排除
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 8efaed497a596921af3c73ab919831c73bf598e0
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 27a43ceaefdf3a7842183a64ea57d05416d6cb02
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="troubleshooting-package-restore-errors"></a>包还原错误疑难解答
 
@@ -48,7 +51,10 @@ This project references NuGet package(s) that are missing on this computer.
 Use NuGet Package Restore to download them. The missing file is {name}.
 ```
 
-当你尝试生成包含对一个或多个 NuGet 包的引用的项目，但这些包当前未缓存在项目中时，发生了此错误。 （如果项目使用 `packages.config`，则将包缓存在解决方案根目录的 `packages` 文件夹中；或者如果项目使用 PackageReference 格式，则将其缓存到 `obj/project.assets.json` 文件中。）
+当你尝试生成包含对一个或多个 NuGet 包的引用的项目，但这些包当前未安装在计算机上或项目中时，发生了此错误。
+
+- 使用 PackageReference 管理格式时，此错误意味着包未安装在 global-packages 文件夹中，如[管理全局包和缓存文件夹](managing-the-global-packages-and-cache-folders.md)中所述。
+- 当使用 `packages.config` 时，此错误意味着包未安装在解决方案根目录中的 `packages` 文件夹中。
 
 当你从源代码管理或其他下载获得项目的源代码时，通常会发生这种情况。 包通常从源代码管理或下载中省略，因为它们可以从包源（例如 nuget.org）中还原（请参阅[包和源代码管理](Packages-and-Source-Control.md)）。 否则，包含它们会导致存储库膨胀或创建不必要的大型 .zip 文件。
 
@@ -59,7 +65,7 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 - 在命令行上运行 `nuget restore`（使用 `dotnet` 创建的项目除外，这种情况下请使用 `dotnet restore`）。
 - 在包含使用 PackageReference 格式的项目的命令行上，运行 `msbuild /t:restore`。
 
-成功还原后，应会看到 `packages` 文件夹（使用 `packages.config` 时）或 `obj/project.assets.json` 文件（使用 PackageReference 时）。 该项目现在应能成功生成。 如果没有，请[在 GitHub 上提交问题](https://github.com/NuGet/docs.microsoft.com-nuget/issues)，以便我们跟进。
+成功还原后，包应显示在 global-packages 文件夹中。 对于使用 PackageReference 的项目，还原应重新创建 `obj/project.assets.json` 文件；对于使用 `packages.config` 的项目，包应显示在项目的 `packages` 文件夹中。 该项目现在应能成功生成。 如果没有，请[在 GitHub 上提交问题](https://github.com/NuGet/docs.microsoft.com-nuget/issues)，以便我们跟进。
 
 <a name="assets"></a>
 
@@ -71,7 +77,9 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 Assets file '<path>\project.assets.json' not found. Run a NuGet package restore to generate this file.
 ```
 
-此错误出现的原因与[上一部分](#missing)中所述的原因相同，并具有相同的补救措施。 例如，在从源代码管理获取的 .NET Core 项目上运行 `msbuild` 不会自动还原包。 在这种情况下，请运行 `msbuild /t:restore`，然后运行 `msbuild`，或使用 `dotnet build`（它会自动还原包）。
+`project.assets.json` 文件在使用 PackageReference 管理格式时维护项目的依赖项关系图，用于确保在计算机上安装了所有必需的包。 由于此文件是通过包还原动态生成的，它通常不添加到源代码管理中。 因此，该错误在使用工具生成项目时出现，例如，不自动还原包的 `msbuild`。
+
+在这种情况下，请运行 `msbuild /t:restore`，然后运行 `msbuild`，或使用 `dotnet build`（它会自动还原包）。 也可以使用[上一节](#missing)中的任一包还原方法。
 
 <a name="consent"></a>
 
@@ -103,11 +111,12 @@ during build.' You can also give consent by setting the environment variable
 </configuration>
 ```
 
-请注意，如果直接在 `nuget.config` 中编辑 `packageRestore` 设置，请重启 Visual Studio，以便“选项”对话框显示当前值。
+> [!Important]
+> 如果直接在 `nuget.config` 中编辑 `packageRestore` 设置，请重启 Visual Studio，以便“选项”对话框显示当前值。
 
 ## <a name="other-potential-conditions"></a>其他潜在条件
 
-- 由于缺少文件，你可能会遇到生成错误，并看到提示使用 NuGet 还原来下载它们的消息。 但是，运行还原时可能会出现：“所有包都已安装，无可还原项。” 在这种情况下，请删除 `packages` 文件夹（使用 `packages.config` 时）或 `obj/project.assets.json` 文件（使用 PackageReference 时）并再次运行还原。
+- 由于缺少文件，你可能会遇到生成错误，并看到提示使用 NuGet 还原来下载它们的消息。 但是，运行还原时可能会出现：“所有包都已安装，无可还原项。” 在这种情况下，请删除 `packages` 文件夹（使用 `packages.config` 时）或 `obj/project.assets.json` 文件（使用 PackageReference 时）并再次运行还原。 如果错误仍然存在，请使用命令行中的 `nuget locals all -clear` 或 `dotnet locals all --clear` 以清除 global-packages 文件夹和缓存文件夹，如[管理全局包和缓存文件夹](managing-the-global-packages-and-cache-folders.md)中所述。
 
 - 从源代码管理获取项目时，项目文件夹可能设置为只读。 更改文件夹权限并尝试重新还原包。
 

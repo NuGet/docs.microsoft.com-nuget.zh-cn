@@ -1,22 +1,25 @@
 ---
-title: "使用 dotnet CLI 创建和发布 NuGet 包 | Microsoft Docs"
+title: 使用 dotnet CLI 创建和发布 NuGet 包 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/24/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
-ms.technology: 
-description: "使用 .NET Core CLI dotnet 创建和发布 NuGet 包的演练教程。"
-keywords: "NuGet 包创建, NuGet 包发布, NuGet 教程, dotnet 发布 NuGet 包"
+ms.technology: ''
+description: 使用 .NET Core CLI dotnet 创建和发布 NuGet 包的演练教程。
+keywords: NuGet 包创建, NuGet 包发布, NuGet 教程, dotnet 发布 NuGet 包
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 086de5378fe4ae928e6bd00cd3a87afd7c366a01
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 536e39ae64649ca1c11afa95c20872515e9e4c83
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-and-publish-a-package"></a>创建和发布包
 
@@ -59,14 +62,14 @@ ms.lasthandoff: 03/08/2018
 
 ## <a name="run-the-pack-command"></a>运行 pack 命令
 
-若要从项目中生成 NuGet 包（一个 `.nupkg` 文件），请运行 `dotnet pack` 命令：
+若要从项目中生成 NuGet 包（`.nupkg` 文件），运行 `dotnet pack` 命令，它也会自动生成项目：
 
 ```cli
 # Uses the project file in the current folder by default
 dotnet pack
 ```
 
-输出将显示 `.nupkg` 文件的路径：
+输出显示 `.nupkg` 文件的路径：
 
 ```output
 Microsoft (R) Build Engine version 15.5.180.51428 for .NET Core
@@ -75,6 +78,14 @@ Copyright (C) Microsoft Corporation. All rights reserved.
   Restore completed in 29.91 ms for D:\proj\AppLoggerNet\AppLogger\AppLogger.csproj.
   AppLogger -> D:\proj\AppLoggerNet\AppLogger\bin\Debug\netstandard2.0\AppLogger.dll
   Successfully created package 'D:\proj\AppLoggerNet\AppLogger\bin\Debug\AppLogger.1.0.0.nupkg'.
+```
+
+### <a name="automatically-generate-package-on-build"></a>在生成期间自动生成包
+
+若要在运行 `dotnet build` 时自动运行 `dotnet pack`，请将以下行添加到 `<PropertyGroup>` 中的项目文件内：
+
+```xml
+<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 ```
 
 ## <a name="publish-the-package"></a>发布包

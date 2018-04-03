@@ -1,22 +1,25 @@
 ---
-title: "Visual Studio 模板中的 NuGet 包 | Microsoft Docs"
+title: Visual Studio 模板中的 NuGet 包 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/03/2018
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "在 Visual Studio 项目和项模板中添加 NuGet 包的说明。"
-keywords: "Visual Studio 中的 NuGet, Visual Studio 项目模板, Visual Studio 项模板, 项目模板中的包, 项模板中的包"
+ms.technology: ''
+description: 在 Visual Studio 项目和项模板中添加 NuGet 包的说明。
+keywords: Visual Studio 中的 NuGet, Visual Studio 项目模板, Visual Studio 项模板, 项目模板中的包, 项模板中的包
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 65b914e1fa59c28615f195b470880a12bf80efbb
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 8c1751ba9caf5e71ace7a81575e4e5448b1e4185
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="packages-in-visual-studio-templates"></a>Visual Studio 模板中的包
 
@@ -62,7 +65,7 @@ ms.lasthandoff: 02/02/2018
     </WizardData>
     ```
 
-    (NuGet 2.2.1+) 该向导支持多个 `<package>` 元素，从而支持多个包源。 `id` 和 `version` 属性都是必需的，这意味着即使可使用较新版本，仍将安装包的特定版本。 这可以防止包更新中断模板，并将是否更新包的选择权留给使用模板的开发人员。
+    向导支持多个 `<package>` 元素，从而支持多个包源。 `id` 和 `version` 属性都是必需的，这意味着即使可使用较新版本，仍将安装包的特定版本。 这可以防止包更新中断模板，并将是否更新包的选择权留给使用模板的开发人员。
 
 1. 指定 NuGet 可找到包的存储库，如以下各节中所述。
 

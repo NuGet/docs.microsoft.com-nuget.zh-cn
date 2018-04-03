@@ -1,26 +1,29 @@
 ---
-title: "从 Visual Studio 中使用 NuGet 包的介绍性指南 | Microsoft 文档"
+title: 从 Visual Studio 中使用 NuGet 包的介绍性指南 | Microsoft 文档
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/23/2018
-ms.topic: get-started-article
+ms.topic: quickstart
 ms.prod: nuget
-ms.technology: 
-description: "有关如何在 Visual Studio 项目中安装并使用 NuGet 包的演练教程。"
-keywords: "安装 NuGet, NuGet包使用, 安装 NuGet 包, NuGet 包引用, 使用 NuGet 包"
+ms.technology: ''
+description: 有关如何在 Visual Studio 项目中安装并使用 NuGet 包的演练教程。
+keywords: 安装 NuGet, NuGet包使用, 安装 NuGet 包, NuGet 包引用, 使用 NuGet 包
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: ff905fec6d6af4fa40fd4331cb970121b6eb0879
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 4205893cc02cffff8926513a555393d10c046f43
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-and-use-a-package-in-visual-studio"></a>在 Visual Studio 中安装和使用包
 
-NuGet 包包含其他开发人员提供的在项目中使用的可重用代码。 请参阅[什么是 NuGet？](../What-is-NuGet.md)，了解背景信息。 如本文中针对流行的 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) 包和通用 Windows 平台 (UWP) 项目的内容所述，使用程序包管理器 UI 或程序包管理器控制台将程序包安装到 Visual Studio 项目中。
+NuGet 包包含其他开发人员提供的在项目中使用的可重用代码。 请参阅[什么是 NuGet？](../What-is-NuGet.md)，了解背景信息。 使用包管理器 UI 或包管理器控制台的 Visual Studio 项目中安装包。 本文介绍使用热门的 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) 包和通用 Windows 平台 (UWP) 项目的过程。 相同的过程适用于任何其他 .NET 或 .NET Core 项目。
 
 安装完成后，请引用具有 `using <namespace>` 的代码中的包，其中 \<namespace\> 特定于正在使用的包。 建立引用后，可通过相应的 API 调用包。
 
@@ -36,7 +39,9 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 
 ## <a name="create-a-project"></a>创建项目
 
-可以将 NuGet 包安装到某种类型的 .NET 项目。 对于本演练，将使用简单的通用 Windows (UWP) 应用。 要在 Visual Studio 中创建项目，请使用“文件 > 新建项目...”，然后选择“Windows 通用 > 空白应用(通用 Windows)”。 出现提示时，接受“目标版本”和“最低版本”的默认值。
+可将 NuGet 包安装到任何 .NET 项目，前提是包支持与项目相同的目标框架。
+
+对于本演练，将使用简单的通用 Windows (UWP) 应用。 要在 Visual Studio 中创建项目，请使用“文件 > 新建项目...”，然后选择“Windows 通用 > 空白应用(通用 Windows)”。 出现提示时，接受“目标版本”和“最低版本”的默认值。
 
 ## <a name="add-the-newtonsoftjson-nuget-package"></a>添加 Newtonsoft.Json Nuget 包
 
@@ -56,7 +61,7 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 
 1. (Visual Studio 2017) 如果系统提示选择程序包管理格式，请选择“项目文件中的 PackageReference”：
 
-    ![选择包引用格式](media/QS_Use-03b-SelectFormat.png)
+    ![选择包管理格式](media/QS_Use-03b-SelectFormat.png)
 
 1. 如果系统提示查看更改，请选择“确定”。
 

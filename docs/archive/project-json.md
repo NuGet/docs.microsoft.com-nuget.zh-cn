@@ -1,28 +1,31 @@
 ---
-title: "适用于 NuGet 的 project.json 文件引用 | Microsoft Docs"
+title: 适用于 NuGet 的 project.json 文件引用 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 07/27/2017
 ms.topic: reference
 ms.prod: nuget
-ms.technology: 
-description: "在某些项目类型中，project.json 维护项目中使用的 NuGet 包列表。"
-keywords: "NuGet project.json, NuGet 包引用, NuGet 依赖项, project.lock.json"
+ms.technology: ''
+description: 在某些项目类型中，project.json 维护项目中使用的 NuGet 包列表。
+keywords: NuGet project.json, NuGet 包引用, NuGet 依赖项, project.lock.json
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 2e2c521b18dd67e49942cc20eafef0be7f91573a
-ms.sourcegitcommit: 262d026beeffd4f3b6fc47d780a2f701451663a8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 21542a219faa3d1fa0c32a838645d4471c5aa935
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="projectjson-reference"></a>project.json 引用
 
 NuGet 3.x+
 
-`project.json` 文件维护项目中使用的包列表，称为包引用格式。 它会取代 `packages.config`，但在 NuGet 4.0+ 中又被 [PackageReference](../consume-packages/package-references-in-project-files.md) 取代。
+`project.json` 文件维护项目中使用的包列表，称为包管理格式。 它会取代 `packages.config`，但在 NuGet 4.0+ 中又被 [PackageReference](../consume-packages/package-references-in-project-files.md) 取代。
 
 [`project.lock.json`](#projectlockjson) 文件（如下所述）也用于采用 `project.json` 的项目。
 

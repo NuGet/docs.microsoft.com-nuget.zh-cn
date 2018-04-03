@@ -1,22 +1,25 @@
 ---
-title: "配置 NuGet 行为 | Microsoft Docs"
+title: 配置 NuGet 行为 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 10/25/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "NuGet.Config 文件同时以全局方式和基于每个项目的方式控制 NuGet 的行为，并且这些文件可使用 nuget config 命令进行修改。"
-keywords: "NuGet 配置文件, NuGet 配置, NuGet 行为设置, NuGet 设置, Nuget.Config, NuGetDefaults.Config, 默认"
+ms.technology: ''
+description: NuGet.Config 文件同时以全局方式和基于每个项目的方式控制 NuGet 的行为，并且这些文件可使用 nuget config 命令进行修改。
+keywords: NuGet 配置文件, NuGet 配置, NuGet 行为设置, NuGet 设置, Nuget.Config, NuGetDefaults.Config, 默认
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: c46f23fcbec5dfcb6122434d43097212f6230fb0
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: a575868894d5ca9992b1c9984cf4920bd2858209
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="configuring-nuget-behavior"></a>配置 NuGet 行为
 
@@ -27,7 +30,7 @@ NuGet 的行为由一个或多个 `NuGet.Config` (XML) 文件（可存在于项�
 | 范围 | NuGet.Config 文件的位置 | 描述 |
 | --- | --- | --- |
 | 项目 | 当前文件夹（aka 项目文件夹）或上至驱动器根目录的任何文件夹。| 在项目文件夹中，设置仅应用于该项目。 在包含多个项目子文件夹的父文件夹中，设置应用于这些子文件夹中的所有项目。 |
-| “用户” | Windows：`%APPDATA%\NuGet\NuGet.Config`<br/>Mac/Linux：`~/.nuget/NuGet/NuGet.Config` | 设置应用于所有操作，但可被任何项目级的设置替代。 |
+| “用户” | Windows：`%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux：`~/.nuget/NuGet/NuGet.Config` | 设置应用于所有操作，但可被任何项目级的设置替代。 |
 | 计算机 | Windows：`%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux：`$XDG_DATA_HOME`（通常为 `~/.local/share`） | 设置应用于计算机上的所有操作，但可被任何用户级或项目级的设置替代。 |
 
 针对早期版本的 NuGet 的说明：
@@ -94,7 +97,7 @@ nuget config -set repositoryPath= -configfile /home/my.Config
 
 ### <a name="creating-a-new-config-file"></a>创建新配置文件
 
-将下方的模板复制到新文件中，然后使用 `nuget config --configFile <filename>` 设置值：
+将下方的模板复制到新文件中，然后使用 `nuget config -configFile <filename>` 设置值：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -137,7 +140,7 @@ NuGet 在这些文件中找到设置时，设置将按如下方式应用：
 
 随后以下位置上将有 4 个具有给定内容的 `NuGet.Config` 文件。 （此示例不包括计算机级文件，但其与用户级文件具有相似行为。）
 
-文件 A. 用户级文件（Windows 上为 `%APPDATA%\NuGet\NuGet.Config`，Mac/Linux 上为 `~/.nuget/NuGet/NuGet.Config`）：
+文件 A. 用户级文件（Windows 上为 `%appdata%\NuGet\NuGet.Config`，Mac/Linux 上为 `~/.nuget/NuGet/NuGet.Config`）：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -220,7 +223,7 @@ NuGet 在这些文件中找到设置时，设置将按如下方式应用：
 
 ### <a name="nugetdefaultsconfig-settings"></a>NuGetDefaults.Config 的设置
 
-- `packageSources`：此集合与常规配置文件中的 `packageSources` 具有相同含义，并可指定默认源。 在使用 `packages.config` 引用格式的项目中安装或更新包时，NuGet 会按顺序使用源。 对于使用 PackageReference 格式的项目，NuGet 会先使用本地源，再使用网络共享上的源，最后使用 HTTP 源，而不管配置文件中的顺序如何。 NuGet 会始终忽略还原操作的源顺序。
+- `packageSources`：此集合与常规配置文件中的 `packageSources` 具有相同含义，并可指定默认源。 在使用 `packages.config` 管理格式的项目中安装或更新包时，NuGet 会按顺序使用源。 对于使用 PackageReference 格式的项目，NuGet 会先使用本地源，再使用网络共享上的源，最后使用 HTTP 源，而不管配置文件中的顺序如何。 NuGet 会始终忽略还原操作的源顺序。
 
 - `disabledPackageSources`：此集合还与在 `NuGet.Config` 文件中时具有相同含义，集合中将列出每个受影响源的名称，并用 true/false 值指示源是否已禁用。 这可使源名称和 URL 保留在 `packageSources` 中，但不会将其默认打开。 开发人员随后可在其他 `NuGet.Config` 文件中将源的值设置为 false，以便重新启用源，而无需再次寻找正确的 URL。 开发人员还可通过此方法获取组织的内部源 URL 完整列表，同时仅默认启用一个团队的源。
 

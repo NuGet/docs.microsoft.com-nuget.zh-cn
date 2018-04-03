@@ -1,23 +1,26 @@
 ---
-title: "如何创建 NuGet 符号包 | Microsoft Docs"
+title: 如何创建 NuGet 符号包 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 09/12/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-description: "如何在 Visual Studio 中创建仅包含符号的 NuGet 包以支持调试其他 NuGet 包。"
-keywords: "NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符号包约定"
+ms.technology: ''
+description: 如何在 Visual Studio 中创建仅包含符号的 NuGet 包以支持调试其他 NuGet 包。
+keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符号包约定
 ms.reviewer:
 - anangaur
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: e1d90009c739a7f358e9581c7032523b8b284936
-ms.sourcegitcommit: 7969f6cd94eccfee5b62031bb404422139ccc383
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 6b6ddb0ca8ac5d7589dc5cb6de66ee3aa5faf8b6
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="creating-symbol-packages"></a>创建符号包
 

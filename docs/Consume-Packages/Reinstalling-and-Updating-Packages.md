@@ -1,23 +1,25 @@
 ---
-title: "重新安装和更新 NuGet 包 | Microsoft Docs"
+title: 重新安装和更新 NuGet 包 | Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 12/07/2017
 ms.topic: article
 ms.prod: nuget
-ms.technology: 
-ms.assetid: 2785879b-97f0-4a85-b3cc-bf4eaa5c39bf
-description: "有关何时需要重新安装和更新包的详细信息，与 Visual Studio 中损坏的包引用一样。"
-keywords: "NuGet 包安装, NuGet 包重新安装, NuGet 包还原, 更新包, 还原包, 修复损坏的引用"
+ms.technology: ''
+description: 有关何时需要重新安装和更新包的详细信息，与 Visual Studio 中损坏的包引用一样。
+keywords: NuGet 包安装, NuGet 包重新安装, NuGet 包还原, 更新包, 还原包, 修复损坏的引用
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: e2875630b24fbe04fc7bcab52335d849e54160de
-ms.sourcegitcommit: 8f26d10bdf256f72962010348083ff261dae81b9
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: 9da385f51abf5877589c29ebdeffefc9a1a20a2e
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>如何重新安装和更新包
 
@@ -48,7 +50,7 @@ ms.lasthandoff: 03/08/2018
 
 默认情况下，重新安装或更新包常常会安装包源中提供的最新版本。
 
-但是，在使用 `packages.config` 引用格式的项目中，可以专门约束版本范围。 例如，如果知道可能因为包 API 中存在重要更改，应用程序只能使用 1.x 版本的包，而不是 2.0 以及更高版本的包，则需要将升级约束为 1.x 版本。 这会阻止可能损坏应用程序的意外更新。
+但是，在使用 `packages.config` 管理格式的项目中，可以专门约束版本范围。 例如，如果知道可能因为包 API 中存在重要更改，应用程序只能使用 1.x 版本的包，而不是 2.0 以及更高版本的包，则需要将升级约束为 1.x 版本。 这会阻止可能损坏应用程序的意外更新。
 
 要设置约束，在文本编辑器中打开 `packages.config`，找到有问题的依赖项，然后添加带版本范围的 `allowedVersions` 属性。 例如，要将更新约束为版本 1.x，请将 `allowedVersions` 设为 `[1,2)`：
 

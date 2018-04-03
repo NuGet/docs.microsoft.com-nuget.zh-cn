@@ -1,28 +1,31 @@
 ---
-title: "为 Xamarin 创建 NuGet 包（适用于 iOS、Android 和 Windows）| Microsoft Docs"
+title: 使用 Visual Studio 2015 为 Xamarin 创建 NuGet 包（适用于 iOS、Android 和 Windows）| Microsoft Docs
 author: kraigb
 ms.author: kraigb
 manager: ghogen
 ms.date: 01/09/2017
-ms.topic: get-started-article
+ms.topic: tutorial
 ms.prod: nuget
-ms.technology: 
-description: "从头到尾演练如何为 Xamarin 创建在 iOS、Android 和 Windows 上使用本机 API 的 NuGet 包。"
-keywords: "创建包, 适用于 Xamarin 的包, 跨平台包"
+ms.technology: ''
+description: 从头到尾演练如何为 Xamarin 创建在 iOS、Android 和 Windows 上使用本机 API 的 NuGet 包。
+keywords: 创建包, 适用于 Xamarin 的包, 跨平台包
 ms.reviewer:
 - karann-msft
 - unniravindranathan
-ms.openlocfilehash: 3e1460de060980365a5eaa2ef91c052cc359bb70
-ms.sourcegitcommit: 74c21b406302288c158e8ae26057132b12960be8
+ms.workload:
+- dotnet
+- aspnet
+ms.openlocfilehash: e101ca2d124a19d2cf758776717b3680aa5bbdd8
+ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="create-packages-for-xamarin"></a>为 Xamarin 创建包
+# <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>使用 Visual Studio 2015 为 Xamarin 创建包
 
-跨平台包包含在 iOS、Android 和 Windows 上使用本机 API 的代码，具体取决于运行时操作系统。 虽然这很简单，但最好让开发人员通过通用的 API 外围应用从 PCL 或 .NET Standard 库中使用包。
+Xamarin 包包含在 iOS、Android 和 Windows 上使用本机 API 的代码，具体取决于运行时操作系统。 虽然这很简单，但最好让开发人员通过通用的 API 外围应用从 PCL 或 .NET Standard 库中使用包。
 
-在本演练中，将创建可在 iOS、Android 和 Windows 的移动项目中使用的跨平台 NuGet 包。
+在本演练中，将使用 Visual Studio 2015 创建可在 iOS、Android 和 Windows 的移动项目中使用的跨平台 NuGet 包。
 
 1. [先决条件](#prerequisites)
 1. [创建项目结构和抽象代码](#create-the-project-structure-and-abstraction-code)
