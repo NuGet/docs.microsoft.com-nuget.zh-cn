@@ -15,11 +15,11 @@ ms.reviewer:
 ms.workload:
 - dotnet
 - aspnet
-ms.openlocfilehash: f682a5209556ec6741473ccf2648e8f38bb568b9
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 5fb34654dc294de34cf0e15f784240884dc1e3d1
+ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="sources-command-nuget-cli"></a>源命令 (NuGet CLI)
 
@@ -63,7 +63,7 @@ nuget sources Add -Name "MyServer" -Source \\myserver\packages
 
 nuget sources Disable -Name "MyServer"
 
-nuget source Enable -Source "nuget.org"
+nuget source Enable -Name "nuget.org"
 
 nuget sources add -name foo.bar -source C:\NuGet\local -username foo -password bar -StorePasswordInClearText -configfile %AppData%\NuGet\my.config
 ```
