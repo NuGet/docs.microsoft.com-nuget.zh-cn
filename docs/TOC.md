@@ -74,6 +74,7 @@
 # 参考
 ## [.nuspec](reference/nuspec.md)
 ## [项目文件中的包引用](consume-packages/package-references-in-project-files.md)
+## [将 packages.config 迁移到 PackageReference](reference/migrate-packages-config-to-package-reference.md)
 ## [packages.config](reference/packages-config.md)
 ## [包版本控制](reference/package-versioning.md)
 ## [Nuget.Config 文件](reference/nuget-config-file.md)
