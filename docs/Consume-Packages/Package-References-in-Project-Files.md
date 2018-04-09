@@ -15,11 +15,11 @@ ms.reviewer:
 ms.workload:
 - dotnet
 - aspnet
-ms.openlocfilehash: 99caf371ca1bd85e6af4e879741e3e2caab6e860
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 7844ace0565b2e70f8f68e6e61548f0f28171689
+ms.sourcegitcommit: 5b223c5814799caa6309e95792a2d338df692778
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -96,8 +96,8 @@ ms.lasthandoff: 03/28/2018
 
 | “值” | 描述 |
 | --- | ---
-| 编译 | `lib` 文件夹中的内容 |
-| Runtime — 运行时 | `runtimes` 文件夹中的内容 |
+| 编译 | `lib` 文件夹的内容，控制项目能否对文件夹中的程序集进行编译 |
+| Runtime — 运行时 | `lib` 和 `runtimes` 文件夹的内容，控制是否会复制这些程序集，以生成输出目录 |
 | contentFiles | `contentfiles` 文件夹中的内容 |
 | 生成 | `build` 文件夹中的属性和目标 |
 | analyzers | .NET 分析器 |
