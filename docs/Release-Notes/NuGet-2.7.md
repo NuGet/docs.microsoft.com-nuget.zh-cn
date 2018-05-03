@@ -1,25 +1,16 @@
 ---
-title: NuGet 2.7 发行说明 |Microsoft 文档
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: NuGet 2.7 发行说明
 description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 2.7 的发行说明。
-keywords: NuGet 2.7 发行说明，bug 修复的已知问题，添加了一些功能，DCRs
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 71ced70af127c8219001069739a6cec59d7d1684
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: 4b7cea360764e1b069afacabadd9b94d87e21ecc
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-27-release-notes"></a>NuGet 2.7 发行说明
 
@@ -33,36 +24,36 @@ NuGet 2.7 已于 2013 年 8 月 22 日发布。
 
 1. [Mike Roth](http://www.codeplex.com/site/users/view/mxrss) ([@mxrss](https://twitter.com/mxrss))
     - 显示许可证 url 时详细列出包和详细级别。
-1. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+2. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - [# 1956年](http://nuget.codeplex.com/workitem/1956)-developmentDependency 将特性添加到`packages.config`和命令中使用它包以仅包括运行时包
-1. [Rafael Nicoletti](http://www.codeplex.com/site/users/view/tkrafael) ([@tkrafael](https://twitter.com/tkrafael))
+3. [Rafael Nicoletti](http://www.codeplex.com/site/users/view/tkrafael) ([@tkrafael](https://twitter.com/tkrafael))
     - 避免 nuget.exe 包命令中的重复属性键。
-1. [Ben Phegan](http://www.codeplex.com/site/users/view/benphegan) ([@BenPhegan](https://twitter.com/benphegan))
+4. [Ben Phegan](http://www.codeplex.com/site/users/view/benphegan) ([@BenPhegan](https://twitter.com/benphegan))
     - [# 2610年](http://nuget.codeplex.com/workitem/2610)-机缓存大小增加到 200。
-1. [Slava Trenogin](http://www.codeplex.com/site/users/view/derigel) ([@derigel](https://twitter.com/derigel))
+5. [Slava Trenogin](http://www.codeplex.com/site/users/view/derigel) ([@derigel](https://twitter.com/derigel))
     - [#3217](http://nuget.codeplex.com/workitem/3217) -修复 NuGet 对话框的错误选项卡中显示更新
     - 修复 Project.TargetFramework 可以为 null ProjectManager 中
     - [#3248](http://nuget.codeplex.com/workitem/3248) -修复 SharedPackageRepository FindPackage/FindPackagesById 上不存在 packageId 将失败
-1. [Kevin Boyle](http://www.codeplex.com/site/users/view/KevinBoyleRG) ([@kevfromireland](https://twitter.com/kevfromireland))
+6. [Kevin Boyle](http://www.codeplex.com/site/users/view/KevinBoyleRG) ([@kevfromireland](https://twitter.com/kevfromireland))
     - [#3234](http://nuget.codeplex.com/workitem/3234) -启用对 Nomad 项目的支持
-1. [Corin Blaikie](http://www.codeplex.com/site/users/view/corinblaikie) ([@corinblaikie](https://twitter.com/corinblaikie))
+7. [Corin Blaikie](http://www.codeplex.com/site/users/view/corinblaikie) ([@corinblaikie](https://twitter.com/corinblaikie))
     - [#3252](http://nuget.codeplex.com/workitem/3252) -修复推送命令将会失败，退出代码 0，当文件不存在。
-1. [Martin Veselý](http://www.codeplex.com/site/users/view/veselkamartin)
+8. [Martin Veselý](http://www.codeplex.com/site/users/view/veselkamartin)
     - [#3226](http://nuget.codeplex.com/workitem/3226) -使用项目引用数据库项目时添加 BindingRedirect 命令修复 bug。
-1. [Miroslav Bajtos](http://www.codeplex.com/site/users/view/miroslavbajtos) ([@bajtos](https://twitter.com/bajtos))
+9. [Miroslav Bajtos](http://www.codeplex.com/site/users/view/miroslavbajtos) ([@bajtos](https://twitter.com/bajtos))
     - [# 2891年](http://nuget.codeplex.com/workitem/2891)-修复 bug 的 nuget.pack 错误地解析排除属性中的通配符。
-1. [Justin Dearing](http://www.codeplex.com/site/users/view/zippy1981) ([@zippy1981](https://twitter.com/zippy1981))
-    - [#3307](http://nuget.codeplex.com/workitem/3307) -修复 bug`NuGet.targets`未通过 $(Platform) 到 nuget.exe 还原包时。
-1. [Brian Federici](http://www.codeplex.com/site/users/view/benerdin)
-    - [#3294](http://nuget.codeplex.com/workitem/3294) -这将允许将具有相同名称但不同大小写，最终导致"项已存在"异常的文件添加 nuget.exe 包命令中的修复 bug。
-1. [Daniel Cazzulino](http://www.codeplex.com/site/users/view/dcazzulino) ([@kzu](https://twitter.com/kzu))
-    - [# 2990年](http://nuget.codeplex.com/workitem/2990)-NetPortableProfile 类添加版本属性。
-1. [David Simner](https://www.codeplex.com/site/users/view/DavidSimner)
-    - [#3460](https://nuget.codeplex.com/workitem/3460) -如果修复 bug NullReferenceException requireApiKey = true，但标头 X NUGET APIKEY 不存在
-1. [Michael Friis](https://www.codeplex.com/site/users/view/friism) ([@friism](https://twitter.com/friism))
-    - [#3278](https://nuget.codeplex.com/workitem/3278) -修复 NuGet.Build 目标文件到，以便它新平台上正常工作 MonoDevelop
-1. [Pranav Krishnamoorthy](https://www.codeplex.com/site/users/view/pranavkm) ([@pranav_km](https://twitter.com/pranav_km))
-    - 通过增加并行化提高还原命令性能
+10. [Justin Dearing](http://www.codeplex.com/site/users/view/zippy1981) ([@zippy1981](https://twitter.com/zippy1981))
+     - [#3307](http://nuget.codeplex.com/workitem/3307) -修复 bug`NuGet.targets`未通过 $(Platform) 到 nuget.exe 还原包时。
+11. [Brian Federici](http://www.codeplex.com/site/users/view/benerdin)
+     - [#3294](http://nuget.codeplex.com/workitem/3294) -这将允许将具有相同名称但不同大小写，最终导致"项已存在"异常的文件添加 nuget.exe 包命令中的修复 bug。
+12. [Daniel Cazzulino](http://www.codeplex.com/site/users/view/dcazzulino) ([@kzu](https://twitter.com/kzu))
+     - [# 2990年](http://nuget.codeplex.com/workitem/2990)-NetPortableProfile 类添加版本属性。
+13. [David Simner](https://www.codeplex.com/site/users/view/DavidSimner)
+     - [#3460](https://nuget.codeplex.com/workitem/3460) -如果修复 bug NullReferenceException requireApiKey = true，但标头 X NUGET APIKEY 不存在
+14. [Michael Friis](https://www.codeplex.com/site/users/view/friism) ([@friism](https://twitter.com/friism))
+     - [#3278](https://nuget.codeplex.com/workitem/3278) -修复 NuGet.Build 目标文件到，以便它新平台上正常工作 MonoDevelop
+15. [Pranav Krishnamoorthy](https://www.codeplex.com/site/users/view/pranavkm) ([@pranav_km](https://twitter.com/pranav_km))
+     - 通过增加并行化提高还原命令性能
 
 ## <a name="notable-features-in-the-release"></a>发行版中的值得注意的功能
 
@@ -105,7 +96,7 @@ NuGet 2.7 引入 nuget.exe 的新功能： `nuget.exe restore`
 
 此新的 Restore 命令允许你轻松地通过接受的解决方案文件或文件夹作为自变量来还原使用单个命令，解决方案的所有包。 此外，在当前文件夹中没有单个解决方案时，会进行隐式该自变量。 这意味着所有以下各项工作从包含单个解决方案文件 (MySolution.sln) 的文件夹：
 
-1. nuget.exe restore MySolution.sln
+1. nuget.exe 还原 MySolution.sln
 1. nuget.exe 还原。
 1. nuget.exe 还原
 
@@ -161,7 +152,7 @@ Restore 命令将打开的解决方案文件并找到解决方案中的所有项
 
 ### <a name="renaming-the-default-package-source"></a>重命名默认的程序包源
 
-NuGet 始终注册了名为"NuGet 正式程序包源"，指向 nuget.org 一个默认包源。该名称详细，且它还未指定实际上指向。 若要解决这些两个问题，我们已重命名只需"nuget.org"在 UI 中为此包源。 包源的 URL 也进行了更改以包括"www"。 前缀。 使用 NuGet 2.7 之后, 你现有的"NuGet 正式程序包源"将自动更新到"nuget.org"作为其名称和"https://www.nuget.org/api/v2/"作为其 URL。
+NuGet 始终注册了名为"NuGet 正式程序包源"，指向 nuget.org 一个默认包源。该名称详细，且它还未指定实际上指向。 若要解决这些两个问题，我们已重命名只需"nuget.org"在 UI 中为此包源。 包源的 URL 也进行了更改以包括"www"。 前缀。 使用 NuGet 2.7 之后, 你现有的"NuGet 正式程序包源"将自动更新到"nuget.org"作为其名称和"<https://www.nuget.org/api/v2/>"作为其 URL。
 
 ### <a name="performance-improvements"></a>性能改进
 
