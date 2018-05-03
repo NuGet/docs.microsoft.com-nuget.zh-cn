@@ -1,25 +1,16 @@
 ---
-title: NuGet 3.0 Beta 发行说明 |Microsoft 文档
-author: karann-msft
-ms.author: karann-msft
-manager: ghogen
-ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+title: NuGet 3.0 Beta 发行说明
 description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.0 试用版的发行说明。
-keywords: NuGet 3.0 试用版发行说明，bug 修复的已知问题，添加了一些功能，DCRs
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: bb64cbce4f26d84e1ba12930578382f887bb85f8
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 11/11/2016
+ms.topic: conceptual
+ms.openlocfilehash: 4608b196d19f95410f9fe20f6a22e31c15955b89
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-30-beta-release-notes"></a>NuGet 3.0 Beta 发行说明
 
@@ -29,7 +20,7 @@ ms.lasthandoff: 03/28/2018
 
 我们强烈建议你在安装此新版本之前卸载任何以前版本的 NuGet Visual Studio 2015 扩展。  如果你有与此版本的扩展的任何问题，我们建议你还原到[以前的版本](http://nuget.codeplex.com/downloads/get/909582)用于 Visual Studio 2015 预览版。
 
-## <a name="visual-studio-2012"></a>Visual Studio 2012+
+## <a name="visual-studio-2012"></a>Visual Studio 2012 +
 
 此 NuGet 3.0 试用版，可在 Visual Studio 2015 CTP 6 扩展库中安装。 我们正在努力获取预览谷的 Visual Studio 2012 和 Visual Studio 2013 很快。 我们先前共享到我们的目的[for Visual Studio 2010 停止更新](http://blog.nuget.org/20141002/visual-studio-2010.html)，我们未作出此困难的决策。
 

@@ -1,27 +1,18 @@
 ---
-title: dotNet NuGet 命令 |Microsoft 文档
+title: dotnet NuGet 命令
+description: 使用 dotnet 命令行界面的 NuGet 相关命令短引用。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/23/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: 使用 dotnet 命令行界面的 NuGet 相关命令短引用。
-keywords: dotnet NuGet 命令、 dotnet 包、 dotnet 还原、 dotnet nuget 局部变量、 dotnet nuget 推送和 dotnet nuget 删除
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 352145701fba509e21e774a429d227e7427a1f0d
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.topic: conceptual
+ms.openlocfilehash: fe49274af339c987d5e090c99edd78f62f59ce47
+ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="dotnet-commands"></a>dotNet 命令
+# <a name="dotnet-commands"></a>dotnet 命令
 
 `dotnet`命令行界面，在 Windows、 Mac OS X 和 Linux 运行，提供了大量基本 nuget.exe 命令，如下所示。 如果 dotnet 满足你的需求，不需要使用`nuget.exe`。
 

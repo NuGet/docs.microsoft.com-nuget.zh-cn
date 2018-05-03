@@ -1,26 +1,17 @@
 ---
-title: "推送和删除，NuGet API |Microsoft 文档"
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 推送和删除，NuGet API
+description: 发布服务允许客户端发布新的包以及不列出或删除现有包。
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "发布服务允许客户端发布新的包以及不列出或删除现有包。"
-keywords: "NuGet API 推送包 NuGet API 删除包、 NuGet API 不列出包，NuGet API 上载包、 NuGet API 创建包"
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: f8051ca57fccae77917567d8c9f2f8a120a8d884
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: 911c8238624f806b1fbb5c7938d02b6bdfbd8614
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="push-and-delete"></a>推送和删除
 
@@ -55,7 +46,7 @@ nuget.org 支持使用以下 API 的推送新包。 如果已存在具有提供�
 
 ### <a name="request-parameters"></a>请求参数
 
-name           | 内     | 类型   | 必需 | 说明
+名称           | 内     | 类型   | 必需 | 说明
 -------------- | ------ | ------ | -------- | -----
 X-NuGet-ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
 
@@ -87,7 +78,7 @@ nuget.org 解释为包删除请求的"不列出"。 这意味着包仍可用于�
 
 ### <a name="request-parameters"></a>请求参数
 
-name           | 内     | 类型   | 必需 | 说明
+名称           | 内     | 类型   | 必需 | 说明
 -------------- | ------ | ------ | -------- | -----
 Id             | URL    | 字符串 | 是      | 要删除的包 ID
 VERSION        | URL    | 字符串 | 是      | 要删除的包的版本
@@ -110,7 +101,7 @@ X-NuGet-ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER
 
 ### <a name="request-parameters"></a>请求参数
 
-name           | 内     | 类型   | 必需 | 说明
+名称           | 内     | 类型   | 必需 | 说明
 -------------- | ------ | ------ | -------- | -----
 Id             | URL    | 字符串 | 是      | 要 relist 包的 ID
 VERSION        | URL    | 字符串 | 是      | 要 relist 的包的版本

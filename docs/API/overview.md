@@ -1,29 +1,17 @@
 ---
-title: 概述、 NuGet API |Microsoft 文档
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: NuGet API 的概述
+description: NuGet API 是一组可用于下载包，提取元数据，发布新的包等的 HTTP 终结点。
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: NuGet API 是一组可用于下载包，提取元数据，发布新的包等的 HTTP 终结点。
-keywords: NuGet V3 API、 NuGet V2 API、 NuGet JSON、 NuGet 注册 API，NuGet API 平面容器、 NuGet nupkg API、 NuGet 元数据 API、 NuGet 搜索 API、 NuGet 推送 API，NuGe 发布 API，NuGet 删除 API，NuGet 不列出 API，NuGet 协议
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 7053a971c80a94cf035e8f149c332b36e66a9ea9
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: a638dba005c14bff4b2e668e2d6ca527a67b94a9
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-api"></a>NuGet API
 

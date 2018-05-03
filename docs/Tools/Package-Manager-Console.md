@@ -1,27 +1,18 @@
 ---
-title: NuGet 程序包管理器控制台指南 |Microsoft 文档
+title: NuGet 程序包管理器控制台指南
+description: 使用 Visual Studio 中的 NuGet 程序包管理器控制台，用于处理包的说明。
 author: kraigb
-hms.author: kraigb
-manager: ghogen
+ms.author: kraigb
+manager: douge
 ms.date: 01/23/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
+ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-description: 使用 Visual Studio 中的 NuGet 程序包管理器控制台，用于处理包的说明。
-keywords: NuGet 包管理器控制台，NuGet powershell，管理 NuGet 包
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: af22a524f6b4a41a4c24077fe396846da6fb1ff8
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 64912f0dc32a492d9c23a02f45b4303c69faf340
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="package-manager-console"></a>程序包管理器控制台
 
@@ -150,7 +141,7 @@ Find-Package jquery -AllVersions -ExactMatch
 
 在 Visual Studio 2017，NuGet 和 NuGet 包管理器将自动安装时选择任何。提供与.NET 相关的工作负荷;你就可以还单独安装它，通过检查**各个组件 > 代码工具 > NuGet 包管理器**在 Visual Studio 2017 安装程序中的选项。
 
-此外，如果你缺少 NuGet 包管理器在 Visual Studio 2015 及更早版本，请检查**工具 > 扩展和更新...**和搜索 NuGet 包管理器扩展。 如果你无法使用 Visual Studio 中的扩展安装程序，你可以下载直接从扩展[ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html)。
+此外，如果你缺少 NuGet 包管理器在 Visual Studio 2015 及更早版本，请检查**工具 > 扩展和更新...** 和搜索 NuGet 包管理器扩展。 如果你无法使用 Visual Studio 中的扩展安装程序，你可以下载直接从扩展[ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html)。
 
 程序包管理器控制台不是当前适用于 Visual Studio for mac。 等效命令，但是，这些功能通过[NuGet CLI](nuget-exe-CLI-reference.md)。 适用于 Mac 的 visual Studio 也用于管理 NuGet 包存在一些 UI。 请参阅[中你的项目包括 NuGet 包](/visualstudio/mac/nuget-walkthrough)。
 

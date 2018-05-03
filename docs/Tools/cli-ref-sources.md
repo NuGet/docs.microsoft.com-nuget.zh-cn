@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI 源命令 |Microsoft 文档
+title: NuGet CLI 源命令
+description: 参考 nuget.exe 源命令
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 参考 nuget.exe 源命令
-keywords: nuget 源引用，源命令
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 5fb34654dc294de34cf0e15f784240884dc1e3d1
-ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
+ms.openlocfilehash: d588ff09075ad75b76b7dd3645f3cdff29f6f093
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sources-command-nuget-cli"></a>源命令 (NuGet CLI)
 
@@ -42,10 +33,10 @@ nuget sources <operation> -Name <name> -Source <source>
 | 选项 | 描述 |
 | --- | --- |
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
-| ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
+| ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 格式 | 适用于`list`操作并可以是`Detailed`（默认值） 或`Short`。 |
 | 帮助 | 显示的帮助命令的信息。 |
-| NonInteractive | 取消显示提示用户输入或确认。 |
+| 非交互式 | 取消显示提示用户输入或确认。 |
 | Password | 指定与源进行身份验证的密码。 |
 | StorePasswordInClearText | 指示要将密码存储在未加密的文本，而不是存储以加密的形式的默认行为。 |
 | UserName | 指定与源进行身份验证的用户名。 |

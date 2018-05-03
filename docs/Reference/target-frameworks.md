@@ -1,26 +1,17 @@
 ---
-title: NuGet 的目标框架引用 | Microsoft Docs
+title: Nuget 的目标框架引用
+description: NuGet 目标框架引用标识并隔离包的框架依赖组件。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/11/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: NuGet 目标框架引用标识并隔离包的框架依赖组件。
-keywords: NuGet 包定向, .NET ramework 目标, .NET framework 版本
-ms.reviewer:
-- anangaur
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 0a9c45ef31e27c2242edce48e2cf272e5280dcff
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: anangaur
+ms.openlocfilehash: 6b7ee3f739847777dda638d8fed083c48ed5812e
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="target-frameworks"></a>目标框架
 
@@ -41,25 +32,25 @@ NuGet 在各个地方使用目标框架引用，以特别标识和隔离包的�
 
 NuGet 客户端支持下表中的框架。 等效项显示在括号内 []。 请注意，某些工具（如 `dotnet`）可能会在某些文件中使用规范的 TFM 变体。 例如，`dotnet pack` 在 `.nuspec` 文件中使用 `.NETCoreApp2.0`，而非 `netcoreapp2.0` 文件。 各种 NuGet 客户端工具正确处理这些变体，但是在直接编辑文件时，应始终使用规范的 TFM。
 
-| 名称           | 缩写 | TFM/TxM |
-| -------------  | ------------ | --------- |
-|.NET Framework  | net          | net11     |
-|                |              | net20     |
-|                |              | net35     |
-|                |              | net40     |
-|                |              | net403    |
-|                |              | net45      |
-|                |              | net451     |
-|                |              | net452     |
-|                |              | net46      |
-|                |              | net461     |
-|                |              | net462     |
-|Microsoft Store（Windows 应用商店） | netcore      | netcore [netcore45] |
-|                |              | netcore45 [win, win8] |
-|                |              | netcore451 [win81] |
-|                |              | netcore50 |
-|.NET MicroFramework | netmf    | netmf |
-|Windows         | win          | win [win8、netcore45] |
+| 名称 | 缩写 | TFM/TxM |
+| ------------- | ------------ | --------- |
+|.NET Framework | net | net11 |
+| | | net20 |
+| | | net35 |
+| | | net40 |
+| | | net403 |
+| | | net45 |
+| | | net451 |
+| | | net452 |
+| | | net46 |
+| | | net461 |
+| | | net462 |
+|Microsoft Store（Windows 应用商店） | netcore | netcore [netcore45] |
+| | | netcore45 [win, win8] |
+| | | netcore451 [win81] |
+| | | netcore50 |
+|.NET MicroFramework | netmf | netmf |
+|Windows | win | win [win8、netcore45] |
 | | | win8 [netcore45、win] |
 | | | win81 [netcore451] |
 | | | win10（Windows 10 平台不支持） |
@@ -88,6 +79,7 @@ Tizen | tizen | tizen3 |
 | | | tizen4 |
 
 ## <a name="deprecated-frameworks"></a>弃用的框架
+
 以下框架已弃用。 定位这些框架的包应迁移到指明的替代框架。
 
 | 弃用的框架 | Replacement
@@ -114,12 +106,12 @@ Tizen | tizen | tizen3 |
 许多框架相互关联且彼此兼容，但不一定是等效的：
 
 | 框架 | 可以使用 |
-| --- | --- |
+| -- | --- |
 | uap（通用 Windows 平台） | win81 |
 | | wpa81 |
 | | netcore50 |
 | win (Microsoft Store) | winrt |
-| | | winrt45 |
+| | |
 
 ## <a name="net-platform-standard"></a>NET 平台标准
 

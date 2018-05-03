@@ -1,29 +1,17 @@
 ---
-title: 目录、 NuGet V3 API |Microsoft 文档
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 目录资源，NuGet V3 API
+description: 目录是创建和删除在 nuget.org 上的所有包的索引。
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/30/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 目录是创建和删除在 nuget.org 上的所有包的索引。
-keywords: NuGet V3 API 目录，nuget.org 事务日志复制 nuget.org，克隆 nuget.org 的 nuget.org 的仅限追加的记录
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 61ed502eee498f5ad0a014e3338503f2855396a5
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: 464b252ca318a5bd3487c723dbf4c7062e4698a3
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="catalog"></a>Catalog
 
@@ -238,7 +226,7 @@ verbatimVersion         | 字符串                     | 否       | 因为它�
 
 #### <a name="sample-request"></a>示例请求
 
-GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
+获取 https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
 
 #### <a name="sample-response"></a>示例响应
 
@@ -259,7 +247,7 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 #### <a name="sample-request"></a>示例请求
 
-GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
+获取 https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
 
 #### <a name="sample-response"></a>示例响应
 

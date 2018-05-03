@@ -1,26 +1,17 @@
 ---
-title: 适用于 NuGet 的 .nuspec 文件引用 | Microsoft Docs
+title: nuget.nuspec 文件引用
+description: .nuspec 文件包含生成包时使用的，并向包使用者提供信息的包元数据。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 08/29/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: .nuspec 文件包含生成包时使用的，并向包使用者提供信息的包元数据。
-keywords: nuspec 引用, NuGet 包元数据, NuGet 包清单, nuspec 架构
-ms.reviewer:
-- anangaur
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 086826b47402bb5e7066c7a10b1e2ff246fd58ea
-ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
+ms.reviewer: anangaur
+ms.openlocfilehash: c11b50aa1637c00f0f0e71a6e20ce5d435db402b
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -97,14 +88,14 @@ ms.lasthandoff: 04/03/2018
 | **owners** | 使用 nuget.org 上的配置文件名称的包创建者的逗号分隔列表。这通常和 `authors` 中的列表相同，将包上传到 nuget.org 时被忽略。请参阅[在 nuget.org 上管理包所有者](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)。 |
 | **projectUrl** | 包的主页 URL，通常显示在 UI 中以及 nuget.org 中。 |
 | **licenseUrl** | 包的许可证 URL，通常显示在 UI 和 nuget.org 中。 |
-| **iconUrl** | 64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的映像，可使用原始文件 URL 喜欢 *https://github.com/\<用户名\>/\<存储库\>/raw/\<分支\>/ \<logo.png\>*。 |
+| **iconUrl** | 64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的映像，可使用原始文件 URL 喜欢 <em>https://github.com/\<用户名\>/\<存储库\>/raw/\<分支\>/ \<logo.png\></em>。 |
 | **requireLicenseAcceptance** | 一个布尔值，用于指定客户端是否必须提示使用者接受包许可证后才可安装包。 |
 | **developmentDependency** | (2.8+) 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。 |
 | **summary** | 用于 UI 显示的包的简要说明。 如果省略，则使用 `description` 的截断版本。 |
 | **releaseNotes** | (1.5+) 此版本包中所作更改的说明，通常代替包说明用在 UI 中，如 Visual Studio 包管理器的“更新”选项卡。 |
 | **copyright** | (1.5+) 包的版权详细信息。 |
 | language | 包的区域设置 ID。 请参阅[创建本地化包](../create-packages/creating-localized-packages.md)。 |
-| **tags** | 以空格分隔的标记和关键字列表，描述包并通过搜索和筛选辅助包的可发现性。 |
+| **tags**  | 以空格分隔的标记和关键字列表，描述包并通过搜索和筛选辅助包的可发现性。 |
 | **serviceable** | (3.3+) 仅限内部使用。 |
 
 #### <a name="collection-elements"></a>集合元素
@@ -183,8 +174,8 @@ nuget pack MyProject.csproj
 
 | 包括/排除标记 | 受影响的目标文件夹 |
 | --- | --- |
-| contentFiles | 内容  |
-| Runtime — 运行时 | 运行时、资源和 FrameworkAssemblies  |
+| contentFiles | 内容 |
+| Runtime — 运行时 | 运行时、资源和 FrameworkAssemblies |
 | 编译 | lib |
 | 生成 | 生成（MSBuild 属性和目标） |
 | 本机 | 本机 |

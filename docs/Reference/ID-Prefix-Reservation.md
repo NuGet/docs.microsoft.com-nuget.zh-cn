@@ -1,26 +1,17 @@
 ---
-title: ID 前缀保留引用 |Microsoft 文档
+title: ID 前缀保留引用
+description: 包 ID 前缀保留功能说明和作者指南。
 author: diverdan92
 ms.author: diverdan92
-manager: unniravindranathan
+manager: unnir
 ms.date: 10/09/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 包 ID 前缀保留功能说明和作者指南。
-keywords: NuGet 包 ID、 前缀、 保留
-ms.reviewer:
-- ananguar
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 7b1956612bd48a1c59503418f1a4d7d9dee900f5
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: ananguar
+ms.openlocfilehash: 63f442ae25b92aacbbf5af7d9b3ea1a5dafe5fc9
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="package-id-prefix-reservation"></a>包 ID 前缀保留
 
@@ -74,9 +65,9 @@ ms.lasthandoff: 03/28/2018
 
 1. 查看验收[前缀 ID 保留条件](#id-prefix-reservation-criteria)。
 
-1. 确定你想要保留，除了任何命名的空间[高级前缀保留方案](#advanced-prefix-reservation-scenarios)可能需要。
+2. 确定你想要保留，除了任何命名的空间[高级前缀保留方案](#advanced-prefix-reservation-scenarios)可能需要。
 
-1. 发送到邮件[ account@nuget.org ](mailto:account@nuget.org)与所有者显示名称上[nuget.org](https://www.nuget.org/)，以及任何您请求的保留前缀。 如果你的多个所有者分配前缀子集，请确保涉及所有所有者显示名称和前缀子集。
+3. 发送到邮件[ account@nuget.org ](mailto:account@nuget.org)与所有者显示名称上[nuget.org](https://www.nuget.org/)，以及任何您请求的保留前缀。 如果你的多个所有者分配前缀子集，请确保涉及所有所有者显示名称和前缀子集。
 
 提交应用程序后，会接受或拒绝 （与导致拒绝的条件） 的通知您。 我们可能需要询问其他标识的一些问题，以确认所有者身份。
 

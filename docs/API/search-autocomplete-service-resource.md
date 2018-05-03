@@ -1,26 +1,17 @@
 ---
-title: "记忆式键入功能、 NuGet API |Microsoft 文档"
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 记忆式键入功能，NuGet API
+description: 搜索记忆式键入功能服务支持交互式发现的包 Id 和版本。
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "搜索记忆式键入功能服务支持交互式发现的包 Id 和版本。"
-keywords: "NuGet 记忆式键入功能 API、 NuGet 搜索包 ID、 子字符串包 ID"
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: 7c984ca61799293d7832851b80cf3fefc4734288
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: d5e1936c6c5406a1a376c16b2bad5351320dfb4f
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="autocomplete"></a>自动完成
 
@@ -33,8 +24,8 @@ ms.lasthandoff: 02/02/2018
 @type 值                          | 说明
 ------------------------------------ | -----
 SearchAutocompleteService            | 初始版本
-SearchAutocompleteService/3.0.0-beta | 别名`SearchAutocompleteService`
-SearchAutocompleteService/3.0.0-rc   | 别名`SearchAutocompleteService`
+SearchAutocompleteService/3.0.0-beta | 别名 `SearchAutocompleteService`
+SearchAutocompleteService/3.0.0-rc   | 别名 `SearchAutocompleteService`
 
 ## <a name="base-url"></a>基 URL
 
@@ -54,12 +45,12 @@ HTTP 方法位于注册资源支持的所有 Url`GET`和`HEAD`。
 
 ### <a name="request-parameters"></a>请求参数
 
-name        | 内     | 类型    | 必需 | 说明
+名称        | 内     | 类型    | 必需 | 说明
 ----------- | ------ | ------- | -------- | -----
 q           | URL    | 字符串  | 否       | 要针对包 Id 进行比较的字符串
 skip        | URL    | 整数 | 否       | 要分页的跳过的结果数
 take        | URL    | 整数 | 否       | 要为分页返回的结果数
-预发行版  | URL    | boolean | 否       | `true`或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
+预发行版  | URL    | boolean | 否       | `true` 或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
 semVerLevel | URL    | 字符串  | 否       | SemVer 1.0.0 版本字符串 
 
 自动完成查询`q`分析由服务器实现定义的方式。 nuget.org 支持查询个前缀的包 ID 令牌，它们是由拆分生成的 ID 的段原始由 camel 大小写和符号字符。
@@ -80,14 +71,14 @@ semVerLevel | URL    | 字符串  | 否       | SemVer 1.0.0 版本字符串
 
 根 JSON 对象具有以下属性：
 
-name      | 类型             | 必需 | 说明
+名称      | 类型             | 必需 | 说明
 --------- | ---------------- | -------- | -----
-totalHits | 整数          | 是      | 匹配项，而不考虑的总数目`skip`和`take`
+totalHits | 整数          | 是      | 匹配项，而不考虑的总数目`skip`和 `take`
 数据      | 字符串数组 | 是      | 由请求的包 Id 匹配
 
 ### <a name="sample-request"></a>示例请求
 
-GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
+获取 https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
 
 ### <a name="sample-response"></a>示例响应
 
@@ -103,10 +94,10 @@ GET https://api-v2v3search-0.nuget.org/autocomplete?q=storage&prerelease=true
 
 ### <a name="request-parameters"></a>请求参数
 
-name        | 内     | 类型    | 必需 | 说明
+名称        | 内     | 类型    | 必需 | 说明
 ----------- | ------ | ------- | -------- | -----
 id          | URL    | 字符串  | 是      | 要提取的版本的包 ID
-预发行版  | URL    | boolean | 否       | `true`或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
+预发行版  | URL    | boolean | 否       | `true` 或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
 semVerLevel | URL    | 字符串  | 否       | SemVer 2.0.0 的版本字符串 
 
 如果`prerelease`未提供排除预发行包。
@@ -119,7 +110,7 @@ semVerLevel | URL    | 字符串  | 否       | SemVer 2.0.0 的版本字符串
 
 根 JSON 对象具有以下属性：
 
-name      | 类型             | 必需 | 说明
+名称      | 类型             | 必需 | 说明
 --------- | ---------------- | -------- | -----
 数据      | 字符串数组 | 是      | 由请求匹配的程序包版本
 

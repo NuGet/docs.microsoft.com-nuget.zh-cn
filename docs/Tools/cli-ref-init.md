@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI init 命令 |Microsoft 文档
+title: NuGet CLI init 命令
+description: Nuget.exe init 命令参考
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe init 命令参考
-keywords: nuget init 引用，init 命令
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 01a3553622020b5868e33ece09cd7555cb712fd3
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: f5e819d014637d1ebb0403d9d838f9362efb20f0
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="init-command-nuget-cli"></a>init 命令 (NuGet CLI)
 
@@ -42,10 +33,10 @@ nuget init <source> <destination> [options]
 | 选项 | 描述 |
 | --- | --- |
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
-| ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
+| ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | Expand | 将所有文件都添加到包源，则添加每个包中与相同`-Expand`与`add`命令。 |
 | 帮助 | 显示的帮助命令的信息。 |
-| NonInteractive | 取消显示提示用户输入或确认。 |
+| 非交互式 | 取消显示提示用户输入或确认。 |
 | 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)

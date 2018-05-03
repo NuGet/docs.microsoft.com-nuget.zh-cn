@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI 将命令添加 |Microsoft 文档
+title: NuGet CLI 添加命令
+description: Nuget.exe 的引用添加命令
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe 的引用添加命令
-keywords: nuget 添加引用，添加包命令
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 48e093cbae2cecb1652e17a9b26920107aa8aef7
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 4a4201a321ffe0f7fb61f4e98012a1a2d7d8fda4
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="add-command-nuget-cli"></a>添加命令 (NuGet CLI)
 
@@ -52,9 +43,9 @@ nuget add <packagePath> -Source <sourcePath> [options]
 | --- | --- |
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
 | Expand | 将包中的所有文件都添加到包源。 |
-| ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
+| ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助命令的信息。 |
-| NonInteractive | 取消显示提示用户输入或确认。 |
+| 非交互式 | 取消显示提示用户输入或确认。 |
 | 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)

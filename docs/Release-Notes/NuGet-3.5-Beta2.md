@@ -1,22 +1,16 @@
 ---
-title: "3.5 beta2 之前发行说明 |Microsoft 文档"
+title: 3.5 beta2 之前发行说明
+description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.5 Beta 2 的发行说明。
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.5 Beta 2 的发行说明。"
-keywords: "NuGet 3.5 Beta 2 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 4073b669c19f9e96ebd35ba269919b5f42313e7c
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 08bbae00a3e63c2a1ff42d5cc04981eb02966850
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-35-beta2-release-notes"></a>NuGet 3.5 beta2 之前发行说明
 
@@ -74,7 +68,7 @@ NuGet 3.5 Beta 2 RTM Visual Studio 2013 和 nuget.exe 2016 年 6 月 27 日发�
 
 * 如果单个源失败授权-安装块[# 2034年](https://github.com/NuGet/Home/issues/2034)
 
-* `.nuspec`版本范围应重写-IncludeReferencedProjects 版本- [# 1983年](https://github.com/NuGet/Home/issues/1983)
+* `.nuspec` 版本范围应重写-IncludeReferencedProjects 版本- [# 1983年](https://github.com/NuGet/Home/issues/1983)
 
 * NuGet 3.3.0 更新失败，出现...的其他约束中定义 packages.config 会阻止此操作。 - [#1816](https://github.com/NuGet/Home/issues/1816)
 

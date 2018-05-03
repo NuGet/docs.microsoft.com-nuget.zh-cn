@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI 删除命令 |Microsoft 文档
+title: NuGet CLI delete 命令
+description: Nuget.exe delete 命令的引用
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe delete 命令的引用
-keywords: nuget 删除引用，则删除包命令
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 9445042c46ef41721def1fbbb8dcebf4afc14d1b
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 1db00a32d777f1c0247f855bf57a0dcf1c6734ae
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="delete-command-nuget-cli"></a>删除命令 (NuGet CLI)
 
@@ -41,9 +32,9 @@ nuget delete <packageID> <packageVersion> [options]
 | --- | --- |
 | ApiKey | 目标存储库的 API 密钥。 如果不存在，则使用在配置文件中指定。 |
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
-| ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
+| ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助命令的信息。 |
-| NonInteractive | 取消显示提示用户输入或确认。 |
+| 非交互式 | 取消显示提示用户输入或确认。 |
 | 源 | 指定服务器 URL。 Nuget.org 的 URL 是`https://api.nuget.org/v3/index.json`。 对于专用源，用替换主机名，例如， *%hostname%/api/v3*。 |
 | 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。 |
 

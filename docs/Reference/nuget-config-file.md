@@ -1,31 +1,22 @@
 ---
-title: NuGet.Config 文件引用 | Microsoft Docs
+title: nuget.config 文件引用
+description: NuGet.Config 文件引用，包括配置、bindingRedirects、packageRestore、解决方案和 packageSource 节。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 10/25/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: NuGet.Config 文件引用，包括配置、bindingRedirects、packageRestore、解决方案和 packageSource 节。
-keywords: NuGet.Config 文件, NuGet 配置引用, NuGet 配置选项
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: e2a9d4f10ac6af4e5bc7386d4f78e18c2a5752c4
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 871cd05ed010d2a31348151de6b7e225ed2dc915
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="nugetconfig-reference"></a>NuGet.Config 引用
+# <a name="nugetconfig-reference"></a>nuget.config 引用
 
 NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)中所述。
 
-`NuGet.Config` 是包含顶级 `<configuration>` 节点的 XML 文件，而该节点包含本主题中所述的节元素。 每个节包含零个或多个具有 `key` 和 `value` 属性的 `<add>` 元素 。 请参阅[示例配置文件](#example-config-file)。 设置名称不区分大小写，并且值可以使用[环境变量](#using-environment-variables)。
+`nuget.config` 是包含顶级 `<configuration>` 节点的 XML 文件，而该节点包含本主题中所述的节元素。 每个节包含零个或多个具有 `key` 和 `value` 属性的 `<add>` 元素 。 请参阅[示例配置文件](#example-config-file)。 设置名称不区分大小写，并且值可以使用[环境变量](#using-environment-variables)。
 
 本主题内容：
 
@@ -56,8 +47,8 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 | 键 | 值 |
 | --- | --- |
 | dependencyVersion（仅限于 `packages.config`） | 包安装、还原和更新的默认 `DependencyVersion` 值（未直接指定 `-DependencyVersion` 开关时）。 NuGet 包管理器 UI 也使用此值。 值为 `Lowest`、`HighestPatch`、`HighestMinor`、`Highest`。 |
-| globalPackagesFolder （仅限使用 PackageReference 项目） | 默认全局包文件夹的位置。 默认值为 `%userprofile%\.nuget\packages` (Windows) 或 `~/.nuget/packages` (Mac/Linux)。 相对路径可在项目特定的 `Nuget.Config` 文件中使用。 此设置被重写通过 NUGET_PACKAGES 环境变量将优先。 |
-| repositoryPath（仅限于 `packages.config`） | 安装 NuGet 包的位置，而非默认的 `$(Solutiondir)/packages` 文件夹。 相对路径可在项目特定的 `Nuget.Config` 文件中使用。 此设置被重写通过 NUGET_PACKAGES 环境变量将优先。 |
+| globalPackagesFolder （仅限使用 PackageReference 项目） | 默认全局包文件夹的位置。 默认值为 `%userprofile%\.nuget\packages` (Windows) 或 `~/.nuget/packages` (Mac/Linux)。 相对路径可在项目特定的 `nuget.config` 文件中使用。 此设置被重写通过 NUGET_PACKAGES 环境变量将优先。 |
+| repositoryPath（仅限于 `packages.config`） | 安装 NuGet 包的位置，而非默认的 `$(Solutiondir)/packages` 文件夹。 相对路径可在项目特定的 `nuget.config` 文件中使用。 此设置被重写通过 NUGET_PACKAGES 环境变量将优先。 |
 | defaultPushSource | 如果操作未找到任何其他包源，则会标识应用作默认值的包源 URL 或路径。 |
 | http_proxy http_proxy.user http_proxy.password no_proxy | 连接到包源时要使用的代理设置；`http_proxy` 应为 `http://<username>:<password>@<domain>` 格式。 密码已加密，且不能手动添加。 对于 `no_proxy`，该值是绕过代理服务器的域的列表（以逗号分隔）。 可将 http_proxy 和 no_proxy 环境变量交替用于这些值。 有关其他详细信息，请参阅 [NuGet 代理设置](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com)。 |
 
@@ -108,7 +99,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 ## <a name="solution-section"></a>解决方案节
 
-控制解决方案的 `packages` 文件夹是否包括在源代码管理中。 此节仅适用于解决方案文件夹中的 `Nuget.Config` 文件。
+控制解决方案的 `packages` 文件夹是否包括在源代码管理中。 此节仅适用于解决方案文件夹中的 `nuget.config` 文件。
 
 | 键 | 值 |
 | --- | --- |
@@ -249,7 +240,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 ## <a name="using-environment-variables"></a>使用环境变量
 
-可以在 `NuGet.Config` 值中使用环境变量 (NuGet 3.4 +) 在运行时应用设置。
+可以在 `nuget.config` 值中使用环境变量 (NuGet 3.4 +) 在运行时应用设置。
 
 例如，如果 Windows 上的 `HOME` 环境变量设置为 `c:\users\username`，则配置文件中 `%HOME%\NuGetRepository` 的值解析为 `c:\users\username\NuGetRepository`。
 
@@ -259,7 +250,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 ## <a name="example-config-file"></a>示例配置文件
 
-下面是示例 `NuGet.Config` 文件，它对一些设置进行了说明：
+下面是示例 `nuget.config` 文件，它对一些设置进行了说明：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

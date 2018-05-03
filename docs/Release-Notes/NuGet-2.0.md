@@ -1,22 +1,16 @@
 ---
-title: "NuGet 2.0 发行说明 |Microsoft 文档"
+title: NuGet 2.0 发行说明
+description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 2.0 的发行说明。
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 2.0 的发行说明。"
-keywords: "NuGet 2.0 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: eaa3c8db1cce72ff93671a1df63698748cdfab70
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 0e637a953d9d5d10394857a352be96a7f68dc4e8
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-20-release-notes"></a>NuGet 2.0 发行说明
 
@@ -27,7 +21,7 @@ NuGet 2.0 已于 2012 年 6 月 19 日发布。
 ## <a name="known-installation-issue"></a>已知的安装问题
 如果你运行的 VS 2010 SP1，你可能尝试升级 NuGet，如果安装了较旧版本时遇到安装错误。
 
-解决方法是只需卸载 NuGet，然后从 VS 扩展库安装它。  请参阅[http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019)有关详细信息，或[转到 VS 修补程序直接](http://bit.ly/vsixcertfix)。
+解决方法是只需卸载 NuGet，然后从 VS 扩展库安装它。  请参阅[ http://support.microsoft.com/kb/2581019 ](http://support.microsoft.com/kb/2581019)有关详细信息，或[转到 VS 修补程序直接](http://bit.ly/vsixcertfix)。
 
 注意： 如果 Visual Studio 不会使您可以卸载的扩展 （卸载按钮为禁用），然后你可能需要重新启动 Visual Studio 中使用"以管理员身份运行"。
 
@@ -37,7 +31,7 @@ NuGet 2.0 已于 2012 年 6 月 19 日发布。
 
 ## <a name="group-dependencies-by-target-frameworks"></a>由目标框架的组依赖项
 
-依赖项而异的包从版本 2.0 开始，基于目标项目的框架配置文件。 这使用更新完成`.nuspec`架构。 `<dependencies>`元素现在可以包含一套`<group>`元素。 每个组包含零个或多`<dependency>`元素和`targetFramework`属性。 如果目标框架与目标项目框架配置文件兼容，位于组内的所有依赖项是一起安装。 例如:
+依赖项而异的包从版本 2.0 开始，基于目标项目的框架配置文件。 这使用更新完成`.nuspec`架构。 `<dependencies>`元素现在可以包含一套`<group>`元素。 每个组包含零个或多`<dependency>`元素和`targetFramework`属性。 如果目标框架与目标项目框架配置文件兼容，位于组内的所有依赖项是一起安装。 例如：
 
 ```xml
 <dependencies>
@@ -74,7 +68,7 @@ NuGet 2.0 已于 2012 年 6 月 19 日发布。
 
 ## <a name="grouping-content-files-and-powershell-scripts-by-target-framework"></a>由目标 framework 分组内容文件和 PowerShell 脚本
 
-程序集引用，除了内容文件和 PowerShell 脚本也可以由目标框架分组。 在中找到的相同文件夹结构`lib`用于指定目标框架的文件夹现在可将应用到相同的方式`content`和`tools`文件夹。 例如:
+程序集引用，除了内容文件和 PowerShell 脚本也可以由目标框架分组。 在中找到的相同文件夹结构`lib`用于指定目标框架的文件夹现在可将应用到相同的方式`content`和`tools`文件夹。 例如：
 
     \content
         \net11

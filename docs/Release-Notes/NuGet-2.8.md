@@ -1,22 +1,16 @@
 ---
-title: "NuGet 2.8 发行说明 |Microsoft 文档"
+title: NuGet 2.8 发行说明
+description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 2.8 的发行说明。
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 2.8 的发行说明。"
-keywords: "NuGet 2.8 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 39b885adc9e23eb815f65639875c4a4c27d61a4c
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 9f472f1370bfedaf04ebe889c0da01155b8aec22
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-28-release-notes"></a>NuGet 2.8 发行说明
 
@@ -28,21 +22,21 @@ NuGet 2.8 已于 2014 年 1 月 29 日发布。
 
 1. [Llewellyn Pritchard](https://www.codeplex.com/site/users/view/leppie) ([@leppie](https://twitter.com/leppie))
     - [#3466](https://nuget.codeplex.com/workitem/3466) -当封装包，验证的依赖项包的 Id。
-1. [Maarten Balliauw](https://www.codeplex.com/site/users/view/maartenba) ([@maartenballiauw](https://twitter.com/maartenballiauw))
+2. [Maarten Balliauw](https://www.codeplex.com/site/users/view/maartenba) ([@maartenballiauw](https://twitter.com/maartenballiauw))
     - [# 2379年](https://nuget.codeplex.com/workitem/2379)-persistening 源凭据时删除 $metadata 后缀。
-1. [Filip De Vos](https://www.codeplex.com/site/users/view/FilipDeVos) ([@foxtricks](https://twitter.com/foxtricks))
+3. [Filip De Vos](https://www.codeplex.com/site/users/view/FilipDeVos) ([@foxtricks](https://twitter.com/foxtricks))
     - [#3538](http://nuget.codeplex.com/workitem/3538) -指定用于 nuget.exe 更新命令的项目文件的支持。
-1. [Juan Gonzalez](https://www.codeplex.com/site/users/view/jjgonzalez)
+4. [Juan Gonzalez](https://www.codeplex.com/site/users/view/jjgonzalez)
     - [#3536](http://nuget.codeplex.com/workitem/3536) -不使用-IncludeReferencedProjects 容纳传递的替换标记。
-1. [David Poole](https://www.codeplex.com/site/users/view/Sarkie) ([@Sarkie_Dave](https://twitter.com/Sarkie_Dave))
+5. [David Poole](https://www.codeplex.com/site/users/view/Sarkie) ([@Sarkie_Dave](https://twitter.com/Sarkie_Dave))
     - [#3677](http://nuget.codeplex.com/workitem/3677) -修复 nuget.push 引发 OutOfMemoryException 推送大型包时。
-1. [Wouter Ouwens](https://www.codeplex.com/site/users/view/Despotes)
+6. [Wouter Ouwens](https://www.codeplex.com/site/users/view/Despotes)
     - [#3666](http://nuget.codeplex.com/workitem/3666) -项目引用另一个 CLI/c + + 项目时修复不正确的目标路径。
-1. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+7. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
     - [#3639](https://nuget.codeplex.com/workitem/3639) -允许包开发依赖关系作为默认情况下进行安装
-1. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
+8. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
     - [#3717](https://nuget.codeplex.com/workitem/3717) -删除隐式升级到最新的修补程序版本
-1. [Gregory Vandenbrouck](https://www.codeplex.com/site/users/view/vdbg)
+9. [Gregory Vandenbrouck](https://www.codeplex.com/site/users/view/vdbg)
     - 几个 bug 修复和改进 NuGet.Server、 nuget.exe 镜像命令，和其他内容。
     - 此工作通过几个月，已完成，Gregory 使用右计时我们要将集成到 2.8 母版。
 

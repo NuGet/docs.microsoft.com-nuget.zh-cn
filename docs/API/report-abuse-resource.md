@@ -1,29 +1,17 @@
 ---
-title: 报告滥用行为 URL 模板，NuGet API |Microsoft 文档
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 报告滥用行为 URL 模板，NuGet API
+description: 报告滥用行为 URL 模板允许客户端在其用户界面中显示的报告滥用行为链接。
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 报告滥用行为 URL 模板允许客户端在其用户界面中显示的报告滥用行为链接。
-keywords: NuGet API 报告滥用行为、 NuGet API 文件合规、 nuget.org 报表 URL 模板
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: ded861e3eaf73e45b8d4bd80b96d54bfeb38e9d6
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: 15cf0953391489d9dd9b5d609c3f4c8f66748f19
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="report-abuse-url-template"></a>报告滥用行为 URL 模板
 

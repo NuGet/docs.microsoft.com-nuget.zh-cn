@@ -1,25 +1,16 @@
 ---
-title: NuGet 添加 BindingRedirect PowerShell 参考 |Microsoft 文档
+title: NuGet 添加 BindingRedirect PowerShell 参考
+description: Visual Studio 中的 NuGet 包管理器控制台中添加 BindingRedirect PowerShell 命令参考。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/07/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Visual Studio 中的 NuGet 包管理器控制台中添加 BindingRedirect PowerShell 命令参考。
-keywords: NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考，添加 BindingRedirect
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 2a337bd61295f436b49c56c1680d07ccc6a8c403
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 7f1f2ef23e54ee48b577a2796b7f7b5f4c7eb284
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="add-bindingredirect-package-manager-console-in-visual-studio"></a>添加-BindingRedirect （Visual Studio 中的包管理器控制台）
 

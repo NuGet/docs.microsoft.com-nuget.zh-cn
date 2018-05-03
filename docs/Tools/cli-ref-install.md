@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI 安装命令 |Microsoft 文档
+title: NuGet CLI 安装命令
+description: Nuget.exe 安装命令的引用
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe 安装命令的引用
-keywords: nuget 安装引用，安装包命令
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 121d7b50767f1d466d6d0d8494f324b02d8ff6f1
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 615f2beca1eb288417f2345fcdf25e323942d300
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="install-command-nuget-cli"></a>安装命令 (NuGet CLI)
 
@@ -51,15 +42,15 @@ nuget install <packageID | configFilePath> [options]
 | 选项 | 描述 |
 | --- | --- |
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
-| DependencyVersion | *（4.4 +)*指定特定版本，重写默认依赖项解析行为。 |
+| DependencyVersion | *（4.4 +)* 指定特定版本，重写默认依赖项解析行为。 |
 | DisableParallelProcessing | 禁用并行安装多个包。 |
 | ExcludeVersion | 将包安装到名为仅的包名称和不的版本号的文件夹。 |
-| FallbackSource | *（3.2 +)*要用作回退机制，以防主键中找不到包的包源的列表或默认源。 |
-| ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
-| 框架 | *（4.4 +)*用于选择依赖关系的目标框架。 默认值为任何如果未指定。 |
+| FallbackSource | *（3.2 +)* 要用作回退机制，以防主键中找不到包的包源的列表或默认源。 |
+| ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
+| 框架 | *（4.4 +)* 用于选择依赖关系的目标框架。 默认值为任何如果未指定。 |
 | 帮助 | 显示的帮助命令的信息。 |
 | NoCache | 防止 NuGet 使用缓存的包。 请参阅[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)。 |
-| NonInteractive | 取消显示提示用户输入或确认。 |
+| 非交互式 | 取消显示提示用户输入或确认。 |
 | OutputDirectory | 指定在其中安装包的文件夹。 如果未不指定任何文件夹，则使用当前文件夹。 |
 | PackageSaveMode | 指定要保存包安装完成后的文件类型： 之一`nuspec`， `nupkg`，或`nuspec;nupkg`。 |
 | 预发行版 | 允许要安装预发行程序包。 还原的包时，此标志不是必需`packages.config`。 |

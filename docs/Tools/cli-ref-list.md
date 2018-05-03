@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI 列表命令 |Microsoft 文档
+title: NuGet CLI 列表命令
+description: 对于 nuget.exe 列出命令的引用
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 对于 nuget.exe 列出命令的引用
-keywords: nuget 列表引用包列表的命令
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 61ad02eb99d6c56968c38841498df8aa9f74159d
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: f4a44c70937e7cb49e472c53e9857e9f44d269f7
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="list-command-nuget-cli"></a>(NuGet CLI) 中的列表命令
 
@@ -41,10 +32,10 @@ nuget list [search terms] [options]
 | --- | --- |
 | AllVersions | 列出所有版本的包。 默认情况下，显示仅最新的包版本。 |
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
-| ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
+| ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助命令的信息。 |
-| IncludeDelisted | *（3.2 +)*显示未列出的程序包。 |
-| NonInteractive | 取消显示提示用户输入或确认。 |
+| IncludeDelisted | *（3.2 +)* 显示未列出的程序包。 |
+| 非交互式 | 取消显示提示用户输入或确认。 |
 | 预发行版 | 在列表中包含预发行程序包。 |
 | 源 | 指定要搜索的程序包源的列表。 |
 | 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。 |

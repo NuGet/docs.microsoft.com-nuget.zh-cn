@@ -1,21 +1,17 @@
 ---
-title: "nuget.org 协议 |Microsoft 文档"
+title: nuget.org 协议
+description: 不断发展与 NuGet 客户端交互 nuget.org 协议。
 author: anangaur
 ms.author: anangaur
-manager: unniravindranathan
+manager: unnir
 ms.date: 10/30/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "不断发展与 NuGet 客户端交互 nuget.org 协议。"
-ms.reviewer:
-- kraigb
-- karann-msft
-ms.openlocfilehash: 488a86a36a6bc83c91f0182bf437ddb83e707e31
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.reviewer: kraigb
+ms.openlocfilehash: cc6d52617ea8b69d5b18b831ddf8a1a85dd6798f
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nugetorg-protocols"></a>nuget.org 协议
 
@@ -54,7 +50,7 @@ ms.lasthandoff: 02/02/2018
 
 #### <a name="request-parameters"></a>请求参数
 
-name           | 内     | 类型   | 必需 | 说明
+名称           | 内     | 类型   | 必需 | 说明
 -------------- | ------ | ------ | -------- | -----
 Id             | URL    | 字符串 | 是      | 为其请求验证作用域键包 identidier
 VERSION        | URL    | 字符串 | 否       | 包版本
@@ -77,7 +73,7 @@ X-NuGet-ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER
 
 #### <a name="request-parameters"></a>请求参数
 
-name           | 内     | 类型   | 必需 | 说明
+名称           | 内     | 类型   | 必需 | 说明
 -------------  | ------ | ------ | -------- | -----
 Id             | URL    | 字符串 | 是      | 为其请求验证作用域键包标识符
 VERSION        | URL    | 字符串 | 否       | 包版本

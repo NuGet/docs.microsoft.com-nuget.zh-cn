@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI 镜像命令 |Microsoft 文档
+title: NuGet CLI 镜像命令
+description: Nuget.exe 镜像命令参考
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe 镜像命令参考
-keywords: nuget 镜像引用，镜像命令
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 512bd72d568cda81eb7c6a1555c36ead66b5c438
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 5ba13196d385abf42a5af2faa3fe6f0e80fb59d8
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="mirror-command-nuget-cli"></a>镜像命令 (NuGet CLI)
 

@@ -1,22 +1,16 @@
 ---
-title: "NuGet 命令行界面 (CLI) 参考 |Microsoft 文档"
+title: NuGet 命令行界面 (CLI) 参考
+description: Nuget.exe CLI 命令行参考索引
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/23/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "Nuget.exe CLI 命令行参考索引"
-keywords: "nuget.exe 引用索引、 nuget.exe 命令行界面、 nuget.exe CLI、 nuget 命令"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 8b1ee17702f5a54a77dc2cd663e13729a9b4a39f
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.openlocfilehash: ed91a31505ab1de9447cdbeb87c8ad08f7ba56d8
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-cli-reference"></a>NuGet CLI 参考
 
@@ -28,7 +22,7 @@ NuGet 命令行界面 (CLI)， `nuget.exe`，提供了 NuGet 功能安装、 创
 
 ## <a name="installing-nugetexe"></a>安装 nuget.exe
 
-[!INCLUDE[install-cli](../includes/install-cli.md)]
+[!INCLUDE [install-cli](../includes/install-cli.md)]
 
 > [!Tip]
 > 若要在 Visual Studio 进行 NuGet CLI 程序包管理器控制台中可用，请参阅[使用控制台中的 CLI nuget.exe](package-manager-console.md#using-the-nugetexe-cli-in-the-console)。
@@ -51,8 +45,8 @@ NuGet 命令行界面 (CLI)， `nuget.exe`，提供了 NuGet 功能安装、 创
 | [push](cli-ref-push.md) | 发布 | 全部 | 将包发布到包源。 |
 | [config](cli-ref-config.md) | 全部 | 全部 | 获取或设置 NuGet 配置值。 |
 | [help or ?](cli-ref-help.md) | 全部 | 全部 | 显示帮助信息或命令的帮助。 |
-| [locals](cli-ref-locals.md) | 使用 | 3.3+ | 清除或列出各种缓存或全局包文件夹中中的包或标识这些文件夹。 |
-| [restore](cli-ref-restore.md) | 使用 | 2.7+ | 还原引用使用的包引用格式的所有包。 Mono 上运行时，不支持还原使用 PackageReference 格式的包。 |
+| [locals](cli-ref-locals.md) | 使用 | 3.3+ | 列出的位置*全局包*， *http 缓存*，和*temp*文件夹和清除这些文件夹的内容。 |
+| [restore](cli-ref-restore.md) | 使用 | 2.7+ | 还原引用使用的包管理格式的所有包。 Mono 上运行时，不支持还原使用 PackageReference 格式的包。 |
 | [setapikey](cli-ref-setapikey.md) | 发布消耗 | 全部 | 该包源需要访问密钥时，将保存给定的包源的 API 密钥。 |
 | [spec](cli-ref-spec.md) | 创建 | 全部 | 生成`.nuspec`文件，请使用令牌，如果从 Visual Studio 项目中生成文件。 |
 

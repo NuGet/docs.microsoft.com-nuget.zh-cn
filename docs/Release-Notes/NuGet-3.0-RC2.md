@@ -1,22 +1,16 @@
 ---
-title: "NuGet 3.0 RC2 发行说明 |Microsoft 文档"
+title: NuGet 3.0 RC2 发行说明
+description: 发行说明 NuGet 3.0 RC2 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs。
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "发行说明 NuGet 3.0 RC2 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs。"
-keywords: "NuGet 3.0 RC2 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 67299408170ae3c3676c2866bec2945b41ad4184
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: eb8b514fa967cc6ef850483b6b2a5df3ab27a550
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-30-rc2-release-notes"></a>NuGet 3.0 RC2 发行说明
 

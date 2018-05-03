@@ -1,22 +1,16 @@
 ---
-title: "NuGet 1.3 发行说明 |Microsoft 文档"
+title: NuGet 1.3 的发行说明
+description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.3 的发行说明。
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 1.3 的发行说明。"
-keywords: "NuGet 1.3 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 59169be5b39ba4436e13e0935a0ad6efa724e08e
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: c0284fe0afb11bf6465897132cccd160674ea3e1
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-13-release-notes"></a>NuGet 1.3 的发行说明
 
@@ -30,7 +24,7 @@ NuGet 1.3 已于 2011 年 4 月 25 日发布。
 
 NuGet 团队的整个过程的人员合作[SymbolSource.org](http://www.symbolsource.org/)以提供了非常简单的方法，以及你的包中发布你的源和 PDB。 这允许你的包的使用者单步执行你在调试器中的包的源。 有关详细信息，请阅读[创建和发布符号包](../create-packages/symbol-packages.md)发布 NuGet 包与源的简单方法。 你也可以观看实时演示此功能的深度 NuGet 的一部分在 Mix11 对话。 此功能完全进行了演示视频的 20 分钟标记处开始。
 
-### <a name="open-packagepage-command"></a>`Open-PackagePage`命令
+### <a name="open-packagepage-command"></a>`Open-PackagePage` 命令
 
 此命令可以轻松获取到从程序包管理器控制台中的包的项目页。 它还提供了选项，若要打开的许可证 URL 和包的报告滥用行为页。
 该命令的语法是：

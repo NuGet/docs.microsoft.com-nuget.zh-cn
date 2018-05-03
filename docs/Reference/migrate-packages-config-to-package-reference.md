@@ -1,25 +1,16 @@
 ---
-title: 从 package.config 迁移到 PackageReference 格式 |Microsoft 文档
+title: 从 package.config 迁移到 PackageReference 格式
+description: 有关如何将从 package.config 管理格式的项目迁移到 PackageReference NuGet 4.0 + 和 VS2017 和.NET 核心 2.0 所支持的详细信息
 author: karann-msft
 ms.author: karann
-manager: unniravindranathan
+manager: unnir
 ms.date: 03/27/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: 有关如何将从 package.config 管理格式的项目迁移到 PackageReference NuGet 4.0 + 和 VS2017 和.NET 核心 2.0 所支持的详细信息
-keywords: NuGet 迁移器迁移、 包的引用，项目文件，PackageReference，packages.config VS2017、 Visual Studio 2017、 NuGet 4、.NET 核心 2.0
-ms.reviewer:
-- karann
-- unnir
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 10bd2fe95a6af11806a7edd7a43eaa497486fd80
-ms.sourcegitcommit: ecb598c790d4154366bc92757ec7db1a51c34faf
+ms.topic: conceptual
+ms.openlocfilehash: 2b15d60d4f71fb2777e36c6a948ad72b4e2bc594
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>将从 packages.config 迁移到 PackageReference
 

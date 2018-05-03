@@ -1,23 +1,16 @@
 ---
-title: "NuGet 2.8.6 发行说明 |Microsoft 文档"
+title: NuGet 2.8.6 发行说明
+description: 发行说明，了解 NuGet 2.8.6 包括已知问题、 bug 修复、 增加的功能，以及 DCRs。
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-ms.assetid: 920c551c-18a7-40f4-a32b-ce84de6ea766
-description: "发行说明，了解 NuGet 2.8.6 包括已知问题、 bug 修复、 增加的功能，以及 DCRs。"
-keywords: "NuGet 2.8.6 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: 4dfd0a76967280cc6a16b37fe2b2a3362231fce5
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: ee801a0edfe22888d65506cea557fd9c79dcf7bd
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-286-release-notes"></a>NuGet 2.8.6 发行说明
 

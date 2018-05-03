@@ -1,21 +1,12 @@
 ---
-title: NuGet 错误和警告参考 |Microsoft 文档
+title: NuGet 错误和警告参考
+description: 针对警告和错误各种 NuGet 操作过程中从 NuGet 发出的完整参考。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/06/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 针对警告和错误各种 NuGet 操作过程中从 NuGet 发出的完整参考。
-keywords: NuGet 错误、 NuGet 警告诊断
-ms.reviewer:
-- anangaur
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
+ms.reviewer: anangaur
 f1_keywords:
 - NU1000
 - NU1001
@@ -53,11 +44,11 @@ f1_keywords:
 - NU3008
 - NU3018
 - NU3028
-ms.openlocfilehash: 020e31dc8646c43b86bcee555f1772e8b1db7761
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: dcff20e35adc0a3dbcc7bef482f81a937cf059c5
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="errors-and-warnings"></a>错误和警告
 
@@ -69,9 +60,9 @@ ms.lasthandoff: 03/28/2018
 
 | Group | 错误号 |
 | --- | --- |
-| [无效的输入的错误](#invalid-input-errors) | [NU1001](#nu1001), [NU1002](#nu1002), [NU1003](#nu1003) |
+| [无效的输入的错误](#invalid-input-errors) | [NU1001](#nu1001)， [NU1002](#nu1002)， [NU1003](#nu1003) |
 | [缺少的包和项目错误](#missing-package-and-project-errors) | [NU1100](#nu1100)， [NU1101](#nu1101)， [NU1102](#nu1102)， [NU1103](#nu1103)， [NU1104](#nu1104)， [NU1105](#nu1105)， [NU1106](#nu1106)， [NU1107](#nu1107) (以前 NU1607) [NU1108](#nu1108) (以前 NU1606) |
-| [兼容性错误](#compatibility-errors) | [NU1201](#nu1201), [NU1202](#nu1202), [NU1203](#nu1203), [NU1401](#nu1401) |
+| [兼容性错误](#compatibility-errors) | [NU1201](#nu1201)， [NU1202](#nu1202)， [NU1203](#nu1203)， [NU1401](#nu1401) |
 
 **警告**
 
@@ -82,8 +73,8 @@ ms.lasthandoff: 03/28/2018
 | [冲突解决程序冲突警告](#resolver-conflict-warnings) | [NU1608](#nu1608) |
 | [包回退警告](#package-fallback-warnings) | [NU1701](#nu1701) |
 | [源警告](#feed-warnings) | [NU1801](#nu1801) |
-| [NuGet 内部错误和警告](#nuget-internal-errors-and-warnings) | [NU1000](#nu1000), [NU1500](#nu1500) |
-| [已签名的软件包 （创建和验证）](#signed-packages-creation-and-verification)| [NU3000](#nu3000), [NU3001](#nu3001), [NU3002](#nu3002), [NU3004](#nu3004), [NU3008](#nu3008), [NU3018](#nu3018), [NU3028](#nu3028) |
+| [NuGet 内部错误和警告](#nuget-internal-errors-and-warnings) | [NU1000](#nu1000)， [NU1500](#nu1500) |
+| [已签名的软件包 （创建和验证）](#signed-packages-creation-and-verification)| [NU3000](#nu3000)， [NU3001](#nu3001)， [NU3002](#nu3002)， [NU3004](#nu3004)， [NU3008](#nu3008)， [NU3018](#nu3018)， [NU3028](#nu3028) |
 
 ## <a name="invalid-input-errors"></a>无效的输入的错误
 

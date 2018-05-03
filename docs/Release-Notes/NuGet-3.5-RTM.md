@@ -1,22 +1,16 @@
 ---
-title: "NuGet 3.5 Beta 发行说明 |Microsoft 文档"
+title: NuGet 3.5 Beta 发行说明
+description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.5 的发行说明。
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.5 的发行说明。"
-keywords: "NuGet 3.5 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: ee78ceb2ff032c05c0f8ef9a6623b94cc56ee0a9
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: cdb540229cae0e6e952ac2a0c00c8801ccbbb28d
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-35-release-notes"></a>NuGet 3.5 发行说明
 
@@ -80,7 +74,7 @@ ms.lasthandoff: 02/02/2018
 
 * 时调用 nuget.exe 更新 *.csproj 而项目没有指定任何信息`packages.config`  -  [# 1496年](https://github.com/NuGet/Home/issues/1496)
 
-* `packages.config`从 V2 源-5xx 状态代码，还原不重试[# 1217年](https://github.com/NuGet/Home/issues/1217)
+* `packages.config` 从 V2 源-5xx 状态代码，还原不重试[# 1217年](https://github.com/NuGet/Home/issues/1217)
 
 * 在文件中的 src 双点`.nuspec`不起作用- [# 2947年](https://github.com/NuGet/Home/issues/2947)
 
@@ -148,7 +142,7 @@ ms.lasthandoff: 02/02/2018
 
 * 如果单个源失败授权-安装块[# 2034年](https://github.com/NuGet/Home/issues/2034)
 
-* `.nuspec`版本范围应重写-IncludeReferencedProjects 版本- [# 1983年](https://github.com/NuGet/Home/issues/1983)
+* `.nuspec` 版本范围应重写-IncludeReferencedProjects 版本- [# 1983年](https://github.com/NuGet/Home/issues/1983)
 
 * 更新包非常缓慢-"尝试收集依赖项信息"- [# 1909年](https://github.com/NuGet/Home/issues/1909)
 
@@ -196,7 +190,7 @@ ms.lasthandoff: 02/02/2018
 
 * 文件-> 新建项目-> 类库 （可移植） VS2015 和 Dev15-中的项目失败[#3094](https://github.com/NuGet/Home/issues/3094)
 
-* NuGet 错误-1.0.0-* 不是有效的版本字符串- [#3070](https://github.com/NuGet/Home/issues/3070)
+* nuGet 错误-1.0.0-* 不是有效的版本字符串- [#3070](https://github.com/NuGet/Home/issues/3070)
 
 * 查找包无法显示，但安装包工作原理- [#3068](https://github.com/NuGet/Home/issues/3068)
 
@@ -226,7 +220,7 @@ ms.lasthandoff: 02/02/2018
 
 * 凭据插件退出，错误为-1 / 错误下载包时使用多个源的凭据提供程序[# 2885年](https://github.com/NuGet/Home/issues/2885)
 
-* `project.json`nuget 还原会导致重新编译时执行任何操作更改- [# 2817年](https://github.com/NuGet/Home/issues/2817)
+* `project.json` nuget 还原会导致重新编译时执行任何操作更改- [# 2817年](https://github.com/NuGet/Home/issues/2817)
 
 * 符号包不应在安装或更新-中使用[# 2807年](https://github.com/NuGet/Home/issues/2807)
 

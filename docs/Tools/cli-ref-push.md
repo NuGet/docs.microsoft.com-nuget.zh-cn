@@ -1,25 +1,16 @@
 ---
-title: NuGet CLI 推送命令 |Microsoft 文档
+title: NuGet CLI 推送命令
+description: Nuget.exe 推送命令参考
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe 推送命令参考
-keywords: nuget 推送引用，推送命令
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 832f7aeb2b485acbb83e5213916fc3423df961ab
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 959b539fc20bc47f38946cb660375a6652582a0d
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="push-command-nuget-cli"></a>推送命令 (NuGet CLI)
 
@@ -47,13 +38,13 @@ nuget push <packagePath> [options]
 | ApiKey | 目标存储库的 API 密钥。 如果不存在，则使用在配置文件中指定。 |
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
 | DisableBuffering | 禁用时将推送到的 http （s） 服务器以减少内存使用情况进行缓冲。 注意： 当使用此选项时，集成的 Windows 身份验证可能无法工作。 |
-| ForceEnglishOutput | *（3.5 +)*强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
+| ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助命令的信息。 |
-| NonInteractive | 取消显示提示用户输入或确认。 |
-| NoSymbols | *（3.5 +)*如果符号包存在，它将不会推送到符号服务器。 |
+| 非交互式 | 取消显示提示用户输入或确认。 |
+| NoSymbols | *（3.5 +)* 如果符号包存在，它将不会推送到符号服务器。 |
 | 源 | 指定服务器 URL。 NuGet 标识的 UNC 或本地文件夹源，并只需将复制文件而不是将它使用 HTTP 推送。  此外，从开始 NuGet 上面 3.4.2，这是强制参数除非`NuGet.Config`文件指定*DefaultPushSource*值 (请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md))。 |
-| SymbolSource | *（3.5 +)*指定符号服务器 URL; 推送到 nuget.org 时使用 nuget.smbsrc.net |
-| SymbolApiKey | *（3.5 +)*中指定的 URL 指定的 API 密钥`-SymbolSource`。 |
+| SymbolSource | *（3.5 +)* 指定符号服务器 URL; 推送到 nuget.org 时使用 nuget.smbsrc.net |
+| SymbolApiKey | *（3.5 +)* 中指定的 URL 指定的 API 密钥`-SymbolSource`。 |
 | 超时 | 指定超时，以秒为单位，以便将推送到服务器。 默认值为 300 秒 （5 分钟）。 |
 | 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。 |
 

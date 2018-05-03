@@ -1,31 +1,25 @@
 ---
-title: NuGet CLI 验证命令 |Microsoft 文档
+title: NuGet CLI 验证命令
+description: 参考 nuget.exe 验证命令
 author: dtivel
 ms.author: dtivel
 manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 参考 nuget.exe 验证命令
-keywords: nuget 验证引用，验证命令
-ms.reviewer:
-- karann
-- rmpablos
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 4423e491e0ab5dc1e13982440db42bc9b0e85c38
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: rmpablos
+ms.openlocfilehash: c2c31b71358bc50a1fb9aab8905c279cd1235b07
+ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="verify-command-nuget-cli"></a>验证命令 (NuGet CLI)
 
 **适用于：**打包消耗&bullet;**受支持的版本：** 4.6 +
 
 验证包。
+
+在.NET 核心，Mono、 下或在非 Windows 平台上尚不支持验证的已签名的软件包。
 
 ## <a name="usage"></a>用法
 
@@ -44,7 +38,7 @@ nuget verify <package(s)> [options]
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定， `%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.nuget/NuGet/NuGet.Config`使用 (Mac/Linux)。|
 | ForceEnglishOutput | 强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助命令的信息。 |
-| NonInteractive | 取消显示提示用户输入或确认。 |
+| 非交互式 | 取消显示提示用户输入或确认。 |
 | 签名 | 指定应执行包签名验证。 |
 | 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。 |
 

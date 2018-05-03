@@ -1,22 +1,16 @@
 ---
-title: "3.5 RC 发行说明 |Microsoft 文档"
+title: 3.5 RC 发行说明
+description: 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.5 RC 的发行说明。
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 3.5 RC 的发行说明。"
-keywords: "NuGet 3.5 RC 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: fdb84da5f1648ce4508afe6ddcf04bddd41284d3
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: d620a8b8d97f9a52cb2bc93a91eb393130a42898
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="nuget-35-rc-release-notes"></a>NuGet 3.5 RC 发行说明
 
@@ -24,7 +18,7 @@ ms.lasthandoff: 02/02/2018
 
 3.5 版本侧重于提高质量和性能的 NuGet 客户端。 此外，如果我们发送的几个功能，如支持[回退文件夹](https://github.com/NuGet/Home/issues/2899)， [PackageType](https://github.com/NuGet/Home/issues/2476)中支持`.nuspec`和的详细信息。
 
-[问题列表](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%223.5 RC")
+[问题列表](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%223.5%20RC")
 
 ## <a name="bug-fixes"></a>Bug 修复
 
@@ -46,7 +40,7 @@ ms.lasthandoff: 02/02/2018
 
 * 文件-> 新建项目-> 类库 （可移植） VS2015 和 Dev15-中的项目失败[#3094](https://github.com/NuGet/Home/issues/3094)
 
-* NuGet 错误-1.0.0-* 不是有效的版本字符串- [#3070](https://github.com/NuGet/Home/issues/3070)
+* nuGet 错误-1.0.0-* 不是有效的版本字符串- [#3070](https://github.com/NuGet/Home/issues/3070)
 
 * 查找包无法显示，但安装包工作原理- [#3068](https://github.com/NuGet/Home/issues/3068)
 

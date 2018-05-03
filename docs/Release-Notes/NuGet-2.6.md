@@ -1,22 +1,16 @@
 ---
-title: "NuGet 2.6 发行说明 |Microsoft 文档"
+title: NuGet 2.6 发行说明
+description: NuGet 2.6.1 为 WebMatrix 包括已知的问题、 bug 修复、 增加的功能，以及 DCRs 的发行说明。
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "包括已知的问题、 bug 修复、 增加的功能，以及 DCRs NuGet 2.6 的发行说明。"
-keywords: "NuGet 2.6 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: c2df9721e6941c110948af1a2d4ec4b7aeb476dd
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 39ce6ac3d36464d26966b0dabb0893f09ad4afdc
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-26-release-notes"></a>NuGet 2.6 发行说明
 
@@ -100,11 +94,11 @@ Visual Studio 2013 中，其中一个文件安装在使用此功能：
 从 NuGet 2.6 针对安装操作将立即发送数据。  NuGet 库上的包统计信息将公开该数据作为单独的安装操作，与"-依赖项"后缀。
 
 * 安装
-* Install-Dependency
+* 安装依赖项
 * 更新
-* Update-Dependency
+* 更新依赖项
 * 重新安装
-* Reinstall-Dependency
+* 重新安装依赖项
 
 除了不同的操作名称，还会安装记录依赖的包 id。  NuGet 库到未来的更新将公开报表，允许包作者，若要全面了解如何开发人员要安装其包中的数据。
 

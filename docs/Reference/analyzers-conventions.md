@@ -1,29 +1,20 @@
 ---
-title: 适用于 NuGet 的 .NET Compiler Platform 分析器格式 | Microsoft Docs
+title: Nuget 的.NET 编译器平台分析器格式
+description: .NET 分析器的约定，与实现 API 或库的 NuGet 包一起打包并分发。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/09/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: .NET 分析器的约定，与实现 API 或库的 NuGet 包一起打包并分发。
-keywords: NuGet 分析器约定, .NET 分析器, NuGet 和 .NET Compiler Platform, NuGet 和 Roslyn
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 26e40346b1d76d2f4f0e4177dbe0670f10db164c
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.topic: conceptual
+ms.openlocfilehash: 57ab485c8062b0515c292b68ecb5a3628b6e3e9d
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="analyzer-nuget-formats"></a>分析器 NuGet 格式
 
-.NET Compiler Platform (也称为"Roslyn") 允许开发人员创建 [分析器] (https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix) ，检查语法树和代码的语义正在写入。 这为开发人员提供了创建方法和域特定的分析工具（如帮助指导如何使用特定 API 或库的工具）。 可以在 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub wiki 上找到详细信息。 另请参阅下文：MSDN 杂志中的[使用 Roslyn 编写 API 的实时代码分析器](https://msdn.microsoft.com/magazine/dn879356.aspx)
+.NET Compiler Platform (也称为"Roslyn") 允许开发人员创建[分析器](https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix)，检查语法树和代码的语义正在写入。 这为开发人员提供了创建方法和域特定的分析工具（如帮助指导如何使用特定 API 或库的工具）。 可以在 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub wiki 上找到详细信息。 另请参阅下文：MSDN 杂志中的[使用 Roslyn 编写 API 的实时代码分析器](https://msdn.microsoft.com/magazine/dn879356.aspx)
 
 分析器本身通常作为实现 API 或相关库的 NuGet 包的一部分进行打包和分发。
 

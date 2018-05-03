@@ -1,26 +1,17 @@
 ---
-title: NuGet 程序包版本引用 |Microsoft 文档
+title: NuGet 程序包版本引用
+description: 指定版本号和其他包 NuGet 包依赖，和如何安装依赖关系后的范围的准确详细信息。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/23/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 指定版本号和其他包 NuGet 包依赖，和如何安装依赖关系后的范围的准确详细信息。
-keywords: 版本控制、 NuGet 包依赖项、 NuGet 依赖项版本、 NuGet 版本数字、 NuGet 程序包版本、 版本范围、 版本规范、 规范化的版本号
-ms.reviewer:
-- anandr
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 678ad79d9106a9f592ae4f47bc93cc117496e2c9
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: anangaur
+ms.openlocfilehash: d17d964ac73075f05678b9727e90d481a30da62e
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="package-versioning"></a>包版本控制
 
@@ -94,9 +85,10 @@ ms.lasthandoff: 03/28/2018
 如果将 SemVer 2.0.0 版特定包上载到 nuget.org 中时，包已向旧客户端不可见并且可用于仅以下 NuGet 客户端：
 
 - NuGet 4.3.0+
-- Visual Studio 2017 version 15.3+
+- Visual Studio 2017 15.3 以上版本
 - Visual Studio 2015 [NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)
-- dotnet.exe (.NET SDK 2.0.0+)
+- dotnet
+  - dotnetcore.exe (.NET SDK 2.0.0+)
 
 第三方客户端：
 
@@ -125,7 +117,7 @@ ms.lasthandoff: 03/28/2018
 使用 PackageReference 格式时，NuGet 还支持使用通配符表示法， \*、 主要、 次要、 修补程序，和的数的预发行后缀部分。 不支持通配符`packages.config`格式。
 
 > [!Note]
-> 在解析版本范围时，将不包括预发行版本。 预发布版本*是*时使用通配符，包括 (\*)。 版本范围*[1.0,2.0]*，例如，不包括 2.0 beta，但通配符表示法_2.0-*_未。 请参阅[发出 912](https://github.com/NuGet/Home/issues/912)有关预发行通配符的进一步讨论。
+> 在解析版本范围时，将不包括预发行版本。 预发布版本*是*时使用通配符，包括 (\*)。 版本范围 *[1.0,2.0]*，例如，不包括 2.0 beta，但通配符表示法_2.0-*_ 未。 请参阅[发出 912](https://github.com/NuGet/Home/issues/912)有关预发行通配符的进一步讨论。
 
 ### <a name="examples"></a>示例
 

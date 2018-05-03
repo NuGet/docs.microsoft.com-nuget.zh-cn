@@ -1,25 +1,17 @@
 ---
-title: NuGet CLI 登录命令 |Microsoft 文档
+title: NuGet CLI 登录命令
+description: Nuget.exe 登录命令参考
 author: dtivel
 ms.author: dtivel
 manager: doronm
 ms.date: 03/06/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: Nuget.exe 登录命令参考
-keywords: nuget 符号引用，登录命令
-ms.reviewer:
-- karann
-- rmpablos
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 9c83e5abae0e70cdc62917861c1febfce4f792c7
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: rmpablos
+ms.openlocfilehash: 7e84d794b802cfd69c785f720280fd5c022a46f6
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="sign-command-nuget-cli"></a>登录命令 (NuGet CLI)
 
@@ -27,7 +19,7 @@ ms.lasthandoff: 03/28/2018
 
 对匹配的第一个参数使用证书的所有包进行都签名。 从文件或从安装在证书存储区中，通过提供使用者名称或指纹的证书，则可以获取具有私钥的证书。
 
-包签名尚不支持在 Mono 下或在非 Windows 平台上。
+包签名尚不支持在.NET 核心，Mono、 下或在非 Windows 平台上。
 
 ## <a name="usage"></a>用法
 
@@ -51,7 +43,7 @@ nuget sign <package(s)> [options]
 | ForceEnglishOutput | 强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | HashAlgorithm | 要用于对包进行签名的哈希算法。 默认值为 SHA256。 |
 | 帮助 | 显示的帮助命令的信息。 |
-| NonInteractive | 取消显示提示用户输入或确认。 |
+| 非交互式 | 取消显示提示用户输入或确认。 |
 | OutputDirectory | 指定保存签名的包的目录。 默认情况下已签名的软件包的情况下会覆盖原始包。 |
 | Overwrite | 开关，这表示是否应覆盖当前的签名。 默认情况下如果包已签名，则该命令将失败。 |
 | Timestamper | 到 RFC 3161 时间戳服务器的 URL。 |

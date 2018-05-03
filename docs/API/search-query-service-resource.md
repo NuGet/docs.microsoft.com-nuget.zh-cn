@@ -1,26 +1,17 @@
 ---
-title: "搜索、 NuGet API |Microsoft 文档"
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 搜索，NuGet API
+description: 搜索服务允许客户端到包按关键字的查询和某些包字段上的筛选结果。
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "搜索服务允许客户端到包按关键字的查询和某些包字段上的筛选结果。"
-keywords: "NuGet 搜索 API，NuGet 发现包，API 到查询 NuGet 程序包，API 来浏览 NuGet 包"
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: 612ce0f46b654335a29bb36a64b27525994162ed
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: 76600ee916305ee01ddfb675c83c184e980c5a42
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="search"></a>搜索
 
@@ -33,8 +24,8 @@ ms.lasthandoff: 02/02/2018
 @type 值                   | 说明
 ----------------------------- | -----
 SearchQueryService            | 初始版本
-SearchQueryService/3.0.0-beta | 别名`SearchQueryService`
-SearchQueryService/3.0.0-rc   | 别名`SearchQueryService`
+SearchQueryService/3.0.0-beta | 别名 `SearchQueryService`
+SearchQueryService/3.0.0-rc   | 别名 `SearchQueryService`
 
 ## <a name="base-url"></a>基 URL
 
@@ -54,12 +45,12 @@ HTTP 方法位于注册资源支持的所有 Url`GET`和`HEAD`。
 
 ### <a name="request-parameters"></a>请求参数
 
-name        | 内     | 类型    | 必需 | 说明
+名称        | 内     | 类型    | 必需 | 说明
 ----------- | ------ | ------- | -------- | -----
 q           | URL    | 字符串  | 否       | 为用于筛选器程序包搜索词
 skip        | URL    | 整数 | 否       | 要分页的跳过的结果数
 take        | URL    | 整数 | 否       | 要为分页返回的结果数
-预发行版  | URL    | boolean | 否       | `true`或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
+预发行版  | URL    | boolean | 否       | `true` 或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
 semVerLevel | URL    | 字符串  | 否       | SemVer 1.0.0 版本字符串 
 
 搜索查询`q`分析由服务器实现定义的方式。 nuget.org 支持基本筛选[各种字段](../consume-packages/finding-and-choosing-packages.md#search-syntax)。 如果没有`q`提供应返回所有包，skip 和 take 强加的边界内。 这使 NuGet Visual Studio 体验中的"浏览"选项卡。
@@ -80,9 +71,9 @@ semVerLevel | URL    | 字符串  | 否       | SemVer 1.0.0 版本字符串
 
 根 JSON 对象具有以下属性：
 
-name      | 类型             | 必需 | 说明
+名称      | 类型             | 必需 | 说明
 --------- | ---------------- | -------- | -----
-totalHits | 整数          | 是      | 匹配项，而不考虑的总数目`skip`和`take`
+totalHits | 整数          | 是      | 匹配项，而不考虑的总数目`skip`和 `take`
 数据      | 对象的数组 | 是      | 由请求匹配的搜索结果
 
 ### <a name="search-result"></a>搜索结果
@@ -90,7 +81,7 @@ totalHits | 整数          | 是      | 匹配项，而不考虑的总数目`sk
 在每个项`data`数组是组成一组共享相同的包 id。 程序包版本的 JSON 对象
 该对象具有以下属性：
 
-name           | 类型                       | 必需 | 说明
+名称           | 类型                       | 必需 | 说明
 -------------- | -------------------------- | -------- | -----
 id             | 字符串                     | 是      | 匹配的程序包的 ID
 version        | 字符串                     | 是      | 完整的 SemVer 2.0.0 的版本字符串 （可能包含生成元数据） 的包
@@ -112,7 +103,7 @@ totalDownloads | 整数                    | 否       | 此值可以推断出�
 
 搜索结果对象中包含的元数据中获取最新的包版本。 在每个项`versions`数组是具有以下属性的 JSON 对象：
 
-name      | 类型    | 必需 | 说明
+名称      | 类型    | 必需 | 说明
 --------- | ------- | -------- | -----
 @id       | 字符串  | 是      | 到关联的绝对 URL[注册叶](registration-base-url-resource.md#registration-leaf)
 version   | 字符串  | 是      | 完整的 SemVer 2.0.0 的版本字符串 （可能包含生成元数据） 的包

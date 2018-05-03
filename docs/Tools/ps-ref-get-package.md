@@ -1,25 +1,16 @@
 ---
-title: NuGet Get 包 PowerShell 参考 |Microsoft 文档
+title: NuGet Get 包 PowerShell 参考
+description: 在 Visual Studio 中的 NuGet 包管理器控制台中的 Get 包 PowerShell 命令参考。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 12/07/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 在 Visual Studio 中的 NuGet 包管理器控制台中的 Get 包 PowerShell 命令参考。
-keywords: NuGet 包管理器控制台，NuGet Powershell 命令，NuGet Powershell 参考，Get 包
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: ca80d95df309d8afce2ce6cff26c19980affde7a
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: c70e60b7391f19026e2dcd502d667fbe1da7e6e2
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>获取包 （在 Visual Studio 中的包管理器控制台）
 
@@ -50,7 +41,7 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
 | Skip | 省略第一个&lt;int&gt;从列表中显示的包。  |
 | AllVersions | 显示每个包而不是仅最新版本的所有可用的版本。 |
 | IncludePrerelease | 在结果中包含预发行程序包。 |
-| PageSize | *（3.0 +)*时与-ListAvailable 一起 （必需） 的包的数量来授予提示是否继续前列表。 |
+| PageSize | *（3.0 +)* 时与-ListAvailable 一起 （必需） 的包的数量来授予提示是否继续前列表。 |
 
 任何这些参数接受管道输入或通配符字符。
 

@@ -1,22 +1,16 @@
 ---
-title: "NuGet 3.4.4 发行说明 |Microsoft 文档"
+title: NuGet 3.4.4 发行说明
+description: 发行说明，了解 NuGet 3.4.4 包括已知问题、 bug 修复、 增加的功能，以及 DCRs。
 author: karann-msft
-ms.author: karann-msft
-manager: ghogen
+ms.author: karann
+manager: unnir
 ms.date: 11/11/2016
-ms.topic: article
-ms.prod: nuget
-ms.technology: 
-description: "发行说明，了解 NuGet 3.4.4 包括已知问题、 bug 修复、 增加的功能，以及 DCRs。"
-keywords: "NuGet 3.4.4 发行说明，bug 修复的已知问题，添加了一些功能，DCRs"
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: fabc10ae5c8e0bd43581f85c7763eb23e9483aaf
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.topic: conceptual
+ms.openlocfilehash: 891d5c7ee884d31f405118739b57a169b9cd93b3
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="nuget-344-release-notes"></a>NuGet 3.4.4 发行说明
 
@@ -26,7 +20,7 @@ ms.lasthandoff: 02/02/2018
 
 你可以下载 VSIX 和 nuget.exe[此处](https://dist.nuget.org/index.html)。
 
-## <a name="344-rtmhttpsgithubcomnugetnugetclienttree344-rtm-2016-05-19"></a>[3.4.4-rtm](https://github.com/NuGet/NuGet.Client/tree/3.4.4-rtm) (2016-05-19)
+## <a name="344-rtmhttpsgithubcomnugetnugetclienttree344-rtm-2016-05-19"></a>[3.4.4-rtm](https://github.com/NuGet/NuGet.Client/tree/3.4.4-rtm) (2016年-05-19)
 
 [完整的版本记录](https://github.com/NuGet/NuGet.Client/compare/3.5.0-beta-final...3.4.4-rtm)
 

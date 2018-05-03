@@ -1,26 +1,17 @@
 ---
-title: "包内容，NuGet API |Microsoft 文档"
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 包的内容，NuGet API
+description: 包基址是一个简单接口提取包本身。
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: 
-description: "包基址是一个简单接口提取包本身。"
-keywords: "NuGet 平面容器、 NuGet 包基址、 NuGet nupkg API，NuGet API 包版本中，NuGet API 未列出的包、 NuGet API 下载 nuspec"
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.openlocfilehash: c2e631dc0bba95ac849430d77142f27ef591f741
-ms.sourcegitcommit: 4651b16a3a08f6711669fc4577f5d63b600f8f58
+ms.reviewer: kraigb
+ms.openlocfilehash: a6ac40368f30d33f35d4ca0b6cc18ce4bd6efee5
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="package-content"></a>包内容
 
@@ -55,7 +46,7 @@ HTTP 方法位于注册资源支持的所有 Url`GET`和`HEAD`。
 
 ### <a name="request-parameters"></a>请求参数
 
-name     | 内     | 类型    | 必需 | 说明
+名称     | 内     | 类型    | 必需 | 说明
 -------- | ------ | ------- | -------- | -----
 LOWER_ID | URL    | 字符串  | 是      | 包 ID 小写
 
@@ -67,7 +58,7 @@ LOWER_ID | URL    | 字符串  | 是      | 包 ID 小写
 
 如果包源具有一个或多个版本，则返回状态代码 200。 响应正文是具有以下属性的 JSON 对象：
 
-name     | 类型             | 必需 | 说明
+名称     | 类型             | 必需 | 说明
 -------- | ---------------- | -------- | -----
 版本 | 字符串数组 | 是      | 包 Id 可用
 
@@ -91,7 +82,7 @@ name     | 类型             | 必需 | 说明
 
 ### <a name="request-parameters"></a>请求参数
 
-name          | 内     | 类型   | 必需 | 说明
+名称          | 内     | 类型   | 必需 | 说明
 ------------- | ------ | ------ | -------- | -----
 LOWER_ID      | URL    | 字符串 | 是      | 包 ID 小写
 LOWER_VERSION | URL    | 字符串 | 是      | 包版本、 规范化和小写
@@ -122,7 +113,7 @@ Newtonsoft.Json 9.0.1.nupkg 二进制流。
 
 ### <a name="request-parameters"></a>请求参数
 
-name          | 内     | 类型    | 必需 | 说明
+名称          | 内     | 类型    | 必需 | 说明
 ------------- | ------ | ------- | -------- | -----
 LOWER_ID      | URL    | 字符串  | 是      | 包 ID 小写
 LOWER_VERSION | URL    | 整数 | 是      | 包版本、 规范化和小写
