@@ -46,12 +46,16 @@
     }
   ],
   "branch_target_mapping": {
+     "live-sxs": [
+        "Publish",
+        "Pdf" 
+    ],
     "live": [
       "Publish",
       "Pdf"
     ]
   },
-  "need_generate_pdf_url_template": false,
+  "need_generate_pdf_url_template": true,
   "Targets": {
     "Pdf": {
       "template_folder": "_themes.pdf"
