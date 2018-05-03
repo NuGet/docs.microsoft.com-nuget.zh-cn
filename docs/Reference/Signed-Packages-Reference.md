@@ -1,64 +1,58 @@
 ---
-title: 签名包引用 |Microsoft 文档
+title: 签名 NuGet 包引用
+description: NuGet 包签名要求。
 author: rido-min
 ms.author: rido-min
-manager: unniravindranathan
-ms.date: 03/06/2018
+manager: unnir
+ms.date: 04/24/2018
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 签名包功能说明。
-keywords: NuGet 包签名、 签名、 证书
-ms.reviewer:
-- ananguar
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: a2a338596f7d98ded11da6fb02bafba3521249ab
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: ananguar
+ms.openlocfilehash: 751a8ff14bdc3a647985da4f908ad1a0fd0def9a
+ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="signed-packages"></a><span data-ttu-id="761e8-104">已签名的软件包</span><span class="sxs-lookup"><span data-stu-id="761e8-104">Signed packages</span></span>
+# <a name="signed-packages"></a><span data-ttu-id="ad463-103">已签名的软件包</span><span class="sxs-lookup"><span data-stu-id="ad463-103">Signed packages</span></span>
 
-<span data-ttu-id="761e8-105">*NuGet 4.6.0+ 和 Visual Studio 2017 15.6 及更高版本*</span><span class="sxs-lookup"><span data-stu-id="761e8-105">*NuGet 4.6.0+ and Visual Studio 2017 version 15.6 and later*</span></span>
+<span data-ttu-id="ad463-104">*NuGet 4.6.0+ 和 Visual Studio 2017 15.6 及更高版本*</span><span class="sxs-lookup"><span data-stu-id="ad463-104">*NuGet 4.6.0+ and Visual Studio 2017 version 15.6 and later*</span></span>
 
-<span data-ttu-id="761e8-106">NuGet 包可以包含数字签名，它提供针对篡改的内容的保护。</span><span class="sxs-lookup"><span data-stu-id="761e8-106">NuGet packages can include a digital signature that provides protection against tampered content.</span></span> <span data-ttu-id="761e8-107">此签名被生成一个 X.509 证书，还将真实性证明添加到包的实际来源。</span><span class="sxs-lookup"><span data-stu-id="761e8-107">This signature is produced from an X.509 certificate that also adds authenticity proofs to the actual origin of the package.</span></span>
+<span data-ttu-id="ad463-105">NuGet 包可以包含数字签名，它提供针对篡改的内容的保护。</span><span class="sxs-lookup"><span data-stu-id="ad463-105">NuGet packages can include a digital signature that provides protection against tampered content.</span></span> <span data-ttu-id="ad463-106">此签名被生成一个 X.509 证书，还将真实性证明添加到包的实际来源。</span><span class="sxs-lookup"><span data-stu-id="ad463-106">This signature is produced from an X.509 certificate that also adds authenticity proofs to the actual origin of the package.</span></span>
 
-<span data-ttu-id="761e8-108">已签名的软件包提供最高的端到端验证。</span><span class="sxs-lookup"><span data-stu-id="761e8-108">Signed packages provide the strongest end-to-end validation.</span></span> <span data-ttu-id="761e8-109">作者签名可保证由于作者签名包，无论从包不被修改的存储库或什么传输传递包的方法。</span><span class="sxs-lookup"><span data-stu-id="761e8-109">An author signature guarantees that the package has not been modified since the author signed the package, no matter from which repository or what transport method the package is delivered.</span></span>
+<span data-ttu-id="ad463-107">已签名的软件包提供最高的端到端验证。</span><span class="sxs-lookup"><span data-stu-id="ad463-107">Signed packages provide the strongest end-to-end validation.</span></span> <span data-ttu-id="ad463-108">作者签名可保证由于作者签名包，无论从包不被修改的存储库或什么传输传递包的方法。</span><span class="sxs-lookup"><span data-stu-id="ad463-108">An author signature guarantees that the package has not been modified since the author signed the package, no matter from which repository or what transport method the package is delivered.</span></span>
 
-<span data-ttu-id="761e8-110">需要锁定环境使用者可以要求使用特定的作者证书签名的包。</span><span class="sxs-lookup"><span data-stu-id="761e8-110">Consumers who demand a locked-down environment can require packages signed with a specific author certificate.</span></span>
+<span data-ttu-id="ad463-109">需要锁定环境使用者可以要求使用特定的作者证书签名的包。</span><span class="sxs-lookup"><span data-stu-id="ad463-109">Consumers who demand a locked-down environment can require packages signed with a specific author certificate.</span></span>
 
-<span data-ttu-id="761e8-111">此外，作者签名的包提供向 nuget.org 发布管道的额外的身份验证机制，因为签名的证书必须提前注册。</span><span class="sxs-lookup"><span data-stu-id="761e8-111">Additionally, author-signed packages provide an extra authentication mechanism to the nuget.org publishing pipeline because the signing certificate must be registered ahead of time.</span></span>
+<span data-ttu-id="ad463-110">此外，作者签名的包提供向 nuget.org 发布管道的额外的身份验证机制，因为签名的证书必须提前注册。</span><span class="sxs-lookup"><span data-stu-id="ad463-110">Additionally, author-signed packages provide an extra authentication mechanism to the nuget.org publishing pipeline because the signing certificate must be registered ahead of time.</span></span>
 
-<span data-ttu-id="761e8-112">有关创建签名的包的详细信息，请参阅[签名包](../create-packages/Sign-a-package.md)和[nuget 登录命令](../tools/cli-ref-sign.md)。</span><span class="sxs-lookup"><span data-stu-id="761e8-112">For details on creating a signed package, see [Signing Packages](../create-packages/Sign-a-package.md) and the [nuget sign command](../tools/cli-ref-sign.md).</span></span>
+<span data-ttu-id="ad463-111">有关创建签名的包的详细信息，请参阅[签名包](../create-packages/Sign-a-package.md)和[nuget 登录命令](../tools/cli-ref-sign.md)。</span><span class="sxs-lookup"><span data-stu-id="ad463-111">For details on creating a signed package, see [Signing Packages](../create-packages/Sign-a-package.md) and the [nuget sign command](../tools/cli-ref-sign.md).</span></span>
 
 > [!Important]
-> <span data-ttu-id="761e8-113">nuget.org 目前不接受已签名的软件包。</span><span class="sxs-lookup"><span data-stu-id="761e8-113">nuget.org does not presently accept signed packages.</span></span> <span data-ttu-id="761e8-114">可以对发布到自定义源的包进行签名。</span><span class="sxs-lookup"><span data-stu-id="761e8-114">You can sign packages for publishing to custom feeds.</span></span>
+> <span data-ttu-id="ad463-112">nuget.org 目前不接受已签名的软件包。</span><span class="sxs-lookup"><span data-stu-id="ad463-112">nuget.org does not presently accept signed packages.</span></span> <span data-ttu-id="ad463-113">可以对发布到自定义源的包进行签名。</span><span class="sxs-lookup"><span data-stu-id="ad463-113">You can sign packages for publishing to custom feeds.</span></span>
 
-## <a name="certificate-requirements"></a><span data-ttu-id="761e8-115">证书要求</span><span class="sxs-lookup"><span data-stu-id="761e8-115">Certificate requirements</span></span>
+> [!Important]
+> <span data-ttu-id="ad463-114">仅在 Windows 上使用 nuget.exe 时，当前支持包签名。</span><span class="sxs-lookup"><span data-stu-id="ad463-114">Package signing is currently supported only when using nuget.exe on Windows.</span></span> <span data-ttu-id="ad463-115">仅在 Windows 上使用 nuget.exe 或 Visual Studio 时，当前支持的已签名的软件包的验证。</span><span class="sxs-lookup"><span data-stu-id="ad463-115">Verification of signed packages is currently supported only when using nuget.exe or Visual Studio on Windows.</span></span>
 
-<span data-ttu-id="761e8-116">包签名需要代码签名证书，这是一种特殊类型的证书有效`id-kp-codeSigning`目的 [[RFC 5280 部分 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]。</span><span class="sxs-lookup"><span data-stu-id="761e8-116">Package signing requires a code signing certificate, which is a special type of certificate that is valid for the `id-kp-codeSigning` purpose [[RFC 5280 section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)].</span></span> <span data-ttu-id="761e8-117">此外，证书必须具有 RSA 公钥长度为 2048 位或更高版本。</span><span class="sxs-lookup"><span data-stu-id="761e8-117">Additionally, the certificate must have an RSA public key length of 2048 bits or higher.</span></span>
+## <a name="certificate-requirements"></a><span data-ttu-id="ad463-116">证书要求</span><span class="sxs-lookup"><span data-stu-id="ad463-116">Certificate requirements</span></span>
 
-## <a name="get-a-code-signing-certificate"></a><span data-ttu-id="761e8-118">获取代码签名证书</span><span class="sxs-lookup"><span data-stu-id="761e8-118">Get a code signing certificate</span></span>
+<span data-ttu-id="ad463-117">包签名需要代码签名证书，这是一种特殊类型的证书有效`id-kp-codeSigning`目的 [[RFC 5280 部分 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]。</span><span class="sxs-lookup"><span data-stu-id="ad463-117">Package signing requires a code signing certificate, which is a special type of certificate that is valid for the `id-kp-codeSigning` purpose [[RFC 5280 section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)].</span></span> <span data-ttu-id="ad463-118">此外，证书必须具有 RSA 公钥长度为 2048 位或更高版本。</span><span class="sxs-lookup"><span data-stu-id="ad463-118">Additionally, the certificate must have an RSA public key length of 2048 bits or higher.</span></span>
 
-<span data-ttu-id="761e8-119">可能从等公共证书颁发机构那里获取有效证书：</span><span class="sxs-lookup"><span data-stu-id="761e8-119">Valid certificates may be obtained from public certificate authorities like:</span></span>
+## <a name="get-a-code-signing-certificate"></a><span data-ttu-id="ad463-119">获取代码签名证书</span><span class="sxs-lookup"><span data-stu-id="ad463-119">Get a code signing certificate</span></span>
 
-- [<span data-ttu-id="761e8-120">Symantec</span><span class="sxs-lookup"><span data-stu-id="761e8-120">Symantec</span></span>](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3)
-- [<span data-ttu-id="761e8-121">DigiCert</span><span class="sxs-lookup"><span data-stu-id="761e8-121">DigiCert</span></span>](https://www.digicert.com/code-signing/)
-- [<span data-ttu-id="761e8-122">Go Daddy</span><span class="sxs-lookup"><span data-stu-id="761e8-122">Go Daddy</span></span>](https://www.godaddy.com/web-security/code-signing-certificate)
-- [<span data-ttu-id="761e8-123">全局登录</span><span class="sxs-lookup"><span data-stu-id="761e8-123">Global Sign</span></span>](https://www.globalsign.com/en/code-signing-certificate/)
-- [<span data-ttu-id="761e8-124">Comodo</span><span class="sxs-lookup"><span data-stu-id="761e8-124">Comodo</span></span>](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)
-- [<span data-ttu-id="761e8-125">Certum</span><span class="sxs-lookup"><span data-stu-id="761e8-125">Certum</span></span>](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 
+<span data-ttu-id="ad463-120">可能从等公共证书颁发机构那里获取有效证书：</span><span class="sxs-lookup"><span data-stu-id="ad463-120">Valid certificates may be obtained from public certificate authorities like:</span></span>
 
-<span data-ttu-id="761e8-126">可以从获取由 Windows 受信任的证书颁发机构的完整列表[ http://aka.ms/trustcertpartners ](http://aka.ms/trustcertpartners)。</span><span class="sxs-lookup"><span data-stu-id="761e8-126">The complete list of certification authorities trusted by Windows can be obtained from [http://aka.ms/trustcertpartners](http://aka.ms/trustcertpartners).</span></span>
+- [<span data-ttu-id="ad463-121">Symantec</span><span class="sxs-lookup"><span data-stu-id="ad463-121">Symantec</span></span>](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3)
+- [<span data-ttu-id="ad463-122">DigiCert</span><span class="sxs-lookup"><span data-stu-id="ad463-122">DigiCert</span></span>](https://www.digicert.com/code-signing/)
+- [<span data-ttu-id="ad463-123">Go Daddy</span><span class="sxs-lookup"><span data-stu-id="ad463-123">Go Daddy</span></span>](https://www.godaddy.com/web-security/code-signing-certificate)
+- [<span data-ttu-id="ad463-124">全局登录</span><span class="sxs-lookup"><span data-stu-id="ad463-124">Global Sign</span></span>](https://www.globalsign.com/en/code-signing-certificate/)
+- [<span data-ttu-id="ad463-125">Comodo</span><span class="sxs-lookup"><span data-stu-id="ad463-125">Comodo</span></span>](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)
+- [<span data-ttu-id="ad463-126">Certum</span><span class="sxs-lookup"><span data-stu-id="ad463-126">Certum</span></span>](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 
 
-## <a name="create-a-test-certificate"></a><span data-ttu-id="761e8-127">创建测试证书</span><span class="sxs-lookup"><span data-stu-id="761e8-127">Create a test certificate</span></span>
+<span data-ttu-id="ad463-127">可以从获取由 Windows 受信任的证书颁发机构的完整列表[ http://aka.ms/trustcertpartners ](http://aka.ms/trustcertpartners)。</span><span class="sxs-lookup"><span data-stu-id="ad463-127">The complete list of certification authorities trusted by Windows can be obtained from [http://aka.ms/trustcertpartners](http://aka.ms/trustcertpartners).</span></span>
 
-<span data-ttu-id="761e8-128">出于测试目的，可以使用自行颁发的证书。</span><span class="sxs-lookup"><span data-stu-id="761e8-128">You can use self-issued certificates for testing purposes.</span></span> <span data-ttu-id="761e8-129">若要创建自行颁发的证书，请使用[的 New-selfsignedcertificate](https://docs.microsoft.com/en-us/powershell/module/pkiclient/new-selfsignedcertificate) PowerShell 命令。</span><span class="sxs-lookup"><span data-stu-id="761e8-129">To create a self-issued certificate, use the [New-SelfSignedCertificate](https://docs.microsoft.com/en-us/powershell/module/pkiclient/new-selfsignedcertificate) PowerShell command.</span></span>
+## <a name="create-a-test-certificate"></a><span data-ttu-id="ad463-128">创建测试证书</span><span class="sxs-lookup"><span data-stu-id="ad463-128">Create a test certificate</span></span>
+
+<span data-ttu-id="ad463-129">出于测试目的，可以使用自行颁发的证书。</span><span class="sxs-lookup"><span data-stu-id="ad463-129">You can use self-issued certificates for testing purposes.</span></span> <span data-ttu-id="ad463-130">若要创建自行颁发的证书，请使用[的 New-selfsignedcertificate](https://docs.microsoft.com/en-us/powershell/module/pkiclient/new-selfsignedcertificate) PowerShell 命令。</span><span class="sxs-lookup"><span data-stu-id="ad463-130">To create a self-issued certificate, use the [New-SelfSignedCertificate](https://docs.microsoft.com/en-us/powershell/module/pkiclient/new-selfsignedcertificate) PowerShell command.</span></span>
 
 ```ps
 New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
@@ -72,10 +66,10 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
                           -CertStoreLocation "Cert:\CurrentUser\My" 
 ```
 
-<span data-ttu-id="761e8-130">此命令创建当前用户的个人证书存储中可用的测试证书。</span><span class="sxs-lookup"><span data-stu-id="761e8-130">This command creates a testing certificate available in the current user's personal certificate store.</span></span> <span data-ttu-id="761e8-131">你可以通过运行打开证书存储区`certmgr.msc`以查看新创建的证书。</span><span class="sxs-lookup"><span data-stu-id="761e8-131">You can open the certificate store by running `certmgr.msc` to see the newly created certificate.</span></span>
+<span data-ttu-id="ad463-131">此命令创建当前用户的个人证书存储中可用的测试证书。</span><span class="sxs-lookup"><span data-stu-id="ad463-131">This command creates a testing certificate available in the current user's personal certificate store.</span></span> <span data-ttu-id="ad463-132">你可以通过运行打开证书存储区`certmgr.msc`以查看新创建的证书。</span><span class="sxs-lookup"><span data-stu-id="ad463-132">You can open the certificate store by running `certmgr.msc` to see the newly created certificate.</span></span>
 
-## <a name="timestamp-requirements"></a><span data-ttu-id="761e8-132">时间戳要求</span><span class="sxs-lookup"><span data-stu-id="761e8-132">Timestamp requirements</span></span>
+## <a name="timestamp-requirements"></a><span data-ttu-id="ad463-133">时间戳要求</span><span class="sxs-lookup"><span data-stu-id="ad463-133">Timestamp requirements</span></span>
 
-<span data-ttu-id="761e8-133">已签名的软件包应包括的 RFC 3161 时间戳，以确保签名有效性超出程序包签名证书的有效期。</span><span class="sxs-lookup"><span data-stu-id="761e8-133">Signed packages should include an RFC 3161 timestamp to ensure signature validity beyond the package signing certificate's validity period.</span></span> <span data-ttu-id="761e8-134">用于签署时间戳证书必须是有效的`id-kp-timeStamping`目的 [[RFC 5280 部分 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]。</span><span class="sxs-lookup"><span data-stu-id="761e8-134">The certificate used to sign the timestamp must be valid for the `id-kp-timeStamping` purpose [[RFC 5280 section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)].</span></span> <span data-ttu-id="761e8-135">此外，证书必须具有 RSA 公钥长度为 2048 位或更高版本。</span><span class="sxs-lookup"><span data-stu-id="761e8-135">Additionally, the certificate must have an RSA public key length of 2048 bits or higher.</span></span>
+<span data-ttu-id="ad463-134">已签名的软件包应包括的 RFC 3161 时间戳，以确保签名有效性超出程序包签名证书的有效期。</span><span class="sxs-lookup"><span data-stu-id="ad463-134">Signed packages should include an RFC 3161 timestamp to ensure signature validity beyond the package signing certificate's validity period.</span></span> <span data-ttu-id="ad463-135">用于签署时间戳证书必须是有效的`id-kp-timeStamping`目的 [[RFC 5280 部分 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]。</span><span class="sxs-lookup"><span data-stu-id="ad463-135">The certificate used to sign the timestamp must be valid for the `id-kp-timeStamping` purpose [[RFC 5280 section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)].</span></span> <span data-ttu-id="ad463-136">此外，证书必须具有 RSA 公钥长度为 2048 位或更高版本。</span><span class="sxs-lookup"><span data-stu-id="ad463-136">Additionally, the certificate must have an RSA public key length of 2048 bits or higher.</span></span>
 
-<span data-ttu-id="761e8-136">其他技术详细信息可在[包签名的技术规格](https://github.com/NuGet/Home/wiki/Package-Signatures-Technical-Details)(GitHub)。</span><span class="sxs-lookup"><span data-stu-id="761e8-136">Additional technical details can be found in the [package signature technical specs](https://github.com/NuGet/Home/wiki/Package-Signatures-Technical-Details) (GitHub).</span></span>
+<span data-ttu-id="ad463-137">其他技术详细信息可在[包签名的技术规格](https://github.com/NuGet/Home/wiki/Package-Signatures-Technical-Details)(GitHub)。</span><span class="sxs-lookup"><span data-stu-id="ad463-137">Additional technical details can be found in the [package signature technical specs](https://github.com/NuGet/Home/wiki/Package-Signatures-Technical-Details) (GitHub).</span></span>
