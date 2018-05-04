@@ -1,24 +1,29 @@
 #### <a name="windows"></a>Windows
-1. 请访问[nuget.org/downloads](https://nuget.org/downloads)和选择 NuGet 3.3 或更高版本 （2.8.6 不与 Mono 兼容）。 始终建议的最新版本，并且将包发布到 nuget.org 所需的 4.1.0+。
-2. 每个下载`nuget.exe`直接文件。 指示您的浏览器将文件保存到所选的文件夹。 该文件是*不*的安装程序; 如果直接从浏览器运行不会看到任何内容。
-3. 将你的放置位置的文件夹添加`nuget.exe`到你的 PATH 环境变量，从任意位置使用 CLI 工具。
+
+1. 请访问 [nuget.org/downloads](https://nuget.org/downloads)，并选择 NuGet 3.3 或更高版本（2.8.6 与 Mono 不兼容）。 始终建议使用最新版。若要将包发布到 nuget.org，版本至少必须是 4.1.0。
+1. 每次下载都直接下载 `nuget.exe` 文件。 让浏览器将文件保存到选定文件夹。 此文件不是安装程序；如果直接在浏览器中运行，就不会看到任何内容。
+1. 将文件夹添加到 `nuget.exe` 中放置 PATH 环境变量的位置，这样就可以从任意位置使用 CLI 工具。
 
 #### <a name="macoslinux"></a>macOS/Linux
-行为可能通过操作系统分配略有不同。
 
-1. 安装[Mono 4.4.2 或更高版本](http://www.mono-project.com/docs/getting-started/install/)。
-2. 执行以下命令外壳提示符：
-    
+行为可能因 OS 分发版本略有不同。
+
+1. 安装 [Mono 4.4.2 或更高版本](http://www.mono-project.com/docs/getting-started/install/)。
+
+1. 在 shell 提示符处，执行下列命令：
+
     ```bash
     # Download the latest stable `nuget.exe` to `/usr/local/bin`
     sudo curl -o /usr/local/bin/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
     # Give the file permissions to execute
     sudo chmod 755 /usr/local/bin/nuget.exe
     ```
-3. 通过将以下脚本添加到相应的文件，为您的操作系统创建别名 (通常`~/.bash_aliases`或`~/.bash_profile`):
-    
+
+1. 通过将以下脚本添加到 OS 的相应文件来创建别名（通常为 `~/.bash_aliases` 或 `~/.bash_profile`）：
+
     ```bash
     # Create as alias for nuget
     alias nuget="mono /usr/local/bin/nuget.exe"
     ```
-4. 重新加载 shell。  通过输入测试安装`nuget`不带任何参数。 应显示 NuGet CLI 帮助。
+
+1. 重载 shell。  通过输入 `nuget`（而不使用任何参数）来测试安装。 应该会看到 NuGet CLI 帮助。
