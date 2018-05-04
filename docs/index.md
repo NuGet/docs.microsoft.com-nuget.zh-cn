@@ -1,35 +1,18 @@
 ---
-layout: HubPage
-hide_bc: ''
-title: NuGet 文档 | Microsoft Docs
+title: NuGet 文档
 description: NuGet 是适用于包含 .NET 的 Microsoft 开发平台的包管理器。 NuGet 客户端工具可用于创建和使用包。
-keywords:
-- nuget
-- nuget 管理器
-- nupkg
-- nuget 包资源管理器
-- NuGet 包
-- nuget 扩展
-- nuget.exe
-- nuget 命令行
-- nuget cli
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 02/12/2018
-ms.topic: hub-page
-ms.prod: nuget
-ms.technology: ''
-ms.reviewer:
-- karann-msft
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: c5b1a1b10ea74aa7ad47ecc94918a72486094828
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.topic: overview
+layout: HubPage
+hide_bc: true
+ms.openlocfilehash: 534d9969c7ad73b9eaf4df64834cb46140085507
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 <div id="main" class="v2">
 <div class="container">
@@ -48,8 +31,7 @@ ms.lasthandoff: 03/28/2018
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-what-is-nuget.svg" alt="" />        
-                                            </div>
+                                                <img src="media/hub/nuget-get-started-what-is-nuget.svg" alt="" /><br/>                                            </div>
                                         </div>
                                         <div class="cardText">
                                             <h3>什么是 NuGet？</h3>
