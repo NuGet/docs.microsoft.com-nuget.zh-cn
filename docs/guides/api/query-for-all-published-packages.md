@@ -1,29 +1,17 @@
 ---
-title: 查询所有发布到 nuget.org 的包 | Microsoft Docs
-author:
-- joelverhagen
-- kraigb
-ms.author:
-- joelverhagen
-- kraigb
+title: 查询所有发布到 nuget.org 的包
+description: 使用 NuGet API 可以查询所有发布到 nuget.org 的包并随着时间推移保持最新状态。
+author: joelverhagen
+ms.author: jver
 manager: skofman
 ms.date: 11/02/2017
 ms.topic: tutorial
-ms.prod: nuget
-ms.technology: ''
-description: 使用 NuGet API 可以查询所有发布到 nuget.org 的包并随着时间推移保持最新状态。
-keywords: NuGet API 枚举所有包, NuGet API 复制包, 最新发布到 nuget.org 的包
-ms.reviewer:
-- karann
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 5ea11e1b4edd87b6d30d3838986ca60aaa77870f
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.reviewer: kraigb
+ms.openlocfilehash: 4190cfb500127f117ea1067f0679e5c248bffb3d
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>查询所有发布到 nuget.org 的包
 
