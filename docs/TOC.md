@@ -114,6 +114,7 @@
 ## [NuGet FAQ](policies/nuget-faq.md)
 ## [治理](policies/governance.md)
 ## [生态系统](policies/ecosystem.md)
+## [数据请求](policies/Data-requests.md)
 ## [争议的解决](policies/dispute-resolution.md)
 ## [删除包](policies/deleting-packages.md)
 # 发行说明
