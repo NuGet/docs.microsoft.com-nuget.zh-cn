@@ -1,25 +1,16 @@
 ---
-title: 安装 NuGet 包的方式 | Microsoft Docs
+title: 安装 NuGet 包的方式
+description: 介绍将 NuGet 包安装到项目中的过程，包括磁盘上和适用的项目文件会发生的情况。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 02/12/2018
 ms.topic: overview
-ms.prod: nuget
-ms.technology: ''
-description: 介绍将 NuGet 包安装到项目中的过程，包括磁盘上和适用的项目文件会发生的情况。
-keywords: 安装 NuGet, NuGet 包使用, 安装 NuGet 包, NuGet 包引用
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: b8cce7bd6c1bd73eb018b8891ddd72b2f4432d55
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 028fb9710e808974348d9cca3c56103c087d5390
+ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="different-ways-to-install-a-nuget-package"></a>安装 NuGet 包的不同方式
 
@@ -40,33 +31,36 @@ ms.lasthandoff: 03/28/2018
 
 1. （除 `nuget.exe` 之外的所有工具）将包标识符和版本记录到项目文件或 `packages.config`中。
 
-1. 获取包：
-    - 检查包是否（通过标识符和版本号）已安装在 global-packages 文件夹中，如[管理全局包和缓存文件夹](managing-the-global-packages-and-cache-folders.md)中所述。
+2. 获取包：
+   - 检查包是否（通过标识符和版本号）已安装在 global-packages 文件夹中，如[管理全局包和缓存文件夹](managing-the-global-packages-and-cache-folders.md)中所述。
 
-    - 如果包不在 global-packages 文件夹中，请尝试从[配置文件](Configuring-NuGet-Behavior.md)中列出的源检索包。 对于在线源，请首先尝试从缓存中检索包，除非通过 `nuget.exe` 命令指定 `-NoCache` 或通过 `dotnet restore` 指定 `--no-cache`。 （Visual Studio 和 `dotnet add package` 始终使用缓存。）如果从缓存中使用包，“缓存”将出现在输出中。 缓存有 30 分钟的到期时间。
+   - 如果包不在 global-packages 文件夹中，请尝试从[配置文件](Configuring-NuGet-Behavior.md)中列出的源检索包。 对于在线源，请首先尝试从缓存中检索包，除非通过 `nuget.exe` 命令指定 `-NoCache` 或通过 `dotnet restore` 指定 `--no-cache`。 （Visual Studio 和 `dotnet add package` 始终使用缓存。）如果从缓存中使用包，“缓存”将出现在输出中。 缓存有 30 分钟的到期时间。
 
-    - 如果包不在缓存中，请尝试从配置中列出的源下载包。 如果下载包，则会在输出中出现“GET”和“OK”。
+   - 如果包不在缓存中，请尝试从配置中列出的源下载包。 如果下载包，则会在输出中出现“GET”和“OK”。
 
-    - 如果无法从任何源成功获取包，安装将失败，并显示诸如 [NU1103](../reference/errors-and-warnings.md#nu1103) 之类的错误。 注意，来自 `nuget.exe` 命令的错误仅显示最后检查的源，但意味着无法从任何源获取包。
+   - 如果无法从任何源成功获取包，安装将失败，并显示诸如 [NU1103](../reference/errors-and-warnings.md#nu1103) 之类的错误。 注意，来自 `nuget.exe` 命令的错误仅显示最后检查的源，但意味着无法从任何源获取包。
 
-    获取包时，NuGet 配置中的源顺序可能适用：
-      - 对于使用 PackageReference 格式的项目，NuGet 将首先检查源本地文件夹和网络共享，然后再检查 HTTP 源。
-      - 对于使用 `packages.config` 管理格式的项目，NuGet 会使用配置中的源顺序。 还原操作除外，这种情况下将忽略源排序，NuGet 会使用任何最先响应的源中的包。
-      - 一般情况下，NuGet 检查源的顺序不具有特别意义，因为具有特定标识符和版本号的任意给定包在找到的源方面完全相同。
+   获取包时，NuGet 配置中的源顺序可能适用：
 
-1. （除 `nuget.exe` 之外的所有工具）保存包副本和 http-cache 文件夹中的其他信息，如[管理全局包和缓存文件夹](managing-the-global-packages-and-cache-folders.md)中所述。
+   - 对于使用 PackageReference 格式的项目，NuGet 将首先检查源本地文件夹和网络共享，然后再检查 HTTP 源。
 
-1. 如下载，请将包安装到每个用户的 global-packages 文件夹中。 NuGet 创建每个包标识符的子文件夹，然后创建每个已安装包版本的子文件夹。
+   - 对于使用 `packages.config` 管理格式的项目，NuGet 会使用配置中的源顺序。 还原操作除外，这种情况下将忽略源排序，NuGet 会使用任何最先响应的源中的包。
 
-1. 更新其他项目文件和文件夹：
+   - 一般情况下，NuGet 检查源的顺序不具有特别意义，因为具有特定标识符和版本号的任意给定包在找到的源方面完全相同。
+
+3. （除 `nuget.exe` 之外的所有工具）保存包副本和 http-cache 文件夹中的其他信息，如[管理全局包和缓存文件夹](managing-the-global-packages-and-cache-folders.md)中所述。
+
+4. 如下载，请将包安装到每个用户的 global-packages 文件夹中。 NuGet 创建每个包标识符的子文件夹，然后创建每个已安装包版本的子文件夹。
+
+5. 更新其他项目文件和文件夹：
 
     - 对于使用 PackageReference 的项目，更新存储在 `obj/project.assets.json` 中的包依赖项关系图。 包内容本身不会复制到任何项目文件夹中。
     - 对于使用 `packages.config` 的项目，将展开包中与项目目标框架匹配的那些部分复制到项目的 `packages` 文件夹。 （在使用 `nuget install` 时，将复制整个展开包，因为 `nuget.exe` 不检查项目文件来标识目标框架。）
     - 如果包使用[源和配置文件转换](../create-packages/source-and-config-file-transformations.md)，则更新 `app.config` 和/或 `web.config`。
 
-1. 安装任何低级别的依赖项（如果项目中尚不存在）。 此过程可能会更新过程中的包版本，如[依赖项解析](../consume-packages/dependency-resolution.md)中所述。
+6. 安装任何低级别的依赖项（如果项目中尚不存在）。 此过程可能会更新过程中的包版本，如[依赖项解析](../consume-packages/dependency-resolution.md)中所述。
 
-1. （仅适用于 Visual Studio）如果可用，请在 Visual Studio 窗口中显示包的自述文件。
+7. （仅适用于 Visual Studio）如果可用，请在 Visual Studio 窗口中显示包的自述文件。
 
 ## <a name="related-articles"></a>相关文章
 

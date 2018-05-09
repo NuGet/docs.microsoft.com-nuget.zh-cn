@@ -1,22 +1,16 @@
 ---
-title: 如何管理 NuGet 中的全局包、缓存、临时文件夹 | Microsoft Docs
+title: 如何管理 NuGet 中的全局包、缓存、临时文件夹
+description: 如何管理计算机上存在的全局包安装文件夹、包缓存和临时文件夹，这些在安装、还原和更新包时将用到。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 03/19/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: 如何管理计算机上存在的全局包安装文件夹、包缓存和临时文件夹，这些在安装、还原和更新包时将用到。
-keywords: NuGet 全局包文件夹、NuGet 包缓存、包缓存、包安装文件夹、NuGet 缓存、管理缓存、本地 NuGet 缓存、全局 NuGet 缓存、NuGet 局部变量命令、清除缓存
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.openlocfilehash: e9f4383a3f1700b96e3d6fe9ea4c0a7c24daa45a
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.topic: conceptual
+ms.openlocfilehash: 354a8ec80e2ba20abe27746dec8c8aaae9b6c96c
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>管理全局包、缓存和临时文件夹
 
@@ -99,7 +93,7 @@ nuget locals all -clear
 
 目前在 Visual Studio 中打开的项目所使用的任何包都不会从 global-packages 文件夹中清除。
 
-在 Visual Studio 中，使用“工具”>“NuGet 包管理器”>“包管理器设置”菜单命令，然后选择“清除所有 NuGet 缓存”。 管理缓存目前不支持通过包管理器控制台提供。
+在 Visual Studio 2017 中，使用“工具”>“NuGet 包管理器”>“包管理器设置”菜单命令，然后选择“清除所有 NuGet 缓存”。 管理缓存目前不支持通过包管理器控制台提供。 在 Visual Studio 2015 中，则改用 CLI 命令。
 
 ![用于清除缓存的 NuGet 选项命令](media/options-clear-caches.png)
 

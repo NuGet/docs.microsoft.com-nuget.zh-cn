@@ -1,25 +1,16 @@
 ---
-title: 适用于 NuGet 的 project.json 文件引用 | Microsoft Docs
+title: 适用于 NuGet 的 project.json 文件引用
+description: 在某些项目类型中，project.json 维护项目中使用的 NuGet 包列表。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 07/27/2017
 ms.topic: reference
-ms.prod: nuget
-ms.technology: ''
-description: 在某些项目类型中，project.json 维护项目中使用的 NuGet 包列表。
-keywords: NuGet project.json, NuGet 包引用, NuGet 依赖项, project.lock.json
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 21542a219faa3d1fa0c32a838645d4471c5aa935
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.openlocfilehash: 52df5c6a4d5f1c0092a85c124903203da83a1821
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="projectjson-reference"></a>project.json 引用
 

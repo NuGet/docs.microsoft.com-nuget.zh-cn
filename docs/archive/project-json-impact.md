@@ -1,25 +1,16 @@
 ---
-title: project.json 对 NuGet 包作者的影响 | Microsoft Docs
+title: project.json 对 NuGet 包作者的影响
+description: 详细介绍 NuGet 3.x 中的 project.json 实现如何影响包作者，如不支持的功能、内容和包格式。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 01/18/2018
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: 详细介绍 NuGet 3.x 中的 project.json 实现如何影响包作者，如不支持的功能、内容和包格式。
-keywords: NuGet 和 project.json, project.json 影响, 包创作注意事项, project.json 功能
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 6e8af98504a2866106e84943989aeb91f2e9c1fb
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.topic: conceptual
+ms.openlocfilehash: 6163297075f741a4132afd748974498fa1600fbb
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="impact-of-projectjson-when-creating-packages"></a>创建包时 project.json 产生的影响
 

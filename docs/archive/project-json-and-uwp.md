@@ -1,25 +1,16 @@
 ---
-title: NuGet project.json 文件和 UWP 项目 | Microsoft Docs
+title: NuGet project.json 文件和 UWP 项目
+description: 介绍如何使用 project.json 文件来跟踪通用 Windows 平台 (UWP) 项目中的 NuGet 依赖项。
 author: kraigb
 ms.author: kraigb
-manager: ghogen
+manager: douge
 ms.date: 07/17/2017
-ms.topic: article
-ms.prod: nuget
-ms.technology: ''
-description: 介绍如何使用 project.json 文件来跟踪通用 Windows 平台 (UWP) 项目中的 NuGet 依赖项。
-keywords: NuGet 依赖项, NuGet 和 UWP, UWP 和 project.json, NuGet project.json 文件
-ms.reviewer:
-- karann-msft
-- unniravindranathan
-ms.workload:
-- dotnet
-- aspnet
-ms.openlocfilehash: 453a38456670db850d3d2845b23bd4ad36fc8fd2
-ms.sourcegitcommit: beb229893559824e8abd6ab16707fd5fe1c6ac26
+ms.topic: conceptual
+ms.openlocfilehash: 826aed65a69c553bedf661cb5a4f940735dfba2c
+ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="projectjson-and-uwp"></a>project.json 和 UWP
 
