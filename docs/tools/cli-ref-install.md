@@ -6,11 +6,11 @@ ms.author: kraigb
 manager: douge
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 615f2beca1eb288417f2345fcdf25e323942d300
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
-ms.translationtype: HT
+ms.openlocfilehash: 1c6ec1181f2f619eb8a4f2d87f7910f25b98e0f4
+ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="install-command-nuget-cli"></a>install 命令 (NuGet CLI)
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 04/26/2018
 
 `install`命令不会修改项目文件或`packages.config`; 在这种方式很类似于`restore`，因为它只将包添加到磁盘，但不会更改项目的依赖关系。
 
-若要添加依赖关系，请在 Visual Studio 中，添加通过程序包管理器 UI 或控制台项目，或者修改`packages.config`，然后运行或者`install`或`restore`。
+若要添加依赖关系，请在 Visual Studio 中，添加通过程序包管理器 UI 或控制台的包，或者修改`packages.config`，然后运行或者`install`或`restore`。
 
 ## <a name="usage"></a>用法
 
@@ -50,10 +50,10 @@ nuget install <packageID | configFilePath> [options]
 | 框架 | *（4.4 +)* 用于选择依赖关系的目标框架。 默认值为任何如果未指定。 |
 | 帮助 | 显示的帮助命令的信息。 |
 | NoCache | 防止 NuGet 使用缓存的包。 请参阅[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)。 |
-| 非交互式 | 取消显示提示用户输入或确认。 |
+| NonInteractive | 取消显示提示用户输入或确认。 |
 | OutputDirectory | 指定在其中安装包的文件夹。 如果未不指定任何文件夹，则使用当前文件夹。 |
 | PackageSaveMode | 指定要保存包安装完成后的文件类型： 之一`nuspec`， `nupkg`，或`nuspec;nupkg`。 |
-| 预发行版 | 允许要安装预发行程序包。 还原的包时，此标志不是必需`packages.config`。 |
+| PreRelease | 允许要安装预发行程序包。 还原的包时，此标志不是必需`packages.config`。 |
 | RequireConsent | 验证还原程序包启用了之前下载和安装包。 有关详细信息，请参阅[程序包还原](../consume-packages/package-restore.md)。 |
 | SolutionDirectory | 指定为其还原包解决方案的根文件夹。 |
 | 源 | 指定包源的列表 （作为 Url) 使用。 如果省略，则该命令使用在配置文件中提供的源，请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)。 |
