@@ -10,11 +10,11 @@ ms.reviewer:
 - skofman
 - anangaur
 - kraigb
-ms.openlocfilehash: e236d685a700d0f47480336cece8edfd44c28863
-ms.sourcegitcommit: 68c8a494a11c892ac671fec3170ba7be97fb044d
+ms.openlocfilehash: c5d3cf68ac6a96a6c14eb5e652bcf72698b6a8e8
+ms.sourcegitcommit: 8f0bb8bb9cb91d27d660963ed9b0f32642f420fe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="rate-limits"></a>速率限制
 
@@ -46,5 +46,5 @@ NuGet.org API 强制实施速率限制以防止滥用行为。 超过速率限�
 
 | API | 限制类型 | 限制值 | API 用例 | 
 |:---|:---|:---|:--- |
-**PUT** `/api/v2/package` | API 密钥 | 100 / 分钟 | 上载新 NuGet 包 （版本） 通过 v2 推送终结点 
-**删除** `/api/v2/package/{id}/{version}` | API 密钥 | 100 / 分钟 | 不列出通过 v2 终结点的 NuGet 包 （版本） 
+**PUT** `/api/v2/package` | API 密钥 | 250 / 小时 | 上载新 NuGet 包 （版本） 通过 v2 推送终结点 
+**删除** `/api/v2/package/{id}/{version}` | API 密钥 | 250 / 小时 | 不列出通过 v2 终结点的 NuGet 包 （版本） 
