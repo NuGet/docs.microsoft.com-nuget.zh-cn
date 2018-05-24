@@ -84,7 +84,7 @@
 ## [错误和警告](reference/errors-and-warnings.md)
 ## [ID 前缀保留](reference/id-prefix-reservation.md)
 ## [NuGet 客户端 SDK](reference/nuget-client-sdk.md)
-## [签名包引用](reference/signed-packages-reference.md)
+## [已签名的包](reference/signed-packages-reference.md)
 ## [nuget.org 上的组织](reference/organizations-on-nuget-org.md)
 ## 扩展性
 ### [适用于 Visual Studio 的 NuGet 凭据提供程序](reference/extensibility/nuget-credential-providers-for-visual-studio.md)
