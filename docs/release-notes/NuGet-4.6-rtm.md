@@ -6,22 +6,24 @@ ms.author: anangaur
 manager: unnir
 ms.date: 3/7/2018
 ms.topic: conceptual
-ms.openlocfilehash: d8fc374167e5c7f601c41887c4844854d0177ccb
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 11e604ad9a28ac2b22880a13ef9d8b41d8c09507
+ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/22/2018
 ---
 # <a name="nuget-46-rtm-release-notes"></a>NuGet 4.6 RTM 发行说明
 
 [Visual Studio 2017 15.6 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) 附带 [NuGet 4.6.0](https://dist.nuget.org/win-x86-commandline/v4.6.0/nuget.exe)。
 
 ## <a name="summary-whats-new-in-this-release"></a>摘要：此版本中的新增功能
-* 添加了对[给包签名](https://docs.microsoft.com/en-us/nuget/create-packages/sign-a-package)的支持。  
-* Visual Studio 2017 和 nuget.exe 现将在安装包、为[已签名包](https://docs.microsoft.com/en-us/nuget/reference/signed-packages-reference)还原包之前，验证包的完整性。
+
+* 添加了对[给包签名](../create-packages/sign-a-package.md)的支持。
+* Visual Studio 2017 和 nuget.exe 现将在安装包、为[已签名包](../reference/signed-packages-reference.md)还原包之前，验证包的完整性。
 * 改进了连续还原的性能。
 
 ## <a name="known-issues"></a>已知问题
+
 ### <a name="issues-with-net-standard-20-with-net-framework--nuget"></a>使用 .NET Framework 和 NuGet 的 .NET Standard 2.0 的问题 
 
 .NET Standard 及其工具旨在使面向 .NET Framework 4.6.1 的项目可使用面向 .NET Standard 2.0 或更早版本的 NuGet 包和项目。 [本文档](https://github.com/dotnet/standard/issues/481)总结了该方案相关问题、解决问题的计划以及可使用当前工具状态部署的变通方法。
@@ -29,11 +31,13 @@ ms.lasthandoff: 04/26/2018
 ## <a name="top-issues-fixed-in-this-release"></a>此版本中已修复的主要问题
 
 **性能修复**
+
 * 没有更改时，无法写入资产文件 - [#6491](https://github.com/NuGet/Home/issues/6491)
 * 当子项目的 TFM 与父项目的 TFM 不匹配时，还原会导致额外的 MSBuild 计算 - [#6311](https://github.com/NuGet/Home/issues/6311)
 * 通过优化依赖项关系图创建规范来提高 NoOp 还原性能 - [#6252](https://github.com/NuGet/Home/issues/6252)
 
 **Bug**
+
 * 推送到本地文件夹导致 nupkg 锁定 - [#6325](https://github.com/NuGet/Home/issues/6325)
 * NuGet 插件实现：多个问题 - [#6149](https://github.com/NuGet/Home/issues/6149)
 * UIHang - 从 VSSolutionManager 的 MEF 初始化中删除查询服务调用 - [#6110](https://github.com/NuGet/Home/issues/6110)
@@ -60,6 +64,5 @@ ms.lasthandoff: 04/26/2018
 * Nuget 添加在 CentOS 上挂起 - [#2708](https://github.com/NuGet/Home/issues/2708)
 * 使用 packagesavemode -nupkg 还原 json.net 失败 - [#2706](https://github.com/NuGet/Home/issues/2706)
 * 包管理器筛选器在 vs 输出窗口中不可用于还原命令 - [#2704](https://github.com/NuGet/Home/issues/2704)
-
 
 [此版本中所有已修复问题的列表](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.6")

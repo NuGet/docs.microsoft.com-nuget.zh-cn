@@ -6,11 +6,11 @@ ms.author: kraigb
 manager: douge
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 5a36b886c3de1943b99b10faff63f4e244166ceb
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: bc2c6d5e9933f2f6103363a2e69fbb9b47f80ecf
+ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/22/2018
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>在源代码管理系统中省略 NuGet 包
 
@@ -80,7 +80,7 @@ project.assets.json
 
 1. 如果使用的是 TFS 2010 或更早版本，请掩蔽工作区映射中的 `packages` 文件夹。
 
-1. 对于 TFS 2012 或更高版本或者 Visual Studio Team Services，请按照 [Add Files to the Server](https://www.visualstudio.com/en-us/docs/tfvc/add-files-server#tfignore)（将文件添加到服务器）中所述创建 `.tfignore` 文件。 在该文件中，包括以下内容以显式忽略对存储库级别上的 `\packages` 文件夹和其他几个中间文件的修改。 （可以使用具有尾随点的 `.tfignore.` 名称在 Windows 资源管理器中创建文件，但可能需要首先禁用“隐藏已知文件扩展名”选项。）：
+1. 对于 TFS 2012 或更高版本或者 Visual Studio Team Services，请按照 [Add Files to the Server](/vsts/tfvc/add-files-server.md?view=vsts#tfignore)（将文件添加到服务器）中所述创建 `.tfignore` 文件。 在该文件中，包括以下内容以显式忽略对存储库级别上的 `\packages` 文件夹和其他几个中间文件的修改。 （可以使用具有尾随点的 `.tfignore.` 名称在 Windows 资源管理器中创建文件，但可能需要首先禁用“隐藏已知文件扩展名”选项。）：
 
    ```cli
    # Ignore NuGet Packages
