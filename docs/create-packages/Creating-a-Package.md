@@ -6,11 +6,11 @@ ms.author: kraigb
 manager: douge
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: c1e3bfd1c7e80c7deb505ef732d73c2edf3e32f7
-ms.sourcegitcommit: 5fcd6d664749aa720359104ef7a66d38aeecadc2
+ms.openlocfilehash: 1657479e1a87f7022caa2fd991127b4ca702cdac
+ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="creating-nuget-packages"></a>创建 NuGet 包
 
@@ -157,7 +157,7 @@ nuget locals -list global-packages
 
 ### <a name="from-a-convention-based-working-directory"></a>来自基于约定的工作目录
 
-因为 NuGet 包仅仅是使用 `.nupkg` 扩展名重命名的 ZIP 文件，所以在文件系统上创建所需文件夹结构，然后从该结构直接创建 `.nuspec` 文件通常最简单。 然后，`nuget pack` 命令自动将所有文件添加到该文件夹结构（不包含以 `.` 开头的文件夹，从而在同一结构中保留专用文件）。
+因为 NuGet 包仅仅是使用 `.nupkg` 扩展名重命名的 ZIP 文件，所以在本地文件系统上创建所需文件夹结构，然后从该结构直接创建 `.nuspec` 文件通常最简单。 然后，`nuget pack` 命令自动将所有文件添加到该文件夹结构（不包含以 `.` 开头的文件夹，从而在同一结构中保留专用文件）。
 
 此方法的优势是无需在清单中指定需要包含在包中的文件（如本主题后面所述）。 可以轻松使得生成进程生成进入包中的确切文件夹结构，并且可以轻松包含不是项目一部分的其他文件：
 
@@ -361,12 +361,9 @@ nuget spec [<package-name>]
 包含 COM 互操作程序集的包必须包含合适的[目标文件](#including-msbuild-props-and-targets-in-a-package)，使正确的 `EmbedInteropTypes` 元数据使用 PackageReference 格式添加到项目。 默认情况下，使用 PackageReference 时，`EmbedInteropTypes` 元数据对所有程序集一直为 false，所以目标文件显式添加此元数据。 为了避免冲突，目标名称必须是唯一的；理想情况下，使用包名称和嵌入程序集的组合，使用此值替换下例中的 `{InteropAssemblyName}`。 （有关示例，另请参阅 [NuGet.Samples.Interop](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop)。）
 
 ```xml
-<Target Name="EmbeddingAssemblyNameFromPackageId" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
-  <PropertyGroup>
-    <_InteropAssemblyFileName>{InteropAssemblyName}</_InteropAssemblyFileName>
-  </PropertyGroup>
+<Target Name="Embedding**AssemblyName**From**PackageId**" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
   <ItemGroup>
-    <ReferencePath Condition=" '%(FileName)' == '$(_InteropAssemblyFileName)' AND '%(ReferencePath.NuGetPackageId)' == '$(MSBuildThisFileName)' ">
+    <ReferencePath Condition=" '%(FileName)' == '{InteropAssemblyName}' AND '%(ReferencePath.NuGetPackageId)' == '$(MSBuildThisFileName)' ">
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </ReferencePath>
   </ItemGroup>
@@ -381,7 +378,7 @@ nuget spec [<package-name>]
 
 ## <a name="running-nuget-pack-to-generate-the-nupkg-file"></a>运行 NuGet 包生成 .nupkg 文件
 
-使用程序集或基于约定的工作目录时，通过使用 `.nuspec` 文件运行 `nuget pack` 创建包，使用特定的文件名替换 `<manifest-name>`：
+使用程序集或基于约定的工作目录时，通过使用 `.nuspec` 文件运行 `nuget pack` 创建包，使用特定的文件名替换 `<project-name>`：
 
 ```cli
 nuget pack <project-name>.nuspec

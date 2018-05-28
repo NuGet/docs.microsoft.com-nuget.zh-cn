@@ -4,18 +4,18 @@ description: 详细说明如何将 NuGet 包发布到 nuget.org 或专用源，�
 author: kraigb
 ms.author: kraigb
 manager: douge
-ms.date: 03/19/2018
+ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 539ac9485e6062a0bdc3bb86dac0f028a2de7821
-ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
+ms.openlocfilehash: 806a64d2d7654e4c1bca89a13d70fd9983c12703
+ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/22/2018
 ---
 # <a name="publishing-packages"></a>发布包
 
-创建程序包并获得 `.nukpg` 文件后，即可轻松以公开或私密方式将其提供给其他开发人员：
+创建程序包并获得 `.nupkg` 文件后，即可轻松以公开或私密方式将其提供给其他开发人员：
 
 - 根据本文中的介绍，可通过 [nuget.org](https://www.nuget.org/packages/manage/upload) 将公共包全局提供给所有开发人员（需要 NuGet 4.1.0+）。
 - 通过以下方式可以仅向团队或组织提供专用包：在文件共享、专用 NuGet 服务器、[Visual Studio Team Services 包管理](https://www.visualstudio.com/docs/package/nuget/publish)或第三方存储库（如 myget、ProGet、Nexus 存储库和 Artifactory）上承载专用包。 有关其他详细信息，请参阅[承载包概述](../hosting-packages/overview.md)。
@@ -71,6 +71,13 @@ ms.lasthandoff: 04/28/2018
     ```cli
     nuget push YourPackage.nupkg -Source https://api.nuget.org/v3/index.json
     ```
+
+#### <a name="publish-signed-packages"></a>发布已签名的包
+
+若要提交已签名的包，必须首先[注册用于签名包的证书](../reference/Signed-Packages-Reference.md#register-certificate-on-nugetorg)。 
+
+> [!Warning]
+> nuget.org 会拒绝不满足[签名包要求](../reference/Signed-Packages-Reference.md#signature-requirements-on-nugetorg)的包。
 
 ### <a name="package-validation-and-indexing"></a>包验证和编制索引
 

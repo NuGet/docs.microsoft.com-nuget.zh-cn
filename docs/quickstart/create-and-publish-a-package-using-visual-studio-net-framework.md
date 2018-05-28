@@ -1,20 +1,23 @@
 ---
-title: 使用 Visual Studio 创建和发布 .NET Framework NuGet 包的介绍性指南
-description: 使用 Visual Studio 2017 创建和发布 .NET Framework NuGet 包的演练教程。
+title: 在 Windows 上使用 Visual Studio 创建和发布 .NET Framework 包
+description: 在 Windows 上使用 Visual Studio 2017 创建和发布 .NET Framework NuGet 包的演练教程。
 author: kraigb
 ms.author: kraigb
 manager: douge
-ms.date: 03/13/2018
+ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: 01760034a121b1ff6f227e006415779898c4cf6d
-ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
+ms.openlocfilehash: ba02b53c6ac0b4172b8611958775980ce401bf9b
+ms.sourcegitcommit: f0b31af805183cf3a98eabb504e16d9b05223cfe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/22/2018
 ---
-# <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework"></a>快速入门：使用 Visual Studio 创建和发布包 (.NET Framework)
+# <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>快速入门：使用 Visual Studio 创建和发布包（.NET Framework、Windows）
 
-若要从 .NET Framework 类库创建 NuGet 包，需要在 Visual Studio 中创建 DLL，然后使用 nuget.exe 命令行工具创建并发布包。
+若要从 .NET Framework 类库创建 NuGet 包，需要在 Windows 上的 Visual Studio 中创建 DLL，然后使用 nuget.exe 命令行工具创建并发布包。
+
+> [!Note]
+> 本快速入门教程仅适用于 Visual Studio 2017 for Windows。 Visual Studio for Mac 不包括此处所述的功能。 改为使用 [dotnet CLI 工具](create-and-publish-a-package-using-the-dotnet-cli.md)。
 
 ## <a name="prerequisites"></a>系统必备
 

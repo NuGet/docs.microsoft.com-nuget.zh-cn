@@ -6,11 +6,11 @@ ms.author: kraigb
 manager: douge
 ms.date: 09/27/2017
 ms.topic: conceptual
-ms.openlocfilehash: d1a64c61954381b7ab3a7ecc8aa5a812cfa14e8b
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 9bdcff8210c192a695a5645f28ef88087469ec52
+ms.sourcegitcommit: f0b31af805183cf3a98eabb504e16d9b05223cfe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/22/2018
 ---
 # <a name="supporting-multiple-net-framework-versions"></a>支持多个 .NET Framework 版本
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 04/26/2018
 
 有关支持的名称的完整列表，请参阅[目标框架引用](../reference/target-frameworks.md#supported-frameworks)。
 
-所具有的库版本必须特定于某框架，且不应直接放置在根 `lib` 文件夹中。 （此功能仅受 `packages.config` 支持。） 此操作会导致与任何目标框架兼容，并允许在任何位置上进行安装，很可能造成意外的运行时错误。 已弃用在根文件夹（如 `lib\abc.dll`）或子文件夹（如 `lib\abc\abc.dll`）中添加程序集的操作，且在使用 PackagesReference 格式时忽略了此操作。
+所具有的库版本必须特定于某框架，且不应直接放置在根 `lib` 文件夹中。 （此功能仅受 `packages.config` 支持。） 此操作会导致库与任何目标框架兼容，并允许在任何位置上进行安装，很可能造成意外的运行时错误。 已弃用在根文件夹（如 `lib\abc.dll`）或子文件夹（如 `lib\abc\abc.dll`）中添加程序集的操作，且在使用 PackagesReference 格式时忽略了此操作。
 
 例如，以下文件夹结构支持特定于框架的程序集的四种版本：
 
