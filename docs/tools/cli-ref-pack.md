@@ -1,18 +1,19 @@
 ---
 title: NuGet CLI 包命令
 description: Nuget.exe 包命令参考
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: a2468b099a822e69298ea78c80cfd1d5d5c09938
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 3140d56ac827d932c2323182ad040b8a4d14da5c
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818027"
 ---
-# <a name="pack-command-nuget-cli"></a>(Package Manager Console in Visual Studio)pack 命令 (NuGet CLI)
+# <a name="pack-command-nuget-cli"></a>包 (NuGet CLI) 命令
 
 **适用于：** ，创建包&bullet;**受支持的版本：** 2.7 +
 

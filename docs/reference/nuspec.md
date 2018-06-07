@@ -1,17 +1,18 @@
 ---
 title: nuget.nuspec 文件引用
 description: .nuspec 文件包含生成包时使用的，并向包使用者提供信息的包元数据。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: c0717418e1efcdcaf407bec6ab50f43e5396421e
-ms.sourcegitcommit: 8f0bb8bb9cb91d27d660963ed9b0f32642f420fe
+ms.openlocfilehash: 2ff83538f9f1cf3bd4ed616ec8f5f1aef3ffd9d6
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818537"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -135,7 +136,7 @@ nuget pack MyProject.csproj
 
 除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
 
-| 标记 | 值来源 | 值
+| 标记 | 值来源 | “值”
 | --- | --- | ---
 | **$id$** | 项目文件 | 从项目文件的 AssemblyName （标题） |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |

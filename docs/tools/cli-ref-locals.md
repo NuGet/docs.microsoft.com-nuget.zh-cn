@@ -1,16 +1,17 @@
 ---
 title: NuGet CLI 局部变量命令
 description: Nuget.exe 局部变量命令参考
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 03/19/2018
 ms.topic: reference
-ms.openlocfilehash: ac07dc306bc23c2fedd33c5627e8d34a6098387c
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 90e8c85e7a3e0e9520933e2ddd6dd84447475f2b
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818196"
 ---
 # <a name="locals-command-nuget-cli"></a>locals 命令 (NuGet CLI)
 
@@ -35,7 +36,7 @@ nuget locals <folder> [options]
 | ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助命令的信息。 |
 | 列表 | 列出指定的文件夹的位置或一起使用时的所有文件夹的位置*所有*。 |
-| 非交互式 | 取消显示提示用户输入或确认。 |
+| NonInteractive | 取消显示提示用户输入或确认。 |
 | 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)

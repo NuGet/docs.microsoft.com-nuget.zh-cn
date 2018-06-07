@@ -1,16 +1,17 @@
 ---
 title: NuGet CLI 帮助命令
 description: Nuget.exe help 命令的引用
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: dbfc803e24c824d30e128d6e86cfa3c43660668f
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: d7112209a0a2a267343c3458ebacaf6b744786a9
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818251"
 ---
 # <a name="help-or--command-nuget-cli"></a>help or ? 命令 (NuGet CLI)
 
@@ -39,7 +40,7 @@ nuget ? [command] [options]
 | ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助帮助命令本身的信息。 |
 | Markdown | 打印 markdown 格式一起使用时的详细的帮助`-All`。 否则将忽略。 |
-| 非交互式 | 取消显示提示用户输入或确认。 |
+| NonInteractive | 取消显示提示用户输入或确认。 |
 | 详细级别 | 指定的输出中显示的详细信息量：*正常*， *quiet*，*详细*。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)

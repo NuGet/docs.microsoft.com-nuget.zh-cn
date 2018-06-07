@@ -1,16 +1,17 @@
 ---
 title: NuGet Get 项目 PowerShell 参考
 description: Visual Studio 中的 NuGet 包管理器控制台中 GetProject PowerShell 命令参考。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: a7b66cbf36095e31b5929596300018239749cb15
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: afdf9f762bbd34531f9d9093238a2fed27e3f4d3
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817751"
 ---
 # <a name="get-project-package-manager-console-in-visual-studio"></a>Get-Project （Visual Studio 中的程序包管理器控制台）
 
@@ -28,7 +29,7 @@ Get-Project [[-Name] <string>] [-All] [<CommonParameters>]
 
 | 参数 | 描述 |
 | --- | --- |
-| 名称 | 指定的项目以显示，默认为程序包管理器控制台中选定的默认项目。 -名称开关是可选本身。 |
+| name | 指定的项目以显示，默认为程序包管理器控制台中选定的默认项目。 -名称开关是可选本身。 |
 | 全部 | 显示解决方案; 中的每个项目的信息项目的顺序是不确定的。 |
 
 任何这些参数接受管道输入或通配符字符。

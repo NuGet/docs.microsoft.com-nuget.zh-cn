@@ -1,9 +1,9 @@
 ---
 title: NuGet 错误和警告参考
 description: 针对警告和错误各种 NuGet 操作过程中从 NuGet 发出的完整参考。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
@@ -44,11 +44,12 @@ f1_keywords:
 - NU3008
 - NU3018
 - NU3028
-ms.openlocfilehash: 748c2746a61886617e2eefe3e6c4a2e2a5b9d4d3
-ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
+ms.openlocfilehash: 368a9554c5caf92b709f9b29e16b8a7cdb264eec
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818511"
 ---
 # <a name="errors-and-warnings"></a>错误和警告
 
@@ -173,7 +174,7 @@ ms.lasthandoff: 05/22/2018
 | --- | --- |
 | **问题** | 无法解析包之间的依赖关系约束。 |
 | **示例消息** | *NuGet.Versioning 检测到的版本冲突。若要解决此问题的项目中直接引用包。<br/>NuGet.Packaging 3.5.0-> （= 3.5.0） NuGet.Versioning<br/> NuGet.Configuration 4.0.0-> 的 NuGet.Versioning （= 4.0.0）* |
-| **解决方案** | 依赖项与上的约束的确切版本的包不允许其他包以根据需要增大版本号。 添加具有所需的确切版本对直接 （在项目文件中） 项目的引用。 |
+| **解决方案** | 依赖项与上的约束的确切版本的包不允许其他包以根据需要增大版本号。 添加具有所需的确切版本直接 （在项目文件中） 的包引用。 |
 
 <a name="nu1108"></a>
 

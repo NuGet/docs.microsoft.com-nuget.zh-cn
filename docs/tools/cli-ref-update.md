@@ -1,16 +1,17 @@
 ---
 title: NuGet CLI 更新命令
 description: Nuget.exe 更新命令参考
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: e6964d92436ce1bac9e6af85f6dae75fcf40378d
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 39e269b10a0cf144d5971d2af9f82a606e0b6904
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817702"
 ---
 # <a name="update-command-nuget-cli"></a>update 命令 (NuGet CLI)
 
@@ -43,7 +44,7 @@ nuget update <configPath> [options]
 | Id | 指定的包 Id，以更新的列表。 |
 | MSBuildPath | *（4.0 +)* 指定 MSBuild 使用执行命令，优先于的路径`-MSBuildVersion`。 |
 | MSBuildVersion | *（3.2 +)* 指定要用于此命令的 MSBuild 的版本。 支持的值为 4、 12、 14、 15。 默认情况下，选择你的路径中的 MSBuild，否则，它默认为最高的已安装版本的 MSBuild。 |
-| 非交互式 | 取消显示提示用户输入或确认。 |
+| NonInteractive | 取消显示提示用户输入或确认。 |
 | 预发行版 | 允许更新到的预发布版本。 如果更新已安装的预发行包，则不需要此标志。 |
 | RepositoryPath | 指定包的安装位置的本地文件夹。 |
 | 安全 | 指定仅更新在相同的主版本号和次版本中可用的最高版本的已安装的程序包将安装。 |

@@ -1,16 +1,17 @@
 ---
 title: NuGet CLI 镜像命令
 description: Nuget.exe 镜像命令参考
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 5ba13196d385abf42a5af2faa3fe6f0e80fb59d8
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 4cec854f05fcd207bb15a50ea4ebdc201fdb3ac6
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818147"
 ---
 # <a name="mirror-command-nuget-cli"></a>mirror 命令 (NuGet CLI)
 

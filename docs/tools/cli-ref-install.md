@@ -1,16 +1,17 @@
 ---
 title: NuGet CLI 安装命令
 description: Nuget.exe 安装命令的引用
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 1c6ec1181f2f619eb8a4f2d87f7910f25b98e0f4
-ms.sourcegitcommit: 00c4c809c69c16fcf4d81012eb53ea22f0691d0b
+ms.openlocfilehash: 8aaf4c2563aa802900a102848fc33fc8708a135d
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817884"
 ---
 # <a name="install-command-nuget-cli"></a>install 命令 (NuGet CLI)
 
@@ -53,7 +54,7 @@ nuget install <packageID | configFilePath> [options]
 | NonInteractive | 取消显示提示用户输入或确认。 |
 | OutputDirectory | 指定在其中安装包的文件夹。 如果未不指定任何文件夹，则使用当前文件夹。 |
 | PackageSaveMode | 指定要保存包安装完成后的文件类型： 之一`nuspec`， `nupkg`，或`nuspec;nupkg`。 |
-| PreRelease | 允许要安装预发行程序包。 还原的包时，此标志不是必需`packages.config`。 |
+| 预发行版 | 允许要安装预发行程序包。 还原的包时，此标志不是必需`packages.config`。 |
 | RequireConsent | 验证还原程序包启用了之前下载和安装包。 有关详细信息，请参阅[程序包还原](../consume-packages/package-restore.md)。 |
 | SolutionDirectory | 指定为其还原包解决方案的根文件夹。 |
 | 源 | 指定包源的列表 （作为 Url) 使用。 如果省略，则该命令使用在配置文件中提供的源，请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)。 |

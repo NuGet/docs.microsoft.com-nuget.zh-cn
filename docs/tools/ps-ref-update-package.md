@@ -1,16 +1,17 @@
 ---
 title: NuGet 更新包 PowerShell 参考
 description: 在 Visual Studio 中的 NuGet 包管理器控制台中的更新包 PowerShell 命令参考。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 621e59633117a29c58fe643860ee7e2b40a4fbe2
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: aa039f3ffcc0a7323178dae846733559c0f689b5
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817094"
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>Update-Package （Visual Studio 中的程序包管理器控制台）
 
