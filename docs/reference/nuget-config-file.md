@@ -1,58 +1,59 @@
 ---
 title: nuget.config 文件引用
 description: NuGet.Config 文件引用，包括配置、bindingRedirects、packageRestore、解决方案和 packageSource 节。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 10/25/2017
 ms.topic: reference
-ms.openlocfilehash: e57d17c5bf393a05b8915b9a1a7af0b659a04716
-ms.sourcegitcommit: 055248d790051774c892b220eca12015babbd668
+ms.openlocfilehash: 3d6741b2d724b967e76ba65547e84adcd461a521
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818394"
 ---
-# <a name="nugetconfig-reference"></a><span data-ttu-id="ba755-103">nuget.config 引用</span><span class="sxs-lookup"><span data-stu-id="ba755-103">nuget.config reference</span></span>
+# <a name="nugetconfig-reference"></a><span data-ttu-id="89774-103">nuget.config 引用</span><span class="sxs-lookup"><span data-stu-id="89774-103">nuget.config reference</span></span>
 
-<span data-ttu-id="ba755-104">NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)中所述。</span><span class="sxs-lookup"><span data-stu-id="ba755-104">NuGet behavior is controlled by settings in different `NuGet.Config` files as described in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).</span></span>
+<span data-ttu-id="89774-104">NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)中所述。</span><span class="sxs-lookup"><span data-stu-id="89774-104">NuGet behavior is controlled by settings in different `NuGet.Config` files as described in [Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md).</span></span>
 
-<span data-ttu-id="ba755-105">`nuget.config` 是包含顶级 `<configuration>` 节点的 XML 文件，而该节点包含本主题中所述的节元素。</span><span class="sxs-lookup"><span data-stu-id="ba755-105">`nuget.config` is an XML file containing a top-level `<configuration>` node, which then contains the section elements described in this topic.</span></span> <span data-ttu-id="ba755-106">每个节包含零个或多个具有 `key` 和 `value` 属性的 `<add>` 元素 。</span><span class="sxs-lookup"><span data-stu-id="ba755-106">Each section contains zero or more `<add>` elements with `key` and `value` attributes.</span></span> <span data-ttu-id="ba755-107">请参阅[示例配置文件](#example-config-file)。</span><span class="sxs-lookup"><span data-stu-id="ba755-107">See the [examples config file](#example-config-file).</span></span> <span data-ttu-id="ba755-108">设置名称不区分大小写，并且值可以使用[环境变量](#using-environment-variables)。</span><span class="sxs-lookup"><span data-stu-id="ba755-108">Setting names are case-insensitive, and values can use [environment variables](#using-environment-variables).</span></span>
+<span data-ttu-id="89774-105">`nuget.config` 是包含顶级 `<configuration>` 节点的 XML 文件，而该节点包含本主题中所述的节元素。</span><span class="sxs-lookup"><span data-stu-id="89774-105">`nuget.config` is an XML file containing a top-level `<configuration>` node, which then contains the section elements described in this topic.</span></span> <span data-ttu-id="89774-106">每个节包含零个或多个具有 `key` 和 `value` 属性的 `<add>` 元素 。</span><span class="sxs-lookup"><span data-stu-id="89774-106">Each section contains zero or more `<add>` elements with `key` and `value` attributes.</span></span> <span data-ttu-id="89774-107">请参阅[示例配置文件](#example-config-file)。</span><span class="sxs-lookup"><span data-stu-id="89774-107">See the [examples config file](#example-config-file).</span></span> <span data-ttu-id="89774-108">设置名称不区分大小写，并且值可以使用[环境变量](#using-environment-variables)。</span><span class="sxs-lookup"><span data-stu-id="89774-108">Setting names are case-insensitive, and values can use [environment variables](#using-environment-variables).</span></span>
 
-<span data-ttu-id="ba755-109">本主题内容：</span><span class="sxs-lookup"><span data-stu-id="ba755-109">In this topic:</span></span>
+<span data-ttu-id="89774-109">本主题内容：</span><span class="sxs-lookup"><span data-stu-id="89774-109">In this topic:</span></span>
 
-- [<span data-ttu-id="ba755-110">配置节</span><span class="sxs-lookup"><span data-stu-id="ba755-110">config section</span></span>](#config-section)
-- [<span data-ttu-id="ba755-111">bindingRedirects 节</span><span class="sxs-lookup"><span data-stu-id="ba755-111">bindingRedirects section</span></span>](#bindingredirects-section)
-- [<span data-ttu-id="ba755-112">packageRestore 节</span><span class="sxs-lookup"><span data-stu-id="ba755-112">packageRestore section</span></span>](#packagerestore-section)
-- [<span data-ttu-id="ba755-113">解决方案节</span><span class="sxs-lookup"><span data-stu-id="ba755-113">solution section</span></span>](#solution-section)
-- <span data-ttu-id="ba755-114">[包源节](#package-source-sections)：</span><span class="sxs-lookup"><span data-stu-id="ba755-114">[Package source sections](#package-source-sections):</span></span>
-  - [<span data-ttu-id="ba755-115">packageSources</span><span class="sxs-lookup"><span data-stu-id="ba755-115">packageSources</span></span>](#packagesources)
-  - [<span data-ttu-id="ba755-116">packageSourceCredentials</span><span class="sxs-lookup"><span data-stu-id="ba755-116">packageSourceCredentials</span></span>](#packagesourcecredentials)
-  - [<span data-ttu-id="ba755-117">apikeys</span><span class="sxs-lookup"><span data-stu-id="ba755-117">apikeys</span></span>](#apikeys)
-  - [<span data-ttu-id="ba755-118">disabledPackageSources</span><span class="sxs-lookup"><span data-stu-id="ba755-118">disabledPackageSources</span></span>](#disabledpackagesources)
-  - [<span data-ttu-id="ba755-119">activePackageSource</span><span class="sxs-lookup"><span data-stu-id="ba755-119">activePackageSource</span></span>](#activepackagesource)
-- [<span data-ttu-id="ba755-120">使用环境变量</span><span class="sxs-lookup"><span data-stu-id="ba755-120">Using environment variables</span></span>](#using-environment-variables)
-- [<span data-ttu-id="ba755-121">示例配置文件</span><span class="sxs-lookup"><span data-stu-id="ba755-121">Example config file</span></span>](#example-config-file)
+- [<span data-ttu-id="89774-110">配置节</span><span class="sxs-lookup"><span data-stu-id="89774-110">config section</span></span>](#config-section)
+- [<span data-ttu-id="89774-111">bindingRedirects 节</span><span class="sxs-lookup"><span data-stu-id="89774-111">bindingRedirects section</span></span>](#bindingredirects-section)
+- [<span data-ttu-id="89774-112">packageRestore 节</span><span class="sxs-lookup"><span data-stu-id="89774-112">packageRestore section</span></span>](#packagerestore-section)
+- [<span data-ttu-id="89774-113">解决方案节</span><span class="sxs-lookup"><span data-stu-id="89774-113">solution section</span></span>](#solution-section)
+- <span data-ttu-id="89774-114">[包源节](#package-source-sections)：</span><span class="sxs-lookup"><span data-stu-id="89774-114">[Package source sections](#package-source-sections):</span></span>
+  - [<span data-ttu-id="89774-115">packageSources</span><span class="sxs-lookup"><span data-stu-id="89774-115">packageSources</span></span>](#packagesources)
+  - [<span data-ttu-id="89774-116">packageSourceCredentials</span><span class="sxs-lookup"><span data-stu-id="89774-116">packageSourceCredentials</span></span>](#packagesourcecredentials)
+  - [<span data-ttu-id="89774-117">apikeys</span><span class="sxs-lookup"><span data-stu-id="89774-117">apikeys</span></span>](#apikeys)
+  - [<span data-ttu-id="89774-118">disabledPackageSources</span><span class="sxs-lookup"><span data-stu-id="89774-118">disabledPackageSources</span></span>](#disabledpackagesources)
+  - [<span data-ttu-id="89774-119">activePackageSource</span><span class="sxs-lookup"><span data-stu-id="89774-119">activePackageSource</span></span>](#activepackagesource)
+- [<span data-ttu-id="89774-120">使用环境变量</span><span class="sxs-lookup"><span data-stu-id="89774-120">Using environment variables</span></span>](#using-environment-variables)
+- [<span data-ttu-id="89774-121">示例配置文件</span><span class="sxs-lookup"><span data-stu-id="89774-121">Example config file</span></span>](#example-config-file)
 
 <a name="dependencyVersion"></a>
 <a name="globalPackagesFolder"></a>
 <a name="repositoryPath"></a>
 <a name="proxy-settings"></a>
 
-## <a name="config-section"></a><span data-ttu-id="ba755-122">配置节</span><span class="sxs-lookup"><span data-stu-id="ba755-122">config section</span></span>
+## <a name="config-section"></a><span data-ttu-id="89774-122">配置节</span><span class="sxs-lookup"><span data-stu-id="89774-122">config section</span></span>
 
-<span data-ttu-id="ba755-123">包含杂项配置设置，可使用 [`nuget config` 命令](../tools/cli-ref-config.md)设置。</span><span class="sxs-lookup"><span data-stu-id="ba755-123">Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/cli-ref-config.md).</span></span>
+<span data-ttu-id="89774-123">包含杂项配置设置，可使用 [`nuget config` 命令](../tools/cli-ref-config.md)设置。</span><span class="sxs-lookup"><span data-stu-id="89774-123">Contains miscellaneous configuration settings, which can be set using the [`nuget config` command](../tools/cli-ref-config.md).</span></span>
 
-<span data-ttu-id="ba755-124">`dependencyVersion` 和`repositoryPath`仅适用于使用的项目`packages.config`。</span><span class="sxs-lookup"><span data-stu-id="ba755-124">`dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`.</span></span> <span data-ttu-id="ba755-125">`globalPackagesFolder` 仅适用于使用 PackageReference 格式的项目。</span><span class="sxs-lookup"><span data-stu-id="ba755-125">`globalPackagesFolder` applies only to projects using the PackageReference format.</span></span>
+<span data-ttu-id="89774-124">`dependencyVersion` 和`repositoryPath`仅适用于使用的项目`packages.config`。</span><span class="sxs-lookup"><span data-stu-id="89774-124">`dependencyVersion` and `repositoryPath` apply only to projects using `packages.config`.</span></span> <span data-ttu-id="89774-125">`globalPackagesFolder` 仅适用于使用 PackageReference 格式的项目。</span><span class="sxs-lookup"><span data-stu-id="89774-125">`globalPackagesFolder` applies only to projects using the PackageReference format.</span></span>
 
-| <span data-ttu-id="ba755-126">键</span><span class="sxs-lookup"><span data-stu-id="ba755-126">Key</span></span> | <span data-ttu-id="ba755-127">值</span><span class="sxs-lookup"><span data-stu-id="ba755-127">Value</span></span> |
+| <span data-ttu-id="89774-126">键</span><span class="sxs-lookup"><span data-stu-id="89774-126">Key</span></span> | <span data-ttu-id="89774-127">“值”</span><span class="sxs-lookup"><span data-stu-id="89774-127">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="ba755-128">dependencyVersion（仅限于 `packages.config`）</span><span class="sxs-lookup"><span data-stu-id="ba755-128">dependencyVersion (`packages.config` only)</span></span> | <span data-ttu-id="ba755-129">包安装、还原和更新的默认 `DependencyVersion` 值（未直接指定 `-DependencyVersion` 开关时）。</span><span class="sxs-lookup"><span data-stu-id="ba755-129">The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly.</span></span> <span data-ttu-id="ba755-130">NuGet 包管理器 UI 也使用此值。</span><span class="sxs-lookup"><span data-stu-id="ba755-130">This value is also used by the NuGet Package Manager UI.</span></span> <span data-ttu-id="ba755-131">值为 `Lowest`、`HighestPatch`、`HighestMinor`、`Highest`。</span><span class="sxs-lookup"><span data-stu-id="ba755-131">Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`.</span></span> |
-| <span data-ttu-id="ba755-132">globalPackagesFolder （仅限使用 PackageReference 项目）</span><span class="sxs-lookup"><span data-stu-id="ba755-132">globalPackagesFolder (projects using PackageReference only)</span></span> | <span data-ttu-id="ba755-133">默认全局包文件夹的位置。</span><span class="sxs-lookup"><span data-stu-id="ba755-133">The location of the default global packages folder.</span></span> <span data-ttu-id="ba755-134">默认值为 `%userprofile%\.nuget\packages` (Windows) 或 `~/.nuget/packages` (Mac/Linux)。</span><span class="sxs-lookup"><span data-stu-id="ba755-134">The default is `%userprofile%\.nuget\packages` (Windows) or `~/.nuget/packages` (Mac/Linux).</span></span> <span data-ttu-id="ba755-135">相对路径可在项目特定的 `nuget.config` 文件中使用。</span><span class="sxs-lookup"><span data-stu-id="ba755-135">A relative path can be used in project-specific `nuget.config` files.</span></span> <span data-ttu-id="ba755-136">此设置被重写通过 NUGET_PACKAGES 环境变量将优先。</span><span class="sxs-lookup"><span data-stu-id="ba755-136">This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence.</span></span> |
-| <span data-ttu-id="ba755-137">repositoryPath（仅限于 `packages.config`）</span><span class="sxs-lookup"><span data-stu-id="ba755-137">repositoryPath (`packages.config` only)</span></span> | <span data-ttu-id="ba755-138">安装 NuGet 包的位置，而非默认的 `$(Solutiondir)/packages` 文件夹。</span><span class="sxs-lookup"><span data-stu-id="ba755-138">The location in which to install NuGet packages instead of the default `$(Solutiondir)/packages` folder.</span></span> <span data-ttu-id="ba755-139">相对路径可在项目特定的 `nuget.config` 文件中使用。</span><span class="sxs-lookup"><span data-stu-id="ba755-139">A relative path can be used in project-specific `nuget.config` files.</span></span> <span data-ttu-id="ba755-140">此设置被重写通过 NUGET_PACKAGES 环境变量将优先。</span><span class="sxs-lookup"><span data-stu-id="ba755-140">This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence.</span></span> |
-| <span data-ttu-id="ba755-141">defaultPushSource</span><span class="sxs-lookup"><span data-stu-id="ba755-141">defaultPushSource</span></span> | <span data-ttu-id="ba755-142">如果操作未找到任何其他包源，则会标识应用作默认值的包源 URL 或路径。</span><span class="sxs-lookup"><span data-stu-id="ba755-142">Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation.</span></span> |
-| <span data-ttu-id="ba755-143">http_proxy http_proxy.user http_proxy.password no_proxy</span><span class="sxs-lookup"><span data-stu-id="ba755-143">http_proxy http_proxy.user http_proxy.password no_proxy</span></span> | <span data-ttu-id="ba755-144">连接到包源时要使用的代理设置；`http_proxy` 应为 `http://<username>:<password>@<domain>` 格式。</span><span class="sxs-lookup"><span data-stu-id="ba755-144">Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://<username>:<password>@<domain>`.</span></span> <span data-ttu-id="ba755-145">密码已加密，且不能手动添加。</span><span class="sxs-lookup"><span data-stu-id="ba755-145">Passwords are encrypted and cannot be added manually.</span></span> <span data-ttu-id="ba755-146">对于 `no_proxy`，该值是绕过代理服务器的域的列表（以逗号分隔）。</span><span class="sxs-lookup"><span data-stu-id="ba755-146">For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server.</span></span> <span data-ttu-id="ba755-147">可将 http_proxy 和 no_proxy 环境变量交替用于这些值。</span><span class="sxs-lookup"><span data-stu-id="ba755-147">You can alternately use the http_proxy and no_proxy environment variables for those values.</span></span> <span data-ttu-id="ba755-148">有关其他详细信息，请参阅 [NuGet 代理设置](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com)。</span><span class="sxs-lookup"><span data-stu-id="ba755-148">For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com).</span></span> |
+| <span data-ttu-id="89774-128">dependencyVersion（仅限于 `packages.config`）</span><span class="sxs-lookup"><span data-stu-id="89774-128">dependencyVersion (`packages.config` only)</span></span> | <span data-ttu-id="89774-129">包安装、还原和更新的默认 `DependencyVersion` 值（未直接指定 `-DependencyVersion` 开关时）。</span><span class="sxs-lookup"><span data-stu-id="89774-129">The default `DependencyVersion` value for package install, restore, and update, when the `-DependencyVersion` switch is not specified directly.</span></span> <span data-ttu-id="89774-130">NuGet 包管理器 UI 也使用此值。</span><span class="sxs-lookup"><span data-stu-id="89774-130">This value is also used by the NuGet Package Manager UI.</span></span> <span data-ttu-id="89774-131">值为 `Lowest`、`HighestPatch`、`HighestMinor`、`Highest`。</span><span class="sxs-lookup"><span data-stu-id="89774-131">Values are `Lowest`, `HighestPatch`, `HighestMinor`, `Highest`.</span></span> |
+| <span data-ttu-id="89774-132">globalPackagesFolder （仅限使用 PackageReference 项目）</span><span class="sxs-lookup"><span data-stu-id="89774-132">globalPackagesFolder (projects using PackageReference only)</span></span> | <span data-ttu-id="89774-133">默认全局包文件夹的位置。</span><span class="sxs-lookup"><span data-stu-id="89774-133">The location of the default global packages folder.</span></span> <span data-ttu-id="89774-134">默认值为 `%userprofile%\.nuget\packages` (Windows) 或 `~/.nuget/packages` (Mac/Linux)。</span><span class="sxs-lookup"><span data-stu-id="89774-134">The default is `%userprofile%\.nuget\packages` (Windows) or `~/.nuget/packages` (Mac/Linux).</span></span> <span data-ttu-id="89774-135">相对路径可在项目特定的 `nuget.config` 文件中使用。</span><span class="sxs-lookup"><span data-stu-id="89774-135">A relative path can be used in project-specific `nuget.config` files.</span></span> <span data-ttu-id="89774-136">此设置被重写通过 NUGET_PACKAGES 环境变量将优先。</span><span class="sxs-lookup"><span data-stu-id="89774-136">This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence.</span></span> |
+| <span data-ttu-id="89774-137">repositoryPath（仅限于 `packages.config`）</span><span class="sxs-lookup"><span data-stu-id="89774-137">repositoryPath (`packages.config` only)</span></span> | <span data-ttu-id="89774-138">安装 NuGet 包的位置，而非默认的 `$(Solutiondir)/packages` 文件夹。</span><span class="sxs-lookup"><span data-stu-id="89774-138">The location in which to install NuGet packages instead of the default `$(Solutiondir)/packages` folder.</span></span> <span data-ttu-id="89774-139">相对路径可在项目特定的 `nuget.config` 文件中使用。</span><span class="sxs-lookup"><span data-stu-id="89774-139">A relative path can be used in project-specific `nuget.config` files.</span></span> <span data-ttu-id="89774-140">此设置被重写通过 NUGET_PACKAGES 环境变量将优先。</span><span class="sxs-lookup"><span data-stu-id="89774-140">This setting is overridden by the NUGET_PACKAGES environment variable, which takes precedence.</span></span> |
+| <span data-ttu-id="89774-141">defaultPushSource</span><span class="sxs-lookup"><span data-stu-id="89774-141">defaultPushSource</span></span> | <span data-ttu-id="89774-142">如果操作未找到任何其他包源，则会标识应用作默认值的包源 URL 或路径。</span><span class="sxs-lookup"><span data-stu-id="89774-142">Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation.</span></span> |
+| <span data-ttu-id="89774-143">http_proxy http_proxy.user http_proxy.password no_proxy</span><span class="sxs-lookup"><span data-stu-id="89774-143">http_proxy http_proxy.user http_proxy.password no_proxy</span></span> | <span data-ttu-id="89774-144">连接到包源时要使用的代理设置；`http_proxy` 应为 `http://<username>:<password>@<domain>` 格式。</span><span class="sxs-lookup"><span data-stu-id="89774-144">Proxy settings to use when connecting to package sources; `http_proxy` should be in the format `http://<username>:<password>@<domain>`.</span></span> <span data-ttu-id="89774-145">密码已加密，且不能手动添加。</span><span class="sxs-lookup"><span data-stu-id="89774-145">Passwords are encrypted and cannot be added manually.</span></span> <span data-ttu-id="89774-146">对于 `no_proxy`，该值是绕过代理服务器的域的列表（以逗号分隔）。</span><span class="sxs-lookup"><span data-stu-id="89774-146">For `no_proxy`, the value is a comma-separated list of domains the bypass the proxy server.</span></span> <span data-ttu-id="89774-147">可将 http_proxy 和 no_proxy 环境变量交替用于这些值。</span><span class="sxs-lookup"><span data-stu-id="89774-147">You can alternately use the http_proxy and no_proxy environment variables for those values.</span></span> <span data-ttu-id="89774-148">有关其他详细信息，请参阅 [NuGet 代理设置](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com)。</span><span class="sxs-lookup"><span data-stu-id="89774-148">For additional details, see [NuGet proxy settings](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com).</span></span> |
 
-<span data-ttu-id="ba755-149">**示例**：</span><span class="sxs-lookup"><span data-stu-id="ba755-149">**Example**:</span></span>
+<span data-ttu-id="89774-149">**示例**：</span><span class="sxs-lookup"><span data-stu-id="89774-149">**Example**:</span></span>
 
 ```xml
 <config>
@@ -63,15 +64,15 @@ ms.lasthandoff: 05/14/2018
 </config>
 ```
 
-## <a name="bindingredirects-section"></a><span data-ttu-id="ba755-150">bindingRedirects 节</span><span class="sxs-lookup"><span data-stu-id="ba755-150">bindingRedirects section</span></span>
+## <a name="bindingredirects-section"></a><span data-ttu-id="89774-150">bindingRedirects 节</span><span class="sxs-lookup"><span data-stu-id="89774-150">bindingRedirects section</span></span>
 
-<span data-ttu-id="ba755-151">在安装包时，配置 NuGet 是否执行自动绑定重定向。</span><span class="sxs-lookup"><span data-stu-id="ba755-151">Configures whether NuGet does automatic binding redirects when a package is installed.</span></span>
+<span data-ttu-id="89774-151">在安装包时，配置 NuGet 是否执行自动绑定重定向。</span><span class="sxs-lookup"><span data-stu-id="89774-151">Configures whether NuGet does automatic binding redirects when a package is installed.</span></span>
 
-| <span data-ttu-id="ba755-152">键</span><span class="sxs-lookup"><span data-stu-id="ba755-152">Key</span></span> | <span data-ttu-id="ba755-153">值</span><span class="sxs-lookup"><span data-stu-id="ba755-153">Value</span></span> |
+| <span data-ttu-id="89774-152">键</span><span class="sxs-lookup"><span data-stu-id="89774-152">Key</span></span> | <span data-ttu-id="89774-153">“值”</span><span class="sxs-lookup"><span data-stu-id="89774-153">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="ba755-154">skip</span><span class="sxs-lookup"><span data-stu-id="ba755-154">skip</span></span> | <span data-ttu-id="ba755-155">指示是否跳过自动绑定重定向的布尔。</span><span class="sxs-lookup"><span data-stu-id="ba755-155">A Boolean indicating whether to skip automatic binding redirects.</span></span> <span data-ttu-id="ba755-156">默认值为 false。</span><span class="sxs-lookup"><span data-stu-id="ba755-156">The default is false.</span></span> |
+| <span data-ttu-id="89774-154">skip</span><span class="sxs-lookup"><span data-stu-id="89774-154">skip</span></span> | <span data-ttu-id="89774-155">指示是否跳过自动绑定重定向的布尔。</span><span class="sxs-lookup"><span data-stu-id="89774-155">A Boolean indicating whether to skip automatic binding redirects.</span></span> <span data-ttu-id="89774-156">默认值为 false。</span><span class="sxs-lookup"><span data-stu-id="89774-156">The default is false.</span></span> |
 
-<span data-ttu-id="ba755-157">**示例**：</span><span class="sxs-lookup"><span data-stu-id="ba755-157">**Example**:</span></span>
+<span data-ttu-id="89774-157">**示例**：</span><span class="sxs-lookup"><span data-stu-id="89774-157">**Example**:</span></span>
 
 ```xml
 <bindingRedirects>
@@ -79,16 +80,16 @@ ms.lasthandoff: 05/14/2018
 </bindingRedirects>
 ```
 
-## <a name="packagerestore-section"></a><span data-ttu-id="ba755-158">packageRestore 节</span><span class="sxs-lookup"><span data-stu-id="ba755-158">packageRestore section</span></span>
+## <a name="packagerestore-section"></a><span data-ttu-id="89774-158">packageRestore 节</span><span class="sxs-lookup"><span data-stu-id="89774-158">packageRestore section</span></span>
 
-<span data-ttu-id="ba755-159">在生成期间控制包还原。</span><span class="sxs-lookup"><span data-stu-id="ba755-159">Controls package restore during builds.</span></span>
+<span data-ttu-id="89774-159">在生成期间控制包还原。</span><span class="sxs-lookup"><span data-stu-id="89774-159">Controls package restore during builds.</span></span>
 
-| <span data-ttu-id="ba755-160">键</span><span class="sxs-lookup"><span data-stu-id="ba755-160">Key</span></span> | <span data-ttu-id="ba755-161">值</span><span class="sxs-lookup"><span data-stu-id="ba755-161">Value</span></span> |
+| <span data-ttu-id="89774-160">键</span><span class="sxs-lookup"><span data-stu-id="89774-160">Key</span></span> | <span data-ttu-id="89774-161">“值”</span><span class="sxs-lookup"><span data-stu-id="89774-161">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="ba755-162">enabled</span><span class="sxs-lookup"><span data-stu-id="ba755-162">enabled</span></span> | <span data-ttu-id="ba755-163">指示 NuGet 是否可执行自动还原的布尔。</span><span class="sxs-lookup"><span data-stu-id="ba755-163">A Boolean indicating whether NuGet can perform automatic restore.</span></span> <span data-ttu-id="ba755-164">还可以使用 `True` 的值设置 `EnableNuGetPackageRestore` 环境变量，而不是在配置文件中设置此密钥。</span><span class="sxs-lookup"><span data-stu-id="ba755-164">You can also set the `EnableNuGetPackageRestore` environment variable with a value of `True` instead of setting this key in the config file.</span></span> |
-| <span data-ttu-id="ba755-165">自动</span><span class="sxs-lookup"><span data-stu-id="ba755-165">automatic</span></span> | <span data-ttu-id="ba755-166">指示 NuGet 是否应在生成期间检查缺少的包。</span><span class="sxs-lookup"><span data-stu-id="ba755-166">A Boolean indicating whether NuGet should check for missing packages during a build.</span></span> |
+| <span data-ttu-id="89774-162">enabled</span><span class="sxs-lookup"><span data-stu-id="89774-162">enabled</span></span> | <span data-ttu-id="89774-163">指示 NuGet 是否可执行自动还原的布尔。</span><span class="sxs-lookup"><span data-stu-id="89774-163">A Boolean indicating whether NuGet can perform automatic restore.</span></span> <span data-ttu-id="89774-164">还可以使用 `True` 的值设置 `EnableNuGetPackageRestore` 环境变量，而不是在配置文件中设置此密钥。</span><span class="sxs-lookup"><span data-stu-id="89774-164">You can also set the `EnableNuGetPackageRestore` environment variable with a value of `True` instead of setting this key in the config file.</span></span> |
+| <span data-ttu-id="89774-165">自动</span><span class="sxs-lookup"><span data-stu-id="89774-165">automatic</span></span> | <span data-ttu-id="89774-166">指示 NuGet 是否应在生成期间检查缺少的包。</span><span class="sxs-lookup"><span data-stu-id="89774-166">A Boolean indicating whether NuGet should check for missing packages during a build.</span></span> |
 
-<span data-ttu-id="ba755-167">**示例**：</span><span class="sxs-lookup"><span data-stu-id="ba755-167">**Example**:</span></span>
+<span data-ttu-id="89774-167">**示例**：</span><span class="sxs-lookup"><span data-stu-id="89774-167">**Example**:</span></span>
 
 ```xml
 <packageRestore>
@@ -97,15 +98,15 @@ ms.lasthandoff: 05/14/2018
 </packageRestore>
 ```
 
-## <a name="solution-section"></a><span data-ttu-id="ba755-168">解决方案节</span><span class="sxs-lookup"><span data-stu-id="ba755-168">solution section</span></span>
+## <a name="solution-section"></a><span data-ttu-id="89774-168">解决方案节</span><span class="sxs-lookup"><span data-stu-id="89774-168">solution section</span></span>
 
-<span data-ttu-id="ba755-169">控制解决方案的 `packages` 文件夹是否包括在源代码管理中。</span><span class="sxs-lookup"><span data-stu-id="ba755-169">Controls whether the `packages` folder of a solution is included in source control.</span></span> <span data-ttu-id="ba755-170">此节仅适用于解决方案文件夹中的 `nuget.config` 文件。</span><span class="sxs-lookup"><span data-stu-id="ba755-170">This section works only in `nuget.config` files in a solution folder.</span></span>
+<span data-ttu-id="89774-169">控制解决方案的 `packages` 文件夹是否包括在源代码管理中。</span><span class="sxs-lookup"><span data-stu-id="89774-169">Controls whether the `packages` folder of a solution is included in source control.</span></span> <span data-ttu-id="89774-170">此节仅适用于解决方案文件夹中的 `nuget.config` 文件。</span><span class="sxs-lookup"><span data-stu-id="89774-170">This section works only in `nuget.config` files in a solution folder.</span></span>
 
-| <span data-ttu-id="ba755-171">键</span><span class="sxs-lookup"><span data-stu-id="ba755-171">Key</span></span> | <span data-ttu-id="ba755-172">值</span><span class="sxs-lookup"><span data-stu-id="ba755-172">Value</span></span> |
+| <span data-ttu-id="89774-171">键</span><span class="sxs-lookup"><span data-stu-id="89774-171">Key</span></span> | <span data-ttu-id="89774-172">“值”</span><span class="sxs-lookup"><span data-stu-id="89774-172">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="ba755-173">disableSourceControlIntegration</span><span class="sxs-lookup"><span data-stu-id="ba755-173">disableSourceControlIntegration</span></span> | <span data-ttu-id="ba755-174">指示在使用源代码管理时是否忽略包文件夹的布尔。</span><span class="sxs-lookup"><span data-stu-id="ba755-174">A Boolean indicating whether to ignore the packages folder when working with source control.</span></span> <span data-ttu-id="ba755-175">默认值为 False。</span><span class="sxs-lookup"><span data-stu-id="ba755-175">The default value is false.</span></span> |
+| <span data-ttu-id="89774-173">disableSourceControlIntegration</span><span class="sxs-lookup"><span data-stu-id="89774-173">disableSourceControlIntegration</span></span> | <span data-ttu-id="89774-174">指示在使用源代码管理时是否忽略包文件夹的布尔。</span><span class="sxs-lookup"><span data-stu-id="89774-174">A Boolean indicating whether to ignore the packages folder when working with source control.</span></span> <span data-ttu-id="89774-175">默认值为 False。</span><span class="sxs-lookup"><span data-stu-id="89774-175">The default value is false.</span></span> |
 
-<span data-ttu-id="ba755-176">**示例**：</span><span class="sxs-lookup"><span data-stu-id="ba755-176">**Example**:</span></span>
+<span data-ttu-id="89774-176">**示例**：</span><span class="sxs-lookup"><span data-stu-id="89774-176">**Example**:</span></span>
 
 ```xml
 <solution>
@@ -113,23 +114,23 @@ ms.lasthandoff: 05/14/2018
 </solution>
 ```
 
-## <a name="package-source-sections"></a><span data-ttu-id="ba755-177">包源节</span><span class="sxs-lookup"><span data-stu-id="ba755-177">Package source sections</span></span>
+## <a name="package-source-sections"></a><span data-ttu-id="89774-177">包源节</span><span class="sxs-lookup"><span data-stu-id="89774-177">Package source sections</span></span>
 
-<span data-ttu-id="ba755-178">在进行安装、还原和更新操作期间，`packageSources`、`packageSourceCredentials`、`apikeys`、`activePackageSource` 和 `disabledPackageSources` 全部一起协作来配置 NuGet 与包存储库协作的方式。</span><span class="sxs-lookup"><span data-stu-id="ba755-178">The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, and `disabledPackageSources` all work together to configure how NuGet works with package repositories during install, restore, and update operations.</span></span>
+<span data-ttu-id="89774-178">在进行安装、还原和更新操作期间，`packageSources`、`packageSourceCredentials`、`apikeys`、`activePackageSource` 和 `disabledPackageSources` 全部一起协作来配置 NuGet 与包存储库协作的方式。</span><span class="sxs-lookup"><span data-stu-id="89774-178">The `packageSources`, `packageSourceCredentials`, `apikeys`, `activePackageSource`, and `disabledPackageSources` all work together to configure how NuGet works with package repositories during install, restore, and update operations.</span></span>
 
-<span data-ttu-id="ba755-179">[`nuget sources` 命令](../tools/cli-ref-sources.md)通常用于管理这些设置，但 `apikeys` 使用 [`nuget setapikey` 命令](../tools/cli-ref-setapikey.md)进行管理。</span><span class="sxs-lookup"><span data-stu-id="ba755-179">The [`nuget sources` command](../tools/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/cli-ref-setapikey.md).</span></span>
+<span data-ttu-id="89774-179">[`nuget sources` 命令](../tools/cli-ref-sources.md)通常用于管理这些设置，但 `apikeys` 使用 [`nuget setapikey` 命令](../tools/cli-ref-setapikey.md)进行管理。</span><span class="sxs-lookup"><span data-stu-id="89774-179">The [`nuget sources` command](../tools/cli-ref-sources.md) is generally used to manage these settings, except for `apikeys` which is managed using the [`nuget setapikey` command](../tools/cli-ref-setapikey.md).</span></span>
 
-<span data-ttu-id="ba755-180">请注意，nuget.org 的源 URL 是 `https://api.nuget.org/v3/index.json`。</span><span class="sxs-lookup"><span data-stu-id="ba755-180">Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.</span></span>
+<span data-ttu-id="89774-180">请注意，nuget.org 的源 URL 是 `https://api.nuget.org/v3/index.json`。</span><span class="sxs-lookup"><span data-stu-id="89774-180">Note that the source URL for nuget.org is `https://api.nuget.org/v3/index.json`.</span></span>
 
-### <a name="packagesources"></a><span data-ttu-id="ba755-181">packageSources</span><span class="sxs-lookup"><span data-stu-id="ba755-181">packageSources</span></span>
+### <a name="packagesources"></a><span data-ttu-id="89774-181">packageSources</span><span class="sxs-lookup"><span data-stu-id="89774-181">packageSources</span></span>
 
-<span data-ttu-id="ba755-182">列出所有已知包源。</span><span class="sxs-lookup"><span data-stu-id="ba755-182">Lists all known package sources.</span></span> <span data-ttu-id="ba755-183">在还原操作期间和与使用 PackageReference 格式任何项目，将忽略顺序。</span><span class="sxs-lookup"><span data-stu-id="ba755-183">The order is ignored during restore operations and with any project using the PackageReference format.</span></span> <span data-ttu-id="ba755-184">NuGet 遵循的顺序的源安装和使用的项目与更新操作`packages.config`。</span><span class="sxs-lookup"><span data-stu-id="ba755-184">NuGet respects the order of sources for install and update operations with projects using `packages.config`.</span></span>
+<span data-ttu-id="89774-182">列出所有已知包源。</span><span class="sxs-lookup"><span data-stu-id="89774-182">Lists all known package sources.</span></span> <span data-ttu-id="89774-183">在还原操作期间和与使用 PackageReference 格式任何项目，将忽略顺序。</span><span class="sxs-lookup"><span data-stu-id="89774-183">The order is ignored during restore operations and with any project using the PackageReference format.</span></span> <span data-ttu-id="89774-184">NuGet 遵循的顺序的源安装和使用的项目与更新操作`packages.config`。</span><span class="sxs-lookup"><span data-stu-id="89774-184">NuGet respects the order of sources for install and update operations with projects using `packages.config`.</span></span>
 
-| <span data-ttu-id="ba755-185">键</span><span class="sxs-lookup"><span data-stu-id="ba755-185">Key</span></span> | <span data-ttu-id="ba755-186">值</span><span class="sxs-lookup"><span data-stu-id="ba755-186">Value</span></span> |
+| <span data-ttu-id="89774-185">键</span><span class="sxs-lookup"><span data-stu-id="89774-185">Key</span></span> | <span data-ttu-id="89774-186">“值”</span><span class="sxs-lookup"><span data-stu-id="89774-186">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="ba755-187">（要分配给包源的名称）</span><span class="sxs-lookup"><span data-stu-id="ba755-187">(name to assign to the package source)</span></span> | <span data-ttu-id="ba755-188">包源的路径或 URL。</span><span class="sxs-lookup"><span data-stu-id="ba755-188">The path or URL of the package source.</span></span> |
+| <span data-ttu-id="89774-187">（要分配给包源的名称）</span><span class="sxs-lookup"><span data-stu-id="89774-187">(name to assign to the package source)</span></span> | <span data-ttu-id="89774-188">包源的路径或 URL。</span><span class="sxs-lookup"><span data-stu-id="89774-188">The path or URL of the package source.</span></span> |
 
-<span data-ttu-id="ba755-189">**示例**：</span><span class="sxs-lookup"><span data-stu-id="ba755-189">**Example**:</span></span>
+<span data-ttu-id="89774-189">**示例**：</span><span class="sxs-lookup"><span data-stu-id="89774-189">**Example**:</span></span>
 
 ```xml
 <packageSources>
@@ -139,19 +140,19 @@ ms.lasthandoff: 05/14/2018
 </packageSources>
 ```
 
-### <a name="packagesourcecredentials"></a><span data-ttu-id="ba755-190">packageSourceCredentials</span><span class="sxs-lookup"><span data-stu-id="ba755-190">packageSourceCredentials</span></span>
+### <a name="packagesourcecredentials"></a><span data-ttu-id="89774-190">packageSourceCredentials</span><span class="sxs-lookup"><span data-stu-id="89774-190">packageSourceCredentials</span></span>
 
-<span data-ttu-id="ba755-191">存储源的用户名和密码，通常通过 `nuget sources` 使用 `-username` 和 `-password` 开关指定。</span><span class="sxs-lookup"><span data-stu-id="ba755-191">Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`.</span></span> <span data-ttu-id="ba755-192">默认情况下密码会进行加密，除非还使用了 `-storepasswordincleartext` 选项。</span><span class="sxs-lookup"><span data-stu-id="ba755-192">Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.</span></span>
+<span data-ttu-id="89774-191">存储源的用户名和密码，通常通过 `nuget sources` 使用 `-username` 和 `-password` 开关指定。</span><span class="sxs-lookup"><span data-stu-id="89774-191">Stores usernames and passwords for sources, typically specified with the `-username` and `-password` switches with `nuget sources`.</span></span> <span data-ttu-id="89774-192">默认情况下密码会进行加密，除非还使用了 `-storepasswordincleartext` 选项。</span><span class="sxs-lookup"><span data-stu-id="89774-192">Passwords are encrypted by default unless the `-storepasswordincleartext` option is also used.</span></span>
 
-| <span data-ttu-id="ba755-193">键</span><span class="sxs-lookup"><span data-stu-id="ba755-193">Key</span></span> | <span data-ttu-id="ba755-194">值</span><span class="sxs-lookup"><span data-stu-id="ba755-194">Value</span></span> |
+| <span data-ttu-id="89774-193">键</span><span class="sxs-lookup"><span data-stu-id="89774-193">Key</span></span> | <span data-ttu-id="89774-194">“值”</span><span class="sxs-lookup"><span data-stu-id="89774-194">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="ba755-195">username</span><span class="sxs-lookup"><span data-stu-id="ba755-195">username</span></span> | <span data-ttu-id="ba755-196">纯文本形式的源用户名。</span><span class="sxs-lookup"><span data-stu-id="ba755-196">The user name for the source in plain text.</span></span> |
-| <span data-ttu-id="ba755-197">密码</span><span class="sxs-lookup"><span data-stu-id="ba755-197">password</span></span> | <span data-ttu-id="ba755-198">源的加密密码。</span><span class="sxs-lookup"><span data-stu-id="ba755-198">The encrypted password for the source.</span></span> |
-| <span data-ttu-id="ba755-199">cleartextpassword</span><span class="sxs-lookup"><span data-stu-id="ba755-199">cleartextpassword</span></span> | <span data-ttu-id="ba755-200">源的未加密密码。</span><span class="sxs-lookup"><span data-stu-id="ba755-200">The unencrypted password for the source.</span></span> |
+| <span data-ttu-id="89774-195">username</span><span class="sxs-lookup"><span data-stu-id="89774-195">username</span></span> | <span data-ttu-id="89774-196">纯文本形式的源用户名。</span><span class="sxs-lookup"><span data-stu-id="89774-196">The user name for the source in plain text.</span></span> |
+| <span data-ttu-id="89774-197">密码</span><span class="sxs-lookup"><span data-stu-id="89774-197">password</span></span> | <span data-ttu-id="89774-198">源的加密密码。</span><span class="sxs-lookup"><span data-stu-id="89774-198">The encrypted password for the source.</span></span> |
+| <span data-ttu-id="89774-199">cleartextpassword</span><span class="sxs-lookup"><span data-stu-id="89774-199">cleartextpassword</span></span> | <span data-ttu-id="89774-200">源的未加密密码。</span><span class="sxs-lookup"><span data-stu-id="89774-200">The unencrypted password for the source.</span></span> |
 
-<span data-ttu-id="ba755-201">**示例：**</span><span class="sxs-lookup"><span data-stu-id="ba755-201">**Example:**</span></span>
+<span data-ttu-id="89774-201">**示例：**</span><span class="sxs-lookup"><span data-stu-id="89774-201">**Example:**</span></span>
 
-<span data-ttu-id="ba755-202">在配置文件中，`<packageSourceCredentials>` 元素包含每个适用源名称的子节点（名称中的空格被替换为 `_x0020_`）。</span><span class="sxs-lookup"><span data-stu-id="ba755-202">In the config file, the `<packageSourceCredentials>` element contains child nodes for each applicable source name (spaces in the name are replaced with `_x0020_`).</span></span> <span data-ttu-id="ba755-203">也就是说，对于名为“Contoso”和“测试源”的源，使用加密密码时，配置文件包含以下内容：</span><span class="sxs-lookup"><span data-stu-id="ba755-203">That is, for sources named "Contoso" and "Test Source", the config file contains the following when using encrypted passwords:</span></span>
+<span data-ttu-id="89774-202">在配置文件中，`<packageSourceCredentials>` 元素包含每个适用源名称的子节点（名称中的空格被替换为 `_x0020_`）。</span><span class="sxs-lookup"><span data-stu-id="89774-202">In the config file, the `<packageSourceCredentials>` element contains child nodes for each applicable source name (spaces in the name are replaced with `_x0020_`).</span></span> <span data-ttu-id="89774-203">也就是说，对于名为“Contoso”和“测试源”的源，使用加密密码时，配置文件包含以下内容：</span><span class="sxs-lookup"><span data-stu-id="89774-203">That is, for sources named "Contoso" and "Test Source", the config file contains the following when using encrypted passwords:</span></span>
 
 ```xml
 <packageSourceCredentials>
@@ -166,7 +167,7 @@ ms.lasthandoff: 05/14/2018
 </packageSourceCredentials>
 ```
 
-<span data-ttu-id="ba755-204">使用未加密密码时：</span><span class="sxs-lookup"><span data-stu-id="ba755-204">When using unencrypted passwords:</span></span>
+<span data-ttu-id="89774-204">使用未加密密码时：</span><span class="sxs-lookup"><span data-stu-id="89774-204">When using unencrypted passwords:</span></span>
 
 ```xml
 <packageSourceCredentials>
@@ -181,15 +182,15 @@ ms.lasthandoff: 05/14/2018
 </packageSourceCredentials>
 ```
 
-### <a name="apikeys"></a><span data-ttu-id="ba755-205">apikeys</span><span class="sxs-lookup"><span data-stu-id="ba755-205">apikeys</span></span>
+### <a name="apikeys"></a><span data-ttu-id="89774-205">apikeys</span><span class="sxs-lookup"><span data-stu-id="89774-205">apikeys</span></span>
 
-<span data-ttu-id="ba755-206">存储使用 API 密钥身份验证的源的密钥，如使用 [`nuget setapikey` 命令](../tools/cli-ref-setapikey.md) 设置。</span><span class="sxs-lookup"><span data-stu-id="ba755-206">Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../tools/cli-ref-setapikey.md).</span></span>
+<span data-ttu-id="89774-206">存储使用 API 密钥身份验证的源的密钥，如使用 [`nuget setapikey` 命令](../tools/cli-ref-setapikey.md) 设置。</span><span class="sxs-lookup"><span data-stu-id="89774-206">Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](../tools/cli-ref-setapikey.md).</span></span>
 
-| <span data-ttu-id="ba755-207">键</span><span class="sxs-lookup"><span data-stu-id="ba755-207">Key</span></span> | <span data-ttu-id="ba755-208">值</span><span class="sxs-lookup"><span data-stu-id="ba755-208">Value</span></span> |
+| <span data-ttu-id="89774-207">键</span><span class="sxs-lookup"><span data-stu-id="89774-207">Key</span></span> | <span data-ttu-id="89774-208">“值”</span><span class="sxs-lookup"><span data-stu-id="89774-208">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="ba755-209">（源 URL）</span><span class="sxs-lookup"><span data-stu-id="ba755-209">(source URL)</span></span> | <span data-ttu-id="ba755-210">加密的 API 密钥。</span><span class="sxs-lookup"><span data-stu-id="ba755-210">The encrypted API key.</span></span> |
+| <span data-ttu-id="89774-209">（源 URL）</span><span class="sxs-lookup"><span data-stu-id="89774-209">(source URL)</span></span> | <span data-ttu-id="89774-210">加密的 API 密钥。</span><span class="sxs-lookup"><span data-stu-id="89774-210">The encrypted API key.</span></span> |
 
-<span data-ttu-id="ba755-211">**示例**：</span><span class="sxs-lookup"><span data-stu-id="ba755-211">**Example**:</span></span>
+<span data-ttu-id="89774-211">**示例**：</span><span class="sxs-lookup"><span data-stu-id="89774-211">**Example**:</span></span>
 
 ```xml
 <apikeys>
@@ -197,15 +198,15 @@ ms.lasthandoff: 05/14/2018
 </apikeys>
 ```
 
-### <a name="disabledpackagesources"></a><span data-ttu-id="ba755-212">disabledPackageSources</span><span class="sxs-lookup"><span data-stu-id="ba755-212">disabledPackageSources</span></span>
+### <a name="disabledpackagesources"></a><span data-ttu-id="89774-212">disabledPackageSources</span><span class="sxs-lookup"><span data-stu-id="89774-212">disabledPackageSources</span></span>
 
-<span data-ttu-id="ba755-213">标识当前已禁用的源。</span><span class="sxs-lookup"><span data-stu-id="ba755-213">Identified currently disabled sources.</span></span> <span data-ttu-id="ba755-214">可能为空。</span><span class="sxs-lookup"><span data-stu-id="ba755-214">May be empty.</span></span>
+<span data-ttu-id="89774-213">标识当前已禁用的源。</span><span class="sxs-lookup"><span data-stu-id="89774-213">Identified currently disabled sources.</span></span> <span data-ttu-id="89774-214">可能为空。</span><span class="sxs-lookup"><span data-stu-id="89774-214">May be empty.</span></span>
 
-| <span data-ttu-id="ba755-215">键</span><span class="sxs-lookup"><span data-stu-id="ba755-215">Key</span></span> | <span data-ttu-id="ba755-216">值</span><span class="sxs-lookup"><span data-stu-id="ba755-216">Value</span></span> |
+| <span data-ttu-id="89774-215">键</span><span class="sxs-lookup"><span data-stu-id="89774-215">Key</span></span> | <span data-ttu-id="89774-216">“值”</span><span class="sxs-lookup"><span data-stu-id="89774-216">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="ba755-217">（源名称）</span><span class="sxs-lookup"><span data-stu-id="ba755-217">(name of source)</span></span> | <span data-ttu-id="ba755-218">指示源是否禁用的布尔。</span><span class="sxs-lookup"><span data-stu-id="ba755-218">A Boolean indicating whether the source is disabled.</span></span> |
+| <span data-ttu-id="89774-217">（源名称）</span><span class="sxs-lookup"><span data-stu-id="89774-217">(name of source)</span></span> | <span data-ttu-id="89774-218">指示源是否禁用的布尔。</span><span class="sxs-lookup"><span data-stu-id="89774-218">A Boolean indicating whether the source is disabled.</span></span> |
 
-<span data-ttu-id="ba755-219">**示例：**</span><span class="sxs-lookup"><span data-stu-id="ba755-219">**Example:**</span></span>
+<span data-ttu-id="89774-219">**示例：**</span><span class="sxs-lookup"><span data-stu-id="89774-219">**Example:**</span></span>
 
 ```xml
 <disabledPackageSources>
@@ -216,17 +217,17 @@ ms.lasthandoff: 05/14/2018
 <disabledPackageSources />
 ```
 
-### <a name="activepackagesource"></a><span data-ttu-id="ba755-220">activePackageSource</span><span class="sxs-lookup"><span data-stu-id="ba755-220">activePackageSource</span></span>
+### <a name="activepackagesource"></a><span data-ttu-id="89774-220">activePackageSource</span><span class="sxs-lookup"><span data-stu-id="89774-220">activePackageSource</span></span>
 
-<span data-ttu-id="ba755-221">*（仅限于 2.x；3.x+ 中已弃用）*</span><span class="sxs-lookup"><span data-stu-id="ba755-221">*(2.x only; deprecated in 3.x+)*</span></span>
+<span data-ttu-id="89774-221">*（仅限于 2.x；3.x+ 中已弃用）*</span><span class="sxs-lookup"><span data-stu-id="89774-221">*(2.x only; deprecated in 3.x+)*</span></span>
 
-<span data-ttu-id="ba755-222">标识到当前活动的源或指示所有源的聚合。</span><span class="sxs-lookup"><span data-stu-id="ba755-222">Identifies to the currently active source or indicates the aggregate of all sources.</span></span>
+<span data-ttu-id="89774-222">标识到当前活动的源或指示所有源的聚合。</span><span class="sxs-lookup"><span data-stu-id="89774-222">Identifies to the currently active source or indicates the aggregate of all sources.</span></span>
 
-| <span data-ttu-id="ba755-223">键</span><span class="sxs-lookup"><span data-stu-id="ba755-223">Key</span></span> | <span data-ttu-id="ba755-224">值</span><span class="sxs-lookup"><span data-stu-id="ba755-224">Value</span></span> |
+| <span data-ttu-id="89774-223">键</span><span class="sxs-lookup"><span data-stu-id="89774-223">Key</span></span> | <span data-ttu-id="89774-224">“值”</span><span class="sxs-lookup"><span data-stu-id="89774-224">Value</span></span> |
 | --- | --- |
-| <span data-ttu-id="ba755-225">（源名称）或 `All`</span><span class="sxs-lookup"><span data-stu-id="ba755-225">(name of source) or `All`</span></span> | <span data-ttu-id="ba755-226">如果密钥是源的名称，则值为源路径或 URL。</span><span class="sxs-lookup"><span data-stu-id="ba755-226">If key is the name of a source, the value is the source path or URL.</span></span> <span data-ttu-id="ba755-227">如果为 `All`，值应为 `(Aggregate source)`，从而组合其他未禁用的所有包源。</span><span class="sxs-lookup"><span data-stu-id="ba755-227">If `All`, value should be `(Aggregate source)` to combine all package sources that are not otherwise disabled.</span></span> |
+| <span data-ttu-id="89774-225">（源名称）或 `All`</span><span class="sxs-lookup"><span data-stu-id="89774-225">(name of source) or `All`</span></span> | <span data-ttu-id="89774-226">如果密钥是源的名称，则值为源路径或 URL。</span><span class="sxs-lookup"><span data-stu-id="89774-226">If key is the name of a source, the value is the source path or URL.</span></span> <span data-ttu-id="89774-227">如果为 `All`，值应为 `(Aggregate source)`，从而组合其他未禁用的所有包源。</span><span class="sxs-lookup"><span data-stu-id="89774-227">If `All`, value should be `(Aggregate source)` to combine all package sources that are not otherwise disabled.</span></span> |
 
-<span data-ttu-id="ba755-228">**示例**：</span><span class="sxs-lookup"><span data-stu-id="ba755-228">**Example**:</span></span>
+<span data-ttu-id="89774-228">**示例**：</span><span class="sxs-lookup"><span data-stu-id="89774-228">**Example**:</span></span>
 
 ```xml
 <activePackageSource>
@@ -238,19 +239,19 @@ ms.lasthandoff: 05/14/2018
 </activePackageSource>
 ```
 
-## <a name="using-environment-variables"></a><span data-ttu-id="ba755-229">使用环境变量</span><span class="sxs-lookup"><span data-stu-id="ba755-229">Using environment variables</span></span>
+## <a name="using-environment-variables"></a><span data-ttu-id="89774-229">使用环境变量</span><span class="sxs-lookup"><span data-stu-id="89774-229">Using environment variables</span></span>
 
-<span data-ttu-id="ba755-230">可以在 `nuget.config` 值中使用环境变量 (NuGet 3.4 +) 在运行时应用设置。</span><span class="sxs-lookup"><span data-stu-id="ba755-230">You can use environment variables in `nuget.config` values (NuGet 3.4+) to apply settings at run time.</span></span>
+<span data-ttu-id="89774-230">可以在 `nuget.config` 值中使用环境变量 (NuGet 3.4 +) 在运行时应用设置。</span><span class="sxs-lookup"><span data-stu-id="89774-230">You can use environment variables in `nuget.config` values (NuGet 3.4+) to apply settings at run time.</span></span>
 
-<span data-ttu-id="ba755-231">例如，如果 Windows 上的 `HOME` 环境变量设置为 `c:\users\username`，则配置文件中 `%HOME%\NuGetRepository` 的值解析为 `c:\users\username\NuGetRepository`。</span><span class="sxs-lookup"><span data-stu-id="ba755-231">For example, if the `HOME` environment variable on Windows is set to `c:\users\username`, then the value of `%HOME%\NuGetRepository` in the configuration file resolves to `c:\users\username\NuGetRepository`.</span></span>
+<span data-ttu-id="89774-231">例如，如果 Windows 上的 `HOME` 环境变量设置为 `c:\users\username`，则配置文件中 `%HOME%\NuGetRepository` 的值解析为 `c:\users\username\NuGetRepository`。</span><span class="sxs-lookup"><span data-stu-id="89774-231">For example, if the `HOME` environment variable on Windows is set to `c:\users\username`, then the value of `%HOME%\NuGetRepository` in the configuration file resolves to `c:\users\username\NuGetRepository`.</span></span>
 
-<span data-ttu-id="ba755-232">同样，如果 Mac/Linux 上的 `HOME` 设置为 `/home/myStuff`，则配置文件中的 `%HOME%/NuGetRepository` 解析为 `/home/myStuff/NuGetRepository`。</span><span class="sxs-lookup"><span data-stu-id="ba755-232">Similarly, if `HOME` on Mac/Linux is set to `/home/myStuff`, then `%HOME%/NuGetRepository` in the configuration file resolves to `/home/myStuff/NuGetRepository`.</span></span>
+<span data-ttu-id="89774-232">同样，如果 Mac/Linux 上的 `HOME` 设置为 `/home/myStuff`，则配置文件中的 `%HOME%/NuGetRepository` 解析为 `/home/myStuff/NuGetRepository`。</span><span class="sxs-lookup"><span data-stu-id="89774-232">Similarly, if `HOME` on Mac/Linux is set to `/home/myStuff`, then `%HOME%/NuGetRepository` in the configuration file resolves to `/home/myStuff/NuGetRepository`.</span></span>
 
-<span data-ttu-id="ba755-233">如果未找到环境变量，NuGet 会使用配置文件中的文本值。</span><span class="sxs-lookup"><span data-stu-id="ba755-233">If an environment variable is not found, NuGet uses the literal value from the configuration file.</span></span>
+<span data-ttu-id="89774-233">如果未找到环境变量，NuGet 会使用配置文件中的文本值。</span><span class="sxs-lookup"><span data-stu-id="89774-233">If an environment variable is not found, NuGet uses the literal value from the configuration file.</span></span>
 
-## <a name="example-config-file"></a><span data-ttu-id="ba755-234">示例配置文件</span><span class="sxs-lookup"><span data-stu-id="ba755-234">Example config file</span></span>
+## <a name="example-config-file"></a><span data-ttu-id="89774-234">示例配置文件</span><span class="sxs-lookup"><span data-stu-id="89774-234">Example config file</span></span>
 
-<span data-ttu-id="ba755-235">下面是示例 `nuget.config` 文件，它对一些设置进行了说明：</span><span class="sxs-lookup"><span data-stu-id="ba755-235">Below is an example `nuget.config` file that illustrates a number of settings:</span></span>
+<span data-ttu-id="89774-235">下面是示例 `nuget.config` 文件，它对一些设置进行了说明：</span><span class="sxs-lookup"><span data-stu-id="89774-235">Below is an example `nuget.config` file that illustrates a number of settings:</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
