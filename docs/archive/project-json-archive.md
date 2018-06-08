@@ -1,16 +1,17 @@
 ---
 title: NuGet project.json 存档内容
 description: 从 NuGet 文档的其他区域中删除了 project.json 内容的其他位。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: cd0f4bc44c1acaeed3b3ed0241c501ddd281628d
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 5b5a5309f5b22f08c289aa49781fa44f95646153
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818329"
 ---
 # <a name="projectjson-archive"></a>project.json 存档
 
@@ -28,7 +29,7 @@ NuGet 3.x 引入了 `project.json` 管理格式，并用于某些项目类型。
 
 在管理格式列表中：
 
-- [`project.json`](project-json.md)：*（已弃用）*一种 JSON 文件，用于维护项目依赖项的列表，同时将包的整体信息图存储在关联文件 `project.lock.json` 中。 此格式已被弃用，被 PackageReference 取代。
+- [`project.json`](project-json.md)：*（已弃用）* 一种 JSON 文件，用于维护项目依赖项的列表，同时将包的整体信息图存储在关联文件 `project.lock.json` 中。 此格式已被弃用，被 PackageReference 取代。
 
 ## <a name="nuget-restore-on-mono"></a>Mono 上的 nuget 还原
 

@@ -1,16 +1,17 @@
 ---
 title: 安装 NuGet 客户端工具
 description: 有关安装客户端工具、dotnet 和 nuget 命令行接口 (CLI) 以及 Visual Studio 软件包管理器的指导。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 04/09/2018
 ms.topic: quickstart
-ms.openlocfilehash: 6681c910768bc705f5e09340e04e4d368fde5efe
-ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
+ms.openlocfilehash: f136295cd46dd11a153b5f9c25a685a5a8dbd45a
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818116"
 ---
 # <a name="installing-nuget-client-tools"></a>安装 NuGet 客户端工具
 

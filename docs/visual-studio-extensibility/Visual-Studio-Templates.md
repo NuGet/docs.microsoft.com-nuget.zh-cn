@@ -1,16 +1,17 @@
 ---
 title: Visual Studio 模板中的 NuGet 包
 description: 在 Visual Studio 项目和项模板中添加 NuGet 包的说明。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/03/2018
 ms.topic: conceptual
-ms.openlocfilehash: 801e107afb498d7a3353bd36d71eb7b0f0201910
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: e03d97eede3f4c91475fbb48804d0f4a08ff0750
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818797"
 ---
 # <a name="packages-in-visual-studio-templates"></a>Visual Studio 模板中的包
 

@@ -1,16 +1,17 @@
 ---
 title: 设置本地 NuGet 源
 description: 如何在本地网络上使用文件夹创建 NuGet 包的本地源
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 12/06/2017
 ms.topic: conceptual
-ms.openlocfilehash: 4710a6fd13bdd89492e2a7246d1e15f6c01a5368
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 5d86657bdf26452d027593b953168e28694acf82
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818680"
 ---
 # <a name="local-feeds"></a>本地源
 

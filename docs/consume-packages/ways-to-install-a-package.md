@@ -1,16 +1,17 @@
 ---
 title: 安装 NuGet 包的方式
 description: 介绍将 NuGet 包安装到项目中的过程，包括磁盘上和适用的项目文件会发生的情况。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 02/12/2018
 ms.topic: overview
-ms.openlocfilehash: 028fb9710e808974348d9cca3c56103c087d5390
-ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
+ms.openlocfilehash: 5f71ce6217071efc3d483cde4cf36c5585808167
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34816917"
 ---
 # <a name="different-ways-to-install-a-nuget-package"></a>安装 NuGet 包的不同方式
 

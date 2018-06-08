@@ -1,18 +1,19 @@
 ---
 title: NuGet 文档
 description: NuGet 是适用于包含 .NET 的 Microsoft 开发平台的包管理器。 NuGet 客户端工具可用于创建和使用包。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 02/12/2018
 ms.topic: overview
 layout: HubPage
 hide_bc: true
-ms.openlocfilehash: 534d9969c7ad73b9eaf4df64834cb46140085507
-ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
+ms.openlocfilehash: 8458f936caedeb761f8775e354c2848cb5b56c9a
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818472"
 ---
 <div id="main" class="v2">
 <div class="container">

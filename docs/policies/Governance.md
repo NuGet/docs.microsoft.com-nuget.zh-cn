@@ -1,16 +1,17 @@
 ---
 title: NuGet 项目治理
 description: NuGet 的治理模型，包括提交者、参与者和用户的角色和职责。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 37bfd146eefd52fd0332f3b99fa36651fc5c93d4
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 658901a86b42d6451e41c2c26906a6b6f444faf6
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818057"
 ---
 # <a name="nuget-governance"></a>NuGet 治理
 

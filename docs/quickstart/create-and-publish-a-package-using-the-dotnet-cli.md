@@ -1,16 +1,17 @@
 ---
 title: 使用 dotnet CLI 创建和发布 NuGet 包
 description: 使用 .NET Core CLI dotnet 创建和发布 NuGet 包的演练教程。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: e47eb5f9b3cd7e915db82f043ebb6190b656fb28
-ms.sourcegitcommit: a6ca160b1e7e5c58b135af4eba0e9463127a59e8
+ms.openlocfilehash: c50c92f966cd68477cd3f29ab99857911299b7ea
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818446"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>快速入门：创建和发布包 (dotnet CLI)
 

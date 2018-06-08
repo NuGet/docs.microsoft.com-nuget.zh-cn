@@ -1,16 +1,17 @@
 ---
 title: NuGet 及其功能介绍
 description: 全面介绍 NuGet 及其功能
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/10/2018
 ms.topic: overview
-ms.openlocfilehash: 7237db8f3be3d9a1d46b9e6be41bff5c06593a20
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: b8929baa9022b7c40acbeb8a4f868fa5532ec13b
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818355"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 简介
 

@@ -1,16 +1,17 @@
 ---
 title: 使用 Visual Studio 2015 创建 .NET Standard 和 .NET Framework NuGet 包
 description: 从头到尾介绍如何使用 NuGet 3.x 和 Visual Studio 2015 创建 .NET Standard 和 .NET Framework NuGet 包。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 02/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: a77d977b2abc4cfd8be48e97e4c811e68e09bd61
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: c66e782ea5d4e9e2a9585d8301dc2a1b2e8c72b9
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34818718"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>使用 Visual Studio 2015 创建 NET Standard 和 .NET Framework 包
 
