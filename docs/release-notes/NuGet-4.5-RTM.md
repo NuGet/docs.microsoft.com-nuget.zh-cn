@@ -11,6 +11,7 @@ ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31820711"
 ---
 # <a name="nuget-45-rtm-release-notes"></a><span data-ttu-id="0266b-103">NuGet 4.5 RTM 发行说明</span><span class="sxs-lookup"><span data-stu-id="0266b-103">NuGet 4.5 RTM Release Notes</span></span>
 
