@@ -14,6 +14,7 @@ ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/22/2018
+ms.locfileid: "34449573"
 ---
 # <a name="organization-on-nugetorg"></a>在 nuget.org 上的组织
 
