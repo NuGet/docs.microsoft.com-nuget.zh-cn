@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31822651"
 ---
 # <a name="nuget-43-rtm-release-notes"></a><span data-ttu-id="6a902-103">NuGet 4.3 RTM 发行说明</span><span class="sxs-lookup"><span data-stu-id="6a902-103">NuGet 4.3 RTM Release Notes</span></span>
 

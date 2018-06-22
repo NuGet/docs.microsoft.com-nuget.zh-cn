@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31821364"
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a><span data-ttu-id="0dee4-103">查询所有发布到 nuget.org 的包</span><span class="sxs-lookup"><span data-stu-id="0dee4-103">Query for all packages published to nuget.org</span></span>
 
