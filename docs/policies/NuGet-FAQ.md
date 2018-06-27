@@ -1,16 +1,17 @@
 ---
 title: NuGet 常见问题解答
 description: 在命令行和 Visual Studio 中使用 NuGet 以及使用 NuGet 库的常见问题。
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: bcdb4e8971ee4e742e6cf37f8b662e50a77604f0
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: e3c52f1e49a53b89d7e5c0728c02a7915db2aeb9
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817975"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
@@ -160,9 +161,9 @@ Visual Studio 自动化对象模型中的顶层对象称为 DTE （开发工具�
 
 ## <a name="managing-packages-on-nugetorg"></a>在 nuget.org 上管理包
 
-在上传包元数据后是否可以再对其进行编辑？为什么需要编辑 nuspec 并上传新包才能更改包元数据？
+在上传包元数据后是否可以再对其进行编辑？
 
-NuGet 要求对所有的包签名。 包签名的设计原则是已签名包的内容不得改变，nuspec 也包括在内。 编辑包元数据会使 nuspec 发生更改，导致现有签名无效。 我们建议在创建包后修改现有工作流，这样则无需编辑包元数据。
+NuGet 建议对所有的包签名。 包签名的设计原则是已签名包的内容不得改变，nuspec 也包括在内。 编辑包元数据会使 nuspec 发生更改，导致现有签名无效。 我们建议在创建包后修改现有工作流，这样则无需编辑包元数据。
 
 请注意，列出的包依赖项从包本身自动生成，并且无法进行编辑。
 

@@ -1,16 +1,17 @@
 ---
 title: 查找和选择 NuGet 包
 description: 概述如何查找和选择最适合项目的 NuGet 包，包括有关 NuGet 搜索语法的详细信息。
-author: kraigb
-ms.author: kraigb
-manager: douge
-ms.date: 03/16/2018
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 94d851cfbc860e50b02ca99595ca41bbf4ce21ef
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: f1bb145229b0db0e8fdb7fdb31a59aa50bd1d57b
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817897"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>针对项目查找和评估 NuGet 包
 
@@ -105,7 +106,7 @@ NuGet 支持本机 C++ 包，这些包可在 Visual Studio 的 C++ 项目中使�
 
 NuGet 包搜索在 nuget.org 上、NuGet CLI 中和 Visual Studio 的 NuGet 包管理器扩展中具有相同的使用方法。 通常可使用关键字和包说明进行搜索。
 
-- **关键字**：搜索操作将查找包含所有给定关键字的相关包。 示例：`modern UI javascript`
+- **关键字**：搜索操作将查找包含任何给定关键字的相关包。 示例：`modern UI`。 若要搜索包含所有给定关键字的包，请在搜索词之间使用“+”，例如 `modern+UI`。
 - **短语**：在引号内输入搜索词可查找与其大小写完全匹配的匹配项。 示例：`"modern UI" package`
 - **筛选**：可以按照语法 `<property>:<term>` 使用搜索词来搜索特定属性，其中，`<property>`（区分大小写）可为 `id`、`packageid`、`version`、`title`、`tags`、`author`、`description`、`summary` 和 `owner`。 可将搜索词添加在引号中（如需要），还可以同时搜索多个属性。 此外，按 `id` 属性搜索得到的是子字符串匹配项，而按 `packageid` 搜索将得到确切匹配。 示例：
 

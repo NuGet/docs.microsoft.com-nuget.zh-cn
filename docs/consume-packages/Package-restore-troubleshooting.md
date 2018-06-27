@@ -1,16 +1,17 @@
 ---
 title: 对 Visual Studio 中的 NuGet 包还原进行故障排除
 description: 介绍 Visual Studio 中常见的 NuGet 还原错误以及相应的故障排除方法。
-author: kraigb
-ms.author: kraigb
-manager: douge
-ms.date: 03/16/2018
+author: karann-msft
+ms.author: karann
+manager: unnir
+ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: c552941c896d1a7136310c0a8bc6755d5974809a
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 8e817b8e95c53d27120bf56db52b45b69a5ff973
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34816964"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>包还原错误疑难解答
 
@@ -49,8 +50,11 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 当你从源代码管理或其他下载获得项目的源代码时，通常会发生这种情况。 包通常从源代码管理或下载中省略，因为它们可以从包源（例如 nuget.org）中还原（请参阅[包和源代码管理](Packages-and-Source-Control.md)）。 否则，包含它们会导致存储库膨胀或创建不必要的大型 .zip 文件。
 
+如果项目文件包含包位置的绝对路径，并移动项目，也会发生该错误。
+
 使用下列方法之一还原包：
 
+- 如果已移动项目文件，请直接编辑该文件以更新包引用。
 - 在 Visual Studio 中，通过以下方法启用包还原：选择“工具”>“NuGet 包管理器”>“包管理器设置”菜单命令，在“包还原”下设置这两个选项，然后选择“确定”。 然后再次生成解决方案。
 - 对于 .NET Core 项目，运行 `dotnet restore` 或 `dotnet build`（它会自动运行还原）。
 - 在命令行上运行 `nuget restore`（使用 `dotnet` 创建的项目除外，这种情况下请使用 `dotnet restore`）。

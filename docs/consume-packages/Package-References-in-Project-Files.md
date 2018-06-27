@@ -1,16 +1,17 @@
 ---
 title: NuGet PackageReference 格式（项目文件中的包引用）
 description: 详细介绍项目文件中 NuGet 4.0+、VS2017 和 .NET Core 2.0 支持的 NuGet PackageReference
-author: kraigb
-ms.author: kraigb
-manager: douge
+author: karann-msft
+ms.author: karann
+manager: unnir
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8f277a8af7f988d6fdcfa75c43a10b3792c2ae22
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 61f447877459764906cf9a2b88b32a8bc0553689
+ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34817666"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -45,6 +46,17 @@ ms.lasthandoff: 04/26/2018
 ```
 
 在上述示例中，3.6.0 指 >=3.6.0 的任何版本（首选项为最低版本），详见[包版本控制](../reference/package-versioning.md#version-ranges-and-wildcards)。
+
+## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a>对没有 PackageReferences 的项目使用 PackageReference
+高级：如果项目中没有安装包（项目文件中没有 PackageReference，也没有 packages.config 文件），但想要项目还原为 PackageReference 样式，则可以在项目文件中将项目属性 RestoreProjectStyle 设置为 PackageReference。
+```xml
+<PropertyGroup>
+    <!--- ... -->
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <!--- ... -->
+</PropertyGroup>    
+```
+如果引用 PackageReference 样式的项目（现有 csproj 或 SDK 样式的项目），这可能很有用。 这可让其他项目以“可传递”的方式引用这些项目引用的包。
 
 ## <a name="floating-versions"></a>可变版本
 
