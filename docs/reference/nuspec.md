@@ -1,5 +1,5 @@
 ---
-title: nuget.nuspec 文件引用
+title: 适用于 NuGet 的.nuspec 文件引用
 description: .nuspec 文件包含生成包时使用的，并向包使用者提供信息的包元数据。
 author: karann-msft
 ms.author: karann
@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 2ff83538f9f1cf3bd4ed616ec8f5f1aef3ffd9d6
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 142f82386395b8ab2ed1d57218db9bc1d2e98638
+ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818537"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37843441"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -89,7 +89,7 @@ ms.locfileid: "34818537"
 | **owners** | 使用 nuget.org 上的配置文件名称的包创建者的逗号分隔列表。这通常和 `authors` 中的列表相同，将包上传到 nuget.org 时被忽略。请参阅[在 nuget.org 上管理包所有者](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)。 |
 | **projectUrl** | 包的主页 URL，通常显示在 UI 中以及 nuget.org 中。 |
 | **licenseUrl** | 包的许可证 URL，通常显示在 UI 和 nuget.org 中。 |
-| **iconUrl** | 64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的映像，可使用原始文件 URL 喜欢<em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>。 |
+| **iconUrl** | 64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的图像，可使用原始文件 URL，如<em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>。 |
 | **requireLicenseAcceptance** | 一个布尔值，用于指定客户端是否必须提示使用者接受包许可证后才可安装包。 |
 | **developmentDependency** | (2.8+) 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。 |
 | **summary** | 用于 UI 显示的包的简要说明。 如果省略，则使用 `description` 的截断版本。 |
@@ -98,6 +98,7 @@ ms.locfileid: "34818537"
 | language | 包的区域设置 ID。 请参阅[创建本地化包](../create-packages/creating-localized-packages.md)。 |
 | **tags**  | 以空格分隔的标记和关键字列表，描述包并通过搜索和筛选辅助包的可发现性。 |
 | **serviceable** | (3.3+) 仅限内部使用。 |
+| **存储库** | 存储库的元数据，包括四个可选属性：*类型*并*url* *（4.0 +）*，以及*分支*和*提交* *（4.6 +）*。 这些特性，你可以将.nupkg 映射到存储库可能会获取与生成它，作为单独的分支或包生成的提交进行了详细说明。 |
 
 #### <a name="collection-elements"></a>集合元素
 
@@ -138,7 +139,7 @@ nuget pack MyProject.csproj
 
 | 标记 | 值来源 | “值”
 | --- | --- | ---
-| **$id$** | 项目文件 | 从项目文件的 AssemblyName （标题） |
+| **$id$** | 项目文件 | 项目文件中的 AssemblyName （标题） |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
 | **$author$** | AssemblyInfo | AssemblyCompany |
 | **$title$** | AssemblyInfo | AssemblyTitle |

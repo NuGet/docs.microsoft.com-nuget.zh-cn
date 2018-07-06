@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 02/12/2018
 ms.topic: overview
-ms.openlocfilehash: 5f71ce6217071efc3d483cde4cf36c5585808167
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 0f59c3b7f1e32ae34889921c13d15074ef5c1260
+ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34816917"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37843376"
 ---
 # <a name="different-ways-to-install-a-nuget-package"></a>安装 NuGet 包的不同方式
 
@@ -39,7 +39,7 @@ ms.locfileid: "34816917"
 
    - 如果包不在缓存中，请尝试从配置中列出的源下载包。 如果下载包，则会在输出中出现“GET”和“OK”。
 
-   - 如果无法从任何源成功获取包，安装将失败，并显示诸如 [NU1103](../reference/errors-and-warnings.md#nu1103) 之类的错误。 注意，来自 `nuget.exe` 命令的错误仅显示最后检查的源，但意味着无法从任何源获取包。
+   - 如果无法从任何源成功获取包，安装将失败，并显示诸如 [NU1103](../reference/errors-and-warnings/NU1103.md) 之类的错误。 注意，来自 `nuget.exe` 命令的错误仅显示最后检查的源，但意味着无法从任何源获取包。
 
    获取包时，NuGet 配置中的源顺序可能适用：
 
