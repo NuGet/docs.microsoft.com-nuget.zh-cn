@@ -81,8 +81,7 @@
 ## [MSBuild 目标](reference/msbuild-targets.md)
 ## [目标框架](reference/target-frameworks.md)
 ## [分析器约定](reference/analyzers-conventions.md)
-## 
-  [ID 前缀预留](reference/id-prefix-reservation.md)
+## [ID 前缀预留](reference/id-prefix-reservation.md)
 ## [NuGet 客户端 SDK](reference/nuget-client-sdk.md)
 ## [已签名的包](reference/signed-packages-reference.md)
 ## [nuget.org 上的组织](reference/organizations-on-nuget-org.md)
