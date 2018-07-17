@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 03/27/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1ca97e1c2dfba876aefe6b06eab10def67b8d848
-ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
+ms.openlocfilehash: 4f42403abbf07c2c48ce13c70c49f7f3c15c40e4
+ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843389"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39072361"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>从 packages.config 迁移到 PackageReference
 
@@ -58,7 +58,7 @@ Visual Studio 2017 版本 15.7年和更高版本支持将项目从迁移[package
 
 1. 在中**解决方案资源管理器**，右键单击**引用**节点或`packages.config`文件，然后选择**将 packages.config 迁移到 PackageReference...**.
 
-1. 迁移器会分析项目的 NuGet 包引用，并尝试对其进行分类**顶级依赖项**（NuGet 包已安装目录） 和**可传递依赖项**（已作为顶级包的依赖项安装的包）。
+1. 迁移器会分析项目的 NuGet 包引用，并尝试对其进行分类**顶级依赖项**（直接安装的 NuGet 包） 和**可传递依赖项**（已作为顶级包的依赖项安装的包）。
 
    > [!Note]
    > PackageReference 支持可传递程序包还原，这意味着不必显式安装可传递依赖项动态地解析依赖项。

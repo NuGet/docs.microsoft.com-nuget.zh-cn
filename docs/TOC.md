@@ -58,6 +58,7 @@
 ### [update](tools/cli-ref-update.md)
 ### [verify](tools/cli-ref-verify.md)
 ### [环境变量](tools/cli-ref-environment-variables.md)
+### [长路径支持](tools/cli-ref-long-path.md)
 ## [包管理器 UI](tools/package-manager-ui.md)
 ## [包管理器控制台](tools/package-manager-console.md)
 ## [PowerShell 参考](tools/powershell-reference.md)
@@ -81,7 +82,8 @@
 ## [MSBuild 目标](reference/msbuild-targets.md)
 ## [目标框架](reference/target-frameworks.md)
 ## [分析器约定](reference/analyzers-conventions.md)
-## [ID 前缀预留](reference/id-prefix-reservation.md)
+## 
+  [ID 前缀预留](reference/id-prefix-reservation.md)
 ## [NuGet 客户端 SDK](reference/nuget-client-sdk.md)
 ## [已签名的包](reference/signed-packages-reference.md)
 ## [nuget.org 上的组织](reference/organizations-on-nuget-org.md)
