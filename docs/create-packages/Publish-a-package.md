@@ -8,11 +8,11 @@ ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: eb45ac1574efc79873d2d372f122a3d756e90ee5
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.sourcegitcommit: 6cffa6ef59b922df2d87aa9c24034d00542983cd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818550"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37963111"
 ---
 # <a name="publishing-packages"></a>发布包
 
