@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 01/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: c50c92f966cd68477cd3f29ab99857911299b7ea
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 0f71da0be27369712f718a7ab80d952a467aff2a
+ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818446"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39069669"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>快速入门：创建和发布包 (dotnet CLI)
 
@@ -35,7 +35,7 @@ ms.locfileid: "34818446"
 
 每个 NuGet 包都需要一个清单，用以描述包的内容和依赖项。 在最终包中，清单是基于项目文件中包含的 NuGet 元数据属性生成的 `.nuspec` 文件。
 
-1. 打开项目文件 (`.csproj`)，并在退出的 `<PropertyGroup>` 标记内添加以下最小属性，并根据需要更改值：
+1. 打开项目文件 (`.csproj`)，并在现有 `<PropertyGroup>` 标记内至少添加以下属性，同时根据需要更改值：
 
     ```xml
     <PackageId>AppLogger</PackageId>
