@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 03/27/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4f42403abbf07c2c48ce13c70c49f7f3c15c40e4
-ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
+ms.openlocfilehash: b05192038bff071ca7a5b8f2e0f735696d09bef6
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39072361"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508265"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>从 packages.config 迁移到 PackageReference
 
@@ -28,7 +28,7 @@ Visual Studio 2017 版本 15.7年和更高版本支持将项目从迁移[package
 ### <a name="limitations"></a>限制
 
 * NuGet PackageReference 不提供在 Visual Studio 2015 及更早版本。 只能在 Visual Studio 2017 中可以打开已迁移的项目。
-* 迁移不是当前可用于 c + + 和 ASP.NET 项目。
+* 迁移不是当前适用于 c + + 和 ASP.NET 项目。
 * 某些包可能无法与 PackageReference 完全兼容。 有关详细信息，请参阅[包兼容性问题](#package-compatibility-issues)。
 
 ### <a name="known-issues"></a>已知问题
