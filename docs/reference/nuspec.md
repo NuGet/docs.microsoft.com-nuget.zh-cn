@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 142f82386395b8ab2ed1d57218db9bc1d2e98638
-ms.sourcegitcommit: 8e3546ab630a24cde8725610b6a68f8eb87afa47
+ms.openlocfilehash: 6d190d9fdb26d76fa8e46b7d283c1857cfab26e9
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843441"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508031"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -27,7 +27,7 @@ ms.locfileid: "37843441"
 - [Framework 程序集引用](#framework-assembly-references)
 - [包括程序集文件](#including-assembly-files)
 - [包括内容文件](#including-content-files)
-- [示例](#examples)
+- [示例 nuspec 文件](#example-nuspec-files)
 
 ## <a name="general-form-and-schema"></a>常规形式和架构
 
@@ -58,12 +58,6 @@ ms.locfileid: "37843441"
 
 ### <a name="metadata-attributes"></a>元数据特性
 
-`<metadata>` 元素支持下表中介绍的特性。
-
-| 特性 | 必需 | 描述 |
-| --- | --- | --- | 
-| **minClientVersion** | 否 | 指定可安装此包的最低 NuGet 客户端版本，并由 nuget.exe 和 Visual Studio 程序包管理器强制实施。 只要包依赖于特定 NuGet 客户端版本中添加的 `.nuspec` 文件的特定功能，就会使用此功能。 例如，使用 `developmentDependency` 特性的包应为 `minClientVersion` 指定“2.8”。 同样，使用 `contentFiles` 元素（请参阅下一部分）的包应将 `minClientVersion` 设置为“3.3”。 另请注意，早于 2.5 的 NuGet 客户端无法识别此标记，所以无论 `minClientVersion` 包含什么内容，它们总是拒绝安装该包。 |
-
 ### <a name="required-metadata-elements"></a>所需的元数据元素
 
 尽管以下元素是包的最低要求，但应该考虑添加[可选元数据元素](#optional-metadata-elements)以改善开发人员对包的整体体验。
@@ -79,39 +73,51 @@ ms.locfileid: "37843441"
 
 ### <a name="optional-metadata-elements"></a>可选元数据元素
 
-这些元素可能出现在 `<metadata>` 元素中。
+#### <a name="title"></a>标题
+明了易用的包标题，通常用在 UI 显示中，如 nuget.org 上和 Visual Studio 中包管理器上的那样。 如果未指定，则使用包 ID。 
+#### <a name="owners"></a>所有者
+使用 nuget.org 上的配置文件名称的包创建者的逗号分隔列表。这通常和 `authors` 中的列表相同，将包上传到 nuget.org 时被忽略。请参阅[在 nuget.org 上管理包所有者](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)。 
+#### <a name="projecturl"></a>projectUrl
+包的主页 URL，通常显示在 UI 中以及 nuget.org 中。 
+#### <a name="licenseurl"></a>licenseUrl
+包的许可证 URL，通常显示在 UI 和 nuget.org 中。
+#### <a name="iconurl"></a>iconUrl
+64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的图像，可使用原始文件 URL，如<em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>。 
 
-#### <a name="single-elements"></a>单个元素
-
-| 元素 | 描述 |
-| --- | --- |
-| **title** | 明了易用的包标题，通常用在 UI 显示中，如 nuget.org 上和 Visual Studio 中包管理器上的那样。 如果未指定，则使用包 ID。 |
-| **owners** | 使用 nuget.org 上的配置文件名称的包创建者的逗号分隔列表。这通常和 `authors` 中的列表相同，将包上传到 nuget.org 时被忽略。请参阅[在 nuget.org 上管理包所有者](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)。 |
-| **projectUrl** | 包的主页 URL，通常显示在 UI 中以及 nuget.org 中。 |
-| **licenseUrl** | 包的许可证 URL，通常显示在 UI 和 nuget.org 中。 |
-| **iconUrl** | 64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的图像，可使用原始文件 URL，如<em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>。 |
-| **requireLicenseAcceptance** | 一个布尔值，用于指定客户端是否必须提示使用者接受包许可证后才可安装包。 |
-| **developmentDependency** | (2.8+) 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。 |
-| **summary** | 用于 UI 显示的包的简要说明。 如果省略，则使用 `description` 的截断版本。 |
-| **releaseNotes** | (1.5+) 此版本包中所作更改的说明，通常代替包说明用在 UI 中，如 Visual Studio 包管理器的“更新”选项卡。 |
-| **copyright** | (1.5+) 包的版权详细信息。 |
-| language | 包的区域设置 ID。 请参阅[创建本地化包](../create-packages/creating-localized-packages.md)。 |
-| **tags**  | 以空格分隔的标记和关键字列表，描述包并通过搜索和筛选辅助包的可发现性。 |
-| **serviceable** | (3.3+) 仅限内部使用。 |
-| **存储库** | 存储库的元数据，包括四个可选属性：*类型*并*url* *（4.0 +）*，以及*分支*和*提交* *（4.6 +）*。 这些特性，你可以将.nupkg 映射到存储库可能会获取与生成它，作为单独的分支或包生成的提交进行了详细说明。 |
+#### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
+一个布尔值，用于指定客户端是否必须提示使用者接受包许可证后才可安装包。
+#### <a name="developmentdependency"></a>developmentDependency
+(2.8+) 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。
+#### <a name="summary"></a>摘要
+用于 UI 显示的包的简要说明。 如果省略，则使用 `description` 的截断版本。
+#### <a name="releasenotes"></a>releaseNotes
+(1.5+) 此版本包中所作更改的说明，通常代替包说明用在 UI 中，如 Visual Studio 包管理器的“更新”选项卡。
+#### <a name="copyright"></a>copyright
+(1.5+) 包的版权详细信息。
+#### <a name="language"></a>语言
+包的区域设置 ID。 请参阅[创建本地化包](../create-packages/creating-localized-packages.md)。
+#### <a name="tags"></a>标记
+以空格分隔的标记和关键字列表，描述包并通过搜索和筛选辅助包的可发现性。 
+#### <a name="serviceable"></a>可维护性 
+(3.3+) 仅限内部使用。
+#### <a name="repository"></a>储存库
+存储库的元数据，包括四个可选属性：*类型*并*url* *（4.0 +）*，以及*分支*和*提交* *（4.6 +）*。 这些特性，你可以将.nupkg 映射到存储库可能会获取与生成它，作为单独的分支或包生成的提交进行了详细说明。 这应该是版本控制软件可以直接调用的公开发布 url。 它不应为 html 页，因为这意味着计算机。 对于链接到项目页，使用`projectUrl`字段，而是。 |
+#### <a name="minclientversion"></a>minClientVersion
+指定可安装此包的最低 NuGet 客户端版本，并由 nuget.exe 和 Visual Studio 程序包管理器强制实施。 只要包依赖于特定 NuGet 客户端版本中添加的 `.nuspec` 文件的特定功能，就会使用此功能。 例如，使用 `developmentDependency` 特性的包应为 `minClientVersion` 指定“2.8”。 同样，使用 `contentFiles` 元素（请参阅下一部分）的包应将 `minClientVersion` 设置为“3.3”。 另请注意，早于 2.5 的 NuGet 客户端无法识别此标记，所以无论 `minClientVersion` 包含什么内容，它们总是拒绝安装该包。
 
 #### <a name="collection-elements"></a>集合元素
 
-| 元素 | 描述 |
-| --- | --- |
-**packageTypes** | *(3.5+)* 如果不是传统的依赖项包，则为指定包类型的包括零个或多个 `<packageType>` 元素的集合。 每个 packageType 都具有 name 和 version 特性。 请参阅[设置包类型](../create-packages/creating-a-package.md#setting-a-package-type)。 |
-| **dependencies** | 零个或多个 `<dependency>` 元素的集合，用来指定包的依赖项。 每个 dependency 都具有 id、version、include (3.x+) 和 exclude (3.x+) 特性。 请参阅下面的[依赖项](#dependencies)。 |
-| **frameworkAssemblies** | (1.2+) 零个或多个 `<frameworkAssembly>` 元素的集合，用来标识此包要求的 .NET Framework 程序集引用，从而确保引用添加到使用该包的项目。 每个 frameworkAssembly 都具有 assemblyName 和 targetFramework 特性。 请参阅下面的[指定 Framework 程序集引用 GAC](#specifying-framework-assembly-references-gac)。 |
-| **references** | (1.5+) 零个或多个 `<reference>` 元素的集合，用来指定包的 `lib` 文件夹中添加为项目引用的程序集。 每个 reference 都具有 file 特性。 `<references>` 也可包含具有 targetFramework 特性的 `<group>` 元素，然后包含 `<reference>` 元素。 如果省略，则包含 `lib` 中的全部引用。 请参阅下面的[指定显式程序集引用](#specifying-explicit-assembly-references)。 |
-| **contentFiles** | (3.3+) `<files>` 元素的集合，用来标识包含在使用项目中的内容文件。 这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件。 请参阅下面的[指定包含在包中的文件](#specifying-files-to-include-in-the-package)。 |
-
-### <a name="files-element"></a>Files 元素
-
+#### <a name="packagetypes"></a>PackageTypes
+*(3.5+)* 如果不是传统的依赖项包，则为指定包类型的包括零个或多个 `<packageType>` 元素的集合。 每个 packageType 都具有 name 和 version 特性。 请参阅[设置包类型](../create-packages/creating-a-package.md#setting-a-package-type)。
+#### <a name="dependencies"></a>依赖项
+零个或多个 `<dependency>` 元素的集合，用来指定包的依赖项。 每个 dependency 都具有 id、version、include (3.x+) 和 exclude (3.x+) 特性。 请参阅下面的[依赖项](#dependencies-element)。
+#### <a name="frameworkassemblies"></a>frameworkAssemblies
+(1.2+) 零个或多个 `<frameworkAssembly>` 元素的集合，用来标识此包要求的 .NET Framework 程序集引用，从而确保引用添加到使用该包的项目。 每个 frameworkAssembly 都具有 assemblyName 和 targetFramework 特性。 请参阅下面的[指定 Framework 程序集引用 GAC](#specifying-framework-assembly-references-gac)。 |
+#### <a name="references"></a>引用
+(1.5+) 零个或多个 `<reference>` 元素的集合，用来指定包的 `lib` 文件夹中添加为项目引用的程序集。 每个 reference 都具有 file 特性。 `<references>` 也可包含具有 targetFramework 特性的 `<group>` 元素，然后包含 `<reference>` 元素。 如果省略，则包含 `lib` 中的全部引用。 请参阅下面的[指定显式程序集引用](#specifying-explicit-assembly-references)。
+#### <a name="contentfiles"></a>contentFiles
+(3.3+) `<files>` 元素的集合，用来标识包含在使用项目中的内容文件。 这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件。 请参阅下面的[指定包含在包中的文件](#specifying-files-to-include-in-the-package)。
+#### <a name="files"></a>文件 
 `<package>` 节点可能包含 `<files>` 节点作为 `<metadata>` 的同级或 `<metadata>` 的 `<contentFiles>` 子级，以指定要包含在包中的程序集和内容文件。 有关详细信息，请参阅本主题后面的[包含程序集文件](#including-assembly-files)和[包含内容文件](#including-content-files)。
 
 ## <a name="replacement-tokens"></a>替换令牌
@@ -163,7 +169,7 @@ nuget pack MyProject.csproj
 </files>
 ```
 
-## <a name="dependencies"></a>依赖项
+## <a name="dependencies-element"></a>依赖关系元素
 
 `<metadata>` 中的 `<dependencies>` 元素包含任意数量的 `<dependency>` 元素，用来标识顶级包所依赖的其他包。 每个 `<dependency>` 的特性如下所示：
 
@@ -594,7 +600,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 </contentFiles>
 ```
 
-## <a name="example-nuspec-files"></a>.nuspec 文件示例
+## <a name="example-nuspec-files"></a>示例 nuspec 文件
 
 **未指定依赖项或文件的简单 `.nuspec`**
 
