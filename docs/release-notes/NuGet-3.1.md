@@ -70,4 +70,4 @@ NuGet 命令行可执行文件已更新，并移动到新的可分发位置，�
 1.    无法执行包针对`project.json`文件- [928](https://github.com/NuGet/Home/issues/928)
 2.    不支持 Mono- [1059年](https://github.com/NuGet/Home/issues/1059)
 3.    未本地化的[1058年](https://github.com/NuGet/Home/issues/1058)， [1057年](https://github.com/NuGet/Home/issues/1057)
-4.    未签名，就像现有http://nuget.org/nuget.exe- [1073年](https://github.com/NuGet/Home/issues/1073)
+4.    未签名，就像现有 http://nuget.org/nuget.exe - [1073年](https://github.com/NuGet/Home/issues/1073)
