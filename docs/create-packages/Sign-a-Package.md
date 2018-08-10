@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 9900db1970a89de129d9074e5900e0aa048101de
-ms.sourcegitcommit: 8127dd73ff8481a1a01acd9b7004dd131a9d84e7
+ms.openlocfilehash: 8bbbc785a50e49530bbbd4e88bbd71a8a7bfe911
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2018
-ms.locfileid: "34449599"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508174"
 ---
 # <a name="signing-nuget-packages"></a>对 NuGet 包进行签名
 
@@ -44,7 +44,7 @@ nuget sign MyPackage.nupkg -CertificateSubjectName <MyCertSubjectName> -Timestam
 - 时间戳服务器不符合证书要求。
 
 > [!Note]
-> 已签名包应包含时间戳，用于确保签名证书过期时签名仍有效。 签名不含时间戳时，签名操作会发出[警告 NU3002](../reference/Errors-and-Warnings.md#nu3002)。
+> 已签名包应包含时间戳，用于确保签名证书过期时签名仍有效。 签名不含时间戳时，签名操作会发出[警告 NU3002](../reference/errors-and-warnings/NU3002.md)。
 
 ## <a name="verify-a-signed-package"></a>验证已签名的包
 
@@ -56,7 +56,7 @@ nuget verify -signature MyPackage.nupkg
 
 ## <a name="install-a-signed-package"></a>安装已签名的包
 
-安装已签名的包不需要任何特定操作；但是，如果内容在签名后被修改，则安装会被阻止并发出[错误 NU3008](../reference/Errors-and-Warnings.md#nu3008)。
+安装已签名的包不需要任何特定操作；但是，如果内容在签名后被修改，则安装会被阻止并发出[错误 NU3008](../reference/errors-and-warnings/NU3008.md)。
 
 > [!Warning]
 > 使用不受信任的证书签名的包被视为未签名，并且在安装时不会像其他任何未签名的包一样发出任何警告或错误。

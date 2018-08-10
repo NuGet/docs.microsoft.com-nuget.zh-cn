@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 6d190d9fdb26d76fa8e46b7d283c1857cfab26e9
-ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
+ms.openlocfilehash: 110d1aa29fc7238f1a82c1a81ec6431dfe437420
+ms.sourcegitcommit: e9c58dbfc1af2876337dcc37b1b070e8ddec0388
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39508031"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40020448"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -56,20 +56,18 @@ ms.locfileid: "39508031"
 
 ![nuspec.xsd 打开时的 Visual Studio 架构资源管理器](media/SchemaExplorer.png)
 
-### <a name="metadata-attributes"></a>元数据特性
-
 ### <a name="required-metadata-elements"></a>所需的元数据元素
 
-尽管以下元素是包的最低要求，但应该考虑添加[可选元数据元素](#optional-metadata-elements)以改善开发人员对包的整体体验。
+尽管以下元素是包的最低要求，但应该考虑添加[可选元数据元素](#optional-metadata-elements)以改善开发人员对包的整体体验。 
 
 这些元素必须出现在 `<metadata>` 元素中。
 
-| 元素 | 描述 |
-| --- | --- |
-| **id** | 不区分大小写的包标识符，在 nuget.org 或包驻留的任意库中必须是唯一的。 ID 不得包含空格或对 URL 无效的字符，通常遵循 .NET 命名空间规则。 有关指南，请参阅[选择唯一的包标识符](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)。 |
-| **version** | 遵循 major.minor.patch 模式的包版本。 版本号可能包括预发布后缀，如[包版本控制](../reference/package-versioning.md#pre-release-versions)中所述。 |
-| description | 用于 UI 显示的包的详细说明。 |
-| **authors** | 包创建者的逗号分隔列表，与 nuget.org 上的配置文件名称一致。这些信息显示在 nuget.org 上的 NuGet 库中，并用于交叉引用同一作者的包。 |
+#### <a name="id"></a>id 
+不区分大小写的包标识符，在 nuget.org 或包驻留的任意库中必须是唯一的。 ID 不得包含空格或对 URL 无效的字符，通常遵循 .NET 命名空间规则。 有关指南，请参阅[选择唯一的包标识符](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)。 # # # 版本关注的包的版本*major.minor.patch*模式。 版本号可能包括预发布后缀，如[包版本控制](../reference/package-versioning.md#pre-release-versions)中所述。 
+#### <a name="description"></a>说明
+用于 UI 显示的包的详细说明。 
+#### <a name="authors"></a>作者
+包创建者的逗号分隔列表，与 nuget.org 上的配置文件名称一致。这些信息显示在 nuget.org 上的 NuGet 库中，并用于交叉引用同一作者的包。 
 
 ### <a name="optional-metadata-elements"></a>可选元数据元素
 
@@ -102,6 +100,7 @@ ms.locfileid: "39508031"
 (3.3+) 仅限内部使用。
 #### <a name="repository"></a>储存库
 存储库的元数据，包括四个可选属性：*类型*并*url* *（4.0 +）*，以及*分支*和*提交* *（4.6 +）*。 这些特性，你可以将.nupkg 映射到存储库可能会获取与生成它，作为单独的分支或包生成的提交进行了详细说明。 这应该是版本控制软件可以直接调用的公开发布 url。 它不应为 html 页，因为这意味着计算机。 对于链接到项目页，使用`projectUrl`字段，而是。 |
+
 #### <a name="minclientversion"></a>minClientVersion
 指定可安装此包的最低 NuGet 客户端版本，并由 nuget.exe 和 Visual Studio 程序包管理器强制实施。 只要包依赖于特定 NuGet 客户端版本中添加的 `.nuspec` 文件的特定功能，就会使用此功能。 例如，使用 `developmentDependency` 特性的包应为 `minClientVersion` 指定“2.8”。 同样，使用 `contentFiles` 元素（请参阅下一部分）的包应将 `minClientVersion` 设置为“3.3”。 另请注意，早于 2.5 的 NuGet 客户端无法识别此标记，所以无论 `minClientVersion` 包含什么内容，它们总是拒绝安装该包。
 
