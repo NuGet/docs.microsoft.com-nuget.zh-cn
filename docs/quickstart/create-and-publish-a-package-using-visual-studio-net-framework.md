@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: ffa2128b577673e980f4115f37f8685858c36250
-ms.sourcegitcommit: 6cffa6ef59b922df2d87aa9c24034d00542983cd
+ms.openlocfilehash: c537ee97b79648428df2c1b52894f536f5626a9e
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37963153"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508252"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>快速入门：使用 Visual Studio 创建和发布包（.NET Framework、Windows）
 
@@ -114,7 +114,7 @@ NuGet 包中包含清单（`.nuspec` 文件），其中包含相关的元数据�
 
 ## <a name="edit-the-manifest"></a>编辑清单
 
-1. 如果尝试在 `.nuspec` 文件中创建包含默认值的包，NuGet 会产生错误，因此在继续操作之前必须编辑以下字段。 有关如何使用这些字段的说明，请参阅 [.nuspec 文件引用 - 单个元素](../reference/nuspec.md#single-elements)。
+1. 如果尝试在 `.nuspec` 文件中创建包含默认值的包，NuGet 会产生错误，因此在继续操作之前必须编辑以下字段。 请参阅 [.nuspec 文件引用 - 可选元数据元素](../reference/nuspec.md#optional-metadata-elements)，了解如何使用它们。
 
     - licenseUrl
     - projectUrl

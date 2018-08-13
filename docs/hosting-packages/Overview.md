@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: b72369efb906f6d186c914fa3d8dd1da0be94641
-ms.sourcegitcommit: 6cffa6ef59b922df2d87aa9c24034d00542983cd
+ms.openlocfilehash: 95750bc926c242c02112f68a5aebf43c5fdb9a46
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37948364"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508291"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>承载自己的 NuGet 源
 
@@ -32,7 +32,7 @@ ms.locfileid: "37948364"
 - [NuGet 服务器](http://nugetserver.net/)，Inedo 的社区项目
 - [NuGet 服务器（开放源代码）](http://nuget-server.net)，与 Inedo 的 NuGet 服务器相似的开放源代码实现
 - [LiGet](https://github.com/ai-traders/liget)：在 docker 中 kestrel 上运行的 NuGet V2 服务器的开放源代码实现
-- [BaGet](https://github.com/loic-sharma/BaGet)：使用 .NET Core 的 NuGet V3 服务器的开放源代码实现
+- [BaGet](https://github.com/loic-sharma/BaGet) 构建与 ASP.NET Core 基础上的 NuGet V3 服务器的开源实现
 - JFrog 的 [Artifactory](https://www.jfrog.com/artifactory/)。
 - Sonatype 的 [Nexus](http://www.sonatype.org/nexus/)。
 - JetBrains 的 [TeamCity](https://www.jetbrains.com/teamcity/)。

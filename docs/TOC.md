@@ -82,7 +82,8 @@
 ## [MSBuild 目标](reference/msbuild-targets.md)
 ## [目标框架](reference/target-frameworks.md)
 ## [分析器约定](reference/analyzers-conventions.md)
-## [ID 前缀预留](reference/id-prefix-reservation.md)
+## 
+  [ID 前缀预留](reference/id-prefix-reservation.md)
 ## [NuGet 客户端 SDK](reference/nuget-client-sdk.md)
 ## [已签名的包](reference/signed-packages-reference.md)
 ## [nuget.org 上的组织](reference/organizations-on-nuget-org.md)
@@ -161,6 +162,7 @@
 ## [包元数据](api/registration-base-url-resource.md)
 ## [包内容](api/package-base-address-resource.md)
 ## [报告滥用 URL](api/report-abuse-resource.md)
+## [存储库签名](api/repository-signatures-resource.md)
 ## [目录](api/catalog-resource.md)
 ## [速率限制](api/rate-limits.md)
 ## [nuget.org 协议](api/nuget-protocols.md)

@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: f23cc2973fa6370d9b7513d415fd8151b822c104
-ms.sourcegitcommit: 8f0bb8bb9cb91d27d660963ed9b0f32642f420fe
+ms.openlocfilehash: 79be74f9c54e27bf2c08e83c7adf81d1f96ce79a
+ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225965"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39508158"
 ---
 # <a name="nuget-47-rtm-release-notes"></a>NuGet 4.7 RTM 发行说明
 
