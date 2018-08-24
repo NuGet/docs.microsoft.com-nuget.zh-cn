@@ -7,12 +7,12 @@ manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: fe843a121e2f1aae376f3e30a7b911792057688f
-ms.sourcegitcommit: e9c58dbfc1af2876337dcc37b1b070e8ddec0388
+ms.openlocfilehash: 0cb40a640a0bab63a63b3b690a34f1f8cbf7fcb8
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40020526"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42793320"
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -21,6 +21,8 @@ NuGet API 是一组可用于下载包、 提取元数据、 将发布新的包�
 在 Visual Studio、 nuget.exe 和.NET CLI 中的 NuGet 客户端使用此 API 来执行 NuGet 操作，如[ `dotnet restore` ](/dotnet/articles/core/preview3/tools/dotnet-restore)，在 Visual Studio UI 中，搜索并[ `nuget.exe push` ](../tools/cli-ref-push.md)。
 
 请注意，在某些情况下，nuget.org 具有由其他包源中不强制执行的附加要求。 这些差异记录通过[nuget.org 协议](nuget-protocols.md)。
+
+简单枚举和可用 nuget.exe 版本的下载，请参阅[tools.json](tools-json.md)终结点。
 
 ## <a name="service-index"></a>服务索引
 

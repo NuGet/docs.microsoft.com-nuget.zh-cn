@@ -16,12 +16,12 @@ keywords: NuGet API 存储库签名、 签名证书，nuget.org nuget.org 包签
 ms.reviewer:
 - karann
 - unniravindranathan
-ms.openlocfilehash: 27c572a482fef791f19b3d32e816a41d8dc40b53
-ms.sourcegitcommit: e9c58dbfc1af2876337dcc37b1b070e8ddec0388
+ms.openlocfilehash: 32dd2ee19261488a2b1b92724095a11ced69ae68
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40020552"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42793266"
 ---
 # <a name="repository-signatures"></a>存储库签名
 
@@ -59,7 +59,7 @@ RepositorySignatures/4.7.0 | 初始版本
 
 在大多数情况下，证书的列表将只会追加到。 以前的签名证书已过期，但包源需要开始使用新的签名证书时，会将新证书添加到列表。 如果从列表中删除证书，这意味着，使用已删除的签名证书创建的所有包签名应不再被都视为有效客户端。 在这种情况下，包的签名 （但不是一定是包） 是无效的。 客户端策略可能会允许安装未签名包。
 
-在证书吊销 （例如密钥泄漏） 的情况下应将包的源文件重新签署所有受影响的证书签名的包。 此外，包源应从签名的证书列表中删除受影响的证书。
+在证书吊销 （例如密钥泄漏） 的情况下应将包的源文件重新签名由受影响的证书签名的所有包。 此外，包源应从签名的证书列表中删除受影响的证书。
 
 以下请求获取存储库签名索引。
 

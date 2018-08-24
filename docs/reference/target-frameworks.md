@@ -1,5 +1,5 @@
 ---
-title: Nuget 的目标框架引用
+title: 适用于 NuGet 的目标框架引用
 description: NuGet 目标框架引用标识并隔离包的框架依赖组件。
 author: karann-msft
 ms.author: karann
@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 87000ce95ffeef36d9f792e9e8fdad6878488773
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: c9267945b8055b536cf35911c36a066981ef67b6
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818316"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42793236"
 ---
 # <a name="target-frameworks"></a>目标框架
 
@@ -46,6 +46,9 @@ NuGet 客户端支持下表中的框架。 等效项显示在括号内 []。 请
 | | | net46 |
 | | | net461 |
 | | | net462 |
+| | | net47 |
+| | | net471 |
+| | | net472 |
 |Microsoft Store（Windows 应用商店） | netcore | netcore [netcore45] |
 | | | netcore45 [win, win8] |
 | | | netcore451 [win81] |
@@ -76,6 +79,7 @@ Windows Phone (UWP) | | wpa81 |
 .NET Core 应用 | netcoreapp | netcoreapp1.0 |
 | | | netcoreapp1.1 |
 | | | netcoreapp2.0 |
+| | | netcoreapp2.1 |
 Tizen | tizen | tizen3 |
 | | | tizen4 |
 
@@ -125,7 +129,7 @@ NuGet 3.3 及更早版本应该使用 `dotnet` 系列的名字对象；v3.4 及�
 ## <a name="portable-class-libraries"></a>可移植类库
 
 > [!Warning]
-> 建议不要使用 PCL。 尽管支持 PCL，但包创建者反而应支持 netstandard。 .NET 平台标准是演变而来的 Pcl 和跨平台使用不绑定到静态库类似的单个标记表示二进制可移植性*可移植-a + b + c*名字对象。
+> 建议不要使用 PCL。 尽管支持 PCL，但包创建者反而应支持 netstandard。 .NET 平台标准是 Pcl 的一种演变和跨平台使用单个的名字对象没有绑定到静态库，例如表示二进制可移植性*便携式-a + b + c*名字对象。
 
 若要定义一个引用多个子目标框架的目标框架，请使用 `portable` 关键字作为所引用框架列表的前缀。 避免人为地包含非直接编译的额外框架，因为可能会导致这些框架中出现意外的负面效果。
 
