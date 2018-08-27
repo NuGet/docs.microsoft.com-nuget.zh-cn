@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: 89f70c8d22f5a6409bc3db751646a253f6ad034a
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 545e658d26b557f27d6534bf677f467e65a315b4
+ms.sourcegitcommit: 8d5121af528e68789485405e24e2100fda2868d6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817479"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42793613"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>管理全局包、缓存和临时文件夹
 
@@ -22,6 +22,7 @@ ms.locfileid: "34817479"
 | global&#8209;packages | global-packages 文件夹是 NuGet 安装任何下载包的位置。 每个包完全展开到匹配包标识符和版本号的子文件夹。 使用 PackageReference 格式的项目总是直接从该文件夹中使用包。 使用 `packages.config` 时，包将安装到 global-packages 文件夹，然后复制到项目的 `packages` 文件夹。<br/><ul><li>Windows：`%userprofile%\.nuget\packages`</li><li>Mac/Linux：`~/.nuget/packages`</li><li>使用 NUGET_PACKAGES 重写环境变量 `globalPackagesFolder` 或 `repositoryPath` [配置设置](../reference/nuget-config-file.md#config-section)（分别在使用 PackageReference 和 `packages.config` 时）或 `RestorePackagesPath` MSBuild 属性（仅限 MSBuild）。 环境变量优先于配置设置。</li></ul> |
 | http&#8209;cache | Visual Studio 包管理器 (NuGet 3.x+) 和 `dotnet` 工具存储此缓存中下载包的副本（另存为 `.dat` 文件），这些副本被组织到每个包源的子文件夹中。 未展开包，且缓存中有 30 分钟的到期时间。<br/><ul><li>Windows：`%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux：`~/.local/share/NuGet/v3-cache`</li><li>使用 NUGET_HTTP_CACHE_PATH 环境变量替代。</li></ul> |
 | temp | NuGet 在各操作期间在其中存储临时文件的文件夹。<br/><li>Windows：`%temp%\NuGetScratch`</li><li>Mac/Linux：`/tmp/NuGetScratch`</li></ul> |
+| plugins-cache **4.8 +** | NuGet 存储来自操作声明请求的结果的文件夹。<br/><ul><li>Windows：`%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux：`~/.local/share/NuGet/plugins-cache`</li><li>使用 NUGET_PLUGINS_CACHE_PATH 环境变量替代。</li></ul> |
 
 > [!Note]
 > NuGet 3.5 和早期版本使用 `%localappdata%\NuGet\Cache` 中的 packages-cache 而不是 http-cache。
@@ -34,7 +35,25 @@ ms.locfileid: "34817479"
 
 ## <a name="viewing-folder-locations"></a>查看文件夹位置
 
-可以使用 [dotnet nuget locals 命令](/dotnet/core/tools/dotnet-nuget-locals)查看文件夹位置：
+可以使用 [nuget locals 命令](../tools/cli-ref-locals.md)查看位置：
+
+```cli
+# Display locals for all folders: global-packages, http cache, temp and plugins cache
+nuget locals all -list
+```
+
+典型输出（Windows；“user1”为当前用户名）：
+
+```output
+http-cache: C:\Users\user1\AppData\Local\NuGet\v3-cache
+global-packages: C:\Users\user1\.nuget\packages\
+temp: C:\Users\user1\AppData\Local\Temp\NuGetScratch
+plugins-cache: C:\Users\user1\AppData\Local\NuGet\plugins-cache
+```
+
+（`package-cache` 在 NuGet 2.x 中使用，并在 NuGet 3.5 及更早版本中显示。）
+
+还可以使用 [dotnet nuget locals 命令](/dotnet/core/tools/dotnet-nuget-locals)查看文件夹位置：
 
 ```cli
 dotnet nuget locals all --list
@@ -46,26 +65,10 @@ dotnet nuget locals all --list
 info : http-cache: /home/user1/.local/share/NuGet/v3-cache
 info : global-packages: /home/user1/.nuget/packages/
 info : temp: /tmp/NuGetScratch
+info : plugins-cache: /home/user1/.local/share/NuGet/plugins-cache
 ```
 
-若要显示单个文件夹的位置，请使用 `http-cache`、`global-packages` 或 `temp`，而不是 `all`。 
-
-还可以使用 [nuget locals 命令](../tools/cli-ref-locals.md)查看位置：
-
-```cli
-# Display locals for all folders: global-packages, cache, and temp
-nuget locals all -list
-```
-
-典型输出（Windows；“user1”为当前用户名）：
-
-```output
-http-cache: C:\Users\user1\AppData\Local\NuGet\v3-cache
-global-packages: C:\Users\user1\.nuget\packages\
-temp: C:\Users\user1\AppData\Local\Temp\NuGetScratch
-```
-
-（`package-cache` 在 NuGet 2.x 中使用，并在 NuGet 3.5 及更早版本中显示。）
+若要显示单个文件夹的位置，请使用 `http-cache`、`global-packages`、`temp` 或 `plugins-cache`，而不是 `all`。
 
 ## <a name="clearing-local-folders"></a>清除本地文件夹
 
@@ -86,6 +89,10 @@ nuget locals global-packages -clear
 # Clear the temporary cache (use either command)
 dotnet nuget locals temp --clear
 nuget locals temp -clear
+
+# Clear the plugins cache (use either command)
+dotnet nuget locals plugins-cache --clear
+nuget locals plugins-cache -clear
 
 # Clear all caches (use either command)
 dotnet nuget locals all --clear

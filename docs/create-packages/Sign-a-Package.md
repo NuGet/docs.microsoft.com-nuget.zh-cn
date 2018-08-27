@@ -7,12 +7,12 @@ manager: unnir
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 8bbbc785a50e49530bbbd4e88bbd71a8a7bfe911
-ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
+ms.openlocfilehash: 0679b60179760d6626e7ce42bfdbdfa266677ce6
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39508174"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42792962"
 ---
 # <a name="signing-nuget-packages"></a>对 NuGet 包进行签名
 
@@ -56,7 +56,7 @@ nuget verify -signature MyPackage.nupkg
 
 ## <a name="install-a-signed-package"></a>安装已签名的包
 
-安装已签名的包不需要任何特定操作；但是，如果内容在签名后被修改，则安装会被阻止并发出[错误 NU3008](../reference/errors-and-warnings/NU3008.md)。
+安装已签名的包不需要任何特定操作；但是，如果内容在签名后被修改，则安装会被阻止并引发[错误 NU3008](../reference/errors-and-warnings/NU3008.md)。
 
 > [!Warning]
 > 使用不受信任的证书签名的包被视为未签名，并且在安装时不会像其他任何未签名的包一样发出任何警告或错误。

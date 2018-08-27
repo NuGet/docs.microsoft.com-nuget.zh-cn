@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 05/18/2018
 ms.topic: quickstart
-ms.openlocfilehash: e97773d79b22db1f08d868190895a9417b12c924
-ms.sourcegitcommit: 6cffa6ef59b922df2d87aa9c24034d00542983cd
+ms.openlocfilehash: af6e6e015f2e4adccd99171abb37e7291551351c
+ms.sourcegitcommit: 8d5121af528e68789485405e24e2100fda2868d6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37963082"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42794094"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>快速入门：使用 Visual Studio 创建和发布 NuGet 包（仅限 .NET Standard 和 Windows）
 
@@ -149,6 +149,26 @@ msbuild /t:pack /p:Configuration=Release
 ### <a name="manage-the-published-package"></a>管理已发布的包
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
+
+## <a name="adding-a-readme-and-other-files"></a>添加自述文件和其他文件
+
+若要直接指定要包含在包中的文件，请编辑项目文件并使用 `content` 属性：
+
+```xml
+<ItemGroup>
+  <Content Include="readme.txt">
+    <Pack>true</Pack>
+    <PackagePath>\</PackagePath>
+  </Content>
+</ItemGroup>
+```
+
+这将在包根目录中包含一个名为 `readme.txt` 的文件。 Visual Studio 在直接安装包之后立即将该文件的内容显示为纯文本。 （对于安装为依赖项的包，不会显示自述文件）。 例如，下面是 HtmlAgilityPack 包的自述文件的显示方式：
+
+![安装时 NuGet 包的自述文件的显示](../create-packages/media/Create_01-ShowReadme.png)
+
+> [!Note]
+> 只在项目根目录添加 readme.txt 不会导致它被包含在生成的包中。
 
 ## <a name="related-topics"></a>相关主题
 

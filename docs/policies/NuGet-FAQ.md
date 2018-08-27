@@ -6,12 +6,12 @@ ms.author: karann
 manager: unnir
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: e3c52f1e49a53b89d7e5c0728c02a7915db2aeb9
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 3fe59ef03632053182b034052e93a5f2e6f444bd
+ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817975"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42792936"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
