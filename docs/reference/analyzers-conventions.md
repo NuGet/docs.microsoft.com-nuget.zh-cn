@@ -1,21 +1,21 @@
 ---
-title: Nuget 的.NET 编译器平台分析器格式
+title: 适用于 NuGet 的.NET 编译器平台分析器格式
 description: .NET 分析器的约定，与实现 API 或库的 NuGet 包一起打包并分发。
 author: karann-msft
 ms.author: karann
 manager: unnir
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: dc5896631fa3b15dcc1b84b054cb532d56193f36
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 9e833447820c0fb13cf558a45921554e82e2b2df
+ms.sourcegitcommit: ddc2b07a788d4a92b9df193c9bbd43db945b14d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818381"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43119157"
 ---
 # <a name="analyzer-nuget-formats"></a>分析器 NuGet 格式
 
-.NET Compiler Platform (也称为"Roslyn") 允许开发人员创建[分析器](https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix)，检查语法树和代码的语义正在写入。 这为开发人员提供了创建方法和域特定的分析工具（如帮助指导如何使用特定 API 或库的工具）。 可以在 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub wiki 上找到详细信息。 另请参阅下文：MSDN 杂志中的[使用 Roslyn 编写 API 的实时代码分析器](https://msdn.microsoft.com/magazine/dn879356.aspx)
+.NET 编译器平台 (也称为"Roslyn") 允许开发人员创建[分析器](https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix)，检查语法树和语义的代码是在编写。 这为开发人员提供了创建方法和域特定的分析工具（如帮助指导如何使用特定 API 或库的工具）。 可以在 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub wiki 上找到详细信息。 另请参阅下文：MSDN 杂志中的[使用 Roslyn 编写 API 的实时代码分析器](https://msdn.microsoft.com/magazine/dn879356.aspx)
 
 分析器本身通常作为实现 API 或相关库的 NuGet 包的一部分进行打包和分发。
 
@@ -44,7 +44,7 @@ ms.locfileid: "34818381"
 
 `analyzers` 文件夹的使用类似于用于 [框架目标](../create-packages/supporting-multiple-target-frameworks.md)，只是路径中的说明符描述开发主机依赖项而不是生成时。 常规格式如下所示：
 
-    $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}}/{analyzer_name}.dll
+    $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
 
 - **framework_name**：所包含 DLL 需要运行的 .NET framework 的可选 API 外围应用。 `dotnet` 是目前唯一有效的值，因为 Roslyn 是唯一可运行分析器的主机。 如果未指定目标，则假定 DLL 适用于所有目标。
 - **supported_language**：DLL 适用的语言，`cs` (C#)、`vb` (Visual Basic) 和 `fs` 中的一种。 语言表示应仅为使用该语言的项目加载分析器。 如果未指定任何语言，则假定 DLL 适用于支持分析器的所有语言。
