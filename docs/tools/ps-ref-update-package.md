@@ -3,21 +3,20 @@ title: NuGet 更新包 PowerShell 参考
 description: 在 Visual Studio 中的 NuGet 包管理器控制台中的更新包 PowerShell 命令参考。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: aa039f3ffcc0a7323178dae846733559c0f689b5
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: d47e1978ab7d827e0b8b97cd4e7237019185b50f
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817094"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546071"
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>Update-Package （Visual Studio 中的程序包管理器控制台）
 
-*仅在内可用[NuGet 程序包管理器控制台](package-manager-console.md)Windows 上的 Visual Studio 中。*
+*仅在内可用[NuGet 包管理器控制台](package-manager-console.md)在 Windows 上的 Visual Studio 中。*
 
-更新到较新版本的包和其依赖项或在项目中，所有包。
+更新到较新版本的包和依赖项或在项目中，所有包。
 
 ## <a name="syntax"></a>语法
 
@@ -27,7 +26,7 @@ Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Ve
     [-DependencyVersion] [-ToHighestPatch] [-ToHighestMinor] [-WhatIf] [<CommonParameters>]
 ```
 
-在 NuGet 2.8 +`Update-Package`可用来将你的项目中的现有包降级。 例如，如果你有 Microsoft.AspNet.MVC 5.1.0-rc1 安装，以下命令会将它降级到 5.0.0:
+在 NuGet 2.8 +`Update-Package`可用于将你的项目中的现有包降级。 例如，如果必须安装 Microsoft.AspNet.MVC 5.1.0-rc1，以下命令将降级到 5.0.0:
 
 ```ps
 Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
@@ -37,19 +36,19 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 
 |  参数 | 描述 |
 | --- | --- |
-| Id | 要更新的包标识符。 如果省略，则更新所有包。 -Id 开关本身是可选的。 |
+| Id | 要更新的包的标识符。 如果省略，将更新所有包。 -Id 开关本身是可选的。 |
 | IgnoreDependencies | 跳过更新包的依赖项。 |
-| ProjectName | 项目包含要更新的包，将使用默认值的所有项目的名称。 |
-| 版本 | 要用于升级，默认为最新版本的版本。 NuGet 3.0 + 中的版本值必须是之一*最低、 最高、 HighestMinor*，或*HighestPatch* （等效于-安全）。 |
-| 安全 | 将使用相同的主要和次要版本与当前安装的包的唯一版本升级的约束。 |
-| 源 | 要搜索的程序包源 URL 或文件夹路径。 本地文件夹路径可以是绝对的或相对于当前文件夹。 如果省略，`Update-Package`搜索当前选定的程序包源。 |
-| IncludePrerelease | 包括预发行程序包更新。 |
-| 重新安装 | Resintalls 使用其当前安装的版本包。 请参阅[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md)。 |
-| FileConflictAction | 当系统询问是覆盖还是忽略所引用的项目的现有文件时要执行操作。 可能的值为*覆盖，忽略，无、 OverwriteAll*，和*IgnoreAll* （3.0 +）。 |
-| DependencyVersion | 版本的依赖项包若要使用，可以是下列项之一：<br/><ul><li>*最低*（默认值）： 最低版本</li><li>*HighestPatch*： 具有的最低主要、 越小越小、 最高的修补程序版本</li><li>*HighestMinor*： 具有最低主要版本、 最高次，最高的修补程序</li><li>*最高*（默认值为更新包不带任何参数）： 最高的版本</li></ul>你可以设置默认值使用[ `dependencyVersion` ](../reference/nuget-config-file.md#config-section)中设置`Nuget.Config`文件。 |
-| ToHighestPatch | 将仅使用相同的次要版本与当前安装的包的版本升级的约束。 |
-| ToHighestMinor | 将仅使用相同的主要版本与当前安装的包的版本升级的约束。 |
-| WhatIf | 显示不实际执行更新运行命令时，会发生什么情况。 |
+| ProjectName | 包含要更新的包，默认值为所有项目的项目的名称。 |
+| 版本 | 要用于升级，默认为最新版本的版本。 在 NuGet 3.0 + 中，版本值必须是之一*最低、 最高、 HighestMinor*，或*HighestPatch* （相当于-安全）。 |
+| 安全 | 限制升级到使用相同的主要和次要版本与当前安装的包的唯一版本。 |
+| 源 | 要搜索的包源 URL 或文件夹路径。 本地文件夹路径可以是绝对的或相对于当前文件夹。 如果省略，`Update-Package`搜索当前所选的包源。 |
+| IncludePrerelease | 包括预发行包的更新。 |
+| 重新安装 | Resintalls 包使用其当前安装的版本。 请参阅[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md)。 |
+| FileConflictAction | 当要求您覆盖或忽略现有的项目所引用的文件时要执行的操作。 可能的值为*覆盖、 忽略、 None、 OverwriteAll*，并*IgnoreAll* （3.0 +）。 |
+| DependencyVersion | 版本的依赖项包使用，可以是以下值之一：<br/><ul><li>*最低*（默认值）： 最低版本</li><li>*HighestPatch*： 具有最低主要、 次要最低、 最高的修补程序版本</li><li>*HighestMinor*： 具有最低主要版本、 最小的、 最高的修补程序</li><li>*最高*（默认值为更新包不带任何参数）： 最高版本</li></ul>您可以设置默认值使用[ `dependencyVersion` ](../reference/nuget-config-file.md#config-section)中设置`Nuget.Config`文件。 |
+| ToHighestPatch | 限制为仅使用相同的次要版本与当前安装的包的版本升级。 |
+| ToHighestMinor | 限制为仅使用相同的主版本与当前安装的包的版本升级。 |
+| WhatIf | 显示无需实际执行更新运行命令时，会发生什么情况。 |
 
 任何这些参数接受管道输入或通配符字符。
 

@@ -3,15 +3,14 @@ title: NuGet CLI 局部变量命令
 description: Nuget.exe 局部变量命令参考
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 03/19/2018
 ms.topic: reference
-ms.openlocfilehash: 38d8b9366fb2749b77c987c950da3aa9e7f029fc
-ms.sourcegitcommit: 8d5121af528e68789485405e24e2100fda2868d6
+ms.openlocfilehash: ea216c4651ba9619bc3b6a7ab52546fd299b0bb6
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42794130"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43545023"
 ---
 # <a name="locals-command-nuget-cli"></a>locals 命令 (NuGet CLI)
 

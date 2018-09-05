@@ -3,16 +3,15 @@ title: 用于发现 nuget.exe 版本 tools.json
 description: 为终结点
 author: jver
 ms.author: jver
-manager: skofman
 ms.date: 08/16/2018
 ms.topic: conceptual
 ms.reviewer: kraigb
-ms.openlocfilehash: d11e79cd9109e1760189e848e35ff322be026a4d
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: 6184fe8e987e0637cb912999f2e3fa3a3dc9b4ba
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40247793"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43546930"
 ---
 # <a name="toolsjson-for-discovering-nugetexe-versions"></a>用于发现 nuget.exe 版本 tools.json
 

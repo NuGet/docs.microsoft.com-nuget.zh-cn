@@ -3,15 +3,14 @@ title: 作为 MSBuild 目标的 NuGet 包和还原
 description: NuGet 包和还原可作为 MSBuild 目标直接用于 NuGet 4.0+。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0e7e0952519afdcb4b50f31d33cce2a92e3579b4
-ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
+ms.openlocfilehash: 07296ce5a9ba85d68eca5f4915d6efea00dc8980
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39069695"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548867"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 

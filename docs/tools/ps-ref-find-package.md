@@ -1,23 +1,22 @@
 ---
-title: NuGet Find-package PowerShell 参考
-description: Visual Studio 中的 NuGet 包管理器控制台中查找包 PowerShell 命令参考。
+title: NuGet 找到的包 PowerShell 参考
+description: 在 Visual Studio 中的 NuGet 包管理器控制台中找到的包 PowerShell 命令参考。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 6/1/2017
 ms.topic: reference
-ms.openlocfilehash: ebecb3818c063d11a2d613a85e2b7baef649dee6
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: c6797e3778c7095a9abfc6cd87e2337313988c20
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34816912"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43550973"
 ---
 # <a name="find-package-package-manager-console-in-visual-studio"></a>Find-Package （Visual Studio 中的程序包管理器控制台）
 
-*版本 3.0 +;本主题介绍中的命令[NuGet 包管理器控制台](package-manager-console.md)Windows 上的 Visual Studio 中。泛型的 PowerShell 查找包命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*
+*版本 3.0 + 中;本主题介绍中的命令[NuGet 包管理器控制台](package-manager-console.md)在 Windows 上的 Visual Studio 中。有关泛型的 PowerShell 找到的包命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*
 
-从包源中获取具有指定 ID 或关键字的远程程序包集。
+包源中获取具有指定 ID 或关键字远程包的集。
 
 ## <a name="syntax"></a>语法
 
@@ -30,13 +29,13 @@ Find-Package [-Id] <keywords> -Source <string> [-AllVersions] [-First [<int>]]
 
 | 参数 | 描述 |
 | --- | --- |
-| Id&lt;关键字&gt; | （必需）搜索包源时要使用的关键字。 使用-ExactMatch 返回其包 ID 和匹配关键字这些包。 如果给不出任何关键字，则`Find-Package`返回第一次-指定下载或数量的前 20 个包的列表。 注意，-Id 是可选的并且不执行任何操作。 |
-| 源 | 要搜索的程序包源 URL 或文件夹路径。 本地文件夹路径可以是绝对的或相对于当前文件夹。 如果省略，`Find-Package`搜索当前选定的程序包源。 |
-| AllVersions | 显示每个包而不是仅最新版本的所有可用的版本。 |
-| First | 要从列表中; 的开头返回的程序包数默认值为 20。 |
-| Skip | 省略第一个&lt;int&gt;从列表中显示的包。  |
-| IncludePrerelease | 在结果中包含预发行程序包。 |
-| ExactMatch | 指定要使用&lt;关键字&gt;作为区分大小写的包 id。 |
+| Id&lt;关键字&gt; | （必需）搜索包源时要使用的关键字。 使用-ExactMatch 返回关键字匹配的包 ID 这些包。 如果不给定了任何关键字，`Find-Package`返回首次为-指定数或下载的前 20 个包的列表。 请注意，-Id 是可选的执行任何操作。 |
+| 源 | 要搜索的包源 URL 或文件夹路径。 本地文件夹路径可以是绝对的或相对于当前文件夹。 如果省略，`Find-Package`搜索当前所选的包源。 |
+| AllVersions | 显示所有可用版本的每个包而不是仅最新版本。 |
+| First | 若要从列表中; 开头返回的包数默认值为 20。 |
+| Skip | 省略了第一个&lt;int&gt;显示的列表中的包。  |
+| IncludePrerelease | 在结果中包括预发行包。 |
+| ExactMatch | 指定要使用&lt;关键字&gt;作为一个区分大小写的包 id。 |
 | StartWith | 返回包的包 ID 开头&lt;关键字&gt;。 |
 
 任何这些参数接受管道输入或通配符字符。

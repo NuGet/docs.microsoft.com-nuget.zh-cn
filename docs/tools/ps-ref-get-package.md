@@ -1,23 +1,22 @@
 ---
-title: NuGet Get 包 PowerShell 参考
-description: 在 Visual Studio 中的 NuGet 包管理器控制台中的 Get 包 PowerShell 命令参考。
+title: NuGet 包获取 PowerShell 参考
+description: 在 Visual Studio 中的 NuGet 包管理器控制台中获取包 PowerShell 命令参考。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: f4b71fc44e44dcbd5d123a0e2fed63adb79964b5
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: a28b29614dfe5abdeb24438b3451d96634a120db
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818498"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43551437"
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>Get-Package （Visual Studio 中的程序包管理器控制台）
 
-*本主题介绍中的命令[NuGet 包管理器控制台](package-manager-console.md)Windows 上的 Visual Studio 中。泛型的 PowerShell Get 包命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*
+*本主题介绍中的命令[NuGet 包管理器控制台](package-manager-console.md)在 Windows 上的 Visual Studio 中。有关泛型的 PowerShell Get-package 命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*
 
-检索包安装在本地存储库的列表，列出从包源与-ListAvailable 开关一起使用时可用的包或列出可用的更新与-更新开关一起使用时。
+检索安装在本地存储库中的包的列表，列出了与-ListAvailable 开关一起使用时的包源中可用的包或列出与-更新开关一起使用时可用的更新。
 
 ## <a name="syntax"></a>语法
 
@@ -27,22 +26,22 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
     [-PageSize] [<CommonParameters>]
 ```
 
-不带任何参数，`Get-Package`显示的默认项目中安装的程序包的列表。
+不带任何参数，`Get-Package`显示的默认项目中安装的包的列表。
 
 ## <a name="parameters"></a>参数
 
 | 参数 | 描述 |
 | --- | --- |
-| 源 | 包的 URL 或文件夹路径。 本地文件夹路径可以是绝对的或相对于当前文件夹。 如果省略，`Get-Package`搜索当前选定的程序包源。 如果与-ListAvailable 一起，默认为 nuget.org。 |
-| ListAvailable | 列出从包源，默认为 nuget.org 可用的包。除非指定的 PageSize 和/或-第一个，则显示默认值为 50 的包。 |
-| 更新 | 列出程序包源中具有更新的包。 |
-| ProjectName | 从中获取已安装的软件包项目。 如果省略，则返回安装整个解决方案的项目。 |
-| 筛选器 | 用于通过将其应用到包 ID、 说明和标记缩小的包列表的筛选器字符串。 |
-| First | 要从列表的开头返回的程序包数。 如果未指定，默认为 50。 |
-| Skip | 省略第一个&lt;int&gt;从列表中显示的包。  |
-| AllVersions | 显示每个包而不是仅最新版本的所有可用的版本。 |
-| IncludePrerelease | 在结果中包含预发行程序包。 |
-| PageSize | *（3.0 +)* 时与-ListAvailable 一起 （必需） 的包的数量来授予提示是否继续前列表。 |
+| 源 | 包的 URL 或文件夹路径。 本地文件夹路径可以是绝对的或相对于当前文件夹。 如果省略，`Get-Package`搜索当前所选的包源。 与-ListAvailable，一起使用时默认为 nuget.org。 |
+| ListAvailable | 列出了默认值为 nuget.org 的包源中可用的包。除非另有指定的 PageSize 和/或-第一个显示默认值为 50 的包。 |
+| 更新 | 列出包源中有可用更新的包。 |
+| ProjectName | 获取已安装的包的项目。 如果省略，则返回安装整个解决方案的项目。 |
+| 筛选器 | 用来将其应用到包 ID、 说明和标记来缩小包列表的筛选器字符串。 |
+| First | 若要从列表开头返回的包数。 如果未指定，默认为 50。 |
+| Skip | 省略了第一个&lt;int&gt;显示的列表中的包。  |
+| AllVersions | 显示所有可用版本的每个包而不是仅最新版本。 |
+| IncludePrerelease | 在结果中包括预发行包。 |
+| PageSize | *（3.0 +)* 与一起使用时-ListAvailable （必需），包的数量以列出提供提示以继续之前。 |
 
 任何这些参数接受管道输入或通配符字符。
 

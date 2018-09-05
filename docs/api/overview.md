@@ -3,16 +3,15 @@ title: NuGet API 的概述
 description: NuGet API 是一组 HTTP 终结点，可用于下载包，提取元数据，将发布新的包，等等。
 author: joelverhagen
 ms.author: jver
-manager: skofman
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 0cb40a640a0bab63a63b3b690a34f1f8cbf7fcb8
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: 770173d6b84048cf42a5da46cbc474d8cf604a08
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42793320"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547498"
 ---
 # <a name="nuget-api"></a>NuGet API
 

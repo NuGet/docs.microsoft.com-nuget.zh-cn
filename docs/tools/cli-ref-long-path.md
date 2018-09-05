@@ -3,15 +3,14 @@ title: NuGet CLI 长路径支持
 description: Nuget.exe 长路径支持的引用
 author: zhili1208
 ms.author: lzhi
-manager: rob
 ms.date: 07/12/2018
 ms.topic: reference
-ms.openlocfilehash: 0119be3fd8fd6c2e06e0135de5e498e0730bb0cc
-ms.sourcegitcommit: a76ecc58f41c2c5b3536ff4a3f3fcbdf5258177c
+ms.openlocfilehash: 7cd387e3eb05d149da9a88cc1c76dc08588d04b5
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39072716"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547821"
 ---
 # <a name="long-path-support-nuget-cli"></a>长路径支持 (NuGet CLI)
 

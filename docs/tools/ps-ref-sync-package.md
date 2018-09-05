@@ -1,23 +1,22 @@
 ---
-title: NuGet 同步包 PowerShell 参考
-description: Visual Studio 中的 NuGet 包管理器控制台中同步包 PowerShell 命令参考。
+title: NuGet 包同步 PowerShell 参考
+description: 在 Visual Studio 中的 NuGet 包管理器控制台中同步包 PowerShell 命令参考。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 92f0d7490dea57a69b5a5cb3cb7165f665f60d44
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 8119664b1bafe9238b12b1819cc46dc1ee7bdd00
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818100"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547989"
 ---
 # <a name="sync-package-package-manager-console-in-visual-studio"></a>Sync-Package （Visual Studio 中的程序包管理器控制台）
 
-*版本 3.0 +;仅在内可用[NuGet 包管理器控制台](package-manager-console.md)Windows 上的 Visual Studio 中。*
+*版本 3.0 + 中;仅在内可用[NuGet 包管理器控制台](package-manager-console.md)在 Windows 上的 Visual Studio 中。*
 
-获取从安装包的版本指定 （或默认值） 项目，并同步到解决方案中项目的其余部分的版本。
+获取从已安装包的版本指定 （或默认值） 项目，并同步到解决方案中项目的其余部分的版本。
 
 ## <a name="syntax"></a>语法
 
@@ -31,15 +30,15 @@ Sync-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-Ver
 
 | 参数 | 描述 |
 | --- | --- |
-| Id | （必需）要同步的包标识符。-Id 开关本身是可选的。 |
-| IgnoreDependencies | 安装仅此包不及其依赖项。 |
-| ProjectName | 要同步包从，默认为默认项目的项目。 |
-| 版本 | 若要同步，包的版本默认为当前安装的版本。 |
-| 源 | 要搜索的程序包源 URL 或文件夹路径。 本地文件夹路径可以是绝对的或相对于当前文件夹。 如果省略，`Sync-Package`搜索当前选定的程序包源。 |
-| IncludePrerelease | 在同步中包括预发行程序包。 |
-| FileConflictAction | 当系统询问是覆盖还是忽略所引用的项目的现有文件时要执行操作。 可能的值为*覆盖，忽略，无、 OverwriteAll*，和 *（3.0 +）* *IgnoreAll*。 |
-| DependencyVersion | 版本的依赖项包若要使用，可以是下列项之一：<br/><ul><li>*最低*（默认值）： 最低版本</li><li>*HighestPatch*： 具有的最低主要、 越小越小、 最高的修补程序版本</li><li>*HighestMinor*： 具有最低主要版本、 最高次，最高的修补程序</li><li>*最高*（默认值为更新包不带任何参数）： 最高的版本</li></ul>你可以设置默认值使用[ `dependencyVersion` ](../reference/nuget-config-file.md#config-section)中设置`Nuget.Config`文件。 |
-| WhatIf | 显示不实际执行同步运行命令时，会发生什么情况。 |
+| Id | （必需）要同步的包的标识符。-Id 开关本身是可选的。 |
+| IgnoreDependencies | 安装此包仅不及其依赖项。 |
+| ProjectName | 要同步中，默认值为默认项目的包的项目。 |
+| 版本 | 要同步的包的版本默认为当前安装的版本。 |
+| 源 | 要搜索的包源 URL 或文件夹路径。 本地文件夹路径可以是绝对的或相对于当前文件夹。 如果省略，`Sync-Package`搜索当前所选的包源。 |
+| IncludePrerelease | 在同步中包括预发行包。 |
+| FileConflictAction | 当要求您覆盖或忽略现有的项目所引用的文件时要执行的操作。 可能的值为*覆盖、 忽略、 None、 OverwriteAll*，并 *（3.0 +）* *IgnoreAll*。 |
+| DependencyVersion | 版本的依赖项包使用，可以是以下值之一：<br/><ul><li>*最低*（默认值）： 最低版本</li><li>*HighestPatch*： 具有最低主要、 次要最低、 最高的修补程序版本</li><li>*HighestMinor*： 具有最低主要版本、 最小的、 最高的修补程序</li><li>*最高*（默认值为更新包不带任何参数）： 最高版本</li></ul>您可以设置默认值使用[ `dependencyVersion` ](../reference/nuget-config-file.md#config-section)中设置`Nuget.Config`文件。 |
+| WhatIf | 显示运行该命令而无需实际执行同步时，会发生什么情况。 |
 
 任何这些参数接受管道输入或通配符字符。
 

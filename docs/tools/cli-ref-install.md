@@ -3,15 +3,14 @@ title: NuGet CLI 安装命令
 description: Nuget.exe install 命令的引用
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: e609b01bc14083ce212f6d4d4c6d3412f0ee316b
-ms.sourcegitcommit: 4d139cb54a46616ae48d1768fa108ae3bf450d5b
+ms.openlocfilehash: 8261cdb83af72d9d9379124f4c446c7cd2a50299
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39508317"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549131"
 ---
 # <a name="install-command-nuget-cli"></a>install 命令 (NuGet CLI)
 

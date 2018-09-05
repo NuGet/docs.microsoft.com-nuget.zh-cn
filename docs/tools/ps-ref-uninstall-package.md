@@ -1,23 +1,22 @@
 ---
 title: NuGet 卸载包 PowerShell 参考
-description: Visual Studio 中的 NuGet 包管理器控制台中卸载程序包 PowerShell 命令参考。
+description: 在 Visual Studio 中的 NuGet 包管理器控制台中卸载程序包 PowerShell 命令参考。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: 860a58c359c9b723564a70f83aee4eee5cebf16d
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: ae60473fbb716b23f40b0605be8aaa8515802315
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818862"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43551638"
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>Uninstall-Package （Visual Studio 中的程序包管理器控制台）
 
-*本主题介绍中的命令[NuGet 包管理器控制台](package-manager-console.md)Windows 上的 Visual Studio 中。泛型的 PowerShell 卸载程序包命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*
+*本主题介绍中的命令[NuGet 包管理器控制台](package-manager-console.md)在 Windows 上的 Visual Studio 中。有关泛型的 PowerShell 卸载程序包命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*
 
-从项目中，有选择性地删除其依赖项中删除包。 如果其他程序包依赖于此包，该命令将失败，除非指定选项 – Force。
+从项目中，有选择性地删除其依赖项中删除包。 如果其他程序包依赖于此包，该命令将失败，除非选项指定了 – Force。
 
 ## <a name="syntax"></a>语法
 
@@ -26,18 +25,18 @@ Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [
     [-Version <string>] [-WhatIf] [<CommonParameters>]
 ```
 
-如果其他程序包依赖于此包，该命令将失败，除非指定选项 – Force。
+如果其他程序包依赖于此包，该命令将失败，除非选项指定了 – Force。
 
 ## <a name="parameters"></a>参数
 
 | 参数 | 描述 |
 | --- | --- |
-| Id | （必需）要卸载的程序包的标识符。 -Id 开关本身是可选的。 |
+| Id | （必需）要卸载的包的标识符。 -Id 开关本身是可选的。 |
 | 版本 | 若要卸载，包的版本默认为当前安装的版本。 |
-| RemoveDependencies | 卸载程序包及其未使用的依赖项。 也就是说，如果任何依赖关系没有依赖于它的另一个包，它会跳过。 |
-| ProjectName | 要从中卸载程序包，对默认项目默认项目。 |
-| 强制 | 强制包要卸载，即使其他程序包依赖于它。 |
-| WhatIf | 显示运行命令而不实际执行卸载时，会发生什么情况。 |
+| RemoveDependencies | 卸载程序包及其未使用的依赖项。 也就是说，如果任何依赖项具有依赖于它的另一个包，它会跳过。 |
+| ProjectName | 要从中卸载程序包，默认值为默认项目项目。 |
+| 强制 | 即使其他程序包依赖于它强制要卸载的包。 |
+| WhatIf | 显示无需实际执行卸载运行命令时，会发生什么情况。 |
 
 任何这些参数接受管道输入或通配符字符。
 

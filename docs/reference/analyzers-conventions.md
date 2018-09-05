@@ -3,15 +3,14 @@ title: 适用于 NuGet 的.NET 编译器平台分析器格式
 description: .NET 分析器的约定，与实现 API 或库的 NuGet 包一起打包并分发。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 9e833447820c0fb13cf558a45921554e82e2b2df
-ms.sourcegitcommit: ddc2b07a788d4a92b9df193c9bbd43db945b14d9
+ms.openlocfilehash: a5ccbba5fbc189eb59acfdeb86a4a03dcf907a9a
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43119157"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43547626"
 ---
 # <a name="analyzer-nuget-formats"></a>分析器 NuGet 格式
 

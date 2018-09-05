@@ -3,16 +3,15 @@ title: 已签名的包
 description: NuGet 包签名的要求。
 author: rido-min
 ms.author: rmpablos
-manager: unnir
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 992097281e21cd8cf37edf67fb1968b70c2b359b
-ms.sourcegitcommit: e9c58dbfc1af2876337dcc37b1b070e8ddec0388
+ms.openlocfilehash: c36db9486ad787f19430c75fc38a2e9dd8ba6e37
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40020504"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43550416"
 ---
 # <a name="signed-packages"></a>签名的包
 

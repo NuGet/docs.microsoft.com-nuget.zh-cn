@@ -3,23 +3,22 @@ title: NuGet packages.config 文件引用
 description: 在某些项目类型中，packages.config 维护项目中使用的 NuGet 包的列表。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 05/21/2018
 ms.topic: reference
-ms.openlocfilehash: 2019ce5961a8237fbda855cd7d5b42948808be3a
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 18566671b611899b28fcc8542cf53935f5ee2dfd
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817826"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43551765"
 ---
 # <a name="packagesconfig-reference"></a>packages.config 引用
 
 某些项目类型中使用 `packages.config` 文件维护项目引用的包的列表。 这允许 NuGet 在项目要传输到其他计算机（如生成服务器）上时轻松还原项目的依赖项，而无需所有这些包。
 
-如果使用，`packages.config`通常位于项目根目录中。 将自动创建时的第一个 NuGet 操作运行，但也可以创建手动如运行任何命令之前`nuget restore`。
+如果使用，`packages.config`通常位于项目根目录中。 第一个 NuGet 操作运行时，但也可以创建手动运行任何命令，如之前时自动创建`nuget restore`。
 
-项目使用[PackageReference](../consume-packages/Package-References-in-Project-Files.md)不使用`packages.config`。
+项目使用[PackageReference](../consume-packages/Package-References-in-Project-Files.md)不要使用`packages.config`。
 
 ## <a name="schema"></a>架构
 
