@@ -1,25 +1,24 @@
 ---
-title: NuGet Get 包 PowerShell 参考
-description: 在 Visual Studio 中的 NuGet 包管理器控制台中的 Get 包 PowerShell 命令参考。
+title: NuGet 包获取 PowerShell 参考
+description: 在 Visual Studio 中的 NuGet 包管理器控制台中获取包 PowerShell 命令参考。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: f4b71fc44e44dcbd5d123a0e2fed63adb79964b5
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: a28b29614dfe5abdeb24438b3451d96634a120db
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818498"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43551437"
 ---
-# <a name="get-package-package-manager-console-in-visual-studio"></a><span data-ttu-id="7fe06-103">Get-Package （Visual Studio 中的程序包管理器控制台）</span><span class="sxs-lookup"><span data-stu-id="7fe06-103">Get-Package (Package Manager Console in Visual Studio)</span></span>
+# <a name="get-package-package-manager-console-in-visual-studio"></a><span data-ttu-id="ade98-103">Get-Package （Visual Studio 中的程序包管理器控制台）</span><span class="sxs-lookup"><span data-stu-id="ade98-103">Get-Package (Package Manager Console in Visual Studio)</span></span>
 
-<span data-ttu-id="7fe06-104">*本主题介绍中的命令[NuGet 包管理器控制台](package-manager-console.md)Windows 上的 Visual Studio 中。泛型的 PowerShell Get 包命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*</span><span class="sxs-lookup"><span data-stu-id="7fe06-104">*This topic describes the command within the [NuGet Package Manager Console](package-manager-console.md) in Visual Studio on Windows. For the generic PowerShell Get-Package command, see the [PowerShell PackageManagement reference](/powershell/module/packagemanagement/?view=powershell-6).*</span></span>
+<span data-ttu-id="ade98-104">*本主题介绍中的命令[NuGet 包管理器控制台](package-manager-console.md)在 Windows 上的 Visual Studio 中。有关泛型的 PowerShell Get-package 命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*</span><span class="sxs-lookup"><span data-stu-id="ade98-104">*This topic describes the command within the [NuGet Package Manager Console](package-manager-console.md) in Visual Studio on Windows. For the generic PowerShell Get-Package command, see the [PowerShell PackageManagement reference](/powershell/module/packagemanagement/?view=powershell-6).*</span></span>
 
-<span data-ttu-id="7fe06-105">检索包安装在本地存储库的列表，列出从包源与-ListAvailable 开关一起使用时可用的包或列出可用的更新与-更新开关一起使用时。</span><span class="sxs-lookup"><span data-stu-id="7fe06-105">Retrieves the list of packages installed in the local repository, lists packages available from a package source when used with the -ListAvailable switch, or lists available updates when used with the -Update switch.</span></span>
+<span data-ttu-id="ade98-105">检索安装在本地存储库中的包的列表，列出了与-ListAvailable 开关一起使用时的包源中可用的包或列出与-更新开关一起使用时可用的更新。</span><span class="sxs-lookup"><span data-stu-id="ade98-105">Retrieves the list of packages installed in the local repository, lists packages available from a package source when used with the -ListAvailable switch, or lists available updates when used with the -Update switch.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="7fe06-106">语法</span><span class="sxs-lookup"><span data-stu-id="7fe06-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="ade98-106">语法</span><span class="sxs-lookup"><span data-stu-id="ade98-106">Syntax</span></span>
 
 ```ps
 Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
@@ -27,30 +26,30 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
     [-PageSize] [<CommonParameters>]
 ```
 
-<span data-ttu-id="7fe06-107">不带任何参数，`Get-Package`显示的默认项目中安装的程序包的列表。</span><span class="sxs-lookup"><span data-stu-id="7fe06-107">With no parameters, `Get-Package` displays the list of packages installed in the default project.</span></span>
+<span data-ttu-id="ade98-107">不带任何参数，`Get-Package`显示的默认项目中安装的包的列表。</span><span class="sxs-lookup"><span data-stu-id="ade98-107">With no parameters, `Get-Package` displays the list of packages installed in the default project.</span></span>
 
-## <a name="parameters"></a><span data-ttu-id="7fe06-108">参数</span><span class="sxs-lookup"><span data-stu-id="7fe06-108">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="ade98-108">参数</span><span class="sxs-lookup"><span data-stu-id="ade98-108">Parameters</span></span>
 
-| <span data-ttu-id="7fe06-109">参数</span><span class="sxs-lookup"><span data-stu-id="7fe06-109">Parameter</span></span> | <span data-ttu-id="7fe06-110">描述</span><span class="sxs-lookup"><span data-stu-id="7fe06-110">Description</span></span> |
+| <span data-ttu-id="ade98-109">参数</span><span class="sxs-lookup"><span data-stu-id="ade98-109">Parameter</span></span> | <span data-ttu-id="ade98-110">描述</span><span class="sxs-lookup"><span data-stu-id="ade98-110">Description</span></span> |
 | --- | --- |
-| <span data-ttu-id="7fe06-111">源</span><span class="sxs-lookup"><span data-stu-id="7fe06-111">Source</span></span> | <span data-ttu-id="7fe06-112">包的 URL 或文件夹路径。</span><span class="sxs-lookup"><span data-stu-id="7fe06-112">The URL or folder path for the package .</span></span> <span data-ttu-id="7fe06-113">本地文件夹路径可以是绝对的或相对于当前文件夹。</span><span class="sxs-lookup"><span data-stu-id="7fe06-113">Local folder paths can be absolute, or relative to the current folder.</span></span> <span data-ttu-id="7fe06-114">如果省略，`Get-Package`搜索当前选定的程序包源。</span><span class="sxs-lookup"><span data-stu-id="7fe06-114">If omitted, `Get-Package` searches the currently selected package source.</span></span> <span data-ttu-id="7fe06-115">如果与-ListAvailable 一起，默认为 nuget.org。</span><span class="sxs-lookup"><span data-stu-id="7fe06-115">When used with -ListAvailable, defaults to nuget.org.</span></span> |
-| <span data-ttu-id="7fe06-116">ListAvailable</span><span class="sxs-lookup"><span data-stu-id="7fe06-116">ListAvailable</span></span> | <span data-ttu-id="7fe06-117">列出从包源，默认为 nuget.org 可用的包。除非指定的 PageSize 和/或-第一个，则显示默认值为 50 的包。</span><span class="sxs-lookup"><span data-stu-id="7fe06-117">Lists packages available from a package source, defaulting to nuget.org. Shows a default of 50 packages unless -PageSize and/or -First are specified.</span></span> |
-| <span data-ttu-id="7fe06-118">更新</span><span class="sxs-lookup"><span data-stu-id="7fe06-118">Updates</span></span> | <span data-ttu-id="7fe06-119">列出程序包源中具有更新的包。</span><span class="sxs-lookup"><span data-stu-id="7fe06-119">Lists packages that have an update available from the package source.</span></span> |
-| <span data-ttu-id="7fe06-120">ProjectName</span><span class="sxs-lookup"><span data-stu-id="7fe06-120">ProjectName</span></span> | <span data-ttu-id="7fe06-121">从中获取已安装的软件包项目。</span><span class="sxs-lookup"><span data-stu-id="7fe06-121">The project from which to get installed packages.</span></span> <span data-ttu-id="7fe06-122">如果省略，则返回安装整个解决方案的项目。</span><span class="sxs-lookup"><span data-stu-id="7fe06-122">If omitted, returns installed projects for the entire solution.</span></span> |
-| <span data-ttu-id="7fe06-123">筛选器</span><span class="sxs-lookup"><span data-stu-id="7fe06-123">Filter</span></span> | <span data-ttu-id="7fe06-124">用于通过将其应用到包 ID、 说明和标记缩小的包列表的筛选器字符串。</span><span class="sxs-lookup"><span data-stu-id="7fe06-124">A filter string used to narrow down the list of packages by applying it to the package ID, description, and tags.</span></span> |
-| <span data-ttu-id="7fe06-125">First</span><span class="sxs-lookup"><span data-stu-id="7fe06-125">First</span></span> | <span data-ttu-id="7fe06-126">要从列表的开头返回的程序包数。</span><span class="sxs-lookup"><span data-stu-id="7fe06-126">The number of packages to return from the beginning of the list.</span></span> <span data-ttu-id="7fe06-127">如果未指定，默认为 50。</span><span class="sxs-lookup"><span data-stu-id="7fe06-127">If not specified, defaults to 50.</span></span> |
-| <span data-ttu-id="7fe06-128">Skip</span><span class="sxs-lookup"><span data-stu-id="7fe06-128">Skip</span></span> | <span data-ttu-id="7fe06-129">省略第一个&lt;int&gt;从列表中显示的包。</span><span class="sxs-lookup"><span data-stu-id="7fe06-129">Omits the first &lt;int&gt; packages from the displayed list.</span></span>  |
-| <span data-ttu-id="7fe06-130">AllVersions</span><span class="sxs-lookup"><span data-stu-id="7fe06-130">AllVersions</span></span> | <span data-ttu-id="7fe06-131">显示每个包而不是仅最新版本的所有可用的版本。</span><span class="sxs-lookup"><span data-stu-id="7fe06-131">Displays all available versions of each package instead of only the latest version.</span></span> |
-| <span data-ttu-id="7fe06-132">IncludePrerelease</span><span class="sxs-lookup"><span data-stu-id="7fe06-132">IncludePrerelease</span></span> | <span data-ttu-id="7fe06-133">在结果中包含预发行程序包。</span><span class="sxs-lookup"><span data-stu-id="7fe06-133">Includes prerelease packages in the results.</span></span> |
-| <span data-ttu-id="7fe06-134">PageSize</span><span class="sxs-lookup"><span data-stu-id="7fe06-134">PageSize</span></span> | <span data-ttu-id="7fe06-135">*（3.0 +)* 时与-ListAvailable 一起 （必需） 的包的数量来授予提示是否继续前列表。</span><span class="sxs-lookup"><span data-stu-id="7fe06-135">*(3.0+)* When used with -ListAvailable (required), the number of packages to list before giving a prompt to continue.</span></span> |
+| <span data-ttu-id="ade98-111">源</span><span class="sxs-lookup"><span data-stu-id="ade98-111">Source</span></span> | <span data-ttu-id="ade98-112">包的 URL 或文件夹路径。</span><span class="sxs-lookup"><span data-stu-id="ade98-112">The URL or folder path for the package .</span></span> <span data-ttu-id="ade98-113">本地文件夹路径可以是绝对的或相对于当前文件夹。</span><span class="sxs-lookup"><span data-stu-id="ade98-113">Local folder paths can be absolute, or relative to the current folder.</span></span> <span data-ttu-id="ade98-114">如果省略，`Get-Package`搜索当前所选的包源。</span><span class="sxs-lookup"><span data-stu-id="ade98-114">If omitted, `Get-Package` searches the currently selected package source.</span></span> <span data-ttu-id="ade98-115">与-ListAvailable，一起使用时默认为 nuget.org。</span><span class="sxs-lookup"><span data-stu-id="ade98-115">When used with -ListAvailable, defaults to nuget.org.</span></span> |
+| <span data-ttu-id="ade98-116">ListAvailable</span><span class="sxs-lookup"><span data-stu-id="ade98-116">ListAvailable</span></span> | <span data-ttu-id="ade98-117">列出了默认值为 nuget.org 的包源中可用的包。除非另有指定的 PageSize 和/或-第一个显示默认值为 50 的包。</span><span class="sxs-lookup"><span data-stu-id="ade98-117">Lists packages available from a package source, defaulting to nuget.org. Shows a default of 50 packages unless -PageSize and/or -First are specified.</span></span> |
+| <span data-ttu-id="ade98-118">更新</span><span class="sxs-lookup"><span data-stu-id="ade98-118">Updates</span></span> | <span data-ttu-id="ade98-119">列出包源中有可用更新的包。</span><span class="sxs-lookup"><span data-stu-id="ade98-119">Lists packages that have an update available from the package source.</span></span> |
+| <span data-ttu-id="ade98-120">ProjectName</span><span class="sxs-lookup"><span data-stu-id="ade98-120">ProjectName</span></span> | <span data-ttu-id="ade98-121">获取已安装的包的项目。</span><span class="sxs-lookup"><span data-stu-id="ade98-121">The project from which to get installed packages.</span></span> <span data-ttu-id="ade98-122">如果省略，则返回安装整个解决方案的项目。</span><span class="sxs-lookup"><span data-stu-id="ade98-122">If omitted, returns installed projects for the entire solution.</span></span> |
+| <span data-ttu-id="ade98-123">筛选器</span><span class="sxs-lookup"><span data-stu-id="ade98-123">Filter</span></span> | <span data-ttu-id="ade98-124">用来将其应用到包 ID、 说明和标记来缩小包列表的筛选器字符串。</span><span class="sxs-lookup"><span data-stu-id="ade98-124">A filter string used to narrow down the list of packages by applying it to the package ID, description, and tags.</span></span> |
+| <span data-ttu-id="ade98-125">First</span><span class="sxs-lookup"><span data-stu-id="ade98-125">First</span></span> | <span data-ttu-id="ade98-126">若要从列表开头返回的包数。</span><span class="sxs-lookup"><span data-stu-id="ade98-126">The number of packages to return from the beginning of the list.</span></span> <span data-ttu-id="ade98-127">如果未指定，默认为 50。</span><span class="sxs-lookup"><span data-stu-id="ade98-127">If not specified, defaults to 50.</span></span> |
+| <span data-ttu-id="ade98-128">Skip</span><span class="sxs-lookup"><span data-stu-id="ade98-128">Skip</span></span> | <span data-ttu-id="ade98-129">省略了第一个&lt;int&gt;显示的列表中的包。</span><span class="sxs-lookup"><span data-stu-id="ade98-129">Omits the first &lt;int&gt; packages from the displayed list.</span></span>  |
+| <span data-ttu-id="ade98-130">AllVersions</span><span class="sxs-lookup"><span data-stu-id="ade98-130">AllVersions</span></span> | <span data-ttu-id="ade98-131">显示所有可用版本的每个包而不是仅最新版本。</span><span class="sxs-lookup"><span data-stu-id="ade98-131">Displays all available versions of each package instead of only the latest version.</span></span> |
+| <span data-ttu-id="ade98-132">IncludePrerelease</span><span class="sxs-lookup"><span data-stu-id="ade98-132">IncludePrerelease</span></span> | <span data-ttu-id="ade98-133">在结果中包括预发行包。</span><span class="sxs-lookup"><span data-stu-id="ade98-133">Includes prerelease packages in the results.</span></span> |
+| <span data-ttu-id="ade98-134">PageSize</span><span class="sxs-lookup"><span data-stu-id="ade98-134">PageSize</span></span> | <span data-ttu-id="ade98-135">*（3.0 +)* 与一起使用时-ListAvailable （必需），包的数量以列出提供提示以继续之前。</span><span class="sxs-lookup"><span data-stu-id="ade98-135">*(3.0+)* When used with -ListAvailable (required), the number of packages to list before giving a prompt to continue.</span></span> |
 
-<span data-ttu-id="7fe06-136">任何这些参数接受管道输入或通配符字符。</span><span class="sxs-lookup"><span data-stu-id="7fe06-136">None of these parameters accept pipeline input or wildcard characters.</span></span>
+<span data-ttu-id="ade98-136">任何这些参数接受管道输入或通配符字符。</span><span class="sxs-lookup"><span data-stu-id="ade98-136">None of these parameters accept pipeline input or wildcard characters.</span></span>
 
-## <a name="common-parameters"></a><span data-ttu-id="7fe06-137">通用参数</span><span class="sxs-lookup"><span data-stu-id="7fe06-137">Common Parameters</span></span>
+## <a name="common-parameters"></a><span data-ttu-id="ade98-137">通用参数</span><span class="sxs-lookup"><span data-stu-id="ade98-137">Common Parameters</span></span>
 
-<span data-ttu-id="7fe06-138">`Get-Package` 支持以下[常见的 PowerShell 参数](http://go.microsoft.com/fwlink/?LinkID=113216)： 调试、 错误操作、 ErrorVariable、 OutBuffer、 OutVariable、 PipelineVariable、 Verbose、 WarningAction 和 WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="7fe06-138">`Get-Package` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.</span></span>
+<span data-ttu-id="ade98-138">`Get-Package` 支持以下[常见的 PowerShell 参数](http://go.microsoft.com/fwlink/?LinkID=113216)： 调试、 错误操作、 ErrorVariable、 OutBuffer、 OutVariable、 PipelineVariable、 Verbose、 WarningAction 和 WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="ade98-138">`Get-Package` supports the following [common PowerShell parameters](http://go.microsoft.com/fwlink/?LinkID=113216): Debug, Error Action, ErrorVariable, OutBuffer, OutVariable, PipelineVariable, Verbose, WarningAction, and WarningVariable.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="7fe06-139">示例</span><span class="sxs-lookup"><span data-stu-id="7fe06-139">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="ade98-139">示例</span><span class="sxs-lookup"><span data-stu-id="ade98-139">Examples</span></span>
 
 ```ps
 # Lists the packages installed in the current solution
