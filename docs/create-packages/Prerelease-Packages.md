@@ -3,15 +3,14 @@ title: NuGet 包中的预发行版本
 description: 用于生成预发行包的指南
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 498509e03a794878eeeadd46d499521d19415600
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: a47a3a56e1c290c9a2f228ce1d0313cbdf0c4c34
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818368"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549201"
 ---
 # <a name="building-pre-release-packages"></a>生成预发行包
 

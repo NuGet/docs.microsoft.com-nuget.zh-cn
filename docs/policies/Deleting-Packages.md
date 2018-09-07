@@ -3,15 +3,14 @@ title: 删除 nuget.org 的 NuGet 包
 description: 用于取消列出 nuget.org 的包的策略；除非包违反其他策略，否则不支持永久删除。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 84a27c16968fa55ff1929db1adf98b8242a64fcf
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 901eb09711a6e32740c70829028da66b782870a0
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34816970"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548123"
 ---
 # <a name="deleting-packages"></a>删除包
 

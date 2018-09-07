@@ -3,15 +3,14 @@ title: 使用 Visual Studio 2015 为 Xamarin 创建 NuGet 包（适用于 iOS、
 description: 从头到尾演练如何为 Xamarin 创建在 iOS、Android 和 Windows 上使用本机 API 的 NuGet 包。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/09/2017
 ms.topic: tutorial
-ms.openlocfilehash: 5215650ee69741ee83f76cadb6c38f9a9c3e2e0c
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: c43f4e80d456214ca354e136db6419a95fc797a0
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818001"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43551903"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>使用 Visual Studio 2015 为 Xamarin 创建包
 

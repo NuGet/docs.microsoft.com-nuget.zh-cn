@@ -3,15 +3,14 @@ title: 从 Visual Studio 中使用 NuGet 包的介绍性指南
 description: 有关如何在 Visual Studio 项目中安装并使用 NuGet 包的演练教程。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: a64a87319e9bc6dc992892783d00dc42db1b1dd8
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 7b30fce4a2d9ad0bd7bc2b97f69b8d5d25101b72
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818849"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43545221"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio"></a>快速入门：在 Visual Studio 中安装和使用包
 

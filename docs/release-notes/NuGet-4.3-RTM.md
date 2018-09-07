@@ -3,16 +3,15 @@ title: NuGet 4.3 RTM 发行说明
 description: NuGet 4.3 RTM 的发行说明，包括已知问题、bug 修复、新增功能和 DCR。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: cb44f47ef0b3bd086f0a681cb2fedc7c5afc42fa
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 4bee32995884f4c003ebb963d2fd5b2d04363bab
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31822651"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43551619"
 ---
 # <a name="nuget-43-rtm-release-notes"></a>NuGet 4.3 RTM 发行说明
 

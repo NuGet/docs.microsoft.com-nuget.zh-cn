@@ -3,15 +3,14 @@ title: NuGet project.json 存档内容
 description: 从 NuGet 文档的其他区域中删除了 project.json 内容的其他位。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: 5b5a5309f5b22f08c289aa49781fa44f95646153
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: aa5cd1a2f3e3a6707a9d68204306db85651b0a18
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818329"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43545195"
 ---
 # <a name="projectjson-archive"></a>project.json 存档
 

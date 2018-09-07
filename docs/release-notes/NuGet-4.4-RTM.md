@@ -3,16 +3,15 @@ title: NuGet 4.4 RTM 发行说明
 description: NuGet 4.3 RTM 的发行说明，包括已知问题、bug 修复、新增功能和 DCR。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 3e969274e69de03ca9851d31a627919dcc46bb7d
-ms.sourcegitcommit: 3eab9c4dd41ea7ccd2c28bb5ab16f6fbbec13708
+ms.openlocfilehash: 9ea11ad5476b02940b171fdc69ac0bf56598418d
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31821663"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548409"
 ---
 # <a name="nuget-44-rtm-release-notes"></a>NuGet 4.4 RTM 发行说明
 
@@ -82,7 +81,7 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 - 还原期间，如果需要适用于 .NET Standard 2.0 的 .NET 4.6.1 支持但尚未安装，则会出现错误 - [#5325](https://github.com/NuGet/Home/issues/5325)
 
-- 包 ID 前缀保留客户端 UI - [#5572](https://github.com/NuGet/Home/issues/5572)
+- 包 ID 前缀预留客户端 UI - [#5572](https://github.com/NuGet/Home/issues/5572)
 
 - 提供本地化 nuget 组件以支持 dotnet.exe 本地化 - [#4336](https://github.com/NuGet/Home/issues/4336)
 

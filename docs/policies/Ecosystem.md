@@ -3,15 +3,14 @@ title: NuGet 生态系统概述
 description: NuGet 生态系统中的完整资源，包括 NuGet 源、非 Microsoft NuGet 项目、实用程序和培训材料。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 52edc29fe8e9ec8927844a71a01e4983e47b1ce0
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 31243076f36f6ff274c4377c1773ea59dda8c834
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818173"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548139"
 ---
 # <a name="an-overview-of-the-nuget-ecosystem"></a>NuGet 生态系统概述
 

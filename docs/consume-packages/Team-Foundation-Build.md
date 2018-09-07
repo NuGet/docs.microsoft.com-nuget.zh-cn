@@ -3,15 +3,14 @@ title: 使用 Team Foundation 生成还原 NuGet 包的演练
 description: 演练如何使用 Team Foundation Build（TFS 和 Visual Studio Team Services）还原 NuGet 包。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 1b7dcc351626e60e0444cf1d48b8f09cc23aa157
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: 0e69491525fce03e504d9d455bee2718510c83c2
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817029"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43549880"
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>使用 Team Foundation Build 设置包还原
 

@@ -3,15 +3,14 @@ title: 在 Windows 上使用 Visual Studio 创建和发布 .NET Standard 包
 description: 在 Windows 上使用 Visual Studio 2017 创建和发布 .NET Standard NuGet 包的演练教程。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 05/18/2018
 ms.topic: quickstart
-ms.openlocfilehash: af6e6e015f2e4adccd99171abb37e7291551351c
-ms.sourcegitcommit: 8d5121af528e68789485405e24e2100fda2868d6
+ms.openlocfilehash: a0bf174e3e27ad6d8fefe18f6213213a4bc77b53
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42794094"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548933"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>快速入门：使用 Visual Studio 创建和发布 NuGet 包（仅限 .NET Standard 和 Windows）
 

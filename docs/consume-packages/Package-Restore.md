@@ -3,15 +3,14 @@ title: NuGet 包还原
 description: 概述 NuGet 如何还原项目依赖的包，包括如何禁用还原和约束版本。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 34da7f5800671f03df6728e0b948c560f73fd13c
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: b95c4462a214a78452f9dbe35936620636c4f60b
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34817042"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548767"
 ---
 # <a name="package-restore"></a>包还原
 

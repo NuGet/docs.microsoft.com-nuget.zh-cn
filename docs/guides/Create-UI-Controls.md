@@ -3,15 +3,14 @@ title: 如何使用 NuGet 打包 UI 控件
 description: 如何创建包含 UWP 或 WPF 控件的 NuGet 包，包括必要的元数据和 Visual Studio 和 Blend 设计器的支持文件。
 author: karann-msft
 ms.author: karann
-manager: unnir
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: ab7499c415f63319fd314f33607f74d400b5f957
-ms.sourcegitcommit: 2a6d200012cdb4cbf5ab1264f12fecf9ae12d769
+ms.openlocfilehash: ce5ad07209a06010150b14092aa1b15ee6f84146
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34818652"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43548733"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>以 NuGet 包形式创建 UI 控件
 

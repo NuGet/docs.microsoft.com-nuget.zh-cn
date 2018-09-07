@@ -3,16 +3,15 @@ title: 对 NuGet 包进行签名
 description: 介绍如何使用已签名包来启用内容完整性验证。
 author: rido-min
 ms.author: rmpablos
-manager: unnir
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 0679b60179760d6626e7ce42bfdbdfa266677ce6
-ms.sourcegitcommit: c643dd2c44e085601551ff7079d696bcc3ad2b49
+ms.openlocfilehash: c598461831323ecfcc5da3877df71bd8d69557f6
+ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42792962"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43551973"
 ---
 # <a name="signing-nuget-packages"></a>对 NuGet 包进行签名
 
