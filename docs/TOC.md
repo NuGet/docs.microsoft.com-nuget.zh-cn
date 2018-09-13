@@ -130,7 +130,7 @@
 ### [NuGet 警告 NU3023](reference/errors-and-warnings/NU3023.md)
 ### [NuGet 警告 NU3025](reference/errors-and-warnings/NU3025.md)
 ### [NuGet 警告 NU3027](reference/errors-and-warnings/NU3027.md)
-### [NuGet 错误 NU3028](reference/errors-and-warnings/NU3028.md)
+### [NuGet 警告 NU3028](reference/errors-and-warnings/NU3028.md)
 ### [NuGet 错误 NU5000](reference/errors-and-warnings/NU5000.md)
 ### [NuGet 错误 NU5001](reference/errors-and-warnings/NU5001.md)
 ### [NuGet 错误 NU5002](reference/errors-and-warnings/NU5002.md)
@@ -222,6 +222,7 @@
 ## [删除包](policies/deleting-packages.md)
 # 发行说明
 ## [已知问题](release-notes/known-issues.md)
+## [NuGet 4.8 RTM](release-notes/NuGet-4.8-RTM.md)
 ## [NuGet 4.7 RTM](release-notes/NuGet-4.7-RTM.md)
 ## [NuGet 4.6 RTM](release-notes/NuGet-4.6-RTM.md)
 ## [NuGet 4.5 RTM](release-notes/NuGet-4.5-RTM.md)
