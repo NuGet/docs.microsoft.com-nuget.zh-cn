@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9ae8e8dc4e7e901acacffed8b7dfb4162c5ad2b6
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 648b2679538e38b2451d7857beb5d070deeef7c5
+ms.sourcegitcommit: 47858da1103848cc1b15bdc00ac7219c0ee4a6a0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551385"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44516199"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -18,7 +18,7 @@ ms.locfileid: "43551385"
 
 利用 PackageReference，还可以使用 MSBuild 条件按目标框架、配置、平台或其他分组选择包引用。 它还允许对依赖项和内容流实行精细控制。 （有关更多详细信息，请参阅[NuGet 打包和还原为 MSBuild 目标](../reference/msbuild-targets.md)。）
 
-默认情况下，PackageReference 用于 .NET Core 项目、.NET Standard 项目，以及面向 Windows 10 Build 15063（创意者更新）及更高版本的 UWP 项目（C++ UWP 项目除外）。 .NET 完整框架项目支持 PackageReference，但当前默认为 `packages.config`。 若要使用 PackageReference，请将 `packages.config` 中的依赖项迁移到项目文件中，然后删除 packages.config。
+默认情况下，PackageReference 用于 .NET Core 项目、.NET Standard 项目，以及面向 Windows 10 Build 15063（创意者更新）及更高版本的 UWP 项目（C++ UWP 项目除外）。 .NET 框架项目支持 PackageReference，但当前默认为 `packages.config`。 若要使用 PackageReference，请将 `packages.config` 中的依赖项迁移到项目文件中，然后删除 packages.config。
 
 ## <a name="adding-a-packagereference"></a>添加 PackageReference
 
