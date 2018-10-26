@@ -1,0 +1,29 @@
+{
+  "version": "3.0.0",
+  "resources": [
+    {
+      "@id": "https://api.nuget.org/v3-flatcontainer/",
+      "@type": "PackageBaseAddress/3.0.0",
+      "comment": "基 URL 的 Azure 存储.NET Core 的 NuGet 包注册信息，以存储格式 https://api.nuget.org/v3-flatcontainer/ {低 id} / {id 低}。{版本较低}.nupkg"
+    },
+    {
+      "@id": "https://www.nuget.org/api/v2/package",
+      "@type": "PackagePublish/2.0.0"
+    },
+    {
+      "@id": "https://api-v2v3search-0.nuget.org/query",
+      "@type": "SearchQueryService/3.0.0-rc",
+      "comment": "查询 RC 客户端使用的 （主） NuGet 搜索服务的终结点"
+    },
+    {
+      "@id": "https://api-v2v3search-0.nuget.org/autocomplete",
+      "@type": "SearchAutocompleteService/3.0.0-rc",
+      "comment": "记忆式键入功能服务终结点的 NuGet 搜索 （主） RC 客户端使用"
+    },
+    {
+      "@id": "https://api.nuget.org/v3/registration2/",
+      "@type": "RegistrationsBaseUrl/3.0.0-rc",
+      "comment": "基 URL 的 Azure 存储 NuGet 包注册信息的存储位置 RC 客户端使用。此基 URL 不包括 SemVer 2.0.0 包。"
+    }
+  ]
+}
