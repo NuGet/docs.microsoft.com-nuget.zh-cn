@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: ce5ad07209a06010150b14092aa1b15ee6f84146
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: dd36987e020c2daa02bb875aa9dbd69c85bba4d3
+ms.sourcegitcommit: 1bd72dca2f85b4267b9924236f1d23dd7b0ed733
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548733"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49951741"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>以 NuGet 包形式创建 UI 控件
 
@@ -87,7 +87,9 @@ ms.locfileid: "43548733"
 
 ## <a name="add-custom-icons-to-your-controls"></a>将自定义图标添加到控件
 
-要在工具箱/资产窗格中显示自定义图标，请将图像添加到项目或名为“Namespace.ControlName.extension”的对应 `design.dll` 项目，并将生成操作设为“嵌入资源”。 支持的格式为 `.png`、`.jpg`、`.jpeg`、`.gif` 和 `.bmp`。 建议图像大小为 64 像素乘 64 像素。
+要在工具箱/资产窗格中显示自定义图标，请将图像添加到项目或名为“Namespace.ControlName.extension”的对应 `design.dll` 项目，并将生成操作设为“嵌入资源”。 还必须确保关联的 `AssemblyInfo.cs` 指定 ProvideMetadata 属性 - `[assembly: ProvideMetadata(typeof(RegisterMetadata))]`。 请参阅此[示例](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20)。
+
+支持的格式为 `.png`、`.jpg`、`.jpeg`、`.gif` 和 `.bmp`。 建议图像大小为 64 像素乘 64 像素。
 
 在以下示例中，项目包含名为“ManagedPackage.MyCustomControl.png”的图像文件。
 
