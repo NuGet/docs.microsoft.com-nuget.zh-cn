@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1258ca4b30cb674c3832f12262940729438dd5b0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d80339eb81ade1cf2c323a604cc4fac06dcb1012
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546629"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981049"
 ---
 # <a name="nuget-cross-platform-authentication-plugin"></a>NuGet 跨平台身份验证插件
 
@@ -36,7 +36,7 @@ Dotnet.exe 中的身份验证机制是设备流。 当还原或添加操作块�
 
 ## <a name="creating-a-cross-platform-authentication-plugin"></a>创建跨平台身份验证插件
 
-示例实现可在[MSCredProvider 插件](https://github.com/Microsoft/mscredprovider)。
+示例实现可在[Microsoft 凭据提供程序插件](https://github.com/Microsoft/artifacts-credprovider)。
 
 它是非常重要的插件，符合所提出的 NuGet 客户端工具的安全要求。
 所需的最低版本为插件以进行身份验证插件*2.0.0*。

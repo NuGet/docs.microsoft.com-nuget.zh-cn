@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: ddb22d819a1a4e41a2019705789a11de6cad1d79
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5fe8b35125d9171a37afb337ed08d06445e5f890
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548437"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981153"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -65,7 +65,7 @@ ms.locfileid: "43548437"
 不区分大小写的包标识符，在 nuget.org 或包驻留的任意库中必须是唯一的。 ID 不得包含空格或对 URL 无效的字符，通常遵循 .NET 命名空间规则。 有关指南，请参阅[选择唯一的包标识符](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)。
 #### <a name="version"></a>version
 遵循 major.minor.patch 模式的包版本。 版本号可能包括预发布后缀，如[包版本控制](../reference/package-versioning.md#pre-release-versions)中所述。 
-#### <a name="description"></a>说明
+#### <a name="description"></a>description
 用于 UI 显示的包的详细说明。 
 #### <a name="authors"></a>作者
 包创建者的逗号分隔列表，与 nuget.org 上的配置文件名称一致。这些信息显示在 nuget.org 上的 NuGet 库中，并用于交叉引用同一作者的包。 
@@ -86,7 +86,7 @@ ms.locfileid: "43548437"
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 一个布尔值，用于指定客户端是否必须提示使用者接受包许可证后才可安装包。
 #### <a name="developmentdependency"></a>developmentDependency
-(2.8+) 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。
+(2.8+) 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。 使用 PackageReference (NuGet 4.8 +)，此标志也意味着它将从编译排除编译时资产。 请参阅[DevelopmentDependency 支持 PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)
 #### <a name="summary"></a>摘要
 用于 UI 显示的包的简要说明。 如果省略，则使用 `description` 的截断版本。
 #### <a name="releasenotes"></a>releaseNotes
@@ -118,7 +118,7 @@ ms.locfileid: "43548437"
 #### <a name="contentfiles"></a>contentFiles
 (3.3+) `<files>` 元素的集合，用来标识包含在使用项目中的内容文件。 这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件。 请参阅下面的[指定包含在包中的文件](#specifying-files-to-include-in-the-package)。
 #### <a name="files"></a>文件 
-`<package>` 节点可能包含 `<files>` 节点作为 `<metadata>` 的同级或 `<metadata>` 的 `<contentFiles>` 子级，以指定要包含在包中的程序集和内容文件。 有关详细信息，请参阅本主题后面的[包含程序集文件](#including-assembly-files)和[包含内容文件](#including-content-files)。
+`<package>`节点可能包含`<files>`节点的同级`<metadata>`，和一个`<contentFiles>`下的子`<metadata>`，以指定要在包中包含的程序集和内容文件。 有关详细信息，请参阅本主题后面的[包含程序集文件](#including-assembly-files)和[包含内容文件](#including-content-files)。
 
 ## <a name="replacement-tokens"></a>替换令牌
 
@@ -143,7 +143,7 @@ nuget pack MyProject.csproj
 
 除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
 
-| 标记 | 值来源 | “值”
+| 标记 | 值来源 | ReplTest1
 | --- | --- | ---
 | **$id$** | 项目文件 | 项目文件中的 AssemblyName （标题） |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |

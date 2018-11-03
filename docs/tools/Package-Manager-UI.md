@@ -10,12 +10,12 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-ms.openlocfilehash: 651bbe63ec95fcedb8e9504022d08d6ba7f9219e
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 1de6ddeca6295c621a90409807af198bc3c7a068
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551752"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981179"
 ---
 # <a name="nuget-package-manager-ui"></a>NuGet 包管理器 UI
 
@@ -70,7 +70,11 @@ Windows 上的 Visual Studio 中的 NuGet 包管理器用户界面，可轻松�
 
     ![更新包](media/UpdatePackages.png)
 
-1. <a name="implicit_reference"></a>某些包的**更新**按钮处于禁用状态并显示一条消息说它"隐式引用的 sdk"（或"AutoReferenced"）。 该消息指示程序包，例如 Microsoft.NETCore.App 或 Microsoft.NETStandard.Library，是更大的框架或 SDK 的一部分，并且不应独立更新。 (此类包在内部标记有`<IsImplicitlyDefined>True</IsImplicitlyDefined>`。)若要更新的包，更新其所属，推断从包名称包含 SDK 的 SDK。 例如，程序包一样 Microsoft.NETCore.App 是.NET Core SDK 的一部分，因此需要将.NET Core SDK 安装更新。
+1. <a name="implicit_reference"></a>某些包的**更新**按钮处于禁用状态并显示一条消息说它"隐式引用的 sdk"（或"AutoReferenced"）。 此消息指示包是一个更大的框架或 SDK 的一部分，并且不应单独更新。 (此类包在内部标记有`<IsImplicitlyDefined>True</IsImplicitlyDefined>`。)例如，`Microsoft.NETCore.App`是.NET Core SDK 的一部分，包版本不是由应用程序使用的运行时框架的版本相同。 你需要[更新.NET Core 安装](https://aka.ms/dotnet-download)以获取新版本的 ASP.NET Core 和.NET Core 运行时。 [在.NET Core 元包和版本控制，请参阅此文档的更多详细信息](/dotnet/core/packages)。 这适用于以下常用包：
+    * Microsoft.AspNetCore.All
+    * Microsoft.AspNetCore.App
+    * Microsoft.NETCore.App
+    * NETStandard.Library
 
     ![示例包标记为隐式引用或 AutoReferenced](media/PackageManagerUIAutoReferenced.png)
 

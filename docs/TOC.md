@@ -31,7 +31,6 @@
 ## 参考线
 ### [创建 UWP 包](guides/create-uwp-packages.md)
 ### [以 NuGet 包形式创建 UI 控件](guides/create-UI-controls.md)
-### [使用 Visual Studio 2015 创建 NET Standard/NET Framework 包](guides/create-net-standard-packages-vs2015.md)
 ### [使用 Visual Studio 2015 为 Xamarin 创建包](guides/create-packages-for-xamarin.md)
 # 承载包
 ## [概述](hosting-packages/overview.md)
