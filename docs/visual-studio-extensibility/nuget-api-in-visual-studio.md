@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: reference
-ms.openlocfilehash: c2a6675472070b49c9c5b723b9d24a1fa59c2971
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: f1a11eb63c07a5d737a9474870f5653f6f7d850a
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546205"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50980971"
 ---
 # <a name="nuget-api-in-visual-studio"></a>Visual Studio 中的 NuGet API
 
@@ -24,8 +24,8 @@ ms.locfileid: "43546205"
 - [`IVsPackageInstallerProjectEvents`](#ivspackageinstallerprojectevents-interface)：包安装/卸载的 Batch 事件。
 - [`IVsPackageInstallerServices`](#ivspackageinstallerservices-interface)：检索当前解决方案中安装的包及检查项目中是否已安装给定包的方法。
 - [`IVsPackageManagerProvider`](#ivspackagemanagerprovider-interface)：提供 NuGet 包的替代包管理器建议的方法。
-- [`IVsPackageMetadata`](#ivspackagemetadata-interface)；检索已安装包相关信息的方法。
-- [`IVsPackageProjectMetadata`](#ivspackageprojectmetadata-interface)；检索正在执行 NuGet 操作的项目相关信息的方法。
+- [`IVsPackageMetadata`](#ivspackagemetadata-interface)：检索已安装包相关信息的方法。
+- [`IVsPackageProjectMetadata`](#ivspackageprojectmetadata-interface)：检索正在执行 NuGet 操作的项目相关信息的方法。
 - [`IVsPackageRestorer`](#ivspackagerestorer-interface)：还原项目中已安装包的方法。
 - [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface)：检索 NuGet 包源列表的方法。
 - [`IVsPackageUninstaller`](#ivspackageuninstaller-interface)：从项目中卸载 NuGet 包的方法。

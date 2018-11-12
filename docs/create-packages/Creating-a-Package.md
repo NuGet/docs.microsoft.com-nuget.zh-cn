@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: 37c2208f0942b12428dba9d664f25e7e4f3c0b72
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 1bc67927ddc463dcc3a0abe80fe20e625e188e63
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547369"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981166"
 ---
 # <a name="creating-nuget-packages"></a>创建 NuGet 包
 
@@ -170,8 +170,9 @@ nuget locals -list global-packages
 | 文件夹 | 描述 | 包安装时的操作 |
 | --- | --- | --- |
 | （根） | readme.txt 的位置 | 包安装时，Visual Studio 在包根目录中显示 readme.txt 文件。 |
-| lib/{tfm} | 特定目标框架名字对象 (TFM) 的程序集 (`.dll`)、文档 (`.xml`) 和符号 (`.pdb`) 文件 | 程序集添加为引用；`.xml` 和 `.pdb` 复制到项目文件夹中。 有关创建框架特定目标子文件夹的详细信息，请参阅[支持多个目标框架](supporting-multiple-target-frameworks.md)。 |
-| runtimes | 特定于体系结构的程序集 (`.dll`)、符号 (`.pdb`) 和本机源 (`.pri`) 文件 | 程序集添加为引用；其他文件复制到项目文件夹中。 请参阅[支持多个目标框架](supporting-multiple-target-frameworks.md)。 |
+| lib/{tfm} | 特定目标框架名字对象 (TFM) 的程序集 (`.dll`)、文档 (`.xml`) 和符号 (`.pdb`) 文件 | 程序集添加为引用，以用于编译和运行时；`.xml` 和 `.pdb` 复制到项目文件夹中。 有关创建框架特定目标子文件夹的详细信息，请参阅[支持多个目标框架](supporting-multiple-target-frameworks.md)。 |
+| ref/{tfm} | 给定目标框架名字对象 (TFM) 的程序集 (`.dll`) 和符号 (`.pdb`) 文件 | 程序集添加为引用，仅用于编译时；因此，不会向项目 Bin 文件夹复制任何内容。 |
+| runtimes | 特定于体系结构的程序集 (`.dll`)、符号 (`.pdb`) 和本机源 (`.pri`) 文件 | 程序集添加为引用，仅用于运行时；其他文件复制到项目文件夹中。 在 `AnyCPU` 文件夹下应始终具有特定于相应的 (TFM) `/ref/{tfm}` 的程序集，以提供相应的编译时程序集。 请参阅[支持多个目标框架](supporting-multiple-target-frameworks.md)。 |
 | 内容 | 任意文件 | 内容复制到项目根目录。 将“内容”文件夹视为最终使用包的目标应用程序的根目录。 若要使包在应用程序的 /images 文件夹中添加图片，请将其置于包的 content/images 文件夹中。 |
 | 生成 | MSBuild `.targets` 和 `.props` 文件 | 自动插入到项目文件或 `project.lock.json` (NuGet 3.x+)。 |
 | 工具 | 可从包管理器控制台访问 Powershell 脚本和程序 | `tools` 文件夹添加到仅适用于包管理器控制台的 `PATH` 环境变量（尤其是不作为 MSBuild 集在生成项目时添加到 `PATH`）。 |

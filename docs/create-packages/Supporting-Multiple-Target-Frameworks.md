@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/27/2017
 ms.topic: conceptual
-ms.openlocfilehash: 0b22d48b9151b903a5307beafa5ccef14e5fecf3
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c59839240935e2a6c590dea3adf623313f79f02f
+ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551701"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50981140"
 ---
 # <a name="supporting-multiple-net-framework-versions"></a>支持多个 .NET Framework 版本
 
@@ -65,7 +65,13 @@ ms.locfileid: "43551701"
             \native
             \lib\uap10.0
 
+这些程序集将仅在运行时可用，因此，如果你也想要提供相应的编译时程序集，则在 `/ref{tfm}` 文件夹中设置 `AnyCPU` 程序集。 
+
+请注意，NuGet 始终从一个文件夹选取这些编译或运行时资产，因此，如果在 `/ref` 中存在某些兼容资产，则将忽略 `/lib` 以添加编译时程序集。 同样，如果在 `/runtime` 中有某些兼容资产，则也将为运行时忽略 `/lib`。
+
 有关在 `.nuspec` 清单中引用这些文件的示例，请参阅[创建 UWP 包](../guides/create-uwp-packages.md)。
+
+此外，请参阅[使用 NuGet 打包 Windows 存储应用组件](https://blogs.msdn.microsoft.com/mim/2013/09/02/packaging-a-windows-store-apps-component-with-nuget-part-2)
 
 ## <a name="matching-assembly-versions-and-the-target-framework-in-a-project"></a>将程序集版本与项目中的目标框架匹配
 
