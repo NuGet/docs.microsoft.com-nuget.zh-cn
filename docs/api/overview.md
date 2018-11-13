@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 770173d6b84048cf42a5da46cbc474d8cf604a08
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 7bb5e83b29d1d7e4bf06accfccb73db3aa9ee025
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547498"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580332"
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -49,16 +49,17 @@ NuGet API 是一组可用于下载包、 提取元数据、 将发布新的包�
 
 **服务索引**介绍了各种资源。 当前的受支持的资源集如下所示：
 
-资源名称                                                          | 必需 | 描述
----------------------------------------------------------------------- | -------- | -----------
+资源名称                                                           | 必需 | 描述
+----------------------------------------------------------------------  | -------- | -----------
 [`PackagePublish`](package-publish-resource.md)                        | 是      | 推送和删除 （或取消列出） 包。
 [`SearchQueryService`](search-query-service-resource.md)               | 是      | 筛选器和搜索的关键字的包。
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | 是      | 获取包元数据。
 [`PackageBaseAddress`](package-base-address-resource.md)               | 是      | 获取包的内容 (.nupkg)。
 [`SearchAutocompleteService`](search-autocomplete-service-resource.md) | 否       | 发现的子字符串的包 Id 和版本。
 [`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | 否       | 构造一个 URL 以访问"报告滥用行为"网页。
-[`RepositorySignatures`](repository-signatures-resource.md)            | 否       | 获取用于存储库签名的证书。
-[`Catalog`](catalog-resource.md)                                       | 否       | 包的所有事件的完整记录。
+[`RepositorySignatures`](repository-signatures-resource.md)             | 否      | 获取用于存储库签名的证书。
+[`Catalog`](catalog-resource.md)                                         | 否      | 包的所有事件的完整记录。
+[`SymbolPackagePublish`](symbol-package-publish-resource.md)            | 否      | 推送符号包。
 
 一般情况下，使用 JSON API 资源返回的所有非二进制数据进行序列化。 该资源的单独定义的服务索引的每个资源返回的响应架构。 有关每个资源的详细信息，请参阅上面列出的主题。
 

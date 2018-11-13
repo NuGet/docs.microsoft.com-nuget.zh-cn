@@ -24,8 +24,8 @@
 ## [源和配置文件转换](create-packages/source-and-config-file-transformations.md)
 ## [创建本地化包](create-packages/creating-localized-packages.md)
 ## [预发行包](create-packages/prerelease-packages.md)
-## [本机包](create-packages/native-packages.md)
-## [符号包](create-packages/symbol-packages.md)
+## [创建本机包](create-packages/native-packages.md)
+## [创建符号包](create-packages/symbol-packages-snupkg.md)
 ## [给包签名](create-packages/sign-a-package.md)
 ## [发布包](create-packages/publish-a-package.md)
 ## 参考线
@@ -198,6 +198,7 @@
 ## [如何：使用 API 查询所有包](guides/api/query-for-all-published-packages.md)
 ## [服务索引](api/service-index.md)
 ## [推送和删除](api/package-publish-resource.md)
+## [推送符号包](api/symbol-package-publish-resource.md)
 ## [搜索](api/search-query-service-resource.md)
 ## [自动完成](api/search-autocomplete-service-resource.md)
 ## [包元数据](api/registration-base-url-resource.md)
