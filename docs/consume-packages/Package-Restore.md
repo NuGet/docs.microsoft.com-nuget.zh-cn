@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: b95c4462a214a78452f9dbe35936620636c4f60b
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: da69181aebe3bebcea6acd6e15fde6b77dd33452
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548767"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580293"
 ---
 # <a name="package-restore"></a>包还原
 
@@ -62,9 +62,9 @@ ms.locfileid: "43548767"
         </packageRestore>
     </configuration>
     ```
-    <br/>
-    > [!Note]
-    >  可以通过在启动 Visual Studio 或启动生成前将名为 EnableNuGetPackageRestore 的环境变量设为 TRUE 或 FALSE 值，全局重写 `packageRestore/enabled` 设置。
+
+> [!Note]
+>  可以通过在启动 Visual Studio 或启动生成前将名为 EnableNuGetPackageRestore 的环境变量设为 TRUE 或 FALSE 值，全局重写 `packageRestore/enabled` 设置。
 
 - **生成期间在 Visual Studio 中自动检查缺失的包**：如下所示，通过更改 `NuGet.Config` 文件中的 `packageRestore/automatic` 设置控制自动还原（Windows 上为 `%AppData%\NuGet\NuGet.Config`，Mac/Linux 上为 `~/.nuget/NuGet/NuGet.Config`）。 设置此选项后，从 Visual Studio 运行生成会自动还原任何缺失的包。 该选项不影响使用 MSBuild 从命令行运行的生成。
 
