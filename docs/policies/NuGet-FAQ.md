@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8c63abc9971623e0732ae8d973fafcd04c5d9f48
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c136a3dffac38a68b80f730de1e4c3a3a9c8bd5d
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548799"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580351"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
@@ -166,7 +166,7 @@ NuGet 建议对所有的包签名。 包签名的设计原则是已签名包的�
 
 请注意，列出的包依赖项从包本身自动生成，并且无法进行编辑。
 
-此外，要测试和验证包，同时不在公共库中提供此包，最好将包上传到 [staging.nuget.org](http://staging.nuget.org)。
+此外，要测试和验证包，同时不在公共库中提供此包，最好将包上传到[ int.nugettest.org](https://int.nugettest.org)。
 
 是否可以为以后发布的包预留名称？
 
@@ -182,9 +182,9 @@ NuGet 建议对所有的包签名。 包签名的设计原则是已签名包的�
 
 是否建议将测试包上传到 nuget.org？
 
-对于测试目的，可以使用 [staging.nuget.org](http://staging.nuget.org)，或使用备用的公共 NuGet 服务器，如 [myget.org](https://myget.org) 或 [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/)。
+对于测试目的，可以使用 [int.nugettest.org](https://int.nugettest.org)，或使用备用的公共 NuGet 服务器，如 [myget.org](https://myget.org) 或 [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/)。
 
-请注意，上传到 staging.nuget.org 的包可能不会保留。 请参阅[告别预览版](http://blog.nuget.org/20130419/goodbye-preview.html)。
+请注意，上传到 int.nugettest.org 的包可能不会保留。
 
 可上传到 nuget.org 的最大包大小是多少？
 

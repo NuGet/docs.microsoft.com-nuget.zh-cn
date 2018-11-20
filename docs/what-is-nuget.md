@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/10/2018
 ms.topic: overview
-ms.openlocfilehash: 0b7105ea5d183d139c8bac915378924ba9c0874a
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d688aecaa73cecbfee184e3b13801ed22326a852
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548814"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580319"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 简介
 
@@ -24,7 +24,7 @@ ms.locfileid: "43548814"
 
 ## <a name="the-flow-of-packages-between-creators-hosts-and-consumers"></a>包在创建者、主机和使用者之间的流
 
-作为公用主机角色时，NuGet 自身负责在 [nuget.org](https://www.nuget.org) 中维护包含 100,000 多个唯一包的中央存储库。这些包每天供数以百万的 .NET/.Net Core 开发人员使用。 NuGet 还支持在云中（例如在 Visual Studio Team Services 中）、在私有网络中或者甚至直接在本地文件系统以私密方式托管包。 通过这样做，这些程序包仅对那些有权访问主机的开发人员可用，使你能够将程序包提供给特定的一组用户。 [托管自己的 NuGet 源](hosting-packages/overview.md)中提供了对相关选项的说明。 通过配置选项，你还可以精确控制任何给定计算机可以访问的主机，从而确保程序包是从特定源（而不是像 nuget.org 这样的公用存储库）获取的。
+作为公用主机角色时，NuGet 自身负责在 [nuget.org](https://www.nuget.org) 中维护包含 100,000 多个唯一包的中央存储库。这些包每天供数以百万的 .NET/.Net Core 开发人员使用。 NuGet 还支持在云中（如在 Azure DevOps 上）、在私有网络中或者甚至直接在本地文件系统以私密方式托管包。 通过这样做，这些程序包仅对那些有权访问主机的开发人员可用，使你能够将程序包提供给特定的一组用户。 [托管自己的 NuGet 源](hosting-packages/overview.md)中提供了对相关选项的说明。 通过配置选项，你还可以精确控制任何给定计算机可以访问的主机，从而确保程序包是从特定源（而不是像 nuget.org 这样的公用存储库）获取的。
 
 无论主机的本质是什么，它都可作为包创建者和包使用者之间的连接点。 创建者生成有用的 NuGet 包并将其发布到主机。 然后，使用者可以在可访问的主机上搜索有用且兼容的包，下载包并将其包含在项目中。 在项目中安装包后，包的 API 将可用于其余项目代码。
 
@@ -78,7 +78,7 @@ ms.locfileid: "43548814"
 
 只需引用列表，NuGet 随后即可随时从公共和/或私有主机重新安装&mdash;即“还原”&mdash;所有这些包。 将项目提交到源代码管理存储库或将其以其他方式进行共享时，只需包含引用列表，不需要包含任何包二进制文件（请参阅[包和源代码管理](consume-packages/packages-and-source-control.md)）。
 
-接收项目的计算机（如获得项目副本并将其作为自动部署系统的一部分的生成服务器）仅会在需要时要求 NuGet 还原依赖项。 Visual Studio Team Services 等生成系统会针对此确切目的提供“NuGet 还原”步骤。 同样，当开发人员获取项目副本（如克隆存储库时），他们可以调用 `nuget restore`(NuGet CLI)、`dotnet restore`(dotnet CLI) 或 `Install-Package`（程序包管理器控制台）类似的命令，以获得所有必要的程序包。 对于 Visual Studio 来说，它将在生成项目时自动还原包（前提是启用了自动还原，如[包还原](consume-packages/package-restore.md)中所述）。
+接收项目的计算机（如获得项目副本并将其作为自动部署系统的一部分的生成服务器）仅会在需要时要求 NuGet 还原依赖项。 Azure DevOps 等生成系统会出于此确切目的提供“NuGet 还原”步骤。 同样，当开发人员获取项目副本（如克隆存储库时），他们可以调用 `nuget restore`(NuGet CLI)、`dotnet restore`(dotnet CLI) 或 `Install-Package`（程序包管理器控制台）类似的命令，以获得所有必要的程序包。 对于 Visual Studio 来说，它将在生成项目时自动还原包（前提是启用了自动还原，如[包还原](consume-packages/package-restore.md)中所述）。
 
 显然，开发人员接下来关注的 NuGet 的主要角色则是代表项目维护该引用列表并提供高效还原（和更新）这些引用包的方法。 该列表以两种“包管理格式”中的一种维护，因为将它们称为：
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: a5807a6895a76a7d6660d218b29e1d3a2802ca28
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5f52b00e0c45882fb7a4bd1c1a80022192f3be6b
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545043"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580241"
 ---
 # <a name="package-consumption-workflow"></a>包使用工作流
 
@@ -18,7 +18,7 @@ ms.locfileid: "43545043"
 
 ![前往包源、查找包、在项目中安装包然后添加 using 语句和对包 API 的调用的流](media/Overview-01-GeneralFlow.png)
 
-\* _仅限 Visual Studio 和 dotnet.ex`。Nuget 安装命令不会修改项目文件或 packages.config；必须手动管理条目。_
+\* _仅 Visual Studio 和 `dotnet.exe`。`nuget install` 命令不会修改项目文件或 `packages.config` 文件；必须手动管理条目。_
 
 有关详细信息，请参阅[查找和选择包](../consume-packages/finding-and-choosing-packages.md)和[安装 NuGet 包的不同方式](ways-to-install-a-package.md)。
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: 1bc67927ddc463dcc3a0abe80fe20e625e188e63
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: 1221631b22eed7d2d8e58bd08ff120d91231d49b
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981166"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580386"
 ---
 # <a name="creating-nuget-packages"></a>创建 NuGet 包
 
@@ -177,7 +177,7 @@ nuget locals -list global-packages
 | 生成 | MSBuild `.targets` 和 `.props` 文件 | 自动插入到项目文件或 `project.lock.json` (NuGet 3.x+)。 |
 | 工具 | 可从包管理器控制台访问 Powershell 脚本和程序 | `tools` 文件夹添加到仅适用于包管理器控制台的 `PATH` 环境变量（尤其是不作为 MSBuild 集在生成项目时添加到 `PATH`）。 |
 
-因为文件夹结构可能包含任意数量的目标框架的任意数量的程序集，所以此方法在创建支持多个框架的包时是必要的 
+因为文件夹结构可能包含任意数量的目标框架的任意数量的程序集，所以此方法在创建支持多个框架的包时是必要的。
 
 在任何情况下，一旦准备好所需文件夹结构，则在该文件夹中运行以下命令以创建 `.nuspec` 文件：
 

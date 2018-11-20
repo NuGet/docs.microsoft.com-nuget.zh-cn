@@ -6,14 +6,18 @@ ms.author: karann
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: ad1cf08437b4802d981f8c1a96ab9dc75425a2f0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 3321cba9082eb35b53ba693e246db18e5d8e187b
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43550610"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580254"
 ---
-# <a name="creating-symbol-packages"></a>创建符号包
+# <a name="creating-symbol-packages-legacy"></a>创建符号包（旧版）
+
+> [!Important]
+> 符号包的新推荐格式为 .snupkg。 请参阅[创建符号包 (.snupkg)](Symbol-Packages-snupkg.md)。 </br>
+> .symbols.nupkg 仍受支持，但仅出于兼容性原因。
 
 除了为 nuget.org 或其他源生成包之外，NuGet 还支持创建关联的符号包并将其发布到 SymbolSource 存储库。
 

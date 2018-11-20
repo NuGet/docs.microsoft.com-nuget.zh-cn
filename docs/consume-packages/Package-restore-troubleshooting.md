@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: dacc95c557af016f535bc1b758473d7062f2ad3f
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: 51dd78ef7cc427232982df15657d76d117146853
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981010"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580345"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>包还原错误疑难解答
 

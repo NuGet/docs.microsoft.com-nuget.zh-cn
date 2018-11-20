@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: dd36987e020c2daa02bb875aa9dbd69c85bba4d3
-ms.sourcegitcommit: 1bd72dca2f85b4267b9924236f1d23dd7b0ed733
+ms.openlocfilehash: dfbd6a3e6d59dfcea6394891703ea66bce5e8e92
+ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49951741"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51580267"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>以 NuGet 包形式创建 UI 控件
 
@@ -89,7 +89,11 @@ ms.locfileid: "49951741"
 
 要在工具箱/资产窗格中显示自定义图标，请将图像添加到项目或名为“Namespace.ControlName.extension”的对应 `design.dll` 项目，并将生成操作设为“嵌入资源”。 还必须确保关联的 `AssemblyInfo.cs` 指定 ProvideMetadata 属性 - `[assembly: ProvideMetadata(typeof(RegisterMetadata))]`。 请参阅此[示例](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20)。
 
-支持的格式为 `.png`、`.jpg`、`.jpeg`、`.gif` 和 `.bmp`。 建议图像大小为 64 像素乘 64 像素。
+支持的格式为 `.png`、`.jpg`、`.jpeg`、`.gif` 和 `.bmp`。 推荐格式为 16 x 16 像素 BMP24。
+
+![工具框图标示例](https://raw.githubusercontent.com/NuGet/docs.microsoft.com-nuget/live/docs/guides/media/ColorPicker_16x16x24.bmp)
+
+运行时将替换粉色背景。 更改 Visual Studio 主题且需要设置背景颜色时，图标会重新着色。 有关详细信息，请参阅 [Visual Studio 的图像和图标](https://docs.microsoft.com/en-us/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio)。
 
 在以下示例中，项目包含名为“ManagedPackage.MyCustomControl.png”的图像文件。
 
