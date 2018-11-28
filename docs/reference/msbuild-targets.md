@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 07296ce5a9ba85d68eca5f4915d6efea00dc8980
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 7b3fc72ddd3ad6c9185c2bd0f2563df59e77f1c8
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548867"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453541"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -37,7 +37,7 @@ NuGet 4.0+
 
 ## <a name="pack-target"></a>包目标
 
-.NET Standard 项目使用 PackageReference 格式，并使用`msbuild /t:pack`绘制从项目文件可用于创建 NuGet 包的输入。
+.NET Standard 项目使用 PackageReference 格式，并使用`msbuild -t:pack`绘制从项目文件可用于创建 NuGet 包的输入。
 
 下表描述了可以添加到项目文件第一个 `<PropertyGroup>` 节点中的 MSBuild 属性。 在 Visual Studio 2017 及更高版本中，通过右键单击项目并选择上下文菜单上的“编辑 {project_name}”，即可轻松进行这些编辑。 为方便起见，表由 [`.nuspec` 文件](../reference/nuspec.md)中的等效属性组织。
 
@@ -55,7 +55,9 @@ NuGet 4.0+
 | 描述 | 描述 | “包描述” | |
 | Copyright | Copyright | 空 | |
 | requireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
-| LicenseUrl | PackageLicenseUrl | 空 | |
+| 许可证 | PackageLicenseExpression | 空 | 对应于 `<license type="expression">` |
+| 许可证 | PackageLicenseFile | 空 | 对应到 `<license type="file">`。 您可能需要显式包引用的许可证文件。 |
+| LicenseUrl | PackageLicenseUrl | 空 | `licenseUrl` 已弃用，使用 PackageLicenseExpression 或 PackageLicenseFile 属性 |
 | ProjectUrl | PackageProjectUrl | 空 | |
 | IconUrl | PackageIconUrl | 空 | |
 | Tags | PackageTags | 空 | 使用分号分隔标记。 |
@@ -77,6 +79,8 @@ NuGet 4.0+
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
+- PackageLicenseExpression
+- PackageLicenseFile
 - PackageLicenseUrl
 - PackageProjectUrl
 - PackageIconUrl
@@ -177,7 +181,7 @@ NuGet 4.0+
 
 ### <a name="includesymbols"></a>IncludeSymbols
 
-使用 `MSBuild /t:pack /p:IncludeSymbols=true` 时，相应的 `.pdb` 文件将随其他输出文件（`.dll`、`.exe`、`.winmd`、`.xml`、`.json`、`.pri`）一起复制。 请注意，设置 `IncludeSymbols=true` 会创建常规包和符号包。
+使用 `MSBuild -t:pack -p:IncludeSymbols=true` 时，相应的 `.pdb` 文件将随其他输出文件（`.dll`、`.exe`、`.winmd`、`.xml`、`.json`、`.pri`）一起复制。 请注意，设置 `IncludeSymbols=true` 会创建常规包和符号包。
 
 ### <a name="includesource"></a>IncludeSource
 
@@ -185,28 +189,46 @@ NuGet 4.0+
 
 如果类型为 Compile 的文件位于项目文件夹外，则它只添加到了 `src\<ProjectName>\`。
 
+### <a name="packing-a-license-expression-or-a-license-file"></a>装箱许可证表达式或许可证文件
+
+在使用许可证表达式时，应使用 PackageLicenseExpression 属性。 
+[许可证表达式示例](#https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample)。
+
+封装的许可证文件，需要使用 PackageLicenseFile 属性来指定包的路径，相对于包的根。 此外，您需要确保该文件包含在包中。 例如：
+
+```xml
+<PropertyGroup>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+</PropertyGroup>
+
+<ItemGroup>
+    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+</ItemGroup>
+```
+[许可证生命示例](#https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample)。
+
 ### <a name="istool"></a>IsTool
 
-使用 `MSBuild /t:pack /p:IsTool=true` 时，所有输出文件（如[输出程序集](#output-assemblies)方案中所指定）都被复制到 `tools` 文件夹，而不是 `lib` 文件夹。 请注意，这不同于 `DotNetCliTool`，后者通过在 `.csproj` 文件中设置 `PackageType` 进行指定。
+使用 `MSBuild -t:pack -p:IsTool=true` 时，所有输出文件（如[输出程序集](#output-assemblies)方案中所指定）都被复制到 `tools` 文件夹，而不是 `lib` 文件夹。 请注意，这不同于 `DotNetCliTool`，后者通过在 `.csproj` 文件中设置 `PackageType` 进行指定。
 
 ### <a name="packing-using-a-nuspec"></a>使用 .nuspec 打包
 
 可以使用`.nuspec`文件打包项目，假设具有一个 SDK 项目文件导入`NuGet.Build.Tasks.Pack.targets`，以便可以执行包任务。 仍需要将项目还原之前能够打包 nuspec 文件。 项目文件的目标框架是不相关和打包 nuspec 时不使用。 以下三个 MSBuild 属性与使用 `.nuspec` 的打包相关：
 
 1. `NuspecFile`：用于打包的 `.nuspec` 文件的相对或绝对路径。
-1. `NuspecProperties`：键=值对的分号分隔列表。 由于 MSBuild 命令行分析工作的方式，必须指定多个属性，如下所示：`/p:NuspecProperties=\"key1=value1;key2=value2\"`。  
+1. `NuspecProperties`：键=值对的分号分隔列表。 由于 MSBuild 命令行分析工作的方式，必须指定多个属性，如下所示：`-p:NuspecProperties=\"key1=value1;key2=value2\"`。  
 1. `NuspecBasePath`：`.nuspec` 文件的基路径。
 
 如果使用 `dotnet.exe` 打包项目，请使用类似于下面的命令：
 
 ```cli
-dotnet pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
+dotnet pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:NuspecProperties=<> -p:NuspecBasePath=<Base path> 
 ```
 
 如果使用 MSBuild 打包项目，请使用类似于下面的命令：
 
 ```cli
-msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:NuspecProperties=<> /p:NuspecBasePath=<Base path> 
+msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:NuspecProperties=<> -p:NuspecBasePath=<Base path> 
 ```
 
 请注意，打包 nuspec 使用 dotnet.exe 或 msbuild 还会导致默认情况下生成项目。 这可以避免通过传递```--no-build```属性设置为等同于设置的 dotnet.exe```<NoBuild>true</NoBuild> ```在项目文件中，以及设置```<IncludeBuildOutput>false</IncludeBuildOutput> ```项目文件中
@@ -283,7 +305,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 ## <a name="restore-target"></a>还原目标
 
-`MSBuild /t:restore`（`nuget restore` 和 `dotnet restore` 与 .NET Core 项目一起使用）会还原项目文件中引用的包，如下所示：
+`MSBuild -t:restore`（`nuget restore` 和 `dotnet restore` 与 .NET Core 项目一起使用）会还原项目文件中引用的包，如下所示：
 
 1. 读取所有项目到项目的引用
 1. 读取项目属性以查找中间文件夹和目标框架
@@ -296,7 +318,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 
 ### <a name="restore-properties"></a>还原属性
 
-其他的还原设置可能来自项目文件中的 MSBuild 属性。 还可以从命令行使用 `/p:` 开关设置值（请参阅以下示例）。
+其他的还原设置可能来自项目文件中的 MSBuild 属性。 还可以从命令行使用 `-p:` 开关设置值（请参阅以下示例）。
 
 | 属性 | 描述 |
 |--------|--------|
@@ -315,7 +337,7 @@ msbuild /t:pack <path to .csproj file> /p:NuspecFile=<path to nuspec file> /p:Nu
 命令行：
 
 ```cli
-msbuild /t:restore /p:RestoreConfigFile=<path>
+msbuild -t:restore -p:RestoreConfigFile=<path>
 ```
 
 项目文件：
