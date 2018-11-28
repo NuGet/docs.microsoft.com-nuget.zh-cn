@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 826316bdbce881836836f2a667cfa5297996d14f
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: b5bd8bd30ad134f36433b8e4721ce131425a1483
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580306"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453359"
 ---
 # <a name="pack-command-nuget-cli"></a>pack 命令 (NuGet CLI)
 
 **适用于：** 创建包&bullet;**支持的版本：** 2.7 +
 
-创建基于指定的 NuGet 包`.nuspec`或项目文件。 `dotnet pack`命令 (请参阅[dotnet 命令](dotnet-Commands.md)) 和`msbuild /t:pack`(请参阅[MSBuild 目标](../reference/msbuild-targets.md)) 可以用作备用项。
+创建基于指定的 NuGet 包`.nuspec`或项目文件。 `dotnet pack`命令 (请参阅[dotnet 命令](dotnet-Commands.md)) 和`msbuild -t:pack`(请参阅[MSBuild 目标](../reference/msbuild-targets.md)) 可以用作备用项。
 
 > [!Important]
 > 在 Mono 下从项目文件创建包不支持。 您还需要调整中的非本地路径`.nuspec`nuget.exe 不会将自身的 Windows 路径名转换为 Unix 样式的路径，到文件。
@@ -49,7 +49,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 | OutputDirectory | 指定在其中存储创建的包的文件夹。 如果未不指定任何文件夹，则使用当前文件夹。 |
 | 属性 | 其他选项后应显示最后一个命令行上。 指定重写项目文件中; 中的值的属性的列表请参阅[常用的 MSBuild 项目属性](/visualstudio/msbuild/common-msbuild-project-properties)属性名称。 此处的属性参数是一系列令牌 = 值对，用分号分隔，其中的每个匹配项`$token$`中`.nuspec`文件将替换为给定的值。 值可以为在引号内的字符串。 请注意，对于"配置"属性中，默认值"Debug"。 若要将更改为发布配置，请使用`-Properties Configuration=Release`。 |
 | 后缀 | *(3.4.4+)* 将后缀追加到在内部生成的版本号，通常用于追加生成或其他预发布版本标识符。 例如，使用`-suffix nightly`将使用版本编号类似于创建包`1.2.3-nightly`。 后缀必须以字母以避免警告、 错误和使用不同版本的 NuGet 和 NuGet 包管理器可能不兼容问题开头。 |
-| 符号 | 指定包包含源和符号。 与一起使用时`.nuspec`文件，这将创建常规 NuGet 包文件和对应的符号包。 默认情况下它会创建[旧符号包](../create-packages/Symbol-Packages.md)。 符号包的新建议的格式是.snupkg。 请参阅[创建符号包 (.snupkg)](../create-packages/Symbol-Packages-snupkg.md)。 |
+| 符号 | 指定包包含源和符号。 与一起使用时`.nuspec`文件，这将创建常规 NuGet 包文件和对应的符号包。 默认情况下它会创建[旧符号包](../create-packages/Symbol-Packages.md)。 符号包的新推荐格式为 .snupkg。 请参阅[创建符号包 (.snupkg)](../create-packages/Symbol-Packages-snupkg.md)。 |
 | 工具 | 指定应将该项目的输出文件放在`tool`文件夹。 |
 | 详细级别 | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
 | 版本 | 重写从版本号`.nuspec`文件。 |

@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: a64c5844a58213415671ab0d202a75bc0ececc89
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: ba47d6fdeeaa4ee9de83ef4dd990707bd4928063
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546779"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453554"
 ---
 # <a name="package-metadata"></a>包元数据
 
@@ -103,7 +103,7 @@ name   | 类型             | 必需 | 说明
 count  | 整数          | 是      | 在页面中离开注册数
 项  | 对象的数组 | 否       | 注册叶和其关联的元数据的数组
 较低  | 字符串           | 是      | （含） 的页中最低的 SemVer 2.0.0 版本
-父 | 字符串           | 否       | 为注册索引 URL
+父级 (parent) | 字符串           | 否       | 为注册索引 URL
 上限  | 字符串           | 是      | （含） 的页中最高的 SemVer 2.0.0 版本
 
 `lower`和`upper`时所需的元数据的特定页版本页面对象的边界很有用。
@@ -150,7 +150,9 @@ requireLicenseAcceptance | boolean                    | 否       |
 摘要                  | 字符串                     | 否       | 
 标记                     | 字符串或字符串数组  | 否       | 
 标题                    | 字符串                     | 否       | 
-version                  | 字符串                     | 是      | 包的版本
+version                  | 字符串                     | 是      | 规范化后的完整版本字符串
+
+包`version`属性是在执行规范化后的完整版本字符串。 这意味着，SemVer 2.0.0 生成数据可以包含此处。
 
 `dependencyGroups`属性是一个表示按目标框架的包的依赖项的对象的数组。 如果包有没有依赖关系`dependencyGroups`缺少属性，一个空数组或`dependencies`所有组的属性为空或缺失。
 
@@ -201,7 +203,7 @@ name   | 类型             | 必需 | 说明
 count  | 整数          | 是      | 在页面中离开注册数
 项  | 对象的数组 | 是      | 注册叶和其关联的元数据的数组
 较低  | 字符串           | 是      | （含） 的页中最低的 SemVer 2.0.0 版本
-父 | 字符串           | 是      | 为注册索引 URL
+父级 (parent) | 字符串           | 是      | 为注册索引 URL
 上限  | 字符串           | 是      | （含） 的页中最高的 SemVer 2.0.0 版本
 
 注册叶对象的形状是与注册索引中的相同[上面](#registration-leaf-object-in-a-page)。

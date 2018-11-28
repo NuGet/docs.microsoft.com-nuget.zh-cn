@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: d80339eb81ade1cf2c323a604cc4fac06dcb1012
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: b76fab1028ec9a4172d2390083fbf9adb4290a6c
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981049"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453502"
 ---
 # <a name="nuget-cross-platform-authentication-plugin"></a>NuGet 跨平台身份验证插件
 
@@ -32,7 +32,7 @@ Dotnet.exe 中的身份验证机制是设备流。 当还原或添加操作块�
 ## <a name="authentication-in-msbuild"></a>在 MSBuild 中的身份验证
 
 类似于 dotnet.exe，MSBuild.exe 默认为非交互式 MSBuild.exe 身份验证机制是设备流。
-若要允许还原后，若要暂停并等待身份验证，请调用使用还原`msbuild /t:restore /p:NuGetInteractive="true"`。
+若要允许还原后，若要暂停并等待身份验证，请调用使用还原`msbuild -t:restore -p:NuGetInteractive="true"`。
 
 ## <a name="creating-a-cross-platform-authentication-plugin"></a>创建跨平台身份验证插件
 
