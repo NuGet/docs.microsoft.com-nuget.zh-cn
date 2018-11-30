@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 51dd78ef7cc427232982df15657d76d117146853
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: b85b586e76e424442dc0ba3acfecbee1e8755345
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580345"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453463"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>包还原错误疑难解答
 
@@ -57,7 +57,7 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 - 在 Visual Studio 中，通过以下方法启用包还原：选择“工具”>“NuGet 包管理器”>“包管理器设置”菜单命令，在“包还原”下设置这两个选项，然后选择“确定”。 然后再次生成解决方案。
 - 对于 .NET Core 项目，运行 `dotnet restore` 或 `dotnet build`（它会自动运行还原）。
 - 在命令行上运行 `nuget restore`（使用 `dotnet` 创建的项目除外，这种情况下请使用 `dotnet restore`）。
-- 在包含使用 PackageReference 格式的项目的命令行上，运行 `msbuild /t:restore`。
+- 在包含使用 PackageReference 格式的项目的命令行上，运行 `msbuild -t:restore`。
 
 成功还原后，包应显示在 global-packages 文件夹中。 对于使用 PackageReference 的项目，还原应重新创建 `obj/project.assets.json` 文件；对于使用 `packages.config` 的项目，包应显示在项目的 `packages` 文件夹中。 该项目现在应能成功生成。 如果没有，请[在 GitHub 上提交问题](https://github.com/NuGet/docs.microsoft.com-nuget/issues)，以便我们跟进。
 
@@ -73,7 +73,7 @@ Assets file '<path>\project.assets.json' not found. Run a NuGet package restore 
 
 `project.assets.json` 文件在使用 PackageReference 管理格式时维护项目的依赖项关系图，用于确保在计算机上安装了所有必需的包。 由于此文件是通过包还原动态生成的，它通常不添加到源代码管理中。 因此，该错误在使用工具生成项目时出现，例如，不自动还原包的 `msbuild`。
 
-在这种情况下，请运行 `msbuild /t:restore`，然后运行 `msbuild`，或使用 `dotnet build`（它会自动还原包）。 也可以使用[上一节](#missing)中的任一包还原方法。
+在这种情况下，请运行 `msbuild -t:restore`，然后运行 `msbuild`，或使用 `dotnet build`（它会自动还原包）。 也可以使用[上一节](#missing)中的任一包还原方法。
 
 <a name="consent"></a>
 

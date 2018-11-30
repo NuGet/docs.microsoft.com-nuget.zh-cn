@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 7b30fce4a2d9ad0bd7bc2b97f69b8d5d25101b72
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 15268ae33d56042a765420e5076dac49db6cce04
+ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545221"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52671170"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio"></a>快速入门：在 Visual Studio 中安装和使用包
 
@@ -64,7 +64,7 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 
     ![定位 Newtonsoft.Json 包](media/QS_Use-08-Console1.png)
 
-1. 输入命令 `Install-Package Newtonsoft.json`（请参阅 [Install-Package](../tools/ps-ref-install-package.md)）。 控制台窗口会显示该命令的输出。 错误通常指示程序包与项目的目标框架不兼容。
+1. 输入命令 `Install-Package Newtonsoft.Json`（请参阅 [Install-Package](../tools/ps-ref-install-package.md)）。 控制台窗口会显示该命令的输出。 错误通常指示程序包与项目的目标框架不兼容。
 
 ## <a name="use-the-newtonsoftjson-api-in-the-app"></a>在应用中使用 Newtonsoft.Json API
 
@@ -107,7 +107,7 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 1. 尽管已将 Newtonsoft.Json 包添加到项目中，因为你需要使用代码文件最上方的 `using` 语句，所以 `JsonConvert` 下仍会出现红色波形曲线：
 
     ```cs
-    using Newtonsoft.json;
+    using Newtonsoft.Json;
     ```
 
 1. 若要生成并运行应用，请按 F5 或选择“调试”>“启动调试”：

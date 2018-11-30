@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/26/2017
 ms.topic: conceptual
-ms.openlocfilehash: f911e24da76880410f8dfaa2891b609c7beb4a61
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 6b41b23df115c45e830404afcf9defa23615bd7c
+ms.sourcegitcommit: ce97dded7715f217ec44f6c8368ab0df19c38342
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547884"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52615751"
 ---
 # <a name="package-creation-workflow"></a>包创建工作流
 
@@ -36,7 +36,7 @@ ms.locfileid: "43547884"
 - [创建本地化包](../create-packages/creating-localized-packages.md)，说明如何构建具有多个语言资源的包以及如何使用独立的本地化附属包。
 - [预发行包](../create-packages/prerelease-packages.md)，演示如何向感兴趣的客户发布 alpha、beta 和 rc 版本的包。
 - [源和配置文件转换](../create-packages/source-and-config-file-transformations.md)，说明如何在已添加到项目的文件中执行两种单向令牌替换，以及如何修改 `web.config` 和 `app.config`（卸载包时还将舍弃这两者的设置）。
-- [符号包](../create-packages/symbol-packages.md)，说明如何为库提供符号以允许使用者在调试期间单步执行代码。
+- [符号包](../create-packages/symbol-packages-snupkg.md)，说明如何为库提供符号以允许使用者在调试期间单步执行代码。
 - [包版本控制](../reference/package-versioning.md)，说明如何识别依赖项（通过你的包所使用的其他包）所需的确切版本。
 - [本机包](../create-packages/native-packages.md)，说明面向 C++ 使用者创建包的流程。
 - [签名包](../create-packages/sign-a-package.md)，说明向包添加数字签名的流程。
