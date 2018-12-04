@@ -16,12 +16,12 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: a72b59a391ed25e9617ba3ba3656301a2ed90ddc
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 48ca4b62e722988b3dfe69306565d7f159805962
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580430"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453450"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
@@ -41,12 +41,12 @@ nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 
-msbuild /t:pack MyPackage.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
+msbuild -t:pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
 ```
 
-默认情况下不会生成 `.snupkgs`。 对于 nuget.exe，必须将 `SymbolsPackageFormat` 属性与 `-Symbols` 一起传递；对于 dotnet.exe，必须传递 `--include-symbols`，对于 msbuild，必须传递 `/p:IncludeSymbols`。
+默认情况下不会生成 `.snupkgs`。 对于 nuget.exe，必须将 `SymbolPackageFormat` 属性与 `-Symbols` 一起传递；对于 dotnet.exe，必须传递 `--include-symbols`，对于 msbuild，必须传递 `-p:IncludeSymbols`。
 
-SymbolsPackageFormat 属性可以具有以下两个值之一：`symbols.nupkg`（默认值）或 `snupkg`。 如果未指定 SymbolsPackageFormat，则默认为 `symbols.nupkg`，并将创建旧的符号包。
+SymbolPackageFormat 属性的可取值为下列两个之一：`symbols.nupkg`（默认值）或 `snupkg`。 如果未指定 SymbolPackageFormat，默认值为 `symbols.nupkg`，并将创建旧的符号包。
 
 > [!Note]
 > 仍支持旧格式 `.symbols.nupkg`，但仅出于兼容性原因（请参阅[旧版符号包](Symbol-Packages.md)）。 NuGet.org 符号服务器仅接受新的符号包格式 - `.snupkg`。
@@ -65,13 +65,13 @@ SymbolsPackageFormat 属性可以具有以下两个值之一：`symbols.nupkg`�
     nuget push MyPackage.snupkg
     ```
 
-1. 还可以使用以下命令同时推送主包和符号包。 当前文件夹必须包含 .nupkg 和 .snupkg 文件。
+1. 还可以使用以下命令同时推送主包和符号包。 当前文件夹中必须同时有 .nupkg 和 .snupkg 文件。
 
     ```cli
     nuget push MyPackage.nupkg
     ```
 
-在这种情况下，NuGet 首先将 `MyPackage.nupkg` 发布到 nuget.org，然后发布 `MyPackage.snupkg`。
+NuGet 会将两个包发布到 nuget.org。`MyPackage.nupkg` 先发布，随后 `MyPackage.snupkg` 发布。
 
 ## <a name="nugetorg-symbol-server"></a>NuGet.org 符号服务器
 

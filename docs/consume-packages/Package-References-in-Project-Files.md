@@ -5,22 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 71ab5bb464d1513df89ab53e119d9768e880e4e5
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: d4f0177183ee3edf595c4ce10d1f26cbaca5755d
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981023"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453567"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
-使用 `PackageReference` 节点的包引用可直接在项目文件中管理 NuGet 依赖项（无需单独的 `packages.config` 文件）。 使用 PackageReference 时（正如其名称所述），不会影响 NuGet 的其他方面；例如，“NuGet.fig”文件中的设置
-
-
-
-
-
-（包括包源）仍将如[配置 NuGet 行为](configuring-nuget-behavior.md)中所述应用。
+使用 `PackageReference` 节点的包引用可直接在项目文件中管理 NuGet 依赖项（无需单独的 `packages.config` 文件）。 使用所谓的 PackageReference 不会影响 NuGet 的其他方面；例如，仍按照[配置 NuGet 行为](configuring-nuget-behavior.md)中的说明应用 `NuGet.config` 文件（包括包源）中的设置。
 
 利用 PackageReference，还可以使用 MSBuild 条件按目标框架、配置、平台或其他分组选择包引用。 它还允许对依赖项和内容流实行精细控制。 （有关更多详细信息，请参阅[NuGet 打包和还原为 MSBuild 目标](../reference/msbuild-targets.md)。）
 
@@ -163,7 +157,7 @@ ms.locfileid: "50981023"
 ## <a name="locking-dependencies"></a>锁定依赖项
 NuGet 4.9 或更高版本以及 Visual Studio 2017 15.9 预览版 5 或更高版本中提供此功能。
 
-NuGet 还原的输入是一组项目文件中的包引用（顶级或直接依赖项），而输出是所有包依赖项的完整闭包，其中包括可传递依赖项。 如果输入 PackageReference 列表尚未更改，则 NuGet 尝试始终生成相同的完整闭包。 但是，在某些情况下，它无法执行此操作。 例如:
+对 NuGet 还原的输入是项目文件中的一组包引用（顶级或直接依赖项），而输出则是所有包依赖项的完整闭包，其中包括可传递依赖项。 如果输入 PackageReference 列表尚未更改，则 NuGet 尝试始终生成相同的完整闭包。 但是，在某些情况下，它无法执行此操作。 例如:
 
 * 在使用 `<PackageReference Include="My.Sample.Lib" Version="4.*"/>` 等浮动版本时。 尽管在此处这样做的目的是浮动到每个包还原的最新版本，但是在某些情况下，用户需要在一个显式动作后，将图形锁定到某个最新版本并浮动到更高版本（如果有可用的更高版本）。
 * 匹配 PackageReference 版本要求的较新版本已发布。 例如， 
@@ -193,9 +187,9 @@ NuGet 还原的输入是一组项目文件中的包引用（顶级或直接依�
 ### <a name="restore-behavior-with-lock-file"></a>锁定文件的 `restore` 行为
 如果项目存在锁定文件，则 NuGet 使用此锁定文件来运行 `restore`。 NuGet 将执行一次快速检查，以确定在包依赖项中是否存在项目文件（或相关项目的文件）中所提及的任何更改，如果没有任何更改，则它将仅还原锁定文件中提及的包。 不会对包依赖项进行重新评估。
 
-如果 NuGet 检测到在定义的依赖项中存在项目文件中提及的更改，则它将重新评估包关系图并更新锁定文件，以反映项目的新闭包。
+如果 NuGet 检测到在定义的依赖项中存在一个或多个项目文件中提及的更改，它会重新评估包关系图，并将锁定文件更新为反映项目的新闭包。
 
-对于 CI/CD 和其他应用场景（你不想匆忙更改包依赖项），可以通过将 `lockedmode` 设置为 `true` 来执行此操作：
+对于 CI/CD 和其他方案（不想匆忙更改包依赖项），为此可以将 `lockedmode` 设置为 `true`：
 
 对于 dotnet.exe，请运行：
 ```
@@ -204,7 +198,7 @@ NuGet 还原的输入是一组项目文件中的包引用（顶级或直接依�
 
 对于 msbuild.exe，请运行：
 ```
-> msbuild.exe /t:restore /p:RestoreLockedMode=true
+> msbuild.exe -t:restore -p:RestoreLockedMode=true
 ```
 
 此外，还可以在项目文件中设置此条件 MSBuild 属性：
@@ -238,6 +232,6 @@ ProjectA
 | 选项 | MSBuild 等效选项 | 
 |:---  |:--- |
 | `--use-lock-file` | 为项目启动锁定文件的使用。 或者，可以在项目文件中设置 `RestorePackagesWithLockFile` 属性 | 
-| `--locked-mode` | 为还原启用锁定模式。 这对于想要获取重复版本的 CI/CD 应用场景非常有用。 通过将 `RestoreLockedMode` MSBuild 属性设置为 `true` 也可以实现此目的 |  
+| `--locked-mode` | 为还原启用锁定模式。 这对于要获取可重复生成的 CI/CD 方案非常有用。 通过将 `RestoreLockedMode` MSBuild 属性设置为 `true` 也可以实现此目的 |  
 | `--force-evaluate` | 对于在项目中定义了浮动版本的包，此选项也非常有用。 默认情况下，NuGet 还原不会在每次还原时自动更新包版本，除非使用 `--force-evaluate` 选项运行还原。 |
 | `--lock-file-path` | 为项目定义自定义锁定文件位置。 这也可以通过设置 MSBuild 属性 `NuGetLockFilePath` 来实现。 默认情况下，NuGet 支持根目录中的 `packages.lock.json`。 如果在同一目录中具有多个项目，则 NuGet 支持特定于项目的锁定文件 `packages.<project_name>.lock.json` |

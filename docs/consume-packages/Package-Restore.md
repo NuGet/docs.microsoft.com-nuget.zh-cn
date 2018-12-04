@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: da69181aebe3bebcea6acd6e15fde6b77dd33452
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 9acb87a5f5731fb33c91a1ae9b106c6df492ddcd
+ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580293"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52453528"
 ---
 # <a name="package-restore"></a>包还原
 
@@ -39,7 +39,7 @@ ms.locfileid: "51580293"
 
 - NuGet CLI：使用 [nuget restore](../tools/cli-ref-restore.md) 命令还原项目文件或 `packages.config` 中列出的包。 此外，你还可以指定解决方案文件。
 
-- MSBuild：使用 [msbuild /t:restore](../reference/msbuild-targets.md#restore-target) 命令还原项目文件中列出的包（仅限 PackageReference）。 仅适用于 Visual Studio 2017 附带的 NuGet 4.x+ 和 MSBuild 15.1+。 `nuget restore` 和 `dotnet restore` 均对适用项目使用此命令。
+- **MSBuild**：使用 [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) 命令还原项目文件中列出的包（仅限 PackageReference）。 仅适用于 Visual Studio 2017 附带的 NuGet 4.x+ 和 MSBuild 15.1+。 `nuget restore` 和 `dotnet restore` 均对适用项目使用此命令。
 
 - **Visual Studio Team Services**：在 Team Services 上创建生成定义时，只需在任意生成任务前将 [“NuGet 还原”](/vsts/build-release/tasks/package/nuget#restore-nuget-packages) 或 [“.NET Core 还原”](/vsts/build-release/tasks/build/dotnet-core#restore-nuget-packages) 任务包括在定义中。 大量生成模板中默认包括了此任务。
 

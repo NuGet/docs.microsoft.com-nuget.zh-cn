@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 81672abf0362e053da2b71c8bd39bd7f96ddf73b
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c86a07c30631b7ee99526b014ac9c3b9f136aa81
+ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549410"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52671183"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>针对项目查找和评估 NuGet 包
 
@@ -100,6 +100,21 @@ NuGet 支持本机 C++ 包，这些包可在 Visual Studio 的 C++ 项目中使�
 
 > [!Note]
 > 应时刻留意包的许可条款 - 在 nuget.org 中的包清单页面上选择“许可信息”即可查看。如果包未指定许可条款，请直接通过包页面上的“联系所有者”链接与包所有者联系。 Microsoft 不向用户授予任何第三方包提供程序的知识产权许可，同时不对第三方提供的信息承担任何责任。
+
+## <a name="license-url-deprecation"></a>许可证 URL 弃用
+在我们从 [licenseUrl](../reference/nuspec#licenseurl) 切换到 [license](../reference/nuspec#license) 时，一些 NuGet 客户端和 NuGet 源可能在某些情况下尚无法提供授权信息。 为了维护向后兼容性，许可证 URL 会指向介绍如何在此类情况下检索许可证信息的文档。
+
+如果通过单击包的许可证 URL 转到此页面，表示包中有许可证文件；并且
+* 你已连接到尚不知道如何向客户端解释和显示新许可证信息的源；或者
+* 要使用的客户端尚不知道如何解释和读取源可能提供的新许可证信息；或者
+* 这两者的组合
+
+下面介绍了如何读取包内的许可证文件信息：
+1. 下载 NuGet 包，并将它的内容解压缩到文件夹中。
+1. 打开位于此文件夹的根目录中的 `.nuspec` 文件。
+1. 它应有 `<license type="file">license\license.txt</license>` 等标记。 这意味着，许可证文件的命名为 `license.txt`，且它位于 `license` 文件夹的根目录中。
+1. 转到 `license` 文件夹，并打开 `license.txt` 文件。
+
 
 ## <a name="search-syntax"></a>搜索语法
 
