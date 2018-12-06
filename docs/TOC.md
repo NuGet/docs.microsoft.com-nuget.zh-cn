@@ -10,6 +10,7 @@
 ## [概述和工作流](consume-packages/overview-and-workflow.md)
 ## [查找和选择包](consume-packages/finding-and-choosing-packages.md)
 ## [安装包](consume-packages/ways-to-install-a-package.md)
+###[已签名的包](consume-packages/installing-signed-packages.md)
 ## [包还原](consume-packages/package-restore.md)
 ### [疑难解答](consume-packages/package-restore-troubleshooting.md)
 ## [重新安装并更新包](consume-packages/reinstalling-and-updating-packages.md)

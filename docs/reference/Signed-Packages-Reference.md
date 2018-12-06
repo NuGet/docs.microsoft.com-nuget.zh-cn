@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: c36db9486ad787f19430c75fc38a2e9dd8ba6e37
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 486bf4032e156168f9b2fef57ccdae0c372b2eff
+ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43550416"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52977506"
 ---
 # <a name="signed-packages"></a>签名的包
 
@@ -32,47 +32,13 @@ NuGet 包可以包含的数字签名来提供保护以防止被篡改的内容�
 
 包签名需要代码签名证书，这是一种特殊类型的有效的证书`id-kp-codeSigning`目的 [[RFC 5280 部分 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]。 此外，证书必须具有 RSA 公钥长度为 2048 位或更高版本。
 
-## <a name="get-a-code-signing-certificate"></a>获取代码签名证书
-
-从公共证书颁发机构等都可以获得有效的证书：
-
-- [Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3)
-- [DigiCert](https://www.digicert.com/code-signing/)
-- [Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate)
-- [全局符号](https://www.globalsign.com/en/code-signing-certificate/)
-- [Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)
-- [Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 
-
-可以从 Windows 的受信任的证书颁发机构的完整列表[ http://aka.ms/trustcertpartners ](http://aka.ms/trustcertpartners)。
-
-## <a name="create-a-test-certificate"></a>创建测试证书
-
-出于测试目的，可以使用自行颁发的证书。 若要创建自行颁发的证书，请使用[New-selfsignedcertificate PowerShell 命令](/powershell/module/pkiclient/new-selfsignedcertificate.md)。
-
-```ps
-New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
-                          -FriendlyName "NuGetTestDeveloper" `
-                          -Type CodeSigning `
-                          -KeyUsage DigitalSignature `
-                          -KeyLength 2048 `
-                          -KeyAlgorithm RSA `
-                          -HashAlgorithm SHA256 `
-                          -Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" `
-                          -CertStoreLocation "Cert:\CurrentUser\My" 
-```
-
-此命令在当前用户的个人证书存储区中创建的测试证书可用。 可以通过运行打开证书存储区`certmgr.msc`若要查看新创建的证书。
-
-> [!Warning]
-> nuget.org 不接受包使用自行颁发的证书进行签名。
-
 ## <a name="timestamp-requirements"></a>时间戳要求
 
 已签名的包应包含一个 RFC 3161 时间戳，以确保包签名证书的有效期超出签名有效性。 用于登录时间戳的证书必须为有效`id-kp-timeStamping`目的 [[RFC 5280 部分 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.12)]。 此外，证书必须具有 RSA 公钥长度为 2048 位或更高版本。
 
 其他技术详细信息可在[包签名的技术规格](https://github.com/NuGet/Home/wiki/Package-Signatures-Technical-Details)(GitHub)。
 
-## <a name="signature-requirements-on-nugetorg"></a>在 nuget.org 上的签名要求
+## <a name="signature-requirements-on-nugetorg"></a>在 NuGet.org 上的签名要求
 
 nuget.org 具有用于接受已签名的包的附加要求：
 
@@ -86,32 +52,9 @@ nuget.org 具有用于接受已签名的包的附加要求：
     - 签名证书的作者必须对代码签名有效。
     - 时间戳证书必须是有效的时间戳。
   - 必须不会撤消在签名时。 （这可能不是可知在提交时，因此 nuget.org 定期重新检查吊销状态）。
+  
+  
+## <a name="related-articles"></a>相关文章
 
-## <a name="register-certificate-on-nugetorg"></a>在 nuget.org 上注册证书
-
-若要提交已签名的包，必须先使用 nuget.org 注册证书。你需要为证书`.cer`二进制 DER 格式文件中的。 使用证书导出向导，可以将现有的证书导出到二进制 DER 格式。
-
-![证书导出向导](media/CertificateExportWizard.png)
-
-高级的用户可以导出证书使用[导出证书的 PowerShell 命令](/powershell/module/pkiclient/export-certificate.md)。
-
-若要向 nuget.org 注册证书，请转到`Certificates`部分`Account settings`页 （或组织的设置页），然后选择`Register new certificate`。
-
-![已注册的证书](media/registered-certs.png)
-
-> [!Tip]
-> 一个用户可以提交多个用户可以注册多个证书和相同的证书。
-
-一旦用户拥有一个证书注册，未来的程序包的所有提交**必须**使用其中一个证书进行签名。
-
-用户还可以从帐户中删除已注册的证书。 删除证书后，使用该证书签名的包会在提交失败。 现有的包不会受到影响。
-
-## <a name="configure-package-signing-requirements"></a>配置包签名要求
-
-如果你是包的唯一所有者，则可以所需的签名者。 也就是说，您可以使用任何已注册的证书签署应用程序包并将提交到 nuget.org。
-
-如果包包含多个所有者，默认情况下，可以使用"任何"所有者的证书对程序包进行签名。 作为包的共同所有者，你可以重写"任何"与自己或任何其他共同所有者为所需的签名者。 如果没有注册任何证书的所有者，则将允许未签名的包。 
-
-同样，如果"任何"选项选择其中一个所有者具有注册证书的包和另一个所有者的默认值不具有注册任何证书，然后 nuget.org 接受已签名的包具有签名由其所有者之一注册或未签名包 （因为某个所有者没有注册任何证书）。
-
-![配置包签名者](media/configure-package-signers.png)
+- [对 NuGet 包进行签名](../create-packages/Sign-a-Package.md)
+- [安装已签名的包](../consume-packages/installing-signed-packages.md)
