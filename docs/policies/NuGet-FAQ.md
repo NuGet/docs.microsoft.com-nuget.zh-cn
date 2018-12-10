@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: c136a3dffac38a68b80f730de1e4c3a3a9c8bd5d
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 93a22b423b193874c4c69c37ff9c6d9b4489a48d
+ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580351"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52977571"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
@@ -39,7 +39,7 @@ NuGet 是否支持 Mono？
 - Windows 版 Visual Studio 支持[包管理器 UI](../tools/package-manager-ui.md) 和[包管理器控制台](../tools/package-manager-console.md)。
 - Visual Studio for Mac 具有内置 NuGet 功能，如[在项目中包括 NuGet 包](/visualstudio/mac/nuget-walkthrough)中所述。
 - Visual Studio Code（所有平台）与 NuGet 不存在任何直接集成。 请使用 [NuGet CLI](../tools/nuget-exe-cli-reference.md) 或 [dotnet CLI](../tools/dotnet-commands.md)。
-- Visual Studio Team Services 提供[还原 NuGet 包的生成步骤](/vsts/build-release/tasks/package/nuget)。 还可以[在 Team Services 上托管私有 NuGet 包源](https://www.visualstudio.com/docs/package/nuget/publish)。
+- Azure DevOps 提供[还原 NuGet 包的生成步骤](/vsts/build-release/tasks/package/nuget)。 还可以[在 Azure DevOps 上托管私有 NuGet 包源](https://docs.microsoft.com/azure/devops/artifacts/nuget/publish)。
 
 **如何查看安装的 NuGet 工具的确切版本？**
 
@@ -182,7 +182,7 @@ NuGet 建议对所有的包签名。 包签名的设计原则是已签名包的�
 
 是否建议将测试包上传到 nuget.org？
 
-对于测试目的，可以使用 [int.nugettest.org](https://int.nugettest.org)，或使用备用的公共 NuGet 服务器，如 [myget.org](https://myget.org) 或 [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/)。
+对于测试目的，可以使用 [int.nugettest.org](https://int.nugettest.org)，或使用备用的公共 NuGet 服务器，如 [myget.org](https://myget.org) 或 [Azure DevOps](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/)。
 
 请注意，上传到 int.nugettest.org 的包可能不会保留。
 

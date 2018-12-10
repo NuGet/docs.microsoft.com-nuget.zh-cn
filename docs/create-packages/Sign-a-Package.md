@@ -6,60 +6,99 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: c598461831323ecfcc5da3877df71bd8d69557f6
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: e8955f9d46bab235c8755d5654814a4291d542d6
+ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551973"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52977558"
 ---
 # <a name="signing-nuget-packages"></a>对 NuGet 包进行签名
 
-对包进行签名的过程可确保包自创建以来未被修改。
+已签名的包允许进行内容完整性验证检查，可有效防止内容被篡改。 此外，包的签名还可作为包的实际来源的单一可信来源，增强了对包使用者的身份验证。 本指南假定你已[创建一个包](creating-a-package.md)。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
-1. 待签名的包（一个 `.nupkg` 文件）。 请参阅[创建包](creating-a-package.md)。
+可从以下公共证书颁发机构获取有效的证书：[Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3)、[DigiCert](https://www.digicert.com/code-signing/)、[Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate)、[Global Sign](https://www.globalsign.com/en/code-signing-certificate/)、[Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)、[Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 等。可从 [http://aka.ms/trustcertpartners](http://aka.ms/trustcertpartners) 获取 Windows 信任的证书颁发机构完整列表。
 
-1. nuget.exe 4.6.0 或更高版本。 请参阅如何[安装 NuGet CLI](../install-nuget-client-tools.md#nugetexe-cli)。
+可使用自颁发证书进行测试。 但 NuGet.org 不接受使用自颁发证书签名的包。详细了解如何[创建测试证书](#create-a-test-certificate)
 
-1. [代码签名证书](../reference/signed-packages-reference.md#get-a-code-signing-certificate)。
+## <a name="export-the-certificate-file"></a>导出证书文件
 
-## <a name="sign-a-package"></a>对包进行签名
+* 使用证书导出向导，可将现有的证书导出为二进制 DER 格式。
 
-若要对包进行签名，请使用 [nuget sign](../tools/cli-ref-sign.md)：
+  ![证书导出向导](../reference/media/CertificateExportWizard.png)
 
-```cli
-nuget sign MyPackage.nupkg -CertificateSubjectName <MyCertSubjectName> -Timestamper <TimestampServiceURL>
-```
+* 此外，还可使用 [Export-Certificate PowerShell 命令](/powershell/module/pkiclient/export-certificate.md)导出证书。
 
-如命令参考中所述，可以使用证书存储中可用的证书或使用来自文件的证书。
+## <a name="sign-the-package"></a>对包进行签名
 
-### <a name="common-problems-when-signing-a-package"></a>对包签名时的常见问题
+> [!note]
+> 需要 nuget.exe 4.6.0 或更高版本
 
-- 证书对代码签名无效。 必须确保指定的证书具有适当的扩展密钥用法 (EKU 1.3.6.1.5.5.7.3.3)。
-- 证书不符合基本要求，例如 RSA SHA-256 签名算法或 2048 位或更高位公钥。
-- 证书已过期或已吊销。
-- 时间戳服务器不符合证书要求。
-
-> [!Note]
-> 已签名包应包含时间戳，用于确保签名证书过期时签名仍有效。 签名不含时间戳时，签名操作会发出[警告 NU3002](../reference/errors-and-warnings/NU3002.md)。
-
-## <a name="verify-a-signed-package"></a>验证已签名的包
-
-使用 [nuget verify](../tools/cli-ref-verify.md) 查看给定包的签名详细信息：
+可使用 [nuget sign](../tools/cli-ref-sign.md) 对包进行签名：
 
 ```cli
-nuget verify -signature MyPackage.nupkg
+nuget sign MyPackage.nupkg -CertificateFilePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
 ```
 
-## <a name="install-a-signed-package"></a>安装已签名的包
+* 可使用证书存储中可用的证书或使用来自文件的证书。 请参阅 CLI 参考，了解 [nuget sign](../tools/cli-ref-sign.md)。
+* 已签名包应包含时间戳，用于确保签名证书过期时签名仍有效。 否则签名操作将引发一个[警告](../reference/errors-and-warnings/NU3002.md)。
+* 使用 [nuget verify](../tools/cli-ref-verify.md) 可查看给定包的签名详细信息。
 
-安装已签名的包不需要任何特定操作；但是，如果内容在签名后被修改，则安装会被阻止并引发[错误 NU3008](../reference/errors-and-warnings/NU3008.md)。
+## <a name="register-the-certificate-on-nugetorg"></a>使用 NuGet.org 注册证书
+
+要发布已签名的包，必须先使用 NuGet.org 注册证书。需要将证书设置为二进制 DER 格式的 `.cer` 文件。
+
+1. [登录](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)到 NuGet.org。
+1. 转到 `Account settings`（如果希望使用组织帐户注册证书，则转到 `Manage Organization` >  `Edit Organziation`）。
+1. 展开 `Certificates` 部分，并选择 `Register new`。
+1. 浏览并选择前面导出的证书文件。
+  ![已注册的证书](../reference/media/registered-certs.png)
+
+**注意**
+* 一个用户可以提交多个证书并且多个用户可以注册同一个证书。
+* 用户注册证书之后，所有未来的包提交都必须使用其中一个证书进行签名。 请参阅[管理 NuGet.org 上的包的签名要求](#manage-signing-requirements-for-your-package-on-nugetorg)
+* 用户还可以从帐户中删除已注册的证书。 删除证书后，使用该证书签名的新包将在提交时失败。 现有包不会受到影响。
+
+## <a name="publish-the-package"></a>发布包
+
+现在即可将包发布到 NuGet.org。请参阅[发布包](Publish-a-package.md)。
+
+## <a name="create-a-test-certificate"></a>创建测试证书
+
+可使用自颁发证书进行测试。 要创建自颁发证书，请使用 [New-SelfSignedCertificate PowerShell 命令](/powershell/module/pkiclient/new-selfsignedcertificate.md)。
+
+```ps
+New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing purposes ONLY" `
+                          -FriendlyName "NuGetTestDeveloper" `
+                          -Type CodeSigning `
+                          -KeyUsage DigitalSignature `
+                          -KeyLength 2048 `
+                          -KeyAlgorithm RSA `
+                          -HashAlgorithm SHA256 `
+                          -Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" `
+                          -CertStoreLocation "Cert:\CurrentUser\My" 
+```
+
+此命令将在当前用户的个人证书存储中创建可用的测试证书。 可通过运行 `certmgr.msc` 打开证书存储，查看新创建的证书。
 
 > [!Warning]
-> 使用不受信任的证书签名的包被视为未签名，并且在安装时不会像其他任何未签名的包一样发出任何警告或错误。
+> NuGet.org 不接受使用自颁发证书签名的包。
 
-## <a name="see-also"></a>请参阅
+## <a name="manage-signing-requirements-for-your-package-on-nugetorg"></a>管理 NuGet.org 上的包的签名要求
+1. [登录](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)到 NuGet.org。
 
-[签名包引用](../reference/Signed-Packages-Reference.md)
+1. 转到 `Manage Packages`  
+   ![配置包签名程序](../reference/media/configure-package-signers.png)
+
+* 如果你是包的唯一所有者，那么你就是所要求的签名者，即你可使用任何已注册的证书对包进行签名，然后将其发布到 NuGet.org。
+
+* 如果包具有多个所有者，默认情况下，可以使用“任何”所有者的证书对包进行签名。 作为包的共同所有者，你可将“任何”重写为你自己或任何其他共同所有者，作为所需的签名者。 如果你让没有注册任何证书的人成为所有者，则将允许未签名的包。 
+
+* 同样，如果已选中某个包的默认“任何”选项，在该包中，有一个所有者已注册证书，而另一个所有者未注册任何证书，则 NuGet.org 接受已签名的包（由其中一个所有者注册签名）或接受未签名的包（因为其中一个所有者未注册任何证书）。
+
+## <a name="related-articles"></a>相关文章
+
+- [安装已签名的包](../consume-packages/installing-signed-packages.md)
+- [签名包引用](../reference/Signed-Packages-Reference.md)
