@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 7bb5e83b29d1d7e4bf06accfccb73db3aa9ee025
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: bb47c72768b0698d8e712c8261321ff38bba2764
+ms.sourcegitcommit: be9c51b4b095aea40ef41bbea7e12ef0a194ee74
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580332"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53248424"
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -62,6 +62,8 @@ NuGet API 是一组可用于下载包、 提取元数据、 将发布新的包�
 [`SymbolPackagePublish`](symbol-package-publish-resource.md)            | 否      | 推送符号包。
 
 一般情况下，使用 JSON API 资源返回的所有非二进制数据进行序列化。 该资源的单独定义的服务索引的每个资源返回的响应架构。 有关每个资源的详细信息，请参阅上面列出的主题。
+
+将来，随着协议的发展，新属性可能会添加到 JSON 响应。 客户端要与时俱进，实现不应假定响应架构已完成，且不能包含额外的数据。 应忽略实现并不了解的所有属性。
 
 > [!Note]
 > 当源不实现`SearchAutocompleteService`应适当地禁用任何自动完成行为。 当`ReportAbuseUriTemplate`未实现，正式的 NuGet 客户端回退到 nuget.org 的报告滥用 URL (通过跟踪[NuGet/Home #4924](https://github.com/NuGet/Home/issues/4924))。 其他客户端可以选择只是不向用户显示报告滥用 URL。
