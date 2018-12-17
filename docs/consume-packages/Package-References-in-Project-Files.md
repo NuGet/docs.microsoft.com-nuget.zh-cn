@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: d4f0177183ee3edf595c4ce10d1f26cbaca5755d
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: e4df15be1f29e2c611876aaa49e16ac7d1823938
+ms.sourcegitcommit: be9c51b4b095aea40ef41bbea7e12ef0a194ee74
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453567"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53248450"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -47,7 +47,7 @@ ms.locfileid: "52453567"
 在上述示例中，3.6.0 指 >=3.6.0 的任何版本（首选项为最低版本），详见[包版本控制](../reference/package-versioning.md#version-ranges-and-wildcards)。
 
 ## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a>对没有 PackageReferences 的项目使用 PackageReference
-高级：如果项目中没有安装包（项目文件中没有 PackageReference，也没有 packages.config 文件），但想要项目还原为 PackageReference 样式，则可以在项目文件中将项目属性 RestoreProjectStyle 设置为 PackageReference。
+高级：如果没有在项目中安装包（项目文件中没有 PackageReference，也没有 packages.config 文件），但要将项目还原为 PackageReference 样式，可以在项目文件中将项目属性 RestoreProjectStyle 设置为 PackageReference。
 ```xml
 <PropertyGroup>
     <!--- ... -->
@@ -88,7 +88,7 @@ ms.locfileid: "52453567"
 
 以下元数据标记控制依赖项资产：
 
-| 标记 | 描述 | 默认值 |
+| 标记 | 说明 | 默认值 |
 | --- | --- | --- |
 | IncludeAssets | 将使用这些资产 | 全部 |
 | ExcludeAssets | 不会使用这些资产 | 无 |
@@ -96,7 +96,7 @@ ms.locfileid: "52453567"
 
 以下是这些标记的允许值，其中用分号分隔多个值（但 `all` 和 `none` 必须单独显示）：
 
-| “值” | 描述 |
+| 值 | 说明 |
 | --- | ---
 | 编译 | `lib` 文件夹的内容，控制项目能否对文件夹中的程序集进行编译 |
 | Runtime — 运行时 | `lib` 和 `runtimes` 文件夹的内容，控制是否会复制这些程序集，以生成输出目录 |
@@ -155,7 +155,7 @@ ms.locfileid: "52453567"
 ```
 
 ## <a name="locking-dependencies"></a>锁定依赖项
-NuGet 4.9 或更高版本以及 Visual Studio 2017 15.9 预览版 5 或更高版本中提供此功能。
+NuGet 4.9 或更高版本以及 Visual Studio 2017 15.9 或更高版本随附此功能。
 
 对 NuGet 还原的输入是项目文件中的一组包引用（顶级或直接依赖项），而输出则是所有包依赖项的完整闭包，其中包括可传递依赖项。 如果输入 PackageReference 列表尚未更改，则 NuGet 尝试始终生成相同的完整闭包。 但是，在某些情况下，它无法执行此操作。 例如:
 
@@ -213,7 +213,7 @@ NuGet 4.9 或更高版本以及 Visual Studio 2017 15.9 预览版 5 或更高版
 如果锁定模式为 `true`，则还原将还原锁定文件中列出的完全匹配的包，或者，如果在锁定文件创建后为项目更新了定义的包依赖项，则还原将失败。
 
 ### <a name="make-lock-file-part-of-your-source-repository"></a>使锁定文件作为源存储库的一部分
-如果生成应用程序，存在问题的可执行文件和项目在依赖关系链结尾处，则将锁定文件签入到源代码存储库，以便 NuGet 能够在还原期间使用它。
+若要生成应用程序，且可执行文件和相关项目位于依赖关系链的开头，请将锁定文件签入源代码存储库，以便 NuGet 能够在还原期间使用它。
 
 但是，如果你的项目是不交付的库项目或其他项目依赖的常用代码项目，则不应将锁定文件作为源代码的一部分签入。 保留锁定文件没有任何坏处，但在依赖于此常用代码项目的项目还原/生成期间，锁定文件中列出的常用代码项目的锁定的包依赖项可能无法使用。
 
