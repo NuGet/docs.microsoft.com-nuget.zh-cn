@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: a9427d87f69a2e942a9802fbdae5193eead1c724
-ms.sourcegitcommit: af58d59669674c3bc0a230d5764e37020a9a3f1e
+ms.openlocfilehash: 878fb582a31667c84f3ae306b554718de72eca7a
+ms.sourcegitcommit: 5c5f0f0e1f79098e27d9566dd98371f6ee16f8b5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52831015"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53645667"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -65,7 +65,7 @@ NuGet 4.0+
 | 存储库/Url | RepositoryUrl | 空 | 用来克隆或检索源代码存储库 URL。 示例： *https://github.com/NuGet/NuGet.Client.git* |
 | 存储库/类型 | RepositoryType | 空 | 存储库类型。 示例： *git*， *tfs*。 |
 | 存储库/分支 | RepositoryBranch | 空 | 可选存储库分支的信息。 *RepositoryUrl*还必须指定要包含此属性。 示例：*主*(NuGet 4.7.0+) |
-| 存储库/提交 | RepositoryCommit | 空 | 可选存储库提交或变更集以指示哪些源包已针对构建。 *RepositoryUrl*还必须指定要包含此属性。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
+| 存储库/提交 | RepositoryCommit | 空 | 可选存储库提交或变更集以指示哪些源包已针对构建。 *RepositoryUrl*还必须指定要包含此属性。 示例:*0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0+) |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | 总结 | 不支持 | | |
 
@@ -117,8 +117,8 @@ NuGet 4.0+
 
 在项目文件或命令行中，有两种 MSBuild 属性可用于控制输出程序集的位置：
 
-- `IncludeBuildOutput`：确定包中是否应包括生成输出程序集的布尔值。
-- `BuildOutputTargetFolder`：指定应放置输出程序集的文件夹。 输出程序集（和其他输出文件）会复制到各自的框架文件夹中。
+- `IncludeBuildOutput`：一个布尔值，确定是否应在生成输出程序集包括在包中。
+- `BuildOutputTargetFolder`：指定应在其中放置输出程序集的文件夹。 输出程序集（和其他输出文件）会复制到各自的框架文件夹中。
 
 ### <a name="package-references"></a>包引用
 
@@ -202,7 +202,7 @@ NuGet 4.0+
 </PropertyGroup>
 
 <ItemGroup>
-    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath=""/>
 </ItemGroup>
 ```
 [许可证文件示例](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample)。
@@ -217,7 +217,7 @@ NuGet 4.0+
 
 1. `NuspecFile`：用于打包的 `.nuspec` 文件的相对或绝对路径。
 1. `NuspecProperties`：键=值对的分号分隔列表。 由于 MSBuild 命令行分析工作的方式，必须指定多个属性，如下所示：`-p:NuspecProperties=\"key1=value1;key2=value2\"`。  
-1. `NuspecBasePath`：`.nuspec` 文件的基路径。
+1. `NuspecBasePath`：基路径`.nuspec`文件。
 
 如果使用 `dotnet.exe` 打包项目，请使用类似于下面的命令：
 
@@ -252,15 +252,15 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 `pack`目标提供了在内部，目标框架特定生成中运行的两个扩展点。 包括目标框架特定内容和程序集放在一个程序包支持的扩展点：
 
-- `TargetsForTfmSpecificBuildOutput` 目标： 用于文件内`lib`文件夹或使用指定的文件夹`BuildOutputTargetFolder`。
-- `TargetsForTfmSpecificContentInPackage` 目标： 之外的文件的使用`BuildOutputTargetFolder`。
+- `TargetsForTfmSpecificBuildOutput` 目标：用于文件内`lib`文件夹或使用指定的文件夹`BuildOutputTargetFolder`。
+- `TargetsForTfmSpecificContentInPackage` 目标：用于外部文件`BuildOutputTargetFolder`。
 
 #### <a name="targetsfortfmspecificbuildoutput"></a>TargetsForTfmSpecificBuildOutput
 
 编写自定义目标和指定的值为`$(TargetsForTfmSpecificBuildOutput)`属性。 转到所需的所有文件`BuildOutputTargetFolder`(默认情况下为 lib)，目标应将这些文件写入到 ItemGroup`BuildOutputInPackage`并设置以下两个元数据值：
 
-- `FinalOutputPath`: 该文件; 绝对路径如果未提供，标识用于评估源路径。
-- `TargetPath`: （可选) 设置时需要转到子文件夹内文件`lib\<TargetFramework>`，像在其各自的区域性文件夹下，所涉及的附属资源程序集。 默认值为的文件的名称。
+- `FinalOutputPath`：文件; 的绝对路径如果未提供，标识用于评估源路径。
+- `TargetPath`：（可选）当文件需要转到子文件夹内时设置`lib\<TargetFramework>`，像在其各自的区域性文件夹下，所涉及的附属资源程序集。 默认值为的文件的名称。
 
 示例:
 
@@ -282,8 +282,8 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 编写自定义目标和指定的值为`$(TargetsForTfmSpecificContentInPackage)`属性。 若要在包中包含任何文件，目标应将这些文件写入 ItemGroup`TfmSpecificPackageFile`并设置以下可选元数据：
 
-- `PackagePath`： 该文件应位于包中的输出路径。 如果多个文件添加到相同的包路径，NuGet 会发出警告。
-- `BuildAction`: 生成操作以将分配到该文件，才是必需的包路径是否在`contentFiles`文件夹。 默认值为"None"。
+- `PackagePath`：该文件应在包中的输出路径。 如果多个文件添加到相同的包路径，NuGet 会发出警告。
+- `BuildAction`：要分配给文件的生成操作才是必需的包路径是否在`contentFiles`文件夹。 默认值为"None"。
 
 示例：
 ```xml
