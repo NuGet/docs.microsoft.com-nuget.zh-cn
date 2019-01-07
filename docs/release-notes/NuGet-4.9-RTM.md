@@ -5,32 +5,32 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/20/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3da1056f64b76f27afa662d879ef9f85868e2a07
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: 7dcb2e430ad80815f716f5567b511ff08acfe31b
+ms.sourcegitcommit: a9babe261f67da0f714d168d04ea54a66628974b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453767"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53735131"
 ---
 # <a name="nuget-49-release-notes"></a>NuGet 4.9 发行说明
 
-[Visual Studio 2017 15.9.0 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) 随附 NuGet 4.9.0 功能。
+NuGet 分发车辆：
 
+| NuGet 版本 | 适用于 Visual Studio 版本| 适用于 .NET SDK|
+|:---|:---|:---|
+| **4.9.0** | Visual Studio 2017 版本 15.9.0 | 2.1.500、2.2.100 |
+| **4.9.1** | n/a | n/a |
+| [**4.9.2**](https://nuget.org/downloads) |[Visual Studio 2017 版本 15.9.4](https://visualstudio.microsoft.com/downloads/) | [2.1.502，2.2.101](https://www.microsoft.com/net/download/visual-studio-sdks) |
 
-此外提供了相同功能的命令行版本：
-* NuGet.exe 4.9.x - [nuget.org/downloads](https://nuget.org/downloads)
-* dotnet.exe - [.NET Core SDK 2.1.500](https://www.microsoft.com/net/download/visual-studio-sdks)
+## <a name="summary-whats-new-in-490"></a>摘要:4.9.0 版中的新增功能
 
+* 签名：允许 ClientPolicies 要求必须使用 NuGet.Config 中列出的一组受信任作者和存储库 - [#6961](https://github.com/NuGet/Home/issues/6961)，[博客文章](https://blog.nuget.org/20181205/Lock-down-your-dependencies-using-configurable-trust-policies.html)
 
-## <a name="summary-whats-new-in-490"></a>摘要：4.9.0 中的新变化
-
-* 签名：允许 ClientPolicies 要求必须使用 NuGet.Config 中列出的一组受信任作者和存储库 - [#6961](https://github.com/NuGet/Home/issues/6961)
-
-* 创建“.snupkg”文件以将符号包含在包中，即将 push 增强为了解 nuget 协议，以接受符号服务器的 snupkg 文件 - [#6878](https://github.com/NuGet/Home/issues/6878)
+* 创建“.snupkg”文件以将符号包含在包中，即将 push 增强为了解 nuget 协议，以接受符号服务器的 snupkg 文件 - [#6878](https://github.com/NuGet/Home/issues/6878)，[博客文章](https://blog.nuget.org/20181116/Improved-debugging-experience-with-the-NuGet-org-symbol-server-and-snupkg.html)
 
 * NuGet 凭据插件 V2 - [#6642](https://github.com/NuGet/Home/issues/6642)
 
-* 独立式 NuGet 包 - 许可证 - [#4628](https://github.com/NuGet/Home/issues/4628)
+* 独立式 NuGet 包 - 许可证 - [#4628](https://github.com/NuGet/Home/issues/4628)，[公告](https://github.com/NuGet/Announcements/issues/32)
 
 * 支持选择对 PackageReference 启用“GeneratePathProperty”元数据，以将每个包的 MSBuild 属性生成到“Foo.Bar\1.0”目录中 - [#6949](https://github.com/NuGet/Home/issues/6949)
 
@@ -80,7 +80,7 @@ ms.locfileid: "52453767"
 
 [版本 4.9.0 中所有已修复问题的列表](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9") <br>
 
-## <a name="summary-whats-new-in-491"></a>摘要：4.9.1 中的新变化
+## <a name="summary-whats-new-in-491"></a>摘要:4.9.1 版中的新增功能
 
 * 现在支持通过新命令 trusted-signers 读取对 nuget.config 执行的写入操作 - [#7480](https://github.com/NuGet/Home/issues/7480)
 
@@ -94,15 +94,19 @@ ms.locfileid: "52453767"
 
 [版本 4.9.1 中所有已修复问题的列表](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.1")
 
+## <a name="summary-whats-new-in-492"></a>摘要:4.9.2 版中的新增功能
+
+### <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
+
+* 如果源名称包含空格，VS/dotnet.exe/nuget.exe/msbuild.exe 还原不使用凭据 - [#7517](https://github.com/NuGet/Home/issues/7517)
+
+* LicenseAcceptanceWindow 和 LicenseFileWindow 辅助功能问题 - [#7452](https://github.com/NuGet/Home/issues/7452)
+
+* 修复 DateTimeConverter 中 DateTime.Parse 中的 FormatException -[#7539](https://github.com/NuGet/Home/issues/7539)
+
+[版本 4.9.2 中所有已修复问题的列表](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
+
 ## <a name="known-issues"></a>已知问题
-
-### <a name="dotnetexenugetexe-doesnt-use-credentials-when-source-name-contains-a-whitespace---7517httpsgithubcomnugethomeissues7517"></a>如果源名称包含空格，dotnet.exe/nuget.exe 不使用凭据 - [#7517](https://github.com/NuGet/Home/issues/7517)
-
-#### <a name="issue"></a>问题
-如果源名称中有空格，nuget.exe 会抛出错误，如 `The ' ' character, hexadecimal value 0x20, cannot be included in a name.`
-
-#### <a name="workaround"></a>解决方法
-将源名称更改为不包含空格。
 
 ### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>dotnet nuget push --interactive 在 Mac 上抛出错误。 - [#7519](https://github.com/NuGet/Home/issues/7519)
 
@@ -111,14 +115,6 @@ ms.locfileid: "52453767"
 
 #### <a name="workaround"></a>解决方法
 将 interactive 选项与其他任何 dotnet 命令一起运行（如 `dotnet restore --interactive`），并进行身份验证。 凭据提供程序可能会缓存身份验证。 然后，运行 `dotnet nuget push`。
-
-### <a name="licenseacceptancewindow-and-licensefilewindow-accessibility-issues---7452httpsgithubcomnugethomeissues7452"></a>LicenseAcceptanceWindow 和 LicenseFileWindow 辅助功能问题 - [#7452](https://github.com/NuGet/Home/issues/7452)
-
-#### <a name="issue"></a>问题
-许可证接受窗口和许可证文件窗口存在辅助功能问题，不支持键盘导航和使用屏幕阅读器和 JAWS 提供旁白。
-
-#### <a name="workaround"></a>解决方法
-无解决方法。
 
 ### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414httpsgithubcomnugethomeissues7414"></a>FallbackFolders 中由 .NET Core SDK 安装的包是自定义安装的，无法通过签名验证。 - [#7414](https://github.com/NuGet/Home/issues/7414)
 
