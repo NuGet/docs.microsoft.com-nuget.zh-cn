@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: a47a3a56e1c290c9a2f228ce1d0313cbdf0c4c34
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d6925df63daf3096455a8205d6aeb07b4475f715
+ms.sourcegitcommit: 5c5f0f0e1f79098e27d9566dd98371f6ee16f8b5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549201"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53645628"
 ---
 # <a name="building-pre-release-packages"></a>生成预发行包
 
@@ -44,13 +44,13 @@ ms.locfileid: "43549201"
 
 默认情况下，NuGet 在处理包时不会包括预发行版本，但按照下文所述方法可更改此行为：
 
-- Visual Studio 中的包管理器 UI：在“管理 NuGet 包”UI 中，选中“包括预发行版”框：
+- **Visual Studio 中的包管理器 UI**：在“管理 NuGet 包”UI 中，选中“包括预发行版”框：
 
     ![Visual Studio 中的“包括预发行版”复选框](media/Prerelease_02-CheckPrerelease.png)
 
     设置或清除此框将刷新包管理器 UI 和可安装的可用版本的列表。
 
-- **包管理器控制台**：将 `-IncludePrerelease` 开关与 `Find-Package`、`Get-Package`、`Install-Package`、`Sync-Package` 和 `Update-Package` 命令配合使用。 请参阅 [PowerShell 参考](../tools/powershell-reference.md)。
+- **包管理器控制台**：将 `-IncludePrerelease` 开关与 `Find-Package`、`Get-Package`、`Install-Package``Sync-Package` 和 `Update-Package` 命令配合使用。 请参阅 [PowerShell 参考](../tools/powershell-reference.md)。
 
 - **NuGet CLI**：将 `-prerelease` 开关与 `install`、`update`、`delete` 和 `mirror` 命令配合使用。 请参阅 [NuGet CLI 参考](../tools/nuget-exe-cli-reference.md)
 
