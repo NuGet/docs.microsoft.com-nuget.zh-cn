@@ -6,18 +6,18 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 3dd50c1f39ddba24b2814624fe290e20fbd1a146
-ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
+ms.openlocfilehash: f224f16f91bbe8a6580098ad655e5e42e112f178
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671144"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324742"
 ---
 # <a name="errors-and-warnings"></a>错误和警告
 
 在 NuGet 4.3.0 错误和警告本主题中所述进行编号，并提供详细的信息来帮助你解决所涉及的问题。
 
-错误和警告在此处列出并仅提供[基于 PackageReference 的](../consume-packages/package-references-in-project-files.md)项目和 NuGet 4.3.0。 NuGet 还支持 MSBuild 属性禁止显示警告或将其提升至错误。 有关详细信息，请参阅[如何： 禁止显示编译器警告](/visualstudio/ide/how-to-suppress-compiler-warnings)Visual Studio 文档中。
+错误和警告在此处列出并仅提供[基于 PackageReference 的](../consume-packages/package-references-in-project-files.md)项目和 NuGet 4.3.0。 NuGet 还支持 MSBuild 属性禁止显示警告或将其提升至错误。 有关详细信息，请参阅[如何：取消显示编译器警告](/visualstudio/ide/how-to-suppress-compiler-warnings)Visual Studio 文档中。
 
 ## <a name="errors"></a>错误
 
@@ -28,7 +28,7 @@ ms.locfileid: "52671144"
 | 兼容性错误 | [NU1201](./errors-and-warnings/NU1201.md)， [NU1202](./errors-and-warnings/NU1202.md)， [NU1203](./errors-and-warnings/NU1203.md)， [NU1401](./errors-and-warnings/NU1401.md) |
 | NuGet 的内部错误 | [NU1000](./errors-and-warnings/NU1000.md) |
 | 已签名的包错误 （创建和验证） | [NU3001](./errors-and-warnings/NU3001.md)， [NU3004](./errors-and-warnings/NU3004.md)， [NU3005](./errors-and-warnings/NU3005.md)， [NU3008](./errors-and-warnings/NU3008.md)， [NU3012](./errors-and-warnings/NU3012.md)， [NU3028](./errors-and-warnings/NU3028.md)， [NU3034](./errors-and-warnings/NU3034.md)|
-| 包错误 | [NU5000](./errors-and-warnings/NU5000.md)， [NU5001](./errors-and-warnings/NU5001.md)， [NU5002](./errors-and-warnings/NU5002.md)， [NU5003](./errors-and-warnings/NU5003.md)， [NU5004](./errors-and-warnings/NU5004.md)， [NU5005](./errors-and-warnings/NU5005.md)， [NU5007](./errors-and-warnings/NU5007.md)， [NU5008](./errors-and-warnings/NU5008.md)， [NU5009](./errors-and-warnings/NU5009.md)， [NU5010](./errors-and-warnings/NU5010.md)， [NU5011](./errors-and-warnings/NU5011.md)， [NU5012](./errors-and-warnings/NU5012.md)， [NU5013](./errors-and-warnings/NU5013.md)， [NU5014](./errors-and-warnings/NU5014.md)， [NU5015](./errors-and-warnings/NU5015.md)， [NU5016](./errors-and-warnings/NU5016.md)， [NU5017](./errors-and-warnings/NU5017.md)， [NU5018](./errors-and-warnings/NU5018.md)， [NU5019](./errors-and-warnings/NU5019.md)， [NU5020](./errors-and-warnings/NU5020.md)， [NU5021](./errors-and-warnings/NU5021.md)， [NU5022](./errors-and-warnings/NU5022.md)， [NU5023](./errors-and-warnings/NU5023.md)， [NU5024](./errors-and-warnings/NU5024.md)， [NU5025](./errors-and-warnings/NU5025.md)， [NU5026](./errors-and-warnings/NU5026.md)， [NU5027](./errors-and-warnings/NU5027.md)， [NU5028](./errors-and-warnings/NU5028.md)， [NU5029](./errors-and-warnings/NU5029.md)
+| 包错误 | [NU5000](./errors-and-warnings/NU5000.md)， [NU5001](./errors-and-warnings/NU5001.md)， [NU5002](./errors-and-warnings/NU5002.md)， [NU5003](./errors-and-warnings/NU5003.md)， [NU5004](./errors-and-warnings/NU5004.md)， [NU5005](./errors-and-warnings/NU5005.md)， [NU5007](./errors-and-warnings/NU5007.md)， [NU5008](./errors-and-warnings/NU5008.md)， [NU5009](./errors-and-warnings/NU5009.md)， [NU5010](./errors-and-warnings/NU5010.md)， [NU5011](./errors-and-warnings/NU5011.md)， [NU5012](./errors-and-warnings/NU5012.md)， [NU5013](./errors-and-warnings/NU5013.md)， [NU5014](./errors-and-warnings/NU5014.md)， [NU5015](./errors-and-warnings/NU5015.md)， [NU5016](./errors-and-warnings/NU5016.md)， [NU5017](./errors-and-warnings/NU5017.md)， [NU5018](./errors-and-warnings/NU5018.md)， [NU5019](./errors-and-warnings/NU5019.md)， [NU5020](./errors-and-warnings/NU5020.md)， [NU5021](./errors-and-warnings/NU5021.md)， [NU5022](./errors-and-warnings/NU5022.md)， [NU5023](./errors-and-warnings/NU5023.md)， [NU5024](./errors-and-warnings/NU5024.md)， [NU5025](./errors-and-warnings/NU5025.md)， [NU5026](./errors-and-warnings/NU5026.md)， [NU5027](./errors-and-warnings/NU5027.md)， [NU5028](./errors-and-warnings/NU5028.md)， [NU5029](./errors-and-warnings/NU5029.md)， [NU5036](./errors-and-warnings/NU5036.md)
 | 许可证特定包错误 | [NU5030](./errors-and-warnings/NU5030.md)， [NU5031](./errors-and-warnings/NU5031.md)， [NU5032](./errors-and-warnings/NU5032.md)， [NU5033](./errors-and-warnings/NU5033.md)， [NU5034](./errors-and-warnings/NU5034.md)， [NU5035](./errors-and-warnings/NU5035.md)
 
 ## <a name="warnings"></a>警告

@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: e8d4ed1f3fe4394d084a5847200901b23a1b7b39
-ms.sourcegitcommit: c825eb7e222d4a551431643f5b5617ae868ebe0a
+ms.openlocfilehash: 009be99a1c6623a00b4bdbe6db3164ca70782212
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51944075"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324898"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -105,6 +105,9 @@ ms.locfileid: "51944075"
   </files>
 </package>
 ```
+
+为 MSBuild 等效的看一看[装箱许可证表达式或许可证文件](msbuild-targets.md#packing-a-license-expression-or-a-license-file)。
+
 NuGet 的许可证表达式的确切语法是下面中所述[ABNF](https://tools.ietf.org/html/rfc5234)。
 ```cli
 license-id            = <short form license identifier from https://spdx.org/spdx-specification-21-web-version#h.luq9dgcle9mo>
@@ -149,7 +152,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 
 #### <a name="collection-elements"></a>集合元素
 
-#### <a name="packagetypes"></a>PackageTypes
+#### <a name="packagetypes"></a>packageTypes
 *(3.5+)* 如果不是传统的依赖项包，则为指定包类型的包括零个或多个 `<packageType>` 元素的集合。 每个 packageType 都具有 name 和 version 特性。 请参阅[设置包类型](../create-packages/creating-a-package.md#setting-a-package-type)。
 #### <a name="dependencies"></a>依赖项
 零个或多个 `<dependency>` 元素的集合，用来指定包的依赖项。 每个 dependency 都具有 id、version、include (3.x+) 和 exclude (3.x+) 特性。 请参阅下面的[依赖项](#dependencies-element)。
@@ -185,11 +188,11 @@ nuget pack MyProject.csproj
 
 除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
 
-| 标记 | 值来源 | “值”
+| 标记 | 值来源 | 值
 | --- | --- | ---
 | **$id$** | 项目文件 | 项目文件中的 AssemblyName （标题） |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
-| **$authors $** | AssemblyInfo | AssemblyCompany |
+| **$authors$** | AssemblyInfo | AssemblyCompany |
 | **$title$** | AssemblyInfo | AssemblyTitle |
 | **$description$** | AssemblyInfo | AssemblyDescription |
 | **$copyright$** | AssemblyInfo | AssemblyCopyright |
@@ -250,7 +253,7 @@ nuget pack MyProject.csproj
 </dependencies>
 ```
 
-注意：使用 `nuget spec` 从项目创建 `.nuspec` 时，该项目中存在的依赖项会自动包含在生成的 `.nuspec` 文件中。
+注意:创建时`.nuspec`从项目使用`nuget spec`，在该项目中存在的依赖关系自动包含在生成`.nuspec`文件。
 
 ### <a name="dependency-groups"></a>依赖项组
 

@@ -6,18 +6,18 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: bb47c72768b0698d8e712c8261321ff38bba2764
-ms.sourcegitcommit: be9c51b4b095aea40ef41bbea7e12ef0a194ee74
+ms.openlocfilehash: 39b710c483ce4b3f2da30df6bb5b6842f9ee1fca
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53248424"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324833"
 ---
 # <a name="nuget-api"></a>NuGet API
 
 NuGet API 是一组可用于下载包、 提取元数据、 将发布新的包，并执行大多数官方 NuGet 客户端中提供其他操作的 HTTP 终结点。
 
-在 Visual Studio、 nuget.exe 和.NET CLI 中的 NuGet 客户端使用此 API 来执行 NuGet 操作，如[ `dotnet restore` ](/dotnet/articles/core/preview3/tools/dotnet-restore)，在 Visual Studio UI 中，搜索并[ `nuget.exe push` ](../tools/cli-ref-push.md)。
+在 Visual Studio、 nuget.exe 和.NET CLI 中的 NuGet 客户端使用此 API 来执行 NuGet 操作，如[ `dotnet restore` ](/dotnet/core/tools/dotnet-restore?tabs=netcore2x)，在 Visual Studio UI 中，搜索并[ `nuget.exe push` ](../tools/cli-ref-push.md)。
 
 请注意，在某些情况下，nuget.org 具有由其他包源中不强制执行的附加要求。 这些差异记录通过[nuget.org 协议](nuget-protocols.md)。
 
@@ -35,7 +35,7 @@ NuGet API 是一组可用于下载包、 提取元数据、 将发布新的包�
 
 ## <a name="versioning"></a>版本管理
 
-该 API 是 NuGet 的 HTTP 协议版本 3。 此协议有时称为"V3 API。" 这些引用文档将引用到此版本的协议，简称为"API。"
+该 API 是 NuGet 的 HTTP 协议版本 3。 此协议有时称为"V3 API"。 这些引用文档将引用到此版本的协议，简称为"API。"
 
 指示服务索引的架构版本`version`服务索引中的属性。 API 要求的版本字符串有主版本号的`3`。 服务索引架构做出非重大更改后，会增加版本字符串的次要版本。
 
@@ -43,7 +43,7 @@ NuGet API 是一组可用于下载包、 提取元数据、 将发布新的包�
 
 因为它是后一 V2 API，这是由 2.x 版的官方 NuGet 客户端实现的基于 OData 的协议，这种情况下命名 NuGet V3 API。 V3 API 首先受官方 NuGet 客户端的 3.0 版本和仍的主要协议最新版本支持通过 NuGet 客户端，4.0 和上。 
 
-第一次发布以来，对 API 进行了非重大协议更改。
+首次发布后，对 API 进行了非重大协议更改。
 
 ## <a name="resources-and-schema"></a>资源和架构
 

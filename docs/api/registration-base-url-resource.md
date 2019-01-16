@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: ba47d6fdeeaa4ee9de83ef4dd990707bd4928063
-ms.sourcegitcommit: 0c5a49ec6e0254a4e7a9d8bca7daeefb853c433a
+ms.openlocfilehash: 19a1f48164f65f1ff805e036e55abb110247aa72
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52453554"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324859"
 ---
 # <a name="package-metadata"></a>包元数据
 
@@ -141,7 +141,8 @@ dependencyGroups         | 对象的数组           | 否       | 按目标框�
 说明              | 字符串                     | 否       | 
 iconUrl                  | 字符串                     | 否       | 
 id                       | 字符串                     | 是      | 包的 ID
-licenseUrl               | 字符串                     | 否       | 
+licenseUrl               | 字符串                     | 否       |
+licenseExpression        | 字符串                     | 否       | 
 列出                   | boolean                    | 否       | 应被视为列出如果不存在
 minClientVersion         | 字符串                     | 否       | 
 projectUrl               | 字符串                     | 否       | 
@@ -155,6 +156,8 @@ version                  | 字符串                     | 是      | 规范化�
 包`version`属性是在执行规范化后的完整版本字符串。 这意味着，SemVer 2.0.0 生成数据可以包含此处。
 
 `dependencyGroups`属性是一个表示按目标框架的包的依赖项的对象的数组。 如果包有没有依赖关系`dependencyGroups`缺少属性，一个空数组或`dependencies`所有组的属性为空或缺失。
+
+值`licenseExpression`属性符合[NuGet 许可证表达式语法](https://docs.microsoft.com/en-us/nuget/reference/nuspec#license)。
 
 #### <a name="package-dependency-group"></a>包依赖关系组
 

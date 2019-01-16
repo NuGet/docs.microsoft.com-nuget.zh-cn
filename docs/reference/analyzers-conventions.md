@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: a5ccbba5fbc189eb59acfdeb86a4a03dcf907a9a
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 0a8db9f6c55b7e79f9b338119e0b3ac6cb7a1e35
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547626"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324794"
 ---
 # <a name="analyzer-nuget-formats"></a>分析器 NuGet 格式
 
-.NET 编译器平台 (也称为"Roslyn") 允许开发人员创建[分析器](https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix)，检查语法树和语义的代码是在编写。 这为开发人员提供了创建方法和域特定的分析工具（如帮助指导如何使用特定 API 或库的工具）。 可以在 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub wiki 上找到详细信息。 另请参阅下文：MSDN 杂志中的[使用 Roslyn 编写 API 的实时代码分析器](https://msdn.microsoft.com/magazine/dn879356.aspx)
+.NET 编译器平台 (也称为"Roslyn") 允许开发人员创建[分析器](https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix)，检查语法树和语义的代码是在编写。 如这些有助于指导如何使用特定的 API 或库，这为开发人员提供了一种方式创建特定于域的分析工具。 可以在 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub wiki 上找到详细信息。 另请参阅下文：MSDN 杂志中的[使用 Roslyn 编写 API 的实时代码分析器](https://msdn.microsoft.com/magazine/dn879356.aspx)
 
 分析器本身通常作为实现 API 或相关库的 NuGet 包的一部分进行打包和分发。
 
@@ -46,13 +46,13 @@ ms.locfileid: "43547626"
     $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
 
 - **framework_name**：所包含 DLL 需要运行的 .NET framework 的可选 API 外围应用。 `dotnet` 是目前唯一有效的值，因为 Roslyn 是唯一可运行分析器的主机。 如果未指定目标，则假定 DLL 适用于所有目标。
-- **supported_language**：DLL 适用的语言，`cs` (C#)、`vb` (Visual Basic) 和 `fs` 中的一种。 语言表示应仅为使用该语言的项目加载分析器。 如果未指定任何语言，则假定 DLL 适用于支持分析器的所有语言。
+- **supported_language**：DLL 适用的语言，`cs` (C#)、`vb` (Visual Basic) 和 `fs` 中的一种。 语言表示应仅为使用该语言的项目加载分析器。 如果未指定任何语言，则假定 DLL 要应用于*所有*支持分析器的语言。
 - **analyzer_name**：指定分析器的 DLL。 如果需要 DLL 以外的其他文件，必须通过目标或属性文件包括它们。
 
 
 ## <a name="install-and-uninstall-scripts"></a>安装和卸载脚本
 
-如果用户的项目使用的是 `packages.config`，则选取分析器的 MSBuild 脚本不起作用，因此应在 `tools` 文件夹中包含具有以下所述内容的 `install.ps1` 和 `uninstall.ps1` 文件。
+如果使用用户的项目`packages.config`，选取分析器的 MSBuild 脚本不会不起作用，因此应放置`install.ps1`和`uninstall.ps1`中`tools`如下所述的内容的文件夹。
 
 **install.ps1 文件内容**
 

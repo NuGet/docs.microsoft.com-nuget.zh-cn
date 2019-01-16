@@ -6,20 +6,20 @@ ms.author: karann
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 047ede14c7935844cb4f6d0315772c2a1190e5b8
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 0c76ea43e871009223cc4328449e21e5d02129bb
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547254"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324872"
 ---
 # <a name="target-frameworks"></a>目标框架
 
 NuGet 在各个地方使用目标框架引用，以特别标识和隔离包的框架依赖组件：
 
-- [.nuspec 清单](../reference/nuspec.md)：根据项目的目标框架，包可以指示要包含在项目中的不同包。
-- [.nupkg 文件夹名称](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)：包的 `lib` 文件夹内的文件夹可根据目标框架进行命名，每个文件夹都包含适合该框架的 DLL 及其他内容。
-- [packages.config](../reference/packages-config.md)：依赖项的 `targetframework` 特性指定要安装的包的变体。
+- [.nuspec 清单](../reference/nuspec.md):包可以指示要包含在具体取决于项目的目标框架的项目中的不同包。
+- [.nupkg 文件夹名称](../create-packages/creating-a-package.md#from-a-convention-based-working-directory):在包的文件夹`lib`可以根据目标框架，其中每个包含的 Dll 及其他内容适合该框架命名文件夹。
+- [packages.config](../reference/packages-config.md):`targetframework`的依赖项属性指定要安装的程序包的变体。
 
 > [!Note]
 > 计算下方表格的 NuGet 客户端源代码位于以下位置：
@@ -28,7 +28,7 @@ NuGet 在各个地方使用目标框架引用，以特别标识和隔离包的�
 
 ## <a name="supported-frameworks"></a>支持的框架
 
-通常按简短的目标框架名字对象或 TFM 引用框架。 在 .NET Standard 中，这也泛化成 TxM，以便一次引用多个框架。
+通常按简短的目标框架名字对象或 TFM 引用框架。 使用.NET Standard 中这也具有普遍*TxM*以允许对多个框架的单一引用。
 
 NuGet 客户端支持下表中的框架。 等效项显示在括号内 []。 请注意，某些工具（如 `dotnet`）可能会在某些文件中使用规范的 TFM 变体。 例如，`dotnet pack` 在 `.nuspec` 文件中使用 `.NETCoreApp2.0`，而非 `netcoreapp2.0` 文件。 各种 NuGet 客户端工具正确处理这些变体，但是在直接编辑文件时，应始终使用规范的 TFM。
 

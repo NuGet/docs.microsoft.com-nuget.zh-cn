@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 878fb582a31667c84f3ae306b554718de72eca7a
-ms.sourcegitcommit: 5c5f0f0e1f79098e27d9566dd98371f6ee16f8b5
+ms.openlocfilehash: 8132595cbfaf553736fbcc81aada283a44d6cdbf
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53645667"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324846"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -49,7 +49,7 @@ NuGet 4.0+
 | 版本 | PackageVersion | 版本 | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
 | VersionPrefix | PackageVersionPrefix | 空 | 设置 PackageVersion 会覆盖 PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | 空 | MSBuild 的 $(VersionSuffix)。 设置 PackageVersion 会覆盖 PackageVersionSuffix |
-| 作者 | 作者 | 当前用户的用户名 | |
+| Authors | Authors | 当前用户的用户名 | |
 | Owners | 不可用 | NuSpec 中不存在 | |
 | 标题 | 标题 | PackageId| |
 | 描述 | 描述 | “包描述” | |
@@ -72,9 +72,10 @@ NuGet 4.0+
 ### <a name="pack-target-inputs"></a>包目标输入
 
 - IsPackable
+- SuppressDependenciesWhenPacking
 - PackageVersion
 - PackageId
-- 作者
+- Authors
 - 描述
 - Copyright
 - PackageRequireLicenseAcceptance
@@ -106,6 +107,10 @@ NuGet 4.0+
 - NuspecProperties
 
 ## <a name="pack-scenarios"></a>包方案
+
+### <a name="suppress-dependencies"></a>禁止显示依赖项
+
+若要禁止显示生成的 NuGet 包从包依赖项，请设置`SuppressDependenciesWhenPacking`到`true`以便跳过生成的 nupkg 文件中的所有依赖项。
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
@@ -193,6 +198,14 @@ NuGet 4.0+
 
 在使用许可证表达式时，应使用 PackageLicenseExpression 属性。 
 [许可证表达式示例](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample)。
+
+```xml
+<PropertyGroup>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+</PropertyGroup>
+```
+
+[详细了解许可表达式和接受的 NuGet.org 的许可证](nuspec.md#license)。
 
 封装的许可证文件，需要使用 PackageLicenseFile 属性来指定包的路径，相对于包的根。 此外，您需要确保该文件包含在包中。 例如：
 

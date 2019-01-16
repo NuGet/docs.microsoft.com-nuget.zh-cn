@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8e612d9f86bcffc99870c5541aa6091e678db512
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 97ed3ec7d41d2847c0521af69373a1871eb585dd
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547084"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324677"
 ---
 # <a name="nuget-client-sdk"></a>NuGet 客户端 SDK
 
@@ -29,10 +29,14 @@ ms.locfileid: "43547084"
 
 以下博客系列由 Dave Glick，发布 2016年中，可以找到示例和文档的某些 API:
 
-- [探索 NuGet v3 库，第 1 部分： 简介和概念](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-1)
-- [探索 NuGet v3 库，第 2 部分： 搜索包](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-2)
-- [探索 NuGet v3 库，第 3 部分： 安装包](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-3)
+- [探索 NuGet v3 库，第 1 部分：简介和概念](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-1)
+- [探索 NuGet v3 库，第 2 部分：搜索包](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-2)
+- [探索 NuGet v3 库，第 3 部分：安装包](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-3)
 
 > [!Note]
 > 这些博客文章编写后不久**3.4.3** NuGet 客户端 SDK 包已发布的版本。
 > 包的较新版本可能与博客文章中的信息不兼容。
+
+Martin Björkström 未到 Dave Glick 博客系列的后续博客文章，他介绍了不同的方法上使用 NuGet 客户端 SDK 安装 NuGet 包：
+
+- [再探 NuGet v3 库](https://martinbjorkstrom.com/posts/2018-09-19-revisiting-nuget-client-libraries)
