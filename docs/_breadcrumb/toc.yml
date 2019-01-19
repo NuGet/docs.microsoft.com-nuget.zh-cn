@@ -1,41 +1,48 @@
+items:
 - name: Docs
   tocHref: /
   topicHref: /
   items:
-    - name: NuGet
-      tocHref: /nuget/
-      topicHref: /nuget
-      items:
-        - name: 快速入门
-          tocHref: /nuget/quickstart/
-          topicHref: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
-        - name: 参考线
-          tocHref: /nuget/guides/
-          topicHref: /nuget/guides/create-net-standard-packages-vs2017
-        - name: 创建包
-          tocHref: /nuget/create-packages/
-          topicHref: /nuget/create-packages/overview-and-workflow
-        - name: 使用包
-          tocHref: /nuget/consume-packages/
-          topicHref: /nuget/consume-packages/overview-and-workflow
-        - name: 承载包
-          tocHref: /nuget/hosting-packages/
-          topicHref: /nuget/hosting-packages/overview
-        - name: 工具
-          tocHref: /nuget/tools/
-          topicHref: /nuget/tools/nuget-exe-cli-reference
-        - name: 参考
-          tocHref: /nuget/reference/
-          topicHref: /nuget/reference/nuspec
-        - name: API
-          tocHref: /nuget/api/
-          topicHref: /nuget/api/overview
-        - name: Visual Studio 扩展性
-          tocHref: /nuget/visual-studio-extensibility/
-          topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio
-        - name: 策略
-          tocHref: /nuget/policies/
-          topicHref: /nuget/policies/nuget-faq
-        - name: 发行说明
-          tocHref: /nuget/release-notes/
-          topicHref: /nuget/release-notes/index
+  - name: NuGet
+    tocHref: /nuget/
+    topicHref: /nuget
+    items:
+    - name: 快速入门
+      tocHref: /nuget/quickstart/
+      topicHref: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
+    - name: 参考线
+      tocHref: /nuget/guides/
+      topicHref: /nuget/guides/create-net-standard-packages-vs2017
+    - name: 创建包
+      tocHref: /nuget/create-packages/
+      topicHref: /nuget/create-packages/overview-and-workflow
+    - name: 使用包
+      tocHref: /nuget/consume-packages/
+      topicHref: /nuget/consume-packages/overview-and-workflow
+    - name: 承载包
+      tocHref: /nuget/hosting-packages/
+      topicHref: /nuget/hosting-packages/overview
+    - name: 工具
+      tocHref: /nuget/tools/
+      topicHref: /nuget/tools/nuget-exe-cli-reference
+    - name: 参考
+      tocHref: /nuget/reference/
+      topicHref: /nuget/reference/nuspec
+    - name: API
+      tocHref: /nuget/api/
+      topicHref: /nuget/api/overview
+    - name: Visual Studio 扩展性
+      tocHref: /nuget/visual-studio-extensibility/
+      topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio
+    - name: 策略
+      tocHref: /nuget/policies/
+      topicHref: /nuget/policies/governance
+    - name: 发行说明
+      tocHref: /nuget/release-notes/
+      topicHref: /nuget/release-notes/index
+ms.openlocfilehash: de155b62126e509ae3d554e2caaa70bb91bb90d9
+ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54403120"
