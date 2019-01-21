@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: bb24ccbfdd4a6a94cf7116f16b0862871e176e50
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 4b593cc215ad68629e5a93d1f17c90e53c0b4f4f
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549271"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324625"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>快速入门：使用 dotnet CLI 安装并使用包
 
@@ -19,7 +19,7 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 安装完成后，请引用具有 `using <namespace>` 的代码中的包，其中 \<namespace\> 特定于正在使用的包。 然后，可以使用包的 API。
 
 > [!Tip]
-> **nuget.org 入门**：浏览 nuget.org 是 .NET 开发人员通常在自己的应用程序中查找可重用组件的方式。 你可以直接搜索 nuget.org 或根据本文中的介绍，在 Visual Studio 中查找和安装包。
+> **nuget.org 入门**：若要查找可在自己的应用程序中重用的组件，.NET 开发人员通常都会浏览 nuget.org。 你可以直接搜索 nuget.org 或根据本文中的介绍，在 Visual Studio 中查找和安装包。
 
 ## <a name="prerequisites"></a>系统必备
 
@@ -51,7 +51,7 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 
     ```xml
    <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
    </ItemGroup>
     ```
 

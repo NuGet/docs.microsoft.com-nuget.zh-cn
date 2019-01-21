@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: 641304059c90e360fae4d0956d7b922e34bc6501
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: cf15c4f6a2e3e9f6ce7b6acb2304648041043685
+ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981114"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54324820"
 ---
 # <a name="nuget-48-rtm-release-notes"></a>NuGet 4.8 RTM 发行说明
 
@@ -22,9 +22,9 @@ ms.locfileid: "50981114"
 * DotNet.exe - [.NET Core SDK 2.1.400](https://www.microsoft.com/net/download/visual-studio-sdks)
 
 
-## <a name="summary-whats-new-in-this-release"></a>摘要：此版本中的新增功能
+## <a name="summary-whats-new-in-this-release"></a>摘要:此版本中的新增功能
 * NuGet.exe 现支持 Windows 10 上的 longfilenames - [#6937](https://github.com/NuGet/Home/issues/6937)
-* 身份验证插件现适用于 MsBuild、DotNet.exe、NuGet.exe 和 Visual Studio，包括跨平台使用。 MsBuild 的 DotNet.exe 中不支持第一代身份验证插件。 注意：VS 2017 15.9 预览版本包含 VSTS 身份验证插件。 [#6486](https://github.com/NuGet/Home/issues/6486)
+* 身份验证插件现适用于 MsBuild、DotNet.exe、NuGet.exe 和 Visual Studio（包括跨平台使用）。 MsBuild 的 DotNet.exe 中不支持第一代身份验证插件。 注意:VS 2017 15.9 预览内部版本包含 VSTS 身份验证插件。 [#6486](https://github.com/NuGet/Home/issues/6486)
 * MsBuild 的 SDK 解析程序现作为 NuGet 的一部分生成，并通过 VS 的 NuGet 工具安装。 这将避免版本无法同步的问题。[#6799](https://github.com/NuGet/Home/issues/6799)
 * PackageReference 现支持 DevelopmentDependency 元数据 - [#4125](https://github.com/NuGet/Home/issues/4125)
 
@@ -56,7 +56,7 @@ ms.locfileid: "50981114"
 * 生成还会触发 NuGet 还原的项目
 
 现在应能够看到迁移选项。 请注意，此选项不受支持且不会对 ASP.NET 和 C++ 项目类型显示。
-注意：此问题已在 VS 2017 15.9 预览版 3 中修复
+注意:此问题已在 VS 2017 15.9 预览版 3 中修复
 
 ## <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
 
