@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: c5b0a8efeaadbfb0cbebf72e818683c1ec9a5077
+ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54403172"
+---
 # [什么是 NuGet？](what-is-nuget.md)
 # [安装 NuGet 客户端工具](install-nuget-client-tools.md)
 # 快速入门
@@ -239,7 +247,6 @@
 ## [项目系统支持](visual-studio-extensibility/project-system-support.md)
 ## [Visual Studio 模板](visual-studio-extensibility/visual-studio-templates.md)
 # 策略
-## [NuGet FAQ](policies/nuget-faq.md)
 ## [治理](policies/governance.md)
 ## [生态系统](policies/ecosystem.md)
 ## [数据请求](policies/Data-requests.md)
@@ -305,3 +312,4 @@
 ## [NuGet 1.3](release-notes/NuGet-1.3.md)
 ## [NuGet 1.2](release-notes/NuGet-1.2.md)
 ## [NuGet 1.1](release-notes/NuGet-1.1.md)
+# [常见问题解答](faqs/nuget-faq.md)
