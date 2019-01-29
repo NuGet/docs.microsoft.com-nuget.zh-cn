@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: 5f52b00e0c45882fb7a4bd1c1a80022192f3be6b
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 506a093ff4d62c10c896246f746e6765f64f33f4
+ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580241"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54403159"
 ---
 # <a name="package-consumption-workflow"></a>包使用工作流
 
