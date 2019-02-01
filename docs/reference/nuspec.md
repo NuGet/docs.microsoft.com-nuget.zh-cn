@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 009be99a1c6623a00b4bdbe6db3164ca70782212
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: fec6dd0fb97b565b364a7ffcb192d2eb99187e83
+ms.sourcegitcommit: b15fdd101aec13ea5fe9dd12845051d648034abd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324898"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55480135"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -90,7 +90,7 @@ ms.locfileid: "54324898"
 
 如果您的包常见的多个许可证的许可，则可以指定复合许可证 using [SPDX 表达式语法版本 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)。<br>例如： `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-如果正在使用许可证尚未分配 SPDX 标识符，或者它是自定义许可证，您可以打包具有许可证文本的文件。 例如：
+如果正在使用许可证尚未分配 SPDX 标识符，或者它是自定义许可证，你可以将打包文件 (仅`.txt.`或`.md`) 使用的许可证文本。 例如：
 ```xml
 <package>
   <metadata>
@@ -188,7 +188,7 @@ nuget pack MyProject.csproj
 
 除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
 
-| 标记 | 值来源 | 值
+| 标记 | 值来源 | “值”
 | --- | --- | ---
 | **$id$** | 项目文件 | 项目文件中的 AssemblyName （标题） |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
