@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 3321cba9082eb35b53ba693e246db18e5d8e187b
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 56125516345b2255998c1f734db60b58b9a92a06
+ms.sourcegitcommit: 585394f063e95dcbc24d7ac0ce07de643eaf6f4d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580254"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55046323"
 ---
 # <a name="creating-symbol-packages-legacy"></a>创建符号包（旧版）
 
@@ -100,7 +100,7 @@ nuget pack MyProject.csproj -Symbols
 ## <a name="publishing-a-symbol-package"></a>发布符号包
 
 > [!Important]
-> 若要将包推送到 nuget.org，必须使用实现所需 [NuGet 协议](../api/nuget-protocols.md)的 [nuget.exe v4.1.0 或更高版本](https://www.nuget.org/downloads)。
+> 若要将包推送到 nuget.org，必须使用实现所需 [NuGet 协议](../api/nuget-protocols.md)的 [nuget.exe v4.9.1 或更高版本](https://www.nuget.org/downloads)。
 
 1. 为方便起见，请首先保存 NuGet 的 API 密钥（请参阅[发布包](../create-packages/publish-a-package.md)），它将应用于 nuget.org 和 symbolsource.org，因为 symbolsource.org 会与 nuget.org 进行核对以验证包所有者。
 
