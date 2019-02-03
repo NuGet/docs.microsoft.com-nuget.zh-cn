@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/20/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7dcb2e430ad80815f716f5567b511ff08acfe31b
-ms.sourcegitcommit: a9babe261f67da0f714d168d04ea54a66628974b
+ms.openlocfilehash: 99578c5ed7e88b7269872bf88c465bbda462870a
+ms.sourcegitcommit: 585394f063e95dcbc24d7ac0ce07de643eaf6f4d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53735131"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55045103"
 ---
 # <a name="nuget-49-release-notes"></a>NuGet 4.9 发行说明
 
@@ -18,9 +18,11 @@ NuGet 分发车辆：
 
 | NuGet 版本 | 适用于 Visual Studio 版本| 适用于 .NET SDK|
 |:---|:---|:---|
-| **4.9.0** | Visual Studio 2017 版本 15.9.0 | 2.1.500、2.2.100 |
-| **4.9.1** | n/a | n/a |
+| [**4.9.0**](https://nuget.org/downloads) | [Visual Studio 2017 版本 15.9.0](https://visualstudio.microsoft.com/downloads/) | [2.1.500、2.2.100](https://www.microsoft.com/net/download/visual-studio-sdks) |
+| [**4.9.1**](https://nuget.org/downloads) | n/a | n/a |
 | [**4.9.2**](https://nuget.org/downloads) |[Visual Studio 2017 版本 15.9.4](https://visualstudio.microsoft.com/downloads/) | [2.1.502，2.2.101](https://www.microsoft.com/net/download/visual-studio-sdks) |
+| [**4.9.3**](https://nuget.org/downloads) |[Visual Studio 2017 版本 15.9.6](https://visualstudio.microsoft.com/downloads/) | n/a |
+
 
 ## <a name="summary-whats-new-in-490"></a>摘要:4.9.0 版中的新增功能
 
@@ -35,6 +37,8 @@ NuGet 分发车辆：
 * 支持选择对 PackageReference 启用“GeneratePathProperty”元数据，以将每个包的 MSBuild 属性生成到“Foo.Bar\1.0”目录中 - [#6949](https://github.com/NuGet/Home/issues/6949)
 
 * 改进了客户成功执行 NuGet 操作的体验 - [#7108](https://github.com/NuGet/Home/issues/7108)
+
+* 使用锁定文件启用可重复的包还原 - [#5602](https://github.com/NuGet/Home/issues/5602)，[公告](https://github.com/NuGet/Announcements/issues/28)，[博客文章](https://blog.nuget.org/20181217/Enable-repeatable-package-restores-using-a-lock-file.html)
 
 ### <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
 
@@ -106,6 +110,35 @@ NuGet 分发车辆：
 
 [版本 4.9.2 中所有已修复问题的列表](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
 
+## <a name="summary-whats-new-in-493"></a>摘要:4.9.3 中的新增功能
+
+### <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
+#### <a name="repeatable-package-restores-using-a-lock-file-issues"></a>“使用锁定文件启用可重复的包还原”问题
+
+* 锁定模式不工作，因为未对以前缓存的包正确计算哈希 - [#7682](https://github.com/NuGet/Home/issues/7682)
+
+* 还原解析为与 `packages.lock.json` 文件中定义的版本不同的版本 - [#7667](https://github.com/NuGet/Home/issues/7667)
+
+* 涉及 ProjectReference 时，“--locked-mode / RestoreLockedMode”导致虚假的还原失败 - [#7646](https://github.com/NuGet/Home/issues/7646)
+
+* MSBuild SDK 解析程序尝试验证在使用 packages.lock.json 时未能还原的 SDK 包的 SHA - [#7599](https://github.com/NuGet/Home/issues/7599)
+
+#### <a name="lock-down-your-dependencies-using-configurable-trust-policies-issues"></a>“使用可配置的信任策略锁定依赖关系”问题
+* dotnet.exe 不应在签名包不受支持时评估受信任的签名者 - [#7574](https://github.com/NuGet/Home/issues/7574)
+
+* 配置文件中 trustedSigners 的顺序影响信任评估 - [#7572](https://github.com/NuGet/Home/issues/7572)
+
+* 无法实现 ISettings [由设置 API 重构导致以支持信任策略功能] - [#7614](https://github.com/NuGet/Home/issues/7614)
+
+#### <a name="improved-debugging-experience-issues"></a>“提升了调试体验”问题
+
+* 无法发布 .NET Core 全局工具的符号包 - [#7632](https://github.com/NuGet/Home/issues/7632)
+
+#### <a name="self-contained-nuget-packages---license-issues"></a>“独立 NuGet 包 - 许可证”问题
+
+* 使用嵌入的许可证文件时，生成符号 .snupkg 包出错 - [#7591](https://github.com/NuGet/Home/issues/7591)
+
+[版本 4.9.3 中所有已修复问题的列表](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.3")
 ## <a name="known-issues"></a>已知问题
 
 ### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>dotnet nuget push --interactive 在 Mac 上抛出错误。 - [#7519](https://github.com/NuGet/Home/issues/7519)
