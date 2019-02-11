@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: dbdd171321c2560adc06feccbd60fc4e84dcf0a3
-ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
+ms.openlocfilehash: 290055a306306e944695d3a6ac970819882ee0c6
+ms.sourcegitcommit: 046717af2eba9ff6f619a0533844dee56a600d1c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54403197"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55648265"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
@@ -235,10 +235,17 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 
 如果该操作失败，请尝试[该 StackOverflow 文章中提到的方法](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall)。
 
-有哪些适用于 nuget.org 的 API 终结点？
+## <a name="what-is-the-api-endpoint-for-nugetorg"></a>什么是适用于 nuget.org 的 API 终结点？
 
-- V3：`https://api.nuget.org/v3/index.json`
-- V2：`https://www.nuget.org/api/v2/`（请注意，V2 API 已弃用且不适用于 NuGet 4+。）
+若要将 nuget.org 用作 NuGet 客户端的包存储库，你需要使用以下 V3 API 终结点： 
+
+**`https://api.nuget.org/v3/index.json`**
+
+较旧版本的客户端仍然可以使用 v2 协议来访问 nuget.org。但是，请注意，NuGet 客户端 3.0 或更高版本在使用 v2 协议时将导致服务的速度更慢且不太可靠：
+
+`https://www.nuget.org/api/v2/`（已弃用！！！）注意：“www.” 非常重要。
+
+此外，NuGet.exe 列表仅适用于 v2 协议。
 
 ## <a name="nugetorg-account-management"></a>nuget.org 帐户管理
 
