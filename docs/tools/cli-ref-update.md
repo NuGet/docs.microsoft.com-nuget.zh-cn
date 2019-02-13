@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: fc34550b3669d83466318645987cfd3078bc3c18
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: ded9b571324d810c2f0e1a46ea76375a28940406
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545095"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145600"
 ---
 # <a name="update-command-nuget-cli"></a>update 命令 (NuGet CLI)
 
@@ -42,7 +42,7 @@ nuget update <configPath> [options]
 | 帮助 | 显示的帮助命令的信息。 |
 | Id | 指定包 Id，以更新的列表。 |
 | MSBuildPath | *（4.0 +)* 指定的路径优先于命令中使用 MSBuild `-MSBuildVersion`。 |
-| MSBuildVersion | *（3.2 +)* 指定要用于此命令的 MSBuild 版本。 支持的值为 4、 12、 14、 15。 默认情况下，选择你的路径中的 MSBuild，否则它默认为最高的已安装版本的 MSBuild。 |
+| MSBuildVersion | *（3.2 +)* 指定要用于此命令的 MSBuild 版本。 支持的值为 4，12、 14、 15.1、 15.3、 15.4、 15.5、 15.6、 15.7、 15.8，15.9。 默认情况下，选择你的路径中的 MSBuild，否则它默认为最高的已安装版本的 MSBuild。 |
 | NonInteractive | 取消显示提示用户输入或确认。 |
 | 预发行版 | 允许更新预发布版本。 更新已安装的预发行包时，则不需要此标志。 |
 | RepositoryPath | 指定安装包的本地文件夹。 |

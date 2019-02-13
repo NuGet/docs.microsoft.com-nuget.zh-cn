@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 39b710c483ce4b3f2da30df6bb5b6842f9ee1fca
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 5d0d60cbcf6516d24efeb04f8262902da69d92d1
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324833"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145652"
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -49,17 +49,17 @@ NuGet API 是一组可用于下载包、 提取元数据、 将发布新的包�
 
 **服务索引**介绍了各种资源。 当前的受支持的资源集如下所示：
 
-资源名称                                                           | 必需 | 描述
-----------------------------------------------------------------------  | -------- | -----------
+资源名称                                                          | 必需 | 描述
+---------------------------------------------------------------------- | -------- | -----------
 [`PackagePublish`](package-publish-resource.md)                        | 是      | 推送和删除 （或取消列出） 包。
 [`SearchQueryService`](search-query-service-resource.md)               | 是      | 筛选器和搜索的关键字的包。
 [`RegistrationsBaseUrl`](registration-base-url-resource.md)            | 是      | 获取包元数据。
 [`PackageBaseAddress`](package-base-address-resource.md)               | 是      | 获取包的内容 (.nupkg)。
 [`SearchAutocompleteService`](search-autocomplete-service-resource.md) | 否       | 发现的子字符串的包 Id 和版本。
 [`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | 否       | 构造一个 URL 以访问"报告滥用行为"网页。
-[`RepositorySignatures`](repository-signatures-resource.md)             | 否      | 获取用于存储库签名的证书。
-[`Catalog`](catalog-resource.md)                                         | 否      | 包的所有事件的完整记录。
-[`SymbolPackagePublish`](symbol-package-publish-resource.md)            | 否      | 推送符号包。
+[`RepositorySignatures`](repository-signatures-resource.md)            | 否       | 获取用于存储库签名的证书。
+[`Catalog`](catalog-resource.md)                                       | 否       | 包的所有事件的完整记录。
+[`SymbolPackagePublish`](symbol-package-publish-resource.md)           | 否       | 推送符号包。
 
 一般情况下，使用 JSON API 资源返回的所有非二进制数据进行序列化。 该资源的单独定义的服务索引的每个资源返回的响应架构。 有关每个资源的详细信息，请参阅上面列出的主题。
 
@@ -67,6 +67,19 @@ NuGet API 是一组可用于下载包、 提取元数据、 将发布新的包�
 
 > [!Note]
 > 当源不实现`SearchAutocompleteService`应适当地禁用任何自动完成行为。 当`ReportAbuseUriTemplate`未实现，正式的 NuGet 客户端回退到 nuget.org 的报告滥用 URL (通过跟踪[NuGet/Home #4924](https://github.com/NuGet/Home/issues/4924))。 其他客户端可以选择只是不向用户显示报告滥用 URL。
+
+### <a name="undocumented-resources-on-nugetorg"></a>在 nuget.org 上的未记录的资源
+
+在 nuget.org 上的 V3 服务索引具有一些不前面记录的资源。 有几个原因不记录资源。
+
+首先，我们不记录用作 nuget.org 的实现细节的资源。`SearchGalleryQueryService`属于此类别。 [NuGetGallery](https://github.com/NuGet/NuGetGallery)使用此资源来委派某些 V2 (OData) 到我们的搜索索引而不是使用数据库的查询。 此资源引入了针对可伸缩性原因，但不可供外部使用。
+
+其次，我们不记录永远不会在正式的客户端的 RTM 版本中提供的资源。
+`PackageDisplayMetadataUriTemplate` 和`PackageVersionDisplayMetadataUriTemplate`属于此类别。
+
+第三，我们不记录资源的紧密结合的 V2 协议，它本身是有意未记录。 `LegacyGallery`资源属于此类别。 可以使用此资源的 V3 服务索引，使之指向相应的 V2 源 URL。 此资源支持`nuget.exe list`。
+
+如果资源未在此处，介绍我们*强*建议，不能依赖它们。 我们可能会删除或更改这些未记录的资源，这可能会以意外方式中断您的实现的行为。
 
 ## <a name="timestamps"></a>时间戳
 

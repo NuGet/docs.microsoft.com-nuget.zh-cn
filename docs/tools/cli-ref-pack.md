@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: d39ec8caf94caa767b6c502cc475e278aa718b95
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 9db24b2dd6ced0869ac84b25f9796ded5df10f86
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324781"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145639"
 ---
 # <a name="pack-command-nuget-cli"></a>pack 命令 (NuGet CLI)
 
@@ -43,7 +43,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 | IncludeReferencedProjects | 指示生成的包应包括引用的项目作为依赖项或作为包的一部分。 如果引用的项目有一个相应`.nuspec`具有相同名称，为项目，则该引用的项目添加为依赖项的文件。 否则，引用的项目添加为包的一部分。 |
 | MinClientVersion | 设置*minClientVersion*创建的包的属性。 此值将覆盖现有值*minClientVersion*中的属性 （如果有）`.nuspec`文件。 |
 | MSBuildPath | *（4.0 +)* 指定的路径优先于命令中使用 MSBuild `-MSBuildVersion`。 |
-| MSBuildVersion | *（3.2 +)* 指定要用于此命令的 MSBuild 版本。 支持的值为 4、 12、 14、 15。 默认情况下，选择你的路径中的 MSBuild，否则它默认为最高的已安装版本的 MSBuild。 |
+| MSBuildVersion | *（3.2 +)* 指定要用于此命令的 MSBuild 版本。 支持的值为 4，12、 14、 15.1、 15.3、 15.4、 15.5、 15.6、 15.7、 15.8，15.9。 默认情况下，选择你的路径中的 MSBuild，否则它默认为最高的已安装版本的 MSBuild。 |
 | NoDefaultExcludes | 可防止默认排除的 NuGet 包文件和文件和文件夹启动带有圆点，如`.svn`和`.gitignore`。 |
 | NoPackageAnalysis | 指定 pack 不应在生成包后运行包分析。 |
 | OutputDirectory | 指定在其中存储创建的包的文件夹。 如果未不指定任何文件夹，则使用当前文件夹。 |

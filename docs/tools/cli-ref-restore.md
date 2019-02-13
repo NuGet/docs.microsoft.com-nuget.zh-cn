@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 06e3a26863761b7e7a42752866e7fe369f5be4ef
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: adf97196f50f2a55d6b8ceed93d53ff12b67657b
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43550347"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145626"
 ---
 # <a name="restore-command-nuget-cli"></a>restore 命令 (NuGet CLI)
 
-**适用于：** 打包消耗&bullet;**支持的版本：** 2.7 +
+**适用于：** 打包消耗&bullet;**受支持的版本：** 2.7+
 
 下载并安装缺少的任何包`packages`文件夹。 如果用于 NuGet 4.0 + 和 PackageReference 格式，将生成`<project>.nuget.props`文件，如果需要在`obj`文件夹。 （该文件可以省略从源代码管理。）
 
@@ -39,7 +39,7 @@ nuget restore <projectPath> [options]
 | ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 以运行使用固定的、 基于英语的区域性。 |
 | 帮助 | 显示的帮助命令的信息。 |
 | MSBuildPath | *（4.0 +)* 指定的路径优先于命令中使用 MSBuild `-MSBuildVersion`。 |
-| MSBuildVersion | *（3.2 +)* 指定要用于此命令的 MSBuild 版本。 支持的值为 4、 12、 14、 15。 默认情况下，选择你的路径中的 MSBuild，否则它默认为最高的已安装版本的 MSBuild。 |
+| MSBuildVersion | *（3.2 +)* 指定要用于此命令的 MSBuild 版本。 支持的值为 4，12、 14、 15.1、 15.3、 15.4、 15.5、 15.6、 15.7、 15.8，15.9。 默认情况下，选择你的路径中的 MSBuild，否则它默认为最高的已安装版本的 MSBuild。 |
 | NoCache | 阻止 NuGet 使用缓存的包。 请参阅[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)。 |
 | NonInteractive | 取消显示提示用户输入或确认。 |
 | OutputDirectory | 指定在其中安装包的文件夹。 如果未不指定任何文件夹，则使用当前文件夹。 使用还原时所需`packages.config`文件，除非`PackagesDirectory`或`SolutionDirectory`使用。|
