@@ -5,20 +5,52 @@ author: anangaur
 ms.author: anangaur
 ms.date: 1/25/2019
 ms.topic: conceptual
-ms.openlocfilehash: ed3294f88ff99d5e26f630bdbca03aa8446b6e7f
-ms.sourcegitcommit: 0cb4c9853cde3647291062eadee2298dd273311e
+ms.openlocfilehash: 5889ea52f993fa8fe841f8eb83b6da659cdede93
+ms.sourcegitcommit: 1ab750ff17e55c763d646c50e7630138804ce8b8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55084933"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56247654"
 ---
 # <a name="nuget-50-preview-release-notes"></a>NuGet 5.0 预览版发行说明
+
+## <a name="nuget-50-preview-releases"></a>NuGet 5.0 预览版本
+
+* 2019 年 2 月 13 日- [NuGet 5.0 预览版 3](#summary-whats-new-in-50-preview-3)
+* 2019 年 1 月 23 日- [NuGet 5.0 预览版 2](#summary-whats-new-in-50-preview-2)
+
+## <a name="summary-whats-new-in-nuget-50-preview-3"></a>摘要:什么是 NuGet 5.0 预览版 3 中的新增功能
+
+### <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题 
+
+**Bug:**
+
+* nuget.exe /? 应列出正确的 msbuild 版本- [#7794](https://github.com/NuGet/Home/issues/7794)
+
+* NuGet.targets(498,5)： 错误：找不到部分路径 / tmp/NuGetScratch-mono-上[#7793](https://github.com/NuGet/Home/issues/7793)
+
+* 还原不必要地枚举在计算机缓存中的引用包的所有版本的内容[#7639](https://github.com/NuGet/Home/issues/7639)
+
+* MSBuild 自动检测后安装与 2019年预览-始终选择 16.0 [#7621](https://github.com/NuGet/Home/issues/7621)
+
+* 一种解决方案上的 dotnet 列表包输出的框架的重复条目[#7607](https://github.com/NuGet/Home/issues/7607)
+
+* 异常"空路径名称不是合法的"时调用 IVsPackageInstaller.InstallPackage 上旧项目和包文件夹不存在。 - [#5936](https://github.com/NuGet/Home/issues/5936)
+
+* msbuild /t: restore 最低详细级别应为更少的[#4695](https://github.com/NuGet/Home/issues/4695)
+
+**DCRs**
+
+* 允许程序包作者可定义生成资产可传递行为- [#6091](https://github.com/NuGet/Home/issues/6091)
+
+* 启用在 VS 成功如果项目不是解决方案的一部分或未加载，但以前已还原的还原[#5820](https://github.com/NuGet/Home/issues/5820)
+
 
 ## <a name="summary-whats-new-in-50-preview-2"></a>摘要:什么是 5.0 预览版 2 中的新增功能
 
 ### <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
 
-#### <a name="bugs"></a>Bug:
+**Bug:**
 
 * VS 16.0 的 NuGet UI 具有不可读的选项卡颜色问题-由于[#7735](https://github.com/NuGet/Home/issues/7735)
 
@@ -60,7 +92,7 @@ ms.locfileid: "55084933"
 
 * dotnet 还原由于已禁用计算机范围源-而失败[#5410](https://github.com/NuGet/Home/issues/5410)
 
-#### <a name="dcrs"></a>DCR
+**DCRs**
 
 * NuGet 5.0 程序集 （通过 TFM 更改） 的要求.NET 4.7.2 [#7510](https://github.com/NuGet/Home/issues/7510)
 
@@ -76,21 +108,12 @@ ms.locfileid: "55084933"
 
 [在此版本 5.0.0-preview2 中修复所有问题的列表](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
 
+### <a name="known-issues"></a>已知问题
 
-## <a name="known-issues"></a>已知问题
+#### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>dotnet nuget push --interactive 在 Mac 上抛出错误。 - [#7519](https://github.com/NuGet/Home/issues/7519)
+**问题**`--interactive`自变量不转发 dotnet cli，并且会导致错误`error: Missing value for option 'interactive'` 
+**解决方法**使用如交互式选项运行任何其他dotnet命令`dotnet restore --interactive`并进行身份验证。 凭据提供程序可能会缓存身份验证。 然后，运行 `dotnet nuget push`。
 
-### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>dotnet nuget push --interactive 在 Mac 上抛出错误。 - [#7519](https://github.com/NuGet/Home/issues/7519)
-
-#### <a name="issue"></a>问题
-`--interactive` 参数无法由 dotnet cli 转发，因此导致错误 `error: Missing value for option 'interactive'` 出现
-
-#### <a name="workaround"></a>解决方法
-将 interactive 选项与其他任何 dotnet 命令一起运行（如 `dotnet restore --interactive`），并进行身份验证。 凭据提供程序可能会缓存身份验证。 然后，运行 `dotnet nuget push`。
-
-### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414httpsgithubcomnugethomeissues7414"></a>FallbackFolders 中由 .NET Core SDK 安装的包是自定义安装的，无法通过签名验证。 - [#7414](https://github.com/NuGet/Home/issues/7414)
-
-#### <a name="issue"></a>问题
-使用 dotnet.exe 2.x 还原多重定位 netcoreapp 1.x 和 netcoreapp 2.x 的项目时，回退文件夹被视为文件源。 也就是说，在还原时，NuGet 将从回退文件夹中选取包，并尝试将它安装到全局包文件夹，再执行失败的常规签名验证。
-
-#### <a name="workaround"></a>解决方法
-通过将 `RestoreAdditionalProjectSources` 设置为无，禁用回退文件夹。 请谨慎使用 `<RestoreAdditionalProjectSources/>`，因为它会导致从 NuGet.org 下载许多包，否则将从回退文件夹中还原这些包。
+#### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414httpsgithubcomnugethomeissues7414"></a>FallbackFolders 中由 .NET Core SDK 安装的包是自定义安装的，无法通过签名验证。 - [#7414](https://github.com/NuGet/Home/issues/7414)
+**问题**使用 dotnet.exe 时 2.x 以还原项目的多重目标 netcoreapp 1.x 和 netcoreapp 2.x，回退文件夹视为文件源。 也就是说，在还原时，NuGet 将从回退文件夹中选取包，并尝试将它安装到全局包文件夹，再执行失败的常规签名验证。
+**解决方法**通过设置来禁用回退文件夹的使用情况`RestoreAdditionalProjectSources`为 nothing。 请谨慎使用 `<RestoreAdditionalProjectSources/>`，因为它会导致从 NuGet.org 下载许多包，否则将从回退文件夹中还原这些包。

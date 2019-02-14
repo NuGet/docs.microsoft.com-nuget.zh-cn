@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 0c76ea43e871009223cc4328449e21e5d02129bb
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: c74a128c87a7700232a4fbddb73ff7c8f1984a29
+ms.sourcegitcommit: 885973352d31808e3ddbb45da6d6e54d1e4fca9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324872"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56224952"
 ---
 # <a name="target-frameworks"></a>目标框架
 
@@ -67,6 +67,7 @@ Windows Phone (SL) | wp | wp [wp7] |
 Windows Phone (UWP) | | wpa81 |
 通用 Windows 平台 | uap | uap [uap10.0] |
 | | | uap10.0 |
+| | | uap10.0.xxxxx （其中 10.0.xxxxx 是正在使用的应用的目标平台最低版本） |
 .NET Standard | netstandard | netstandard1.0 |
 | | | netstandard1.1 |
 | | | netstandard1.2 |
