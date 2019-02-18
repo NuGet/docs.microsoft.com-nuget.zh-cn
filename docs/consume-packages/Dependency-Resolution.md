@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: a561a49f2e733929e32584adf7b6849ea535c440
-ms.sourcegitcommit: 585394f063e95dcbc24d7ac0ce07de643eaf6f4d
+ms.openlocfilehash: a2aed3950b3e19e30d9d026ad1b9bdaef44c9d37
+ms.sourcegitcommit: 1ab750ff17e55c763d646c50e7630138804ce8b8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55046237"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56247641"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet 如何解析包依赖项
 
@@ -24,7 +24,7 @@ ms.locfileid: "55046237"
 
 当将包安装到使用 PackageReference 格式的项目中时，NuGet 将添加对相应文件中的平面包关系图的引用并提前解决冲突。 此过程称为“传递还原”。 重新安装或还原包指的是下载关系图中列出的包的过程，此过程可加快生成的速度和提高其可预测性。 还可以利用通配符（可变）版本（如 2.8.\*），避免对客户端计算机和生成服务器上的 `nuget update` 进行成本高昂且容易出错的调用。
 
-当 NuGet 还原进程在生成之前运行时，它将首先解析内存中的依赖项，然后将生成的关系图写入名为 `project.assets.json` 的文件（位于使用 PackageReference 的项目的 `obj` 文件夹中）。 MSBuild 随后将读取此文件并将其转换成一组文件夹（可在其中找到潜在引用），然后将它们添加到内存中的项目树。
+当 NuGet 还原进程在生成之前运行时，它将首先解析内存中的依赖项，然后将生成的关系图写入名为 `project.assets.json` 的文件。 资产文件位于 `MSBuildProjectExtensionsPath`，它默认是项目的“obj”文件夹。 MSBuild 随后将读取此文件并将其转换成一组文件夹（可在其中找到潜在引用），然后将它们添加到内存中的项目树。
 
 该锁定文件是临时的，不应添加到源代码管理中。 默认情况下，此文件将在 `.gitignore` 和 `.tfignore` 中列出。 请参阅[包与源代码管理](packages-and-source-control.md)。
 

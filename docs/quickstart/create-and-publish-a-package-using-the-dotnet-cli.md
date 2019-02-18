@@ -5,14 +5,14 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 02aa7bb9d27352bbecfc718ef5bd6ee33501018d
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 3e459999eea45c5ae705a7e07c1a0fbb2e0cd1a1
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548424"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145613"
 ---
-# <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>快速入门：创建和发布包 (dotnet CLI)
+# <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>快速入门：创建并发布包 (dotnet CLI)
 
 从 .NET 类库创建 NuGet 包并使用 `dotnet` 命令行接口 (CLI) 将其发布到 nuget.org 是很简单的过程。
 
@@ -109,4 +109,5 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 - [支持多个目标框架](../create-packages/supporting-multiple-target-frameworks.md)
 - [包版本控制](../reference/package-versioning.md)
 - [创建本地化包](../create-packages/creating-localized-packages.md)
+- [创建符号包](../create-packages/symbol-packages-snupkg.md)
 - [给包签名](../create-packages/Sign-a-package.md)

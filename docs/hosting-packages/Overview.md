@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 4741d780afa4fbe11001aed49a9f72bf608d96d9
-ms.sourcegitcommit: a1846edf70ddb2505d58e536e08e952d870931b0
+ms.openlocfilehash: 45d8a6557ee02998f3d12b128ee2dc4fd6ae48bb
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52303558"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145587"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>承载自己的 NuGet 源
 
@@ -25,7 +25,7 @@ ms.locfileid: "52303558"
 
 还有其他几个 NuGet 承载产品也支持远程专用源，其中包括：
 
-- [Visual Studio Team Services 包管理](https://www.visualstudio.com/docs/package/nuget/publish)，Team Foundation Server 2017 及更高版本上也提供此产品。
+- [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) 也可通过 Team Foundation Server 2017 以及更高版本获得。
 - [MyGet](http://myget.org)
 - Inedo 的 [ProGet](http://inedo.com/proget)
 - [NuGet 服务器](http://nugetserver.net/)，Inedo 的社区项目

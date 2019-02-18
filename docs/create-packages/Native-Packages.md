@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: f054a1cae7328d3e910d11ac1bfc5f98505e5879
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: e0ec5323f7be53bef6637ad69540a66abbf22711
+ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546528"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56145574"
 ---
 # <a name="creating-native-packages"></a>创建本机包
 
-本机包包含本机 C++ 代码（而不是托管代码），因此可用于 C++ 项目中。 （请参阅“使用”部分中的[本机 C++ 包](../consume-packages/finding-and-choosing-packages.md#native-c-packages)。）
+本机包包含本机二进制文件（而不是托管程序集），因此可用于 C++（或类似）项目中。 （请参阅“使用”部分中的[本机 C++ 包](../consume-packages/finding-and-choosing-packages.md#native-c-packages)。）
 
 若要用于 C++ 项目中，包必须面向 `native` 框架。 目前不存在与此框架关联的任何版本号，因为 NuGet 对所有 C++ 项目的处理方式相同。
 
