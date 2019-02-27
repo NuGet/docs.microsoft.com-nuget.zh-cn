@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 08/16/2018
 ms.topic: conceptual
 ms.reviewer: kraigb
-ms.openlocfilehash: 6184fe8e987e0637cb912999f2e3fa3a3dc9b4ba
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 003139abac7808dbdaef4aa66119e09772db2b4f
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546930"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852528"
 ---
 # <a name="toolsjson-for-discovering-nugetexe-versions"></a>用于发现 nuget.exe 版本 tools.json
 
@@ -45,14 +45,14 @@ nuget.exe | 对象的数组 | 是
 
 name     | 类型   | 必需 | 说明
 -------- | ------ | -------- | -----
-version  | 字符串 | 是      | SemVer 2.0.0 字符串
-URL      | 字符串 | 是      | 下载此版本的 nuget.exe 绝对 URL
-阶段    | 字符串 | 是      | 枚举字符串
-上传 | 字符串 | 是      | 版本何时进行可用一个近似的时间戳
+version  | string | 是      | SemVer 2.0.0 字符串
+URL      | string | 是      | 下载此版本的 nuget.exe 绝对 URL
+阶段    | string | 是      | 枚举字符串
+上传 | string | 是      | 版本何时进行可用一个近似的 ISO 8601 时间戳
 
-将按降序，SemVer 2.0.0 排序数组中的项。 这一保证旨在便于在寻找最新版本的客户端上的负担。 
+将按降序，SemVer 2.0.0 排序数组中的项。 这一保证旨在减少客户端感兴趣的最高版本号的负担。 但是这意味着列表不按时间顺序排序。 例如，如果在某个日期晚于更高版本的主版本，较低的主版本已得到处理，此服务的版本将不出现在列表顶部。 如果想要发布的最新版本*时间戳*，只需对数组进行排序`uploaded`字符串。 这样做的原因`uploaded`时间戳处于[ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)格式，它可以通过使用按字典编辑顺序排序 （即简单的字符串排序） 按时间顺序排序。
 
-`stage`属性指示 vettect 此版本的工具是。 
+`stage`属性指示如何审查该版本的工具是。 
 
 阶段              | 含义
 ------------------ | ------
@@ -60,7 +60,7 @@ EarlyAccessPreview | 在上尚不可见[下载网页](https://www.nuget.org/down
 Released（已释放）           | 下载站点上的可用但尚未广泛使用建议
 ReleasedAndBlessed | 下载站点上可用，建议使用
 
-具有最新的一个简单的方法，建议的版本是所要采取的第一个版本列表，其中包含`stage`的值`ReleasedAndBlessed`。
+具有最新的一个简单的方法，建议的版本是所要采取的第一个版本列表，其中包含`stage`的值`ReleasedAndBlessed`。 这有效，因为版本 SemVer 2.0.0 顺序进行排序。
 
 `NuGet.CommandLine` Nuget.org 上的包通常只会更新与`ReleasedAndBlessed`版本。
 

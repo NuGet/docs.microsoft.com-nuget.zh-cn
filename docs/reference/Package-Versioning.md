@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: b980c1084fe8e31573053a4dcf38bbfa6146e6de
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 6407cd2ea5e5e7a9c9e2be679764a8a0d5dd9260
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549768"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852463"
 ---
 # <a name="package-versioning"></a>包版本控制
 
@@ -29,9 +29,9 @@ ms.locfileid: "43549768"
 
 在窗体中的特定版本号是*Major.Minor.Patch [-后缀]*，其中的组件具有以下含义：
 
-- *主要*： 重大更改
-- *次要*： 新功能，但可向后兼容
-- *修补程序*： 向后兼容 bug 修复
+- *主要*:重大更改
+- *次要*:新增功能，但可向后兼容
+- *修补程序*:仅可向后兼容的 bug 修复
 - *-后缀*（可选）： 连字符后跟一个表示的预发行版本的字符串 (下面[语义化版本控制或 SemVer 1.0 约定](http://semver.org/spec/v1.0.0.html))。
 
 **示例：**
@@ -50,7 +50,7 @@ ms.locfileid: "43549768"
 
 话虽如此，但包开发人员通常遵循公认命名约定：
 
-- `-alpha`: Alpha 版本，通常用于开发过程和试验。
+- `-alpha`：Alpha 版本，通常用于开发过程和试验。
 - `-beta`：Beta 版本，通常指可用于下一计划版本的功能完整的版本，但可能包含已知 bug。
 - `-rc`：候选发布，通常可能为最终（稳定）版本，除非出现重大 bug。
 
@@ -84,7 +84,7 @@ NuGet 4.3.0 和 Visual Studio 2017 版本 15.3 +，NuGet 支持[语义化版本�
 
 将 SemVer 2.0.0 版特定包上传到 nuget.org，该程序包对较旧的客户端不可见，并可用于仅以下 NuGet 客户端：
 
-- NuGet 4.3.0
+- NuGet 4.3.0+
 - Visual Studio 2017 版本 15.3 +
 - 使用 visual Studio 2015 [NuGet VSIX v3.6.0](https://dist.nuget.org/visualstudio-2015-vsix/latest/NuGet.Tools.vsix)
 - dotnet
@@ -92,7 +92,7 @@ NuGet 4.3.0 和 Visual Studio 2017 版本 15.3 +，NuGet 支持[语义化版本�
 
 第三方客户端：
 
-- JetBrains 的 Rider
+- JetBrains Rider
 - Paket 依存版本 5.0 +
 
 <!-- For compatibility with previous dependency-versions page -->
@@ -187,9 +187,6 @@ NuGet 4.3.0 和 Visual Studio 2017 版本 15.3 +，NuGet 支持[语义化版本�
 ```xml
 <!-- Accepts any version 6.1 and above. -->
 <dependency id="ExamplePackage" version="6.1" />
-
-<!-- Accepts any 6.x.y version. -->
-<dependency id="ExamplePackage" version="6.*" />
 
 <!-- Accepts any version above, but not including 4.1.3. Could be
      used to guarantee a dependency with a specific bug fix. -->

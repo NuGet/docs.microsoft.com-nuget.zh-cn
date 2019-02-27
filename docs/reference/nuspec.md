@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: fec6dd0fb97b565b364a7ffcb192d2eb99187e83
-ms.sourcegitcommit: b15fdd101aec13ea5fe9dd12845051d648034abd
+ms.openlocfilehash: a8be66f5871df260581b6baca8eb7959279d66cd
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55480135"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852580"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -84,9 +84,9 @@ ms.locfileid: "55480135"
 
 包的许可证 URL，通常显示在 UI 和 nuget.org 中。
 #### <a name="license"></a>许可证
-一个 SPDX 许可证表达式或通常显示在 ui 和 nuget.org 的包中的许可证文件的路径。如果许可包在常见如 BSD 2 子句或 MIT 许可证下的使用关联的 SPDX 许可证标识符。<br>例如： `<license type="expression">MIT</license>`
+SPDX 许可证表达式或包中许可证文件的路径，通常显示在 UI 和 nuget.org 中。如果许可包在常见如 BSD 2 子句或 MIT 许可证下的使用关联的 SPDX 许可证标识符。<br>例如： `<license type="expression">MIT</license>`
 
-下面是完整列表[SPDX 许可证标识符](https://spdx.org/licenses/)。 NuGet.org 接受仅 OSI 或 FSF 批准许可证时使用许可证类型表达式。
+下面是 [SPDX 许可证标识符](https://spdx.org/licenses/)的完整列表。 NuGet.org 在使用许可证类型表达式时只接受 OSI 或 FSF 批准的许可证。
 
 如果您的包常见的多个许可证的许可，则可以指定复合许可证 using [SPDX 表达式语法版本 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)。<br>例如： `<license type="expression">BSD-2-Clause OR MIT</license>`
 
@@ -188,11 +188,11 @@ nuget pack MyProject.csproj
 
 除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
 
-| 标记 | 值来源 | “值”
+| 标记 | 值来源 | 值
 | --- | --- | ---
 | **$id$** | 项目文件 | 项目文件中的 AssemblyName （标题） |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
-| **$authors$** | AssemblyInfo | AssemblyCompany |
+| **$author$** | AssemblyInfo | AssemblyCompany |
 | **$title$** | AssemblyInfo | AssemblyTitle |
 | **$description$** | AssemblyInfo | AssemblyDescription |
 | **$copyright$** | AssemblyInfo | AssemblyCopyright |
