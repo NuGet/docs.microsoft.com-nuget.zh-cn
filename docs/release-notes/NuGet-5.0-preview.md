@@ -5,19 +5,61 @@ author: anangaur
 ms.author: anangaur
 ms.date: 1/25/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5889ea52f993fa8fe841f8eb83b6da659cdede93
-ms.sourcegitcommit: 1ab750ff17e55c763d646c50e7630138804ce8b8
+ms.openlocfilehash: 57b66b347ac47a3d05907a4bb237002de8981ecc
+ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56247654"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57196195"
 ---
 # <a name="nuget-50-preview-release-notes"></a>NuGet 5.0 预览版发行说明
 
 ## <a name="nuget-50-preview-releases"></a>NuGet 5.0 预览版本
 
+* 2010 年 2 月 27 日- [NuGet 5.0 预览版 4](#summary-whats-new-in-50-preview-4)
 * 2019 年 2 月 13 日- [NuGet 5.0 预览版 3](#summary-whats-new-in-50-preview-3)
 * 2019 年 1 月 23 日- [NuGet 5.0 预览版 2](#summary-whats-new-in-50-preview-2)
+
+## <a name="summary-whats-new-in-nuget-50-preview-4"></a>摘要:什么是 NuGet 5.0 预览版 4 中的新增功能
+
+### <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
+
+**Bug:**
+
+* NuGet.VisualStudio.IVsPackageInstaller-调用上使用的任何包的项目引用始终使用 packages.config，即使默认值设置为 PackageReference- [#7005](https://github.com/NuGet/Home/issues/7005)
+
+* PMC:更新包从列表去除包上重新安装失败 （"找不到包"）。 - [#7268](https://github.com/NuGet/Home/issues/7268)
+
+* 在我们的存储库和 VSIX 中-添加第三方通知[#7409](https://github.com/NuGet/Home/issues/7409)
+
+* NuGet.VisualStudio.IVsPackageInstaller.InstallPackage 应安装最新版本时提供的任何版本[#7493](https://github.com/NuGet/Home/issues/7493)
+
+* -dotnet nuget push 交互式支持- [#7519](https://github.com/NuGet/Home/issues/7519)
+
+* 当还原锁定文件时，不应引发 NU1603 警告。 - [#7529](https://github.com/NuGet/Home/issues/7529)
+
+* NuGet 应使用最小日志记录-还原期间无法打印项目路径[#7647](https://github.com/NuGet/Home/issues/7647)
+
+* -适用于 dotnet 的交互支持中删除程序包- [#7727](https://github.com/NuGet/Home/issues/7727)
+
+* 添加与 TypeForwardedTo attrs-备份 NuGet.Packaging.Core [#7768](https://github.com/NuGet/Home/issues/7768)
+
+* plugins_cache 需要较短的路径来有效工作的[#7770](https://github.com/NuGet/Home/issues/7770)
+
+* 如果用户未请求特定的 msbuild 版本-则更喜欢 msbuild 发现路径[#7786](https://github.com/NuGet/Home/issues/7786)
+
+**Dcr:**
+
+* 限制每个源通过 NuGet.Config 的 http 请求数目[#4538](https://github.com/NuGet/Home/issues/4538)
+
+* NuGet 应针对 Net472 （以帮助清理 16.0 生成的 VSIX）- [#7143](https://github.com/NuGet/Home/issues/7143)
+
+* PMC:删除 OpenPackagePage 命令- [#7384](https://github.com/NuGet/Home/issues/7384)
+
+* 请 NetCoreApp 3.0 映射到 NetStandard 2.1- [#7762](https://github.com/NuGet/Home/issues/7762)
+
+* 将 netstandard2.0 支持添加到 NuGet.* 包- [#6516](https://github.com/NuGet/Home/issues/6516)
+
 
 ## <a name="summary-whats-new-in-nuget-50-preview-3"></a>摘要:什么是 NuGet 5.0 预览版 3 中的新增功能
 
@@ -39,7 +81,7 @@ ms.locfileid: "56247654"
 
 * msbuild /t: restore 最低详细级别应为更少的[#4695](https://github.com/NuGet/Home/issues/4695)
 
-**DCRs**
+**Dcr:**
 
 * 允许程序包作者可定义生成资产可传递行为- [#6091](https://github.com/NuGet/Home/issues/6091)
 
@@ -92,7 +134,7 @@ ms.locfileid: "56247654"
 
 * dotnet 还原由于已禁用计算机范围源-而失败[#5410](https://github.com/NuGet/Home/issues/5410)
 
-**DCRs**
+**Dcr:**
 
 * NuGet 5.0 程序集 （通过 TFM 更改） 的要求.NET 4.7.2 [#7510](https://github.com/NuGet/Home/issues/7510)
 
@@ -109,10 +151,6 @@ ms.locfileid: "56247654"
 [在此版本 5.0.0-preview2 中修复所有问题的列表](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.9.2")
 
 ### <a name="known-issues"></a>已知问题
-
-#### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>dotnet nuget push --interactive 在 Mac 上抛出错误。 - [#7519](https://github.com/NuGet/Home/issues/7519)
-**问题**`--interactive`自变量不转发 dotnet cli，并且会导致错误`error: Missing value for option 'interactive'` 
-**解决方法**使用如交互式选项运行任何其他dotnet命令`dotnet restore --interactive`并进行身份验证。 凭据提供程序可能会缓存身份验证。 然后，运行 `dotnet nuget push`。
 
 #### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414httpsgithubcomnugethomeissues7414"></a>FallbackFolders 中由 .NET Core SDK 安装的包是自定义安装的，无法通过签名验证。 - [#7414](https://github.com/NuGet/Home/issues/7414)
 **问题**使用 dotnet.exe 时 2.x 以还原项目的多重目标 netcoreapp 1.x 和 netcoreapp 2.x，回退文件夹视为文件源。 也就是说，在还原时，NuGet 将从回退文件夹中选取包，并尝试将它安装到全局包文件夹，再执行失败的常规签名验证。
