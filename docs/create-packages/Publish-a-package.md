@@ -6,21 +6,21 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: bd36ae311da1ec824726c5d73670b1232a3f89e0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: bd19bc402ff9d66d7e2baa4f326d75f0ed444f30
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549581"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852567"
 ---
 # <a name="publishing-packages"></a>发布包
 
 创建程序包并获得 `.nupkg` 文件后，即可轻松以公开或私密方式将其提供给其他开发人员：
 
 - 根据本文中的介绍，可通过 [nuget.org](https://www.nuget.org/packages/manage/upload) 将公共包全局提供给所有开发人员（需要 NuGet 4.1.0+）。
-- 通过以下方式可以仅向团队或组织提供专用包：在文件共享、专用 NuGet 服务器、[Visual Studio Team Services 包管理](https://www.visualstudio.com/docs/package/nuget/publish)或第三方存储库（如 myget、ProGet、Nexus 存储库和 Artifactory）上承载专用包。 有关其他详细信息，请参阅[承载包概述](../hosting-packages/overview.md)。
+- 通过以下方式可以仅向团队或组织提供专用包：在文件共享、专用 NuGet 服务器、[Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) 或第三方存储库（如 myget、ProGet、Nexus 存储库和 Artifactory）上承载专用包。 有关其他详细信息，请参阅[承载包概述](../hosting-packages/overview.md)。
 
-本文介绍如何发布到 nuget.org；有关发布到 Visual Studio Team Services 的信息，请参阅[包管理](https://www.visualstudio.com/docs/package/nuget/publish)。
+本文介绍如何发布到 nuget.org；有关发布到 Azure Artifacts 的信息，请参阅[包管理](https://www.visualstudio.com/docs/package/nuget/publish)。
 
 ## <a name="publish-to-nugetorg"></a>发布到 nuget.org
 
@@ -28,7 +28,7 @@ ms.locfileid: "43549581"
 
 ![NuGet 登录位置](media/publish_NuGetSignIn.png)
 
-接下来，可根据以下各节中的介绍，通过 nuget.org Web 门户上传包、从命令行（需要 `nuget.exe` 4.1.0+）将包推送到 nuget.org 或通过 Visual Studio Team Services 在 CI/CD 过程中发布包。
+接下来，可根据以下各节中的介绍，通过 nuget.org Web 门户上传包、从命令行（需要 `nuget.exe` 4.1.0+）将包推送到 nuget.org 或通过 Azure DevOps Services 在 CI/CD 过程中发布包。
 
 ### <a name="web-portal-use-the-upload-package-tab-on-nugetorg"></a>Web 门户：使用 nuget.org 上的“上传包”选项卡
 
@@ -93,9 +93,9 @@ ms.locfileid: "43549581"
 
 ![指示尚未发布包的消息](media/publish_NotYetIndexed.png)
 
-### <a name="visual-studio-team-services-cicd"></a>Visual Studio Team Services (CI/CD)
+### <a name="azure-devops-services-cicd"></a>Azure DevOps Services (CI/CD)
 
-如果在持续集成/部署过程中使用 Visual Studio Team Services 将包推送到 nuget.org，必须在 NuGet 任务中使用 `nuget.exe` 4.1 或更高版本。 要了解详细信息，请参阅 [Using the latest NuGet in your build](https://blogs.msdn.microsoft.com/devops/2017/09/29/using-the-latest-nuget-in-your-build/)（在生成中使用最新 NuGet）（Microsoft DevOps 博客）。
+如果在持续集成/部署过程中使用 Azure DevOps Services 将包推送到 nuget.org，必须在 NuGet 任务中使用 `nuget.exe` 4.1 或更高版本。 要了解详细信息，请参阅 [Using the latest NuGet in your build](https://blogs.msdn.microsoft.com/devops/2017/09/29/using-the-latest-nuget-in-your-build/)（在生成中使用最新 NuGet）（Microsoft DevOps 博客）。
 
 ## <a name="managing-package-owners-on-nugetorg"></a>在 nuget.org 上管理包所有者
 

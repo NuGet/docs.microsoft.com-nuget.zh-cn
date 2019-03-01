@@ -16,14 +16,16 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 1fbb243a7b3518307a393b5f371feae1edb7623a
-ms.sourcegitcommit: 5c5f0f0e1f79098e27d9566dd98371f6ee16f8b5
+ms.openlocfilehash: 43f346dc64ebbc59d02b9c7875b04205d8c5d83a
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53645654"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852437"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
+
+通过符号包可以提高 NuGet 包的调试体验。
 
 ## <a name="prerequisites"></a>系统必备
 
@@ -31,22 +33,28 @@ ms.locfileid: "53645654"
 
 ## <a name="creating-a-symbol-package"></a>创建符号包
 
-可从 .nuspec 文件或 .csproj 文件创建 snupkg 符号包。 同时支持 NuGet.exe 和 dotnet.exe。 当在 nuget.exe 包命令上使用选项 ```-Symbols -SymbolPackageFormat snupkg``` 时，将在除 .nupkg 文件以外另创建 .snupkg 文件。
+可以使用 dotnet.exe、NuGet.exe 或 MSBuild 创建 snupkg 包。 如果使用 NuGet.exe，除 .nupkg 文件外，可以使用以下命令创建一个 .snupkg 文件：
 
-用于创建 .snupkg 文件的示例命令
 ```
-dotnet pack MyPackage.csproj --include-symbols -p:SymbolPackageFormat=snupkg
-
 nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
 nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
-
-msbuild -t:pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
 ```
 
-默认情况下不会生成 `.snupkgs`。 对于 nuget.exe，必须将 `SymbolPackageFormat` 属性与 `-Symbols` 一起传递；对于 dotnet.exe，必须传递 `--include-symbols`，对于 msbuild，必须传递 `-p:IncludeSymbols`。
+如果使用 dotnet.exe 或 MSBuild，除 .nupkg 文件外，可以通过以下步骤创建一个 .snupkg 文件：
 
-SymbolPackageFormat 属性的可取值为下列两个之一：`symbols.nupkg`（默认值）或 `snupkg`。 如果未指定 SymbolPackageFormat，默认值为 `symbols.nupkg`，并将创建旧的符号包。
+1. 将以下属性添加到 .csproj 文件：
+
+    ```xml
+    <PropertyGroup>
+      <IncludeSymbols>true</IncludeSymbols>
+      <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+    ```
+
+1. 使用 `dotnet pack MyPackage.csproj` 或 `msbuild -t:pack MyPackage.csproj` 打包项目。
+
+`SymbolPackageFormat` 属性可以具有以下两个值之一：`symbols.nupkg`（默认值）或 `snupkg`。 如果未指定 `SymbolPackageFormat` 属性，默认值为 `symbols.nupkg`，并将创建旧的符号包。
 
 > [!Note]
 > 仍支持旧格式 `.symbols.nupkg`，但仅出于兼容性原因（请参阅[旧版符号包](Symbol-Packages.md)）。 NuGet.org 符号服务器仅接受新的符号包格式 - `.snupkg`。

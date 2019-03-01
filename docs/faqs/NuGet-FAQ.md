@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: f15639c883241c328b5fc0a4bf5617540b52b7ee
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: 03223e949eeeadd7eaa6e392297ba79d28eed2f2
+ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145678"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56852541"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
@@ -166,7 +166,7 @@ NuGet 建议对所有的包签名。 包签名的设计原则是已签名包的�
 
 请注意，列出的包依赖项从包本身自动生成，并且无法进行编辑。
 
-此外，要测试和验证包，同时不在公共库中提供此包，最好将包上传到[ int.nugettest.org](https://int.nugettest.org)。
+此外，要测试和验证包，同时不在公共库中提供此包，最好将包上传到[ int.nugettest.org](https://int.nugettest.org)。 API 终结点： https://apiint.nugettest.org/v3/index.json
 
 是否可以为以后发布的包预留名称？
 
