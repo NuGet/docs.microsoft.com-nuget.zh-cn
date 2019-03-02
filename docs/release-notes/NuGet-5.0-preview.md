@@ -5,26 +5,26 @@ author: anangaur
 ms.author: anangaur
 ms.date: 1/25/2019
 ms.topic: conceptual
-ms.openlocfilehash: 57b66b347ac47a3d05907a4bb237002de8981ecc
-ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
+ms.openlocfilehash: 4b05dcb9a2960c1e3231e81d4b4c122d3a518753
+ms.sourcegitcommit: 571644118e3c5a2fd818891d305b4b8de8ef21de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57196195"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57225883"
 ---
 # <a name="nuget-50-preview-release-notes"></a>NuGet 5.0 预览版发行说明
 
 ## <a name="nuget-50-preview-releases"></a>NuGet 5.0 预览版本
 
-* 2010 年 2 月 27 日- [NuGet 5.0 预览版 4](#summary-whats-new-in-50-preview-4)
-* 2019 年 2 月 13 日- [NuGet 5.0 预览版 3](#summary-whats-new-in-50-preview-3)
-* 2019 年 1 月 23 日- [NuGet 5.0 预览版 2](#summary-whats-new-in-50-preview-2)
+* 2019 年 2 月 27 日- [NuGet 5.0 预览版 4](#whats-new-in-nuget-50-preview-4)
+* 2019 年 2 月 13 日- [NuGet 5.0 预览版 3](#whats-new-in-nuget-50-preview-3)
+* 2019 年 1 月 23 日- [NuGet 5.0 预览版 2](#whats-new-in-nuget-50-preview-2)
 
-## <a name="summary-whats-new-in-nuget-50-preview-4"></a>摘要:什么是 NuGet 5.0 预览版 4 中的新增功能
+## <a name="whats-new-in-nuget-50-preview-4"></a>什么是 NuGet 5.0 预览版 4 中的新增功能
 
 ### <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
 
-**Bug:**
+**Bug**
 
 * NuGet.VisualStudio.IVsPackageInstaller-调用上使用的任何包的项目引用始终使用 packages.config，即使默认值设置为 PackageReference- [#7005](https://github.com/NuGet/Home/issues/7005)
 
@@ -48,7 +48,7 @@ ms.locfileid: "57196195"
 
 * 如果用户未请求特定的 msbuild 版本-则更喜欢 msbuild 发现路径[#7786](https://github.com/NuGet/Home/issues/7786)
 
-**Dcr:**
+**DCRs**
 
 * 限制每个源通过 NuGet.Config 的 http 请求数目[#4538](https://github.com/NuGet/Home/issues/4538)
 
@@ -61,11 +61,11 @@ ms.locfileid: "57196195"
 * 将 netstandard2.0 支持添加到 NuGet.* 包- [#6516](https://github.com/NuGet/Home/issues/6516)
 
 
-## <a name="summary-whats-new-in-nuget-50-preview-3"></a>摘要:什么是 NuGet 5.0 预览版 3 中的新增功能
+## <a name="whats-new-in-nuget-50-preview-3"></a>什么是 NuGet 5.0 预览版 3 中的新增功能
 
 ### <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题 
 
-**Bug:**
+**Bug**
 
 * nuget.exe /? 应列出正确的 msbuild 版本- [#7794](https://github.com/NuGet/Home/issues/7794)
 
@@ -81,18 +81,18 @@ ms.locfileid: "57196195"
 
 * msbuild /t: restore 最低详细级别应为更少的[#4695](https://github.com/NuGet/Home/issues/4695)
 
-**Dcr:**
+**DCRs**
 
 * 允许程序包作者可定义生成资产可传递行为- [#6091](https://github.com/NuGet/Home/issues/6091)
 
 * 启用在 VS 成功如果项目不是解决方案的一部分或未加载，但以前已还原的还原[#5820](https://github.com/NuGet/Home/issues/5820)
 
 
-## <a name="summary-whats-new-in-50-preview-2"></a>摘要:什么是 5.0 预览版 2 中的新增功能
+## <a name="whats-new-in-nuget-50-preview-2"></a>什么是 NuGet 5.0 预览版 2 中的新增功能
 
 ### <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
 
-**Bug:**
+**Bug**
 
 * VS 16.0 的 NuGet UI 具有不可读的选项卡颜色问题-由于[#7735](https://github.com/NuGet/Home/issues/7735)
 
@@ -134,7 +134,7 @@ ms.locfileid: "57196195"
 
 * dotnet 还原由于已禁用计算机范围源-而失败[#5410](https://github.com/NuGet/Home/issues/5410)
 
-**Dcr:**
+**DCRs**
 
 * NuGet 5.0 程序集 （通过 TFM 更改） 的要求.NET 4.7.2 [#7510](https://github.com/NuGet/Home/issues/7510)
 

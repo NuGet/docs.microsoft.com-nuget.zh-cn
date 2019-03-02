@@ -6,12 +6,12 @@ ms.author: diverdan92
 ms.date: 10/09/2017
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 32f83bede42f7643a9a4fed593643eefea0453c1
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: e8b902c89427333afb7a27ee9de0eeb99a92f391
+ms.sourcegitcommit: 571644118e3c5a2fd818891d305b4b8de8ef21de
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50980997"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57225870"
 ---
 # <a name="package-id-prefix-reservation"></a>包 ID 前缀保留
 
@@ -31,7 +31,7 @@ ms.locfileid: "50980997"
 
 1. 每当包提交给[nuget.org](https://www.nuget.org/) id 相匹配的保留的 ID 前缀，包被拒绝，除非它来自保留 ID 前缀的所有者。
 
-1. 匹配保留的 ID 前缀和源自所有者的 ID 前缀保留的任何包将在 Visual Studio 2017 版本 15.4 或更高版本，以及具有可视的指示器[nuget.org](https://www.nuget.org/) ，该值指示包正在保留的 ID 前缀。 这适用于新的包提交以及在所有者下的现有包。 **注意：** Visual Studio 中的指示符将单个源选择作为数据包来源，才显示。
+1. 匹配保留的 ID 前缀和源自所有者的 ID 前缀保留的任何包将在 Visual Studio 2017 版本 15.4 或更高版本，以及具有可视的指示器[nuget.org](https://www.nuget.org/) ，该值指示包正在保留的 ID 前缀。 这适用于新的包提交以及在所有者下的现有包。 **注意：** 仅当单个源选择作为数据包来源，将显示 Visual Studio 中的指示符。
 
 1. 所有先前存在的包相匹配的保留的 ID 前缀，但都*不*的保留所有者所拥有的前缀将保持不变 （它们将不会取消列出，但它们还将不具有可视的指示器）。 此外，这些包的所有者将仍能够提交到包的新版本。
 
@@ -84,6 +84,8 @@ ms.locfileid: "50980997"
 1. 将*不*保留包 ID 前缀导致二义性和社区的困惑吗？
 
 1. 是与匹配的包 ID 前缀清晰、 一致 （尤其是包的作者） 的程序包的标识属性？
+
+1. 执行包具有的许可证 (使用[许可证](https://docs.microsoft.com/en-us/nuget/reference/nuspec#license)元数据元素，并不将被弃用的 licenseUrl)？
 
 ## <a name="third-party-feed-provider-scenarios"></a>第三方源提供程序方案
 
