@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 03223e949eeeadd7eaa6e392297ba79d28eed2f2
-ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
+ms.openlocfilehash: 1c838116f9737b01ea3f9ca17f5d5002f6548044
+ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852541"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57196208"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
@@ -158,7 +158,7 @@ Visual Studio 自动化对象模型中的顶层对象称为 DTE （开发工具�
 
 如果包未指定许可条款，请直接通过 nuget.org 包页面上的“联系所有者”链接与包所有者联系。 Microsoft 不向用户授予任何第三方包提供程序的知识产权许可，同时不对第三方提供的信息承担任何责任。
 
-## <a name="managing-packages-on-nugetorg"></a>在 nuget.org 上管理包
+## <a name="managing-packages-on-nugetorg"></a>管理 NuGet.org 上的包
 
 在上传包元数据后是否可以再对其进行编辑？
 
@@ -167,6 +167,10 @@ NuGet 建议对所有的包签名。 包签名的设计原则是已签名包的�
 请注意，列出的包依赖项从包本身自动生成，并且无法进行编辑。
 
 此外，要测试和验证包，同时不在公共库中提供此包，最好将包上传到[ int.nugettest.org](https://int.nugettest.org)。 API 终结点： https://apiint.nugettest.org/v3/index.json
+
+**我能否删除发布到 NuGet.org 的包？**
+
+通常，我们不支持删除发布到 NuGet.org 的包。详细阅读我们的[包删除策略](../policies/deleting-packages)。
 
 是否可以为以后发布的包预留名称？
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 901eb09711a6e32740c70829028da66b782870a0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 833f4a67bc75c5d650e85180b52ecd8f69218f15
+ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548123"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57196182"
 ---
 # <a name="deleting-packages"></a>删除包
 
@@ -23,7 +23,7 @@ nuget.org 支持取消列出包，此操作可在网站上的包管理页中执�
 
 ## <a name="exceptions"></a>异常
 
-在侵犯版权和可能包含有害内容等例外情况下，NuGet 团队可以手动删除包。 通过 [NuGet 库](http://www.nuget.org)提交支持请求以启动该进程。
+在侵犯版权和可能包含有害内容等例外情况下，NuGet 团队可以手动删除包。 可使用 NuGet.org 包详细信息页上的“报告滥用情况”按钮报告相关包。 如果你是包所有者，请登录 NuGet.org 帐户，使用 NuGet.org 包详细信息页上的“联系支持人员”按钮联系 NuGet 支持人员。
 
 ## <a name="prohibited-use"></a>禁止使用
 
