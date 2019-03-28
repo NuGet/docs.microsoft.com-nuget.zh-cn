@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: bd19bc402ff9d66d7e2baa4f326d75f0ed444f30
-ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
+ms.openlocfilehash: 6d183100a8319b517347567f34d276e94eb4e15d
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852567"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432538"
 ---
 # <a name="publishing-packages"></a>发布包
 
@@ -74,7 +74,7 @@ ms.locfileid: "56852567"
 
 #### <a name="publish-signed-packages"></a>发布已签名的包
 
-若要提交已签名的包，必须首先[注册用于签名包的证书](../reference/Signed-Packages-Reference.md#register-certificate-on-nugetorg)。 
+若要提交已签名的包，必须首先[注册用于签名包的证书](../create-packages/Sign-a-Package.md#register-the-certificate-on-nugetorg)。 
 
 > [!Warning]
 > nuget.org 会拒绝不满足[签名包要求](../reference/Signed-Packages-Reference.md#signature-requirements-on-nugetorg)的包。
@@ -83,7 +83,7 @@ ms.locfileid: "56852567"
 
 推送到 nuget.org 的包会进行多项验证，如病毒检查。 （定期扫描 nuget.org 上的所有包。）
 
-. 包通过所有验证检查后，对包编制索引并将其显示在搜索结果中可能需要一些时间。 编制索引完成后，你会收到一封确认已成功发布包的电子邮件。 如果包未通过验证检查，将更新包详细信息页面以显示相关错误，同时你也会收到包含相关通知的电子邮件。
+包通过所有验证检查后，对包编制索引并将其显示在搜索结果中可能需要一些时间。 编制索引完成后，你会收到一封确认已成功发布包的电子邮件。 如果包未通过验证检查，将更新包详细信息页面以显示相关错误，同时你也会收到包含相关通知的电子邮件。
 
 包验证和编制索引所需的时间通常不超过 15 分钟。 如果发布包所用时间超出预期，请访问 [status.nuget.org](https://status.nuget.org/) 检查 nuget.org 是否遇到任何中断。 如果所有系统均正常运行，但一个小时之内还未成功发布包，请登录 nuget.org 并使用包页面上的“联系支持人员”链接与我们联系。
 
