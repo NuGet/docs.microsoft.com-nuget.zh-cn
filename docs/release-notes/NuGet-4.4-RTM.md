@@ -6,16 +6,26 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 9ea11ad5476b02940b171fdc69ac0bf56598418d
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 3be24a86cc92c4e6d07fcae1dc625a150f28d7b4
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548409"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432564"
 ---
-# <a name="nuget-44-rtm-release-notes"></a>NuGet 4.4 RTM 发行说明
+# <a name="nuget-44-release-notes"></a>NuGet 4.4 发行说明
 
 [Visual Studio 2017 15.4 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) 附带 NuGet 4.4 RTM。
+
+## <a name="summary-whats-new-in-440"></a>摘要:4.4.0 版中的新增功能
+
+## <a name="summary-whats-new-in-442"></a>摘要:4.4.2 版中的新增功能
+
+* 安全修复：~/.nuget 中创建的文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## <a name="summary-whats-new-in-443"></a>摘要:4.4.3 版中的新增功能
+
+* 安全修复：NUPKGs 中的文件可以具有高于 NUPKG 目录的相对路径 [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>已知问题
 
@@ -73,7 +83,7 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 - msbuild 包目标应具有公共挂钩，以用于在其本身之前运行用户目标 - [#5143](https://github.com/NuGet/Home/issues/5143)
 
-- 功能：将 dependencyVersion 开关添加到 nuget 安装 - [#1806](https://github.com/NuGet/Home/issues/1806)
+- 功能：将 dependencyVersion 开关添加到 nuget install - [#1806](https://github.com/NuGet/Home/issues/1806)
 
 - uap10.0.TODO.0 应映射到适用于 NuGet 的 .NET Standard 2.0 - [#5684](https://github.com/NuGet/Home/issues/5684)
 
@@ -165,9 +175,9 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 - [警告和错误] NoWarn 不通过 P2P 引用间接流动 - [#5501](https://github.com/NuGet/Home/issues/5501)
 
-- 轻量型解决方案加载：PM UI、PMC 和 IV 的共同核心- - [#5057](https://github.com/NuGet/Home/issues/5057)
+- 轻量级解决方案加载：PM UI、PMC 和 IV 的共同核心 - [#5057](https://github.com/NuGet/Home/issues/5057)
 
-- 轻量型解决方案加载：支持 - PMC - [#5053](https://github.com/NuGet/Home/issues/5053)
+- 轻量级解决方案加载：支持 - PMC - [#5053](https://github.com/NuGet/Home/issues/5053)
 
 - 添加对 Visual Studio 触发的还原前 MSBuild 目标的支持 - [#4781](https://github.com/NuGet/Home/issues/4781)
 

@@ -6,16 +6,23 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 4bee32995884f4c003ebb963d2fd5b2d04363bab
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 72d707cb9bacd8abbac873ee10b2fd00f233d3cc
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551619"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432473"
 ---
-# <a name="nuget-43-rtm-release-notes"></a>NuGet 4.3 RTM 发行说明
+# <a name="nuget-43-release-notes"></a>NuGet 4.3 发行说明
 
 [Visual Studio 2017 15.3 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) 附带 NuGet 4.3 RTM，NuGet 4.3 RTM 添加了对新方案（例如 .NET Standard 2.0/.NET Core 2.0）的支持、包含多种质量修复和提升性体能。 此版本还提供多方面的提升，例如对语义化版本控制 2.0.0 的支持、NuGet 警告和错误的 MSBuild 集成等等。
+
+## <a name="summary-whats-new-in-430"></a>摘要:4.3.0 版中的新增功能
+
+## <a name="summary-whats-new-in-431"></a>摘要:4.3.1 版中的新增功能
+
+* 安全修复：~/.nuget 中创建的文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* 安全修复：NUPKGs 中的文件可以具有高于 NUPKG 目录的相对路径 [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>已知问题
 
@@ -71,15 +78,15 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 - 提升 NuGet 还原性能 - 为命令行还原和 VS 实现更小的 NoOp - [#5080](https://github.com/NuGet/Home/issues/5080)
 
-- NET Core 2.0: VS/Dotnet CLI 应开始使用现有的 NuGet 功能：FallBack 文件夹 - [#4939](https://github.com/NuGet/Home/issues/4939)
+- NET Core 2.0：VS/Dotnet CLI 应开始使用现有的 NuGet 功能：FallBack 文件夹 - [#4939](https://github.com/NuGet/Home/issues/4939)
 
-- NET Core 2.0：使得用户可以忽略特定还原警告（或提升为错误）- [#4898](https://github.com/NuGet/Home/issues/4898)
+- NET Core 2.0：使用户可以忽略特定还原警告（或提升为错误）- [#4898](https://github.com/NuGet/Home/issues/4898)
 
 - NET Core 2.0：CLI 本地化程序集 - [#4896](https://github.com/NuGet/Home/issues/4896)
 
 - NET Core 2.0：将所有警告/错误注册到资产文件（包括 PackageTargetFallback）- [#4895](https://github.com/NuGet/Home/issues/4895)
 
-- 启用 TFM 支持：NetStandard2.0，Tizen - [#4892](https://github.com/NuGet/Home/issues/4892)
+- 启用 TFM 支持：NetStandard2.0, Tizen - [#4892](https://github.com/NuGet/Home/issues/4892)
 
 - 减少 NuGet.Core 和 NuGet.Client 项目（和 DLL）的数量 - [#2446](https://github.com/NuGet/Home/issues/2446)
 

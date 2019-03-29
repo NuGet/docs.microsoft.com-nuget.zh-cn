@@ -5,14 +5,14 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: cf15c4f6a2e3e9f6ce7b6acb2304648041043685
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: f85042b8fe1511934d6a3ac7de34da92c575f6e0
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324820"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432512"
 ---
-# <a name="nuget-48-rtm-release-notes"></a>NuGet 4.8 RTM 发行说明
+# <a name="nuget-48-release-notes"></a>NuGet 4.8 发行说明
 
 [Visual Studio 2017 15.8 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) 附带 NuGet 4.8 功能。
 
@@ -22,11 +22,15 @@ ms.locfileid: "54324820"
 * DotNet.exe - [.NET Core SDK 2.1.400](https://www.microsoft.com/net/download/visual-studio-sdks)
 
 
-## <a name="summary-whats-new-in-this-release"></a>摘要:此版本中的新增功能
+## <a name="summary-whats-new-in-480"></a>摘要:4.8.0 版中的新增功能
 * NuGet.exe 现支持 Windows 10 上的 longfilenames - [#6937](https://github.com/NuGet/Home/issues/6937)
 * 身份验证插件现适用于 MsBuild、DotNet.exe、NuGet.exe 和 Visual Studio（包括跨平台使用）。 MsBuild 的 DotNet.exe 中不支持第一代身份验证插件。 注意:VS 2017 15.9 预览内部版本包含 VSTS 身份验证插件。 [#6486](https://github.com/NuGet/Home/issues/6486)
 * MsBuild 的 SDK 解析程序现作为 NuGet 的一部分生成，并通过 VS 的 NuGet 工具安装。 这将避免版本无法同步的问题。[#6799](https://github.com/NuGet/Home/issues/6799)
 * PackageReference 现支持 DevelopmentDependency 元数据 - [#4125](https://github.com/NuGet/Home/issues/4125)
+
+## <a name="summary-whats-new-in-482"></a>摘要:4.8.2 版中的新增功能
+
+* 安全修复：~/.nuget 中创建的文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
 ## <a name="known-issues"></a>已知问题
 ### <a name="installing-signed-packages-on-a-ci-machine-or-in-an-offline-environment-takes-longer-than-usual"></a>在 CI 计算机或在脱机环境中安装签名包所需的时间要比平常长

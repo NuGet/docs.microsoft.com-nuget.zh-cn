@@ -5,22 +5,30 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4ecbdc5475837b1aa1e723a94c2c6c3e8460f9ef
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: f1397e2f42fd65c3a883c864bd430ba5892c12b2
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549423"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432521"
 ---
-# <a name="nuget-47-rtm-release-notes"></a>NuGet 4.7 RTM 发行说明
+# <a name="nuget-47-release-notes"></a>NuGet 4.7 发行说明
 
 [Visual Studio 2017 15.7 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) 附带 [NuGet 4.7.0](https://dist.nuget.org/win-x86-commandline/v4.7.0/nuget.exe)。
 
-## <a name="summary-whats-new-in-this-release"></a>摘要：此版本中的新增功能
+## <a name="summary-whats-new-in-470"></a>摘要:4.7.0 版中的新增功能
 
 * 我们已增强包签名，以便启用[存储库签名包](https://github.com/NuGet/Home/wiki/Repository-Signatures)
 
 * 在 Visual Studio 版本 15.7 中，我们已引入功能改为[迁移使用 packages.config 格式的现有项目以使用 PackageReference](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference)。
+
+## <a name="summary-whats-new-in-472"></a>摘要:4.7.2 版中的新增功能
+
+* 安全修复：~/.nuget 中创建的文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## <a name="summary-whats-new-in-473"></a>摘要:4.7.3 版中的新增功能
+
+* 安全修复：NUPKGs 中的文件可以具有高于 NUPKG 目录的相对路径 [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>已知问题
 
@@ -58,7 +66,7 @@ ms.locfileid: "43549423"
 * lockFile.GetLibrary 区分大小写 - [#6500](https://github.com/NuGet/Home/issues/6500)
 * 安装/更新还原代码和还原代码路径不一致 - [#3471](https://github.com/NuGet/Home/issues/3471)
 * 解决方案 PackageManager 版本组合框可以通过键盘选择分隔符 - [#2606](https://github.com/NuGet/Home/issues/2606)
-* 无法为源加载服务索引 `https://www.myget.org/F/<id>` ---> System.Net.Http.HttpRequestException：响应状态代码指示不成功：403（已禁止） - [#2530](https://github.com/NuGet/Home/issues/2530)
+* 无法加载源的服务索引 `https://www.myget.org/F/<id>`---> System.Net.Http.HttpRequestException：响应状态代码未指示成功：403（已禁止）- [#2530](https://github.com/NuGet/Home/issues/2530)
 
 ### <a name="dcrs"></a>DCR
 

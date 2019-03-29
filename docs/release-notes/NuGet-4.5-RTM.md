@@ -5,16 +5,26 @@ author: anangaur
 ms.author: anangaur
 ms.date: 12/4/2017
 ms.topic: conceptual
-ms.openlocfilehash: 01ecd8c7de1a0f713766e3c413d889038522bac7
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 321aedb471bc6f86e9c03878093b199267e31195
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548291"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432499"
 ---
-# <a name="nuget-45-rtm-release-notes"></a>NuGet 4.5 RTM 发行说明
+# <a name="nuget-45-release-notes"></a>NuGet 4.5 发行说明
 
 [Visual Studio 2017 15.5 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) 附带有 [NuGet 4.5 RTM](https://dist.nuget.org/win-x86-commandline/v4.5.0/nuget.exe)。
+
+## <a name="summary-whats-new-in-450"></a>摘要:4.5.0 版中的新增功能
+
+## <a name="summary-whats-new-in-452"></a>摘要:4.5.2 版中的新增功能
+
+* 安全修复：~/.nuget 中创建的文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## <a name="summary-whats-new-in-453"></a>摘要:4.5.3 版中的新增功能
+
+* 安全修复：NUPKGs 中的文件可以具有高于 NUPKG 目录的相对路径 [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>已知问题
 
@@ -62,7 +72,7 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 ### <a name="bugs"></a>Bug
 
-- [回归] 在 15.5p1 中，Portable0.0 被跳过 - [#6105](https://github.com/NuGet/Home/issues/6105)
+- [回归]在 15.5p1 中：Portable0.0 被跳过 - [#6105](https://github.com/NuGet/Home/issues/6105)
 - 还原后包中的资产丢失 - [#5995](https://github.com/NuGet/Home/issues/5995)
 - 插件凭据提供程序不支持包含空格的 URI - [#5982](https://github.com/NuGet/Home/issues/5982)
 - 如果包无法还原，应在输出中打印错误，即使最低详细级别为“ON”- [#5658](https://github.com/NuGet/Home/issues/5658)

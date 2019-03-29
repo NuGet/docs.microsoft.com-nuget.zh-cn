@@ -5,22 +5,30 @@ author: anangaur
 ms.author: anangaur
 ms.date: 3/7/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3c71d05144aa2b92b916d4ebf319c5a4e321581f
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: eacd29d4c9340a0f015fcdf6c5b9dd41bf781419
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549839"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432551"
 ---
-# <a name="nuget-46-rtm-release-notes"></a>NuGet 4.6 RTM 发行说明
+# <a name="nuget-46-release-notes"></a>NuGet 4.6 发行说明
 
 [Visual Studio 2017 15.6 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) 附带 [NuGet 4.6.0](https://dist.nuget.org/win-x86-commandline/v4.6.0/nuget.exe)。
 
-## <a name="summary-whats-new-in-this-release"></a>摘要：此版本中的新增功能
+## <a name="summary-whats-new-in-460"></a>摘要:4.6.0 版中的新增功能
 
 * 添加了对[给包签名](../create-packages/sign-a-package.md)的支持。
 * Visual Studio 2017 和 nuget.exe 现将在安装包、为[已签名包](../reference/signed-packages-reference.md)还原包之前，验证包的完整性。
 * 改进了连续还原的性能。
+
+## <a name="summary-whats-new-in-463"></a>摘要:4.6.3 版中的新增功能
+
+* 安全修复：~/.nuget 中创建的文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+
+## <a name="summary-whats-new-in-464"></a>摘要:4.6.4 版中的新增功能
+
+* 安全修复：NUPKGs 中的文件可以具有高于 NUPKG 目录的相对路径 [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>已知问题
 

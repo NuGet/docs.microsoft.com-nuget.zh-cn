@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 01/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1c838116f9737b01ea3f9ca17f5d5002f6548044
-ms.sourcegitcommit: 85bf94e0efcfcee1f914650bdc142309ef3e06d9
+ms.openlocfilehash: 3b6257287c1f8c6345765e0a081bac11b34e05cb
+ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57196208"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58432577"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
@@ -346,8 +346,8 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 ### <a name="unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account"></a>无法使用 Microsoft 登录，如何恢复 nuget.org 帐户？
 
 如果尝试使用[登录协助](#which-microsoft-account-is-linked-to-my-nugetorg-account)但无权访问与 nuget.org 帐户关联的 Microsoft 帐户，请按照以下步骤将新的 Microsoft 帐户关联到此 nuget.org 帐户。
-1. **要求**：有权访问某 Microsoft 帐户（此帐户并未关联到任何现有 nuget.org 帐户）。 如果没有帐户，请[创建](https://signup.live.com)帐户。
-2. 按照[密码登录恢复步骤](#how-to-recover-nugetorg-password-login)操作。如已具有密码登录，请跳过此步骤。
+1. **要求**：有权访问某 Microsoft 帐户，此帐户并未关联到任何现有 nuget.org 帐户。 如果没有帐户，请[创建](https://signup.live.com)帐户。
+2. 如果忘记了 nuget.org 帐户的用户名和密码，请按照[恢复密码登录的步骤](#how-to-recover-nugetorg-password-login)操作。
 3. 通过用户名/密码登录方法[登录 nuget.org](https://www.nuget.org/users/account/LogOnNuGetAccount)。
 4. 登录后会弹出如下所示的对话框。 这是密码终止对话框。
 5. **注意**：请忽略有关使用指定 Microsoft 帐户登录的说明。 现在可将 nuget.org 帐户链接到任何其他 Microsoft 登录。
