@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 5d0d60cbcf6516d24efeb04f8262902da69d92d1
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: bb15b4decef104f1aefe37fd18f3358181a848af
+ms.sourcegitcommit: 2af17c8bb452a538977794bf559cdd78d58f2790
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145652"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58637657"
 ---
 # <a name="nuget-api"></a>NuGet API
 
@@ -49,17 +49,18 @@ NuGet API 是一组可用于下载包、 提取元数据、 将发布新的包�
 
 **服务索引**介绍了各种资源。 当前的受支持的资源集如下所示：
 
-资源名称                                                          | 必需 | 描述
----------------------------------------------------------------------- | -------- | -----------
-[`PackagePublish`](package-publish-resource.md)                        | 是      | 推送和删除 （或取消列出） 包。
-[`SearchQueryService`](search-query-service-resource.md)               | 是      | 筛选器和搜索的关键字的包。
-[`RegistrationsBaseUrl`](registration-base-url-resource.md)            | 是      | 获取包元数据。
-[`PackageBaseAddress`](package-base-address-resource.md)               | 是      | 获取包的内容 (.nupkg)。
-[`SearchAutocompleteService`](search-autocomplete-service-resource.md) | 否       | 发现的子字符串的包 Id 和版本。
-[`ReportAbuseUriTemplate`](report-abuse-resource.md)                   | 否       | 构造一个 URL 以访问"报告滥用行为"网页。
-[`RepositorySignatures`](repository-signatures-resource.md)            | 否       | 获取用于存储库签名的证书。
-[`Catalog`](catalog-resource.md)                                       | 否       | 包的所有事件的完整记录。
-[`SymbolPackagePublish`](symbol-package-publish-resource.md)           | 否       | 推送符号包。
+资源名称                                                        | 必需 | 描述
+-------------------------------------------------------------------- | -------- | -----------
+[目录](catalog-resource.md)                                       | 否       | 包的所有事件的完整记录。
+[PackageBaseAddress](package-base-address-resource.md)               | 是      | 获取包的内容 (.nupkg)。
+[PackageDetailsUriTemplate](package-details-template-resource.md)    | 否       | 构造一个 URL 以访问包的详细信息网页。
+[PackagePublish](package-publish-resource.md)                        | 是      | 推送和删除 （或取消列出） 包。
+[RegistrationsBaseUrl](registration-base-url-resource.md)            | 是      | 获取包元数据。
+[ReportAbuseUriTemplate](report-abuse-resource.md)                   | 否       | 构造一个 URL 以访问报表滥用 web 页。
+[RepositorySignatures](repository-signatures-resource.md)            | 否       | 获取用于存储库签名的证书。
+[SearchAutocompleteService](search-autocomplete-service-resource.md) | 否       | 发现的子字符串的包 Id 和版本。
+[SearchQueryService](search-query-service-resource.md)               | 是      | 筛选器和搜索的关键字的包。
+[SymbolPackagePublish](symbol-package-publish-resource.md)           | 否       | 推送符号包。
 
 一般情况下，使用 JSON API 资源返回的所有非二进制数据进行序列化。 该资源的单独定义的服务索引的每个资源返回的响应架构。 有关每个资源的详细信息，请参阅上面列出的主题。
 
@@ -118,12 +119,14 @@ DELETE | 删除或取消列出资源。
 
 ## <a name="http-request-headers"></a>HTTP 请求标头
 
-name                     | 描述
+名称                     | 描述
 ------------------------ | -----------
 X-NuGet-ApiKey           | 所需的推送和删除，请参阅[`PackagePublish`资源](package-publish-resource.md)
 X-NuGet-Client-Version   | **不推荐使用**并替换为 `X-NuGet-Protocol-Version`
 X-NuGet-Protocol-Version | 在某些情况下，仅在 nuget.org 上必需的请参阅[nuget.org 协议](NuGet-Protocols.md)
-X-NuGet-Session-Id       | *可选*。 NuGet 客户端 v4.7 + 标识属于同一个 NuGet 客户端会话的 HTTP 请求。 有关`PackageReference`存在还原操作是单个会话 id，对于其他方案，如自动完成，和`packages.config`还原可能有几个不同的会话 id 的由于代码构造的方式。
+X-NuGet-Session-Id       | *可选*。 NuGet 客户端 v4.7 + 标识属于同一个 NuGet 客户端会话的 HTTP 请求。
+
+`X-NuGet-Session-Id`在单一还原到相关的所有操作的单个都值`PackageReference`。 有关其他方案，如自动完成和`packages.config`由于代码构造如何还原可能有几个不同的会话 ID。
 
 ## <a name="authentication"></a>身份验证
 

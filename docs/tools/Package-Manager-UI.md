@@ -10,12 +10,12 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-ms.openlocfilehash: 1de6ddeca6295c621a90409807af198bc3c7a068
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: 422faf99e58e058d86db774a8f3c1c576b3dc393
+ms.sourcegitcommit: 2af17c8bb452a538977794bf559cdd78d58f2790
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981179"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58637618"
 ---
 # <a name="nuget-package-manager-ui"></a>NuGet 包管理器 UI
 
@@ -127,7 +127,7 @@ Windows 上的 Visual Studio 中的 NuGet 包管理器用户界面，可轻松�
 1. 若要更改包源，选择它，请在编辑**名称**并**源**框中，然后选择**更新**。
 1. 若要禁用的包源，请清除列表中的名称左边的框。
 1. 若要删除的包源，选择它，然后选择**X**按钮。
-1. 使用向上和向下箭头按钮可以更改包源的优先级顺序。 还原项目的包时，visual Studio 中的优先顺序搜索这些源。 有关详细信息，请参阅[包还原](../consume-packages/package-restore.md)。
+1. 使用向上和向下箭头按钮不会更改包源的优先级顺序。 Visual Studio 会忽略包源的顺序使用从任何源，包首先响应请求。 有关详细信息，请参阅[包还原](../consume-packages/package-restore.md)。
 
 > [!Tip]
 > 如果包源中删除它后再次出现，它可能会列出在计算机级别或用户级别`NuGet.Config`文件。 请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)对于这些文件的位置，然后删除源通过手动编辑文件或使用[nuget 源命令](../tools/nuget-exe-CLI-reference.md)。

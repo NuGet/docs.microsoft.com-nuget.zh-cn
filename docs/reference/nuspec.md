@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: a8be66f5871df260581b6baca8eb7959279d66cd
-ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
+ms.openlocfilehash: 21678cc36fd9bf1ed49143bee3f35208640fc8a7
+ms.sourcegitcommit: 2af17c8bb452a538977794bf559cdd78d58f2790
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852580"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58637644"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -90,7 +90,7 @@ SPDX 许可证表达式或包中许可证文件的路径，通常显示在 UI �
 
 如果您的包常见的多个许可证的许可，则可以指定复合许可证 using [SPDX 表达式语法版本 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)。<br>例如： `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-如果正在使用许可证尚未分配 SPDX 标识符，或者它是自定义许可证，你可以将打包文件 (仅`.txt.`或`.md`) 使用的许可证文本。 例如：
+如果正在使用许可证尚未分配 SPDX 标识符，或者它是自定义许可证，你可以将打包文件 (仅`.txt`或`.md`) 使用的许可证文本。 例如：
 ```xml
 <package>
   <metadata>
