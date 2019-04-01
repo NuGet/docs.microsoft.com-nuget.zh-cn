@@ -31,15 +31,15 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 ## <a name="options"></a>选项
 
-| 选项 | 描述 |
+| Option | 描述 |
 | --- | --- |
 | BasePath | 设置中定义的文件的基路径`.nuspec`文件。 |
-| 生成 | 指定应在生成包之前生成项目。 |
-| 排除 | 指定创建包时要排除的一个或多个通配符模式。 若要指定多个模式，请重复-排除标志。 请参阅下面的示例。 |
+| Build | 指定应在生成包之前生成项目。 |
+| Exclude | 指定创建包时要排除的一个或多个通配符模式。 若要指定多个模式，请重复-排除标志。 请参阅下面的示例。 |
 | ExcludeEmptyDirectories | 生成包时，会阻止包含空的目录。 |
 | ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 以运行使用固定的、 基于英语的区域性。 |
 | ConfigFile | 指定 pack 命令的配置文件。 |
-| 帮助 | 显示的帮助命令的信息。 |
+| Help | 显示的帮助命令的信息。 |
 | IncludeReferencedProjects | 指示生成的包应包括引用的项目作为依赖项或作为包的一部分。 如果引用的项目有一个相应`.nuspec`具有相同名称，为项目，则该引用的项目添加为依赖项的文件。 否则，引用的项目添加为包的一部分。 |
 | MinClientVersion | 设置*minClientVersion*创建的包的属性。 此值将覆盖现有值*minClientVersion*中的属性 （如果有）`.nuspec`文件。 |
 | MSBuildPath | *（4.0 +)* 指定的路径优先于命令中使用 MSBuild `-MSBuildVersion`。 |
@@ -48,11 +48,11 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 | NoPackageAnalysis | 指定 pack 不应在生成包后运行包分析。 |
 | OutputDirectory | 指定在其中存储创建的包的文件夹。 如果未不指定任何文件夹，则使用当前文件夹。 |
 | Properties | 其他选项后应显示最后一个命令行上。 指定重写项目文件中; 中的值的属性的列表请参阅[常用的 MSBuild 项目属性](/visualstudio/msbuild/common-msbuild-project-properties)属性名称。 此处的属性参数是一系列令牌 = 值对，用分号分隔，其中的每个匹配项`$token$`中`.nuspec`文件将替换为给定的值。 值可以为在引号内的字符串。 请注意，对于"配置"属性中，默认值"Debug"。 若要将更改为发布配置，请使用`-Properties Configuration=Release`。 |
-| 后缀 | *(3.4.4+)* 将后缀追加到在内部生成的版本号，通常用于追加生成或其他预发布版本标识符。 例如，使用`-suffix nightly`将使用版本编号类似于创建包`1.2.3-nightly`。 后缀必须以字母以避免警告、 错误和使用不同版本的 NuGet 和 NuGet 包管理器可能不兼容问题开头。 |
-| 符号 | 指定包包含源和符号。 与一起使用时`.nuspec`文件，这将创建常规 NuGet 包文件和对应的符号包。 默认情况下它会创建[旧符号包](../create-packages/Symbol-Packages.md)。 符号包的新推荐格式为 .snupkg。 请参阅[创建符号包 (.snupkg)](../create-packages/Symbol-Packages-snupkg.md)。 |
-| 工具 | 指定应将该项目的输出文件放在`tool`文件夹。 |
-| 详细级别 | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
-| 版本 | 重写从版本号`.nuspec`文件。 |
+| Suffix | *(3.4.4+)* 将后缀追加到在内部生成的版本号，通常用于追加生成或其他预发布版本标识符。 例如，使用`-suffix nightly`将使用版本编号类似于创建包`1.2.3-nightly`。 后缀必须以字母以避免警告、 错误和使用不同版本的 NuGet 和 NuGet 包管理器可能不兼容问题开头。 |
+| Symbols | 指定包包含源和符号。 与一起使用时`.nuspec`文件，这将创建常规 NuGet 包文件和对应的符号包。 默认情况下它会创建[旧符号包](../create-packages/Symbol-Packages.md)。 符号包的新推荐格式为 .snupkg。 请参阅[创建符号包 (.snupkg)](../create-packages/Symbol-Packages-snupkg.md)。 |
+| Tool | 指定应将该项目的输出文件放在`tool`文件夹。 |
+| Verbosity | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
+| Version | 重写从版本号`.nuspec`文件。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
 
