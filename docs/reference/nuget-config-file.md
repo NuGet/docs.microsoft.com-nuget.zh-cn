@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: reference
-ms.openlocfilehash: c294e4c188db2e90e6bcb62b60f71ed5529977fe
-ms.sourcegitcommit: a1846edf70ddb2505d58e536e08e952d870931b0
+ms.openlocfilehash: d7c943c1f13edf782dabe4afee9d19a1a42bd42a
+ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52303514"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58911083"
 ---
 # <a name="nugetconfig-reference"></a>nuget.config 引用
 
 NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)中所述。
 
-`nuget.config` 是包含顶级 `<configuration>` 节点的 XML 文件，而该节点包含本主题中所述的节元素。 每个部分包含零个或多个项。 请参阅[示例配置文件](#example-config-file)。 设置名称不区分大小写，并且值可以使用[环境变量](#using-environment-variables)。
+`nuget.config` 是一个 XML 文件包含顶级`<configuration>`节点，然后包含本主题中描述的部分元素。 每个部分包含零个或多个项。 请参阅[示例配置文件](#example-config-file)。 设置名称不区分大小写，并且值可以使用[环境变量](#using-environment-variables)。
 
 本主题内容：
 
@@ -45,7 +45,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 `dependencyVersion` 并`repositoryPath`仅适用于使用的项目`packages.config`。 `globalPackagesFolder` 仅适用于使用 PackageReference 格式的项目。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | dependencyVersion（仅限于 `packages.config`） | 包安装、还原和更新的默认 `DependencyVersion` 值（未直接指定 `-DependencyVersion` 开关时）。 NuGet 包管理器 UI 也使用此值。 值为 `Lowest`、`HighestPatch`、`HighestMinor`、`Highest`。 |
 | globalPackagesFolder （仅限使用 PackageReference 的项目） | 默认全局包文件夹的位置。 默认值为 `%userprofile%\.nuget\packages` (Windows) 或 `~/.nuget/packages` (Mac/Linux)。 相对路径可在项目特定的 `nuget.config` 文件中使用。 由 nuget_packages 重写环境变量优先替代此设置。 |
@@ -70,7 +70,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 在安装包时，配置 NuGet 是否执行自动绑定重定向。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | skip | 指示是否跳过自动绑定重定向的布尔。 默认值为 false。 |
 
@@ -86,7 +86,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 在生成期间控制包还原。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | enabled | 指示 NuGet 是否可执行自动还原的布尔。 还可以使用 `True` 的值设置 `EnableNuGetPackageRestore` 环境变量，而不是在配置文件中设置此密钥。 |
 | 自动 | 指示 NuGet 是否应在生成期间检查缺少的包。 |
@@ -104,7 +104,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 控制解决方案的 `packages` 文件夹是否包括在源代码管理中。 此节仅适用于解决方案文件夹中的 `nuget.config` 文件。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | disableSourceControlIntegration | 指示在使用源代码管理时是否忽略包文件夹的布尔。 默认值为 False。 |
 
@@ -128,7 +128,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 列出所有已知包源。 在还原操作期间，与任何项目使用 PackageReference 格式，被忽略的顺序。 NuGet 会遵守安装源的顺序和项目使用与更新操作`packages.config`。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | （要分配给包源的名称） | 包源的路径或 URL。 |
 
@@ -146,13 +146,13 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 存储源的用户名和密码，通常通过 `nuget sources` 使用 `-username` 和 `-password` 开关指定。 默认情况下密码会进行加密，除非还使用了 `-storepasswordincleartext` 选项。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | username | 纯文本形式的源用户名。 |
 | 密码 | 源的加密密码。 |
 | cleartextpassword | 源的未加密密码。 |
 
-**示例：**
+**示例:**
 
 在配置文件中，`<packageSourceCredentials>` 元素包含每个适用源名称的子节点（名称中的空格被替换为 `_x0020_`）。 也就是说，对于名为“Contoso”和“测试源”的源，使用加密密码时，配置文件包含以下内容：
 
@@ -188,7 +188,7 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 存储使用 API 密钥身份验证的源的密钥，如使用 [`nuget setapikey` 命令](../tools/cli-ref-setapikey.md) 设置。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | （源 URL） | 加密的 API 密钥。 |
 
@@ -204,11 +204,11 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 标识当前已禁用的源。 可能为空。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
 | （源名称） | 指示源是否禁用的布尔。 |
 
-**示例：**
+**示例:**
 
 ```xml
 <disabledPackageSources>
@@ -221,13 +221,13 @@ NuGet 行为由不同 `NuGet.Config` 文件中的设置控制，如[配置 NuGet
 
 ### <a name="activepackagesource"></a>activePackageSource
 
-*（仅限于 2.x；3.x+ 中已弃用）*
+*（仅限 2.x; 中已弃用的 3.x+）*
 
 标识到当前活动的源或指示所有源的聚合。
 
-| 键 | “值” |
+| 键 | 值 |
 | --- | --- |
-| （源名称）或 `All` | 如果密钥是源的名称，则值为源路径或 URL。 如果为 `All`，值应为 `(Aggregate source)`，从而组合其他未禁用的所有包源。 |
+| （源名称） 或 `All` | 如果密钥是源的名称，则值为源路径或 URL。 如果为 `All`，值应为 `(Aggregate source)`，从而组合其他未禁用的所有包源。 |
 
 **示例**：
 

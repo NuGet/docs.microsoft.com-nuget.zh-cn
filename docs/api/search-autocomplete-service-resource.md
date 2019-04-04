@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 2d2b20c1ea439ec0a3225cf983d9a4d2eedb0333
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: fdc3ad8aa239a42d8a4c169a757715e856bdcb41
+ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324755"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58911044"
 ---
 # <a name="autocomplete"></a>自动完成
 
@@ -45,13 +45,13 @@ SearchAutocompleteService/3.0.0-rc   | 别名 `SearchAutocompleteService`
 
 ### <a name="request-parameters"></a>请求参数
 
-name        | 内     | 类型    | 必需 | 说明
+名称        | 内     | 类型    | 必需 | 说明
 ----------- | ------ | ------- | -------- | -----
-q           | URL    | 字符串  | 否       | 要与包 Id 进行比较的字符串
+q           | URL    | string  | 否       | 要与包 Id 进行比较的字符串
 skip        | URL    | 整数 | 否       | 要分页的跳过的结果数
 Take        | URL    | 整数 | 否       | 要为分页返回的结果数
 预发行版  | URL    | boolean | 否       | `true` 或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
-semVerLevel | URL    | 字符串  | 否       | SemVer 1.0.0 版本字符串 
+semVerLevel | URL    | string  | 否       | SemVer 1.0.0 版本字符串 
 
 记忆式键入功能查询`q`分析由服务器实现定义的方式。 nuget.org 支持查询是由拆分生成的 ID 的片段的包 ID 令牌的前缀为原始由驼峰式大小写和符号字符。
 
@@ -71,7 +71,7 @@ semVerLevel | URL    | 字符串  | 否       | SemVer 1.0.0 版本字符串
 
 根 JSON 对象具有以下属性：
 
-name      | 类型             | 必需 | 说明
+名称      | 类型             | 必需 | 说明
 --------- | ---------------- | -------- | -----
 totalHits | 整数          | 是      | 匹配项，而不考虑总数`skip`和 `take`
 数据      | 字符串数组 | 是      | 包 Id 匹配的请求
@@ -94,11 +94,11 @@ totalHits | 整数          | 是      | 匹配项，而不考虑总数`skip`和
 
 ### <a name="request-parameters"></a>请求参数
 
-name        | 内     | 类型    | 必需 | 说明
+名称        | 内     | 类型    | 必需 | 说明
 ----------- | ------ | ------- | -------- | -----
-id          | URL    | 字符串  | 是      | 要提取的版本的程序包 ID
+id          | URL    | string  | 是      | 要提取的版本的程序包 ID
 预发行版  | URL    | boolean | 否       | `true` 或`false`确定是否包括[预发行包](../create-packages/prerelease-packages.md)
-semVerLevel | URL    | 字符串  | 否       | SemVer 2.0.0 版本字符串 
+semVerLevel | URL    | string  | 否       | SemVer 2.0.0 版本字符串 
 
 如果`prerelease`未提供排除预发行包。
 
@@ -110,7 +110,7 @@ semVerLevel | URL    | 字符串  | 否       | SemVer 2.0.0 版本字符串
 
 根 JSON 对象具有以下属性：
 
-name      | 类型             | 必需 | 说明
+名称      | 类型             | 必需 | 说明
 --------- | ---------------- | -------- | -----
 数据      | 字符串数组 | 是      | 由请求匹配的包版本
 

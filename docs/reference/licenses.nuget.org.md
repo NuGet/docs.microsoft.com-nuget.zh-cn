@@ -1,8 +1,19 @@
+---
+title: licenses.nuget.org
+author: agr
+ms.date: 02/22/2019
+ms.openlocfilehash: 4a40cc1f7d333e8d35a721f3eed2e6b9365faf7b
+ms.sourcegitcommit: 8793f528a11bd8e8fb229cd12e9abba50d61e104
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58921554"
+---
 # <a name="licensesnugetorg"></a>licenses.nuget.org
 
 ## <a name="rationale"></a>阐释
 
-通过引入[许可证表达式](nuspec.md#license)要求出现了用来将提供单个许可证标识符、 异常标识符或许可证表达式引用文本的可靠服务。
+通过引入[许可证表达式](nuspec.md#license)，一项要求出现了用来将提供单个许可证标识符、 异常标识符或许可证表达式引用文本的可靠服务。
 此服务的一个额外的要求是具有稳定的 URL 架构，不是易受链接 rot，以便我们可以安全地用于较旧的客户端提供向后兼容性。
 
 Licenses.nuget.org 可满足该角色。 Nuget.org 使用它来为包指定其许可证的使用许可证表达式提供许可证文本引用。 `nuget pack` 或与其他包装[客户端工具](https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools)设置[ `licenseUrl` ](nuspec.md#licenseurl)元素以指向 licenses.nuget.org 以提供向后兼容性与旧版客户端不支持的`license`元素。
@@ -21,15 +32,16 @@ Licenses.nuget.org 用于查看他们的浏览器中的人员，提供没有机�
 
 | 许可证表达式 | 若要使用的 URL |
 |:---|:---|
-MIT                                                | https://licenses.nuget.org/MIT
-(MIT)                                              | https://licenses.nuget.org/(MIT)
-(LGPL 2.0-仅限使用 FLTK 异常或 Apache-2.0+) | https://licenses.nuget.org/(LGPL-2.0-only%20WITH%20FLTK-exception%20OR%20Apache-2.0+)
+| MIT                                                | <https://licenses.nuget.org/MIT> |
+| (MIT)                                              | <https://licenses.nuget.org/(MIT)> |
+| (LGPL 2.0-仅限使用 FLTK 异常或 Apache-2.0+) | <https://licenses.nuget.org/(LGPL-2.0-only%20WITH%20FLTK-exception%20OR%20Apache-2.0+)> |
 
 该服务仅支持许可证标识符和接受的 nuget.org 的许可证异常标识符。所有许可证表达式包含不受支持的许可证标识符或许可证异常标识符或不符合许可证表达式语法将被都视为无效。
 
 #### <a name="response"></a>响应
 
 Licenses.nuget.org 响应请求包含有效的许可证与 HTTP 200 状态代码和网页包含说明的许可证表达式的表达式：
+
 * 如果提供许可证的表达式，包含单个许可证标识符，其中包含该许可证引用文本; 返回 web 页
 * 如果提供许可证表达式是复合许可证表达式，包含与单个许可证或许可证异常引用的链接许可证表达式返回 web 页。
 
@@ -43,8 +55,8 @@ Licenses.nuget.org 响应请求包含有效的许可证与 HTTP 200 状态代码
 
 | 许可证异常标识符 | 若要使用的 URL |
 |:---|:---|
-FLTK-exception            | https://licenses.nuget.org/FLTK-exception
-openvpn-openssl-exception | https://licenses.nuget.org/openvpn-openssl-exception
+|FLTK-exception            | <https://licenses.nuget.org/FLTK-exception> |
+|openvpn-openssl-exception | <https://licenses.nuget.org/openvpn-openssl-exception> |
 
 #### <a name="response"></a>响应
 

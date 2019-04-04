@@ -5,19 +5,19 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 97ed3ec7d41d2847c0521af69373a1871eb585dd
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 8f96bf289e8121fd25262fb95c2f36dfc89045c5
+ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324677"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58911031"
 ---
 # <a name="nuget-client-sdk"></a>NuGet 客户端 SDK
 
 > [!Note]
 > 无法与相混淆[NuGet *Web* API](https://docs.microsoft.com/en-us/nuget/api/overview)
 
-*NuGet 客户端 SDK*表示一组.NET 库围绕[NuGet.Client](https://www.nuget.org/packages/NuGet.Client)， [Nuget.Packaging](https://www.nuget.org/packages/NuGet.Packaging)，和[NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol). 这些包替换较早[NuGet.Core](https://www.nuget.org/packages/NuGet.Core/)库。
+*NuGet 客户端 SDK*表示一组.NET 库围绕[NuGet.Commands](https://www.nuget.org/packages/NuGet.Commands)， [Nuget.Packaging](https://www.nuget.org/packages/NuGet.Packaging)，和[NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol). 这些包替换较早[NuGet.Core](https://www.nuget.org/packages/NuGet.Core/)库。
 
 我们正在努力具有稳定的表面区域，我们很快就可以记录。
 
