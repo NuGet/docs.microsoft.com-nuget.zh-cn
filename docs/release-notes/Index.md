@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: a9b497fd8e5e74f66f9fdf0ef882cd57befcafe6
-ms.sourcegitcommit: 0cb4c9853cde3647291062eadee2298dd273311e
+ms.openlocfilehash: 42d497dabd41d7487bb8bf4adef0dfdb424f13f8
+ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55084920"
+ms.lasthandoff: 04/03/2019
+ms.locfileid: "58911109"
 ---
 # <a name="release-notes"></a>发行说明
 
 [已知问题](../release-notes/known-issues.md)
 
-[NuGet 5.0 Preview](../release-notes/NuGet-5.0-preview.md)
+[NuGet 5.0 RTM](../release-notes/NuGet-5.0-RTM.md)
 
 [NuGet 4.9 RTM](../release-notes/NuGet-4.9-RTM.md)
 
@@ -76,7 +76,7 @@ ms.locfileid: "55084920"
 
 [NuGet 3.0 Beta](../release-notes/nuget-3.0-beta.md)
 
-[NuGet 3.0 Preview](../release-notes/nuget-3.0-preview.md)
+[NuGet 3.0 预览版](../release-notes/nuget-3.0-preview.md)
 
 [NuGet 2.12](../release-notes/nuget-2.12.md)
 
