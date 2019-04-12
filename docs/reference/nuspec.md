@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/29/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 21678cc36fd9bf1ed49143bee3f35208640fc8a7
-ms.sourcegitcommit: 2af17c8bb452a538977794bf559cdd78d58f2790
+ms.openlocfilehash: ebb1dd929042a1fcd269d0ac50154ae6b8234be2
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58637644"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59509095"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -24,8 +24,8 @@ ms.locfileid: "58637644"
 - [依赖项](#dependencies)
 - [显式程序集引用](#explicit-assembly-references)
 - [Framework 程序集引用](#framework-assembly-references)
-- [包括程序集文件](#including-assembly-files)
-- [包括内容文件](#including-content-files)
+- [包含程序集文件](#including-assembly-files)
+- [包含内容文件](#including-content-files)
 - [示例 nuspec 文件](#example-nuspec-files)
 
 ## <a name="general-form-and-schema"></a>常规形式和架构
@@ -84,11 +84,13 @@ ms.locfileid: "58637644"
 
 包的许可证 URL，通常显示在 UI 和 nuget.org 中。
 #### <a name="license"></a>许可证
-SPDX 许可证表达式或包中许可证文件的路径，通常显示在 UI 和 nuget.org 中。如果许可包在常见如 BSD 2 子句或 MIT 许可证下的使用关联的 SPDX 许可证标识符。<br>例如： `<license type="expression">MIT</license>`
+SPDX 许可证表达式或包中许可证文件的路径，通常显示在 UI 和 nuget.org 中。如果许可包在常见如 BSD 2 子句或 MIT 许可证下的使用关联的 SPDX 许可证标识符。<br>例如：
+`<license type="expression">MIT</license>`
 
 下面是 [SPDX 许可证标识符](https://spdx.org/licenses/)的完整列表。 NuGet.org 在使用许可证类型表达式时只接受 OSI 或 FSF 批准的许可证。
 
-如果您的包常见的多个许可证的许可，则可以指定复合许可证 using [SPDX 表达式语法版本 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)。<br>例如： `<license type="expression">BSD-2-Clause OR MIT</license>`
+如果您的包常见的多个许可证的许可，则可以指定复合许可证 using [SPDX 表达式语法版本 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)。<br>例如：
+`<license type="expression">BSD-2-Clause OR MIT</license>`
 
 如果正在使用许可证尚未分配 SPDX 标识符，或者它是自定义许可证，你可以将打包文件 (仅`.txt`或`.md`) 使用的许可证文本。 例如：
 ```xml
@@ -159,7 +161,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 #### <a name="frameworkassemblies"></a>frameworkAssemblies
 (1.2+) 零个或多个 `<frameworkAssembly>` 元素的集合，用来标识此包要求的 .NET Framework 程序集引用，从而确保引用添加到使用该包的项目。 每个 frameworkAssembly 都具有 assemblyName 和 targetFramework 特性。 请参阅下面的[指定 Framework 程序集引用 GAC](#specifying-framework-assembly-references-gac)。 |
 #### <a name="references"></a>引用
-(1.5+) 零个或多个 `<reference>` 元素的集合，用来指定包的 `lib` 文件夹中添加为项目引用的程序集。 每个 reference 都具有 file 特性。 `<references>` 也可包含具有 targetFramework 特性的 `<group>` 元素，然后包含 `<reference>` 元素。 如果省略，则包含 `lib` 中的全部引用。 请参阅下面的[指定显式程序集引用](#specifying-explicit-assembly-references)。
+(1.5+) 零个或多个 `<reference>` 元素的集合，用来指定包的 `lib` 文件夹中添加为项目引用的程序集。 每个 reference 都具有 file 特性。 `<references>` 此外可以包含`<group>`具有元素*targetFramework*属性，然后包含`<reference>`元素。 如果省略，则包含 `lib` 中的全部引用。 请参阅下面的[指定显式程序集引用](#specifying-explicit-assembly-references)。
 #### <a name="contentfiles"></a>contentFiles
 (3.3+) `<files>` 元素的集合，用来标识包含在使用项目中的内容文件。 这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件。 请参阅下面的[指定包含在包中的文件](#specifying-files-to-include-in-the-package)。
 #### <a name="files"></a>文件 
@@ -188,15 +190,15 @@ nuget pack MyProject.csproj
 
 除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
 
-| 标记 | 值来源 | 值
+| 标记 | 值来源 | “值”
 | --- | --- | ---
-| **$id$** | 项目文件 | 项目文件中的 AssemblyName （标题） |
-| **$version$** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
-| **$author$** | AssemblyInfo | AssemblyCompany |
-| **$title$** | AssemblyInfo | AssemblyTitle |
-| **$description$** | AssemblyInfo | AssemblyDescription |
-| **$copyright$** | AssemblyInfo | AssemblyCopyright |
-| **$configuration$** | 程序集 DLL | 用于生成程序集的配置，默认为 Debug。 请注意，若要使用 Release 配置创建包，应始终在命令行上使用 `-properties Configuration=Release`。 |
+| **$id $** | 项目文件 | 项目文件中的 AssemblyName （标题） |
+| **$version $** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
+| **$author $** | AssemblyInfo | AssemblyCompany |
+| **$title $** | AssemblyInfo | AssemblyTitle |
+| **$description $** | AssemblyInfo | AssemblyDescription |
+| **$copyright $** | AssemblyInfo | AssemblyCopyright |
+| **$configuration $** | 程序集 DLL | 用于生成程序集的配置，默认为 Debug。 请注意，若要使用 Release 配置创建包，应始终在命令行上使用 `-properties Configuration=Release`。 |
 
 包含[程序集文件](#including-assembly-files)和[内容文件](#including-content-files)时，令牌也可用于解析路径。 这些令牌与 MSBuild 属性具有相同的名称，因此可根据当前生成配置来选择要包含的文件。 例如，如果在 `.nuspec` 文件中使用以下令牌：
 
@@ -257,7 +259,7 @@ nuget pack MyProject.csproj
 
 ### <a name="dependency-groups"></a>依赖项组
 
-版本 2.0+
+*版本 2.0 +*
 
 作为单个简单列表的替代方法，可使用 `<dependencies>` 中的 `<group>` 元素根据目标项目的框架配置文件指定依赖项。
 
@@ -412,7 +414,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
     Packaged result:
         lib\net40\library.dll
 
-**使用通配符的 DLL 集**
+**使用通配符的 Dll 集**
 
     Source files:
         bin\release\libraryA.dll
@@ -425,7 +427,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
         lib\libraryA.dll
         lib\libraryB.dll
 
-**适用于不同框架的 DLL**
+**适用于不同框架的 Dll**
 
     Source files:
         lib\net40\library.dll
@@ -522,7 +524,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
     Packaged result:
         content\images\package.icons\picture.png
 
-**不具有扩展名的内容文件**
+**不带扩展的内容文件**
 
 若要包含不具有扩展名的文件，请使用 `*` 或 `**` 通配符：
 
@@ -579,7 +581,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 
 ### <a name="using-the-contentfiles-element-for-content-files"></a>对内容文件使用 contentFiles 元素
 
-*NuGet 4.0+ 与 PackageReference*
+*NuGet 4.0 + 与 PackageReference*
 
 默认情况下，包将内容放置在 `contentFiles` 文件夹中（见下文），`nuget pack` 使用默认特性将全部文件包含在该文件夹中。 在此情况下，根本没有必要在 `.nuspec` 中包含 `contentFiles` 节点。
 
@@ -593,7 +595,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 | **exclude** | 要从 `src` 位置排除的文件或文件模式的分号分隔列表。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 | **buildAction** | 生成操作，用于分配到 MSBuild 的内容项（如 `Content`、`None`、`Embedded Resource`、`Compile` 等）。默认值为 `Compile`。 |
 | **copyToOutput** | 布尔值，该值指示是否将内容项复制到生成 （或发布） 输出文件夹。 默认值为 false。 |
-| **flatten** | 一个布尔值，用于指示是将内容项复制到生成输出中的单个文件夹 (true)，还是保留包中的文件夹结构 (false)。 此标志仅在 copyToOutput 标志设置为 true 时才有效。 默认值为 false。 |
+| **平展** | 一个布尔值，用于指示是将内容项复制到生成输出中的单个文件夹 (true)，还是保留包中的文件夹结构 (false)。 此标志仅在 copyToOutput 标志设置为 true 时才有效。 默认值为 false。 |
 
 安装包时，NuGet 从上到下应用 `<contentFiles>` 的子元素。 如果多个条目与相同的文件匹配，那么应用全部条目。 如果相同特性发生冲突，则最上面的条目将替代靠下的条目。
 
@@ -603,8 +605,8 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 
     /contentFiles/{codeLanguage}/{TxM}/{any?}
 
-- `codeLanguages` 可以是 `cs`、`vb`、`fs`、`any` 或给定 `$(ProjectLanguage)` 的小写等效形式
-- `TxM` 是 NuGet 支持的任何合法目标框架名字对象（请参阅[目标框架](../reference/target-frameworks.md)）。
+- `codeLanguages` 可能`cs`， `vb`， `fs`， `any`，或的小写等效项的给定 `$(ProjectLanguage)`
+- `TxM` 是 NuGet 支持任何合法目标框架名字对象 (请参阅[目标框架](../reference/target-frameworks.md))。
 - 任何文件夹结构都可以附加到此语法的末尾。
 
 例如：
@@ -647,7 +649,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 
 ## <a name="example-nuspec-files"></a>示例 nuspec 文件
 
-**未指定依赖项或文件的简单 `.nuspec`**
+**一个简单`.nuspec`未指定依赖项或文件**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -664,7 +666,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 </package>
 ```
 
-**具有依赖项的 `.nuspec`**
+**一个`.nuspec`具有依赖项**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -681,7 +683,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 </package>
 ```
 
-**具有文件的 `.nuspec`**
+**一个`.nuspec`文件**
 
 ```xml
 <?xml version="1.0"?>
@@ -699,7 +701,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 </package>
 ```
 
-**具有 Framework 程序集的 `.nuspec`**
+**一个`.nuspec`具有 framework 程序集**
 
 ```xml
 <?xml version="1.0"?>
@@ -725,8 +727,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 
 在此示例中，为特定的项目目标安装了以下内容：
 
-- .NET4 -> `System.Web``System.Net`
+- .NET4 -> `System.Web`, `System.Net`
 - .NET4 Client Profile -> `System.Net`
 - Silverlight 3 -> `System.Json`
-- Silverlight 4 -> `System.Windows.Controls.DomainServices`
 - WindowsPhone -> `Microsoft.Devices.Sensors`
