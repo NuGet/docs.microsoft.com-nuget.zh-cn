@@ -38,9 +38,9 @@ nuget config -AsPath <name> [options]
 | AsPath | 返回配置值作为路径，忽略时`-Set`使用。 |
 | ConfigFile | 要修改的 NuGet 配置文件。 如果未指定，否则`%AppData%\NuGet\NuGet.Config`(Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux) 使用。|
 | ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 以运行使用固定的、 基于英语的区域性。 |
-| 帮助 | 显示的帮助命令的信息。 |
+| Help | 显示的帮助命令的信息。 |
 | NonInteractive | 取消显示提示用户输入或确认。 |
-| 详细级别 | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
+| Verbosity | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
 

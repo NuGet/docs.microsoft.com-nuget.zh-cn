@@ -33,10 +33,10 @@ nuget delete <packageID> <packageVersion> [options]
 | ApiKey | 目标存储库 API 密钥。 如果不存在，则使用配置文件中指定的一个。 |
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定，否则`%AppData%\NuGet\NuGet.Config`(Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux) 使用。|
 | ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 以运行使用固定的、 基于英语的区域性。 |
-| 帮助 | 显示的帮助命令的信息。 |
+| Help | 显示的帮助命令的信息。 |
 | NonInteractive | 取消显示提示用户输入或确认。 |
-| 源 | 指定服务器 URL。 Nuget.org 的 URL 是`https://api.nuget.org/v3/index.json`。 对于专用源，例如，替换主机名 *%hostname%/api/v3*。 |
-| 详细级别 | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
+| Source | 指定服务器 URL。 Nuget.org 的 URL 是`https://api.nuget.org/v3/index.json`。 对于专用源，例如，替换主机名 *%hostname%/api/v3*。 |
+| Verbosity | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
 
