@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.openlocfilehash: 42d497dabd41d7487bb8bf4adef0dfdb424f13f8
-ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58911109"
 ---
 # <a name="release-notes"></a>发行说明
@@ -76,7 +76,7 @@ ms.locfileid: "58911109"
 
 [NuGet 3.0 Beta](../release-notes/nuget-3.0-beta.md)
 
-[NuGet 3.0 预览版](../release-notes/nuget-3.0-preview.md)
+[NuGet 3.0 Preview](../release-notes/nuget-3.0-preview.md)
 
 [NuGet 2.12](../release-notes/nuget-2.12.md)
 

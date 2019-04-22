@@ -7,10 +7,10 @@ ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: 8ff92e5a3ab2d5c13ee02a9e49709866e2ac0e87
-ms.sourcegitcommit: 8793f528a11bd8e8fb229cd12e9abba50d61e104
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58921567"
 ---
 # <a name="signing-nuget-packages"></a>对 NuGet 包进行签名
@@ -59,7 +59,7 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 1. 浏览并选择前面导出的证书文件。
   ![已注册的证书](../reference/media/registered-certs.png)
 
-**说明**
+**注意**
 * 一个用户可以提交多个证书并且多个用户可以注册同一个证书。
 * 用户注册证书之后，所有未来的包提交都必须使用其中一个证书进行签名。 请参阅[管理 NuGet.org 上的包的签名要求](#manage-signing-requirements-for-your-package-on-nugetorg)
 * 用户还可以从帐户中删除已注册的证书。 删除证书后，使用该证书签名的新包将在提交时失败。 现有包不会受到影响。
@@ -92,7 +92,7 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 ## <a name="manage-signing-requirements-for-your-package-on-nugetorg"></a>管理 NuGet.org 上的包的签名要求
 1. [登录](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)到 NuGet.org。
 
-1. 转到`Manage Packages` 
+1. 转到 `Manage Packages`  
    ![配置包签名程序](../reference/media/configure-package-signers.png)
 
 * 如果你是包的唯一所有者，那么你就是所要求的签名者，即你可使用任何已注册的证书对包进行签名，然后将其发布到 NuGet.org。
@@ -104,4 +104,4 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 ## <a name="related-articles"></a>相关文章
 
 - [安装已签名的包](../consume-packages/installing-signed-packages.md)
-- [已签名的包参考](../reference/Signed-Packages-Reference.md)
+- [签名包引用](../reference/Signed-Packages-Reference.md)

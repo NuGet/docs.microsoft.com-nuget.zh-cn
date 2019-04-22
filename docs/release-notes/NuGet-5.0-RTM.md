@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 04/02/2019
 ms.topic: conceptual
 ms.openlocfilehash: 5e48ff19ea5c4908d7eb0a3cb19a31b738e348eb
-ms.sourcegitcommit: 8793f528a11bd8e8fb229cd12e9abba50d61e104
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58921580"
 ---
 # <a name="nuget-50-release-notes"></a>NuGet 5.0 发行说明
@@ -29,7 +29,7 @@ NuGet 分发车辆：
 * 对还原的支持[筛选解决方案](https://docs.microsoft.com/en-us/visualstudio/ide/filtered-solutions?view=vs-2019)在 Visual Studio 2019- [#5820](https://github.com/NuGet/Home/issues/5820)
 * `BuildTransitive` 文件夹允许包来间接地参与到宿主项目中的目标/属性[#6091](https://github.com/NuGet/Home/issues/6091)
 * 更好地支持 NuGet Iv Api-中的 PackageReference 方案[#7005](https://github.com/NuGet/Home/issues/7005)， [#7493](https://github.com/NuGet/Home/issues/7493)
-* `nuget.exe pack project.json` has been deprecated - [#7928](https://github.com/NuGet/Home/issues/7928)
+* `nuget.exe pack project.json` 已弃用- [#7928](https://github.com/NuGet/Home/issues/7928)
 * 第 1 代凭据提供程序插件已被[第 2 代](https://aka.ms/nuget-cross-platform-authentication-plugin)并且将很快被弃用的[#7819](https://github.com/NuGet/Home/issues/7819)
 
 ## <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
@@ -118,7 +118,7 @@ NuGet 分发车辆：
 
 * dotnet 还原由于已禁用计算机范围源-而失败[#5410](https://github.com/NuGet/Home/issues/5410)
 
-**DCR**
+**DCRs**
 
 * 未来"dotnet 包 project.json"的删除，则发出警告[#7928](https://github.com/NuGet/Home/issues/7928)
  

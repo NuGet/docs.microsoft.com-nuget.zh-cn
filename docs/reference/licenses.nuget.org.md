@@ -3,10 +3,10 @@ title: licenses.nuget.org
 author: agr
 ms.date: 02/22/2019
 ms.openlocfilehash: 4a40cc1f7d333e8d35a721f3eed2e6b9365faf7b
-ms.sourcegitcommit: 8793f528a11bd8e8fb229cd12e9abba50d61e104
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58921554"
 ---
 # <a name="licensesnugetorg"></a>licenses.nuget.org

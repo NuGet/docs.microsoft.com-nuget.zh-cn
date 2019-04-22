@@ -7,10 +7,10 @@ ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
 ms.openlocfilehash: fdc3ad8aa239a42d8a4c169a757715e856bdcb41
-ms.sourcegitcommit: 9f94e00428d83aef4a7a87db679129eff7720c59
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58911044"
 ---
 # <a name="autocomplete"></a>自动完成
