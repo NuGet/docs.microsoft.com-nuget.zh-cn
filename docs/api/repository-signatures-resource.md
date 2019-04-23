@@ -9,11 +9,11 @@ ms.reviewer:
 - karann
 - unniravindranathan
 ms.openlocfilehash: ea318446c41a0d85d3fbf959dd38c929a0d0e9a1
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59509017"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59931847"
 ---
 # <a name="repository-signatures"></a>存储库签名
 

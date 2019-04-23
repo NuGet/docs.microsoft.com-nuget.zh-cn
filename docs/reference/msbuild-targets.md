@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8132595cbfaf553736fbcc81aada283a44d6cdbf
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 1e89aeb46f2538d46c013561a51a41702b2472d8
+ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324846"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59932094"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -46,11 +46,11 @@ NuGet 4.0+
 | 属性/NuSpec 值 | MSBuild 属性 | 默认 | 说明 |
 |--------|--------|--------|--------|
 | Id | PackageId | AssemblyName | MSBuild 的 $(AssemblyName) |
-| 版本 | PackageVersion | 版本 | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
+| Version | PackageVersion | Version | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
 | VersionPrefix | PackageVersionPrefix | 空 | 设置 PackageVersion 会覆盖 PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | 空 | MSBuild 的 $(VersionSuffix)。 设置 PackageVersion 会覆盖 PackageVersionSuffix |
 | Authors | Authors | 当前用户的用户名 | |
-| Owners | 不可用 | NuSpec 中不存在 | |
+| Owners | 不适用 | NuSpec 中不存在 | |
 | 标题 | 标题 | PackageId| |
 | 描述 | 描述 | “包描述” | |
 | Copyright | Copyright | 空 | |
@@ -322,7 +322,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 1. 读取所有项目到项目的引用
 1. 读取项目属性以查找中间文件夹和目标框架
-1. 将 msbuild 数据传递到 NuGet.Build.Tasks.dll
+1. 将 MSBuild 数据传递到 NuGet.Build.Tasks.dll
 1. 运行还原
 1. 下载包
 1. 编写资产文件、目标和属性
@@ -341,9 +341,14 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 | RestoreConfigFile | 要应用的 `Nuget.Config` 文件的路径。 |
 | RestoreNoCache | 如果为 true，可避免使用缓存的包。 请参阅[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)。 |
 | RestoreIgnoreFailedSources | 如果为“true”，则忽略失败或丢失的包源。 |
+| RestoreFallbackFolders | 回退文件夹，使用相同的方式使用文件夹的用户包。 |
+| RestoreAdditionalProjectSources | 要在还原过程中使用的其他源。 |
+| RestoreAdditionalProjectFallbackFolders | 若要在还原过程中使用的其他回退文件夹。 |
+| RestoreAdditionalProjectFallbackFoldersExcludes | 中指定的回退文件夹除外 `RestoreAdditionalProjectFallbackFolders` |
 | RestoreTaskAssemblyFile | `NuGet.Build.Tasks.dll` 的路径。 |
 | RestoreGraphProjectInput | 要还原的以分号分隔的项目列表，其中应包含绝对路径。 |
-| RestoreOutputPath | 输出文件夹，默认为 `obj` 文件夹。 |
+| RestoreUseSkipNonexistentTargets  | 当项目收集通过 MSBuild，它确定是否在收集使用`SkipNonexistentTargets`优化。 未设置时，默认为`true`。 不能导入项目的目标时，结果将是快速失败的行为。 |
+| MSBuildProjectExtensionsPath | 输出文件夹中，将使用默认值`BaseIntermediateOutputPath`和`obj`文件夹。 |
 
 #### <a name="examples"></a>示例
 
@@ -370,6 +375,23 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 | `project.assets.json` | 包含的所有包引用的依赖项关系图。 |
 | `{projectName}.projectFileExtension.nuget.g.props` | 包中包含的对 MSBuild 属性的引用 |
 | `{projectName}.projectFileExtension.nuget.g.targets` | 包中包含的对 MSBuild 目标的引用 |
+
+### <a name="restoring-and-building-with-one-msbuild-command"></a>还原和使用一个 MSBuild 命令生成
+
+因为，NuGet 可以还原关闭 MSBuild 目标和属性的包，请使用不同的全局属性运行还原和生成评估。
+这意味着，以下将具有不可预测且通常不正确行为。
+
+```cli
+msbuild -t:restore,build
+```
+
+ 而是建议的方法是：
+
+```cli
+msbuild -t:build -restore
+```
+
+相同的逻辑适用于类似于其他目标`build`。
 
 ### <a name="packagetargetfallback"></a>PackageTargetFallback
 

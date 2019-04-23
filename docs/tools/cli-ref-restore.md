@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: adf97196f50f2a55d6b8ceed93d53ff12b67657b
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: 9964186dcbfedfbf2415a57102f8f019a1eef23a
+ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145626"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59931990"
 ---
 # <a name="restore-command-nuget-cli"></a>restore 命令 (NuGet CLI)
 
@@ -30,14 +30,14 @@ nuget restore <projectPath> [options]
 
 ## <a name="options"></a>选项
 
-| 选项 | 描述 |
+| Option | 描述 |
 | --- | --- |
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定，否则`%AppData%\NuGet\NuGet.Config`(Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux) 使用。|
 | DirectDownload | *（4.0 +)* 无填充任何二进制文件或元数据缓存，可直接下载包。 |
 | DisableParallelProcessing | 禁用还原并行的多个包。 |
 | FallbackSource | *（3.2 +)* 要用作回退，如果主数据库中找不到包的包源的列表或默认源。 |
 | ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 以运行使用固定的、 基于英语的区域性。 |
-| 帮助 | 显示的帮助命令的信息。 |
+| Help | 显示的帮助命令的信息。 |
 | MSBuildPath | *（4.0 +)* 指定的路径优先于命令中使用 MSBuild `-MSBuildVersion`。 |
 | MSBuildVersion | *（3.2 +)* 指定要用于此命令的 MSBuild 版本。 支持的值为 4，12、 14、 15.1、 15.3、 15.4、 15.5、 15.6、 15.7、 15.8，15.9。 默认情况下，选择你的路径中的 MSBuild，否则它默认为最高的已安装版本的 MSBuild。 |
 | NoCache | 阻止 NuGet 使用缓存的包。 请参阅[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)。 |
@@ -49,8 +49,8 @@ nuget restore <projectPath> [options]
 | 递归 | *（4.0 +)* 还原所有引用项目类型提供的 UWP 和.NET Core 项目。 不适用于使用项目`packages.config`。 |
 | RequireConsent | 验证下载和安装包之前已启用还原包。 有关详细信息，请参阅[包还原](../consume-packages/package-restore.md)。 |
 | SolutionDirectory | 指定的解决方案文件夹。 未还原解决方案的包时才有效。 使用还原时所需`packages.config`文件，除非`PackagesDirectory`或`OutputDirectory`使用。 |
-| 源 | 指定包源的列表 （作为 Url) 要用于还原。 如果省略，该命令使用在配置文件中提供的源，请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)。 |
-| 详细级别 |> 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
+| Source | 指定包源的列表 （作为 Url) 要用于还原。 如果省略，该命令使用在配置文件中提供的源，请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)。 |
+| Verbosity |> 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
 
@@ -71,7 +71,7 @@ Restore 命令将执行以下步骤：
 2. 确定使用以下优先级顺序 （如果没有这些文件夹找到 NuGet 提供错误） 的包文件夹：
 
     - 使用指定的文件夹`-PackagesDirectory`。
-    - `repositoryPath`中的值改 `Nuget.Config`
+    - `repositoryPath`中的值 `Nuget.Config`
     - 使用指定的文件夹 `-SolutionDirectory`
     - `$(SolutionDir)\packages`
 
