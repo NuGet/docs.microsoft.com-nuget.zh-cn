@@ -39,14 +39,14 @@ nuget push <packagePath> [options]
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定，否则`%AppData%\NuGet\NuGet.Config`(Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux) 使用。|
 | DisableBuffering | 禁用缓冲时推送到 http （s） 服务器以减少内存使用情况。 注意： 使用此选项时，集成的 Windows 身份验证可能无法工作。 |
 | ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 以运行使用固定的、 基于英语的区域性。 |
-| 帮助 | 显示的帮助命令的信息。 |
+| Help | 显示的帮助命令的信息。 |
 | NonInteractive | 取消显示提示用户输入或确认。 |
 | NoSymbols | *（3.5 +)* 如果符号包存在，它将不会推送到符号服务器。 |
-| 源 | 指定服务器 URL。 NuGet 标识的 UNC 或本地文件夹源，并只需将复制的文件而非推送它使用 HTTP。  此外，从 NuGet 3.4.2 开始，这是一个必需参数除非`NuGet.Config`文件指定*DefaultPushSource*值 (请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md))。 |
+| Source | 指定服务器 URL。 NuGet 标识的 UNC 或本地文件夹源，并只需将复制的文件而非推送它使用 HTTP。  此外，从 NuGet 3.4.2 开始，这是一个必需参数除非`NuGet.Config`文件指定*DefaultPushSource*值 (请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md))。 |
 | SymbolSource | *（3.5 +)* Nuget.smbsrc.net 使用推送到 nuget.org 时; 指定符号服务器 URL |
 | SymbolApiKey | *（3.5 +)* 为 URL 指定在指定的 API 密钥`-SymbolSource`。 |
-| 超时 | 指定的超时，以秒为单位，以便将推送到服务器。 默认值为 300 秒 （5 分钟）。 |
-| 详细级别 | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
+| Timeout | 指定的超时，以秒为单位，以便将推送到服务器。 默认值为 300 秒 （5 分钟）。 |
+| Verbosity | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
 
