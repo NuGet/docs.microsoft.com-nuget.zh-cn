@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/10/2018
 ms.topic: overview
-ms.openlocfilehash: d688aecaa73cecbfee184e3b13801ed22326a852
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 87f7494ea97a4fa65be04b2692d7b894938c3fe5
+ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580319"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59509121"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 简介
 
@@ -43,7 +43,7 @@ ms.locfileid: "51580319"
 
 除托管支持外，NuGet 还提供各种供创建者和使用者使用的工具。 有关如何获取特定工具的信息，请参阅[安装 NuGet 客户端工具](install-nuget-client-tools.md)。
 
-| 工具 | 平台 | 适用方案 | 描述 |
+| 工具 | 平台 | 适用方案 | 说明 |
 | --- | --- | --- | --- |
 | [nuget.exe CLI](tools/nuget-exe-cli-reference.md) | 全部 | 创建、使用 | 提供所有 NuGet 功能，包括一些专门适用于包创建者、仅适用于使用者和适用于两者的命令。 例如，包创建者使用 `nuget pack` 命令通过各种程序集和相关文件创建包，包使用者使用 `nuget install` 在项目文件夹中包含包，而所有人都可使用 `nuget config` 设置 NuGet 配置变量。 作为与平台无关的工具，NuGet CLI 不会与 Visual Studio 项目交互。 |
 | [dotnet CLI](tools/dotnet-Commands.md) | 全部 | 创建、使用 | 直接在 .NET Core 工具链中提供特定 NuGet CLI 功能。 与 NuGet CLI 一样，dotnet CLI 不会与 Visual Studio 项目交互。 |
