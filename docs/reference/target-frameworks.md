@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: c74a128c87a7700232a4fbddb73ff7c8f1984a29
-ms.sourcegitcommit: 885973352d31808e3ddbb45da6d6e54d1e4fca9d
+ms.openlocfilehash: 0b2a4fe45d0311b7540c73b481d6821357c723af
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56224952"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610647"
 ---
 # <a name="target-frameworks"></a>目标框架
 
@@ -32,7 +32,7 @@ NuGet 在各个地方使用目标框架引用，以特别标识和隔离包的�
 
 NuGet 客户端支持下表中的框架。 等效项显示在括号内 []。 请注意，某些工具（如 `dotnet`）可能会在某些文件中使用规范的 TFM 变体。 例如，`dotnet pack` 在 `.nuspec` 文件中使用 `.NETCoreApp2.0`，而非 `netcoreapp2.0` 文件。 各种 NuGet 客户端工具正确处理这些变体，但是在直接编辑文件时，应始终使用规范的 TFM。
 
-| name | 缩写 | TFM/TxM |
+| 名称 | 缩写 | TFM/TxM |
 | ------------- | ------------ | --------- |
 |.NET Framework | net | net11 |
 | | | net20 |
@@ -48,6 +48,7 @@ NuGet 客户端支持下表中的框架。 等效项显示在括号内 []。 请
 | | | net47 |
 | | | net471 |
 | | | net472 |
+| | | net48 |
 |Microsoft Store（Windows 应用商店） | netcore | netcore [netcore45] |
 | | | netcore45 [win, win8] |
 | | | netcore451 [win81] |
@@ -80,6 +81,7 @@ Windows Phone (UWP) | | wpa81 |
 | | | netcoreapp1.1 |
 | | | netcoreapp2.0 |
 | | | netcoreapp2.1 |
+| | | netcoreapp2.2 |
 Tizen | tizen | tizen3 |
 | | | tizen4 |
 
@@ -280,7 +282,7 @@ NuGet 3.3 及更早版本应该使用 `dotnet` 系列的名字对象；v3.4 及�
 
 另外，面向 Xamarin 的 NuGet 包可以使用 Xamarin 定义的其他框架。 请参阅[创建适用于 Xamarin 的 NuGet 包](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/)。
 
-| name | 描述 | .NET Standard |
+| 名称 | 描述 | .NET Standard |
 | --- | --- | ---
 | monoandroid | Mono 支持 Android OS | netstandard1.4 |
 | monotouch | Mono 支持 iOS | netstandard1.4 |

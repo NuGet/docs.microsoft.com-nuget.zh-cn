@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: ac1bf2b65ab6ec4e8cf864810181fc661236262a
-ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
+ms.openlocfilehash: 9f26f75a70a996cad158fd125e86d98e10c3dac1
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59931977"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610638"
 ---
 # <a name="nuget-cli-environment-variables"></a>NuGet CLI 环境变量
 
@@ -33,7 +33,7 @@ NuGet CLI 使用 MSBuild 来读取项目文件。 所有环境变量都都可用
 | NUGET_HTTP_CACHE_PATH | 要用于路径*http 缓存*文件夹中，如所述[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)。 | 指定为绝对路径。 |
 | NUGET_PERSIST_DG | 标志，用于指示是否应保留 dg 文件 （通过 MSBuild 收集的数据）。 | 指定作为 *，则返回 true*或*false* （默认值），如果未设置 NUGET_PERSIST_DG_PATH 将存储到临时目录 （NuGetScratch 文件夹当前环境的临时目录中）。 |
 | NUGET_PERSIST_DG_PATH | 若要持久保存 dg 文件的路径。 | 指定为绝对路径，此选项是时，才使用*NUGET_PERSIST_DG*设置为 true。 |
-| NUGET_RESTORE_MSBUILD_ARGS | 设置其他 MSBuild 参数。 | |
+| NUGET_RESTORE_MSBUILD_ARGS | 设置其他 MSBuild 参数。 | 将参数传递到如何你会将其传递给 msbuild.exe 完全相同。 从命令行的 Foo 的项目属性设置为值栏的一个示例是 /p:Foo = 栏 |
 | NUGET_RESTORE_MSBUILD_VERBOSITY | 设置 MSBuild 日志详细信息。 | 默认值是*安静*("/ v: q")。 可能的值*q [uiet]*， *m [inimal]*， *n [ormal]*， *d [etailed]*，并*diag [nostic]*。 |
 | NUGET_SHOW_STACK | 确定是否应该向用户显示完整的异常 （包括堆栈跟踪）。 | 指定作为 *，则返回 true*或*false* （默认值）。 |
 | NUGET_XMLDOC_MODE | 确定应如何处理程序集 XML 文档文件解压缩。 | 支持的模式包括*跳过*（不提取 XML 文档文件），请*压缩*（作为 zip 存档中存储 XML 文档文件） 或*none* （默认值，将 XML 文档文件视为常规文件）。 |
