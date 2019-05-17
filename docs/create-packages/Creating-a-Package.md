@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: db02089bec3d2b8c001518fa0542375dc5418eb8
-ms.sourcegitcommit: c825eb7e222d4a551431643f5b5617ae868ebe0a
+ms.openlocfilehash: f0d9667b752caf7831278ac3fd63cfd67f7d34a4
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51944062"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610585"
 ---
 # <a name="creating-nuget-packages"></a>创建 NuGet 包
 
@@ -166,12 +166,12 @@ nuget locals -list global-packages
 此方法的优势是无需在清单中指定需要包含在包中的文件（如本主题后面所述）。 可以轻松使得生成进程生成进入包中的确切文件夹结构，并且可以轻松包含不是项目一部分的其他文件：
 
 - 应注入目标项目的内容和源代码。
-- PowerShell 脚本（NuGet 2.x 中使用的包也可以包含安装脚本，这在 NuGet 3.x 以及更高版本中不受支持）。
+- PowerShell 脚本
 - 转换到现有配置和项目中的源代码文件。
 
 文件夹约定如下所示：
 
-| 文件夹 | 描述 | 包安装时的操作 |
+| 文件夹 | 说明 | 包安装时的操作 |
 | --- | --- | --- |
 | （根） | readme.txt 的位置 | 包安装时，Visual Studio 在包根目录中显示 readme.txt 文件。 |
 | lib/{tfm} | 特定目标框架名字对象 (TFM) 的程序集 (`.dll`)、文档 (`.xml`) 和符号 (`.pdb`) 文件 | 程序集添加为引用，以用于编译和运行时；`.xml` 和 `.pdb` 复制到项目文件夹中。 有关创建框架特定目标子文件夹的详细信息，请参阅[支持多个目标框架](supporting-multiple-target-frameworks.md)。 |
@@ -250,9 +250,9 @@ nuget spec [<package-name>]
 
 **针对包标识符的最佳做法：**
 
-- **唯一性**：标识符在 nuget.org 或承载包的任意库中必须是唯一的。 确定标识符之前，请搜索适用库以检查该名称是否已使用。 为了避免冲突，最好使用公司名作为标识符的第一部分（例如 `Contoso.`）。
-- **类似命名空间的名称**：遵循类似于 .NET 中命名空间的模式，使用点表示法而不是连字符。 例如，使用 `Contoso.Utility.UsefulStuff` 而不是 `Contoso-Utility-UsefulStuff` 或 `Contoso_Utility_UsefulStuff`。 当包标识符与代码中使用的命名空间相匹配时，这个方法也很有用。
-- **示例包**：如果生成演示如何使用另一个包的示例代码的包，则附加 `.Sample` 作为标识符的后缀，与 `Contoso.Utility.UsefulStuff.Sample` 中相似。 （当然，示例包会在其他包上有依赖项。）创建示例包时，使用前面介绍的基于约定的工作目录方法。 在 `content` 文件夹中，在名为 `\Samples\<identifier>` 的文件夹中排列示例代码，与 `\Samples\Contoso.Utility.UsefulStuff.Sample` 中相似。
+- **唯一性**：标识符必须在 nuget.org 或托管包的任意库中是唯一的。 确定标识符之前，请搜索适用库以检查该名称是否已使用。 为了避免冲突，最好使用公司名作为标识符的第一部分（例如 `Contoso.`）。
+- **类似于命名空间的名称**：遵循类似于 .NET 中命名空间的模式，使用点表示法（而不是连字符）。 例如，使用 `Contoso.Utility.UsefulStuff` 而不是 `Contoso-Utility-UsefulStuff` 或 `Contoso_Utility_UsefulStuff`。 当包标识符与代码中使用的命名空间相匹配时，这个方法也很有用。
+- **示例包**：如果生成展示如何使用另一个包的示例代码包，请附加 `.Sample` 作为标识符的后缀，就像 `Contoso.Utility.UsefulStuff.Sample` 中一样。 （当然，示例包会在其他包上有依赖项。）创建示例包时，使用前面介绍的基于约定的工作目录方法。 在 `content` 文件夹中，在名为 `\Samples\<identifier>` 的文件夹中排列示例代码，与 `\Samples\Contoso.Utility.UsefulStuff.Sample` 中相似。
 
 **针对包版本的最佳做法：**
 
@@ -261,9 +261,9 @@ nuget spec [<package-name>]
 
 > 以下一系列简短博客文章也有助于理解版本控制：
 >
-> - [第 1 部分：解决 DLL Hell](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
+> - [第 1 部分：解决 DLL 地狱](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
 > - [第 2 部分：核心算法](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)
-> - [第 3 部分：通过绑定重定向统一](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)
+> - [第 3 部分：通过绑定重定向实现统一](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)
 
 ## <a name="setting-a-package-type"></a>设置包类型
 
@@ -277,7 +277,7 @@ nuget spec [<package-name>]
 
 包类型在 `.nuspec` 文件中设置。 后向兼容最好不显式设置 `Dependency` 类型，而是依赖 NuGet 在没有指定类型时假设此类型。
 
-- `.nuspec`：指示 `<metadata>` 元素的 `packageTypes\packageType` 节点中的包类型：
+- `.nuspec`：指明 `packageTypes\packageType` 节点中 `<metadata>` 元素下的包类型：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -357,7 +357,7 @@ nuget spec [<package-name>]
 
 当 NuGet 使用 `\build` 文件安装包时，它在指向 `.targets` 和 `.props` 文件的项目文件中添加 MSBuild `<Import>` 元素。 （`.props` 添加到项目文件顶部；`.targets` 添加到底部。）为每个目标框架添加了单独的条件 MSBuild `<Import>` 元素。
 
-可将跨框架目标的 MSBuild `.props` 和 `.targets` 文件置于 `\buildCrossTargeting` 文件夹中。 在包安装期间，NuGet 将相应的 `<Import>` 元素添加到项目文件中，前提是目标框架未设置（MSBuild 属性 `$(TargetFramework)` 必须为空）。
+可将跨框架目标的 MSBuild `.props` 和 `.targets` 文件置于 `\buildMultiTargeting` 文件夹中。 在包安装期间，NuGet 将相应的 `<Import>` 元素添加到项目文件中，前提是目标框架未设置（MSBuild 属性 `$(TargetFramework)` 必须为空）。
 
 对于 NuGet 3.x，目标不添加到项目，而是通过 `project.lock.json` 提供。
 
@@ -413,7 +413,7 @@ NuGet 指示需要更正的 `.nuspec` 文件中是否有错误，例如忘记更
 
 以下是 Visual Studio 项目中的一些常见选项：
 
-- **引用项目**：如果项目引用其他项目，通过使用 `-IncludeReferencedProjects` 选项，可以将引用项目添加为包的一部分或依赖项：
+- **已引用项目**：如果项目引用其他项目，可以使用 `-IncludeReferencedProjects` 选项，将已引用项目添加为包的一部分，或添加为依赖项：
 
     ```cli
     nuget pack MyProject.csproj -IncludeReferencedProjects
@@ -423,7 +423,7 @@ NuGet 指示需要更正的 `.nuspec` 文件中是否有错误，例如忘记更
 
     如果引用的项目包含其自身的 `.nuspec` 文件，那么 NuGet 将该引用的项目添加为依赖项。  需要单独打包和发布该项目。
 
-- **生成配置**：默认情况下，NuGet 使用项目文件中设置的默认生成配置，通常是“调试”。 若要从不同的生成配置（例如“发布”）中打包文件，使用包含以下配置的 `-properties` 选项：
+- **生成配置**：默认情况下，NuGet 使用项目文件中的默认生成配置集（通常是“调试”）。 若要从不同的生成配置（例如“发布”）中打包文件，使用包含以下配置的 `-properties` 选项：
 
     ```cli
     nuget pack MyProject.csproj -properties Configuration=Release

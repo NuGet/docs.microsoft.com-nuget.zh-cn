@@ -16,12 +16,12 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 43f346dc64ebbc59d02b9c7875b04205d8c5d83a
-ms.sourcegitcommit: b6efd4b210d92bf163c67e412ca9a5a018d117f0
+ms.openlocfilehash: 18d54e28d77f2bdcfea70ff9ae9def05278cb26c
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56852437"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610556"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
@@ -54,10 +54,10 @@ nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 
 1. 使用 `dotnet pack MyPackage.csproj` 或 `msbuild -t:pack MyPackage.csproj` 打包项目。
 
-`SymbolPackageFormat` 属性可以具有以下两个值之一：`symbols.nupkg`（默认值）或 `snupkg`。 如果未指定 `SymbolPackageFormat` 属性，默认值为 `symbols.nupkg`，并将创建旧的符号包。
+[`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) 属性可以有下列两个值之一：`symbols.nupkg`（默认值）或 `snupkg`。 如果未指定 [`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) 属性，将会创建旧的符号包。
 
 > [!Note]
-> 仍支持旧格式 `.symbols.nupkg`，但仅出于兼容性原因（请参阅[旧版符号包](Symbol-Packages.md)）。 NuGet.org 符号服务器仅接受新的符号包格式 - `.snupkg`。
+> 仍支持旧格式 `.symbols.nupkg`，但仅出于兼容性原因（请参阅[旧版符号包](Symbol-Packages.md)）。 NuGet.org 的符号服务器只接受新的符号包格式，即 `.snupkg`。
 
 ## <a name="publishing-a-symbol-package"></a>发布符号包
 
@@ -80,6 +80,9 @@ nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
     ```
 
 NuGet 会将两个包发布到 nuget.org。`MyPackage.nupkg` 先发布，随后 `MyPackage.snupkg` 发布。
+
+> [!Note]
+> 如果没有发布符号包，请检查是否已将 NuGet.org 源配置为 `https://api.nuget.org/v3/index.json`。 只有 [NuGet V3 API](../api/overview.md#versioning) 才支持符号包发布。
 
 ## <a name="nugetorg-symbol-server"></a>NuGet.org 符号服务器
 

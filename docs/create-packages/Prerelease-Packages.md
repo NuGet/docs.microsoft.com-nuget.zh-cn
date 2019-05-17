@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 696f51905198defdbfd475ba7d010ac3e27ac557
-ms.sourcegitcommit: 3fc93f7a64be040699fe12125977dd25a7948470
+ms.openlocfilehash: 845f0ea84bcb92fedf9e5f4fb2b1deee1462a004
+ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64877945"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65610493"
 ---
 # <a name="building-pre-release-packages"></a>生成预发行包
 
@@ -22,15 +22,9 @@ ms.locfileid: "64877945"
 
 为了支持软件的版本生命周期，NuGet 1.6 及更高版本允许分配预发行包，其中的版本号包括语义化版本控制后缀，如 `-alpha`、`-beta` 或 `-rc`。 有关详细信息，请参阅[包版本控制](../reference/package-versioning.md#pre-release-versions)。
 
-可通过以下三种方式指定此类版本：
+可以使用以下方法之一来指定此类版本：
 
-- `.nuspec` 文件：在 `version` 元素中包括语义化版本后缀：
-
-    ```xml
-    <version>1.0.1-alpha</version>
-    ```
-
-- `.csproj` 文件：在 `PackageVersion` 元素中包括语义化版本后缀：
+- **如果项目使用 [`PackageReference`](../consume-packages/package-references-in-project-files.md)**：在 `.csproj` 文件的 [`PackageVersion`](/dotnet/core/tools/csproj.md#packageversion) 元素中添加语义版本后缀：
 
     ```xml
     <PropertyGroup>
@@ -38,15 +32,13 @@ ms.locfileid: "64877945"
     </PropertyGroup>
     ```
 
-- 程序集特性：使用 `AssemblyInformationalVersionAttribute` 指定版本：
+- **如果项目使用 [`packages.config`](../reference/packages-config.md) 文件**：在 [`.nuspec`](../reference/nuspec.md) 文件的 [`version`](../reference/nuspec.md#version) 元素中添加语义版本后缀：
 
-    ```cs
-    [assembly: AssemblyInformationalVersion("1.0.1-beta")]
+    ```xml
+    <version>1.0.1-alpha</version>
     ```
 
-    NuGet 选取此值，而不是在 `AssemblyVersion` 属性中指定的不支持语义化版本控制的值。
-
-做好发布稳定版本的准备后，只需删除后缀，该包便优先于任何预发行版本。 同样，请参阅[包版本控制](../reference/package-versioning.md#pre-release-versions)。
+在准备好发布稳定版本后，只需删除后缀，此包便会优先于任何预发行版本。 同样，请参阅[包版本控制](../reference/package-versioning.md#pre-release-versions)。
 
 ## <a name="installing-and-updating-pre-release-packages"></a>安装和更新预发行包
 
