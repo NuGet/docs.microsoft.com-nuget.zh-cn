@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 4a9460944e2c232e2a72195434a491d26eee3559
-ms.sourcegitcommit: 3fc93f7a64be040699fe12125977dd25a7948470
+ms.openlocfilehash: bce04864224a66019a52cdfff8355f68dc424204
+ms.sourcegitcommit: 69b5eb1494a1745a4b1a7f320a91255d5d8356a9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64877959"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974993"
 ---
 # <a name="push-command-nuget-cli"></a>push 命令 (NuGet CLI)
 
@@ -43,6 +43,7 @@ nuget push <packagePath> [options]
 | NonInteractive | 取消显示提示用户输入或确认。 |
 | NoSymbols | *（3.5 +)* 如果符号包存在，它将不会推送到符号服务器。 |
 | Source | 指定服务器 URL。 NuGet 标识的 UNC 或本地文件夹源，并只需将复制的文件而非推送它使用 HTTP。  此外，从 NuGet 3.4.2 开始，这是一个必需参数除非`NuGet.Config`文件指定*DefaultPushSource*值 (请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md))。 |
+| SkipDuplicate | 如果包和版本已存在，跳过它，如果有继续在推送中的下一个包。 |
 | SymbolSource | *（3.5 +)* Nuget.smbsrc.net 使用推送到 nuget.org 时; 指定符号服务器 URL |
 | SymbolApiKey | *（3.5 +)* 为 URL 指定在指定的 API 密钥`-SymbolSource`。 |
 | Timeout | 指定的超时，以秒为单位，以便将推送到服务器。 默认值为 300 秒 （5 分钟）。 |
@@ -68,4 +69,7 @@ nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source https://api.nu
 nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
 nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://customsource/
+
+:: In the example below -SkipDuplicate will skip pushing the package if package "Foo" version "5.0.2" already exists on NuGet.org
+nuget push Foo.5.0.2.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -src https://api.nuget.org/v3/index.json -SkipDuplicate
 ```
