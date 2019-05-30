@@ -1,7 +1,18 @@
+---
+ms.openlocfilehash: 1f65939493cf423a76c024607264acee6c7e9050
+ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66271525"
+---
 #### <a name="windows"></a>Windows
 
+> [!Note]
+> NuGet.exe 5.0 及更高版本需要 .NET Framework 4.7.2 或更高版本才能执行。
+
 1. 请访问 [nuget.org/downloads](https://nuget.org/downloads)，并选择 NuGet 3.3 或更高版本（2.8.6 与 Mono 不兼容）。 始终建议使用最新版。若要将包发布到 nuget.org，版本至少必须是 4.1.0。
-1. 每次下载都直接下载 `nuget.exe` 文件。 让浏览器将文件保存到选定文件夹。 此文件不是安装程序；如果直接在浏览器中运行，就不会看到任何内容。
+1. 每次下载都直接下载 `nuget.exe` 文件。 让浏览器将文件保存到选定文件夹。 此文件不  是安装程序；如果直接在浏览器中运行，就不会看到任何内容。
 1. 将文件夹添加到 `nuget.exe` 中放置 PATH 环境变量的位置，这样就可以从任意位置使用 CLI 工具。
 
 #### <a name="macoslinux"></a>macOS/Linux
