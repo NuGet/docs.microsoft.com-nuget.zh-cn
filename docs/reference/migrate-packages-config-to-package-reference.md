@@ -3,14 +3,14 @@ title: 从 package.config 迁移到 PackageReference 格式
 description: 如何将项目从 package.config 管理格式迁移到 PackageReference NuGet 4.0 + 和 VS2017 和.NET Core 2.0 所支持的详细信息
 author: karann-msft
 ms.author: karann
-ms.date: 03/27/2018
+ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 05a82e48c7083a19c50a05fa1df74ebfff8030d1
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 09d132aeaf00d2a1d095b9638b455cc23de91f2c
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546681"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812875"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>从 packages.config 迁移到 PackageReference
 
@@ -18,16 +18,16 @@ Visual Studio 2017 版本 15.7年和更高版本支持将项目从迁移[package
 
 ## <a name="benefits-of-using-packagereference"></a>使用 PackageReference 的好处
 
-* **管理在一个位置的所有项目依赖项**： 一样项目到项目引用和程序集引用，NuGet 包引用 (使用`PackageReference`节点) 直接在项目文件中托管，而不是使用单独的packages.config 文件。
-* **整洁的顶级依赖项的视图**： 与 packages.config，不同 PackageReference 列出这些项目中直接安装的 NuGet 包。 因此，NuGet 包管理器 UI 和项目文件不会充斥了大量下层依赖项。
-* **性能改进**： 在使用 PackageReference 时，包都保留在*全局包*文件夹 (如所述[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)而不在`packages`解决方案中的文件夹。 因此，PackageReference 更快地执行，并会占用较少的磁盘空间。
-* **精确地控制对依赖项和内容流**： 使用 MSBuild 的现有功能，您可以[有条件地引用 NuGet 包](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition)选择每个目标框架的包引用和配置，平台或其他数据透视表。
-* **PackageReference 正处于积极开发**： 请参阅[在 GitHub 上发出 PackageReference](https://aka.ms/nuget-pr-improvements)。 packages.config 不再处于积极开发阶段。
+* **管理在一个位置的所有项目依赖项**:就像项目到项目引用和程序集引用，NuGet 包引用 (使用`PackageReference`节点) 直接在项目文件中托管，而不是使用单独的 packages.config 文件。
+* **整洁的顶级依赖项的视图**:与不同的是 packages.config，PackageReference 列出这些项目中直接安装的 NuGet 包。 因此，NuGet 包管理器 UI 和项目文件不会充斥了大量下层依赖项。
+* **性能改进**:在使用 PackageReference 时，包中维护*全局包*文件夹 (上所述[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)而不在`packages`文件夹中的解决方案。 因此，PackageReference 更快地执行，并会占用较少的磁盘空间。
+* **精确地控制对依赖项和内容流**:使用 MSBuild 的现有功能，您可以[有条件地引用 NuGet 包](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition)和选择包引用每个目标框架、 配置、 平台或其他数据透视表。
+* **PackageReference 正处于积极开发**:请参阅[PackageReference 问题在 GitHub 上](https://aka.ms/nuget-pr-improvements)。 packages.config 不再处于积极开发阶段。
 
 ### <a name="limitations"></a>限制
 
 * NuGet PackageReference 不提供在 Visual Studio 2015 及更早版本。 只能在 Visual Studio 2017 中可以打开已迁移的项目。
-* 迁移不是当前适用于 c + + 和 ASP.NET 项目。
+* 迁移不是当前可用于C++和 ASP.NET 项目。
 * 某些包可能无法与 PackageReference 完全兼容。 有关详细信息，请参阅[包兼容性问题](#package-compatibility-issues)。
 
 ### <a name="known-issues"></a>已知问题
@@ -55,7 +55,7 @@ Visual Studio 2017 版本 15.7年和更高版本支持将项目从迁移[package
 
 1. 打开包含项目使用的解决方案`packages.config`。
 
-1. 在中**解决方案资源管理器**，右键单击**引用**节点或`packages.config`文件，然后选择**将 packages.config 迁移到 PackageReference...**.
+1. 在中**解决方案资源管理器**，右键单击**引用**节点或`packages.config`文件，然后选择**将 packages.config 迁移到 PackageReference...** .
 
 1. 迁移器会分析项目的 NuGet 包引用，并尝试对其进行分类**顶级依赖项**（直接安装的 NuGet 包） 和**可传递依赖项**（已作为顶级包的依赖项安装的包）。
 
@@ -87,6 +87,10 @@ Visual Studio 2017 版本 15.7年和更高版本支持将项目从迁移[package
    ```ps
    update-package -reinstall
    ```
+
+## <a name="create-a-package-after-migration"></a>迁移后创建的包
+
+迁移完成后，我们建议您添加的引用[nuget.build.tasks.pack](https://www.nuget.org/packages/nuget.build.tasks.pack) nuget 包，以及如何将[msbuild 包](../reference/msbuild-targets.md#pack-target)创建包。 虽然在某些情况下，您可以使用`dotnet.exe pack`而不是`msbuild pack`，不建议。
 
 ## <a name="package-compatibility-issues"></a>包兼容性问题
 

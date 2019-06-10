@@ -3,15 +3,15 @@ title: 适用于 NuGet 的.nuspec 文件引用
 description: .nuspec 文件包含生成包时使用的，并向包使用者提供信息的包元数据。
 author: karann-msft
 ms.author: karann
-ms.date: 08/29/2017
+ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: ebb1dd929042a1fcd269d0ac50154ae6b8234be2
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.openlocfilehash: 6c545ddeddb0c5909f57e879912eaeed744e42d5
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59509095"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812924"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -27,6 +27,16 @@ ms.locfileid: "59509095"
 - [包括程序集文件](#including-assembly-files)
 - [包括内容文件](#including-content-files)
 - [示例 nuspec 文件](#example-nuspec-files)
+
+## <a name="project-type-compatibility"></a>项目类型兼容性
+
+- 使用`.nuspec`与`nuget.exe pack`非 SDK 样式项目使用`packages.config`。
+
+- 一个`.nuspec`文件不需要为 SDK 样式项目创建包 (.NET Core 和.NET Standard 项目，使用[SDK 属性](/dotnet/core/tools/csproj#additions))。 (请注意，`.nuspec`创建包时生成。)
+
+   如果要创建包使用`dotnet.exe pack`或`msbuild pack target`，我们建议您[包含的所有属性](../reference/msbuild-targets.md#pack-target)是通常在`.nuspec`改为文件在项目文件中。 但是，你也可以选择向[使用`.nuspec`文件打包使用`dotnet.exe`或`msbuild pack target` ](../reference/msbuild-targets.md#packing-using-a-nuspec)。
+
+- 有关从迁移的项目`packages.config`到[PackageReference](../consume-packages/package-references-in-project-files.md)、`.nuspec`文件不需要创建包。 请改用[msbuild 包](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)。
 
 ## <a name="general-form-and-schema"></a>常规形式和架构
 
@@ -51,7 +61,7 @@ ms.locfileid: "59509095"
 </package>
 ```
 
-有关架构的清晰可视表示形式，请在 Visual Studio 中以“设计”模式打开架构文件，然后单击“XML 架构资源管理器”链接。 或者，将该文件作为代码打开，在编辑器中右键单击，然后选择“显示 XML 架构资源管理器”。 无论哪种方式，都会获得如下所示的视图（大多数部件都处于扩展状态）：
+有关架构的清晰可视表示形式，请在 Visual Studio 中以“设计”模式打开架构文件，然后单击“XML 架构资源管理器”链接  。 或者，将该文件作为代码打开，在编辑器中右键单击，然后选择“显示 XML 架构资源管理器”  。 无论哪种方式，都会获得如下所示的视图（大多数部件都处于扩展状态）：
 
 ![nuspec.xsd 打开时的 Visual Studio 架构资源管理器](media/SchemaExplorer.png)
 
@@ -64,7 +74,7 @@ ms.locfileid: "59509095"
 #### <a name="id"></a>id 
 不区分大小写的包标识符，在 nuget.org 或包驻留的任意库中必须是唯一的。 ID 不得包含空格或对 URL 无效的字符，通常遵循 .NET 命名空间规则。 有关指南，请参阅[选择唯一的包标识符](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)。
 #### <a name="version"></a>version
-遵循 major.minor.patch 模式的包版本。 版本号可能包括预发布后缀，如[包版本控制](../reference/package-versioning.md#pre-release-versions)中所述。 
+遵循 major.minor.patch 模式的包版本  。 版本号可能包括预发布后缀，如[包版本控制](../reference/package-versioning.md#pre-release-versions)中所述。 
 #### <a name="description"></a>说明
 用于 UI 显示的包的详细说明。 
 #### <a name="authors"></a>作者
@@ -126,42 +136,42 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 ```
 
 #### <a name="iconurl"></a>iconUrl
-64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的图像，可使用原始文件 URL，如<em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>。 
+64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL  。 例如，若要使用 GitHub 中的图像，可使用原始文件 URL，如<em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>。 
 
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 一个布尔值，用于指定客户端是否必须提示使用者接受包许可证后才可安装包。
 #### <a name="developmentdependency"></a>developmentDependency
-(2.8+) 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。 使用 PackageReference (NuGet 4.8 +)，此标志也意味着它将从编译排除编译时资产。 请参阅[DevelopmentDependency 支持 PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)
+(2.8+) 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中  。 使用 PackageReference (NuGet 4.8 +)，此标志也意味着它将从编译排除编译时资产。 请参阅[DevelopmentDependency 支持 PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)
 #### <a name="summary"></a>摘要
 用于 UI 显示的包的简要说明。 如果省略，则使用 `description` 的截断版本。
 #### <a name="releasenotes"></a>releaseNotes
-(1.5+) 此版本包中所作更改的说明，通常代替包说明用在 UI 中，如 Visual Studio 包管理器的“更新”选项卡。
+(1.5+) 此版本包中所作更改的说明，通常代替包说明用在 UI 中，如 Visual Studio 包管理器的“更新”选项卡   。
 #### <a name="copyright"></a>copyright
-(1.5+) 包的版权详细信息。
+(1.5+) 包的版权详细信息  。
 #### <a name="language"></a>语言
 包的区域设置 ID。 请参阅[创建本地化包](../create-packages/creating-localized-packages.md)。
 #### <a name="tags"></a>标记
 以空格分隔的标记和关键字列表，描述包并通过搜索和筛选辅助包的可发现性。 
 #### <a name="serviceable"></a>可维护性 
-(3.3+) 仅限内部使用。
+(3.3+) 仅限内部使用  。
 #### <a name="repository"></a>储存库
-存储库的元数据，包括四个可选属性：*类型*并*url* *（4.0 +）*，以及*分支*和*提交* *（4.6 +）*。 这些特性，你可以将.nupkg 映射到存储库可能会获取与生成它，作为单独的分支或包生成的提交进行了详细说明。 这应该是版本控制软件可以直接调用的公开发布 url。 它不应为 html 页，因为这意味着计算机。 对于链接到项目页，使用`projectUrl`字段，而是。
+存储库的元数据，包括四个可选属性：*类型*并*url* *（4.0 +）* ，以及*分支*和*提交* *（4.6 +）* 。 这些特性，你可以将.nupkg 映射到存储库可能会获取与生成它，作为单独的分支或包生成的提交进行了详细说明。 这应该是版本控制软件可以直接调用的公开发布 url。 它不应为 html 页，因为这意味着计算机。 对于链接到项目页，使用`projectUrl`字段，而是。
 
 #### <a name="minclientversion"></a>minClientVersion
-指定可安装此包的最低 NuGet 客户端版本，并由 nuget.exe 和 Visual Studio 程序包管理器强制实施。 只要包依赖于特定 NuGet 客户端版本中添加的 `.nuspec` 文件的特定功能，就会使用此功能。 例如，使用 `developmentDependency` 特性的包应为 `minClientVersion` 指定“2.8”。 同样，使用 `contentFiles` 元素（请参阅下一部分）的包应将 `minClientVersion` 设置为“3.3”。 另请注意，早于 2.5 的 NuGet 客户端无法识别此标记，所以无论 `minClientVersion` 包含什么内容，它们总是拒绝安装该包。
+指定可安装此包的最低 NuGet 客户端版本，并由 nuget.exe 和 Visual Studio 程序包管理器强制实施。 只要包依赖于特定 NuGet 客户端版本中添加的 `.nuspec` 文件的特定功能，就会使用此功能。 例如，使用 `developmentDependency` 特性的包应为 `minClientVersion` 指定“2.8”。 同样，使用 `contentFiles` 元素（请参阅下一部分）的包应将 `minClientVersion` 设置为“3.3”。 另请注意，早于 2.5 的 NuGet 客户端无法识别此标记，所以无论 `minClientVersion` 包含什么内容，它们总是拒绝安装该包  。
 
 #### <a name="collection-elements"></a>集合元素
 
 #### <a name="packagetypes"></a>packageTypes
-*(3.5+)* 如果不是传统的依赖项包，则为指定包类型的包括零个或多个 `<packageType>` 元素的集合。 每个 packageType 都具有 name 和 version 特性。 请参阅[设置包类型](../create-packages/creating-a-package.md#setting-a-package-type)。
+*(3.5+)* 如果不是传统的依赖项包，则为指定包类型的包括零个或多个 `<packageType>` 元素的集合。 每个 packageType 都具有 name 和 version 特性   。 请参阅[设置包类型](../create-packages/creating-a-package.md#setting-a-package-type)。
 #### <a name="dependencies"></a>依赖项
-零个或多个 `<dependency>` 元素的集合，用来指定包的依赖项。 每个 dependency 都具有 id、version、include (3.x+) 和 exclude (3.x+) 特性。 请参阅下面的[依赖项](#dependencies-element)。
+零个或多个 `<dependency>` 元素的集合，用来指定包的依赖项。 每个 dependency 都具有 id、version、include (3.x+) 和 exclude (3.x+) 特性     。 请参阅下面的[依赖项](#dependencies-element)。
 #### <a name="frameworkassemblies"></a>frameworkAssemblies
-(1.2+) 零个或多个 `<frameworkAssembly>` 元素的集合，用来标识此包要求的 .NET Framework 程序集引用，从而确保引用添加到使用该包的项目。 每个 frameworkAssembly 都具有 assemblyName 和 targetFramework 特性。 请参阅下面的[指定 Framework 程序集引用 GAC](#specifying-framework-assembly-references-gac)。 |
+(1.2+) 零个或多个 `<frameworkAssembly>` 元素的集合，用来标识此包要求的 .NET Framework 程序集引用，从而确保引用添加到使用该包的项目  。 每个 frameworkAssembly 都具有 assemblyName 和 targetFramework 特性   。 请参阅下面的[指定 Framework 程序集引用 GAC](#specifying-framework-assembly-references-gac)。 |
 #### <a name="references"></a>引用
-(1.5+) 零个或多个 `<reference>` 元素的集合，用来指定包的 `lib` 文件夹中添加为项目引用的程序集。 每个 reference 都具有 file 特性。 `<references>` 也可包含具有 targetFramework 特性的 `<group>` 元素，然后包含 `<reference>` 元素。 如果省略，则包含 `lib` 中的全部引用。 请参阅下面的[指定显式程序集引用](#specifying-explicit-assembly-references)。
+(1.5+) 零个或多个 `<reference>` 元素的集合，用来指定包的 `lib` 文件夹中添加为项目引用的程序集  。 每个 reference 都具有 file 特性  。 `<references>` 也可包含具有 targetFramework 特性的 `<group>` 元素，然后包含 `<reference>` 元素  。 如果省略，则包含 `lib` 中的全部引用。 请参阅下面的[指定显式程序集引用](#specifying-explicit-assembly-references)。
 #### <a name="contentfiles"></a>contentFiles
-(3.3+) `<files>` 元素的集合，用来标识包含在使用项目中的内容文件。 这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件。 请参阅下面的[指定包含在包中的文件](#specifying-files-to-include-in-the-package)。
+(3.3+) `<files>` 元素的集合，用来标识包含在使用项目中的内容文件  。 这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件。 请参阅下面的[指定包含在包中的文件](#specifying-files-to-include-in-the-package)。
 #### <a name="files"></a>文件 
 `<package>`节点可能包含`<files>`节点的同级`<metadata>`，和一个`<contentFiles>`下的子`<metadata>`，以指定要在包中包含的程序集和内容文件。 有关详细信息，请参阅本主题后面的[包含程序集文件](#including-assembly-files)和[包含内容文件](#including-content-files)。
 
@@ -188,7 +198,7 @@ nuget pack MyProject.csproj
 
 除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
 
-| 标记 | 值来源 | “值”
+| 标记 | 值来源 | 值
 | --- | --- | ---
 | **$id$** | 项目文件 | 项目文件中的 AssemblyName （标题） |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
@@ -257,7 +267,7 @@ nuget pack MyProject.csproj
 
 ### <a name="dependency-groups"></a>依赖项组
 
-版本 2.0+
+版本 2.0+ 
 
 作为单个简单列表的替代方法，可使用 `<dependencies>` 中的 `<group>` 元素根据目标项目的框架配置文件指定依赖项。
 
@@ -364,7 +374,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 如果遵循[创建包](../create-packages/creating-a-package.md)中介绍的约定，则不必在 `.nuspec` 文件中显式指定文件列表。 `nuget pack` 命令自动选取所需的文件。
 
 > [!Important]
-> 当包安装到项目中时，NuGet 自动将程序集引用添加到包的 DLL，不包括命名为 `.resources.dll` 的内容，因为它们被假定为本地化的附属程序集。 为此，请避免对包含基本包代码的文件使用 `.resources.dll`。
+> 当包安装到项目中时，NuGet 自动将程序集引用添加到包的 DLL，不包括命名为 `.resources.dll` 的内容，因为它们被假定为本地化的附属程序集  。 为此，请避免对包含基本包代码的文件使用 `.resources.dll`。
 
 若要绕过此自动行为，并显式控制包中包含的文件，请将 `<files>` 元素作为 `<package>` 的子元素（和 `<metadata>` 的同级元素），并使用单独的 `<file>` 元素标识每个文件。 例如：
 
@@ -626,23 +636,29 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 #### <a name="example-contentfiles-section"></a>contentFiles 部分示例
 
 ```xml
-<contentFiles>
-    <!-- Embed image resources -->
-    <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
-    <files include="any/any/images/ui.png" buildAction="EmbeddedResource" />
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        ...
+        <contentFiles>
+            <!-- Embed image resources -->
+            <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
+            <files include="any/any/images/ui.png" buildAction="EmbeddedResource" />
 
-    <!-- Embed all image resources under contentFiles/cs/ -->
-    <files include="cs/**/*.png" buildAction="EmbeddedResource" />
+            <!-- Embed all image resources under contentFiles/cs/ -->
+            <files include="cs/**/*.png" buildAction="EmbeddedResource" />
 
-    <!-- Copy config.xml to the root of the output folder -->
-    <files include="cs/uap/config/config.xml" buildAction="None" copyToOutput="true" flatten="true" />
+            <!-- Copy config.xml to the root of the output folder -->
+            <files include="cs/uap/config/config.xml" buildAction="None" copyToOutput="true" flatten="true" />
 
-    <!-- Copy run.cmd to the output folder and keep the directory structure -->
-    <files include="cs/commands/run.cmd" buildAction="None" copyToOutput="true" flatten="false" />
+            <!-- Copy run.cmd to the output folder and keep the directory structure -->
+            <files include="cs/commands/run.cmd" buildAction="None" copyToOutput="true" flatten="false" />
 
-    <!-- Include everything in the scripts folder except exe files -->
-    <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />
-</contentFiles>
+            <!-- Include everything in the scripts folder except exe files -->
+            <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />
+        </contentFiles>
+        </metadata>
+</package>
 ```
 
 ## <a name="example-nuspec-files"></a>示例 nuspec 文件
