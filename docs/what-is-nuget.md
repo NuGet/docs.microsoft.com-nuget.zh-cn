@@ -3,20 +3,20 @@ title: NuGet 及其功能介绍
 description: 全面介绍 NuGet 及其功能
 author: karann-msft
 ms.author: karann
-ms.date: 01/10/2018
+ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: 87f7494ea97a4fa65be04b2692d7b894938c3fe5
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.openlocfilehash: 4ab87f072bdace9dd18cecc4100de52b3547136d
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59509121"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813007"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 简介
 
 适用于任何现代开发平台的基本工具可充当一种机制，通过这种机制，开发人员可以创建、共享和使用有用的代码。 通常，此类代码捆绑到“包”中，其中包含编译的代码（如 DLL）以及在使用这些包的项目中所需的其他内容。
 
-对于 .NET（包括 .NET Core），共享代码的 Microsoft 支持的机制则为 NuGet，其定义如何创建、托管和使用面向 .NET 的包，并针对每个角色提供适用工具。
+对于 .NET（包括 .NET Core），共享代码的 Microsoft 支持的机制则为 NuGet  ，其定义如何创建、托管和使用面向 .NET 的包，并针对每个角色提供适用工具。
 
 简单来说，NuGet 包是具有 `.nupkg` 扩展的单个 ZIP 文件，此扩展包含编译代码 (Dll)、与该代码相关的其他文件以及描述性清单（包含包版本号等信息）。 使用代码的开发人员共享创建包，并将其发布到公用或专用主机。 包使用者从适合的主机获取这些包，将它们添加到项目，然后在其项目代码中调用包的功能。 随后，NuGet 自身负责处理所有中间详细信息。
 
@@ -26,7 +26,7 @@ ms.locfileid: "59509121"
 
 作为公用主机角色时，NuGet 自身负责在 [nuget.org](https://www.nuget.org) 中维护包含 100,000 多个唯一包的中央存储库。这些包每天供数以百万的 .NET/.Net Core 开发人员使用。 NuGet 还支持在云中（如在 Azure DevOps 上）、在私有网络中或者甚至直接在本地文件系统以私密方式托管包。 通过这样做，这些程序包仅对那些有权访问主机的开发人员可用，使你能够将程序包提供给特定的一组用户。 [托管自己的 NuGet 源](hosting-packages/overview.md)中提供了对相关选项的说明。 通过配置选项，你还可以精确控制任何给定计算机可以访问的主机，从而确保程序包是从特定源（而不是像 nuget.org 这样的公用存储库）获取的。
 
-无论主机的本质是什么，它都可作为包创建者和包使用者之间的连接点。 创建者生成有用的 NuGet 包并将其发布到主机。 然后，使用者可以在可访问的主机上搜索有用且兼容的包，下载包并将其包含在项目中。 在项目中安装包后，包的 API 将可用于其余项目代码。
+无论主机的本质是什么，它都可作为包创建者和包使用者之间的连接点   。 创建者生成有用的 NuGet 包并将其发布到主机。 然后，使用者可以在可访问的主机上搜索有用且兼容的包，下载包并将其包含在项目中。 在项目中安装包后，包的 API 将可用于其余项目代码。
 
 ![包创建者、包主机和包使用者之间的关系](media/nuget-roles.png)
 
@@ -45,8 +45,8 @@ ms.locfileid: "59509121"
 
 | 工具 | 平台 | 适用方案 | 说明 |
 | --- | --- | --- | --- |
-| [nuget.exe CLI](tools/nuget-exe-cli-reference.md) | 全部 | 创建、使用 | 提供所有 NuGet 功能，包括一些专门适用于包创建者、仅适用于使用者和适用于两者的命令。 例如，包创建者使用 `nuget pack` 命令通过各种程序集和相关文件创建包，包使用者使用 `nuget install` 在项目文件夹中包含包，而所有人都可使用 `nuget config` 设置 NuGet 配置变量。 作为与平台无关的工具，NuGet CLI 不会与 Visual Studio 项目交互。 |
-| [dotnet CLI](tools/dotnet-Commands.md) | 全部 | 创建、使用 | 直接在 .NET Core 工具链中提供特定 NuGet CLI 功能。 与 NuGet CLI 一样，dotnet CLI 不会与 Visual Studio 项目交互。 |
+| [dotnet CLI](tools/dotnet-Commands.md) | 全部 | 创建、使用 | 用于 .NET Core 和 .NET Standard 库，以及用于面向 .NET Framework 的 SDK 样式项目的 CLI 工具（请参阅 [SDK 属性](/dotnet/core/tools/csproj#additions)）。 直接在 .NET Core 工具链中提供特定 NuGet CLI 功能。 与 NuGet CLI 一样，dotnet CLI 不会与 Visual Studio 项目交互。 |
+| [nuget.exe CLI](tools/nuget-exe-cli-reference.md) | 全部 | 创建、使用 | 用于 .NET Framework 库和面向 .NET Standard 库的非 SDK 样式项目的 CLI 工具。 提供所有 NuGet 功能，包括一些专门适用于包创建者、仅适用于使用者和适用于两者的命令。 例如，包创建者使用 `nuget pack` 命令通过各种程序集和相关文件创建包，包使用者使用 `nuget install` 在项目文件夹中包含包，而所有人都可使用 `nuget config` 设置 NuGet 配置变量。 作为与平台无关的工具，NuGet CLI 不会与 Visual Studio 项目交互。 |
 | [包管理器控制台](tools/package-manager-console.md) | Windows 版 Visual Studio | 使用 | 提供用于在 Visual Studio 项目中安装和管理包的 [PowerShell 命令](tools/Powershell-Reference.md)。 |
 | [包管理器 UI](tools/package-manager-ui.md) | Windows 版 Visual Studio | 使用 | 提供用于在 Visual Studio 项目中安装和管理包的易用 UI。 |
 | [管理 NuGet UI](/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | 使用 | 提供用于在 Visual Studio for Mac 项目中安装和管理包的易用 UI。 |
@@ -76,15 +76,15 @@ ms.locfileid: "59509121"
 
 ![NuGet 引用列表在包安装时创建，可用于在其他位置还原包](media/nuget-restore.png)
 
-只需引用列表，NuGet 随后即可随时从公共和/或私有主机重新安装&mdash;即“还原”&mdash;所有这些包。 将项目提交到源代码管理存储库或将其以其他方式进行共享时，只需包含引用列表，不需要包含任何包二进制文件（请参阅[包和源代码管理](consume-packages/packages-and-source-control.md)）。
+只需引用列表，NuGet 随后即可随时从公共和/或私有主机重新安装&mdash;即“还原”  &mdash;所有这些包。 将项目提交到源代码管理存储库或将其以其他方式进行共享时，只需包含引用列表，不需要包含任何包二进制文件（请参阅[包和源代码管理](consume-packages/packages-and-source-control.md)）。
 
 接收项目的计算机（如获得项目副本并将其作为自动部署系统的一部分的生成服务器）仅会在需要时要求 NuGet 还原依赖项。 Azure DevOps 等生成系统会出于此确切目的提供“NuGet 还原”步骤。 同样，当开发人员获取项目副本（如克隆存储库时），他们可以调用 `nuget restore`(NuGet CLI)、`dotnet restore`(dotnet CLI) 或 `Install-Package`（程序包管理器控制台）类似的命令，以获得所有必要的程序包。 对于 Visual Studio 来说，它将在生成项目时自动还原包（前提是启用了自动还原，如[包还原](consume-packages/package-restore.md)中所述）。
 
-显然，开发人员接下来关注的 NuGet 的主要角色则是代表项目维护该引用列表并提供高效还原（和更新）这些引用包的方法。 该列表以两种“包管理格式”中的一种维护，因为将它们称为：
-
-- [`packages.config`](reference/packages-config.md)：(NuGet 1.0+) 一种 XML 文件，用于维护项目中所有依赖项的简单列表，包括其他已安装包的依赖项。 已安装或已还原的包存储在 `packages` 文件夹中。
+显然，开发人员接下来关注的 NuGet 的主要角色则是代表项目维护该引用列表并提供高效还原（和更新）这些引用包的方法。 该列表以两种“包管理格式”  中的一种维护，因为将它们称为：
 
 - [PackageReference](consume-packages/package-references-in-project-files.md)（或“项目文件中的包引用”） | *(NuGet 4.0+)* 维护直接位于项目文件中的项目顶层依赖项的列表，因此无需单独文件。 关联文件 `obj/project.assets.json` 动态生成，以管理项目使用的包的总依赖项关系图以及所有下层依赖项。 PackageReference 始终由 .NET Core 项目使用。
+
+- [`packages.config`](reference/packages-config.md)：(NuGet 1.0+) 一种 XML 文件，用于维护项目中所有依赖项的简单列表，包括其他已安装包的依赖项  。 已安装或已还原的包存储在 `packages` 文件夹中。
 
 任何特定项目中所用的包管理格式取决于项目类型以及 NuGet（和/或 Visual Studio）的可用版本。 若要确认当前使用的格式，只需在安装第一个包后在项目根目录中查找 `packages.config`。 如果没有该文件，请直接在项目文件中查找 \<PackageReference\> 元素。
 
@@ -111,7 +111,7 @@ ms.locfileid: "59509121"
 
 ## <a name="comments-contributions-and-issues"></a>评论、建议和问题
 
-最后，我们非常欢迎针对此文档给出评论和建议 &mdash; 只需在任何页面上选择“反馈”和“编辑”命令，或访问 GitHub 上的[文档存储库](https://github.com/NuGet/docs.microsoft.com-nuget/)和[文档问题列表](https://github.com/NuGet/docs.microsoft.com-nuget/issues)。
+最后，我们非常欢迎针对此文档给出评论和建议 &mdash; 只需在任何页面上选择“反馈”  和“编辑”  命令，或访问 GitHub 上的[文档存储库](https://github.com/NuGet/docs.microsoft.com-nuget/)和[文档问题列表](https://github.com/NuGet/docs.microsoft.com-nuget/issues)。
 
 我们同样欢迎通过[多种 GitHub 存储库](https://github.com/NuGet/Home)针对 NuGet 本身提出建议；有关 NuGet 的问题，请访问 [https://github.com/NuGet/home/issues](https://github.com/NuGet/home/issues)。
 

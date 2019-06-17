@@ -3,25 +3,31 @@ title: 如何创建 NuGet 包
 description: 设计和创建 NuGet 包流程的详细指南，包含文件和版本控制等关键决策点。
 author: karann-msft
 ms.author: karann
-ms.date: 12/12/2017
+ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: f0d9667b752caf7831278ac3fd63cfd67f7d34a4
-ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
+ms.openlocfilehash: 5e362673acfab4b31c8a2e02a521afd8b19d2754
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65610585"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812917"
 ---
 # <a name="creating-nuget-packages"></a>创建 NuGet 包
 
-无论包是什么用途或者它包含什么代码，均使用 `nuget.exe` 将该功能打包进可以与任意数量的其他开发人员共享且可以由其使用的组件中。 若要安装 `nuget.exe`，请参阅[安装 NuGet CLI](../install-nuget-client-tools.md#nugetexe-cli)。 请注意，Visual Studio 不会自动包含 `nuget.exe`。
+无论包是什么用途或者它包含什么代码，均使用其中一个 CLI 工具（`nuget.exe` 或 `dotnet.exe`）将该功能打包进可以与任意数量的其他开发人员共享且可以由其使用的组件中。 若要安装 NuGet CLI 工具，请参阅[安装 NuGet 客户端工具](../install-nuget-client-tools.md)。 请注意，Visual Studio 不会自动包含 CLI 工具。
+
+- 对于使用 SDK 样式格式（[SDK 属性](/dotnet/core/tools/csproj#additions)）的 .NET Core 和 .NET Standard 项目，以及任何其他 SDK 样式项目，NuGet 直接使用项目文件中的信息创建包。 有关详细信息，请参阅[使用 Visual Studio 2017 创建 .NET Standard 包](../quickstart/create-and-publish-a-package-using-visual-studio.md)和[ NuGet 包和作为 MSBuild 目标还原](../reference/msbuild-targets.md)。
+
+- 对于非 SDK 样式项目，按照本文中所述的步骤创建包。
+
+- 对于从 `packages.config` 迁移到 [PackageReference](../consume-packages/package-references-in-project-files.md) 的项目，使用 [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)。
 
 从技术角度来讲，NuGet 包仅仅是一个使用 `.nupkg` 扩展重命名且其中的内容与特定约定相匹配的 ZIP 文件。 本主题介绍创建满足这些约定的包的详细流程。 有关重点演练，请参阅[快速入门：创建和发布包](../quickstart/create-and-publish-a-package.md)。
 
 包以编译的代码（程序集）、符号和/或需要作为包传送的其他文件开头（请参阅[概述和工作流](overview-and-workflow.md)）。 尽管可以使用项目文件中信息的描述来保持编译程序集和包的同步，但此流程独立于编译或生成进入包的文件。
 
 > [!Note]
-> 本主题适用于除使用 Visual Studio 2017 和 NuGet 4.0+ 的 .NET Core 项目以外的项目类型。 在这些 .NET Core 项目中，NuGet 直接使用项目文件中的信息。 有关详细信息，请参阅[使用 Visual Studio 2017 创建 .NET Standard 包](../guides/create-net-standard-packages-vs2017.md)和[ NuGet 包和作为 MSBuild 目标还原](../reference/msbuild-targets.md)。
+> 本主题适用于非 SDK 样式项目，通常是除使用 Visual Studio 2017 和 NuGet 4.0+ 的 .NET Core 和 .NET Standard 项目之外的项目。
 
 ## <a name="deciding-which-assemblies-to-package"></a>确定要打包的程序集
 
@@ -33,7 +39,7 @@ ms.locfileid: "65610585"
 
 - 同样，如果 `Utilities.dll` 依赖于 `Utilities.resources.dll` 并且后者不能独立正常运行，则将两者放入同一包中。
 
-事实上，资源是一种特殊情况。 当包安装到项目中时，NuGet 自动将程序集引用添加到包的 DLL，不包含命名为 `.resources.dll` 的内容，因为它们被假定为本地化的附属程序集（请参阅[创建本地化包](creating-localized-packages.md)）。 为此，请避免对包含基本包代码的文件使用 `.resources.dll`。
+事实上，资源是一种特殊情况。 当包安装到项目中时，NuGet 自动将程序集引用添加到包的 DLL，不包含命名为 `.resources.dll` 的内容，因为它们被假定为本地化的附属程序集（请参阅[创建本地化包](creating-localized-packages.md)）  。 为此，请避免对包含基本包代码的文件使用 `.resources.dll`。
 
 如果库包含 COM 互操作程序集，请遵循[使用 COM 互操作程序集创作包](#authoring-packages-with-com-interop-assemblies)中的其他准则。
 
@@ -50,7 +56,7 @@ ms.locfileid: "65610585"
 所需属性：
 
 - 包标识符在承载包的库中必须是唯一的。
-- 窗体 Major.Minor.Patch[-Suffix] 中特定的版本号，其中 -Suffix 标识[预发布版本](prerelease-packages.md)
+- 窗体 Major.Minor.Patch[-Suffix] 中特定的版本号，其中 -Suffix 标识[预发布版本](prerelease-packages.md)  
 - 包标题应出现在主机上（例如 nuget.org）
 - 创建者和所有者信息。
 - 对包的详细说明。
@@ -134,13 +140,13 @@ ms.locfileid: "65610585"
 
 有关声明依赖项并指定版本号的详细信息，请参阅[包版本控制](../reference/package-versioning.md)。 还可以使用 `dependency` 元素上的 `include` 和 `exclude` 特性直接在包中结合依赖项的资产。 请参阅 [.nuspec 引用 - 依赖项](../reference/nuspec.md#dependencies)。
 
-因为清单包含在从清单创建的包中，所以可以通过检查现有包查找任意数目的其他示例。 计算机上的 global-packages 文件夹是一个不错的源，其位置由以下命令返回：
+因为清单包含在从清单创建的包中，所以可以通过检查现有包查找任意数目的其他示例。 计算机上的 global-packages  文件夹是一个不错的源，其位置由以下命令返回：
 
 ```cli
 nuget locals -list global-packages
 ```
 
-转到任意 package\version 文件夹，将 `.nupkg` 文件复制到 `.zip` 文件，然后打开该 `.zip` 文件并检查其中的 `.nuspec`。
+转到任意 package\version 文件夹，将 `.nupkg` 文件复制到 `.zip` 文件，然后打开该 `.zip` 文件并检查其中的 `.nuspec`  。
 
 > [!Note]
 > 从 Visual Studio 项目创建 `.nuspec` 时，清单包含生成包时被项目信息替换的令牌。 请参阅[从 Visual Studio 项目创建 .nuspec](#from-a-visual-studio-project)。
@@ -177,9 +183,9 @@ nuget locals -list global-packages
 | lib/{tfm} | 特定目标框架名字对象 (TFM) 的程序集 (`.dll`)、文档 (`.xml`) 和符号 (`.pdb`) 文件 | 程序集添加为引用，以用于编译和运行时；`.xml` 和 `.pdb` 复制到项目文件夹中。 有关创建框架特定目标子文件夹的详细信息，请参阅[支持多个目标框架](supporting-multiple-target-frameworks.md)。 |
 | ref/{tfm} | 给定目标框架名字对象 (TFM) 的程序集 (`.dll`) 和符号 (`.pdb`) 文件 | 程序集添加为引用，仅用于编译时；因此，不会向项目 Bin 文件夹复制任何内容。 |
 | runtimes | 特定于体系结构的程序集 (`.dll`)、符号 (`.pdb`) 和本机源 (`.pri`) 文件 | 程序集添加为引用，仅用于运行时；其他文件复制到项目文件夹中。 在 `AnyCPU` 文件夹下应始终具有特定于相应的 (TFM) `/ref/{tfm}` 的程序集，以提供相应的编译时程序集。 请参阅[支持多个目标框架](supporting-multiple-target-frameworks.md)。 |
-| 内容 | 任意文件 | 内容复制到项目根目录。 将“内容”文件夹视为最终使用包的目标应用程序的根目录。 若要使包在应用程序的 /images 文件夹中添加图片，请将其置于包的 content/images 文件夹中。 |
+| 内容 | 任意文件 | 内容复制到项目根目录。 将“内容”文件夹视为最终使用包的目标应用程序的根目录  。 若要使包在应用程序的 /images 文件夹中添加图片，请将其置于包的 content/images 文件夹中   。 |
 | 生成 | MSBuild `.targets` 和 `.props` 文件 | 自动插入到项目文件或 `project.lock.json` (NuGet 3.x+)。 |
-| 工具 | 可从包管理器控制台访问 Powershell 脚本和程序 | `tools` 文件夹添加到仅适用于包管理器控制台的 `PATH` 环境变量（尤其是不作为 MSBuild 集在生成项目时添加到 `PATH`）。 |
+| 工具 | 可从包管理器控制台访问 Powershell 脚本和程序 | `tools` 文件夹添加到仅适用于包管理器控制台的 `PATH` 环境变量（尤其是不作为 MSBuild 集在生成项目时添加到 `PATH`）  。 |
 
 因为文件夹结构可能包含任意数量的目标框架的任意数量的程序集，所以此方法在创建支持多个框架的包时是必要的。
 
@@ -210,7 +216,7 @@ nuget spec <assembly-name>.dll
 nuget spec
 ```
 
-生成的 `<project-name>.nuspec` 文件包含在打包时替换为项目值的令牌，包含对所有其他已安装的包的引用。
+生成的 `<project-name>.nuspec` 文件包含在打包时替换为项目值的令牌，包含对所有其他已安装的包的引用  。
 
 令牌在项目属性的两侧由 `$` 符号分隔。 例如，通过此方法生成的清单中的 `<id>` 值通常如下所示：
 
@@ -267,7 +273,7 @@ nuget spec [<package-name>]
 
 ## <a name="setting-a-package-type"></a>设置包类型
 
-通过 NuGet 3.5+ 可以使用特定的包类型标记包以指示其预期用途。 未标记类型的包（包含使用更早版本的 NuGet 创建的所有包）默认为 `Dependency` 类型。
+通过 NuGet 3.5+ 可以使用特定的包类型标记包以指示其预期用途  。 未标记类型的包（包含使用更早版本的 NuGet 创建的所有包）默认为 `Dependency` 类型。
 
 - `Dependency` 类型包将生成或运行时资产添加到库和应用程序，并且可以在任何项目类型中安装（假设它们相互兼容）。
 
@@ -275,7 +281,7 @@ nuget spec [<package-name>]
 
 - 自定义类型包使用与包 ID 遵守相同格式规则的任意类型标识符。 但是，任何不是 `Dependency` 和 `DotnetCliTool` 的类型不会被 Visual Studio 中的 NuGet 包管理器识别。
 
-包类型在 `.nuspec` 文件中设置。 后向兼容最好不显式设置 `Dependency` 类型，而是依赖 NuGet 在没有指定类型时假设此类型。
+包类型在 `.nuspec` 文件中设置。 后向兼容最好不显式设置 `Dependency` 类型，而是依赖 NuGet 在没有指定类型时假设此类型  。
 
 - `.nuspec`：指明 `packageTypes\packageType` 节点中 `<metadata>` 元素下的包类型：
 
@@ -293,7 +299,7 @@ nuget spec [<package-name>]
 
 ## <a name="adding-a-readme-and-other-files"></a>添加自述文件和其他文件
 
-若要直接指定要包含在包中的文件，请使用 `.nuspec` 中的 `<files>` 节点，其遵循 `<metadata>` 标记：
+若要直接指定要包含在包中的文件，请使用 `.nuspec` 中的 `<files>` 节点，其遵循 `<metadata>` 标记  ：
 
 ```xml
 <?xml version="1.0"?>
@@ -423,7 +429,7 @@ NuGet 指示需要更正的 `.nuspec` 文件中是否有错误，例如忘记更
 
     如果引用的项目包含其自身的 `.nuspec` 文件，那么 NuGet 将该引用的项目添加为依赖项。  需要单独打包和发布该项目。
 
-- **生成配置**：默认情况下，NuGet 使用项目文件中的默认生成配置集（通常是“调试”）。 若要从不同的生成配置（例如“发布”）中打包文件，使用包含以下配置的 `-properties` 选项：
+- **生成配置**：默认情况下，NuGet 使用项目文件中的默认生成配置集（通常是“调试”  ）。 若要从不同的生成配置（例如“发布”）中打包文件，使用包含以下配置的 `-properties` 选项  ：
 
     ```cli
     nuget pack MyProject.csproj -properties Configuration=Release

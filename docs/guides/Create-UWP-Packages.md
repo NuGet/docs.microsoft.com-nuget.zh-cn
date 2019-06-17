@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/21/2017
 ms.topic: tutorial
-ms.openlocfilehash: 16e19be0356bc1d2734ade5cd593ca3ef05bbe5a
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a4c609b3390748099d85a73f7d168ebe4de2676a
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546416"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812942"
 ---
 # <a name="create-uwp-packages"></a>创建 UWP 包
 
@@ -26,23 +26,23 @@ ms.locfileid: "43546416"
 
 ## <a name="create-a-uwp-windows-runtime-component"></a>创建 UWP Windows 运行时组件
 
-1. 在 Visual Studio 中，选择“文件”>“新建”>“项目”，展开“Visual C++”>“Windows”>“Universal”节点，选择“Windows 运行时组件(通用 Windows)”，将名称更改为“ImageEnhancer”，然后单击“确定”。 出现提示时，接受“目标版本”和“最低版本”的默认值。
+1. 在 Visual Studio 中，选择“文件”>“新建”>“项目”，展开“Visual C++”>“Windows”>“Universal”节点，选择“Windows 运行时组件(通用 Windows)”，将名称更改为“ImageEnhancer”，然后单击“确定”    。 出现提示时，接受“目标版本”和“最低版本”的默认值。
 
     ![创建新的 UWP Windows 运行时组件项目](media/UWP-NewProject.png)
 
-1. 右键单击“解决方案资源管理器”中的项目，选择“添加”>“新建项目”，单击“Visual C++”>“XAML”节点，选择“模板控制”，将名称更改为“AwesomeImageControl.cpp”，然后单击“添加”：
+1. 右键单击“解决方案资源管理器”中的项目，选择“添加”>“新建项目”，单击“Visual C++”>“XAML”节点，选择“模板控制”，将名称更改为“AwesomeImageControl.cpp”，然后单击“添加”     ：
 
     ![将新的 XAML 模板化控件项添加到项目](media/UWP-NewXAMLControl.png)
 
-1. 右键单击“解决方案资源管理器”中的项目，然后选择“属性” 在“属性”页中，展开“配置属性”>“C/C++”，然后单击“输出文件”。 在右侧窗格中，将“生成 XML 文档文件”的值更改为“Yes”：
+1. 右键单击“解决方案资源管理器”中的项目，然后选择“属性”  在“属性”页中，展开“配置属性”>“C/C++”，然后单击“输出文件”   。 在右侧窗格中，将“生成 XML 文档文件”的值更改为“Yes”  ：
 
     ![将“生成 XML 文档文件”的值设置为“Yes”](media/UWP-GenerateXMLDocFiles.png)
 
-1. 现在，右键单击“解决方案”，选择“批生成”，选中对话框中的三个 Debug 框，如下所示。 这样可确保在生成时，将为 Windows 支持的每个目标系统生成一套完整的项目。
+1. 现在，右键单击“解决方案”，选择“批生成”，选中对话框中的三个 Debug 框，如下所示   。 这样可确保在生成时，将为 Windows 支持的每个目标系统生成一套完整的项目。
 
     ![批生成](media/UWP-BatchBuild.png)
 
-1. 在“批生成”对话框中，单击“生成”，验证项目并创建 NuGet 包所需的输出文件。
+1. 在“批生成”对话框中，单击“生成”，验证项目并创建 NuGet 包所需的输出文件  。
 
 > [!Note]
 > 在本演练中，将使用包的 Debug 项目。 对于非调试包，请选中“批量生成”对话框中的 Release 选项，然后在以下步骤中引用生成的 Release 文件夹。
@@ -138,6 +138,9 @@ Windows 运行时组件需要描述其所有公共可用类型的元数据，这
         <file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
         <file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
 
+        <file src="..\ARM64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm64\native"/>
+        <file src="..\ARM64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm64\native"/>
+
         <file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
         <file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
 
@@ -150,7 +153,7 @@ Windows 运行时组件需要描述其所有公共可用类型的元数据，这
 
 ### <a name="adding-targets"></a>添加 .targets
 
-接下来，可能使用 NuGet 包的 C++ 和 JavaScript 项目需要一个 .targets 文件来标识必要的程序集和 winmd 文件。 （C# 和 Visual Basic 项目自动执行此操作。）通过将下方文本复制到 `ImageEnhancer.targets` 创建此文件，并将其保存在与 `.nuspec` 文件相同的文件夹中。 _注意_ ：此 `.targets` 文件需要与包 ID（例如 `.nupspec` 文件中的 `<Id>` 元素）名称相同：
+接下来，可能使用 NuGet 包的 C++ 和 JavaScript 项目需要一个 .targets 文件来标识必要的程序集和 winmd 文件。 （C# 和 Visual Basic 项目自动执行此操作。）通过将下方文本复制到 `ImageEnhancer.targets` 创建此文件，并将其保存在与 `.nuspec` 文件相同的文件夹中。 _说明_：此 `.targets` 文件需要与包 ID（例如 `.nupspec` 文件中的 `<Id>` 元素）名称相同：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -216,6 +219,8 @@ Windows 运行时组件需要描述其所有公共可用类型的元数据，这
     <!-- DLLs and resources -->
     <file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
     <file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
+    <file src="..\ARM64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm64\native"/>
+    <file src="..\ARM64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm64\native"/>     
     <file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
     <file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
     <file src="..\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x86\native"/>

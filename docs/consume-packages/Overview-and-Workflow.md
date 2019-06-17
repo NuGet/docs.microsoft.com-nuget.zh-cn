@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: 506a093ff4d62c10c896246f746e6765f64f33f4
-ms.sourcegitcommit: a801052aa728a3a137225ca3ef3ff89f2d1c6b76
+ms.openlocfilehash: 556683e5a24c57a6c32d8b4e368bfdccd4d19b48
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "54403159"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812873"
 ---
 # <a name="package-consumption-workflow"></a>包使用工作流
 
@@ -22,10 +22,10 @@ ms.locfileid: "54403159"
 
 有关详细信息，请参阅[查找和选择包](../consume-packages/finding-and-choosing-packages.md)和[安装 NuGet 包的不同方式](ways-to-install-a-package.md)。
 
-NuGet 会记住每个已安装包的标识和版本号，并将其录制到 [`packages.config`](../reference/packages-config.md) 或项目文件（使用 [PackageReference](../consume-packages/package-references-in-project-files.md)）中，具体取决于项目类型和 NuGet 版本。 使用 NuGet 4.0+，PackageReference 为首选方法，虽然这可在 Visual Studio 中通过[包管理器 UI 选项](../tools/package-manager-ui.md)进行配置。 在任何情况下，可以随时在相应文件中进行搜索，查看项目依赖项的完整列表。
+NuGet 会记住每个已安装包的标识和版本号，并将其录制到项目文件（使用 [PackageReference](../consume-packages/package-references-in-project-files.md)）或 [`packages.config`](../reference/packages-config.md) 中，具体取决于项目类型和 NuGet 版本。 使用 NuGet 4.0+，PackageReference 为首选方法，虽然这可在 Visual Studio 中通过[包管理器 UI 选项](../tools/package-manager-ui.md)进行配置。 在任何情况下，可以随时在相应文件中进行搜索，查看项目依赖项的完整列表。
 
 > [!Tip]
-> 随时检查要在软件中使用的每个包的许可证是非常明智的做法。 在 nuget.org 中，可以在每个包的说明页右侧找到“许可信息”链接。 如果包未指定许可条款，请直接通过包页面上的“联系所有者”链接与包所有者联系。 Microsoft 不向用户授予任何第三方包提供程序的知识产权许可，同时不对第三方提供的信息承担任何责任。
+> 随时检查要在软件中使用的每个包的许可证是非常明智的做法。 在 nuget.org 中，可以在每个包的说明页右侧找到“许可信息”链接  。 如果包未指定许可条款，请直接通过包页面上的“联系所有者”链接与包所有者联系  。 Microsoft 不向用户授予任何第三方包提供程序的知识产权许可，同时不对第三方提供的信息承担任何责任。
 
 安装包时，NuGet 通常会检查此包是否已存在于其缓存中。 可手动从命令行中清除此缓存，如[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)中所述。
 

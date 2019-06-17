@@ -3,25 +3,25 @@ title: 安装 NuGet 客户端工具
 description: 有关安装客户端工具、dotnet 和 nuget 命令行接口 (CLI) 以及 Visual Studio 软件包管理器的指导。
 author: karann-msft
 ms.author: karann
-ms.date: 04/09/2018
+ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: 9e8aa2250c6fc2843f74a925c56f953be5d48221
-ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
+ms.openlocfilehash: 4336377ee90f2187234c0f637620c5fac1f05fb1
+ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671131"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812853"
 ---
 # <a name="installing-nuget-client-tools"></a>安装 NuGet 客户端工具
 
 > **打算安装包？请参阅[安装 NuGet 包的方式](consume-packages/ways-to-install-a-package.md)**
 
-要使用 NuGet，作为软件包使用者或创建者，可以使用[命令行接口 (CLI) 工具](#cli-tools)以及 [Visual Studio 中的 NuGet 功能](#visual-studio)。 本文简要介绍了不同工具的功能，如何安装它们，以及它们[功能可用性](#feature-availability)的相对优势。 若要开始借助 NuGet 来使用包，请参阅[安装和使用包 (.NET CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) 以及[安装和使用包 (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)。 若要开始创建 NuGet 包，请参阅[创建和发布 NET Standard 包 (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) 以及[创建和发布 NET Standard 包 (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)。
+要使用 NuGet，作为软件包使用者或创建者，可以使用命令行接口 (CLI) 工具以及 Visual Studio 中的 NuGet 功能。 本文简要介绍了不同工具的功能，如何安装它们，以及它们[功能可用性](#feature-availability)的相对优势。 若要开始借助 NuGet 来使用包，请参阅[安装和使用包 (.NET CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) 以及[安装和使用包 (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)。 若要开始创建 NuGet 包，请参阅[创建和发布 NET Standard 包 (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) 以及[创建和发布 NET Standard 包 (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)。
 
-| 工具&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 描述 | 下载&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| 工具&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 说明 | 下载&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |:------------- |:-------------|:-----|
-| [dotnet.exe](#dotnetexe-cli) | 包含在 .NET Core SDK 中，并在所有平台上提供核心 NuGet 功能。 | [.NET Core SDK](https://www.microsoft.com/net/download/) |
-| [nuget.exe](#nugetexe-cli) | 提供 Windows 上的所有 NuGet 功能以及 Mac 和 Linux 上在 Mono 下运行时的大多数功能。 | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
+| [dotnet.exe](#dotnetexe-cli) | 用于 .NET Core 和 .NET Standard 库，以及用于面向 .NET Framework 的 SDK 样式项目的 CLI 工具（请参阅 [SDK 属性](/dotnet/core/tools/csproj#additions)）。 包含在 .NET Core SDK 中，并在所有平台上提供核心 NuGet 功能。 | [.NET Core SDK](https://www.microsoft.com/net/download/) |
+| [nuget.exe](#nugetexe-cli) | 用于 .NET Framework 库和面向 .NET Standard 库的非 SDK 样式项目的 CLI 工具。 提供 Windows 上的所有 NuGet 功能以及 Mac 和 Linux 上在 Mono 下运行时的大多数功能。 | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
 | [Visual Studio](#visual-studio) | 在 Windows 上，通过包管理器 UI 和包管理器控制台提供 NuGet 功能；包含在与 .NET 相关的工作负荷中。 在 Mac 上，通过 UI 提供某些功能。 在 Visual Studio Code 中，通过扩展提供 NuGet 功能。 | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
 
 [MSBuild CLI](reference/msbuild-targets.md) 还提供了还原和创建包的功能，该功能主要在生成服务器上使用。 MSBuild 不是与 NuGet 一起使用的通用工具。
@@ -29,6 +29,9 @@ ms.locfileid: "52671131"
 ## <a name="cli-tools"></a>CLI 工具
 
 两个 NuGet CLI 工具是 `dotnet.exe` 和 `nuget.exe`。 请参阅[功能可用性](#feature-availability)以进行比较。
+
+* 若要面向 .NET Core 或 .NET Standard，请使用 dotnet CLI。 dotnet CLI 是 SDK 样式项目格式所必需的，该格式使用 [SDK 属性](/dotnet/core/tools/csproj#additions)。
+* 若要在项目中面向 .NET Framework，请使用 `nuget.exe CLI`。
 
 ### <a name="dotnetexe-cli"></a>dotnet.exe CLI
 
@@ -61,10 +64,10 @@ NuGet CLI `nuget.exe` 是适用于 Windows 的命令行实用工具，可提供�
 
 - Visual Studio for Mac：特定 NuGet 功能是直接内置的。 请参阅[在项目中添加 NuGet 包](/visualstudio/mac/nuget-walkthrough)，获取有关演练。 对于其他功能，请使用 `dotnet.exe` 或 `nuget.exe` CLI 工具。
 
-- Windows 上的 Visual Studio：Visual Studio 2012 及更高版本中都包括“NuGet 包管理器”。 该程序包管理器提供[程序包管理器 UI](tools/package-manager-ui.md) 和[程序包管理器控制台](tools/package-manager-console.md)，通过它可以运行大部分的 NuGet 操作。
-  - Visual Studio 2017 安装程序包括具有任何采用 .NET 的工作负荷的 NuGet 包管理器。 若要单独安装，或验证是否已安装包管理器，运行 Visual Studio 2017 安装程序，并检查“各个组件”>“代码工具”>“NuGet 包管理器”下的选项。
+- Windows 上的 Visual Studio：Visual Studio 2012 及更高版本中都包括“NuGet 包管理器”  。 该程序包管理器提供[程序包管理器 UI](tools/package-manager-ui.md) 和[程序包管理器控制台](tools/package-manager-console.md)，通过它可以运行大部分的 NuGet 操作。
+  - Visual Studio 2017 安装程序包括具有任何采用 .NET 的工作负荷的 NuGet 包管理器。 若要单独安装，或验证是否已安装包管理器，运行 Visual Studio 2017 安装程序，并检查“各个组件”>“代码工具”>“NuGet 包管理器”下的选项  。
   - 程序包管理器 UI 和控制台对于 Windows 上的 Visual Studio 是唯一的。 目前，它们在 Visual Studio for Mac 上不可用。
-  - Visual Studio 不会自动包含 `nuget.exe` CLI，必须按照前面所述单独安装。
+  - 支持 IDE 中的 NuGet 功能需要 CLI 工具。 可以使用 `dotnet` CLI 或 `nuget.exe` CLI。 `dotnet` CLI 随某些 Visual Studio 工作负载一起安装，例如 .NET Core。 如前面所述，必须单独安装 `nuget.exe` CLI。
   - 程序包管理器控制台命令只能在 Windows 的 Visual Studio 中工作，不能在其他 PowerShell 环境中工作。
   - 对于 Visual Studio 2010 及更早版本，请安装“适用于 Visual Studio 的 NuGet 包管理器”扩展。
   - 适用于 Visual Studio 2013 和 2015 的 NuGet 扩展也可以从 [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html) 下载。
@@ -84,7 +87,7 @@ NuGet CLI `nuget.exe` 是适用于 Windows 的命令行实用工具，可提供�
 | 创建包(3) | &#10004; | &#10004; | &#10004;(4) | &#10004; | |
 | 发布包 | &#10004; | &#10004; | &#10004; | &#10004; |  |
 | 复制包 |  | &#10004; | &#10004; | | |
-| 管理 global-packages 文件夹和缓存文件夹。 | &#10004; | &#10004; | &#10004; | | |
+| 管理 global-packages  文件夹和缓存文件夹。 | &#10004; | &#10004; | &#10004; | | |
 | 管理 NuGet 配置 | | &#10004; | &#10004; | | |
 
 (1) 不影响项目文件；改用 `dotnet.exe`。
