@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 4884de71151ee1ae3c0a78b803c9222f9c1d86ec
-ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
+ms.openlocfilehash: 34c205e7dac60c7abfb6323b4dc45bf4f074d46a
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266357"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426791"
 ---
 # <a name="catalog"></a>Catalog
 
@@ -236,8 +236,8 @@ verbatimVersion         | string                     | 否       | 因为它的�
 
 目录项类型的`PackageDelete`包含少量的包从包源已被删除并且不再可用于任何包的操作 （如还原），指示向目录客户端的信息。
 
-> [!Note]
-> 很可能要删除的包和更高版本重新发布使用的相同包 ID 和版本。 在 nuget.org 中，这是极少数情况下，因为这会破坏的包 ID 和版本表示特定包内容的官方客户端的假设。 在 nuget.org 上包删除的详细信息，请参阅[我们的策略](../policies/deleting-packages.md)。
+> [!NOTE]
+> 很可能要删除的包和更高版本重新发布使用的相同包 ID 和版本。 在 nuget.org 中，这是极少数情况下，因为这会破坏的包 ID 和版本表示特定包内容的官方客户端的假设。 在 nuget.org 上包删除的详细信息，请参阅[我们的策略](../nuget-org/policies/deleting-packages.md)。
 
 包删除目录项不包含其他属性除了[包含在所有目录叶](#catalog-leaf)。
 

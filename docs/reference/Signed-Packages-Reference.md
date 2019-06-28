@@ -6,21 +6,21 @@ ms.author: rmpablos
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 486bf4032e156168f9b2fef57ccdae0c372b2eff
-ms.sourcegitcommit: 673e580ae749544a4a071b4efe7d42fd2bb6d209
+ms.openlocfilehash: 952256a24246543ecd4c37285cd001622aa2bc46
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52977506"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426174"
 ---
-# <a name="signed-packages"></a>签名的包
+# <a name="signed-packages"></a>已签名的包
 
 *NuGet 4.6.0+ 和 Visual Studio 2017 版本 15.6 及更高版本*
 
 NuGet 包可以包含的数字签名来提供保护以防止被篡改的内容。 此签名被生成的 X.509 证书，还添加到包的实际来源真实性概念。
 
 已签名的软件包提供最强的端到端验证。 有两种不同类型的 NuGet 签名：
-- **创作签名**。 作者签名可保证包作者签名包，而不管从后未被修改的存储库或内容传输，递送包裹的方法。 此外，作者签署的程序包提供额外的身份验证机制向 nuget.org 发布管道，因为必须提前注册签名证书。 有关详细信息，请参阅[注册的证书](#register-certificate-on-nugetorg)。
+- **创作签名**。 作者签名可保证包作者签名包，而不管从后未被修改的存储库或内容传输，递送包裹的方法。 此外，作者签署的程序包提供额外的身份验证机制向 nuget.org 发布管道，因为必须提前注册签名证书。 有关详细信息，请参阅[注册的证书](#signature-requirements-on-nugetorg)。
 - **存储库签名**。 存储库签名提供完整性保障**所有**包存储库中，无论它们是作者签名或不是，即使从不同的位置所在的原始存储库获取这些包签名。   
 
 创建作者签名的包的详细信息，请参阅[签名包](../create-packages/Sign-a-package.md)并[nuget 登录命令](../tools/cli-ref-sign.md)。
@@ -57,4 +57,4 @@ nuget.org 具有用于接受已签名的包的附加要求：
 ## <a name="related-articles"></a>相关文章
 
 - [对 NuGet 包进行签名](../create-packages/Sign-a-Package.md)
-- [安装已签名的包](../consume-packages/installing-signed-packages.md)
+- [管理包信任边界](../consume-packages/installing-signed-packages.md)

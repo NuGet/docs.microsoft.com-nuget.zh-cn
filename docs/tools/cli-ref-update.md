@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: ded9b571324d810c2f0e1a46ea76375a28940406
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: a242d02a54fd86899cbe274ab63538b53307c1bb
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145600"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425918"
 ---
 # <a name="update-command-nuget-cli"></a>update 命令 (NuGet CLI)
 
@@ -39,7 +39,7 @@ nuget update <configPath> [options]
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定，否则`%AppData%\NuGet\NuGet.Config`(Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux) 使用。|
 | FileConflictAction | 指定当需要覆盖或忽略现有的项目所引用的文件时要执行的操作。 值为*覆盖，忽略无*。 |
 | ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 以运行使用固定的、 基于英语的区域性。 |
-| 帮助 | 显示的帮助命令的信息。 |
+| Help | 显示的帮助命令的信息。 |
 | Id | 指定包 Id，以更新的列表。 |
 | MSBuildPath | *（4.0 +)* 指定的路径优先于命令中使用 MSBuild `-MSBuildVersion`。 |
 | MSBuildVersion | *（3.2 +)* 指定要用于此命令的 MSBuild 版本。 支持的值为 4，12、 14、 15.1、 15.3、 15.4、 15.5、 15.6、 15.7、 15.8，15.9。 默认情况下，选择你的路径中的 MSBuild，否则它默认为最高的已安装版本的 MSBuild。 |
@@ -48,9 +48,9 @@ nuget update <configPath> [options]
 | RepositoryPath | 指定安装包的本地文件夹。 |
 | 安全 | 指定仅更新使用相同的主版本号和次版本中可用的最高版本将安装已安装的程序包。 |
 | 自助 | Nuget.exe 更新到最新版本;将忽略所有其他参数。 |
-| 源 | 指定包源的列表 （作为 Url) 若要使用的更新。 如果省略，该命令使用在配置文件中提供的源，请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)。 |
-| 详细级别 | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
-| 版本 | 当用于一个包 ID，指定要更新的包的版本。 |
+| Source | 指定包源的列表 （作为 Url) 若要使用的更新。 如果省略，该命令使用在配置文件中提供的源，请参阅[常见 NuGet 配置](../consume-packages/configuring-nuget-behavior.md)。 |
+| Verbosity | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
+| Version | 当用于一个包 ID，指定要更新的包的版本。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
 

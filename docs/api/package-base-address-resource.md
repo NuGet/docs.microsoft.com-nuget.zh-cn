@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 740defc34077793b81fb35db73a2eee393ae3bac
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 2f0f93e0cee78ea03cbd53194cdc2a10871fd7e1
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547149"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426756"
 ---
 # <a name="package-content"></a>包内容
 
@@ -46,9 +46,9 @@ PackageBaseAddress/3.0.0 | 初始版本
 
 ### <a name="request-parameters"></a>请求参数
 
-name     | 内     | 类型    | 必需 | 说明
+名称     | 内     | 类型    | 必需 | 说明
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | URL    | 字符串  | 是      | 包 ID 小写
+LOWER_ID | URL    | string  | 是      | 包 ID 小写
 
 `LOWER_ID`值是小写使用通过实施的规则的所需的包 ID。NET 的[ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant)方法。
 
@@ -58,7 +58,7 @@ LOWER_ID | URL    | 字符串  | 是      | 包 ID 小写
 
 如果包源具有一个或多个版本，则返回 200 状态代码。 响应正文是使用下面的属性的 JSON 对象：
 
-name     | 类型             | 必需 | 说明
+名称     | 类型             | 必需 | 说明
 -------- | ---------------- | -------- | -----
 版本 | 字符串数组 | 是      | 包 Id 可用
 
@@ -82,10 +82,10 @@ name     | 类型             | 必需 | 说明
 
 ### <a name="request-parameters"></a>请求参数
 
-name          | 内     | 类型   | 必需 | 说明
+名称          | 内     | 类型   | 必需 | 说明
 ------------- | ------ | ------ | -------- | -----
-LOWER_ID      | URL    | 字符串 | 是      | 包 ID 小写
-LOWER_VERSION | URL    | 字符串 | 是      | 包版本中，规范化和小写
+LOWER_ID      | URL    | string | 是      | 包 ID 小写
+LOWER_VERSION | URL    | string | 是      | 包版本中，规范化和小写
 
 这两`LOWER_ID`和`LOWER_VERSION`小写使用通过实施的规则。NET 的 [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant)
 方法。
@@ -114,10 +114,10 @@ Newtonsoft.Json 9.0.1.nupkg 二进制流。
 
 ### <a name="request-parameters"></a>请求参数
 
-name          | 内     | 类型    | 必需 | 说明
-------------- | ------ | ------- | -------- | -----
-LOWER_ID      | URL    | 字符串  | 是      | 包 ID 小写
-LOWER_VERSION | URL    | 整数 | 是      | 包版本中，规范化和小写
+名称          | 内     | 类型   | 必需 | 说明
+------------- | ------ | ------ | -------- | -----
+LOWER_ID      | URL    | string | 是      | 包 ID 小写
+LOWER_VERSION | URL    | string | 是      | 包版本中，规范化和小写
 
 这两`LOWER_ID`和`LOWER_VERSION`小写使用通过实施的规则。NET 的[ `System.String.ToLowerInvariant()` ](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant)方法。
 

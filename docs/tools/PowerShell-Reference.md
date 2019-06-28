@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/02/2017
 ms.topic: reference
-ms.openlocfilehash: 45c8be9956ceaab844bdcd89f1b96adc256f805c
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 977e06d36962366abd69f1c7f21ef33eca4e5029
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546659"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426127"
 ---
 # <a name="powershell-reference"></a>PowerShell 参考
 
-包管理器控制台提供了下面列出与 NuGet 交互通过特定命令的 Windows 上的 Visual Studio 中的 PowerShell 接口。 （在控制台不是在 Visual Studio for mac 中目前可用的）使用控制台的指南，请参阅[程序包管理器控制台](../tools/package-manager-console.md)主题。
+包管理器控制台提供了下面列出与 NuGet 交互通过特定命令的 Windows 上的 Visual Studio 中的 PowerShell 接口。 （在控制台不是在 Visual Studio for mac 中目前可用的）使用控制台的指南，请参阅[安装和管理包使用 PowerShell](../tools/package-manager-console.md)主题。
 
 > [!Tip]
 > 所有 PowerShell 命令仅都与包使用。 任何 PowerShell 命令不与创建和发布包除外的范围内包也可以是其他包的使用者。
@@ -33,7 +33,7 @@ ms.locfileid: "43546659"
 | --- | --- | --- |
 | [Add-BindingRedirect](ps-ref-add-bindingredirect.md) | 检查项目的输出路径中的所有程序集并将添加到绑定重定向`app.config`或`web.config`在必要时。 | 全部 |
 | [Get-Project](ps-ref-get-project.md) | 显示默认值或指定的项目有关的信息。 | 3.0+ |
-| [Open-PackagePage](ps-ref-open-packagepage.md) | 将启动默认浏览器与项目、 许可证或指定包的报告滥用 URL。 | 3.0 + 中不推荐使用 |
+| [Open-PackagePage](ps-ref-open-packagepage.md) | 将启动默认浏览器与项目、 许可证或指定包的报告滥用 URL。 | 3\.0 + 中不推荐使用 |
 | [Register-TabExpansion](ps-ref-register-tabexpansion.md) | 注册命令，它允许您创建自定义的扩展的常用参数值的参数的选项卡扩展。 | 全部 |
 | [Sync-Package](ps-ref-sync-package.md) | 获取安装的版本的包从指定项目并同步到解决方案中项目的其余部分的版本。 | 3.0+ |
 | [Uninstall-Package](ps-ref-uninstall-package.md) | 从项目中，有选择性地删除其依赖项中删除包。 | 全部 |

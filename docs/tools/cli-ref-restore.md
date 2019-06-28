@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 9964186dcbfedfbf2415a57102f8f019a1eef23a
-ms.sourcegitcommit: 6b71926f062ecddb8729ef8567baf67fd269642a
+ms.openlocfilehash: 3d7a4188de4fb6f812ca19e7f9e302a5a133c58b
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59931990"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425974"
 ---
 # <a name="restore-command-nuget-cli"></a>restore 命令 (NuGet CLI)
 
@@ -30,7 +30,7 @@ nuget restore <projectPath> [options]
 
 ## <a name="options"></a>选项
 
-| Option | 描述 |
+| 选项 | 描述 |
 | --- | --- |
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定，否则`%AppData%\NuGet\NuGet.Config`(Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux) 使用。|
 | DirectDownload | *（4.0 +)* 无填充任何二进制文件或元数据缓存，可直接下载包。 |
@@ -50,7 +50,7 @@ nuget restore <projectPath> [options]
 | RequireConsent | 验证下载和安装包之前已启用还原包。 有关详细信息，请参阅[包还原](../consume-packages/package-restore.md)。 |
 | SolutionDirectory | 指定的解决方案文件夹。 未还原解决方案的包时才有效。 使用还原时所需`packages.config`文件，除非`PackagesDirectory`或`OutputDirectory`使用。 |
 | Source | 指定包源的列表 （作为 Url) 要用于还原。 如果省略，该命令使用在配置文件中提供的源，请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)。 |
-| Verbosity |> 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
+| Verbosity | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
 

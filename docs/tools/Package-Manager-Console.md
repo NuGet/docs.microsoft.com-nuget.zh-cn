@@ -1,24 +1,26 @@
 ---
-title: NuGet 包管理器控制台指南
+title: 安装和管理 NuGet 包在 Visual Studio 中使用 PowerShell
 description: 使用 Visual Studio 中的 NuGet 包管理器控制台，用于处理包的说明。
 author: karann-msft
 ms.author: karann
-ms.date: 01/23/2018
+ms.date: 06/24/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 88979c67ea7f073f2ea5a02c445186642f77f210
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 11ec25598d3110ba84dec5044642e205e13346af
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546873"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426216"
 ---
-# <a name="package-manager-console"></a>程序包管理器控制台
+# <a name="install-and-manage-packages-using-powershell-in-visual-studio"></a>安装和管理包在 Visual Studio 中使用 PowerShell
 
-Windows 2012 和更高版本上的 Visual Studio 内置 NuGet 包管理器控制台。 （它不包含在 Visual Studio for Mac 或 Visual Studio Code。）
+NuGet 包管理器控制台，可以使用[NuGet PowerShell 命令](../tools/powershell-reference.md)查找、 安装、 卸载和更新 NuGet 包。 使用控制台是在包管理器 UI 不提供一种方法来执行操作的情况下必需的。 若要使用`nuget.exe`CLI 命令在控制台中，请参阅[使用 nuget.exe CLI 在控制台中](#using-the-nugetexe-cli-in-the-console)。
 
-在控制台，可以使用[NuGet PowerShell 命令](../tools/powershell-reference.md)查找、 安装、 卸载和更新 NuGet 包。 使用控制台是在包管理器 UI 不提供一种方法来执行操作的情况下必需的。 若要使用`nuget.exe`命令在控制台中，请参阅[使用 nuget.exe CLI 在控制台中](#using-the-nugetexe-cli-in-the-console)。
+在控制台内置在 Windows 上的 Visual Studio。 不包含在 Visual Studio for Mac 或 Visual Studio Code。
+
+## <a name="find-and-install-a-package"></a>查找和安装包
 
 例如，查找和安装包是通过三个简单步骤：
 
@@ -74,7 +76,7 @@ Install-Package Elmah -ProjectName UtilitiesLib
 
 请参阅[安装包](../tools/ps-ref-install-package.md)。
 
-在控制台中安装的包执行相同的步骤，所描述的方法[安装包，则会发生什么情况](../consume-packages/ways-to-install-a-package.md#what-happens-when-a-package-is-installed)，增加了以下信息：
+在控制台中安装的包执行相同的步骤，所描述的方法[安装包，则会发生什么情况](../concepts/package-installation-process.md)，增加了以下信息：
 
 - 控制台会显示在其窗口具有隐式协议中适用的许可条款。 如果您不同意这些条款，则应立即卸载包。
 - 此外对包的引用添加到项目文件并将出现在**解决方案资源管理器**下**引用**节点，你需要保存该项目来直接查看项目文件中的更改。
@@ -139,7 +141,7 @@ Find-Package jquery -AllVersions -ExactMatch
 
 ## <a name="availability-of-the-console"></a>控制台的可用性
 
-在 Visual Studio 2017，NuGet 和 NuGet 包管理器会自动安装时选择任何。NET 相关的工作负荷;您还可以安装它单独通过检查**各个组件 > 代码工具 > NuGet 包管理器**Visual Studio 2017 安装程序中的选项。
+从 Visual Studio 2017，NuGet 和 NuGet 包管理器将自动安装时选择任何。NET 相关的工作负荷;您还可以安装它单独通过检查**各个组件 > 代码工具 > NuGet 包管理器**选项在 Visual Studio 安装程序。
 
 此外，如果您遗漏了 NuGet 包管理器在 Visual Studio 2015 及更早版本，请检查**工具 > 扩展和更新...** 和搜索 NuGet 包管理器扩展。 如果您无法在 Visual Studio 中使用扩展安装程序，也可以下载的扩展直接从[ https://dist.nuget.org/index.html ](https://dist.nuget.org/index.html)。
 

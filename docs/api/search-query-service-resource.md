@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: cfcb52ba7689f1b392c782b4ad42ba820a76c8bf
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.openlocfilehash: d462b289c39c2dd1418304dabcad47d0d4217f82
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981127"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426736"
 ---
 # <a name="search"></a>搜索
 
@@ -45,7 +45,7 @@ SearchQueryService/3.0.0-rc   | 别名 `SearchQueryService`
 
 ### <a name="request-parameters"></a>请求参数
 
-name        | 内     | 类型    | 必需 | 说明
+名称        | 内     | 类型    | 必需 | 说明
 ----------- | ------ | ------- | -------- | -----
 q           | URL    | string  | 否       | 搜索条款，用于筛选器包
 skip        | URL    | 整数 | 否       | 要分页的跳过的结果数
@@ -71,7 +71,7 @@ semVerLevel | URL    | string  | 否       | SemVer 1.0.0 版本字符串
 
 根 JSON 对象具有以下属性：
 
-name      | 类型             | 必需 | 说明
+名称      | 类型             | 必需 | 说明
 --------- | ---------------- | -------- | -----
 totalHits | 整数          | 是      | 匹配项，而不考虑总数`skip`和 `take`
 数据      | 对象的数组 | 是      | 由请求匹配的搜索结果
@@ -81,11 +81,11 @@ totalHits | 整数          | 是      | 匹配项，而不考虑总数`skip`和
 中的每项`data`数组是组成一组共享相同的包 id。 包版本的 JSON 对象
 该对象具有以下属性：
 
-name           | 类型                       | 必需 | 说明
+名称           | 类型                       | 必需 | 说明
 -------------- | -------------------------- | -------- | -----
 id             | string                     | 是      | 匹配的包的 ID
 version        | string                     | 是      | （可能包含生成元数据） 的包的完整的 SemVer 2.0.0 版本字符串
-description    | string                     | 否       | 
+说明    | string                     | 否       | 
 版本       | 对象的数组           | 是      | 所有匹配的包版本`prerelease`参数
 作者        | 字符串或字符串数组 | 否       | 
 iconUrl        | string                     | 否       | 
@@ -97,13 +97,13 @@ projectUrl     | string                     | 否       |
 标记           | 字符串或字符串数组 | 否       | 
 标题          | string                     | 否       | 
 totalDownloads | 整数                    | 否       | 此值可以推断出的下载内容的总和`versions`数组
-验证       | boolean                    | 否       | JSON 布尔值，该值指示包是否[验证](../reference/id-prefix-reservation.md)
+验证       | boolean                    | 否       | JSON 布尔值，该值指示包是否[验证](../nuget-org/id-prefix-reservation.md)
 
 在 nuget.org 中，已验证的包是一个具有与保留的 ID 前缀匹配的包 ID 和拥有的保留的前缀的所有者之一。 有关详细信息，请参阅[ID 前缀保留有关文档](../reference/id-prefix-reservation.md)。
 
 在搜索结果对象中包含的元数据中获取最新的包版本。 中的每项`versions`数组是具有以下属性的 JSON 对象：
 
-name      | 类型    | 必需 | 说明
+名称      | 类型    | 必需 | 说明
 --------- | ------- | -------- | -----
 @id       | string  | 是      | 到关联的绝对 URL[注册叶](registration-base-url-resource.md#registration-leaf)
 version   | string  | 是      | （可能包含生成元数据） 的包的完整的 SemVer 2.0.0 版本字符串

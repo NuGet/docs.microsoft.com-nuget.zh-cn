@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 376b69186ad22d4d94a1df51146b833a1f6f9bd9
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c0497c7b99a2de6bee37d6d0ead8b055578e60b7
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546473"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426075"
 ---
 # <a name="config-command-nuget-cli"></a>配置命令 (NuGet CLI)
 
 **适用于：** 所有&bullet;**支持的版本**： 所有
 
-获取或设置 NuGet 配置值。 有关其他用法，请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)。 有关允许的密钥名称的详细信息，请参阅[NuGet 配置文件引用](../reference/nuget-config-file.md)。
+获取或设置 NuGet 配置值。 有关其他用法，请参阅[常见 NuGet 配置](../consume-packages/configuring-nuget-behavior.md)。 有关允许的密钥名称的详细信息，请参阅[NuGet 配置文件引用](../reference/nuget-config-file.md)。
 
 ## <a name="usage"></a>用法
 

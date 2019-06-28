@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: b47f73c1c225540226d3780e17053427b8ea4a8a
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5d10d6bf27614980a144c30c3af6f9892a109061
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545682"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426193"
 ---
 # <a name="nuget-12-release-notes"></a>NuGet 1.2 发行说明
 
@@ -54,7 +54,7 @@ NuGet 1.2 已于 2011 年 3 月 30 日发布。
 
 ### <a name="nugetexe-now-is-able-to-store-api-key-credentials"></a>nuget.exe 现在是能够存储 API 密钥凭据
 
-使用 nuget.exe 命令行工具时，你现在可以使用 SetApiKey 命令来存储你的 API 密钥。 这样一来，就不必每次推送包时指定它。 有关详细信息使用 nuget.exe，保存你的 API 密钥[阅读有关发布包文档](../create-packages/publish-a-package.md)。
+使用 nuget.exe 命令行工具时，你现在可以使用 SetApiKey 命令来存储你的 API 密钥。 这样一来，就不必每次推送包时指定它。 有关详细信息使用 nuget.exe，保存你的 API 密钥[阅读有关发布包文档](../nuget-org/publish-a-package.md)。
 
 ### <a name="package-explorer"></a>包资源管理器
 包资源管理器已更新为支持 NuGet 1.2。 有关详细信息，请查看[包资源管理器发行说明](http://nuget.codeplex.com/wikipage?title=New%20features%20in%20NuGet%20Package%20Explorer%201.0)。
@@ -65,6 +65,6 @@ NuGet 1.2 已于 2011 年 3 月 30 日发布。
 
 ## <a name="known-issues"></a>已知问题
 
-* **1.2 包不兼容性**： 使用命令行工具的最新版本的包生成，nuget.exe (> 1.2) 不会使用较旧版本的 NuGet VS 外接程序 （如 1.1)。 如果遇到错误消息，表明不兼容的架构有关的内容时，您是否遇到了此错误。 请更新到最新版本的 NuGet。
-* **NuGet.Server 不兼容性**： 如果您正在托管内部 NuGet 源使用 NuGet.Server 项目，你将需要使用 NuGet.Server 的最新版本更新该项目。
-* **签名不匹配错误**： 如果在有关签名不匹配的消息的升级过程中遇到错误，则需要先卸载 NuGet，然后安装它。 这被列入我们[已知问题页](../release-notes/known-issues.md)提供更多详细信息。 此问题仅影响那些运行 Visual Studio 2010 SP1 和拥有的 NuGet 1.0 安装不正确签名的版本。 此版本是仅可从 CodePlex 网站在短时间内使此问题不应影响太多的人。
+* **1.2 包不兼容性**:使用命令行工具的最新版本生成的包，nuget.exe (> 1.2) 不会使用较旧版本的 NuGet VS 外接程序 （如 1.1)。 如果遇到错误消息，表明不兼容的架构有关的内容时，您是否遇到了此错误。 请更新到最新版本的 NuGet。
+* **NuGet.Server 不兼容性**:如果您正在托管内部 NuGet 源使用 NuGet.Server 项目，你将需要使用 NuGet.Server 的最新版本更新该项目。
+* **签名不匹配错误**:如果有关签名不匹配的消息的升级期间遇到错误，您需要首先卸载 NuGet，然后安装它。 这被列入我们[已知问题页](../release-notes/known-issues.md)提供更多详细信息。 此问题仅影响那些运行 Visual Studio 2010 SP1 和拥有的 NuGet 1.0 安装不正确签名的版本。 此版本是仅可从 CodePlex 网站在短时间内使此问题不应影响太多的人。

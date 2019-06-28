@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: bce04864224a66019a52cdfff8355f68dc424204
-ms.sourcegitcommit: 69b5eb1494a1745a4b1a7f320a91255d5d8356a9
+ms.openlocfilehash: b4f73e2b816d8a93e123d6de83ad0a15fbb24d18
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974993"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425932"
 ---
 # <a name="push-command-nuget-cli"></a>push 命令 (NuGet CLI)
 
@@ -21,7 +21,7 @@ ms.locfileid: "65974993"
 
 将包推送到包源并将其发布。
 
-NuGet 的默认配置通过加载`%AppData%\NuGet\NuGet.Config`(Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux)，然后加载任何`Nuget.Config`或`.nuget\Nuget.Config`文件从驱动器的根目录开始和结束当前目录中 (请参阅[配置NuGet 行为](../consume-packages/configuring-nuget-behavior.md))
+NuGet 的默认配置通过加载`%AppData%\NuGet\NuGet.Config`(Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux)，然后加载任何`Nuget.Config`或`.nuget\Nuget.Config`文件从驱动器的根目录开始和结束当前目录中 (请参阅[常见 NuGet配置](../consume-packages/configuring-nuget-behavior.md))
 
 ## <a name="usage"></a>用法
 
@@ -43,7 +43,7 @@ nuget push <packagePath> [options]
 | NonInteractive | 取消显示提示用户输入或确认。 |
 | NoSymbols | *（3.5 +)* 如果符号包存在，它将不会推送到符号服务器。 |
 | Source | 指定服务器 URL。 NuGet 标识的 UNC 或本地文件夹源，并只需将复制的文件而非推送它使用 HTTP。  此外，从 NuGet 3.4.2 开始，这是一个必需参数除非`NuGet.Config`文件指定*DefaultPushSource*值 (请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md))。 |
-| SkipDuplicate | 如果包和版本已存在，跳过它，如果有继续在推送中的下一个包。 |
+| SkipDuplicate | *（5.1 +)* 包和版本已存在，如果跳过它，如果有继续在推送中的下一个包。 |
 | SymbolSource | *（3.5 +)* Nuget.smbsrc.net 使用推送到 nuget.org 时; 指定符号服务器 URL |
 | SymbolApiKey | *（3.5 +)* 为 URL 指定在指定的 API 密钥`-SymbolSource`。 |
 | Timeout | 指定的超时，以秒为单位，以便将推送到服务器。 默认值为 300 秒 （5 分钟）。 |

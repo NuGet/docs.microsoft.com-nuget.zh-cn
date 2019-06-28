@@ -6,18 +6,18 @@ ms.author: patbel
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: ee4ffaa7e250cdbf313476fd794a8d87c80b69f9
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: c22c7f0a6b6878bec4f8396e02e2d97998170455
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324703"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425984"
 ---
 # <a name="trusted-signers-command-nuget-cli"></a>受信任的签名者命令 (NuGet CLI)
 
 **适用于：** 打包消耗&bullet;**受支持的版本：** 4.9.1+
 
-获取或设置 NuGet 配置受信任的签名者。 有关其他用法，请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)。 有关详细信息如何 nuget.config 架构看起来，请参阅[NuGet 配置文件引用](../reference/nuget-config-file.md)。
+获取或设置 NuGet 配置受信任的签名者。 有关其他用法，请参阅[常见 NuGet 配置](../consume-packages/configuring-nuget-behavior.md)。 有关详细信息如何 nuget.config 架构看起来，请参阅[NuGet 配置文件引用](../reference/nuget-config-file.md)。
 
 ## <a name="usage"></a>用法
 
@@ -118,8 +118,8 @@ _说明_：此笔势将删除当前证书的列表，并替换存储库中的最
 | --- | --- |
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定，否则`%AppData%\NuGet\NuGet.Config`(Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux) 使用。|
 | ForceEnglishOutput | 强制 nuget.exe 以运行使用固定的、 基于英语的区域性。 |
-| 帮助 | 显示的帮助命令的信息。 |
-| 详细级别 | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
+| Help | 显示的帮助命令的信息。 |
+| Verbosity | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
 
 ## <a name="examples"></a>示例
 

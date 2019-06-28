@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: ad66d8e0ffda13aaef744104c213863b0e111e0e
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 6e81055796e20186c5769d2ec39849e6c551ff87
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547516"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426725"
 ---
 # <a name="push-and-delete"></a>推送和删除
 
@@ -46,9 +46,9 @@ nuget.org 支持推送新的包使用以下 API。 如果已存在具有提供�
 
 ### <a name="request-parameters"></a>请求参数
 
-name           | 内     | 类型   | 必需 | 说明
+名称           | 内     | 类型   | 必需 | 说明
 -------------- | ------ | ------ | -------- | -----
-X-NuGet-ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
+X-NuGet-ApiKey | Header | string | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
 
 API 密钥是从包源获得由用户和配置到客户端不透明的字符串。 强制要求任何特定字符串格式，但 API 密钥的长度不应超过合理的大小，为 HTTP 标头值。
 
@@ -72,17 +72,17 @@ API 密钥是从包源获得由用户和配置到客户端不透明的字符串�
 
 ## <a name="delete-a-package"></a>删除包
 
-nuget.org 将解释为包删除请求的"取消列出"。 这意味着包仍可用于包的现有使用者，但包不会再出现在搜索结果中或 web 界面中。 有关这种做法的详细信息，请参阅[删除包](../policies/deleting-packages.md)策略。 其他服务器实现可以自由地解释为硬删除此信号，软删除，或取消列出。 例如， [NuGet.Server](https://www.nuget.org/packages/NuGet.Server) （仅支持较旧的 V2 API 的服务器实现） 支持处理此请求作为未列出或硬删除基于配置选项。
+nuget.org 将解释为包删除请求的"取消列出"。 这意味着包仍可用于包的现有使用者，但包不会再出现在搜索结果中或 web 界面中。 有关这种做法的详细信息，请参阅[删除包](../nuget-org/policies/deleting-packages.md)策略。 其他服务器实现可以自由地解释为硬删除此信号，软删除，或取消列出。 例如， [NuGet.Server](https://www.nuget.org/packages/NuGet.Server) （仅支持较旧的 V2 API 的服务器实现） 支持处理此请求作为未列出或硬删除基于配置选项。
 
     DELETE https://www.nuget.org/api/v2/package/{ID}/{VERSION}
 
 ### <a name="request-parameters"></a>请求参数
 
-name           | 内     | 类型   | 必需 | 说明
+名称           | 内     | 类型   | 必需 | 说明
 -------------- | ------ | ------ | -------- | -----
-Id             | URL    | 字符串 | 是      | 要删除的包 ID
-VERSION        | URL    | 字符串 | 是      | 要删除的包的版本
-X-NuGet-ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
+Id             | URL    | string | 是      | 要删除的包 ID
+VERSION        | URL    | string | 是      | 要删除的包的版本
+X-NuGet-ApiKey | Header | string | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
 
 ### <a name="response"></a>响应
 
@@ -101,11 +101,11 @@ X-NuGet-ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER
 
 ### <a name="request-parameters"></a>请求参数
 
-name           | 内     | 类型   | 必需 | 说明
+名称           | 内     | 类型   | 必需 | 说明
 -------------- | ------ | ------ | -------- | -----
-Id             | URL    | 字符串 | 是      | 重新列出包的 ID
-VERSION        | URL    | 字符串 | 是      | 重新列出包的版本
-X-NuGet-ApiKey | Header | 字符串 | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
+Id             | URL    | string | 是      | 重新列出包的 ID
+VERSION        | URL    | string | 是      | 重新列出包的版本
+X-NuGet-ApiKey | Header | string | 是      | 例如，`X-NuGet-ApiKey: {USER_API_KEY}`
 
 ### <a name="response"></a>响应
 

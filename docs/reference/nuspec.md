@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 6c545ddeddb0c5909f57e879912eaeed744e42d5
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: e4c57c0580fe9018703291c08d60e559f95183dc
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812924"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426208"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -85,7 +85,7 @@ ms.locfileid: "66812924"
 #### <a name="title"></a>标题
 明了易用的包标题，通常用在 UI 显示中，如 nuget.org 上和 Visual Studio 中包管理器上的那样。 如果未指定，则使用包 ID。 
 #### <a name="owners"></a>所有者
-使用 nuget.org 上的配置文件名称的包创建者的逗号分隔列表。这通常和 `authors` 中的列表相同，将包上传到 nuget.org 时被忽略。请参阅[在 nuget.org 上管理包所有者](../create-packages/publish-a-package.md#managing-package-owners-on-nugetorg)。 
+使用 nuget.org 上的配置文件名称的包创建者的逗号分隔列表。这通常和 `authors` 中的列表相同，将包上传到 nuget.org 时被忽略。请参阅[在 nuget.org 上管理包所有者](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg)。 
 #### <a name="projecturl"></a>projectUrl
 包的主页 URL，通常显示在 UI 中以及 nuget.org 中。 
 #### <a name="licenseurl"></a>licenseUrl
@@ -300,7 +300,7 @@ nuget pack MyProject.csproj
 
 ## <a name="explicit-assembly-references"></a>显式程序集引用
 
-`<references>` 元素显式指定目标项目在使用包时应引用的程序集。 当此元素存在时，NuGet 仅对列出的程序集添加引用，而不会对包的 `lib` 文件夹中的任何其他程序集添加引用。
+`<references>`元素可供使用的项目`packages.config`显式指定目标项目使用包时应引用的程序集。 显式引用通常用于仅设计时程序集。 有关详细信息，请参阅 》 上页面[选择项目引用的程序集](../create-packages/select-assemblies-referenced-by-projects.md)有关详细信息。
 
 例如，以下 `<references>` 元素指示 NuGet 仅对 `xunit.dll` 和 `xunit.extensions.dll` 添加引用，即使包中还有其他程序集：
 
@@ -310,10 +310,6 @@ nuget pack MyProject.csproj
     <reference file="xunit.extensions.dll" />
 </references>
 ```
-
-显式引用通常用于仅设计时程序集。 例如，在使用 [Code Contracts](/dotnet/framework/debug-trace-profile/code-contracts)（代码协定）时，协定程序集需要放在运行时程序集的旁边进行补充，以便 Visual Studio 能够找到它们，但协定程序集不需要被项目引用或复制到项目的 `bin` 文件夹。
-
-同样，显式引用可用于单元测试框架（如 XUnit），其工具程序集需要位于运行时程序集的旁边，但不需要包含为项目引用。
 
 ### <a name="reference-groups"></a>引用组
 

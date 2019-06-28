@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 8261cdb83af72d9d9379124f4c446c7cd2a50299
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 8088c6dcb7d453650950c219e1cc4dd047a64417
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549131"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425996"
 ---
 # <a name="install-command-nuget-cli"></a>install 命令 (NuGet CLI)
 
@@ -21,7 +21,7 @@ ms.locfileid: "43549131"
 > [!Tip]
 > 若要下载的包直接在项目的上下文以外，访问包的页面上[nuget.org](https://www.nuget.org) ，然后选择**下载**链接。
 
-如果指定了不到源，那些在全局配置文件中，列出`%appdata%\NuGet\NuGet.Config`(Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux) 使用。 请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)有关其他详细信息。
+如果指定了不到源，那些在全局配置文件中，列出`%appdata%\NuGet\NuGet.Config`(Windows) 或`~/.nuget/NuGet/NuGet.Config`(Mac/Linux) 使用。 请参阅[常见 NuGet 配置](../consume-packages/configuring-nuget-behavior.md)有关其他详细信息。
 
 如果未不指定任何特定的包，`install`安装在项目中列出的所有包`packages.config`文件，使它类似于[ `restore` ](cli-ref-restore.md)。
 
@@ -48,7 +48,7 @@ nuget install <packageID | configFilePath> [options]
 | FallbackSource | *（3.2 +)* 要用作回退，如果主数据库中找不到包的包源的列表或默认源。 |
 | ForceEnglishOutput | *（3.5 +)* 强制 nuget.exe 以运行使用固定的、 基于英语的区域性。 |
 | 框架 | *（4.4 +)* 用于选择依赖关系的目标框架。 默认值为 Any 如果未指定。 |
-| 帮助 | 显示的帮助命令的信息。 |
+| Help | 显示的帮助命令的信息。 |
 | NoCache | 阻止 NuGet 使用缓存的包。 请参阅[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)。 |
 | NonInteractive | 取消显示提示用户输入或确认。 |
 | OutputDirectory | 指定在其中安装包的文件夹。 如果未不指定任何文件夹，则使用当前文件夹。 |
@@ -56,9 +56,9 @@ nuget install <packageID | configFilePath> [options]
 | 预发行版 | 允许要安装的预发行包。 还原包时，此标志不是必需`packages.config`。 |
 | RequireConsent | 验证下载和安装包之前已启用还原包。 有关详细信息，请参阅[包还原](../consume-packages/package-restore.md)。 |
 | SolutionDirectory | 指定要为其还原包解决方案的根文件夹。 |
-| 源 | 指定包源的列表 （作为 Url) 来使用。 如果省略，该命令使用在配置文件中提供的源，请参阅[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)。 |
-| 详细级别 | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
-| 版本 | 指定要安装的包的版本。 |
+| Source | 指定包源的列表 （作为 Url) 来使用。 如果省略，该命令使用在配置文件中提供的源，请参阅[常见 NuGet 配置](../consume-packages/configuring-nuget-behavior.md)。 |
+| Verbosity | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
+| Version | 指定要安装的包的版本。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: reference
-ms.openlocfilehash: 2743dde63487124c706f2b1521ef2c6c3b28339d
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a257dbbd9d56b5989e050ed4096d096cd1036184
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548073"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426022"
 ---
 # <a name="nuget-cli-reference"></a>NuGet CLI 参考
 
@@ -19,6 +19,8 @@ NuGet 命令行接口 (CLI)， `nuget.exe`，提供了 NuGet 安装、 创建、
 若要使用的任何命令，打开命令窗口或 bash shell 中，然后运行`nuget`跟命令和相应的选项，例如`nuget help pack`（若要查看上的包命令的帮助）。
 
 此文档反映了 NuGet CLI 的最新版本。 对于要将任何给定版本的准确详细信息，运行`nuget help`为所需的命令。
+
+若要了解如何使用基本命令与`nuget.exe`CLI，请参阅[安装和使用包使用 nuget.exe CLI](../consume-packages/install-use-packages-nuget-cli.md)。
 
 ## <a name="installing-nugetexe"></a>安装 nuget.exe
 
@@ -57,7 +59,7 @@ NuGet 命令行接口 (CLI)， `nuget.exe`，提供了 NuGet 安装、 创建、
 | [init](cli-ref-init.md) | 创建 | 3.3+ | 将包从文件夹添加到使用层次结构布局的包源。 |
 | [install](cli-ref-install.md) | 使用 | 全部 | 安装到当前的包的项目，但不修改的项目或引用文件。 |
 | [list](cli-ref-list.md) | 使用情况，可能发布 | 全部 | 显示从给定源的包。 |
-| [mirror](cli-ref-mirror.md) | 发布 | 3.2 + 中不推荐使用 | 镜像包和来自源到目标存储库及其依赖项。 |
+| [mirror](cli-ref-mirror.md) | 发布 | 3\.2 + 中不推荐使用 | 镜像包和来自源到目标存储库及其依赖项。 |
 | [sources](cli-ref-sources.md) | 消耗发布 | 全部 | 管理配置文件中的包源。 |
 | [update](cli-ref-update.md) | 使用 | 全部 | 更新到最新版本的项目的包。 不支持在 Mono 上运行时。 |
 
@@ -67,7 +69,7 @@ NuGet 命令行接口 (CLI)， `nuget.exe`，提供了 NuGet 安装、 创建、
 
 | 角色 | 命令 |
 | --- | --- |
-| 使用 | `config`, `help`, `install`, `list`, `locals`, `restore`, `setapikey`, `sources`, `update` |
+| 使用 | `config`、`help`、`install`、`list`、`locals`、`restore`、`setapikey`、`sources`、`update` |
 | 创建 | `config`, `help`, `init`, `pack`, `spec` |
 | 发布 | `add`, `config`, `delete`, `help`, `list`, `push`, `setapikey`, `sources` |
 
