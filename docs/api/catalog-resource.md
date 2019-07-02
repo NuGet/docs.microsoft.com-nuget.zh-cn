@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 34c205e7dac60c7abfb6323b4dc45bf4f074d46a
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 8e4fb376e471a207333d241aeb414da7d5c3571e
+ms.sourcegitcommit: 2a9d149bc6f5ff76b0b657324820bd0429cddeef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426791"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67496545"
 ---
 # <a name="catalog"></a>Catalog
 
@@ -194,7 +194,8 @@ version                 | string                     | 是      | 目录项的�
 ----------------------- | -------------------------- | -------- | -----
 作者                 | string                     | 否       |
 created                 | string                     | 否       | 首次创建包的时间戳。 回退属性： `published`。
-dependencyGroups        | 对象的数组           | 否       | 相同的格式设置为[包元数据资源](registration-base-url-resource.md#package-dependency-group)
+dependencyGroups        | 对象的数组           | 否       | 按目标框架的包的依赖项分组 ([与包元数据资源相同的格式](registration-base-url-resource.md#package-dependency-group))
+不推荐使用             | object                     | 否       | 不推荐使用与包相关联 ([与包元数据资源相同的格式](registration-base-url-resource.md#package-deprecation))
 说明             | string                     | 否       |
 iconUrl                 | string                     | 否       |
 isPrerelease            | boolean                    | 否       | 是否是预发行包版本。 可以从检测到`version`。
