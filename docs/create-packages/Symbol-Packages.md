@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 56125516345b2255998c1f734db60b58b9a92a06
-ms.sourcegitcommit: 585394f063e95dcbc24d7ac0ce07de643eaf6f4d
+ms.openlocfilehash: 40f934f3c3fcea62acae66639c22108a93363b8b
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55046323"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426768"
 ---
 # <a name="creating-symbol-packages-legacy"></a>创建符号包（旧版）
 
@@ -102,7 +102,7 @@ nuget pack MyProject.csproj -Symbols
 > [!Important]
 > 若要将包推送到 nuget.org，必须使用实现所需 [NuGet 协议](../api/nuget-protocols.md)的 [nuget.exe v4.9.1 或更高版本](https://www.nuget.org/downloads)。
 
-1. 为方便起见，请首先保存 NuGet 的 API 密钥（请参阅[发布包](../create-packages/publish-a-package.md)），它将应用于 nuget.org 和 symbolsource.org，因为 symbolsource.org 会与 nuget.org 进行核对以验证包所有者。
+1. 为方便起见，请首先保存 NuGet 的 API 密钥（请参阅[发布包](../nuget-org/publish-a-package.md)），它将应用于 nuget.org 和 symbolsource.org，因为 symbolsource.org 会与 nuget.org 进行核对以验证包所有者。
 
     ```cli
     nuget SetApiKey Your-API-Key
@@ -129,8 +129,8 @@ nuget pack MyProject.csproj -Symbols
    > [!Note]
    > 在 nuget.exe 4.5.0 或更高版本中，符号包不会自动推送到 symbolsource.org。需要单独推送符号包，如下一步所述。
    
-在此情况下，向 nuget.org 发布主包后，NuGet 将 `MyPackage.symbols.nupkg`（如果存在）发布到 https://nuget.smbsrc.net/（symbolsource.org 的推送 URL）。
+在此情况下，向 nuget.org 发布主包后，NuGet 将 `MyPackage.symbols.nupkg`（如果存在）发布到 https://nuget.smbsrc.net/ （symbolsource.org 的推送 URL）。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [移动到新的 SymbolSource 引擎](https://tripleemcoder.com/2015/10/04/moving-to-the-new-symbolsource-engine/) (symbolsource.org)
