@@ -57,7 +57,8 @@
       "searchScope": [
         "NuGet"
       ],
-      "uhfHeaderId": "MSDocsHeader-NuGet"
+      "uhfHeaderId": "MSDocsHeader-NuGet",
+      "disable_contribution_on_translation_quality": ["MT"]
     },
     "fileMetadata": {},
     "template": [],
