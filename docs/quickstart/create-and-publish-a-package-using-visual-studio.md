@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: d30e89473b5f00895136b75a90d8d95b7645a100
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: c75785d361f25564c8a59d7a2d85924c570a7b9a
+ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812978"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67467817"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>快速入门：使用 Visual Studio 创建和发布 NuGet 包（仅限 .NET Standard 和 Windows）
 
@@ -29,7 +29,7 @@ ms.locfileid: "66812978"
 
    * 对于 `nuget.exe` CLI，从 [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) 下载它，将 `.exe` 文件保存到合适的文件夹，然后将该文件夹添加到 PATH 环境变量中。 nuget.exe CLI 用于采用非 SDK 样式格式的 .NET Standard 库。
 
-1. 如果你还没有帐户，请[在 nuget.org 上注册一个免费帐户](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)。 创建新帐户会发送确认电子邮件。 必须先确认该帐户，才能上传包。
+1. 如果你还没有帐户，请[在 nuget.org 上注册一个免费帐户](https://docs.microsoft.com/en-us/nuget/nuget-org/individual-accounts#add-a-new-individual-account)。 创建新帐户会发送确认电子邮件。 必须先确认该帐户，才能上传包。
 
 ## <a name="create-a-class-library-project"></a>创建类库项目
 
@@ -174,7 +174,7 @@ msbuild -t:pack -p:Configuration=Release
 ## <a name="related-topics"></a>相关主题
 
 - [创建包](../create-packages/creating-a-package.md)
-- [发布包](../create-packages/publish-a-package.md)
+- [发布包](../nuget-org/publish-a-package.md)
 - [预发行包](../create-packages/Prerelease-Packages.md)
 - [支持多个目标框架](../create-packages/supporting-multiple-target-frameworks.md)
 - [包版本控制](../reference/package-versioning.md)

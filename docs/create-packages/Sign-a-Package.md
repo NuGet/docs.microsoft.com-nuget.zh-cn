@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 8ff92e5a3ab2d5c13ee02a9e49709866e2ac0e87
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.openlocfilehash: abdd06642ccc652527a1a005eda2689ce97df74c
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58921567"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426812"
 ---
 # <a name="signing-nuget-packages"></a>对 NuGet 包进行签名
 
@@ -61,12 +61,12 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 
 **注意**
 * 一个用户可以提交多个证书并且多个用户可以注册同一个证书。
-* 用户注册证书之后，所有未来的包提交都必须使用其中一个证书进行签名。 请参阅[管理 NuGet.org 上的包的签名要求](#manage-signing-requirements-for-your-package-on-nugetorg)
+* 用户注册证书之后，所有未来的包提交都必须  使用其中一个证书进行签名。 请参阅[管理 NuGet.org 上的包的签名要求](#manage-signing-requirements-for-your-package-on-nugetorg)
 * 用户还可以从帐户中删除已注册的证书。 删除证书后，使用该证书签名的新包将在提交时失败。 现有包不会受到影响。
 
 ## <a name="publish-the-package"></a>发布包
 
-现在即可将包发布到 NuGet.org。请参阅[发布包](Publish-a-package.md)。
+现在即可将包发布到 NuGet.org。请参阅[发布包](../nuget-org/Publish-a-package.md)。
 
 ## <a name="create-a-test-certificate"></a>创建测试证书
 
@@ -103,5 +103,5 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 
 ## <a name="related-articles"></a>相关文章
 
-- [安装已签名的包](../consume-packages/installing-signed-packages.md)
+- [管理包信任边界](../consume-packages/installing-signed-packages.md)
 - [签名包引用](../reference/Signed-Packages-Reference.md)

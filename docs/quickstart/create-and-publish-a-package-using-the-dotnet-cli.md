@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: 6aa5c7bcb2a46e5f8dcf8f2c04a91eafe9ca03b6
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: 051fcc355fb78c0ab208125c2295b6316236fd46
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812992"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426364"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>快速入门：创建并发布包 (dotnet CLI)
 
@@ -104,7 +104,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 ## <a name="related-topics"></a>相关主题
 
 - [创建包](../create-packages/creating-a-package.md)
-- [发布包](../create-packages/publish-a-package.md)
+- [发布包](../nuget-org/publish-a-package.md)
 - [预发行包](../create-packages/Prerelease-Packages.md)
 - [支持多个目标框架](../create-packages/supporting-multiple-target-frameworks.md)
 - [包版本控制](../reference/package-versioning.md)

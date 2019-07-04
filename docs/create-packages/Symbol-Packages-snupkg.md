@@ -16,12 +16,12 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 18d54e28d77f2bdcfea70ff9ae9def05278cb26c
-ms.sourcegitcommit: 4ea46498aee386b4f592b5ebba4af7f9092ac607
+ms.openlocfilehash: 0d82cf8614b88247bc3a3ba3019c11bf1b5e2593
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65610556"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426806"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
@@ -61,7 +61,7 @@ nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 
 ## <a name="publishing-a-symbol-package"></a>发布符号包
 
-1. 为方便起见，首先使用 NuGet 保存 API 密钥（请参阅[发布包](../create-packages/publish-a-package.md)）。
+1. 为方便起见，首先使用 NuGet 保存 API 密钥（请参阅[发布包](../nuget-org/publish-a-package.md)）。
 
     ```cli
     nuget SetApiKey Your-API-Key
@@ -121,6 +121,6 @@ nuget.org 上支持的符号包具有以下约束
 4) 如果创建者决定使用自定义 nuspec 来构建其 nupkg 和 snupkg，则 snupkg 应该具有 2 中详细描述的同一文件夹层次结构和文件）。
 5) 将从 snupkg 的 nuspec 中排除 ```authors``` 和 ```owners``` 字段。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 [NuGet-Package-Debugging-&-Symbols-Improvements](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements)

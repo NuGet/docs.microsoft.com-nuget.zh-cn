@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/26/2017
 ms.topic: conceptual
-ms.openlocfilehash: 6b41b23df115c45e830404afcf9defa23615bd7c
-ms.sourcegitcommit: ce97dded7715f217ec44f6c8368ab0df19c38342
+ms.openlocfilehash: a285650034c99026e34fcda398ca7ced4855e40a
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52615751"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425722"
 ---
 # <a name="package-creation-workflow"></a>包创建工作流
 
@@ -41,6 +41,6 @@ ms.locfileid: "52615751"
 - [本机包](../create-packages/native-packages.md)，说明面向 C++ 使用者创建包的流程。
 - [签名包](../create-packages/sign-a-package.md)，说明向包添加数字签名的流程。
 
-当准备好将包发布到 nuget.org 时，请按照[发布包](../create-packages/publish-a-package.md)中的简单流程执行操作。
+当准备好将包发布到 nuget.org 时，请按照[发布包](../nuget-org/publish-a-package.md)中的简单流程执行操作。
 
 如果希望使用私有源而非 nuget.org，请参阅[托管包概述](../hosting-packages/overview.md)
