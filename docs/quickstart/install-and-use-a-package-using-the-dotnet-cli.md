@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 4b593cc215ad68629e5a93d1f17c90e53c0b4f4f
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 1060d98278fed89ac63ee17c1896ae8bdce72a9e
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324625"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426167"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>快速入门：使用 dotnet CLI 安装并使用包
 
@@ -103,7 +103,7 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 
 ## <a name="related-articles"></a>相关文章
 
+- [使用 dotnet CLI 安装并使用包](../consume-packages/install-use-packages-dotnet-cli.md)
 - [包使用的概述和工作流](../consume-packages/overview-and-workflow.md)
 - [查找和选择包](../consume-packages/finding-and-choosing-packages.md)
-- [安装包的方式](../consume-packages/ways-to-install-a-package.md)
-- [配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)
+- [常见的 NuGet 配置](../consume-packages/configuring-nuget-behavior.md)

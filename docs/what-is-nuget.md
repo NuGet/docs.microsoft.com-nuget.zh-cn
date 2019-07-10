@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: 4ab87f072bdace9dd18cecc4100de52b3547136d
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: 087bb043ba4b388b9de6d94cd838915a2e7247f4
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813007"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426131"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 简介
 
 适用于任何现代开发平台的基本工具可充当一种机制，通过这种机制，开发人员可以创建、共享和使用有用的代码。 通常，此类代码捆绑到“包”中，其中包含编译的代码（如 DLL）以及在使用这些包的项目中所需的其他内容。
 
-对于 .NET（包括 .NET Core），共享代码的 Microsoft 支持的机制则为 NuGet  ，其定义如何创建、托管和使用面向 .NET 的包，并针对每个角色提供适用工具。
+对于 .NET（包括 .NET Core），共享代码的 Microsoft 支持的机制则为 NuGet  ，其定义如何创建、托管和使用面向 .NET 的包，并针对每个角色[提供适用工具](install-nuget-client-tools.md)。
 
 简单来说，NuGet 包是具有 `.nupkg` 扩展的单个 ZIP 文件，此扩展包含编译代码 (Dll)、与该代码相关的其他文件以及描述性清单（包含包版本号等信息）。 使用代码的开发人员共享创建包，并将其发布到公用或专用主机。 包使用者从适合的主机获取这些包，将它们添加到项目，然后在其项目代码中调用包的功能。 随后，NuGet 自身负责处理所有中间详细信息。
 
@@ -45,8 +45,8 @@ ms.locfileid: "66813007"
 
 | 工具 | 平台 | 适用方案 | 说明 |
 | --- | --- | --- | --- |
-| [dotnet CLI](tools/dotnet-Commands.md) | 全部 | 创建、使用 | 用于 .NET Core 和 .NET Standard 库，以及用于面向 .NET Framework 的 SDK 样式项目的 CLI 工具（请参阅 [SDK 属性](/dotnet/core/tools/csproj#additions)）。 直接在 .NET Core 工具链中提供特定 NuGet CLI 功能。 与 NuGet CLI 一样，dotnet CLI 不会与 Visual Studio 项目交互。 |
-| [nuget.exe CLI](tools/nuget-exe-cli-reference.md) | 全部 | 创建、使用 | 用于 .NET Framework 库和面向 .NET Standard 库的非 SDK 样式项目的 CLI 工具。 提供所有 NuGet 功能，包括一些专门适用于包创建者、仅适用于使用者和适用于两者的命令。 例如，包创建者使用 `nuget pack` 命令通过各种程序集和相关文件创建包，包使用者使用 `nuget install` 在项目文件夹中包含包，而所有人都可使用 `nuget config` 设置 NuGet 配置变量。 作为与平台无关的工具，NuGet CLI 不会与 Visual Studio 项目交互。 |
+| [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md) | 全部 | 创建、使用 | 用于 .NET Core 和 .NET Standard 库，以及用于面向 .NET Framework 的 SDK 样式项目的 CLI 工具（请参阅 [SDK 属性](/dotnet/core/tools/csproj#additions)）。 直接在 .NET Core 工具链中提供特定 NuGet CLI 功能。 与 NuGet CLI 一样，dotnet CLI 不会与 Visual Studio 项目交互。 |
+| [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md) | 全部 | 创建、使用 | 用于 .NET Framework 库和面向 .NET Standard 库的非 SDK 样式项目的 CLI 工具。 提供所有 NuGet 功能，包括一些专门适用于包创建者、仅适用于使用者和适用于两者的命令。 例如，包创建者使用 `nuget pack` 命令通过各种程序集和相关文件创建包，包使用者使用 `nuget install` 在项目文件夹中包含包，而所有人都可使用 `nuget config` 设置 NuGet 配置变量。 作为与平台无关的工具，NuGet CLI 不会与 Visual Studio 项目交互。 |
 | [包管理器控制台](tools/package-manager-console.md) | Windows 版 Visual Studio | 使用 | 提供用于在 Visual Studio 项目中安装和管理包的 [PowerShell 命令](tools/Powershell-Reference.md)。 |
 | [包管理器 UI](tools/package-manager-ui.md) | Windows 版 Visual Studio | 使用 | 提供用于在 Visual Studio 项目中安装和管理包的易用 UI。 |
 | [管理 NuGet UI](/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | 使用 | 提供用于在 Visual Studio for Mac 项目中安装和管理包的易用 UI。 |

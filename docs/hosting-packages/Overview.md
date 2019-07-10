@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 45d8a6557ee02998f3d12b128ee2dc4fd6ae48bb
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: f05c3a7a51bdc0760097422004cfc4339bf9ee2c
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145587"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426609"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>承载自己的 NuGet 源
 
@@ -28,6 +28,7 @@ ms.locfileid: "56145587"
 - [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) 也可通过 Team Foundation Server 2017 以及更高版本获得。
 - [MyGet](http://myget.org)
 - Inedo 的 [ProGet](http://inedo.com/proget)
+- [GitHub 包注册表](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [NuGet 服务器](http://nugetserver.net/)，Inedo 的社区项目
 - [NuGet 服务器（开放源代码）](http://nuget-server.net)，与 Inedo 的 NuGet 服务器相似的开放源代码实现
 - [LiGet](https://github.com/ai-traders/liget)：在 docker 中 kestrel 上运行的 NuGet V2 服务器的开放源代码实现

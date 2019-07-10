@@ -1,18 +1,18 @@
 ---
-title: 配置 NuGet 的行为
+title: 常见的 NuGet 配置
 description: NuGet.Config 文件同时以全局方式和基于每个项目的方式控制 NuGet 的行为，并且这些文件可使用 nuget config 命令进行修改。
 author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 963d1d59ea7e65e3d75bc7105b8864e3e4045938
-ms.sourcegitcommit: ef08f376688f0191a8d3d873b6a4386afd799373
+ms.openlocfilehash: 57b7f29b533a8e6d7db2710c7e42a239f50199a1
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266343"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426652"
 ---
-# <a name="configuring-nuget-behavior"></a>配置 NuGet 行为
+# <a name="common-nuget-configurations"></a>常见的 NuGet 配置
 
 NuGet 的行为由一个或多个 `NuGet.Config` (XML) 文件（可存在于项目范围、用户范围和计算机范围的级别）中的累积设置驱动。 还可以使用全局 `NuGetDefaults.Config` 文件专门配置包源。 这些设置应用于 CLI、包管理器控制台和包管理器 UI 中发出的所有命令。
 

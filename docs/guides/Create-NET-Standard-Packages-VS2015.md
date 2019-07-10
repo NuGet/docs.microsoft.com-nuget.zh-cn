@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 02/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: 7b1ccfbede4cec53cee3ec7d1c023e4c5be60bf0
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: af0c42853a9e407557a010ff2793406499b4b2ef
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545908"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426884"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>使用 Visual Studio 2015 创建 NET Standard 和 .NET Framework 包
 
-注意：建议使用 Visual Studio 2017 来开发 .NET Standard 库。 Visual Studio 2015 可以工作，但 .NET Core 工具仅处于预览状态。 有关使用 NuGet 4.x+ 和 Visual Studio 2017 的详细信息，请参阅[使用 Visual Studio 2017 创建和发布包](../quickstart/create-and-publish-a-package-using-visual-studio.md)。
+**注意：** 建议使用 Visual Studio 2017 来开发 .NET Standard 库。 Visual Studio 2015 可以工作，但 .NET Core 工具仅处于预览状态。 有关使用 NuGet 4.x+ 和 Visual Studio 2017 的详细信息，请参阅[使用 Visual Studio 2017 创建和发布包](../quickstart/create-and-publish-a-package-using-visual-studio.md)。
 
 [.NET Standard 库](/dotnet/articles/standard/library)是一套正式的 .NET API 规范，有望在所有 .NET 运行时推出，借此在 .NET 生态系统中建立更强的一致性。 .NET Standard 库为要实现的所有 .NET 平台定义一组统一的、与工作负荷无关的 BCL（基类库）API。 它使得开发人员可以生成跨所有 .NET 运行时可用的代码，并减少（如果不能消除）共享代码中平台特定的条件编译指令。
 
@@ -31,17 +31,17 @@ ms.locfileid: "43545908"
 
 ## <a name="create-the-class-library-project"></a>创建类库项目
 
-1. 在 Visual Studio 中，选择“文件”>“新建”>“项目”，展开“Visual C#”>“Windows”节点，选择“类库(可移植)”，将名称更改为“AppLogger”，然后选择“确定”。
+1. 在 Visual Studio 中，选择“文件”>“新建”>“项目”  ，展开“Visual C#”>“Windows”  节点，选择“类库(可移植)”  ，将名称更改为“AppLogger”，然后选择“确定”  。
 
     ![创建新类库项目](media/NetStandard-NewProject.png)
 
-1. 在显示的“添加可移植类库”对话框中，选择 `.NET Framework 4.6` 和 `ASP.NET Core 1.0` 选项。 （如果面向 .NET Framework，则可以选择任何相应选项。）
+1. 在显示的“添加可移植类库”  对话框中，选择 `.NET Framework 4.6` 和 `ASP.NET Core 1.0` 选项。 （如果面向 .NET Framework，则可以选择任何相应选项。）
 
-1. 如果面向 .NET Standard，右键单击解决方案资源管理器中的 `AppLogger (Portable)`，选择“属性”，选择“库”选项卡，然后选择“目标”部分中的“目标 .NET 平台标准”。 此操作将提示进行确认，在确认后可以从下拉列表中选择 `.NET Standard 1.4`（或其他可用版本）：
+1. 如果面向 .NET Standard，右键单击解决方案资源管理器中的 `AppLogger (Portable)`，选择“属性”  ，选择“库”  选项卡，然后选择“目标”  部分中的“目标 .NET 平台标准”  。 此操作将提示进行确认，在确认后可以从下拉列表中选择 `.NET Standard 1.4`（或其他可用版本）：
 
     ![将目标设置为 .NET Standard 1.4](media/NetStandard-ChangeTarget.png)
 
-1. 单击“生成”选项卡，将“配置”更改为 `Release`，然后选中“XML 文档文件”框。
+1. 单击“生成”选项卡，将“配置”更改为 `Release`，然后选中“XML 文档文件”框    。
 
 1. 将代码添加到组件，例如：
 
@@ -110,7 +110,7 @@ ms.locfileid: "43545908"
     </files>
     ```
 
-1. 右键单击解决方案，选择“生成解决方案”，生成包的所有文件。
+1. 右键单击解决方案，选择“生成解决方案”，生成包的所有文件  。
 
 ### <a name="declaring-dependencies"></a>声明依赖项
 
@@ -125,7 +125,7 @@ ms.locfileid: "43545908"
 </dependencies>
 ```
 
-此处 version 特性的语法指示可接受版本 8.0.3 或更高版本。 若要指定不同的版本范围，请参阅[包版本控制](../reference/package-versioning.md)。
+此处 version 特性的语法指示可接受版本 8.0.3 或更高版本  。 若要指定不同的版本范围，请参阅[包版本控制](../reference/package-versioning.md)。
 
 ### <a name="adding-a-readme"></a>添加自述文件
 
@@ -159,7 +159,7 @@ nuget pack AppLogger.nuspec
 > [!Tip]
 > `.nupkg` 文件实际上是具有其他扩展名的 ZIP 文件。 然后，也可通过将 `.nupkg` 更改为 `.zip` 来检查包内容，但将包上传到 nuget.org 之前，请记得恢复扩展名。
 
-若要使你的包可供其他开发人员使用，请按照[发布包](../create-packages/publish-a-package.md)中的说明进行操作。
+若要使你的包可供其他开发人员使用，请按照[发布包](../nuget-org/publish-a-package.md)中的说明进行操作。
 
 请注意，`pack` 要求在 Mac OS X 上使用 Mono 4.4.2，但不能在 Linux 系统上使用。 在 Mac 上，还必须将 `.nuspec` 文件中的 Windows 路径名转换为 Unix 样式的路径。
 
