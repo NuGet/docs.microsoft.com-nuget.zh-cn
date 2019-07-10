@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: c58cf38bab45793bef820e2c52914a91d745ec77
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 9b2a7b299a0cb944ad9045684e14cc7b83e1cff4
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551778"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426670"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>如何重新安装和更新包
 
@@ -21,8 +21,11 @@ ms.locfileid: "43551778"
 | 方法 | 更新 | 重新安装 |
 | --- | --- | --- |
 | 包管理器控制台（[使用 Update-Package](#using-update-package) 中所述） | `Update-Package` 命令 | `Update-Package -reinstall` 命令 |
-| 包管理器 UI | 在“更新”选项卡上，选择一个或多个包并选择“更新” | 在“已安装”选项卡上，选择一个包，记录其名称，然后选择“卸载”。 切换到“浏览”选项卡，搜索包名称并选中，然后选择“安装”。 |
+| 包管理器 UI | 在“更新”选项卡上，选择一个或多个包并选择“更新”   | 在“已安装”选项卡上，选择一个包，记录其名称，然后选择“卸载”   。 切换到“浏览”选项卡，搜索包名称并选中，然后选择“安装”   。 |
 | nuget.exe CLI | `nuget update` 命令 | 对于所有包，删除包文件夹，然后运行 `nuget install`。 对于单个包，删除包文件夹并使用 `nuget install <id>` 再安装一个。 |
+
+> [!NOTE]
+> 对于 dotnet CLI，不需要相同的过程。 在类似的情况下，可以[使用 dotnet CLI 还原包](../consume-packages/install-use-packages-dotnet-cli.md#restore-packages)。
 
 本文内容：
 
@@ -32,14 +35,14 @@ ms.locfileid: "43551778"
 ## <a name="when-to-reinstall-a-package"></a>何时重新安装包
 
 1. **包还原后的损坏引用**：如果已打开项目并还原了 NuGet 包，但仍看见了损坏的引用，请尝试重新安装每个包。
-1. **项目因删除文件损坏**：NuGet 不会阻止删除从包添加的项，因此很容易在无意中修改从包安装的内容并损坏项目。 要还原项目，请重新安装受影响的包。
-1. **包更新损坏了项目**：如果包的更新损坏了项目，则故障通常由可能也已更新的依赖项包引起。 要还原依赖项的状态，请重新安装该特定包。
+1. **项目因删除文件损坏**：NuGet 不会阻止移除从包添加的项，因此很容易在无意中修改从包安装的内容并损坏项目。 要还原项目，请重新安装受影响的包。
+1. **包更新损坏了项目**：如果包的更新损坏了项目，则故障通常由可能也被损坏的依赖项包引起。 要还原依赖项的状态，请重新安装该特定包。
 1. **项目重定向或升级**：这在项目已重定向或升级时并且如果包因为更改目标框架需要重新安装时有用。 NuGet 在项目重定向后立即显示该情况下的生成错误，后续生成警告会提醒你包可能需要重新安装。 对于项目升级，NuGet 显示项目升级日志中的错误。
 1. **开发期间重新安装包**：包创作者常常需要重新安装与他们开发来测试行为的包版本相同的包。 `Install-Package` 命令不提供强制重新安装选项，所以换成使用 `Update-Package -reinstall`。
 
 ## <a name="constraining-upgrade-versions"></a>约束升级版本
 
-默认情况下，重新安装或更新包常常会安装包源中提供的最新版本。
+默认情况下，重新安装或更新包常常会安装包源中提供的最新版本  。
 
 但是，在使用 `packages.config` 管理格式的项目中，可以专门约束版本范围。 例如，如果知道可能因为包 API 中存在重要更改，应用程序只能使用 1.x 版本的包，而不是 2.0 以及更高版本的包，则需要将升级约束为 1.x 版本。 这会阻止可能损坏应用程序的意外更新。
 
@@ -58,7 +61,7 @@ ms.locfileid: "43551778"
 
 ## <a name="using-update-package"></a>使用 Update-Package
 
-注意下述的[注意事项](#considerations)，可以使用 Visual Studio 包管理器控制台中的 [Update-Package 命令](../Tools/ps-ref-update-package.md)（“工具” > “NuGet 包管理器” > “包管理器控制台”）轻松重新安装任意包：
+注意下述的[注意事项](#considerations)，可以使用 Visual Studio 包管理器控制台中的 [Update-Package 命令](../Tools/ps-ref-update-package.md)（“工具” > “NuGet 包管理器” > “包管理器控制台”）轻松重新安装任意包    ：
 
 ```ps
 Update-Package -Id <package_name> –reinstall
@@ -79,7 +82,7 @@ Update-Package <package_name>
 Update-Package <package_name> -ProjectName MyProject -reinstall
 ```
 
-要更新一个项目中的所有包（或者使用 `-reinstall` 重新安装），请使用 `-ProjectName` 而无需指定任意特定的包：
+要更新一个项目中的所有包（或者使用 `-reinstall` 重新安装），请使用 `-ProjectName` 而无需指定任意特定的包  ：
 
 ```ps
 Update-Package -ProjectName MyProject

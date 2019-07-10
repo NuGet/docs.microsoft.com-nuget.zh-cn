@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: c547ae1d46079d040d7c3aa4c7678e70cd199dce
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 4b365488c8dd0e081449552b06451e7b40b5223b
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548008"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426619"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>管理全局包、缓存和临时文件夹
 
@@ -18,19 +18,19 @@ ms.locfileid: "43548008"
 
 | name | 说明和位置（每个用户）|
 | --- | --- |
-| global&#8209;packages | global-packages 文件夹是 NuGet 安装任何下载包的位置。 每个包完全展开到匹配包标识符和版本号的子文件夹。 使用 PackageReference 格式的项目总是直接从该文件夹中使用包。 使用 `packages.config` 时，包将安装到 global-packages 文件夹，然后复制到项目的 `packages` 文件夹。<br/><ul><li>Windows：`%userprofile%\.nuget\packages`</li><li>Mac/Linux：`~/.nuget/packages`</li><li>使用 NUGET_PACKAGES 重写环境变量 `globalPackagesFolder` 或 `repositoryPath` [配置设置](../reference/nuget-config-file.md#config-section)（分别在使用 PackageReference 和 `packages.config` 时）或 `RestorePackagesPath` MSBuild 属性（仅限 MSBuild）。 环境变量优先于配置设置。</li></ul> |
+| global&#8209;packages | global-packages  文件夹是 NuGet 安装任何下载包的位置。 每个包完全展开到匹配包标识符和版本号的子文件夹。 使用 PackageReference 格式的项目总是直接从该文件夹中使用包。 使用 `packages.config` 时，包将安装到 global-packages  文件夹，然后复制到项目的 `packages` 文件夹。<br/><ul><li>Windows：`%userprofile%\.nuget\packages`</li><li>Mac/Linux：`~/.nuget/packages`</li><li>使用 NUGET_PACKAGES 重写环境变量 `globalPackagesFolder` 或 `repositoryPath` [配置设置](../reference/nuget-config-file.md#config-section)（分别在使用 PackageReference 和 `packages.config` 时）或 `RestorePackagesPath` MSBuild 属性（仅限 MSBuild）。 环境变量优先于配置设置。</li></ul> |
 | http&#8209;cache | Visual Studio 包管理器 (NuGet 3.x+) 和 `dotnet` 工具存储此缓存中下载包的副本（另存为 `.dat` 文件），这些副本被组织到每个包源的子文件夹中。 未展开包，且缓存中有 30 分钟的到期时间。<br/><ul><li>Windows：`%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux：`~/.local/share/NuGet/v3-cache`</li><li>使用 NUGET_HTTP_CACHE_PATH 环境变量替代。</li></ul> |
 | temp | NuGet 在各操作期间在其中存储临时文件的文件夹。<br/><li>Windows：`%temp%\NuGetScratch`</li><li>Mac/Linux：`/tmp/NuGetScratch`</li></ul> |
 | plugins-cache **4.8 +** | NuGet 存储来自操作声明请求的结果的文件夹。<br/><ul><li>Windows：`%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux：`~/.local/share/NuGet/plugins-cache`</li><li>使用 NUGET_PLUGINS_CACHE_PATH 环境变量替代。</li></ul> |
 
 > [!Note]
-> NuGet 3.5 和早期版本使用 `%localappdata%\NuGet\Cache` 中的 packages-cache 而不是 http-cache。
+> NuGet 3.5 和早期版本使用 `%localappdata%\NuGet\Cache` 中的 packages-cache  而不是 http-cache  。
 
-通过使用缓存和 global-packages 文件夹，NuGet 通常会避免下载计算机上已存在的包，以提高安装、更新和还原操作的性能。 在使用 PackageReference 时，global-packages 文件夹还会避免在项目文件夹中保存下载的包，其中它们可能会在无意间被添加到源代码管理，并减少 NuGet 对计算机存储的总体影响。
+通过使用缓存和 global-packages  文件夹，NuGet 通常会避免下载计算机上已存在的包，以提高安装、更新和还原操作的性能。 在使用 PackageReference 时，global-packages  文件夹还会避免在项目文件夹中保存下载的包，其中它们可能会在无意间被添加到源代码管理，并减少 NuGet 对计算机存储的总体影响。
 
-当要求检索包时，NuGet 会首先查看 global-packages 文件夹。 如果不存在包的确切版本，NuGet 将检查所有非 HTTP 包源。 如果仍未找到包，NuGet 将查找 http-cache 中的包，除非使用 `dotnet.exe` 命令指定 `--no-cache`，或使用 `nuget.exe` 命令指定 `-NoCache`。 如果包不在缓存中，或未使用缓存，那么 NuGet 将通过 HTTP 检索包。
+当要求检索包时，NuGet 会首先查看 global-packages  文件夹。 如果不存在包的确切版本，NuGet 将检查所有非 HTTP 包源。 如果仍未找到包，NuGet 将查找 http-cache  中的包，除非使用 `dotnet.exe` 命令指定 `--no-cache`，或使用 `nuget.exe` 命令指定 `-NoCache`。 如果包不在缓存中，或未使用缓存，那么 NuGet 将通过 HTTP 检索包。
 
-有关详细信息，请参阅[安装包时会发生什么情况](ways-to-install-a-package.md#what-happens-when-a-package-is-installed)。
+有关详细信息，请参阅[安装包时会发生什么情况？](../concepts/package-installation-process.md)。
 
 ## <a name="viewing-folder-locations"></a>查看文件夹位置
 
@@ -98,9 +98,9 @@ dotnet nuget locals all --clear
 nuget locals all -clear
 ```
 
-目前在 Visual Studio 中打开的项目所使用的任何包都不会从 global-packages 文件夹中清除。
+目前在 Visual Studio 中打开的项目所使用的任何包都不会从 global-packages  文件夹中清除。
 
-在 Visual Studio 2017 中，使用“工具”>“NuGet 包管理器”>“包管理器设置”菜单命令，然后选择“清除所有 NuGet 缓存”。 管理缓存目前不支持通过包管理器控制台提供。 在 Visual Studio 2015 中，则改用 CLI 命令。
+从 Visual Studio 2017 开始，使用“工具”>“NuGet 包管理器”>“包管理器设置”菜单命令，然后选择“清除所有 NuGet 缓存”   。 管理缓存目前不支持通过包管理器控制台提供。 在 Visual Studio 2015 中，则改用 CLI 命令。
 
 ![用于清除缓存的 NuGet 选项命令](media/options-clear-caches.png)
 
@@ -108,14 +108,14 @@ nuget locals all -clear
 
 使用 `nuget locals` 或 `dotnet nuget locals` 时可能出现以下错误：
 
-- 错误：进程无法访问文件 <package>，因为另一个进程正在使用该文件或清除本地资源失败：无法删除一个或多个文件
+- *错误：进程无法访问文件 <package>，因为另一个进程正在使用该文件* *或清除本地资源失败：无法删除一个或多个文件*
 
-    另一个进程正在使用文件夹中的一个或多个文件；例如，Visual Studio 项目处于打开状态，它指的是 global-packages 文件夹中的包。 关闭这些进程，然后重试。
+    另一个进程正在使用文件夹中的一个或多个文件；例如，Visual Studio 项目处于打开状态，它指的是 global-packages  文件夹中的包。 关闭这些进程，然后重试。
 
-- 错误：访问路径 <path> 被拒绝或目录不为空
+- *错误：访问路径 <path> 被拒绝或目录不为空* 
 
     你没有删除缓存文件的权限。 如果可能，请更改文件夹权限，然后重试。 否则，请与系统管理员联系。
 
-- 错误：指定的路径、文件名或两者太长。*完全限定文件名必须少于 260 个字符，而目录名必须少于 248 个字符。*
+- *错误：指定的路径和/或文件名太长。完全限定文件名必须少于 260 个字符，而目录名必须少于 248 个字符。*
 
     缩短文件夹名称，然后重试。

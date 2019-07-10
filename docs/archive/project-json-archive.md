@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: aa5cd1a2f3e3a6707a9d68204306db85651b0a18
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d43f002b740b669de13f5872844ac0df97fc8fdc
+ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545195"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67467785"
 ---
 # <a name="projectjson-archive"></a>project.json 存档
 
@@ -28,7 +28,7 @@ NuGet 3.x 引入了 `project.json` 管理格式，并用于某些项目类型。
 
 在管理格式列表中：
 
-- [`project.json`](project-json.md)：*（已弃用）* 一种 JSON 文件，用于维护项目依赖项的列表，同时将包的整体信息图存储在关联文件 `project.lock.json` 中。 此格式已被弃用，被 PackageReference 取代。
+- [`project.json`](project-json.md)： *（已弃用）* 一种 JSON 文件，用于维护项目依赖项的列表，同时将包的整体信息图存储在关联文件 `project.lock.json` 中。 此格式已被弃用，被 PackageReference 取代。
 
 ## <a name="nuget-restore-on-mono"></a>Mono 上的 nuget 还原
 
@@ -38,9 +38,9 @@ NuGet 3.x 引入了 `project.json` 管理格式，并用于某些项目类型。
 
 ## <a name="constraining-package-versions-with-restore"></a>使用还原约束包版本
 
-*最初在[包还原](../consume-packages/package-restore.md#constraining-package-versions-with-restore)中。*
+*最初在[包还原](../consume-packages/package-restore.md#constrain-package-versions-with-restore)中。*
 
-- `project.json` 使用依赖项的版本号直接指定版本范围。 例如:
+- `project.json`：使用依赖项的版本号直接指定版本范围。 例如:
 
     ```json
     "Newtonsoft.json": "[6, 7)"
@@ -93,7 +93,7 @@ PackageReference 的行为也适用于 `project.json`。 NuGet 还原将依赖�
 
 *最初在[目标框架](../reference/target-frameworks.md)中。*
 
-- [project.json](project-json.md)：`frameworks` 节点指定可编译项目的框架版本。
+- [project.json](project-json.md)：`frameworks` 节点指定编译项目可依据的框架版本。
 
 ## <a name="creating-a-package"></a>创建包
 
@@ -144,7 +144,7 @@ PackageReference 的行为也适用于 `project.json`。 NuGet 还原将依赖�
 
 *最初在[程序包管理器 UI 引用](../tools/package-manager-ui.md)中。*
 
-使用 `project.json` 管理格式的项目仅显示“显示预览窗口”选项。
+使用 `project.json` 管理格式的项目仅显示“显示预览窗口”  选项。
 
 ### <a name="visual-studio-templates"></a>Visual Studio 模板
 

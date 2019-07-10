@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: c86a07c30631b7ee99526b014ac9c3b9f136aa81
-ms.sourcegitcommit: 1591bb230e106b94162a87dd1d86fe427366730a
+ms.openlocfilehash: 8cd7529c4a1ecf659abde03fb1632e26431aebf3
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671183"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67426753"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>针对项目查找和评估 NuGet 包
 
@@ -22,7 +22,7 @@ ms.locfileid: "52671183"
 
 ![显示最常用包的 nuget.org/packages 的默认视图](media/Finding-01-Popularity.png)
 
-请注意页面右上角的“包括预发行版”选项。 勾选此选项时，nuget.org 将显示所有版本的包，包括 beta 版本和其他早期版本。 若要仅显示稳定版本，请清除此选项。
+请注意页面右上角的“包括预发行版”选项  。 勾选此选项时，nuget.org 将显示所有版本的包，包括 beta 版本和其他早期版本。 若要仅显示稳定版本，请清除此选项。
 
 对于特定需求，按标记搜索（在 Visual Studio 包管理器或在 nuget.org 等门户中）是发现适用包的最常用方法。 例如，搜索“json”将列出具有该关键字标记的所有 NuGet 包，这些包必然与 JSON 数据格式存在某种关系。
 
@@ -42,33 +42,33 @@ ms.locfileid: "52671183"
 
 1. 尝试在 NuGet 包管理器控制台中使用 [`Install-Package`](../tools/ps-ref-install-package.md) 命令将包安装到项目中。 如果包不兼容，此命令将显示包支持的框架。
 
-1. 在 nuget.org 中包的页面上，使用“信息”下的“手动下载”链接来下载包。 将扩展名从 `.nupkg` 更改为 `.zip`，然后打开文件查看 `lib` 文件夹的内容。 你会看到每个受支持框架的子文件夹，每个子文件夹都以目标框架名字对象 (TFM)（请参阅[目标框架](../reference/target-frameworks.md)）命名。 如果 `lib` 下没有任何子文件夹而只有一个 DLL，此时则必须通过尝试将包安装到项目中来查看其是否兼容。
+1. 在 nuget.org 中包的页面上，使用“信息”下的“手动下载”链接来下载包   。 将扩展名从 `.nupkg` 更改为 `.zip`，然后打开文件查看 `lib` 文件夹的内容。 你会看到每个受支持框架的子文件夹，每个子文件夹都以目标框架名字对象 (TFM)（请参阅[目标框架](../reference/target-frameworks.md)）命名。 如果 `lib` 下没有任何子文件夹而只有一个 DLL，此时则必须通过尝试将包安装到项目中来查看其是否兼容。
 
 ## <a name="pre-release-packages"></a>预发行包
 
 许多包创建者会提供预览版和 beta 版，他们会继续提供改进并收集其最新版本的反馈。
 
-默认情况下，nuget.org 会在搜索结果中显示预发行包。 若要仅搜索稳定版发布，请清除页面右上角的“包括预发行版”选项
+默认情况下，nuget.org 会在搜索结果中显示预发行包。 若要仅搜索稳定版发布，请清除页面右上角的“包括预发行版”选项 
 
 ![nuget.org 上的“包括预发行版”复选框](media/Finding-06-include-prerelease.png)
 
 在 Visual Studio 中使用 NuGet 和 dotnet CLI 工具时，NuGet 默认不包括预发行版本。 若要更改此行为，请执行以下操作：
 
-- **Visual Studio 中的包管理器 UI**：在“管理 NuGet 包”UI 中，勾选“包括预发行版”框。 勾选或清除此框将刷新包管理器 UI 和可安装的可用版本列表。
+- **Visual Studio 中的包管理器 UI**：在“管理 NuGet 包”UI 中，勾选“包括预发行版”框   。 勾选或清除此框将刷新包管理器 UI 和可安装的可用版本列表。
 
     ![Visual Studio 中的“包括预发行版”复选框](media/Prerelease_02-CheckPrerelease.png)
 
-- **包管理器控制台**：将 `-IncludePrerelease` 开关与 `Find-Package`、`Get-Package`、`Install-Package`、`Sync-Package` 和 `Update-Package` 命令配合使用。 请参阅 [PowerShell 参考](../tools/powershell-reference.md)。
+- **包管理器控制台**：将 `-IncludePrerelease` 开关与 `Find-Package`、`Get-Package`、`Install-Package``Sync-Package` 和 `Update-Package` 命令配合使用。 请参阅 [PowerShell 参考](../tools/powershell-reference.md)。
 
-- nuget.exe CLI：将 `-prerelease` 开关与 `install`、`update`、`delete` 和 `mirror` 命令配合使用。 请参阅 [NuGet CLI 参考](../tools/nuget-exe-cli-reference.md)
+- **nuget.exe CLI**：将 `-prerelease` 开关与 `install`、`update`、`delete` 和 `mirror` 命令配合使用。 请参阅 [NuGet CLI 参考](../tools/nuget-exe-cli-reference.md)
 
-- dotnet.exe CLI：使用 `-v` 参数指定确切的预发行版本。 请参阅 [dotnet 添加包参考](/dotnet/core/tools/dotnet-add-package)。
+- **dotnet.exe CLI**：使用 `-v` 参数指定确切的预发行版本。 请参阅 [dotnet 添加包参考](/dotnet/core/tools/dotnet-add-package)。
 
 <a name="native-cpp-packages"></a>
 
 ### <a name="native-c-packages"></a>本机 C++ 包
 
-NuGet 支持本机 C++ 包，这些包可在 Visual Studio 的 C++ 项目中使用。 这将启用项目的“管理 NuGet 包”上下文菜单命令、引入 `native` 目标框架，以及提供 MSBuild 集成。
+NuGet 支持本机 C++ 包，这些包可在 Visual Studio 的 C++ 项目中使用。 这将启用项目的“管理 NuGet 包”上下文菜单命令、引入 `native` 目标框架，以及提供 MSBuild 集成  。
 
 若要在 [nuget.org](https://www.nuget.org/packages) 中查找本机包，请搜索 `tag:native`。 此类包通常提供 `.targets` 和 `.props` 文件，NuGet 可在将包添加到项目中时自动导入这些文件。
 
@@ -78,35 +78,35 @@ NuGet 支持本机 C++ 包，这些包可在 Visual Studio 的 C++ 项目中使�
 
 同时，使用 NuGet 包则意味着与此包建立依赖关系，因此使用者希望确保包具有耐用性和可靠性。 安装和直接测试包非常耗时，所以还可以通过使用包清单页面中的信息深入了解包的质量：
 
-- *下载统计信息*：在 nuget.org 中，包页面上的“统计信息”部分显示总下载次数、最新版本下载次数以及日平均下载次数。 数值较大则表示已有许多开发人员选择与此包建立依赖关系，这说明此包已获得认可。
+- *下载统计信息*：在 nuget.org 中，包页面上的“统计信息”部分显示总下载次数、最新版本下载次数以及日平均下载次数  。 数值较大则表示已有许多开发人员选择与此包建立依赖关系，这说明此包已获得认可。
 
     ![包清单页面上的下载统计数据](media/Finding-03-Downloads.png)
 
-- *版本历史记录*：在包页面上，可在“信息”下查找最新更新的日期和查看“版本历史记录”。 维护良好的包应具有最新更新和丰富的版本历史记录。 疏于维护的包则仅具有几次更新，并且通常已长时间未更新。
+- *版本历史记录*：在包页面上，可在“信息”下查找最新更新的日期和查看“版本历史记录”   。 维护良好的包应具有最新更新和丰富的版本历史记录。 疏于维护的包则仅具有几次更新，并且通常已长时间未更新。
 
     ![包清单页面上的版本历史记录](media/Finding-04-VersionHistory.png)
 
-- *最近安装*：在包页面上，选择“统计信息”下的“查看完整统计信息”。完整统计信息页面按版本号显示过去六周的包安装次数。 其他开发人员频繁使用的包通常比鲜有使用的包更值得信赖。
+- *最近安装*：在包页面上，选择“统计信息”下的“查看完整统计信息”   。完整统计信息页面按版本号显示过去六周的包安装次数。 其他开发人员频繁使用的包通常比鲜有使用的包更值得信赖。
 
-- 支持：在包页面上，选择“信息”下的“项目网站”（如果可用）可查看作者提供的支持选项。 具有专门网站的项目通常具备更好的支持。
+- 支持  ：在包页面上，选择“信息”  下的“项目网站”  （如果可用）可查看作者提供的支持选项。 具有专门网站的项目通常具备更好的支持。
 
-- *开发人员历史记录*：在包页面上，选择“所有者”下的某个所有者可查看其已发布的其他包。 具有多个包的所有者更有可能在未来继续对其工作成果提供支持。
+- *开发人员历史记录*：在包页面上，选择“所有者”下的某个所有者可查看其已发布的其他包  。 具有多个包的所有者更有可能在未来继续对其工作成果提供支持。
 
 - *开源贡献*：很多包都在开源存储库中进行维护，这使依赖于包的开发人员可直接提供 bug 修补程序和功能改进。 任何给定包的贡献历史记录也能反映出积极参与的开发人员的数量。
 
-- *联系所有者*：新晋开发人员同样可以制作出可供使用的优质包，为他们提供向 NuGet 生态系统引入新内容的机会是非常好的做法。 若有此想法，使用清单页面中“信息”下的“联系所有者”选项即可直接联系包开发人员。 他们很可能非常乐于与你合作来满足你的需求！
+- *联系所有者*：新晋开发人员同样可以制作出可供使用的优质包，为他们提供向 NuGet 生态系统引入新内容的机会是非常好的做法。 若有此想法，使用清单页面中“信息”下的“联系所有者”选项即可直接联系包开发人员   。 他们很可能非常乐于与你合作来满足你的需求！
 
-- 保留包 ID 前缀：许多包所有者已应用并授予了[保留包 ID 前缀](../reference/id-prefix-reservation.md)。 如果 [nuget.org](https://www.nuget.org/) 上或 Visual Studio 中的包 ID 旁有视觉对象复选标记，这意味着包所有者已满足我们的 ID 前缀预留[条件](../reference/id-prefix-reservation.md#id-prefix-reservation-criteria)。 这意味着包所有者清楚了解如何标识自己及其包。
+- 保留包 ID 前缀：许多包所有者已应用并授予了[保留包 ID 前缀](../nuget-org/id-prefix-reservation.md)  。 如果 [nuget.org](https://www.nuget.org/) 上或 Visual Studio 中的包 ID 旁有视觉对象复选标记，这意味着包所有者已满足我们的 ID 前缀预留[条件](../nuget-org/id-prefix-reservation.md#id-prefix-reservation-criteria)。 这意味着包所有者清楚了解如何标识自己及其包。
 
 > [!Note]
-> 应时刻留意包的许可条款 - 在 nuget.org 中的包清单页面上选择“许可信息”即可查看。如果包未指定许可条款，请直接通过包页面上的“联系所有者”链接与包所有者联系。 Microsoft 不向用户授予任何第三方包提供程序的知识产权许可，同时不对第三方提供的信息承担任何责任。
+> 应时刻留意包的许可条款 - 在 nuget.org 中的包清单页面上选择“许可信息”即可查看  。如果包未指定许可条款，请直接通过包页面上的“联系所有者”链接与包所有者联系  。 Microsoft 不向用户授予任何第三方包提供程序的知识产权许可，同时不对第三方提供的信息承担任何责任。
 
 ## <a name="license-url-deprecation"></a>许可证 URL 弃用
-在我们从 [licenseUrl](../reference/nuspec#licenseurl) 切换到 [license](../reference/nuspec#license) 时，一些 NuGet 客户端和 NuGet 源可能在某些情况下尚无法提供授权信息。 为了维护向后兼容性，许可证 URL 会指向介绍如何在此类情况下检索许可证信息的文档。
+在我们从 [licenseUrl](../reference/nuspec.md#licenseurl) 切换到 [license](../reference/nuspec.md#license) 时，一些 NuGet 客户端和 NuGet 源可能在某些情况下尚无法提供授权信息。 为了维护向后兼容性，许可证 URL 会指向介绍如何在此类情况下检索许可证信息的文档。
 
 如果通过单击包的许可证 URL 转到此页面，表示包中有许可证文件；并且
-* 你已连接到尚不知道如何向客户端解释和显示新许可证信息的源；或者
-* 要使用的客户端尚不知道如何解释和读取源可能提供的新许可证信息；或者
+* 你已连接到尚不知道如何向客户端解释和显示新许可证信息的源；或者 
+* 要使用的客户端尚不知道如何解释和读取源可能提供的新许可证信息；或者 
 * 这两者的组合
 
 下面介绍了如何读取包内的许可证文件信息：

@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5e362673acfab4b31c8a2e02a521afd8b19d2754
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: e3a40a521a3b16d9757ef1bbf2511a1537d8bddb
+ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812917"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425807"
 ---
 # <a name="creating-nuget-packages"></a>创建 NuGet 包
 
 无论包是什么用途或者它包含什么代码，均使用其中一个 CLI 工具（`nuget.exe` 或 `dotnet.exe`）将该功能打包进可以与任意数量的其他开发人员共享且可以由其使用的组件中。 若要安装 NuGet CLI 工具，请参阅[安装 NuGet 客户端工具](../install-nuget-client-tools.md)。 请注意，Visual Studio 不会自动包含 CLI 工具。
 
-- 对于使用 SDK 样式格式（[SDK 属性](/dotnet/core/tools/csproj#additions)）的 .NET Core 和 .NET Standard 项目，以及任何其他 SDK 样式项目，NuGet 直接使用项目文件中的信息创建包。 有关详细信息，请参阅[使用 Visual Studio 2017 创建 .NET Standard 包](../quickstart/create-and-publish-a-package-using-visual-studio.md)和[ NuGet 包和作为 MSBuild 目标还原](../reference/msbuild-targets.md)。
+- 对于使用 SDK 样式格式（[SDK 属性](/dotnet/core/tools/csproj#additions)）的 .NET Core 和 .NET Standard 项目，以及任何其他 SDK 样式项目，NuGet 直接使用项目文件中的信息创建包。 有关详细信息，请参阅[使用 Visual Studio 创建 .NET Standard 包](../quickstart/create-and-publish-a-package-using-visual-studio.md)和[ NuGet 包和作为 MSBuild 目标还原](../reference/msbuild-targets.md)。
 
 - 对于非 SDK 样式项目，按照本文中所述的步骤创建包。
 
@@ -27,7 +27,7 @@ ms.locfileid: "66812917"
 包以编译的代码（程序集）、符号和/或需要作为包传送的其他文件开头（请参阅[概述和工作流](overview-and-workflow.md)）。 尽管可以使用项目文件中信息的描述来保持编译程序集和包的同步，但此流程独立于编译或生成进入包的文件。
 
 > [!Note]
-> 本主题适用于非 SDK 样式项目，通常是除使用 Visual Studio 2017 和 NuGet 4.0+ 的 .NET Core 和 .NET Standard 项目之外的项目。
+> 本主题适用于非 SDK 样式项目，通常是除使用 Visual Studio 2017 和更高版本以及 NuGet 4.0+ 的 .NET Core 和 .NET Standard 项目之外的项目。
 
 ## <a name="deciding-which-assemblies-to-package"></a>确定要打包的程序集
 
@@ -408,7 +408,7 @@ nuget pack <project-name>.csproj
 
 NuGet 指示需要更正的 `.nuspec` 文件中是否有错误，例如忘记更改清单中的占位符值。
 
-一旦 `nuget pack` 成功，就有一个可以发布到合适库的 `.nupkg` 文件，如[发布包](../create-packages/publish-a-package.md)中所述。
+一旦 `nuget pack` 成功，就有一个可以发布到合适库的 `.nupkg` 文件，如[发布包](../nuget-org/publish-a-package.md)中所述。
 
 > [!Tip]
 > 一个检查创建后的包的有用方法是在[包资源管理器](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)工具中打开它。 这会为你提供包内容及其清单的图形视图。 还可以将生成的 `.nupkg` 文件重命名为 `.zip` 文件并直接浏览其内容。
@@ -445,7 +445,7 @@ NuGet 指示需要更正的 `.nuspec` 文件中是否有错误，例如忘记更
 
 发布包前，通常需要测试将包安装到项目的过程。 测试确保所有文件一定在项目中正确的位置结束。
 
-可以在 Visual Studio 中手动测试安装，或是使用常规[包安装步骤](../consume-packages/ways-to-install-a-package.md)在命令行上测试。
+可以在 Visual Studio 中手动测试安装，或是使用常规[包安装步骤](../consume-packages/overview-and-workflow.md#ways-to-install-a-nuget-package)在命令行上测试。
 
 对于自动测试，基本流程如下所示：
 
@@ -456,7 +456,7 @@ NuGet 指示需要更正的 `.nuspec` 文件中是否有错误，例如忘记更
 
 ## <a name="next-steps"></a>后续步骤
 
-创建包（`.nupkg` 文件）后，可以将其发布到选择的库，如[发布包](../create-packages/publish-a-package.md)中所述。
+创建包（`.nupkg` 文件）后，可以将其发布到选择的库，如[发布包](../nuget-org/publish-a-package.md)中所述。
 
 你可能还希望扩展包的功能，或者支持其他方案，如以下主题所述：
 
