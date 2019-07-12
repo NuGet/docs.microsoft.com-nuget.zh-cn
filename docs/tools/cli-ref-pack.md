@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 9db24b2dd6ced0869ac84b25f9796ded5df10f86
-ms.sourcegitcommit: d5a35a097e6b461ae791d9f66b3a85d5219d7305
+ms.openlocfilehash: c3a01b7747be96f02f7b93b3bf66f5d1783ceed7
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56145639"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842556"
 ---
 # <a name="pack-command-nuget-cli"></a>pack 命令 (NuGet CLI)
 
@@ -31,7 +31,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 ## <a name="options"></a>选项
 
-| Option | 描述 |
+| 选项 | 描述 |
 | --- | --- |
 | BasePath | 设置中定义的文件的基路径`.nuspec`文件。 |
 | Build | 指定应在生成包之前生成项目。 |
@@ -47,9 +47,10 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 | NoDefaultExcludes | 可防止默认排除的 NuGet 包文件和文件和文件夹启动带有圆点，如`.svn`和`.gitignore`。 |
 | NoPackageAnalysis | 指定 pack 不应在生成包后运行包分析。 |
 | OutputDirectory | 指定在其中存储创建的包的文件夹。 如果未不指定任何文件夹，则使用当前文件夹。 |
-| Properties | 其他选项后应显示最后一个命令行上。 指定重写项目文件中; 中的值的属性的列表请参阅[常用的 MSBuild 项目属性](/visualstudio/msbuild/common-msbuild-project-properties)属性名称。 此处的属性参数是一系列令牌 = 值对，用分号分隔，其中的每个匹配项`$token$`中`.nuspec`文件将替换为给定的值。 值可以为在引号内的字符串。 请注意，对于"配置"属性中，默认值"Debug"。 若要将更改为发布配置，请使用`-Properties Configuration=Release`。 |
+| 属性 | 其他选项后应显示最后一个命令行上。 指定重写项目文件中; 中的值的属性的列表请参阅[常用的 MSBuild 项目属性](/visualstudio/msbuild/common-msbuild-project-properties)属性名称。 此处的属性参数是一系列令牌 = 值对，用分号分隔，其中的每个匹配项`$token$`中`.nuspec`文件将替换为给定的值。 值可以为在引号内的字符串。 请注意，对于"配置"属性中，默认值"Debug"。 若要将更改为发布配置，请使用`-Properties Configuration=Release`。 |
 | Suffix | *(3.4.4+)* 将后缀追加到在内部生成的版本号，通常用于追加生成或其他预发布版本标识符。 例如，使用`-suffix nightly`将使用版本编号类似于创建包`1.2.3-nightly`。 后缀必须以字母以避免警告、 错误和使用不同版本的 NuGet 和 NuGet 包管理器可能不兼容问题开头。 |
 | Symbols | 指定包包含源和符号。 与一起使用时`.nuspec`文件，这将创建常规 NuGet 包文件和对应的符号包。 默认情况下它会创建[旧符号包](../create-packages/Symbol-Packages.md)。 符号包的新推荐格式为 .snupkg。 请参阅[创建符号包 (.snupkg)](../create-packages/Symbol-Packages-snupkg.md)。 |
+| SymbolPackageFormat | 指定符号包的格式： *symbols.nupkg* （旧版） 或*snupkg* （推荐）。 默认情况下它会创建[旧符号包](../create-packages/Symbol-Packages.md)。 请参阅[创建符号包 (.snupkg)](../create-packages/Symbol-Packages-snupkg.md)。 |
 | Tool | 指定应将该项目的输出文件放在`tool`文件夹。 |
 | Verbosity | 指定的输出中显示的详细信息：*正常*，*静默*，*详细*。 |
 | Version | 重写从版本号`.nuspec`文件。 |

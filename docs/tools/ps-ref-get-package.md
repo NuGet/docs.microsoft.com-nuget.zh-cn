@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: a28b29614dfe5abdeb24438b3451d96634a120db
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: d0d25cb6e21f6d0d42389e08340b6f1e1baf8a64
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551437"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842507"
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>Get-Package （Visual Studio 中的程序包管理器控制台）
 
-*本主题介绍中的命令[NuGet 包管理器控制台](package-manager-console.md)在 Windows 上的 Visual Studio 中。有关泛型的 PowerShell Get-package 命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*
+*本主题介绍中的命令[程序包管理器控制台](package-manager-console.md)在 Windows 上的 Visual Studio 中。有关泛型的 PowerShell Get-package 命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*
 
 检索安装在本地存储库中的包的列表，列出了与-ListAvailable 开关一起使用时的包源中可用的包或列出与-更新开关一起使用时可用的更新。
 
@@ -32,12 +32,12 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
 
 | 参数 | 描述 |
 | --- | --- |
-| 源 | 包的 URL 或文件夹路径。 本地文件夹路径可以是绝对的或相对于当前文件夹。 如果省略，`Get-Package`搜索当前所选的包源。 与-ListAvailable，一起使用时默认为 nuget.org。 |
+| Source | 包的 URL 或文件夹路径。 本地文件夹路径可以是绝对的或相对于当前文件夹。 如果省略，`Get-Package`搜索当前所选的包源。 与-ListAvailable，一起使用时默认为 nuget.org。 |
 | ListAvailable | 列出了默认值为 nuget.org 的包源中可用的包。除非另有指定的 PageSize 和/或-第一个显示默认值为 50 的包。 |
 | 更新 | 列出包源中有可用更新的包。 |
 | ProjectName | 获取已安装的包的项目。 如果省略，则返回安装整个解决方案的项目。 |
 | 筛选器 | 用来将其应用到包 ID、 说明和标记来缩小包列表的筛选器字符串。 |
-| First | 若要从列表开头返回的包数。 如果未指定，默认为 50。 |
+| 第一个 | 若要从列表开头返回的包数。 如果未指定，默认为 50。 |
 | Skip | 省略了第一个&lt;int&gt;显示的列表中的包。  |
 | AllVersions | 显示所有可用版本的每个包而不是仅最新版本。 |
 | IncludePrerelease | 在结果中包括预发行包。 |
@@ -47,7 +47,7 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
 
 ## <a name="common-parameters"></a>通用参数
 
-`Get-Package` 支持以下[常见的 PowerShell 参数](http://go.microsoft.com/fwlink/?LinkID=113216)： 调试、 错误操作、 ErrorVariable、 OutBuffer、 OutVariable、 PipelineVariable、 Verbose、 WarningAction 和 WarningVariable。
+`Get-Package` 支持以下[常见的 PowerShell 参数](http://go.microsoft.com/fwlink/?LinkID=113216):调试、 错误操作、 ErrorVariable、 OutBuffer、 OutVariable、 PipelineVariable，详细、 WarningAction 和 WarningVariable。
 
 ## <a name="examples"></a>示例
 

@@ -1,5 +1,5 @@
 ---
-title: 安装和管理 NuGet 包在 Visual Studio 中使用 PowerShell
+title: 安装和管理控制台中使用 Visual Studio 中的 NuGet 包
 description: 使用 Visual Studio 中的 NuGet 包管理器控制台，用于处理包的说明。
 author: karann-msft
 ms.author: karann
@@ -7,14 +7,14 @@ ms.date: 06/24/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 11ec25598d3110ba84dec5044642e205e13346af
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 91ab3859994e5ae738c6637219681ebbfc92d420
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426216"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842587"
 ---
-# <a name="install-and-manage-packages-using-powershell-in-visual-studio"></a>安装和管理包在 Visual Studio 中使用 PowerShell
+# <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>安装和使用 Visual Studio (PowerShell) 中的包管理器控制台管理包
 
 NuGet 包管理器控制台，可以使用[NuGet PowerShell 命令](../tools/powershell-reference.md)查找、 安装、 卸载和更新 NuGet 包。 使用控制台是在包管理器 UI 不提供一种方法来执行操作的情况下必需的。 若要使用`nuget.exe`CLI 命令在控制台中，请参阅[使用 nuget.exe CLI 在控制台中](#using-the-nugetexe-cli-in-the-console)。
 

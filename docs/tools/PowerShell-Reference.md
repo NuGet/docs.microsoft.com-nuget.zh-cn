@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/02/2017
 ms.topic: reference
-ms.openlocfilehash: 977e06d36962366abd69f1c7f21ef33eca4e5029
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 425ba736eba4609ebd6b5185ae3f1f976ab07a67
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426127"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842565"
 ---
 # <a name="powershell-reference"></a>PowerShell 参考
 
-包管理器控制台提供了下面列出与 NuGet 交互通过特定命令的 Windows 上的 Visual Studio 中的 PowerShell 接口。 （在控制台不是在 Visual Studio for mac 中目前可用的）使用控制台的指南，请参阅[安装和管理包使用 PowerShell](../tools/package-manager-console.md)主题。
+包管理器控制台提供了下面列出与 NuGet 交互通过特定命令的 Windows 上的 Visual Studio 中的 PowerShell 接口。 （在控制台不是在 Visual Studio for mac 中目前可用的）使用控制台的指南，请参阅[安装和管理包使用程序包管理器控制台](../tools/package-manager-console.md)主题。
 
 > [!Tip]
 > 所有 PowerShell 命令仅都与包使用。 任何 PowerShell 命令不与创建和发布包除外的范围内包也可以是其他包的使用者。

@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: ae60473fbb716b23f40b0605be8aaa8515802315
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: c95479103be2cba3b4eb6964ea761870477863bd
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551638"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842471"
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>Uninstall-Package （Visual Studio 中的程序包管理器控制台）
 
-*本主题介绍中的命令[NuGet 包管理器控制台](package-manager-console.md)在 Windows 上的 Visual Studio 中。有关泛型的 PowerShell 卸载程序包命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*
+*本主题介绍中的命令[程序包管理器控制台](package-manager-console.md)在 Windows 上的 Visual Studio 中。有关泛型的 PowerShell 卸载程序包命令，请参阅[PowerShell PackageManagement 引用](/powershell/module/packagemanagement/?view=powershell-6)。*
 
 从项目中，有选择性地删除其依赖项中删除包。 如果其他程序包依赖于此包，该命令将失败，除非选项指定了 – Force。
 
@@ -32,7 +32,7 @@ Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [
 | 参数 | 描述 |
 | --- | --- |
 | Id | （必需）要卸载的包的标识符。 -Id 开关本身是可选的。 |
-| 版本 | 若要卸载，包的版本默认为当前安装的版本。 |
+| Version | 若要卸载，包的版本默认为当前安装的版本。 |
 | RemoveDependencies | 卸载程序包及其未使用的依赖项。 也就是说，如果任何依赖项具有依赖于它的另一个包，它会跳过。 |
 | ProjectName | 要从中卸载程序包，默认值为默认项目项目。 |
 | 强制 | 即使其他程序包依赖于它强制要卸载的包。 |
@@ -42,7 +42,7 @@ Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [
 
 ## <a name="common-parameters"></a>通用参数
 
-`Uninstall-Package` 支持以下[常见的 PowerShell 参数](http://go.microsoft.com/fwlink/?LinkID=113216)： 调试、 错误操作、 ErrorVariable、 OutBuffer、 OutVariable、 PipelineVariable、 Verbose、 WarningAction 和 WarningVariable。
+`Uninstall-Package` 支持以下[常见的 PowerShell 参数](http://go.microsoft.com/fwlink/?LinkID=113216):调试、 错误操作、 ErrorVariable、 OutBuffer、 OutVariable、 PipelineVariable，详细、 WarningAction 和 WarningVariable。
 
 ## <a name="examples"></a>示例
 

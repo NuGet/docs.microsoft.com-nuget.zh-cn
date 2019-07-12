@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: e4c57c0580fe9018703291c08d60e559f95183dc
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: fd6ecab05a392a2a0b4ddf1ac15eb108f2653703
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426208"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842403"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -32,7 +32,7 @@ ms.locfileid: "67426208"
 
 - 使用`.nuspec`与`nuget.exe pack`非 SDK 样式项目使用`packages.config`。
 
-- 一个`.nuspec`文件不需要为 SDK 样式项目创建包 (.NET Core 和.NET Standard 项目，使用[SDK 属性](/dotnet/core/tools/csproj#additions))。 (请注意，`.nuspec`创建包时生成。)
+- 一个`.nuspec`创建的包不需要文件[SDK 样式项目](../resources/check-project-format.md)(.NET Core 和.NET Standard 项目使用的通常[SDK 属性](/dotnet/core/tools/csproj#additions))。 (请注意，`.nuspec`创建包时生成。)
 
    如果要创建包使用`dotnet.exe pack`或`msbuild pack target`，我们建议您[包含的所有属性](../reference/msbuild-targets.md#pack-target)是通常在`.nuspec`改为文件在项目文件中。 但是，你也可以选择向[使用`.nuspec`文件打包使用`dotnet.exe`或`msbuild pack target` ](../reference/msbuild-targets.md#packing-using-a-nuspec)。
 
@@ -72,35 +72,42 @@ ms.locfileid: "67426208"
 这些元素必须出现在 `<metadata>` 元素中。
 
 #### <a name="id"></a>id 
-不区分大小写的包标识符，在 nuget.org 或包驻留的任意库中必须是唯一的。 ID 不得包含空格或对 URL 无效的字符，通常遵循 .NET 命名空间规则。 有关指南，请参阅[选择唯一的包标识符](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)。
+不区分大小写的包标识符，在 nuget.org 或包驻留的任意库中必须是唯一的。 ID 不得包含空格或对 URL 无效的字符，通常遵循 .NET 命名空间规则。 有关指南，请参阅[选择唯一的包标识符](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)。
 #### <a name="version"></a>version
 遵循 major.minor.patch 模式的包版本  。 版本号可能包括预发布后缀，如[包版本控制](../reference/package-versioning.md#pre-release-versions)中所述。 
-#### <a name="description"></a>说明
+#### <a name="description"></a>description
 用于 UI 显示的包的详细说明。 
 #### <a name="authors"></a>作者
 包创建者的逗号分隔列表，与 nuget.org 上的配置文件名称一致。这些信息显示在 nuget.org 上的 NuGet 库中，并用于交叉引用同一作者的包。 
 
 ### <a name="optional-metadata-elements"></a>可选元数据元素
 
-#### <a name="title"></a>标题
-明了易用的包标题，通常用在 UI 显示中，如 nuget.org 上和 Visual Studio 中包管理器上的那样。 如果未指定，则使用包 ID。 
 #### <a name="owners"></a>所有者
 使用 nuget.org 上的配置文件名称的包创建者的逗号分隔列表。这通常和 `authors` 中的列表相同，将包上传到 nuget.org 时被忽略。请参阅[在 nuget.org 上管理包所有者](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg)。 
+
 #### <a name="projecturl"></a>projectUrl
 包的主页 URL，通常显示在 UI 中以及 nuget.org 中。 
+
 #### <a name="licenseurl"></a>licenseUrl
 > [!Important]
 > 将弃用 licenseUrl。 改为使用许可证。
 
-包的许可证 URL，通常显示在 UI 和 nuget.org 中。
+包的许可证 URL，通常显示在 Ui 中 nuget.org 等。
+
 #### <a name="license"></a>许可证
-SPDX 许可证表达式或包中许可证文件的路径，通常显示在 UI 和 nuget.org 中。如果许可包在常见如 BSD 2 子句或 MIT 许可证下的使用关联的 SPDX 许可证标识符。<br>例如： `<license type="expression">MIT</license>`
+一个 SPDX 许可证表达式或通常显示在 Ui 中，如 nuget.org 的包中的许可证文件的路径。如果要许可的常见许可，如 MIT 或 BSD 2 子句，包使用关联[SPDX 许可证标识符](https://spdx.org/licenses/)。 例如:
 
-下面是 [SPDX 许可证标识符](https://spdx.org/licenses/)的完整列表。 NuGet.org 在使用许可证类型表达式时只接受 OSI 或 FSF 批准的许可证。
+`<license type="expression">MIT</license>`
 
-如果您的包常见的多个许可证的许可，则可以指定复合许可证 using [SPDX 表达式语法版本 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)。<br>例如： `<license type="expression">BSD-2-Clause OR MIT</license>`
+> [!Note]
+> NuGet.org 只接受由开放源计划或免费软件基金会批准的许可证表达式。
 
-如果正在使用许可证尚未分配 SPDX 标识符，或者它是自定义许可证，你可以将打包文件 (仅`.txt`或`.md`) 使用的许可证文本。 例如：
+如果您的包常见的多个许可证的许可，则可以指定复合许可证 using [SPDX 表达式语法版本 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)。 例如:
+
+`<license type="expression">BSD-2-Clause OR MIT</license>`
+
+如果使用不受许可证表达式的自定义许可证，你可以将打包`.txt`或`.md`具有许可证的文本的文件。 例如:
+
 ```xml
 <package>
   <metadata>
@@ -140,30 +147,41 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 一个布尔值，用于指定客户端是否必须提示使用者接受包许可证后才可安装包。
+
 #### <a name="developmentdependency"></a>developmentDependency
 (2.8+) 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中  。 使用 PackageReference (NuGet 4.8 +)，此标志也意味着它将从编译排除编译时资产。 请参阅[DevelopmentDependency 支持 PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)
+
 #### <a name="summary"></a>摘要
 用于 UI 显示的包的简要说明。 如果省略，则使用 `description` 的截断版本。
+
 #### <a name="releasenotes"></a>releaseNotes
 (1.5+) 此版本包中所作更改的说明，通常代替包说明用在 UI 中，如 Visual Studio 包管理器的“更新”选项卡   。
+
 #### <a name="copyright"></a>copyright
 (1.5+) 包的版权详细信息  。
+
 #### <a name="language"></a>语言
 包的区域设置 ID。 请参阅[创建本地化包](../create-packages/creating-localized-packages.md)。
+
 #### <a name="tags"></a>标记
 以空格分隔的标记和关键字列表，描述包并通过搜索和筛选辅助包的可发现性。 
+
 #### <a name="serviceable"></a>可维护性 
 (3.3+) 仅限内部使用  。
+
 #### <a name="repository"></a>储存库
 存储库的元数据，包括四个可选属性：*类型*并*url* *（4.0 +）* ，以及*分支*和*提交* *（4.6 +）* 。 这些特性，你可以将.nupkg 映射到存储库可能会获取与生成它，作为单独的分支或包生成的提交进行了详细说明。 这应该是版本控制软件可以直接调用的公开发布 url。 它不应为 html 页，因为这意味着计算机。 对于链接到项目页，使用`projectUrl`字段，而是。
 
 #### <a name="minclientversion"></a>minClientVersion
 指定可安装此包的最低 NuGet 客户端版本，并由 nuget.exe 和 Visual Studio 程序包管理器强制实施。 只要包依赖于特定 NuGet 客户端版本中添加的 `.nuspec` 文件的特定功能，就会使用此功能。 例如，使用 `developmentDependency` 特性的包应为 `minClientVersion` 指定“2.8”。 同样，使用 `contentFiles` 元素（请参阅下一部分）的包应将 `minClientVersion` 设置为“3.3”。 另请注意，早于 2.5 的 NuGet 客户端无法识别此标记，所以无论 `minClientVersion` 包含什么内容，它们总是拒绝安装该包  。
 
+#### <a name="title"></a>标题
+显示了可以在一些 UI 中使用的包的用户友好标题。 （nuget.org 和 Visual Studio 中的包管理器不显示标题）
+
 #### <a name="collection-elements"></a>集合元素
 
 #### <a name="packagetypes"></a>packageTypes
-*(3.5+)* 如果不是传统的依赖项包，则为指定包类型的包括零个或多个 `<packageType>` 元素的集合。 每个 packageType 都具有 name 和 version 特性   。 请参阅[设置包类型](../create-packages/creating-a-package.md#setting-a-package-type)。
+*(3.5+)* 如果不是传统的依赖项包，则为指定包类型的包括零个或多个 `<packageType>` 元素的集合。 每个 packageType 都具有 name 和 version 特性   。 请参阅[设置包类型](../create-packages/set-package-type.md)。
 #### <a name="dependencies"></a>依赖项
 零个或多个 `<dependency>` 元素的集合，用来指定包的依赖项。 每个 dependency 都具有 id、version、include (3.x+) 和 exclude (3.x+) 特性     。 请参阅下面的[依赖项](#dependencies-element)。
 #### <a name="frameworkassemblies"></a>frameworkAssemblies
