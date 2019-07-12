@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 0325aa4ddd718a901dd6a09cdf86cae260e326ab
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: fd738f15b461051c4e9413b3035456c687979b97
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547163"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842267"
 ---
 # <a name="open-packagepage-package-manager-console-in-visual-studio"></a>Open-PackagePage （Visual Studio 中的程序包管理器控制台）
 
-*在 3.0 + 中; 已弃用仅在内可用[NuGet 包管理器控制台](package-manager-console.md)在 Windows 上的 Visual Studio 中。*
+*在 3.0 + 中; 已弃用仅在内可用[程序包管理器控制台](package-manager-console.md)在 Windows 上的 Visual Studio 中。*
 
 将启动默认浏览器与项目、 许可证或指定包的报告滥用 URL。
 
@@ -30,8 +30,8 @@ Open-PackagePage [-Id] <string> [-Version] [-Source] [-License] [-ReportAbuse]
 | 参数 | 描述 |
 | --- | --- |
 | Id | 所需包的包 ID。 -Id 开关本身是可选的。 |
-| 版本 | 默认为最新版本的包的版本。 |
-| 源 | 包源，默认设置为源下拉列表中选定的源。 |
+| Version | 默认为最新版本的包的版本。 |
+| Source | 包源，默认设置为源下拉列表中选定的源。 |
 | 许可证 | 包的许可证 URL 浏览器中打开。 如果-许可证和-ReportAbuse 均未指定，在浏览器将打开包的项目 URL。 |
 | ReportAbuse | 包的报告滥用 URL 浏览器中打开。 如果-许可证和-ReportAbuse 均未指定，在浏览器将打开包的项目 URL。 |
 | PassThru | 显示的 URL;使用-WhatIf 若要禁止显示打开浏览器。 |
@@ -40,7 +40,7 @@ Open-PackagePage [-Id] <string> [-Version] [-Source] [-License] [-ReportAbuse]
 
 ## <a name="common-parameters"></a>通用参数
 
-`Open-PackagePage` 支持以下[常见的 PowerShell 参数](http://go.microsoft.com/fwlink/?LinkID=113216)： 调试、 错误操作、 ErrorVariable、 OutBuffer、 OutVariable、 PipelineVariable、 Verbose、 WarningAction 和 WarningVariable。
+`Open-PackagePage` 支持以下[常见的 PowerShell 参数](http://go.microsoft.com/fwlink/?LinkID=113216):调试、 错误操作、 ErrorVariable、 OutBuffer、 OutVariable、 PipelineVariable，详细、 WarningAction 和 WarningVariable。
 
 ## <a name="examples"></a>示例
 
