@@ -15,7 +15,7 @@
 ### [Visual Studio for Mac](/visualstudio/mac/nuget-walkthrough?toc=/nuget/toc.json)
 ### [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md)
 ### [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md)
-### [PowerShell](tools/package-manager-console.md)
+### [包管理器控制台 (PowerShell)](tools/package-manager-console.md)
 ## 配置 NuGet
 ### 包还原选项
 #### [还原选项](consume-packages/package-restore.md)
@@ -31,21 +31,23 @@
 ### [packages.config](reference/packages-config.md)
 # 创建包
 ## [概述和工作流](create-packages/overview-and-workflow.md)
-## [创建包 - nuget.exe CLI](create-packages/creating-a-package.md)
+## [创建包](create-packages/creating-a-package.md)
 ## [使用 MSBuild 创建包](reference/msbuild-targets.md)
 ## [支持多个目标框架](create-packages/supporting-multiple-target-frameworks.md)
 ## [构建预发行包](create-packages/prerelease-packages.md)
 ## [创建符号包](create-packages/symbol-packages-snupkg.md)
 ## 高级任务
 ### [修改源代码和配置文件](create-packages/source-and-config-file-transformations.md)
-### [创建本地化的包](create-packages/creating-localized-packages.md)
 ### [选择项目引用的程序集](create-packages/select-assemblies-referenced-by-projects.md)
+### [设置包类型](create-packages/set-package-type.md)
+### [创建本地化的包](create-packages/creating-localized-packages.md)
 ## 针对特定内容的指南
 ### [创建 UWP 包](guides/create-uwp-packages.md)
 ### [创建本机包](create-packages/native-packages.md)
 ### [以 NuGet 包的形式创建 UI 控件](guides/create-UI-controls.md)
 ### [以 NuGet 包的形式创建分析器](reference/analyzers-conventions.md)
 ### [使用 Visual Studio 2015 为 Xamarin 创建包](guides/create-packages-for-xamarin.md)
+### [使用 COM 互操作程序集创建包](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## 签名包
 ### [对包进行签名](create-packages/sign-a-package.md)
 ### [已签名的包签名和要求](reference/signed-packages-reference.md)
@@ -335,4 +337,5 @@
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
 ## [常见问题解答](faqs/nuget-faq.md)
+## [项目格式](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)
