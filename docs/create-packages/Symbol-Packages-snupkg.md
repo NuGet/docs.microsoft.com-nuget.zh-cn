@@ -16,12 +16,12 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 0d82cf8614b88247bc3a3ba3019c11bf1b5e2593
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 9f9cdd188cf2ec678bc9047604e618f1af9124ae
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426806"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842456"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
@@ -54,7 +54,7 @@ nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 
 1. 使用 `dotnet pack MyPackage.csproj` 或 `msbuild -t:pack MyPackage.csproj` 打包项目。
 
-[`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) 属性可以有下列两个值之一：`symbols.nupkg`（默认值）或 `snupkg`。 如果未指定 [`SymbolPackageFormat`](/dotnet/core/tools/csproj.md#symbolpackageformat) 属性，将会创建旧的符号包。
+[`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) 属性可以有下列两个值之一：`symbols.nupkg`（默认值）或 `snupkg`。 如果未指定 [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) 属性，将会创建旧的符号包。
 
 > [!Note]
 > 仍支持旧格式 `.symbols.nupkg`，但仅出于兼容性原因（请参阅[旧版符号包](Symbol-Packages.md)）。 NuGet.org 的符号服务器只接受新的符号包格式，即 `.snupkg`。

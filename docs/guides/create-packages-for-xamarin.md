@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: tutorial
-ms.openlocfilehash: d737b70febd1e18aa8a39cc73a9a9cf333f758c6
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 81f78de02d9b6510f195e04c78436e38f9b7353d
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426840"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842425"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>使用 Visual Studio 2015 为 Xamarin 创建包
 
@@ -111,7 +111,7 @@ namespace Plugin.LoggingLibrary.Abstractions
     ```
 
 1. 将该文件重命名为 `LoggingLibrary.nuspec` 并在编辑器中打开。
-1. 将文件更新为与以下内容匹配，并将 YOUR_NAME 替换为适当的值。 具体而言，`<id>` 值在 nuget.org 中必须是唯一的（请参阅[创建包](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)中所述的命名约定）。 另请注意，还必须更新创建者和说明标记，否则在打包步骤中会出现错误。
+1. 将文件更新为与以下内容匹配，并将 YOUR_NAME 替换为适当的值。 具体而言，`<id>` 值在 nuget.org 中必须是唯一的（请参阅[创建包](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)中所述的命名约定）。 另请注意，还必须更新创建者和说明标记，否则在打包步骤中会出现错误。
 
     ```xml
     <?xml version="1.0"?>
@@ -268,5 +268,5 @@ nuget pack LoggingLibrary.nuspec
 - [符号包](../create-packages/symbol-packages.md)
 - [包版本控制](../reference/package-versioning.md)
 - [支持多个 .NET Framework 版本](../create-packages/supporting-multiple-target-frameworks.md)
-- [将 MSBuild 属性和目标包含到包中](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
+- [将 MSBuild 属性和目标包含到包中](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [创建本地化包](../create-packages/creating-localized-packages.md)

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 02/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: af0c42853a9e407557a010ff2793406499b4b2ef
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 1198a781543e581f55740cc0ae5a212d3f8a8b61
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426884"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842445"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>使用 Visual Studio 2015 创建 NET Standard 和 .NET Framework 包
 
@@ -68,7 +68,7 @@ ms.locfileid: "67426884"
     nuget spec
     ```
 
-1. 在编辑器中打开 `AppLogger.nuspec`，将其更新为与以下内容匹配，并将 YOUR_NAME 替换为适当的值。 具体而言，`<id>` 值在 nuget.org 中必须是唯一的（请参阅[创建包](../create-packages/creating-a-package.md#choosing-a-unique-package-identifier-and-setting-the-version-number)中所述的命名约定）。 另请注意，还必须更新创建者和说明标记，否则在打包步骤中会出现错误。
+1. 在编辑器中打开 `AppLogger.nuspec`，将其更新为与以下内容匹配，并将 YOUR_NAME 替换为适当的值。 具体而言，`<id>` 值在 nuget.org 中必须是唯一的（请参阅[创建包](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)中所述的命名约定）。 另请注意，还必须更新创建者和说明标记，否则在打包步骤中会出现错误。
 
     ```xml
     <?xml version="1.0"?>
@@ -167,7 +167,7 @@ nuget pack AppLogger.nuspec
 
 - [Nuspec 引用](../reference/nuspec.md)
 - [支持多个 .NET Framework 版本](../create-packages/supporting-multiple-target-frameworks.md)
-- [将 MSBuild 属性和目标包含到包中](../create-packages/creating-a-package.md#including-msbuild-props-and-targets-in-a-package)
+- [将 MSBuild 属性和目标包含到包中](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [创建本地化包](../create-packages/creating-localized-packages.md)
 - [符号包](../create-packages/symbol-packages.md)
 - [包版本控制](../reference/package-versioning.md)

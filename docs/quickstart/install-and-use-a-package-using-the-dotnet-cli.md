@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 1060d98278fed89ac63ee17c1896ae8bdce72a9e
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 0d637c441cf9f36e8e3e04e47b524b2defecae52
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426167"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67841669"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>快速入门：使用 dotnet CLI 安装并使用包
 
@@ -23,7 +23,7 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 
 ## <a name="prerequisites"></a>系统必备
 
-- [.NET Core SDK](https://www.microsoft.com/net/download/)，提供 `dotnet` 命令行工具。
+- [.NET Core SDK](https://www.microsoft.com/net/download/)，提供 `dotnet` 命令行工具。 从 Visual Studio 2017 开始，dotnet CLI 将自动随任何与 .NET Core 相关的工作负载一起安装。
 
 ## <a name="create-a-project"></a>创建项目
 

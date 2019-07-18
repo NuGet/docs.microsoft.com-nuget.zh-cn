@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8bc6af90638408847af6e97cebcbf428f1d5d886
-ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
+ms.openlocfilehash: 20a55c6ba89478e70d8e6837aaebc1b7b7754a93
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67467765"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842435"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
@@ -135,7 +135,7 @@ Visual Studio 自动化对象模型中的顶层对象称为 DTE （开发工具�
 
 如何关闭包还原？ 
 
-请参阅[启用和禁用包还原](../consume-packages/package-restore.md#enable-and-disable-package-restore)。
+请参阅[启用和禁用包还原](../consume-packages/package-restore.md#enable-and-disable-package-restore-visual-studio)。
 
 安装具有远程依赖项的本地包时，为何会出现“无法解析依赖项”错误？ 
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: 051fcc355fb78c0ab208125c2295b6316236fd46
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 4e96d9969c8b4570ee69501d6529986f891ea4dc
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426364"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842605"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>快速入门：创建并发布包 (dotnet CLI)
 
@@ -18,7 +18,7 @@ ms.locfileid: "67426364"
 
 ## <a name="prerequisites"></a>系统必备
 
-1. 安装包括 `dotnet` CLI 的 [.NET Core SDK](https://www.microsoft.com/net/download/)。
+1. 安装包括 `dotnet` CLI 的 [.NET Core SDK](https://www.microsoft.com/net/download/)。 从 Visual Studio 2017 开始，dotnet CLI 将自动随任何与 .NET Core 相关的工作负载一起安装。
 
 1. 如果你还没有帐户，请[在 nuget.org 上注册一个免费帐户](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)。 创建新帐户会发送确认电子邮件。 必须先确认该帐户，才能上传包。
 
