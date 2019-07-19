@@ -1,22 +1,22 @@
 ---
-title: nuget.config 文件引用
+title: nuget .config 文件引用
 description: NuGet.Config 文件引用，包括配置、bindingRedirects、packageRestore、解决方案和 packageSource 节。
 author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: reference
-ms.openlocfilehash: 2eceb6e94a353cb29b83aea114c6cea2acbac266
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: b03bb8da0191a679671e5898ac70fff2024d52f2
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426149"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317224"
 ---
-# <a name="nugetconfig-reference"></a>nuget.config 引用
+# <a name="nugetconfig-reference"></a>nuget.exe 引用
 
-通过在不同的设置控制 NuGet 行为`NuGet.Config`文件中所述[常见 NuGet 配置](../consume-packages/configuring-nuget-behavior.md)。
+NuGet 行为由不同`NuGet.Config`文件中的设置控制, 如[常见 NuGet 配置](../consume-packages/configuring-nuget-behavior.md)中所述。
 
-`nuget.config` 是包含顶级 `<configuration>` 节点的 XML 文件，而该节点包含本主题中所述的节元素。 每个部分包含零个或多个项。 请参阅[示例配置文件](#example-config-file)。 设置名称不区分大小写，并且值可以使用[环境变量](#using-environment-variables)。
+`nuget.config` 是包含顶级 `<configuration>` 节点的 XML 文件，而该节点包含本主题中所述的节元素。 每节都包含零个或多个项。 请参阅[示例配置文件](#example-config-file)。 设置名称不区分大小写，并且值可以使用[环境变量](#using-environment-variables)。
 
 本主题内容：
 
@@ -41,18 +41,18 @@ ms.locfileid: "67426149"
 
 ## <a name="config-section"></a>配置节
 
-包含杂项配置设置，可使用 [`nuget config` 命令](../tools/cli-ref-config.md)设置。
+包含杂项配置设置，可使用 [`nuget config` 命令](../reference/cli-reference/cli-ref-config.md)设置。
 
-`dependencyVersion` 并`repositoryPath`仅适用于使用的项目`packages.config`。 `globalPackagesFolder` 仅适用于使用 PackageReference 格式的项目。
+`dependencyVersion`和`repositoryPath`仅适用于使用`packages.config`的项目。 `globalPackagesFolder`仅适用于使用 PackageReference 格式的项目。
 
-| 键 | 值 |
+| Key | 值 |
 | --- | --- |
 | dependencyVersion（仅限于 `packages.config`） | 包安装、还原和更新的默认 `DependencyVersion` 值（未直接指定 `-DependencyVersion` 开关时）。 NuGet 包管理器 UI 也使用此值。 值为 `Lowest`、`HighestPatch`、`HighestMinor`、`Highest`。 |
-| globalPackagesFolder （仅限使用 PackageReference 的项目） | 默认全局包文件夹的位置。 默认值为 `%userprofile%\.nuget\packages` (Windows) 或 `~/.nuget/packages` (Mac/Linux)。 相对路径可在项目特定的 `nuget.config` 文件中使用。 由 nuget_packages 重写环境变量优先替代此设置。 |
-| repositoryPath（仅限于 `packages.config`） | 安装 NuGet 包的位置，而非默认的 `$(Solutiondir)/packages` 文件夹。 相对路径可在项目特定的 `nuget.config` 文件中使用。 由 nuget_packages 重写环境变量优先替代此设置。 |
+| globalPackagesFolder (仅限使用 PackageReference 的项目) | 默认全局包文件夹的位置。 默认值为 `%userprofile%\.nuget\packages` (Windows) 或 `~/.nuget/packages` (Mac/Linux)。 相对路径可在项目特定的 `nuget.config` 文件中使用。 此设置由 NUGET_PACKAGES 环境变量重写, 该变量优先。 |
+| repositoryPath（仅限于 `packages.config`） | 安装 NuGet 包的位置，而非默认的 `$(Solutiondir)/packages` 文件夹。 相对路径可在项目特定的 `nuget.config` 文件中使用。 此设置由 NUGET_PACKAGES 环境变量重写, 该变量优先。 |
 | defaultPushSource | 如果操作未找到任何其他包源，则会标识应用作默认值的包源 URL 或路径。 |
 | http_proxy http_proxy.user http_proxy.password no_proxy | 连接到包源时要使用的代理设置；`http_proxy` 应为 `http://<username>:<password>@<domain>` 格式。 密码已加密，且不能手动添加。 对于 `no_proxy`，该值是绕过代理服务器的域的列表（以逗号分隔）。 可将 http_proxy 和 no_proxy 环境变量交替用于这些值。 有关其他详细信息，请参阅 [NuGet 代理设置](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com)。 |
-| signatureValidationMode | 指定用来验证包安装的包签名和还原的验证模式。 值为`accept`， `require`。 默认为 `accept`。
+| signatureValidationMode | 指定用于验证包签名以便安装和还原的验证模式。 值为`accept`、 `require`。 默认为 `accept`。
 
 **示例**：
 
@@ -70,7 +70,7 @@ ms.locfileid: "67426149"
 
 在安装包时，配置 NuGet 是否执行自动绑定重定向。
 
-| 键 | 值 |
+| Key | 值 |
 | --- | --- |
 | skip | 指示是否跳过自动绑定重定向的布尔。 默认值为 false。 |
 
@@ -86,7 +86,7 @@ ms.locfileid: "67426149"
 
 在生成期间控制包还原。
 
-| 键 | 值 |
+| Key | 值 |
 | --- | --- |
 | enabled | 指示 NuGet 是否可执行自动还原的布尔。 还可以使用 `True` 的值设置 `EnableNuGetPackageRestore` 环境变量，而不是在配置文件中设置此密钥。 |
 | 自动 | 指示 NuGet 是否应在生成期间检查缺少的包。 |
@@ -104,7 +104,7 @@ ms.locfileid: "67426149"
 
 控制解决方案的 `packages` 文件夹是否包括在源代码管理中。 此节仅适用于解决方案文件夹中的 `nuget.config` 文件。
 
-| 键 | 值 |
+| Key | 值 |
 | --- | --- |
 | disableSourceControlIntegration | 指示在使用源代码管理时是否忽略包文件夹的布尔。 默认值为 False。 |
 
@@ -118,17 +118,17 @@ ms.locfileid: "67426149"
 
 ## <a name="package-source-sections"></a>包源节
 
-`packageSources`， `packageSourceCredentials`， `apikeys`， `activePackageSource`，`disabledPackageSources`和`trustedSigners`一起协作来配置 NuGet 在安装、 还原和更新操作过程中如何使用包存储库的所有工作。
+`packageSourceCredentials` 、、`activePackageSource`、和`trustedSigners`都一起使用,以配置在安装、还原和更新操作过程中NuGet如何处理包存储库。`apikeys` `disabledPackageSources` `packageSources`
 
-[ `nuget sources`命令](../tools/cli-ref-sources.md)通常用于管理这些设置，除`apikeys`使用管理[`nuget setapikey`命令](../tools/cli-ref-setapikey.md)，和`trustedSigners`它托管使用[`nuget trusted-signers`命令](../tools/cli-ref-trusted-signers.md)。
+[ `nuget setapikey` ](../reference/cli-reference/cli-ref-setapikey.md) `apikeys` `trustedSigners` [ `nuget trusted-signers` ](../reference/cli-reference/cli-ref-trusted-signers.md) [命令`nuget sources` ](../reference/cli-reference/cli-ref-sources.md)通常用于管理这些设置, 但使用命令管理的和使用命令管理的设置除外。
 
 请注意，nuget.org 的源 URL 是 `https://api.nuget.org/v3/index.json`。
 
 ### <a name="packagesources"></a>packageSources
 
-列出所有已知包源。 在还原操作期间，与任何项目使用 PackageReference 格式，被忽略的顺序。 NuGet 会遵守安装源的顺序和项目使用与更新操作`packages.config`。
+列出所有已知包源。 在还原操作和任何使用 PackageReference 格式的项目中, 将忽略此顺序。 NuGet 遵循使用`packages.config`的项目进行安装和更新操作的源顺序。
 
-| 键 | 值 |
+| Key | 值 |
 | --- | --- |
 | （要分配给包源的名称） | 包源的路径或 URL。 |
 
@@ -146,7 +146,7 @@ ms.locfileid: "67426149"
 
 存储源的用户名和密码，通常通过 `nuget sources` 使用 `-username` 和 `-password` 开关指定。 默认情况下密码会进行加密，除非还使用了 `-storepasswordincleartext` 选项。
 
-| 键 | 值 |
+| Key | 值 |
 | --- | --- |
 | username | 纯文本形式的源用户名。 |
 | 密码 | 源的加密密码。 |
@@ -186,9 +186,9 @@ ms.locfileid: "67426149"
 
 ### <a name="apikeys"></a>apikeys
 
-存储使用 API 密钥身份验证的源的密钥，如使用 [`nuget setapikey` 命令](../tools/cli-ref-setapikey.md) 设置。
+存储使用 API 密钥身份验证的源的密钥，如使用 [`nuget setapikey` 命令](../reference/cli-reference/cli-ref-setapikey.md) 设置。
 
-| 键 | 值 |
+| Key | 值 |
 | --- | --- |
 | （源 URL） | 加密的 API 密钥。 |
 
@@ -204,7 +204,7 @@ ms.locfileid: "67426149"
 
 标识当前已禁用的源。 可能为空。
 
-| 键 | 值 |
+| Key | 值 |
 | --- | --- |
 | （源名称） | 指示源是否禁用的布尔。 |
 
@@ -225,7 +225,7 @@ ms.locfileid: "67426149"
 
 标识到当前活动的源或指示所有源的聚合。
 
-| 键 | 值 |
+| Key | 值 |
 | --- | --- |
 | （源名称）或 `All` | 如果密钥是源的名称，则值为源路径或 URL。 如果为 `All`，值应为 `(Aggregate source)`，从而组合其他未禁用的所有包源。 |
 
@@ -242,19 +242,19 @@ ms.locfileid: "67426149"
 ```
 ## <a name="trustedsigners-section"></a>trustedSigners 部分
 
-存储受信任的签名者用于允许同时安装或还原包。 当用户设置时，此列表不能为空`signatureValidationMode`到`require`。 
+存储用于在安装或还原时允许包的可信签名者。 当用户将设置`signatureValidationMode`为`require`时, 此列表不能为空。 
 
-本部分中可以使用更新[`nuget trusted-signers`命令](../tools/cli-ref-trusted-signers.md)。
+可以通过[ `nuget trusted-signers`命令](../reference/cli-reference/cli-ref-trusted-signers.md)更新此部分。
 
 **架构**:
 
-受信任的签名者具有一系列`certificate`登记标识给定签名者的所有证书的项。 受信任的签名者可以是`Author`或`Repository`。
+受信任的签名者具有一个`certificate`项的集合, 这些项将登记标识给定签名者的所有证书。 受信任的签名者可以`Author`是`Repository`或。
 
-受信任*存储库*还指定了`serviceIndex`存储库 (这必须是有效`https`uri) 和 （可选） 可以指定以分号分隔的列表`owners`限制更多谁是受信任从该特定存储库。
+受信任的*存储库*还`serviceIndex`为存储库指定 (必须为有效`https`的 uri), 并可以选择指定以分号分隔的`owners`列表, 以限制更多被信任的特定用户库.
 
-用于证书指纹的受支持的哈希算法`SHA256`，`SHA384`和`SHA512`。
+用于证书指纹的受支持的哈希算法`SHA256`为`SHA384` 、 `SHA512`和。
 
-如果`certificate`指定`allowUntrustedRoot`作为`true`给定的证书生成的签名验证一部分的证书链时允许链接到不受信任的根。
+如果为, `allowUntrustedRoot`则`true`在将证书链作为签名验证的一部分生成时, 允许将指定的证书链接到不受信任的根。`certificate`
 
 **示例**：
 

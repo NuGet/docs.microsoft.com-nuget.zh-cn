@@ -1,34 +1,34 @@
 ---
-title: 从 package.config 迁移到 PackageReference 格式
-description: 如何将项目从 package.config 管理格式迁移到 PackageReference NuGet 4.0 + 和 VS2017 和.NET Core 2.0 所支持的详细信息
+title: 从 package 迁移到 PackageReference 格式
+description: 详细介绍了如何将项目从 package 管理格式迁移到 PackageReference (如 NuGet 4.0 + 和 VS2017 和 .NET Core 2.0 所支持)
 author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 09d132aeaf00d2a1d095b9638b455cc23de91f2c
-ms.sourcegitcommit: b8c63744252a5a37a2843f6bc1d5917496ee40dd
+ms.openlocfilehash: 39f260835989cbbcc7293d9db27ac7b2c32debaa
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812875"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317233"
 ---
-# <a name="migrate-from-packagesconfig-to-packagereference"></a>从 packages.config 迁移到 PackageReference
+# <a name="migrate-from-packagesconfig-to-packagereference"></a>从包迁移到 PackageReference
 
-Visual Studio 2017 版本 15.7年和更高版本支持将项目从迁移[packages.config](./packages-config.md)管理格式[PackageReference](../consume-packages/Package-References-in-Project-Files.md)格式。
+Visual Studio 2017 版本15.7 和更高版本支持将项目从[包 .config](./packages-config.md)管理格式迁移到[PackageReference](../consume-packages/Package-References-in-Project-Files.md)格式。
 
 ## <a name="benefits-of-using-packagereference"></a>使用 PackageReference 的好处
 
-* **管理在一个位置的所有项目依赖项**:就像项目到项目引用和程序集引用，NuGet 包引用 (使用`PackageReference`节点) 直接在项目文件中托管，而不是使用单独的 packages.config 文件。
-* **整洁的顶级依赖项的视图**:与不同的是 packages.config，PackageReference 列出这些项目中直接安装的 NuGet 包。 因此，NuGet 包管理器 UI 和项目文件不会充斥了大量下层依赖项。
-* **性能改进**:在使用 PackageReference 时，包中维护*全局包*文件夹 (上所述[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)而不在`packages`文件夹中的解决方案。 因此，PackageReference 更快地执行，并会占用较少的磁盘空间。
-* **精确地控制对依赖项和内容流**:使用 MSBuild 的现有功能，您可以[有条件地引用 NuGet 包](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition)和选择包引用每个目标框架、 配置、 平台或其他数据透视表。
-* **PackageReference 正处于积极开发**:请参阅[PackageReference 问题在 GitHub 上](https://aka.ms/nuget-pr-improvements)。 packages.config 不再处于积极开发阶段。
+* **在一个位置管理所有项目依赖项**:与项目到项目的引用和程序集引用一样, NuGet 包引用 ( `PackageReference`使用节点) 直接在项目文件中进行管理, 而不是使用单独的包 .config 文件。
+* **顶级依赖项的有序视图**:与包不同, PackageReference 只列出你直接安装在项目中的 NuGet 包。 因此, NuGet 包管理器 UI 和项目文件不会混乱地处理下层依赖项。
+* **性能改进**:当使用 PackageReference 时, 包将保留在*全局包*文件夹中 (如[管理全局包和缓存文件夹,](../consume-packages/managing-the-global-packages-and-cache-folders.md)而不是在解决方案中`packages`的文件夹中所述)。 因此, PackageReference 的执行速度更快, 消耗的磁盘空间更少。
+* **精细控制依赖项和内容流**:使用 MSBuild 的现有功能, 可以有[条件地引用 NuGet 包](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition), 并选择每个目标框架、配置、平台或其他透视的包引用。
+* **PackageReference 处于积极开发阶段**:请参阅[GitHub 上的 PackageReference 问题](https://aka.ms/nuget-pr-improvements)。 包已不再处于活动状态。
 
 ### <a name="limitations"></a>限制
 
-* NuGet PackageReference 不提供在 Visual Studio 2015 及更早版本。 只能在 Visual Studio 2017 中可以打开已迁移的项目。
-* 迁移不是当前可用于C++和 ASP.NET 项目。
-* 某些包可能无法与 PackageReference 完全兼容。 有关详细信息，请参阅[包兼容性问题](#package-compatibility-issues)。
+* NuGet PackageReference 在 Visual Studio 2015 及更早版本中不可用。 只能在 Visual Studio 2017 中打开迁移的项目。
+* 目前，C++ 和 ASP.NET 项目无法进行迁移。
+* 某些包可能与 PackageReference 不完全兼容。 有关详细信息, 请参阅[包兼容性问题](#package-compatibility-issues)。
 
 ### <a name="known-issues"></a>已知问题
 
@@ -51,79 +51,79 @@ Visual Studio 2017 版本 15.7年和更高版本支持将项目从迁移[package
 ## <a name="migration-steps"></a>迁移步骤
 
 > [!Note]
-> 开始迁移之前，Visual Studio 创建项目的备份，可以通过[回滚到 packages.config](#how-to-roll-back-to-packagesconfig)如有必要。
+> 在开始迁移之前, Visual Studio 会创建项目的备份, 以便在必要时[回滚到软件包。](#how-to-roll-back-to-packagesconfig)
 
-1. 打开包含项目使用的解决方案`packages.config`。
+1. 使用`packages.config`打开包含项目的解决方案。
 
-1. 在中**解决方案资源管理器**，右键单击**引用**节点或`packages.config`文件，然后选择**将 packages.config 迁移到 PackageReference...** .
+1. 在**解决方案资源管理器**中, 右键单击 "**引用**" `packages.config`节点或文件, 然后选择 "**将包迁移到 PackageReference**..."。
 
-1. 迁移器会分析项目的 NuGet 包引用，并尝试对其进行分类**顶级依赖项**（直接安装的 NuGet 包） 和**可传递依赖项**（已作为顶级包的依赖项安装的包）。
+1. 迁移器分析项目的 NuGet 包引用, 并尝试将它们分类为**顶级依赖项**(你直接安装的 NuGet 包) 和可**传递依赖项**(安装为的包顶层包的依赖项)。
 
    > [!Note]
-   > PackageReference 支持可传递程序包还原，这意味着不必显式安装可传递依赖项动态地解析依赖项。
+   > PackageReference 支持可传递包还原并动态解析依赖项, 这意味着无需显式安装传递依赖项。
 
-1. （可选）您可以选择将通过选择归类为作为顶级依赖项的可传递依赖项的 NuGet 包**顶级**包的选项。 此选项会自动设置包包含不间接流动的资产 (中的那些`build`， `buildCrossTargeting`， `contentFiles`，或`analyzers`文件夹)，这些标记为开发依赖项 (`developmentDependency = "true"`)。
+1. 可有可无您可以选择将 NuGet 包归类为可传递的依赖项, 方法是选择包的**顶级**选项。 对于包含未按可传递的资产 (在`build` `contentFiles`、 `buildCrossTargeting`、或`analyzers`文件夹中) 和标记为开发依赖项 (`developmentDependency = "true"`) 的资产的包, 将自动设置此选项。
 
 1. 查看任何[包兼容性问题](#package-compatibility-issues)。
 
-1. 选择**确定**可开始迁移。
+1. 选择 **"确定"** 开始迁移。
 
-1. 在迁移结束时，Visual Studio 所提供的备份、 已安装程序包 （顶级依赖项） 的列表，可传递依赖项，作为引用的包的列表和标识的开头的兼容性问题的列表的报表的路径迁移。 报表将保存到备份文件夹。
+1. 在迁移结束时, Visual Studio 会提供一个报表, 其中包含指向备份的路径、已安装的包的列表 (顶级依赖项)、被引用为传递依赖项的包列表以及在开始时标识的兼容性问题的列表迁移. 该报表将保存到备份文件夹。
 
-1. 验证解决方案生成并运行。 如果遇到问题，[在 GitHub 上提出问题](https://github.com/NuGet/Home/issues/)。
+1. 验证解决方案是否已生成并运行。 如果遇到问题, 请[在 GitHub 上发布问题](https://github.com/NuGet/Home/issues/)。
 
-## <a name="how-to-roll-back-to-packagesconfig"></a>如何回滚到 packages.config
+## <a name="how-to-roll-back-to-packagesconfig"></a>如何回滚到包 .config
 
 1. 关闭已迁移的项目。
 
-1. 将项目文件复制并`packages.config`从备份 (通常`<solution_root>\MigrationBackup\<unique_guid>\<project_name>\`) 为项目文件夹。 如果它在项目根目录中存在，请删除 obj 文件夹。
+1. 将项目文件和`packages.config`从备份 (通常`<solution_root>\MigrationBackup\<unique_guid>\<project_name>\`为) 复制到项目文件夹。 如果 obj 文件夹位于项目根目录中, 则将其删除。
 
-1. 打开的项目。
+1. 打开项目。
 
-1. 打开使用 Package Manager Console**工具 > NuGet 包管理器 > 程序包管理器控制台**菜单命令。
+1. 使用 " **> NuGet 包管理器" > 包管理器控制台**"菜单命令打开包管理器控制台。
 
-1. 在控制台中运行以下命令：
+1. 在控制台中运行以下命令:
 
    ```ps
    update-package -reinstall
    ```
 
-## <a name="create-a-package-after-migration"></a>迁移后创建的包
+## <a name="create-a-package-after-migration"></a>迁移后创建包
 
-迁移完成后，我们建议您添加的引用[nuget.build.tasks.pack](https://www.nuget.org/packages/nuget.build.tasks.pack) nuget 包，以及如何将[msbuild 包](../reference/msbuild-targets.md#pack-target)创建包。 虽然在某些情况下，您可以使用`dotnet.exe pack`而不是`msbuild pack`，不建议。
+迁移完成后, 建议你添加对 t:pack [nuget 包](https://www.nuget.org/packages/nuget.build.tasks.pack)的引用, 然后使用[msbuild](../reference/msbuild-targets.md#pack-target)来创建包 (& e)。 尽管在某些情况下可以使用`dotnet.exe pack` `msbuild -t:pack`而不是, 因此不建议使用。
 
 ## <a name="package-compatibility-issues"></a>包兼容性问题
 
-PackageReference 中不支持在 packages.config 中受支持的某些方面。 Migrator 分析，并检测此类问题。 按预期方式在迁移后，可能不会有一个或多个以下问题的任何包。
+PackageReference 不支持在包中支持的某些方面。 迁移迁移会分析并检测此类问题。 具有以下一个或多个问题的包在迁移后可能不会按预期方式运行。
 
-### <a name="installps1-scripts-are-ignored-when-the-package-is-installed-after-the-migration"></a>在迁移后安装此包时，将忽略"install.ps1"脚本
-
-| | |
-| --- | --- |
-| **说明** | 利用 PackageReference，安装或卸载包时不执行 install.ps1 和 uninstall.ps1 PowerShell 脚本。 |
-| **潜在影响** | 依赖于这些脚本以配置该目标项目中的某些行为的包可能无法按预期方式工作。 |
-
-### <a name="content-assets-are-not-available-when-the-package-is-installed-after-the-migration"></a>在迁移后安装此包时，"内容"资产不可用
+### <a name="installps1-scripts-are-ignored-when-the-package-is-installed-after-the-migration"></a>如果在迁移之后安装了包, 则将忽略 "install. ps1" 脚本
 
 | | |
 | --- | --- |
-| **说明** | 在包中的资产`content`文件夹不支持使用 PackageReference，将被忽略。 PackageReference 添加了对支持`contentFiles`能够更好地可传递的支持和共享的内容。  |
-| **潜在影响** | 中的资产`content`不会复制到项目和项目取决于是否存在这些资产的代码需要重构。  |
+| **说明** | 使用 PackageReference, 安装或卸载包时, 不会执行 ps1 PowerShell 脚本。 |
+| **潜在影响** | 依赖于这些脚本来配置目标项目中的某些行为的包可能不会按预期方式工作。 |
 
-### <a name="xdt-transforms-are-not-applied-when-the-package-is-installed-after-the-upgrade"></a>在升级后安装包时，不会应用 XDT 转换
-
-| | |
-| --- | --- |
-| **说明** | 利用 PackageReference 不支持 XDT 转换和`.xdt`安装或卸载包时，将忽略文件。   |
-| **潜在影响** | XDT 转换不适用于任何项目的 XML 文件，最常`web.config.install.xdt`并`web.config.uninstall.xdt`，这意味着项目的` web.config`安装或卸载包时不更新文件。 |
-
-### <a name="assemblies-in-the-lib-root-are-ignored-when-the-package-is-installed-after-the-migration"></a>在迁移后安装此包时，将忽略 lib 根中的程序集
+### <a name="content-assets-are-not-available-when-the-package-is-installed-after-the-migration"></a>迁移后, 如果安装了包, 则 "内容" 资产不可用
 
 | | |
 | --- | --- |
-| **说明** | 使用 PackageReference，程序集提供的根处`lib`文件夹，但没有目标框架特定子文件夹将被忽略。 NuGet 查找匹配的目标框架名字对象 (TFM) 的项目的目标框架与对应的子文件夹，并将匹配的程序集安装到项目。 |
-| **潜在影响** | 不具有匹配的目标框架名字对象 (TFM) 的项目的目标框架与对应的子文件夹的包可能不会像预期在转换后或故障迁移过程的安装 |
+| **说明** | PackageReference 不支持包的`content`文件夹中的资产, 它们将被忽略。 PackageReference 添加了对`contentFiles`的支持, 以便获得更好的可传递支持和共享内容。  |
+| **潜在影响** | 不会`content`将中的资产复制到依赖于这些资产是否需要重构的项目和项目代码中。  |
 
-## <a name="found-an-issue-report-it"></a>发现了问题？ 报告它 ！
+### <a name="xdt-transforms-are-not-applied-when-the-package-is-installed-after-the-upgrade"></a>升级后, 如果安装了包, 则不应用 XDT 转换
 
-如果遇到问题的迁移体验，请[NuGet GitHub 存储库中提出问题](https://github.com/NuGet/Home/issues/)。
+| | |
+| --- | --- |
+| **说明** | XDT 转换在 PackageReference 中不受支持`.xdt` , 并且在安装或卸载包时将忽略这些文件。   |
+| **潜在影响** | XDT 转换不会应用于任何项目 XML 文件, 最常见的`web.config.install.xdt`是`web.config.uninstall.xdt`和, 这意味着在安装` web.config`或卸载包时不会更新项目的文件。 |
+
+### <a name="assemblies-in-the-lib-root-are-ignored-when-the-package-is-installed-after-the-migration"></a>当包在迁移后安装后, lib 根中的程序集将被忽略
+
+| | |
+| --- | --- |
+| **说明** | 使用 PackageReference, 将忽略在`lib`文件夹根目录下的程序集, 而不会忽略特定于目标框架的子文件夹。 NuGet 查找与与项目的目标框架对应的目标框架名字对象 (TFM) 相匹配的子文件夹, 并将匹配的程序集安装到项目中。 |
+| **潜在影响** | 不具有与项目的目标框架的目标框架名字对象 (TFM) 匹配的子文件夹的包在迁移期间转换或失败安装后可能不会按预期方式运行 |
+
+## <a name="found-an-issue-report-it"></a>发现问题？ 报告!
+
+如果在迁移过程中遇到问题, 请[在 NuGet GitHub 存储库上发布问题](https://github.com/NuGet/Home/issues/)。
