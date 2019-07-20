@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: acf80a9f919a56c9a9f21a9c8850dc5c1c67df33
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: b450a5bfa3dcf70056c99a951f51a78845ef8438
+ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317210"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68342457"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -226,7 +226,9 @@ NuGet 4.0+
 
 ### <a name="packing-using-a-nuspec"></a>使用 .nuspec 打包
 
-你可以使用`.nuspec`文件打包你的项目, 前提是你有一个要导入`NuGet.Build.Tasks.Pack.targets`的 SDK 项目文件, 以便可以执行 pack 任务。 你仍需要还原项目, 然后才能打包 nuspec 文件。 项目文件的目标框架不相关, 并且不会在对 nuspec 进行打包时使用。 以下三个 MSBuild 属性与使用 `.nuspec` 的打包相关：
+尽管建议你改为在项目文件中包含通常在`.nuspec`文件中的[所有属性](../reference/msbuild-targets.md#pack-target), 但你可以`.nuspec`选择使用文件打包项目。 对于使用`PackageReference`的非 SDK 样式项目, 必须导入`NuGet.Build.Tasks.Pack.targets` , 以便可以执行 pack 任务。 你仍需要还原项目, 然后才能打包 nuspec 文件。 (默认情况下, SDK 样式项目包括包目标。)
+
+项目文件的目标框架不相关, 并且不会在对 nuspec 进行打包时使用。 以下三个 MSBuild 属性与使用 `.nuspec` 的打包相关：
 
 1. `NuspecFile`：用于打包的 `.nuspec` 文件的相对或绝对路径。
 1. `NuspecProperties`：键=值对的分号分隔列表。 由于 MSBuild 命令行分析工作的方式，必须指定多个属性，如下所示：`-p:NuspecProperties=\"key1=value1;key2=value2\"`。  
@@ -244,9 +246,9 @@ dotnet pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nuspec
 msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:NuspecProperties=<> -p:NuspecBasePath=<Base path> 
 ```
 
-请注意, 使用 dotnet 或 msbuild 打包 nuspec 在默认情况下也会导致生成项目。 通过将属性传递```--no-build```给 dotnet, 可以避免这种情况, 这相当于项目文件中的设置```<NoBuild>true</NoBuild> ```以及项目文件中的```<IncludeBuildOutput>false</IncludeBuildOutput> ```设置。
+请注意, 使用 dotnet 或 msbuild 打包 nuspec 在默认情况下也会导致生成项目。 通过将属性传递```--no-build```给 dotnet, 可以避免这种情况, 它与```<IncludeBuildOutput>false</IncludeBuildOutput> ```项目文件中```<NoBuild>true</NoBuild> ```的设置以及项目文件中的设置等效。
 
-用于打包 nuspec 文件的 .csproj 文件的示例如下:
+用于打包 nuspec 文件的 *.csproj*文件的示例如下:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -333,7 +335,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 其他的还原设置可能来自项目文件中的 MSBuild 属性。 还可以从命令行使用 `-p:` 开关设置值（请参阅以下示例）。
 
-| 属性 | 描述 |
+| Property | 描述 |
 |--------|--------|
 | RestoreSources | 以分号分隔的包源列表。 |
 | RestorePackagesPath | 用户包文件夹路径。 |
