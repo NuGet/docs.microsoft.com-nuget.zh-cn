@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: 087bb043ba4b388b9de6d94cd838915a2e7247f4
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: e11eed5c614a7634fa578ebc84c3ab2068522fe2
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426131"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842206"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 简介
 
@@ -45,8 +45,8 @@ ms.locfileid: "67426131"
 
 | 工具 | 平台 | 适用方案 | 说明 |
 | --- | --- | --- | --- |
-| [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md) | 全部 | 创建、使用 | 用于 .NET Core 和 .NET Standard 库，以及用于面向 .NET Framework 的 SDK 样式项目的 CLI 工具（请参阅 [SDK 属性](/dotnet/core/tools/csproj#additions)）。 直接在 .NET Core 工具链中提供特定 NuGet CLI 功能。 与 NuGet CLI 一样，dotnet CLI 不会与 Visual Studio 项目交互。 |
-| [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md) | 全部 | 创建、使用 | 用于 .NET Framework 库和面向 .NET Standard 库的非 SDK 样式项目的 CLI 工具。 提供所有 NuGet 功能，包括一些专门适用于包创建者、仅适用于使用者和适用于两者的命令。 例如，包创建者使用 `nuget pack` 命令通过各种程序集和相关文件创建包，包使用者使用 `nuget install` 在项目文件夹中包含包，而所有人都可使用 `nuget config` 设置 NuGet 配置变量。 作为与平台无关的工具，NuGet CLI 不会与 Visual Studio 项目交互。 |
+| [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md) | 全部 | 创建、使用 | 适用于 .NET Core 和 .NET Standard 库，以及适用于面向 .NET Framework 的 [SDK 样式项目](resources/check-project-format.md)的 CLI 工具。 直接在 .NET Core 工具链中提供特定 NuGet CLI 功能。 与 NuGet CLI 一样，dotnet CLI 不会与 Visual Studio 项目交互。 |
+| [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md) | 全部 | 创建、使用 | 适用于 .NET Framework 库和面向 .NET Standard 库的[非 SDK 样式项目](resources/check-project-format.md)的 CLI 工具。 提供所有 NuGet 功能，包括一些专门适用于包创建者、仅适用于使用者和适用于两者的命令。 例如，包创建者使用 `nuget pack` 命令通过各种程序集和相关文件创建包，包使用者使用 `nuget install` 在项目文件夹中包含包，而所有人都可使用 `nuget config` 设置 NuGet 配置变量。 作为与平台无关的工具，NuGet CLI 不会与 Visual Studio 项目交互。 |
 | [包管理器控制台](tools/package-manager-console.md) | Windows 版 Visual Studio | 使用 | 提供用于在 Visual Studio 项目中安装和管理包的 [PowerShell 命令](tools/Powershell-Reference.md)。 |
 | [包管理器 UI](tools/package-manager-ui.md) | Windows 版 Visual Studio | 使用 | 提供用于在 Visual Studio 项目中安装和管理包的易用 UI。 |
 | [管理 NuGet UI](/visualstudio/mac/nuget-walkthrough) | Visual Studio for Mac | 使用 | 提供用于在 Visual Studio for Mac 项目中安装和管理包的易用 UI。 |

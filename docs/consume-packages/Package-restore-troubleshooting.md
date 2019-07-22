@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3be8d1dad6552db2fc04b2f324145ac7ce86acb2
-ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
+ms.openlocfilehash: 287237cf4041870c562a6a7f48f233d8fdc8ef33
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67467776"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842386"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>包还原错误疑难解答
 
-本文着重介绍还原包时遇到的常见错误以及相应的解决步骤。 有关还原包的完整详细信息，请参阅[包还原](../consume-packages/package-restore.md#enable-and-disable-package-restore)。
+本文着重介绍还原包时遇到的常见错误以及相应的解决步骤。 有关还原包的完整详细信息，请参阅[包还原](../consume-packages/package-restore.md#enable-and-disable-package-restore-visual-studio)。
 
 如果此处的说明对你没有帮助，[请在 GitHub 上提交问题](https://github.com/NuGet/docs.microsoft.com-nuget/issues)，以便我们可以更仔细地检查你的情况。 请勿使用可能出现在该页面上的“此页面有帮助吗?”控件， 因为它无法让我们与你联系以获取详细信息。
 
@@ -29,7 +29,7 @@ ms.locfileid: "67467776"
 
 ![在“工具”/“选项”中启用 NuGet 包还原](../consume-packages/media/restore-01-autorestoreoptions.png)
 
-也可以在 `NuGet.config` 文件中更改这些设置；请参阅[同意](#consent)部分。
+也可以在 `NuGet.config` 文件中更改这些设置；请参阅[同意](#consent)部分。 如果项目是使用集成 MSBuild 的包恢复的较老项目，那么可能需要[迁移](package-restore.md#migrate-to-automatic-package-restore-visual-studio)到自动包恢复。
 
 <a name="missing"></a>
 
@@ -54,10 +54,10 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 使用下列方法之一还原包：
 
 - 如果已移动项目文件，请直接编辑该文件以更新包引用。
-- 在 Visual Studio 中，通过以下方法启用包还原：选择“工具”>“NuGet 包管理器”>“包管理器设置”菜单命令，在“包还原”下设置这两个选项，然后选择“确定”    。 然后再次生成解决方案。
-- 对于 .NET Core 项目，运行 `dotnet restore` 或 `dotnet build`（它会自动运行还原）。
-- 在命令行上运行 `nuget restore`（使用 `dotnet` 创建的项目除外，这种情况下请使用 `dotnet restore`）。
-- 在包含使用 PackageReference 格式的项目的命令行上，运行 `msbuild -t:restore`。
+- (Visual Studio) 通过以下方法启用包还原：选择“工具”>“NuGet 包管理器”>“包管理器设置”菜单命令，在“包还原”下设置这两个选项，然后选择“确定”    。 然后再次生成解决方案。
+- (dotnet CLI) 在命令行中，切换到包含项目的文件夹，然后运行 `dotnet restore` 或 `dotnet build`（自动运行还原）。
+- (nuget.exe CLI) 在命令行中，切换到包含项目的文件夹，然后运行 `nuget restore`（使用 `dotnet` CLI 创建的项目除外，在这种情况下，使用 `dotnet restore`）。
+- （迁移到 PackageReference 的项目）在命令行上，运行 `msbuild -t:restore`。
 
 成功还原后，包应显示在 global-packages  文件夹中。 对于使用 PackageReference 的项目，还原应重新创建 `obj/project.assets.json` 文件；对于使用 `packages.config` 的项目，包应显示在项目的 `packages` 文件夹中。 该项目现在应能成功生成。 如果没有，请[在 GitHub 上提交问题](https://github.com/NuGet/docs.microsoft.com-nuget/issues)，以便我们跟进。
 

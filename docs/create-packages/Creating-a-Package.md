@@ -3,33 +3,33 @@ title: 如何创建 NuGet 包
 description: 设计和创建 NuGet 包流程的详细指南，包含文件和版本控制等关键决策点。
 author: karann-msft
 ms.author: karann
-ms.date: 05/24/2019
+ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: e3a40a521a3b16d9757ef1bbf2511a1537d8bddb
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 1dce8556448131c36680167fdc3605e4378b9178
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425807"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842310"
 ---
-# <a name="creating-nuget-packages"></a>创建 NuGet 包
+# <a name="create-nuget-packages"></a>创建 NuGet 包
 
 无论包是什么用途或者它包含什么代码，均使用其中一个 CLI 工具（`nuget.exe` 或 `dotnet.exe`）将该功能打包进可以与任意数量的其他开发人员共享且可以由其使用的组件中。 若要安装 NuGet CLI 工具，请参阅[安装 NuGet 客户端工具](../install-nuget-client-tools.md)。 请注意，Visual Studio 不会自动包含 CLI 工具。
 
-- 对于使用 SDK 样式格式（[SDK 属性](/dotnet/core/tools/csproj#additions)）的 .NET Core 和 .NET Standard 项目，以及任何其他 SDK 样式项目，NuGet 直接使用项目文件中的信息创建包。 有关详细信息，请参阅[使用 Visual Studio 创建 .NET Standard 包](../quickstart/create-and-publish-a-package-using-visual-studio.md)和[ NuGet 包和作为 MSBuild 目标还原](../reference/msbuild-targets.md)。
+- 对于使用 [SDK 样式格式](../resources/check-project-format.md)的 .NET Core 和 .NET Standard 项目，以及任何其他 SDK 样式项目，NuGet 直接使用项目文件中的信息创建包。 有关详细信息，请参阅[使用 dotnet CLI 创建 .NET Standard 包](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)和[使用 Visual Studio 创建 .NET Standard 包](../quickstart/create-and-publish-a-package-using-visual-studio.md)或[作为 MSBuild 目标的 NuGet 包和还原](../reference/msbuild-targets.md)。
 
-- 对于非 SDK 样式项目，按照本文中所述的步骤创建包。
+- 对于非 SDK 样式项目（通常为 .NET Framework 项目），按照本文中所述的步骤创建包。 还可以按照[创建和发布 .NET Framework 包](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)中的步骤操作，以使用 `nuget.exe` CLI 和 Visual Studio 创建一个包。
 
 - 对于从 `packages.config` 迁移到 [PackageReference](../consume-packages/package-references-in-project-files.md) 的项目，使用 [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)。
 
-从技术角度来讲，NuGet 包仅仅是一个使用 `.nupkg` 扩展重命名且其中的内容与特定约定相匹配的 ZIP 文件。 本主题介绍创建满足这些约定的包的详细流程。 有关重点演练，请参阅[快速入门：创建和发布包](../quickstart/create-and-publish-a-package.md)。
+从技术角度来讲，NuGet 包仅仅是一个使用 `.nupkg` 扩展重命名且其中的内容与特定约定相匹配的 ZIP 文件。 本主题介绍创建满足这些约定的包的详细流程。
 
 包以编译的代码（程序集）、符号和/或需要作为包传送的其他文件开头（请参阅[概述和工作流](overview-and-workflow.md)）。 尽管可以使用项目文件中信息的描述来保持编译程序集和包的同步，但此流程独立于编译或生成进入包的文件。
 
-> [!Note]
+> [!Important]
 > 本主题适用于非 SDK 样式项目，通常是除使用 Visual Studio 2017 和更高版本以及 NuGet 4.0+ 的 .NET Core 和 .NET Standard 项目之外的项目。
 
-## <a name="deciding-which-assemblies-to-package"></a>确定要打包的程序集
+## <a name="decide-which-assemblies-to-package"></a>确定要打包的程序集
 
 大多数通用包包含一个或多个其他开发人员可在其自己项目中使用的程序集。
 
@@ -41,7 +41,7 @@ ms.locfileid: "67425807"
 
 事实上，资源是一种特殊情况。 当包安装到项目中时，NuGet 自动将程序集引用添加到包的 DLL，不包含命名为 `.resources.dll` 的内容，因为它们被假定为本地化的附属程序集（请参阅[创建本地化包](creating-localized-packages.md)）  。 为此，请避免对包含基本包代码的文件使用 `.resources.dll`。
 
-如果库包含 COM 互操作程序集，请遵循[使用 COM 互操作程序集创作包](#authoring-packages-with-com-interop-assemblies)中的其他准则。
+如果库包含 COM 互操作程序集，请遵循[使用 COM 互操作程序集创建包](author-packages-with-com-interop-assemblies.md)中的其他准则。
 
 ## <a name="the-role-and-structure-of-the-nuspec-file"></a>.nuspec 文件的角色和结构
 
@@ -151,7 +151,7 @@ nuget locals -list global-packages
 > [!Note]
 > 从 Visual Studio 项目创建 `.nuspec` 时，清单包含生成包时被项目信息替换的令牌。 请参阅[从 Visual Studio 项目创建 .nuspec](#from-a-visual-studio-project)。
 
-## <a name="creating-the-nuspec-file"></a>创建 .nuspec 文件
+## <a name="create-the-nuspec-file"></a>创建 .nuspec 文件
 
 创建完整的清单通常以通过以下其中一种方法生成的基础 `.nuspec` 文件开始：
 
@@ -228,7 +228,7 @@ nuget spec
 
 借助令牌，更新项目时可以不再需要更新关键值，例如 `.nuspec` 中的版本号。 （如果需要，随时可以使用文本值替换令牌）。 
 
-注意在 Visual Studio 项目中工作时，有多个可用的其他打包选项，如稍后的[运行 NuGet 包生成 .nupkg 文件](#running-nuget-pack-to-generate-the-nupkg-file)所述。
+注意在 Visual Studio 项目中工作时，有多个可用的其他打包选项，如稍后的[运行 NuGet 包生成 .nupkg 文件](#run-nuget-pack-to-generate-the-nupkg-file)所述。
 
 #### <a name="solution-level-packages"></a>解决方案级别包
 
@@ -250,7 +250,7 @@ nuget spec [<package-name>]
 
 生成的 `.nuspec` 包含值的占位符（例如 `projectUrl`）。 请确保在使用文件创建最终 `.nupkg` 文件前编辑该文件。
 
-## <a name="choosing-a-unique-package-identifier-and-setting-the-version-number"></a>选择唯一包标识符并设置版本号
+## <a name="choose-a-unique-package-identifier-and-setting-the-version-number"></a>选择唯一的包标识符并设置版本号
 
 包标识符（`<id>` 元素）和版本号（`<version>` 元素）是清单中最重要的两个值，因为它们唯一标识包中包含的确切代码。
 
@@ -262,7 +262,7 @@ nuget spec [<package-name>]
 
 **针对包版本的最佳做法：**
 
-- 一般情况下，将包的版本设置为与库相匹配，但这不是必须的。 如之前在[确定要打包的程序集](#deciding-which-assemblies-to-package)中所述，将包限制到单个程序集是一个简单的问题。 总的来说，请记住解析依赖项时，NuGet 自己处理包版本而不是程序集版本。
+- 一般情况下，将包的版本设置为与库相匹配，但这不是必须的。 如之前在[确定要打包的程序集](#decide-which-assemblies-to-package)中所述，将包限制到单个程序集是一个简单的问题。 总的来说，请记住解析依赖项时，NuGet 自己处理包版本而不是程序集版本。
 - 使用非标准版本方案时，请确保考虑使用 NuGet 版本控制规则，如[包版本控制](../reference/package-versioning.md)中所述。
 
 > 以下一系列简短博客文章也有助于理解版本控制：
@@ -271,33 +271,7 @@ nuget spec [<package-name>]
 > - [第 2 部分：核心算法](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)
 > - [第 3 部分：通过绑定重定向实现统一](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html)
 
-## <a name="setting-a-package-type"></a>设置包类型
-
-通过 NuGet 3.5+ 可以使用特定的包类型标记包以指示其预期用途  。 未标记类型的包（包含使用更早版本的 NuGet 创建的所有包）默认为 `Dependency` 类型。
-
-- `Dependency` 类型包将生成或运行时资产添加到库和应用程序，并且可以在任何项目类型中安装（假设它们相互兼容）。
-
-- `DotnetCliTool` 类型包是 [.NET CLI](/dotnet/articles/core/tools/index) 的扩展，并且从命令行中调用。 该包仅在 .NET Core 项目中安装并且不影响还原操作。 [.NET Core 扩展性](/dotnet/articles/core/tools/extensibility#per-project-based-extensibility)文档中提供更多有关这些项目扩展的详细信息。
-
-- 自定义类型包使用与包 ID 遵守相同格式规则的任意类型标识符。 但是，任何不是 `Dependency` 和 `DotnetCliTool` 的类型不会被 Visual Studio 中的 NuGet 包管理器识别。
-
-包类型在 `.nuspec` 文件中设置。 后向兼容最好不显式设置 `Dependency` 类型，而是依赖 NuGet 在没有指定类型时假设此类型  。
-
-- `.nuspec`：指明 `packageTypes\packageType` 节点中 `<metadata>` 元素下的包类型：
-
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
-        <metadata>
-        <!-- ... -->
-        <packageTypes>
-            <packageType name="DotnetCliTool" />
-        </packageTypes>
-        </metadata>
-    </package>
-    ```
-
-## <a name="adding-a-readme-and-other-files"></a>添加自述文件和其他文件
+## <a name="add-a-readme-and-other-files"></a>添加自述文件和其他文件
 
 若要直接指定要包含在包中的文件，请使用 `.nuspec` 中的 `<files>` 节点，其遵循 `<metadata>` 标记  ：
 
@@ -327,7 +301,7 @@ nuget spec [<package-name>]
 > [!Note]
 > 如果 `.nuspec` 文件中包含空 `<files>` 节点，则 NuGet 不会在包中包含除 `lib` 文件夹中的内容以外的任何其他内容。
 
-## <a name="including-msbuild-props-and-targets-in-a-package"></a>包含包中的 MSBuild 属性和目标
+## <a name="include-msbuild-props-and-targets-in-a-package"></a>将 MSBuild 属性和目标包含到包中
 
 在某些情况下，可能需要在使用包的项目中添加自定义生成目标或属性，例如生成期间运行自定义工具或进程。 通过将文件置于项目的 `\build` 文件夹中的窗体 `<package_id>.targets` 或 `<package_id>.props`（例如 `Contoso.Utility.UsefulStuff.targets`）中执行此操作。
 
@@ -367,27 +341,7 @@ nuget spec [<package-name>]
 
 对于 NuGet 3.x，目标不添加到项目，而是通过 `project.lock.json` 提供。
 
-## <a name="authoring-packages-with-com-interop-assemblies"></a>使用 COM 互操作程序集创作包
-
-包含 COM 互操作程序集的包必须包含合适的[目标文件](#including-msbuild-props-and-targets-in-a-package)，使正确的 `EmbedInteropTypes` 元数据使用 PackageReference 格式添加到项目。 默认情况下，使用 PackageReference 时，`EmbedInteropTypes` 元数据对所有程序集一直为 false，所以目标文件显式添加此元数据。 为了避免冲突，目标名称必须是唯一的；理想情况下，使用包名称和嵌入程序集的组合，使用此值替换下例中的 `{InteropAssemblyName}`。 （有关示例，另请参阅 [NuGet.Samples.Interop](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop)。）
-
-```xml
-<Target Name="Embedding**AssemblyName**From**PackageId**" AfterTargets="ResolveReferences" BeforeTargets="FindReferenceAssembliesForReferences">
-  <ItemGroup>
-    <ReferencePath Condition=" '%(FileName)' == '{InteropAssemblyName}' AND '%(ReferencePath.NuGetPackageId)' == '$(MSBuildThisFileName)' ">
-      <EmbedInteropTypes>true</EmbedInteropTypes>
-    </ReferencePath>
-  </ItemGroup>
-</Target>
-```
-
-请注意，在使用 `packages.config` 管理格式时，将引用从包添加到程序集会导致 NuGet 和 Visual Studio 检查 COM 互操作程序集并在项目文件中将 `EmbedInteropTypes` 设为 true。 在这种情况下，目标被替代。
-
-此外，默认情况下，[生成资产不以可传递的方式流动](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets)。 当此处所述的创作的包作为可传递的依赖项从项目拉取到项目引用时，它们会以不同的方式工作。 包使用者通过将 PrivateAssets 默认值修改为不包含生成使其流动。
-
-<a name="creating-the-package"></a>
-
-## <a name="running-nuget-pack-to-generate-the-nupkg-file"></a>运行 NuGet 包生成 .nupkg 文件
+## <a name="run-nuget-pack-to-generate-the-nupkg-file"></a>运行 nuget 包以生成 .nupkg 文件
 
 使用程序集或基于约定的工作目录时，通过使用 `.nuspec` 文件运行 `nuget pack` 创建包，使用特定的文件名替换 `<project-name>`：
 
@@ -441,7 +395,7 @@ NuGet 指示需要更正的 `.nuspec` 文件中是否有错误，例如忘记更
     nuget pack MyProject.csproj -symbols
     ```
 
-### <a name="testing-package-installation"></a>测试包安装
+### <a name="test-package-installation"></a>测试包安装
 
 发布包前，通常需要测试将包安装到项目的过程。 测试确保所有文件一定在项目中正确的位置结束。
 
@@ -465,6 +419,8 @@ NuGet 指示需要更正的 `.nuspec` 文件中是否有错误，例如忘记更
 - [源和配置文件的转换](../create-packages/source-and-config-file-transformations.md)
 - [本地化](../create-packages/creating-localized-packages.md)
 - [预发布版本](../create-packages/prerelease-packages.md)
+- [设置包类型](../create-packages/set-package-type.md)
+- [使用 COM 互操作程序集创建包](../create-packages/author-packages-with-COM-interop-assemblies.md)
 
 最后，有需要注意的其他包类型：
 

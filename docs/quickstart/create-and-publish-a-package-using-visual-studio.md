@@ -1,33 +1,34 @@
 ---
 title: 在 Windows 上使用 Visual Studio 创建和发布 .NET Standard 包
-description: 在 Windows 上使用 Visual Studio 2017 创建和发布 .NET Standard NuGet 包的演练教程。
+description: 在 Windows 上使用 Visual Studio 创建和发布 .NET Standard NuGet 包的演练教程。
 author: karann-msft
 ms.author: karann
-ms.date: 05/24/2019
+ms.date: 07/09/2019
 ms.topic: quickstart
-ms.openlocfilehash: c75785d361f25564c8a59d7a2d85924c570a7b9a
-ms.sourcegitcommit: b9a134a6e10d7d8502613f389f7d5f9b9e206ec8
+ms.openlocfilehash: d9eccfa373a5a283542fd158e76ba74b1872f3d6
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67467817"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842154"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>快速入门：使用 Visual Studio 创建和发布 NuGet 包（仅限 .NET Standard 和 Windows）
 
 从 Windows 上 Visual Studio 中的 .NET Standard 类库创建 NuGet 包，然后使用 CLI 工具将其发布到 nuget.org，这是一个很简单的过程。
 
 > [!Note]
-> 本快速入门教程仅适用于 Visual Studio 2017 for Windows。 Visual Studio for Mac 不包括此处所述的功能。 改为使用 [dotnet CLI 工具](create-and-publish-a-package-using-the-dotnet-cli.md)。
+> 如果使用的是 Visual Studio for Mac，请参阅有关创建 NuGet 包的[以下信息](/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library)或使用 [dotnet CLI 工具](create-and-publish-a-package-using-the-dotnet-cli.md)。
 
 ## <a name="prerequisites"></a>系统必备
 
-1. 通过任何与 .NET 相关的工作负载从 [visualstudio.com](https://www.visualstudio.com/) 安装任意版本的 Visual Studio 2017。 安装 .NET 工作负载时，Visual Studio 2017 会自动包含 NuGet 功能。
+1. 通过任何与 .NET 相关的工作负载从 [visualstudio.com](https://www.visualstudio.com/) 安装任意版本的 Visual Studio 2017 或更高版本。 安装 .NET 工作负载时，Visual Studio 2017 及更高版本会自动包含 NuGet 功能。
 
-1. 安装其中一个 CLI 工具。
+1. 安装 `dotnet` CLI。
 
-   * 对于 `dotnet` CLI，安装 [.NET Core SDK](https://www.microsoft.com/net/download/)。 dotnet CLI 是使用 SDK 样式格式（SDK 属性）的 .NET Standard 项目所必需的。
-
-   * 对于 `nuget.exe` CLI，从 [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) 下载它，将 `.exe` 文件保存到合适的文件夹，然后将该文件夹添加到 PATH 环境变量中。 nuget.exe CLI 用于采用非 SDK 样式格式的 .NET Standard 库。
+   对于 `dotnet` CLI，从 Visual Studio 2017 开始，`dotnet` CLI 将自动随任何与 .NET Core 相关的工作负载一起安装。 否则，请安装 [.NET Core SDK](https://www.microsoft.com/net/download/) 以获取 `dotnet` CLI。 `dotnet` CLI 是使用 [SDK 样式格式](../resources/check-project-format.md)（SDK 属性）的 .NET Standard 项目所必需的。 Visual Studio 2017 及更高版本中的默认类库模板（本文所用模板）使用 SDK 属性。
+   
+   > [!Important]
+   > 对于本文，建议使用 `dotnet` CLI。 虽然可以使用 `nuget.exe` CLI 发布任何 NuGet 包，但本文中的某些步骤特定于 SDK 样式的项目和 dotnet CLI。 nuget.exe CLI 用于[非 SDK 样式的项目](../resources/check-project-format.md)（通常为 .NET Framework）。 如果使用的是非 SDK 样式的项目，请按照[创建和发布 .NET Framework 包 (Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md) 中的过程来创建和发布包。
 
 1. 如果你还没有帐户，请[在 nuget.org 上注册一个免费帐户](https://docs.microsoft.com/en-us/nuget/nuget-org/individual-accounts#add-a-new-individual-account)。 创建新帐户会发送确认电子邮件。 必须先确认该帐户，才能上传包。
 
@@ -59,7 +60,9 @@ namespace AppLogger
 
 ## <a name="configure-package-properties"></a>配置包属性
 
-1. 选择“项目”>“属性”菜单命令，然后选择“包”选项卡   。（“包”选项卡仅出现在 .NET Standard 类库项目中；如果要面向 .NET Framework，请参阅[创建和发布 .NET Framework 包](create-and-publish-a-package-using-visual-studio-net-framework.md)  。 如果未出现在 .NET Standard 项目中，可能需要将 Visual Studio 2017 更新到最新版本。）
+1. 在解决方案资源管理器中右键单击该项目，然后选择“属性”  菜单命令，然后选择“包”  选项卡。
+
+   “包”  选项卡仅在 Visual Studio 的 SDK 样式项目中显示，通常是 .NET Standard 或 .NET Core 类库项目；如果要针对非 SDK 样式项目（通常是 .NET Framework），请[迁移项目](../reference/migrate-packages-config-to-package-reference.md)并使用 `dotnet` CLI，或参阅[创建和发布 .NET Framework 包](create-and-publish-a-package-using-visual-studio-net-framework.md)或者改为参阅[创建和发布 .NET Framework 包](create-and-publish-a-package-using-visual-studio-net-framework.md)，以获取分步说明。
 
     ![Visual Studio 项目中的 NuGet 包属性](media/qs_create-vs-01-package-properties.png)
 
@@ -75,6 +78,8 @@ namespace AppLogger
 
 1. 可选：若要直接查看项目文件中的属性，请右击“解决方案资源管理器”中的“项目”，然后选择“编辑 AppLogger.csproj”  。
 
+   此选项从 Visual Studio 2017 开始仅对使用 SDK 样式属性的项目可用。 否则，右键单击项目，并选择“卸载项目”  。 然后右键单击卸载的项目并选择“编辑 AppLogger.csproj”  。
+
 ## <a name="run-the-pack-command"></a>运行 pack 命令
 
 1. 将此配置设置为“发布”  。
@@ -82,6 +87,8 @@ namespace AppLogger
 1. 请在“解决方案资源管理器”中右键单击该项目，然后选择“Pack”命令：  
 
     ![Visual Studio 项目上下文菜单上的 NuGet pack 命令](media/qs_create-vs-02-pack-command.png)
+
+    如果没有看到“Pack”  命令，那么项目可能不是 SDK 样式的项目，需要使用 `nuget.exe` CLI。 [迁移项目](../reference/migrate-packages-config-to-package-reference.md)并使用 `dotnet` CLI，或者改为参阅[创建和发布 .NET Framework 包](create-and-publish-a-package-using-visual-studio-net-framework.md)，以获取分步说明。
 
 1. Visual Studio 构建项目并创建 `.nupkg` 文件。 检查“输出”  窗口以查看详细信息（类似于以下内容），其中包含包文件的路径。 另请注意，生成的程序集位于适合 .NET Standard 2.0 目标的 `bin\Release\netstandard2.0` 中。
 
@@ -116,7 +123,9 @@ msbuild -t:pack -p:Configuration=Release
 
 ### <a name="publish-with-dotnet-nuget-push-dotnet-cli"></a>用 dotnet nuget push 发布 (dotnet CLI)
 
-该步骤是使用 `nuget.exe` 的替代方法。
+此步骤是使用 `nuget.exe` 的推荐替代方法。
+
+在发布包之前，必须先打开命令行。
 
 [!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
@@ -124,9 +133,9 @@ msbuild -t:pack -p:Configuration=Release
 
 该步骤是使用 `dotnet.exe` 的替代方法。
 
-1. 更改到包含 `.nupkg` 文件的文件夹。
+1. 打开命令行并更改到包含 `.nupkg` 文件的文件夹。
 
-1. 运行以下命令，指定包名称并使用你的 API 密钥替换密钥值：
+1. 运行以下命令，指定包名称（唯一包 ID）并使用你的 API 密钥替换密钥值：
 
     ```cli
     nuget push AppLogger.1.0.0.nupkg qz2jga8pl3dvn2akksyquwcs9ygggg4exypy3bhxy6w6x6 -Source https://api.nuget.org/v3/index.json

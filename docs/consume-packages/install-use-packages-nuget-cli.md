@@ -5,18 +5,18 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: e60bca8fe2f80b044e466db2a100d6c6d167edb7
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: a7177b956930835693921163e634321548c22462
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67427372"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842371"
 ---
 # <a name="manage-packages-using-the-nugetexe-cli"></a>使用 nuget.exe CLI 管理包
 
 通过 CLI 工具可轻松更新和还原项目和解决方案中的 NuGet 包。 该工具提供 Windows 上的所有 NuGet 功能以及 Mac 和 Linux 上在 Mono 下运行时的大多数功能。
 
-nuget.exe CLI 适用于 .NET Framework 项目和非 SDK 样式项目（例如，针对 .NET Standard 库的项目）。 如果你使用的是已迁移到 `PackageReference` 的非 SDK 样式项目，请改用 dotnet CLI。 NuGet CLI 需要 [packages.config](../reference/packages-config.md) 文件来进行包引用。
+nuget.exe CLI 适用于 .NET Framework 项目和非 SDK 样式项目（例如，面向 .NET Standard 库的非 SDK 样式项目）。 如果你使用的是已迁移到 `PackageReference` 的非 SDK 样式项目，请改用 dotnet CLI。 NuGet CLI 需要 [packages.config](../reference/packages-config.md) 文件来进行包引用。
 
 > [!NOTE]
 > 在大多数情况下，建议[将使用 `packages.config` 的非 SDK 样式项目迁移至 PackageReference](../reference/migrate-packages-config-to-package-reference.md)，然后可以使用 dotnet CLI 而不是 `nuget.exe` CLI。 目前，C++ 和 ASP.NET 项目无法进行迁移。
@@ -114,7 +114,9 @@ nuget update
 
 `restore` 仅将包添加到磁盘，但不会更改项目的依赖项。 要还原项目依赖项，请修改 `packages.config`，然后使用 `restore` 命令。
 
-要使用 `restore` 还原包：
+与其他 `dotnet` CLI 命令一样，先打开命令行并切换到包含项目文件的目录。
+
+使用 `restore` 还原包：
 
 ```cli
 nuget restore MySolution.sln

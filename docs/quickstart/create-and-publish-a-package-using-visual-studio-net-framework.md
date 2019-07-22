@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: efdaa0128d47f948c86c3cc83d6a332410cbf99f
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: bf561d36a06bf42c029eb96ff1b7930abffa4c0a
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426329"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842040"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>快速入门：使用 Visual Studio 创建和发布包（.NET Framework、Windows）
 
@@ -145,7 +145,7 @@ NuGet 包中包含清单（`.nuspec` 文件），其中包含相关的元数据�
 
 ### <a name="publish-with-nuget-push"></a>用 nuget push 发布
 
-1. 更改到包含 `.nupkg` 文件的文件夹。
+1. 打开命令行并更改到包含 `.nupkg` 文件的文件夹。
 
 1. 运行以下命令，指定包名称并使用你的 API 密钥替换密钥值：
 

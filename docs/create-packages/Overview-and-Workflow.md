@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/26/2017
 ms.topic: conceptual
-ms.openlocfilehash: a285650034c99026e34fcda398ca7ced4855e40a
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 58ad05cb854c8f7233d90d03c1b320f8797ca2ab
+ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425722"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67842389"
 ---
 # <a name="package-creation-workflow"></a>包创建工作流
 
@@ -21,9 +21,7 @@ ms.locfileid: "67425722"
 > [!Note]
 > 如果要创建供其他开发人员使用的包，则务必了解他们将依赖于你的工作成果。 因此，创建并发布包也表示你将修复 bug 和提供其他更新，或者至少应以开源形式提供包，以便他人可帮助维护包。
 
-在任何情况下，创建包首先需要确定要打包的程序集及其他文件。 然后创建称为 `.nuspec` 的清单文件，用于描述包的内容及其标识符、版本号、版权信息、MSBuild 属性和目标以及其他诸多内容。
-
-在相应文件夹中准备好所有必要文件并创建 `.nuspec` 文件后，应使用 `nuget pack` 命令（或 [MSBuild pack target](../reference/msbuild-targets.md)）将所有内容一起放入 `.nupkg` 文件。 此时便可将包部署到可供其他开发人员使用的任何主机。
+无论哪种情况，都要从决定其标识符、版本号、许可证、版权信息和任何其他必要内容开始创建包。 完成后，可以使用“pack”命令将所有内容放到 `.nupkg` 文件中。 可以将此文件发布到 NuGet 源，如 nuget.org。
 
 > [!Tip]
 > 具有 `.nupkg` 扩展名的 NuGet 包只是一个 zip 文件。 若要轻松查看任何包的内容，只需将扩展名更改为 `.zip` 并按常规方法展开内容。 尝试将包上传到主机前，请务必将扩展名改回 `.nupkg`。
