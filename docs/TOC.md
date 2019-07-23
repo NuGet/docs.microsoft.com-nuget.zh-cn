@@ -31,12 +31,14 @@
 ### [packages.config](reference/packages-config.md)
 # 创建包
 ## [概述和工作流](create-packages/overview-and-workflow.md)
-## [创建包](create-packages/creating-a-package.md)
+## [创建包 (dotnet CLI)](create-packages/creating-a-package-dotnet-cli.md)
+## [创建包 (nuget.exe CLI)](create-packages/creating-a-package.md)
 ## [使用 MSBuild 创建包](reference/msbuild-targets.md)
-## [支持多个目标框架](create-packages/supporting-multiple-target-frameworks.md)
+## [支持项目文件中包含多个目标框架](create-packages/multiple-target-frameworks-project-file.md)
 ## [构建预发行包](create-packages/prerelease-packages.md)
 ## [创建符号包](create-packages/symbol-packages-snupkg.md)
 ## 高级任务
+### [支持多个目标框架](create-packages/supporting-multiple-target-frameworks.md)
 ### [修改源代码和配置文件](create-packages/source-and-config-file-transformations.md)
 ### [选择项目引用的程序集](create-packages/select-assemblies-referenced-by-projects.md)
 ### [设置包类型](create-packages/set-package-type.md)
