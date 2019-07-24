@@ -4,247 +4,255 @@ description: NuGet 是适用于包含 .NET 的 Microsoft 开发平台的包管�
 author: karann-msft
 ms.author: karann
 ms.date: 02/12/2018
-ms.topic: overview
+ms.topic: hub-page
 layout: HubPage
 hide_bc: true
-ms.openlocfilehash: 399e4f80afb3e3d6278618055dde38a87184e3ff
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 5fd6556470f544b4f42512708be469bbf8bb72c0
+ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426644"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433329"
 ---
 <div id="main" class="v2">
-<div class="container">
-    <h1>NuGet 文档</h1>
-    <ul class="pivots">
+    <div class="container">
+        <h1>NuGet 文档</h1>
+        <p>NuGet 是适用于 .NET 的包管理器。 它使开发人员能够创建、共享和使用有用的 .NET 库。 NuGet 客户端工具可生成这些库并将其作为“包”。</p> 
+
+<ul id="index1" class="cardsF panelContent singlePanelContent cols cols4" style="float: left; display: flex!important;">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/media/logos/logo_nuget.svg" alt="NuGet logo" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3><a href="what-is-nuget.md">NuGet 简介</a></h3>
+                        <p>
+                            <a href="what-is-nuget.md">什么是 NuGet？</a>
+                        </p>
+                        <p>
+                            <a href="install-nuget-client-tools.md">安装 NuGet 客户端工具</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/media/common/i_get-started.svg" alt="Get started icon" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3><a href="install-nuget-client-tools.md">入门</a></h3>
+                        <p>
+                            <a href="quickstart/install-and-use-a-package-using-the-dotnet-cli.md">安装并使用包 - dotnet CLI</a>
+                        </p>
+                        <p>
+                            <a href="quickstart/install-and-use-a-package-in-visual-studio.md">安装并使用包 - Visual Studio</a>
+                        </p>
+                        <p>
+                            <a href="quickstart/create-and-publish-a-package-using-the-dotnet-cli.md">创建包 - dotnet CLI</a>
+                        </p>
+                        <p>
+                            <a href="quickstart/create-and-publish-a-package-using-visual-studio.md">创建包 - Visual Studio</a>
+                        </p>
+                        <p>
+                            <a href="quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md">创建 .NET Framework 包 - Visual Studio</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com//media/common/i_download-install.svg" alt="Download and install icon" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3><a href="consume-packages/overview-and-workflow.md">使用包</a></h3>
+                        <p>
+                            <a href="consume-packages/overview-and-workflow.md">工作流（概述）</a>
+                        </p>
+                        <p>
+                            <a href="consume-packages/finding-and-choosing-packages.md">查找和选择包</a>
+                        </p>
+                        <p>
+                            <a href="consume-packages/install-use-packages-visual-studio.md">使用 Visual Studio</a>
+                        </p>
+                        <p>
+                            <a href="consume-packages/install-use-packages-dotnet-cli.md">使用 dotnet CLI</a>
+                        </p>
+                        <p>
+                            <a href="consume-packages/install-use-packages-nuget-cli.md">使用 nuget.exe CLI</a>
+                        </p>
+                        <p>
+                            <a href="consume-packages/install-use-packages-powershell.md">使用包管理器控制台</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/media/common/i_build.svg" alt="Build icon" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3><a href="create-packages/overview-and-workflow.md">创建包</a></h3>
+                        <p>
+                            <a href="create-packages/overview-and-workflow.md">工作流（概述）</a>
+                        </p>
+                        <p>
+                            <a href="create-packages/creating-a-package-dotnet-cli.md">创建包 - dotnet CLI</a>
+                        </p>
+                        <p>
+                            <a href="create-packages/creating-a-package.md">创建包 - nuget.exe CLI</a>
+                        </p>
+                        <p>
+                            <a href="create-packages/multiple-target-frameworks-project-file.md">支持多个目标框架</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
         <li>
-            <a href="#start">入门</a>
-            <ul id="start">
-                <li>
-                    <a href="#start-all"></a>
-                    <ul id="start-all" class="cardsC">
-                        <li>
-                            <a href="what-is-nuget.md">
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-what-is-nuget.svg" alt="" /><br/>                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>什么是 NuGet？</h3>
-                                            <p>了解开发人员如何能利用 .NET 包管理器 NuGet 创建、共享和使用库。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="quickstart/install-and-use-a-package-using-the-dotnet-cli.md">
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-quickstarts.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>快速入门：使用包</h3>
-                                            <p>了解如何在项目中安装和使用 NuGet 包（演练适用于 .Net CLI 和 Visual Studio）。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="quickstart/create-and-publish-a-package-using-the-dotnet-cli.md">
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-guides.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>快速入门：创建包</h3>
-                                            <p>尝试使用 NuGet 工具和功能创建包（演练适用于 .Net CLI 和 Visual Studio）。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="create-packages/creating-a-package.md">
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-create-packages.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>创建包</h3>
-                                            <p>有关创建 NuGet 包的所有需知内容，从整个工作流到版本控制、预发行和其他专用包。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="consume-packages/overview-and-workflow.md">
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-consume-packages.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>使用包</h3>
-                                            <p>有关使用 NuGet 包的所有需知内容，从寻找和选择优秀包到恢复更新和缓存。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="hosting-packages/overview.md">
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-get-started-host-packages.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>承载包</h3>
-                                            <p>了解如何在自己的服务器或库上承载包，以使其仅对部分受众可用。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/media/common/i_delivery.svg" alt="Delivery icon" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3><a href="nuget-org/publish-a-package.md">发布包</a></h3>
+                        <p>
+                            <a href="nuget-org/publish-a-package.md">发布到 NuGet.org</a>
+                        </p>
+                        <p>
+                            <a href="hosting-packages/overview.md">发布到私有源</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/media/logos/logo_nuget.svg" alt="NuGet logo" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3><a href="nuget-org/overview-nuget-org.md">NuGet.org</a></h3>
+                        <p>
+                            <a href="nuget-org/overview-nuget-org.md">概述</a>
+                        </p>
+                        <p>
+                            <a href="nuget-org/individual-accounts.md">个人帐户</a>
+                        </p>
+                        <p>
+                            <a href="nuget-org/organizations-on-nuget-org.md">组织</a>
+                        </p>
+                        <p>
+                            <a href="nuget-org/scoped-api-keys.md">API 密钥</a>
+                        </p>
+                        <p>
+                            <a href="nuget-org/publish-a-package.md">发布包</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
         <li>
-            <a href="#tools">工具与参考</a>
-            <ul id="tools">
-                <li>
-                    <a href="#tools-all"></a>
-                    <ul id="tools-all" class="cardsC">
-                        <li>
-                            <a href="install-nuget-client-tools.md">
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-tools.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>工具</h3>
-                                            <p>有关可用于处理 NuGet 的工具及其获取方式的信息。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="reference/nuspec.md">
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-reference.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>参考</h3>
-                                            <p>有关 NuGet 使用的项目和格式、支持的框架及错误和警告的详细信息。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="api/overview.md">
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-api.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>API</h3>
-                                            <p>有关 NuGet HTTP 协议和以编程方式与包源交互详细信息。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="visual-studio-extensibility/nuget-api-in-visual-studio.md">
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-vs-extensibility.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>Visual Studio 扩展性</h3>
-                                            <p>有关 Visual Studio 中的 NuGet 包管理器 UI 和控制台的 API、项目系统支持和集成到 Visual Studio 模板的详细信息。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="policies/governance.md">
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage  bgdAccent1">
-                                                <img src="media/hub/nuget-tools-policies.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>策略</h3>
-                                            <p>作为开源项目、治理、生态系统和争议解决方法的 NuGet 的相关信息。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com/media/common/i_reference.svg" alt="API icon" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3><a href="reference/nuspec.md">引用</a></h3>
+                        <p>
+                            <a href="reference/dotnet-commands.md">dotnet CLI</a>
+                        </p>
+                        <p>
+                            <a href="reference/nuget-exe-cli-reference.md">nuget.exe CLI</a>
+                        <p>
+                            <a href="consume-packages/package-references-in-project-files.md">包引用</a>
+                        </p>
+                        </p>
+                        <p>
+                            <a href="reference/nuspec.md">.nuspec</a>
+                        </p>
+                        <p>
+                            <a href="reference/nuget-config-file.md">nuget.config</a>
+                        </p>
+                        <p>
+                            <a href="api/overview.md">NuGet API</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="https://docs.microsoft.com//media/common/i_multi-connect.svg" alt="Multi-connect icon" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3><a href="policies/governance.md">资源</a></h3>
+                        <p>
+                            <a href="policies/governance.md">策略 - NuGet</a>
+                        </p>
+                        <p>
+                            <a href="nuget-org/policies/data-requests.md">策略 - NuGet.org</a>
+                        </p>
+                        <p>
+                            <a href="release-notes/">发行说明</a>
+                        </p>
+                        <p>
+                            <a href="faqs/nuget-faq.md">常见问题解答 - NuGet</a>
+                        </p>
+                        <p>
+                            <a href="nuget-org/nuget-org-faq.md">常见问题解答 - NuGet.org</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+    </div>
 </div>
