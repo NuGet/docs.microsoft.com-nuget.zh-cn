@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 51c4c9937483e7f8a57356515c06a60c0f9e6f62
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 384e708187a747221de103720cc51af07acf713e
+ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327844"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433321"
 ---
 # <a name="config-command-nuget-cli"></a>config 命令 (NuGet CLI)
 
@@ -36,7 +36,7 @@ nuget config -AsPath <name> [options]
 | 选项 | 描述 |
 | --- | --- |
 | AsPath | 将配置值作为路径返回, 使用时`-Set`将忽略此值。 |
-| ConfigFile | 要修改的 NuGet 配置文件。 如果未指定, `%AppData%\NuGet\NuGet.Config`则使用 (Windows `~/.nuget/NuGet/NuGet.Config` ) 或 (Mac/Linux)。|
+| ConfigFile | 要修改的 NuGet 配置文件。 如果未指定, 则使用默认文件-`%AppData%\NuGet\NuGet.Config` (Windows) 或`~/.config/NuGet/NuGet.Config` (Mac/Linux) 或`~/.nuget/NuGet/NuGet.Config` (因 OS 分发而异)。|
 | ForceEnglishOutput | *(3.5 +)* 使用固定的、基于英语的区域性强制执行 nuget.exe。 |
 | Help | 显示命令的帮助信息。 |
 | NonInteractive | 取消显示提示用户输入或确认。 |

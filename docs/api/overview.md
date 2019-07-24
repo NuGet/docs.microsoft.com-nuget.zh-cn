@@ -1,21 +1,21 @@
 ---
-title: NuGet API 概述
-description: NuGet API 是一组 HTTP 终结点, 可用于下载包、提取元数据、发布新包等。
+title: NuGet 服务器 API 概述
+description: NuGet 服务器 API 是一组 HTTP 终结点, 可用于下载包、提取元数据、发布新包等。
 author: joelverhagen
 ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: e8e8fdeee4f0765e2409aea261db8217744ae2c7
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: aacf56a5dc5af9abf6f60d42bc7fd530a128d0d8
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317000"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419828"
 ---
-# <a name="nuget-api"></a>NuGet API
+# <a name="nuget-server-api"></a>NuGet 服务器 API
 
-NuGet API 是一组 HTTP 终结点, 可用于下载包、提取元数据、发布新包和执行官方 NuGet 客户端中提供的大多数其他操作。
+NuGet 服务器 API 是一组 HTTP 终结点, 可用于下载包、提取元数据、发布新包以及执行官方 NuGet 客户端中提供的大多数其他操作。
 
 此 API 由适用于 visual studio、nuget.exe 和 .net CLI 的 nuget 客户端用来执行 nuget 操作[`dotnet restore`](/dotnet/core/tools/dotnet-restore?tabs=netcore2x), 例如, 在 Visual studio UI 中搜索和。 [`nuget.exe push`](../reference/cli-reference/cli-ref-push.md)
 
@@ -49,7 +49,7 @@ NuGet V3 API 命名为, 因为它是 V2 API 的后续版本, 后者是基于 ODa
 
 **服务索引**描述了各种资源。 当前支持的资源集如下所示:
 
-资源名称                                                        | 必填 | 描述
+资源名称                                                        | 必需 | 描述
 -------------------------------------------------------------------- | -------- | -----------
 [目录](catalog-resource.md)                                       | 否       | 所有包事件的完整记录。
 [PackageBaseAddress](package-base-address-resource.md)               | 是      | 获取包内容 (. nupkg)。

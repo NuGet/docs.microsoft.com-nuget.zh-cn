@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: b450a5bfa3dcf70056c99a951f51a78845ef8438
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: 8e662194fffc031d0cfc0aa129a5a15b555a4231
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342457"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68420008"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
-NuGet 4.0+ 
+NuGet 4.0+
 
-使用 PackageReference 格式，NuGet 4.0+ 可以将所有清单元数据直接存储在项目文件中，而不是使用单独的 `.nuspec` 文件。
+使用[PackageReference](../consume-packages/package-references-in-project-files.md)格式, NuGet 4.0 + 可以直接将所有清单元数据存储在项目文件中, 而不是`.nuspec`使用单独的文件。
 
 如下所述，对于 MSBuild 15.1+，NuGet 还是具有 `pack` 目标和 `restore` 目标的一等 MSBuild 公民。 借助这些目标，你可以像使用任何其他 MSBuild 任务或目标一样使用 NuGet。 （对于 Nuget 3.x 及更早版本，通过 NuGet CLI 使用 [pack](../reference/cli-reference/cli-ref-pack.md) 和 [restore](../reference/cli-reference/cli-ref-restore.md) 命令。）
 
@@ -39,7 +39,7 @@ NuGet 4.0+
 
 对于使用 PackageReference 格式的 .NET Standard 项目, 使用`msbuild -t:pack`可以从项目文件绘制输入, 以在创建 NuGet 包时使用。
 
-下表描述了可以添加到项目文件第一个 `<PropertyGroup>` 节点中的 MSBuild 属性。 在 Visual Studio 2017 及更高版本中，通过右键单击项目并选择上下文菜单上的“编辑 {project_name}”，即可轻松进行这些编辑。  为方便起见，表由 [`.nuspec` 文件](../reference/nuspec.md)中的等效属性组织。
+下表描述了可以添加到项目文件第一个 `<PropertyGroup>` 节点中的 MSBuild 属性。 在 Visual Studio 2017 及更高版本中，通过右键单击项目并选择上下文菜单上的“编辑 {project_name}”，即可轻松进行这些编辑。 为方便起见，表由 [`.nuspec` 文件](../reference/nuspec.md)中的等效属性组织。
 
 请注意，`.nuspec` 的 `Owners` 和 `Summary` 属性不受 MSBuild 支持。
 
@@ -186,7 +186,7 @@ NuGet 4.0+
 
 ### <a name="includesymbols"></a>IncludeSymbols
 
-使用 `MSBuild -t:pack -p:IncludeSymbols=true` 时，相应的 `.pdb` 文件将随其他输出文件（`.dll`、`.exe`、`.winmd`、`.xml`、`.json`、`.pri`）一起复制。 请注意，设置 `IncludeSymbols=true` 会创建常规包和符号包  。
+使用 `MSBuild -t:pack -p:IncludeSymbols=true` 时，相应的 `.pdb` 文件将随其他输出文件（`.dll`、`.exe`、`.winmd`、`.xml`、`.json`、`.pri`）一起复制。 请注意，设置 `IncludeSymbols=true` 会创建常规包和符号包。
 
 ### <a name="includesource"></a>IncludeSource
 
@@ -329,7 +329,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 1. 下载包
 1. 编写资产文件、目标和属性
 
-目标仅适用于使用 PackageReference 格式的项目。  `restore` 它不适  用于使用`packages.config`格式的项目; 请改用[nuget 还原](../reference/cli-reference/cli-ref-restore.md)。
+目标仅适用于使用 PackageReference 格式的项目。  `restore` 它不适用于使用`packages.config`格式的项目; 请改用[nuget 还原](../reference/cli-reference/cli-ref-restore.md)。
 
 ### <a name="restore-properties"></a>还原属性
 
