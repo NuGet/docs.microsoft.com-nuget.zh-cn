@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 20a55c6ba89478e70d8e6837aaebc1b7b7754a93
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 9094d6b4a2dbd6ea1899b4470624948ce7c21f43
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842435"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317625"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
@@ -36,9 +36,9 @@ NuGet 是否支持 Mono？
 
 **NuGet 在不同 Visual Studio 产品中的受支持情况**
 
-- Windows 版 Visual Studio 支持[包管理器 UI](../tools/package-manager-ui.md) 和[包管理器控制台](../tools/package-manager-console.md)。
+- Windows 版 Visual Studio 支持[包管理器 UI](../consume-packages/install-use-packages-visual-studio.md) 和[包管理器控制台](../consume-packages/install-use-packages-powershell.md)。
 - Visual Studio for Mac 具有内置 NuGet 功能，如[在项目中包括 NuGet 包](/visualstudio/mac/nuget-walkthrough)中所述。
-- Visual Studio Code（所有平台）与 NuGet 不存在任何直接集成。 请使用 [NuGet CLI](../tools/nuget-exe-cli-reference.md) 或 [dotnet CLI](../tools/dotnet-commands.md)。
+- Visual Studio Code（所有平台）与 NuGet 不存在任何直接集成。 请使用 [NuGet CLI](../reference/nuget-exe-cli-reference.md) 或 [dotnet CLI](../reference/dotnet-commands.md)。
 - Azure DevOps 提供[还原 NuGet 包的生成步骤](/vsts/build-release/tasks/package/nuget)。 还可以[在 Azure DevOps 上托管私有 NuGet 包源](https://docs.microsoft.com/azure/devops/artifacts/nuget/publish)。
 
 **如何查看安装的 NuGet 工具的确切版本？**
@@ -59,13 +59,13 @@ NuGet 对多种项目模板提供完整支持，如 Windows、Web、Cloud、Shar
 
 如何更新 Visual Studio 模板中的包？ 
 
-在包管理器 UI，转到“更新”选项卡，选择“全部更新”；或者使用包管理控制台中的 [`Update-Package` 命令](../tools/ps-ref-update-package.md)   。
+在包管理器 UI，转到“更新”选项卡，选择“全部更新”；或者使用包管理控制台中的 [`Update-Package` 命令](../reference/ps-reference/ps-ref-update-package.md)   。
 
 若要更新模板本身，则需要手动更新模板存储库。 请参阅与该主题相关的 [Xavier Decoster 博客](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages)。 请注意，此操作的风险由自己承担，因为如果所有依赖项的最新版本不相互兼容，手动更新可能会损坏该模板。
 
 是否可以在 Visual Studio 之外使用 NuGet？ 
 
-可以，NuGet 可直接在命令行中使用。 请参阅[安装指南](../install-nuget-client-tools.md)和 [CLI 参考](../tools/nuget-exe-cli-reference.md)。
+可以，NuGet 可直接在命令行中使用。 请参阅[安装指南](../install-nuget-client-tools.md)和 [CLI 参考](../reference/nuget-exe-cli-reference.md)。
 
 ## <a name="nuget-command-line"></a>NuGet 命令行
 

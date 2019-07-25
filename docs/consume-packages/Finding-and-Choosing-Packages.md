@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8cd7529c4a1ecf659abde03fb1632e26431aebf3
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 3af29e2f9b09ba5bd82779f9aacf314bd8933436
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426753"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317030"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>针对项目查找和评估 NuGet 包
 
@@ -40,7 +40,7 @@ ms.locfileid: "67426753"
 
 幸运的是，你可以通过以下两种方法确定受支持的框架：
 
-1. 尝试在 NuGet 包管理器控制台中使用 [`Install-Package`](../tools/ps-ref-install-package.md) 命令将包安装到项目中。 如果包不兼容，此命令将显示包支持的框架。
+1. 尝试在 NuGet 包管理器控制台中使用 [`Install-Package`](../reference/ps-reference/ps-ref-install-package.md) 命令将包安装到项目中。 如果包不兼容，此命令将显示包支持的框架。
 
 1. 在 nuget.org 中包的页面上，使用“信息”下的“手动下载”链接来下载包   。 将扩展名从 `.nupkg` 更改为 `.zip`，然后打开文件查看 `lib` 文件夹的内容。 你会看到每个受支持框架的子文件夹，每个子文件夹都以目标框架名字对象 (TFM)（请参阅[目标框架](../reference/target-frameworks.md)）命名。 如果 `lib` 下没有任何子文件夹而只有一个 DLL，此时则必须通过尝试将包安装到项目中来查看其是否兼容。
 
@@ -58,9 +58,9 @@ ms.locfileid: "67426753"
 
     ![Visual Studio 中的“包括预发行版”复选框](media/Prerelease_02-CheckPrerelease.png)
 
-- **包管理器控制台**：将 `-IncludePrerelease` 开关与 `Find-Package`、`Get-Package`、`Install-Package``Sync-Package` 和 `Update-Package` 命令配合使用。 请参阅 [PowerShell 参考](../tools/powershell-reference.md)。
+- **包管理器控制台**：将 `-IncludePrerelease` 开关与 `Find-Package`、`Get-Package`、`Install-Package``Sync-Package` 和 `Update-Package` 命令配合使用。 请参阅 [PowerShell 参考](../reference/powershell-reference.md)。
 
-- **nuget.exe CLI**：将 `-prerelease` 开关与 `install`、`update`、`delete` 和 `mirror` 命令配合使用。 请参阅 [NuGet CLI 参考](../tools/nuget-exe-cli-reference.md)
+- **nuget.exe CLI**：将 `-prerelease` 开关与 `install`、`update`、`delete` 和 `mirror` 命令配合使用。 请参阅 [NuGet CLI 参考](../reference/nuget-exe-cli-reference.md)
 
 - **dotnet.exe CLI**：使用 `-v` 参数指定确切的预发行版本。 请参阅 [dotnet 添加包参考](/dotnet/core/tools/dotnet-add-package)。
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: e85d8cc3fd9492118bd8f34cfd05f20a9724c281
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 0df2b0ebcf438fba99291558f1cf929dcb32618b
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842343"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68316990"
 ---
 # <a name="package-restore-options"></a>包还原选项
 
@@ -41,7 +41,7 @@ ms.locfileid: "67842343"
 
 - **dotnet CLI**：在命令行中，切换到包含项目的文件夹，然后使用 [dotnet restore](/dotnet/core/tools/dotnet-restore?tabs=netcore2x) 命令还原带有 [PackageReference](../consume-packages/package-references-in-project-files.md) 的项目文件中列出的包。 如果为 .NET Core 2.0 和更高版本，使用 `dotnet build` 和 `dotnet run` 命令可以自动进行还原。  
 
-- **nuget.exe CLI**：在命令行中，切换到包含项目的文件夹，然后使用 [nuget restore](../tools/cli-ref-restore.md) 命令还原项目或解决方案文件或 `packages.config` 中列出的包。 
+- **nuget.exe CLI**：在命令行中，切换到包含项目的文件夹，然后使用 [nuget restore](../reference/cli-reference/cli-ref-restore.md) 命令还原项目或解决方案文件或 `packages.config` 中列出的包。 
 
 - **MSBuild**：使用 [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) 命令通过 PackageReference 还原项目文件中列出的包。 此命令仅适用于 Visual Studio 2017 及更高版本附带的 NuGet 4.x+ 和 MSBuild 15.1+。 `nuget restore` 和 `dotnet restore` 均对适用项目使用此命令。
 

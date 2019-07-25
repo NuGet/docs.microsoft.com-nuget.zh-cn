@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/06/2017
 ms.topic: conceptual
-ms.openlocfilehash: 91c072c8895ab4267c64fd04deae010ae5af4d37
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 42a5c30c058a9efb35338c1b484235b6ad111bd0
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545447"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317594"
 ---
 # <a name="local-feeds"></a>本地源
 
 本地 NuGet 包源只是本地网络（甚至自己的计算机）上放置包的分层文件夹结构。 然后，这些源可在使用 CLI、包管理器 UI 和包管理器控制台的所有其他 NuGet 操作中用作包源。
 
-若要启用源，请使用[包管理器 UI](../tools/package-manager-ui.md#package-sources) 或 [`nuget sources`](../tools/cli-ref-sources.md) 命令将其路径名（如 `\\myserver\packages`）添加到源列表中。
+若要启用源，请使用[包管理器 UI](../consume-packages/install-use-packages-visual-studio.md#package-sources) 或 [`nuget sources`](../reference/cli-reference/cli-ref-sources.md) 命令将其路径名（如 `\\myserver\packages`）添加到源列表中。
 
 > [!Note]
 > NuGet 3.3+ 中支持分层文件夹结构。 较旧版本的 NuGet 仅使用包含包的一个文件夹，其性能远低于层次结构。
@@ -31,7 +31,7 @@ ms.locfileid: "43545447"
           ├─<packageID>.<version>.nupkg
           └─<other files>
 
-当使用 [`nuget add`](../tools/cli-ref-add.md) 命令将包复制到源时，NuGet 自动创建此结构：
+当使用 [`nuget add`](../reference/cli-reference/cli-ref-add.md) 命令将包复制到源时，NuGet 自动创建此结构：
 
 ```cli
 nuget add new_package.1.0.0.nupkg -source \\myserver\packages
@@ -39,7 +39,7 @@ nuget add new_package.1.0.0.nupkg -source \\myserver\packages
 
 `nuget add` 命令一次仅用于一个包，这在设置具有多个包的源时会造成不便。
 
-在此情况下，请使用 [`nuget init`](../tools/cli-ref-init.md) 命令将文件夹中的所有包复制到源，就像在每个源上单独运行 `nuget add`。 例如，以下命令将所有包从 `c:\packages` 复制到 `\\myserver\packages` 上的分层树中：
+在此情况下，请使用 [`nuget init`](../reference/cli-reference/cli-ref-init.md) 命令将文件夹中的所有包复制到源，就像在每个源上单独运行 `nuget add`。 例如，以下命令将所有包从 `c:\packages` 复制到 `\\myserver\packages` 上的分层树中：
 
 ```cli
 nuget init c:\packages \\myserver\packages

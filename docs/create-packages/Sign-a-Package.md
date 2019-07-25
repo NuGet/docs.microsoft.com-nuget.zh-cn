@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: abdd06642ccc652527a1a005eda2689ce97df74c
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 85a862852761b68db882abdc1ca0e84d83d95f07
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426812"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317643"
 ---
 # <a name="signing-nuget-packages"></a>对 NuGet 包进行签名
 
@@ -36,7 +36,7 @@ ms.locfileid: "67426812"
 > [!note]
 > 需要 nuget.exe 4.6.0 或更高版本
 
-可使用 [nuget sign](../tools/cli-ref-sign.md) 对包进行签名：
+可使用 [nuget sign](../reference/cli-reference/cli-ref-sign.md) 对包进行签名：
 
 ```cli
 nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper <TimestampServiceURL>
@@ -45,9 +45,9 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 > [!Tip]
 > 证书提供程序通常还提供时间戳服务器 URL，可用于如上所示的 `Timestamper` 可选参数。 请参考提供程序文档和/或该服务 URL 的支持。
 
-* 可使用证书存储中可用的证书或使用来自文件的证书。 请参阅 CLI 参考，了解 [nuget sign](../tools/cli-ref-sign.md)。
+* 可使用证书存储中可用的证书或使用来自文件的证书。 请参阅 CLI 参考，了解 [nuget sign](../reference/cli-reference/cli-ref-sign.md)。
 * 已签名包应包含时间戳，用于确保签名证书过期时签名仍有效。 否则签名操作将引发一个[警告](../reference/errors-and-warnings/NU3002.md)。
-* 使用 [nuget verify](../tools/cli-ref-verify.md) 可查看给定包的签名详细信息。
+* 使用 [nuget verify](../reference/cli-reference/cli-ref-verify.md) 可查看给定包的签名详细信息。
 
 ## <a name="register-the-certificate-on-nugetorg"></a>使用 NuGet.org 注册证书
 

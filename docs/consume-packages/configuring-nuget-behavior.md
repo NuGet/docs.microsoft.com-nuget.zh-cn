@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 57b7f29b533a8e6d7db2710c7e42a239f50199a1
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 5309d94fafea9cdfc3699d443393be5d381dd145
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426652"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317734"
 ---
 # <a name="common-nuget-configurations"></a>常见的 NuGet 配置
 
@@ -32,7 +32,7 @@ NuGet 的行为由一个或多个 `NuGet.Config` (XML) 文件（可存在于项�
 
 `NuGet.Config` 文件是包含键/值对的简单 XML 文本文件，请参阅 [NuGet 配置设置](../reference/nuget-config-file.md)主题。
 
-设置通过 NuGet CLI [config 命令](../tools/cli-ref-config.md)进行管理：
+设置通过 NuGet CLI [config 命令](../reference/cli-reference/cli-ref-config.md)进行管理：
 - 默认情况下需更改用户级配置文件。
 - 若要更改其他文件中的设置，请使用 `-configFile` 开关。 在此情况下，文件可以使用任何文件名。
 - 键始终需要区分大小写。

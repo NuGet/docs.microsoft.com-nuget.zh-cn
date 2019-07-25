@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8da57dc295ea78f2eb183226fc9b2f4a37e3f5db
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 7b92d07d19a2e9073ecc38ed37b4ee2491080443
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426634"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317772"
 ---
 # <a name="manage-package-trust-boundaries"></a>管理包信任边界
 
@@ -24,7 +24,7 @@ ms.locfileid: "67426634"
 > [!Note]
 > 在 Windows 上需要 NuGet 4.9.0+ 和 Visual Studio 版本 15.9 及更高版本
 
-可使用 [`nuget config`](../tools/cli-ref-config.md) 命令，通过在 [nuget.config](../reference/nuget-config-file.md) 文件中将 `signatureValidationMode` 设置为 `require`，配置 NuGet 客户端包签名的验证方式。
+可使用 [`nuget config`](../reference/cli-reference/cli-ref-config.md) 命令，通过在 [nuget.config](../reference/nuget-config-file.md) 文件中将 `signatureValidationMode` 设置为 `require`，配置 NuGet 客户端包签名的验证方式。
 
 ```cmd
 nuget.exe config -set signatureValidationMode=require
@@ -40,7 +40,7 @@ nuget.exe config -set signatureValidationMode=require
 
 ### <a name="trust-package-author"></a>信任包作者
 
-要基于作者签名信任包，请使用 [`trusted-signers`](../tools/cli-ref-trusted-signers.md) 命令设置 nuget.config 中的 `author` 属性。
+要基于作者签名信任包，请使用 [`trusted-signers`](../reference/cli-reference/cli-ref-trusted-signers.md) 命令设置 nuget.config 中的 `author` 属性。
 
 ```cmd
 nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE40881FF5F0AD3E58965DA20A9F571EF1651A56933748E1BF1C99E537C4E039 -FingerprintAlgorithm SHA256
@@ -55,7 +55,7 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 ```
 
 >[!TIP]
->使用`nuget.exe`[验证命令](../tools/cli-ref-verify.md)获取证书的指纹值 `SHA256`。
+>使用`nuget.exe`[验证命令](../reference/cli-reference/cli-ref-verify.md)获取证书的指纹值 `SHA256`。
 
 
 ### <a name="trust-all-packages-from-a-repository"></a>信任存储库中的所有包
@@ -95,7 +95,7 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 
 ### <a name="sync-repository-certificates"></a>同步存储库证书
 
-包存储库应发布其在[服务索引](../api/service-index.md)中使用的证书。 存储库最终将更新这些证书，例如证书过期时。 出现这种情况时，使用特定策略的客户端将需要更新配置，以包括新添加的证书。 可通过使用 `nuget.exe` [受信任的签名程序同步命令](../tools/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-)，轻松升级与某个存储库关联的受信任签名程序。
+包存储库应发布其在[服务索引](../api/service-index.md)中使用的证书。 存储库最终将更新这些证书，例如证书过期时。 出现这种情况时，使用特定策略的客户端将需要更新配置，以包括新添加的证书。 可通过使用 `nuget.exe` [受信任的签名程序同步命令](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-)，轻松升级与某个存储库关联的受信任签名程序。
 
 ### <a name="schema-reference"></a>架构参考
 

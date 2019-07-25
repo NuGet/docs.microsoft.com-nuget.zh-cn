@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: f05c3a7a51bdc0760097422004cfc4339bf9ee2c
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 737b13be70de9aaa7dec7904d4c2a4ec494ef7b3
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426609"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317551"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>承载自己的 NuGet 源
 
@@ -38,4 +38,4 @@ ms.locfileid: "67426609"
 - Sonatype 的 [Nexus](http://www.sonatype.org/nexus/)。
 - JetBrains 的 [TeamCity](https://www.jetbrains.com/teamcity/)。
 
-无论包是什么样的承载方式，均可将其添加到 `NuGet.Config` 中的可用源列表以便访问。 此操作可在 Visual Studio 中执行（如[包源](../tools/package-manager-ui.md#package-sources)中所述），或使用 [`nuget sources`](../tools/cli-ref-sources.md) 从命令行执行操作。 源的路径可以是本地文件夹路径名、网络名称或 URL。
+无论包是什么样的承载方式，均可将其添加到 `NuGet.Config` 中的可用源列表以便访问。 此操作可在 Visual Studio 中执行（如[包源](../consume-packages/install-use-packages-visual-studio.md#package-sources)中所述），或使用 [`nuget sources`](../reference/cli-reference/cli-ref-sources.md) 从命令行执行操作。 源的路径可以是本地文件夹路径名、网络名称或 URL。

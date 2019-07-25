@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: 64f3a1978cd336064a77c9f3872357e65c37fc10
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: a796c7a7537c3052259c7cf3f17d60981a495442
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842362"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317720"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>使用 dotnet CLI 安装和管理包
 
@@ -18,7 +18,7 @@ ms.locfileid: "67842362"
 
 dotnet CLI 适用于 .NET Core 和 .NET Standard 项目（SDK 样式的项目类型），以及任何其他 SDK 样式项目（例如，面向 .NET Framework 的 SDK 样式项目）。 有关更多信息，请参阅 [SDK 属性](/dotnet/core/tools/csproj#additions)。
 
-本文介绍了一些最常见的 dotnet CLI 命令的基本用法。 对于这些中的大多数命令，CLI 工具在当前目录中查找项目文件，除非在命令中指定了项目文件（项目文件是一个可选开关）。 如需获取命令的完整列表和可能使用的参数，请参阅 [.NET Core 命令行界面 (CLI) 工具](../tools/dotnet-commands.md)。
+本文介绍了一些最常见的 dotnet CLI 命令的基本用法。 对于这些中的大多数命令，CLI 工具在当前目录中查找项目文件，除非在命令中指定了项目文件（项目文件是一个可选开关）。 如需获取命令的完整列表和可能使用的参数，请参阅 [.NET Core 命令行界面 (CLI) 工具](../reference/dotnet-commands.md)。
 
 ## <a name="prerequisites"></a>系统必备
 

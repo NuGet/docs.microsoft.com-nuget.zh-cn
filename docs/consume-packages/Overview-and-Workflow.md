@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4cfc2fde08b240288851b87a391dc42c1ac8ecaf
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 0b3ecb535c07459bff517102b3cf6f4e6dc42195
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842322"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317046"
 ---
 # <a name="package-consumption-workflow"></a>包使用工作流
 
@@ -22,7 +22,7 @@ ms.locfileid: "67842322"
 
 有关详细信息，请参阅[查找和选择包](../consume-packages/finding-and-choosing-packages.md)和[安装包时会发生什么情况？](../concepts/package-installation-process.md)。
 
-NuGet 会记住每个已安装包的标识和版本号，并将其录制到项目文件（使用 [PackageReference](../consume-packages/package-references-in-project-files.md)）或 [`packages.config`](../reference/packages-config.md) 中，具体取决于项目类型和 NuGet 版本。 若为 NuGet 4.0+，则 PackageReference 为首选方法，虽然这可在 Visual Studio 中通过[包管理器 UI](../tools/package-manager-ui.md) 进行配置。 在任何情况下，可以随时在相应文件中进行搜索，查看项目依赖项的完整列表。
+NuGet 会记住每个已安装包的标识和版本号，并将其录制到项目文件（使用 [PackageReference](../consume-packages/package-references-in-project-files.md)）或 [`packages.config`](../reference/packages-config.md) 中，具体取决于项目类型和 NuGet 版本。 若为 NuGet 4.0+，则 PackageReference 为首选方法，虽然这可在 Visual Studio 中通过[包管理器 UI](install-use-packages-visual-studio.md) 进行配置。 在任何情况下，可以随时在相应文件中进行搜索，查看项目依赖项的完整列表。
 
 > [!Tip]
 > 随时检查要在软件中使用的每个包的许可证是非常明智的做法。 在 nuget.org 中，可以在每个包的说明页右侧找到“许可信息”链接  。 如果包未指定许可条款，请直接通过包页面上的“联系所有者”链接与包所有者联系  。 Microsoft 不向用户授予任何第三方包提供程序的知识产权许可，同时不对第三方提供的信息承担任何责任。
@@ -48,6 +48,6 @@ NuGet 还可以确保包支持的目标框架与你的项目兼容。 如果包�
 | 工具 | 说明 |
 | --- | --- |
 | [dotnet.exe CLI](install-use-packages-dotnet-cli.md) | （所有平台）用于 .NET Core 和 .NET Standard 库，以及用于面向 .NET Framework 的 SDK 样式项目的 CLI 工具（请参阅 [SDK 属性](/dotnet/core/tools/csproj#additions)）。 检索由 \<package_name\> 标识的包，并添加对项目文件的引用。 同时还要检索和安装依赖项。 |
-| Visual Studio | （Windows 和 Mac）提供 UI，用户可以通过此 UI 浏览、选择包，并从指定包源将包及其依赖项安装到项目中。 将对已安装的程序包引用添加到项目文件。<ul><li>[使用 Visual Studio 安装和管理包](../tools/package-manager-ui.md)</li><li>[在项目中包括 NuGet 包 (Mac)](/visualstudio/mac/nuget-walkthrough)</li></ul> |
-| [Visual Studio 中的包管理器控制台](../tools/package-manager-console.md) | （仅限 Windows）检索并将用 \<package_name\> 识别的包从所选源安装到解决方案的指定项目中，然后添加对项目文件的引用。 同时还要检索和安装依赖项。 |
-| [nuget.exe CLI](install-use-packages-dotnet-cli.md) | （所有平台）用于 .NET Framework 库和面向 .NET Standard 库的非 SDK 样式项目的 CLI 工具。 检索用 \<package_name\> 识别的包，将其内容展开到当前目录下的文件夹中；还可以检索 `packages.config` 文件中列出的所有包。 同时还要检索和安装依赖项，但对项目文件或 `packages.config` 不作任何更改。 |
+| Visual Studio | （Windows 和 Mac）提供 UI，用户可以通过此 UI 浏览、选择包，并从指定包源将包及其依赖项安装到项目中。 将对已安装的程序包引用添加到项目文件。<ul><li>[使用 Visual Studio 安装和管理包](install-use-packages-visual-studio.md)</li><li>[在项目中包括 NuGet 包 (Mac)](/visualstudio/mac/nuget-walkthrough)</li></ul> |
+| [包管理器控制台 (Visual Studio)](install-use-packages-powershell.md) | （仅限 Windows）检索并将用 \<package_name\> 识别的包从所选源安装到解决方案的指定项目中，然后添加对项目文件的引用。 同时还要检索和安装依赖项。 |
+| [nuget.exe CLI](install-use-packages-nuget-cli.md) | （所有平台）用于 .NET Framework 库和面向 .NET Standard 库的非 SDK 样式项目的 CLI 工具。 检索用 \<package_name\> 识别的包，将其内容展开到当前目录下的文件夹中；还可以检索 `packages.config` 文件中列出的所有包。 同时还要检索和安装依赖项，但对项目文件或 `packages.config` 不作任何更改。 |

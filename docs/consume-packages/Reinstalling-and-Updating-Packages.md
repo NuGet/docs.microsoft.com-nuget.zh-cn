@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: 9b2a7b299a0cb944ad9045684e14cc7b83e1cff4
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 32b01e6066cf60f7a0942508e640fdd5658b4444
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426670"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68316980"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>如何重新安装和更新包
 
@@ -61,7 +61,7 @@ ms.locfileid: "67426670"
 
 ## <a name="using-update-package"></a>使用 Update-Package
 
-注意下述的[注意事项](#considerations)，可以使用 Visual Studio 包管理器控制台中的 [Update-Package 命令](../Tools/ps-ref-update-package.md)（“工具” > “NuGet 包管理器” > “包管理器控制台”）轻松重新安装任意包    ：
+注意下述的[注意事项](#considerations)，可以使用 Visual Studio 包管理器控制台中的 [Update-Package 命令](../reference/ps-reference/ps-ref-update-package.md)（“工具” > “NuGet 包管理器” > “包管理器控制台”）轻松重新安装任意包    ：
 
 ```ps
 Update-Package -Id <package_name> –reinstall
@@ -97,7 +97,7 @@ Update-Package
 
 使用 [PackageReference](../Consume-Packages/Package-References-in-Project-Files.md) 更新项目或解决方案中的包始终会更新为最新版本的包（不包括预发布包）。 如果需要，使用 `packages.config` 的项目可以限制更新版本，如下方[约束更新版本](#constraining-upgrade-versions)中所述。
 
-有关命令的完整详细信息，请参阅 [Update-Package](../Tools/ps-ref-update-package.md) 引用。
+有关命令的完整详细信息，请参阅 [Update-Package](../reference/ps-reference/ps-ref-update-package.md) 引用。
 
 ### <a name="considerations"></a>注意事项
 
