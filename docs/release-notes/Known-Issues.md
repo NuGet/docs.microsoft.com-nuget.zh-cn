@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: fc338ba3810a125f638a937cf14456bf519a24a8
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: b104eb39ddeacd9ca1ea45937cf98ad57531112a
+ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548469"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317141"
 ---
 # <a name="known-issues-with-nuget"></a>NuGet 的已知问题
 
@@ -29,7 +29,7 @@ $PAT = "Your personal access token" $Feed = "Your url" .\nuget.exe sources add -
 
 **临时解决方法：**
 
-使用 [-StorePasswordInClearText](../tools/cli-ref-sources.md) 选项以明文形式存储密码。
+使用 [-StorePasswordInClearText](../reference/cli-reference/cli-ref-sources.md) 选项以明文形式存储密码。
 
 ## <a name="error-installing-packages-with-nuget-34-341"></a>在 NuGet 3.4、3.4.1 中安装包时出现出错
 
@@ -45,7 +45,7 @@ $PAT = "Your personal access token" $Feed = "Your url" .\nuget.exe sources add -
 
 **问题：**
 
-在 NuGet 2.7 或更高版本中，尝试安装包含程序集引用的任何包时，可能会收到错误消息“输入字符串的格式不正确。”，如下所示：
+在 NuGet 2.7 或更高版本中，尝试安装包含程序集引用的任何包时，可能会收到错误消息“输入字符串的格式不正确。”，如下所示  ：
 
 ```ps
 install-package log4net
@@ -63,9 +63,9 @@ install-package log4net
 
 这是由于未在系统上注册 `VSLangProj.dll` COM 组件的类型库引起的。 这在以下情况下可能发生，例如：并行安装两个版本的 Visual Studio，然后卸载旧版本。 此操作可能会无意中取消注册上述 COM 库。
 
-**解决方案：**:
+**解决方案：** :
 
-从提升的提示符运行此命令，重新注册 `VSLangProj.dll` 的类型库
+从提升的提示符运行此命令，重新注册 `VSLangProj.dll` 的类型库 
 
     regsvr32 "C:\Program Files (x86)\Common Files\microsoft shared\MSEnv\VsLangproj.olb"
 
@@ -75,7 +75,7 @@ install-package log4net
 
 ## <a name="build-failure-after-package-update-in-vs-2012"></a>在 VS 2012 中更新包之后生成失败
 
-问题：使用 VS 2012 RTM。 更新 NuGet 包时，出现此消息：“无法完全卸载一个或多个包。”， 并提示你重启 Visual Studio。 VS 重启后，收到奇怪的生成错误。
+问题：你使用的是 VS 2012 RTM。 更新 NuGet 包时，收到以下消息：“无法完全卸载一个或多个包。” 并提示你重启 Visual Studio。 VS 重启后，收到奇怪的生成错误。
 
 原因是旧包中的某些文件被后台 MSBuild 进程锁定。 即使 VS 重启，后台 MSBuild 进程仍在使用旧包中的文件，导致生成失败。
 
@@ -105,7 +105,7 @@ install-package log4net
     Command execution stopped because the preference variable "ErrorActionPreference" or common parameter
     is set to Stop: Unable to find type
 
-或
+or
 
     System.Management.Automation.CmdletInvocationException: Could not load file or assembly 'Scripts\nuget.psm1' or one of its dependencies. <br />The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) ---&gt; System.IO.FileLoadException: Could not load file or <br />assembly 'Scripts\nuget.psm1' or one of its dependencies. The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) <br />---&gt; System.ArgumentException: Illegal characters in path.
        at System.IO.Path.CheckInvalidPathChars(String path)
@@ -151,7 +151,7 @@ install-package log4net
 
 ## <a name="the-add-package-library-reference-dialog-throws-an-exception-if-the-solution-contains-installshield-limited-edition-project"></a>如果解决方案包含 InstallShield Limited Edition 项目，则“添加包库引用”对话框会引发异常
 
-我们发现，如果解决方案包含一个或多个 InstallShield Limited Edition 项目，打开时，“添加包库引用”对话框将引发异常。 除了删除或卸载 InstallShield 项目，目前尚无解决方法。
+我们发现，如果解决方案包含一个或多个 InstallShield Limited Edition 项目，打开时，“添加包库引用”对话框将引发异常  。 除了删除或卸载 InstallShield 项目，目前尚无解决方法。
 
 ## <a name="uninstall-button-greyed-out-nuget-requires-admin-privileges-to-installuninstall"></a>“卸载”按钮变灰？ 需要管理权限才能安装/卸载 NuGet
 
@@ -178,7 +178,7 @@ NuGet 需要 Powershell 2.0 运行时。 默认情况下，Windows XP 没有 Pow
 
     C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft Corporation\NuGet Package Manager\<version>\
 
-1. 删除带有 .deleteme 扩展名的所有文件。
+1. 删除带有 .deleteme 扩展名的所有文件  。
 1. 重新打开 Visual Studio
 
 执行这些步骤后，继续操作。
@@ -195,7 +195,7 @@ NuGet 需要 Powershell 2.0 运行时。 默认情况下，Windows XP 没有 Pow
 
 默认情况下，FluentNHibernate 需要 NHibernate 3.0.0.2001。 但是，NuGet 会故意在项目中安装 NHibernate 3.0.0.4000 ，并添加相应的绑定重定向，使其工作。 如果没有开启代码分析，项目将正常编译。 与编译器不同，代码分析工具不正确地遵循绑定重定向来使用 3.0.0.4000 而非 3.0.0.2001。 可通过安装 NHibernate 3.0.0.2001 或者通过执行以下操作，指示代码分析工具与编译器行为相同，来解决这个问题：
 
-1. 转到 %PROGRAMFILES%\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop
+1. 转到 %PROGRAMFILES%\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop 
 1. 打开 FxCopCmd.exe.config 并将 `AssemblyReferenceResolveMode` 从 `StrongName` 更改为 `StrongNameIgnoringVersion`。
 1. 保存更改并重新生成项目。
 
@@ -221,7 +221,7 @@ Windows Phone 工具不支持 Visual Studio Extension Manager。 若要卸载 Nu
 
 ## <a name="changing-the-capitalization-of-nuget-package-ids-breaks-package-restore"></a>更改 NuGet 包 ID 的大写会中断包还原
 
-正如在[此 GitHub 问题](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932)上详细讨论的，可通过 NuGet 支持来完成 NuGet 包的大写更改，但对于在 global-packages 文件夹中现有不同包的用户来说，包还原期间会导致复杂情况。 建议仅在有办法与包的现有用户交流生成时包还原可能发生的中断情况时，才请求更改事例。
+正如在[此 GitHub 问题](https://github.com/Particular/NServiceBus/issues/1271#issuecomment-20865932)上详细讨论的，可通过 NuGet 支持来完成 NuGet 包的大写更改，但对于在 global-packages  文件夹中现有不同包的用户来说，包还原期间会导致复杂情况。 建议仅在有办法与包的现有用户交流生成时包还原可能发生的中断情况时，才请求更改事例。
 
 ## <a name="reporting-issues"></a>报告问题
 

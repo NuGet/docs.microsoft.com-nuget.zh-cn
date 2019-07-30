@@ -3,22 +3,22 @@ title: NuGet 包的多目标
 description: 介绍从一个 NuGet 包中以多个 .NET Framework 版本为目标的各种方法。
 author: karann-msft
 ms.author: karann
-ms.date: 09/27/2017
+ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: a755438c1f63d33271f636cb663cc5b51a5aecbc
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: d12b12c4670f5dcb4c1e7e475d77926bd5d3935b
+ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324807"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68342502"
 ---
-# <a name="supporting-multiple-net-framework-versions"></a>支持多个 .NET Framework 版本
+# <a name="support-multiple-net-versions"></a>支持多个 .NET 版本
 
-有关使用 NuGet 4.0+ 的 .NET Core 项目，请参阅 [NuGet 包和作为 MSBuild 目标还原](../reference/msbuild-targets.md)以获取有关跨目标的详细信息。
+许多库以 .NET Framework 的特定版本为目标。 例如，你可能拥有特定于 UWP 的一个库版本，而拥有的另一版本利用 .NET Framework 4.6 中的功能。 为了适应这种情况，NuGet 支持将同一个库的多个版本放在单个包中。
 
-许多库以 .NET Framework 的特定版本为目标。 例如，你可能拥有特定于 UWP 的一个库版本，而拥有的另一版本利用 .NET Framework 4.6 中的功能。
+本文介绍 NuGet 包的布局，但不考虑包或程序集的生成方式（也就是说，无论是使用多个非 SDK 样式的 .csproj  文件、自定义 .nuspec  文件，还是单个多目标 SDK 样式的 .csproj，布局都相同  ）。 对于 SDK 样式的项目，NuGet [pack 目标](../reference/msbuild-targets.md)知道如何设计包的布局，并自动将程序集放在正确的 lib 文件夹中，并为每个目标框架 (TFM) 创建依赖项组。 有关详细说明，请参阅[在项目文件中支持多个 .NET Framework 版本](multiple-target-frameworks-project-file.md)。
 
-为了适应此情况，NuGet 支持在使用[创建包](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)中所述的基于约定的工作目录方法时，将同一库的多个版本放入一个包中。
+使用[创建包](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)中介绍的基于约定的工作目录方法时，必须按照本文所述手动设计包的布局。 对于 SDK 样式的项目，建议使用自动方法，但也可以选择按照本文所述手动设计包的布局。
 
 ## <a name="framework-version-folder-structure"></a>框架版本的文件夹结构
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4b365488c8dd0e081449552b06451e7b40b5223b
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: f5d418fd5b6b9bb88958d6b7e9e3034f40485a7d
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426619"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419956"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>管理全局包、缓存和临时文件夹
 
@@ -18,7 +18,7 @@ ms.locfileid: "67426619"
 
 | name | 说明和位置（每个用户）|
 | --- | --- |
-| global&#8209;packages | global-packages  文件夹是 NuGet 安装任何下载包的位置。 每个包完全展开到匹配包标识符和版本号的子文件夹。 使用 PackageReference 格式的项目总是直接从该文件夹中使用包。 使用 `packages.config` 时，包将安装到 global-packages  文件夹，然后复制到项目的 `packages` 文件夹。<br/><ul><li>Windows：`%userprofile%\.nuget\packages`</li><li>Mac/Linux：`~/.nuget/packages`</li><li>使用 NUGET_PACKAGES 重写环境变量 `globalPackagesFolder` 或 `repositoryPath` [配置设置](../reference/nuget-config-file.md#config-section)（分别在使用 PackageReference 和 `packages.config` 时）或 `RestorePackagesPath` MSBuild 属性（仅限 MSBuild）。 环境变量优先于配置设置。</li></ul> |
+| global&#8209;packages | global-packages  文件夹是 NuGet 安装任何下载包的位置。 每个包完全展开到匹配包标识符和版本号的子文件夹。 使用 [PackageReference](package-references-in-project-files.md) 格式的项目始终直接从该文件夹中使用包。 使用 [packages.config](../reference/packages-config.md) 时，包将安装到 global-packages  文件夹，然后复制到项目的 `packages` 文件夹。<br/><ul><li>Windows：`%userprofile%\.nuget\packages`</li><li>Mac/Linux：`~/.nuget/packages`</li><li>使用 NUGET_PACKAGES 重写环境变量 `globalPackagesFolder` 或 `repositoryPath` [配置设置](../reference/nuget-config-file.md#config-section)（分别在使用 PackageReference 和 `packages.config` 时）或 `RestorePackagesPath` MSBuild 属性（仅限 MSBuild）。 环境变量优先于配置设置。</li></ul> |
 | http&#8209;cache | Visual Studio 包管理器 (NuGet 3.x+) 和 `dotnet` 工具存储此缓存中下载包的副本（另存为 `.dat` 文件），这些副本被组织到每个包源的子文件夹中。 未展开包，且缓存中有 30 分钟的到期时间。<br/><ul><li>Windows：`%localappdata%\NuGet\v3-cache`</li><li>Mac/Linux：`~/.local/share/NuGet/v3-cache`</li><li>使用 NUGET_HTTP_CACHE_PATH 环境变量替代。</li></ul> |
 | temp | NuGet 在各操作期间在其中存储临时文件的文件夹。<br/><li>Windows：`%temp%\NuGetScratch`</li><li>Mac/Linux：`/tmp/NuGetScratch`</li></ul> |
 | plugins-cache **4.8 +** | NuGet 存储来自操作声明请求的结果的文件夹。<br/><ul><li>Windows：`%localappdata%\NuGet\plugins-cache`</li><li>Mac/Linux：`~/.local/share/NuGet/plugins-cache`</li><li>使用 NUGET_PLUGINS_CACHE_PATH 环境变量替代。</li></ul> |
@@ -34,7 +34,7 @@ ms.locfileid: "67426619"
 
 ## <a name="viewing-folder-locations"></a>查看文件夹位置
 
-可以使用 [nuget locals 命令](../tools/cli-ref-locals.md)查看位置：
+可以使用 [nuget locals 命令](../reference/cli-reference/cli-ref-locals.md)查看位置：
 
 ```cli
 # Display locals for all folders: global-packages, http cache, temp and plugins cache

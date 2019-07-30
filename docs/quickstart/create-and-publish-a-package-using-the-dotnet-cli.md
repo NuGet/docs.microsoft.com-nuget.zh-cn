@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: 4e96d9969c8b4570ee69501d6529986f891ea4dc
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 30a77b427fe0a33b41262c5784045e5a6b10852f
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842605"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419986"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>快速入门：创建并发布包 (dotnet CLI)
 
@@ -101,12 +101,18 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
-## <a name="related-topics"></a>相关主题
+## <a name="next-steps"></a>后续步骤
 
-- [创建包](../create-packages/creating-a-package.md)
+祝贺你创建第一个 NuGet 包！
+
+> [!div class="nextstepaction"]
+> [创建包](../create-packages/creating-a-package-dotnet-cli.md)
+
+若要了解更多 NuGet 产品，请选择以下链接。
+
 - [发布包](../nuget-org/publish-a-package.md)
 - [预发行包](../create-packages/Prerelease-Packages.md)
-- [支持多个目标框架](../create-packages/supporting-multiple-target-frameworks.md)
+- [支持多个目标框架](../create-packages/multiple-target-frameworks-project-file.md)
 - [包版本控制](../reference/package-versioning.md)
 - [创建本地化包](../create-packages/creating-localized-packages.md)
 - [创建符号包](../create-packages/symbol-packages-snupkg.md)

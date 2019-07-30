@@ -1,24 +1,24 @@
 ---
-title: 如何创建 NuGet 包
+title: 使用 nuget.exe CLI 创建 NuGet 包
 description: 设计和创建 NuGet 包流程的详细指南，包含文件和版本控制等关键决策点。
 author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1dce8556448131c36680167fdc3605e4378b9178
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 894a39e9e67508234295db128928b09da7f468f0
+ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842310"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68419818"
 ---
-# <a name="create-nuget-packages"></a>创建 NuGet 包
+# <a name="create-a-package-using-the-nugetexe-cli"></a>使用 nuget.exe CLI 创建包
 
 无论包是什么用途或者它包含什么代码，均使用其中一个 CLI 工具（`nuget.exe` 或 `dotnet.exe`）将该功能打包进可以与任意数量的其他开发人员共享且可以由其使用的组件中。 若要安装 NuGet CLI 工具，请参阅[安装 NuGet 客户端工具](../install-nuget-client-tools.md)。 请注意，Visual Studio 不会自动包含 CLI 工具。
 
-- 对于使用 [SDK 样式格式](../resources/check-project-format.md)的 .NET Core 和 .NET Standard 项目，以及任何其他 SDK 样式项目，NuGet 直接使用项目文件中的信息创建包。 有关详细信息，请参阅[使用 dotnet CLI 创建 .NET Standard 包](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)和[使用 Visual Studio 创建 .NET Standard 包](../quickstart/create-and-publish-a-package-using-visual-studio.md)或[作为 MSBuild 目标的 NuGet 包和还原](../reference/msbuild-targets.md)。
+- 对于非 SDK 样式项目（通常为 .NET Framework 项目），按照本文中所述的步骤创建包。 有关使用 Visual Studio 和 `nuget.exe` CLI 的分步说明，请参阅[创建和发布 .NET Framework 包](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)。
 
-- 对于非 SDK 样式项目（通常为 .NET Framework 项目），按照本文中所述的步骤创建包。 还可以按照[创建和发布 .NET Framework 包](../quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md)中的步骤操作，以使用 `nuget.exe` CLI 和 Visual Studio 创建一个包。
+- 对于使用 [SDK 样式格式](../resources/check-project-format.md)的 .NET Core 和 .NET Standard 项目，以及任何其他 SDK 样式项目，请参阅[使用 dotnet CLI 创建 NuGet 包](creating-a-package-dotnet-cli.md)。
 
 - 对于从 `packages.config` 迁移到 [PackageReference](../consume-packages/package-references-in-project-files.md) 的项目，使用 [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)。
 
@@ -65,7 +65,7 @@ ms.locfileid: "67842310"
 
 - 发行说明
 - 版权信息
-- 对 [Visual Studio 中的包管理器 UI](../tools/package-manager-ui.md) 的简短说明
+- 对 [Visual Studio 中的包管理器 UI](../consume-packages/install-use-packages-visual-studio.md) 的简短说明
 - 区域设置 ID
 - 项目 URL
 - 作为表达式或文件的许可证（`licenseUrl` 将被弃用，请使用 [`license` nuspec 元数据元素](../reference/nuspec.md#license)）
@@ -369,7 +369,7 @@ NuGet 指示需要更正的 `.nuspec` 文件中是否有错误，例如忘记更
 
 ### <a name="additional-options"></a>附加选项
 
-可通过 `nuget pack` 使用多种命令行开关，以排除文件、替代清单中的版本号和更改输出文件夹等。 有关完整列表，请参考[包命令引用](../tools/cli-ref-pack.md)。
+可通过 `nuget pack` 使用多种命令行开关，以排除文件、替代清单中的版本号和更改输出文件夹等。 有关完整列表，请参考[包命令引用](../reference/cli-reference/cli-ref-pack.md)。
 
 以下是 Visual Studio 项目中的一些常见选项：
 
@@ -404,7 +404,7 @@ NuGet 指示需要更正的 `.nuspec` 文件中是否有错误，例如忘记更
 对于自动测试，基本流程如下所示：
 
 1. 将 `.nupkg` 文件复制到本地文件夹。
-1. 使用 `nuget sources add -name <name> -source <path>` 命令将文件夹添加到包源（请参阅 [nuget 源](../tools/cli-ref-sources.md)）。 请注意，只需在任意给定计算机上设置一次此本地源。
+1. 使用 `nuget sources add -name <name> -source <path>` 命令将文件夹添加到包源（请参阅 [nuget 源](../reference/cli-reference/cli-ref-sources.md)）。 请注意，只需在任意给定计算机上设置一次此本地源。
 1. 使用 `nuget install <packageID> -source <name>`（其中 `<name>` 与提供给 `nuget sources` 的源名称相匹配）从该源安装包。 指定源可确保包从该源中单独安装。
 1. 检查文件系统以检查文件是否正确安装。
 

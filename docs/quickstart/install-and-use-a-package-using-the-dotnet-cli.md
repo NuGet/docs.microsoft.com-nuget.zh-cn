@@ -1,16 +1,16 @@
 ---
-title: 通过 dotnet CLI 使用 NuGet 包的介绍性指南
+title: 使用 dotnet CLI 安装并使用 NuGet 包
 description: 有关如何在 .NET Core 项目中安装并使用 NuGet 包的演练教程。
 author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 0d637c441cf9f36e8e3e04e47b524b2defecae52
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: ee456fd49675db37fee78dc14502a897d84a2b99
+ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67841669"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68342470"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>快速入门：使用 dotnet CLI 安装并使用包
 
@@ -101,9 +101,15 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
     }
     ```
 
-## <a name="related-articles"></a>相关文章
+## <a name="next-steps"></a>后续步骤
 
-- [使用 dotnet CLI 安装并使用包](../consume-packages/install-use-packages-dotnet-cli.md)
+祝贺你安装并使用第一个 NuGet 包！
+
+> [!div class="nextstepaction"]
+> [使用 dotnet CLI 安装并使用包](../consume-packages/install-use-packages-dotnet-cli.md)
+
+若要了解更多 NuGet 产品，请选择以下链接。
+
 - [包使用的概述和工作流](../consume-packages/overview-and-workflow.md)
 - [查找和选择包](../consume-packages/finding-and-choosing-packages.md)
-- [常见的 NuGet 配置](../consume-packages/configuring-nuget-behavior.md)
+- [项目文件中的包引用](../consume-packages/package-references-in-project-files.md)

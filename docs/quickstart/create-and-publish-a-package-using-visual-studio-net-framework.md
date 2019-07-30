@@ -1,16 +1,16 @@
 ---
-title: 在 Windows 上使用 Visual Studio 创建和发布 .NET Framework 包
+title: 在 Windows 上使用 Visual Studio 创建和发布 .NET Framework NuGet 包
 description: 在 Windows 上使用 Visual Studio 创建和发布 .NET Framework NuGet 包的演练教程。
 author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: bf561d36a06bf42c029eb96ff1b7930abffa4c0a
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 75160bf2b01f6d4707162e019a6263ddc64a6f5e
+ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842040"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68342519"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>快速入门：使用 Visual Studio 创建和发布包（.NET Framework、Windows）
 
@@ -162,7 +162,7 @@ NuGet 包中包含清单（`.nuspec` 文件），其中包含相关的元数据�
     Your package was pushed.
     ```
 
-请参阅 [nuget push](../tools/cli-ref-push.md)。
+请参阅 [nuget push](../reference/cli-reference/cli-ref-push.md)。
 
 ### <a name="publish-errors"></a>发布错误
 
@@ -172,9 +172,15 @@ NuGet 包中包含清单（`.nuspec` 文件），其中包含相关的元数据�
 
 [!INCLUDE [publish-manage](includes/publish-manage.md)]
 
-## <a name="related-topics"></a>相关主题
+## <a name="next-steps"></a>后续步骤
 
-- [创建包](../create-packages/creating-a-package.md)
+祝贺你创建第一个 NuGet 包！
+
+> [!div class="nextstepaction"]
+> [创建包](../create-packages/creating-a-package.md)
+
+若要了解更多 NuGet 产品，请选择以下链接。
+
 - [发布包](../nuget-org/publish-a-package.md)
 - [预发行包](../create-packages/Prerelease-Packages.md)
 - [支持多个目标框架](../create-packages/supporting-multiple-target-frameworks.md)
