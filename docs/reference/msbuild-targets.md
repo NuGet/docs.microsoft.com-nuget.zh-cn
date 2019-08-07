@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8e662194fffc031d0cfc0aa129a5a15b555a4231
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 8403ae38b5d2e907c6f06b162a18cdcd5425565b
+ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68420008"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817532"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -18,7 +18,7 @@ NuGet 4.0+
 
 使用[PackageReference](../consume-packages/package-references-in-project-files.md)格式, NuGet 4.0 + 可以直接将所有清单元数据存储在项目文件中, 而不是`.nuspec`使用单独的文件。
 
-如下所述，对于 MSBuild 15.1+，NuGet 还是具有 `pack` 目标和 `restore` 目标的一等 MSBuild 公民。 借助这些目标，你可以像使用任何其他 MSBuild 任务或目标一样使用 NuGet。 （对于 Nuget 3.x 及更早版本，通过 NuGet CLI 使用 [pack](../reference/cli-reference/cli-ref-pack.md) 和 [restore](../reference/cli-reference/cli-ref-restore.md) 命令。）
+如下所述，对于 MSBuild 15.1+，NuGet 还是具有 `pack` 目标和 `restore` 目标的一等 MSBuild 公民。 借助这些目标，你可以像使用任何其他 MSBuild 任务或目标一样使用 NuGet。 有关使用 MSBuild 创建 NuGet 包的说明, 请参阅[使用 Msbuild 创建 nuget 包](../create-packages/creating-a-package-msbuild.md)。 （对于 Nuget 3.x 及更早版本，通过 NuGet CLI 使用 [pack](../reference/cli-reference/cli-ref-pack.md) 和 [restore](../reference/cli-reference/cli-ref-restore.md) 命令。）
 
 ## <a name="target-build-order"></a>目标生成顺序
 
@@ -329,7 +329,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 1. 下载包
 1. 编写资产文件、目标和属性
 
-目标仅适用于使用 PackageReference 格式的项目。  `restore` 它不适用于使用`packages.config`格式的项目; 请改用[nuget 还原](../reference/cli-reference/cli-ref-restore.md)。
+目标仅适用于使用 PackageReference 格式的项目。 `restore` 它不适用于使用`packages.config`格式的项目; 请改用[nuget 还原](../reference/cli-reference/cli-ref-restore.md)。
 
 ### <a name="restore-properties"></a>还原属性
 
