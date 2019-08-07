@@ -19,7 +19,7 @@
 ## 配置 NuGet
 ### 包还原选项
 #### [还原选项](consume-packages/package-restore.md)
-#### [故障排除](consume-packages/package-restore-troubleshooting.md)
+#### [疑难解答](consume-packages/package-restore-troubleshooting.md)
 ### [重新安装和更新包](consume-packages/reinstalling-and-updating-packages.md)
 ### [管理全局包和缓存文件夹](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ### [管理包信任边界](consume-packages/installing-signed-packages.md)
@@ -33,12 +33,13 @@
 ## [概述和工作流](create-packages/overview-and-workflow.md)
 ## [创建包 (dotnet CLI)](create-packages/creating-a-package-dotnet-cli.md)
 ## [创建包 (nuget.exe CLI)](create-packages/creating-a-package.md)
-## [使用 MSBuild 创建包](reference/msbuild-targets.md)
+## [创建包 (MSBuild)](create-packages/creating-a-package-msbuild.md)
 ## [支持项目文件中包含多个目标框架](create-packages/multiple-target-frameworks-project-file.md)
 ## [构建预发行包](create-packages/prerelease-packages.md)
 ## [创建符号包](create-packages/symbol-packages-snupkg.md)
 ## 高级任务
 ### [支持多个目标框架](create-packages/supporting-multiple-target-frameworks.md)
+### [指定 MSBuild 包和还原目标](reference/msbuild-targets.md)
 ### [修改源代码和配置文件](create-packages/source-and-config-file-transformations.md)
 ### [选择项目引用的程序集](create-packages/select-assemblies-referenced-by-projects.md)
 ### [设置包类型](create-packages/set-package-type.md)
@@ -73,11 +74,11 @@
 ## [dotnet CLI](reference/dotnet-Commands.md)
 ## [nuget.exe CLI 参考](reference/nuget-exe-cli-reference.md)
 ### [add](reference/cli-reference/cli-ref-add.md)
-### [配置](reference/cli-reference/cli-ref-config.md)
+### [config](reference/cli-reference/cli-ref-config.md)
 ### [delete](reference/cli-reference/cli-ref-delete.md)
 ### [help or ?](reference/cli-reference/cli-ref-help.md)
 ### [init](reference/cli-reference/cli-ref-init.md)
-### [安装](reference/cli-reference/cli-ref-install.md)
+### [install](reference/cli-reference/cli-ref-install.md)
 ### [list](reference/cli-reference/cli-ref-list.md)
 ### [locals](reference/cli-reference/cli-ref-locals.md)
 ### [mirror](reference/cli-reference/cli-ref-mirror.md)
@@ -258,7 +259,7 @@
 ### [project.json 管理格式](archive/project-json.md)
 ### [project.json 和 UWP](archive/project-json-and-uwp.md)
 ### [project.json impact](archive/project-json-impact.md)
-# 可扩展性
+# 扩展性
 ## 可扩展性 - NuGet 插件
 ### [NuGet 跨平台插件](reference/extensibility/NuGet-Cross-Platform-Plugins.md)
 ### [NuGet 跨平台身份验证插件](reference/extensibility/nuget-cross-platform-authentication-plugin.md)
@@ -341,6 +342,6 @@
 #### [NuGet 1.3](release-notes/NuGet-1.3.md)
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
-## [常见问题](faqs/nuget-faq.md)
+## [常见问题解答](faqs/nuget-faq.md)
 ## [项目格式](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)
