@@ -18,7 +18,7 @@
 ### [包管理器控制台 (PowerShell)](consume-packages/install-use-packages-powershell.md)
 ## 配置 NuGet
 ### 包还原选项
-#### [还原选项](consume-packages/package-restore.md)
+#### [还原包](consume-packages/package-restore.md)
 #### [疑难解答](consume-packages/package-restore-troubleshooting.md)
 ### [重新安装和更新包](consume-packages/reinstalling-and-updating-packages.md)
 ### [管理全局包和缓存文件夹](consume-packages/managing-the-global-packages-and-cache-folders.md)
