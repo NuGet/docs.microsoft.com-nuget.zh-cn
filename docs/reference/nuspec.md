@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 5b9be55b593890127d8fe0ad1a9357b89527a09a
-ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
+ms.openlocfilehash: 9c608c5455bc83874b670b7f2b9a0ceeeafdc8e5
+ms.sourcegitcommit: dec3fa44547c6a00d0ae6cbb6c64cdc65660d808
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433362"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68912572"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -95,7 +95,7 @@ ms.locfileid: "68433362"
 包的许可证的 URL, 通常显示在 Ui (如 nuget.org) 中。
 
 #### <a name="license"></a>照
-包中的许可证文件的 SPDX 许可证表达式或路径, 通常显示在 Ui 中, 如 nuget.org。如果要使用常见许可证 (如 MIT 或 BSD-2 子句) 来授权包, 请使用关联的[SPDX 许可证标识符](https://spdx.org/licenses/)。 例如:
+包中的许可证文件的 SPDX 许可证表达式或路径, 通常显示在 Ui 中, 如 nuget.org。如果要使用常见许可证 (如 MIT 或 BSD-2 子句) 来授权包, 请使用关联的[SPDX 许可证标识符](https://spdx.org/licenses/)。 例如：
 
 `<license type="expression">MIT</license>`
 
@@ -106,7 +106,7 @@ ms.locfileid: "68433362"
 
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-如果使用许可证表达式不支持的自定义许可证, 则可以使用许可证文本打包`.txt`或`.md`文件。 例如：
+如果使用许可证表达式不支持的自定义许可证, 则可以使用许可证文本打包`.txt`或`.md`文件。 例如:
 
 ```xml
 <package>
@@ -293,7 +293,8 @@ nuget pack MyProject.csproj
 </dependencies>
 ```
 
-注意:使用`.nuspec` `.nuspec`从项目创建时, 该项目中存在的依赖项将自动包含在生成的文件中。 `nuget spec`
+> [!Important]
+> 使用`.nuspec` `.nuspec`从项目创建时, 该项目中存在的依赖项不会自动包括在生成的文件中。 `nuget spec` 请`nuget pack myproject.csproj`改用, 并从生成的*nupkg*文件中获取*nuspec*文件。 *Nuspec*包含依赖项。
 
 ### <a name="dependency-groups"></a>依赖项组
 
