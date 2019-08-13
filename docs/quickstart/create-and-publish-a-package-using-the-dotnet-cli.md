@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: 30a77b427fe0a33b41262c5784045e5a6b10852f
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: f663b1b2176a5f0ae5bc6d82873193638e0efdaa
+ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419986"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833380"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>快速入门：创建并发布包 (dotnet CLI)
 
@@ -26,9 +26,15 @@ ms.locfileid: "68419986"
 
 你可以使用现有的 .NET 类库项目用于要打包的代码，或者创建一个简单的项目，如下所示：
 
-1. 创建一个名为 `AppLogger` 的文件夹并更改到其中。
+1. 创建名为 `AppLogger` 的文件夹。
 
-1. 创建使用 `dotnet new classlib` 的项目，它使用项目当前文件夹的名称。
+1. 打开命令提示符并切换到 `AppLogger` 文件夹。
+
+1. 类型 `dotnet new classlib`，它使用项目当前文件夹的名称。
+
+   这会创建新项目。
+
+1. 使用 `dotnet run` 来测试已正确创建的应用。
 
 ## <a name="add-package-metadata-to-the-project-file"></a>将包元数据添加到项目文件
 

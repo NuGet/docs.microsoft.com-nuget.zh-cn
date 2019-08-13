@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: quickstart
-ms.openlocfilehash: 86e71460094de9b799384db83456a68db57647af
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 0fc3b15c6d5ffa93eb6e26660f71cea2286ba77d
+ms.sourcegitcommit: aed04cc04b0902403612de6736a900d41c265afd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419923"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68821410"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>快速入门：使用 Visual Studio 创建和发布 NuGet 包（仅限 .NET Standard 和 Windows）
 
@@ -99,17 +99,24 @@ namespace AppLogger
     ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
     ```
 
-### <a name="alternate-option-pack-with-msbuild"></a>备用选项：使用 MSBuild 打包
+### <a name="optional-generate-package-on-build"></a>（可选）在生成期间生成包
+
+可以将 Visual Studio 配置为在生成项目时自动生成 NuGet 包。
+
+1. 在“解决方案资源管理器”中，右键单击项目，然后选择“属性”  。
+
+2. 在“包”选项卡中，选择“在生成期间生成 NuGet 包”   。
+
+   ![在生成期间自动生成包](media/qs_create-vs-05-generate-on-build.png)
+
+> [!NOTE]
+> 自动生成包时，打包时间会增加项目的生成时间。
+
+### <a name="optional-pack-with-msbuild"></a>（可选）使用 MSBuild 打包
 
 作为使用“打包”菜单命令的备选项，当项目包含必要的包数据时，NuGet 4.x+ 和 MSBuild 15.1+ 支持 `pack` 目标  。 打开命令提示符，导航到项目文件夹并运行以下命令。 （用户通常习惯从“开始”菜单中启动“适用于 Visual Studio 的开发人员命令提示符”，因为它将使用 MSBuild 的所有必需路径进行配置。）
 
-```cli
-msbuild -t:pack -p:Configuration=Release
-```
-
-然后可在 `bin\Release` 文件夹中找到此包。
-
-有关 `msbuild -t:pack` 的其他选项，请参阅 [NuGet 打包和还原为 MSBuild 目标](../reference/msbuild-targets.md#pack-target)。
+有关详细信息，请参阅[使用 MSBuild 创建包](../create-packages/creating-a-package-msbuild.md)。
 
 ## <a name="publish-the-package"></a>发布包
 

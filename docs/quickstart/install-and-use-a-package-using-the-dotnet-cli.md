@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: ee456fd49675db37fee78dc14502a897d84a2b99
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: 47593cc65ad707b8880d854dc43824b9234fd44a
+ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342470"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68833311"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>快速入门：使用 dotnet CLI 安装并使用包
 
@@ -30,6 +30,8 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 可以将 NuGet 包安装到某种类型的 .NET 项目。 在本演练中，如下所示创建一个简单的 .NET Core 控制台项目：
 
 1. 为项目创建文件夹。
+
+1. 打开命令提示符并切换到新文件夹。
 
 1. 请使用以下命令创建项目：
 

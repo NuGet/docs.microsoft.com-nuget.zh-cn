@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3af29e2f9b09ba5bd82779f9aacf314bd8933436
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: cbe6fd964e88b054b9e2c5c8ead71d1f9090d63c
+ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317030"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817566"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>针对项目查找和评估 NuGet 包
 
@@ -82,6 +82,10 @@ NuGet 支持本机 C++ 包，这些包可在 Visual Studio 的 C++ 项目中使�
 
     ![包清单页面上的下载统计数据](media/Finding-03-Downloads.png)
 
+- GitHub 使用情况：在包页面上，“GitHub 使用情况”部分会列出依赖于此包的主要 GitHub 存储库   。 许多常见的 GitHub 存储库所依赖的包通常是更好的选择。
+
+    ![GitHub 使用情况](media/GitHub-Usage.png)
+
 - *版本历史记录*：在包页面上，可在“信息”下查找最新更新的日期和查看“版本历史记录”   。 维护良好的包应具有最新更新和丰富的版本历史记录。 疏于维护的包则仅具有几次更新，并且通常已长时间未更新。
 
     ![包清单页面上的版本历史记录](media/Finding-04-VersionHistory.png)
@@ -115,6 +119,7 @@ NuGet 支持本机 C++ 包，这些包可在 Visual Studio 的 C++ 项目中使�
 1. 它应有 `<license type="file">license\license.txt</license>` 等标记。 这意味着，许可证文件的命名为 `license.txt`，且它位于 `license` 文件夹的根目录中。
 1. 转到 `license` 文件夹，并打开 `license.txt` 文件。
 
+对于相当于在 `.nuspec` 中设置许可证的 MSBuild，请查看[打包许可证表达式或许可证文件](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file)。
 
 ## <a name="search-syntax"></a>搜索语法
 
