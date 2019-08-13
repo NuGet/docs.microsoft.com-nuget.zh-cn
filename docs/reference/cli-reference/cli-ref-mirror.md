@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 076d7a480e2f07149e4ec7ac58c7ab37040e7a8f
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 81866172bfbf55c42ee96c213c0117f1f986235c
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327664"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959712"
 ---
 # <a name="mirror-command-nuget-cli"></a>mirror 命令 (NuGet CLI)
 
@@ -19,7 +19,7 @@ ms.locfileid: "68327664"
 将包及其依赖项从指定的源存储库镜像到目标存储库。
 
 > [!NOTE]
-> 若要为3.2 之前的 NuGet 版本启用此命令, [https://nuget.codeplex.com/releases](https://nuget.codeplex.com/releases)请跳到, 选择最新稳定`NuGet.ServerExtensions.dll` 版本`Nuget-Signed.exe` , 将和下载到本地`Nuget-Signed.exe` 磁盘`nuget.exe`, 并将重命名为。
+> ServerExtensions 和 NuGet-Signed 以前在 NuGet 2.x 中支持此命令 (通过将 NuGet-Signed 重命名为 nuget.exe) 已不再可供下载。 若要使用与此类似的命令, 请尝试[NuGetMirror](https://www.nuget.org/packages/NuGetMirror/)。
 
 ## <a name="usage"></a>用法
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8403ae38b5d2e907c6f06b162a18cdcd5425565b
-ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
+ms.openlocfilehash: d8d1b2ef0185381d16c1bb73035588fe90bcfd14
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817532"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959682"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -34,6 +34,9 @@ NuGet 4.0+
 ```
 
 同样，你可以编写 MSBuild 任务、编写自己的目标并使用 MSBuild 任务中的 NuGet 属性。
+
+> [!NOTE]
+> `$(OutputPath)`是相对的, 需要从项目根目录运行命令。
 
 ## <a name="pack-target"></a>包目标
 

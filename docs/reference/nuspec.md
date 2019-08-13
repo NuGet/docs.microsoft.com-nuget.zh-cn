@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 9c608c5455bc83874b670b7f2b9a0ceeeafdc8e5
-ms.sourcegitcommit: dec3fa44547c6a00d0ae6cbb6c64cdc65660d808
+ms.openlocfilehash: 67bc95135f746c4a4685773808756df399cbf01e
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68912572"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959706"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -102,11 +102,11 @@ ms.locfileid: "68912572"
 > [!Note]
 > NuGet.org 仅接受开源计划或免费 Software Foundation 批准的许可表达式。
 
-如果你的包在多个常用许可证下获得许可, 则可以使用[SPDX 表达式语法版本 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)指定复合许可证。 例如：
+如果你的包在多个常用许可证下获得许可, 则可以使用[SPDX 表达式语法版本 2.0](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60)指定复合许可证。 例如:
 
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-如果使用许可证表达式不支持的自定义许可证, 则可以使用许可证文本打包`.txt`或`.md`文件。 例如:
+如果使用许可证表达式不支持的自定义许可证, 则可以使用许可证文本打包`.txt`或`.md`文件。 例如：
 
 ```xml
 <package>
@@ -172,7 +172,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 #### <a name="repository"></a>储存库
 存储库元数据, 包括四个可选`type`属性`url` : 和 *(4.0 +)* `branch` 、 `commit`和和 *(4.6 +)* 。 这些属性允许你将映射`.nupkg`到生成它的存储库, 并且可能会将其作为单个分支名称和/或提交生成包的 sha-1 哈希。 这应该是公开提供的 url, 可由版本控制软件直接调用。 它不应是 html 页面, 因为这是用于计算机的。 对于 "链接到项目" 页, `projectUrl`请改用字段。
 
-例如:
+例如：
 ```xml
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
@@ -183,9 +183,6 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
     </metadata>
 </package>
 ```
-
-#### <a name="minclientversion"></a>minClientVersion
-指定可安装此包的最低 NuGet 客户端版本，并由 nuget.exe 和 Visual Studio 程序包管理器强制实施。 只要包依赖于特定 NuGet 客户端版本中添加的 `.nuspec` 文件的特定功能，就会使用此功能。 例如，使用 `developmentDependency` 特性的包应为 `minClientVersion` 指定“2.8”。 同样，使用 `contentFiles` 元素（请参阅下一部分）的包应将 `minClientVersion` 设置为“3.3”。 另请注意，早于 2.5 的 NuGet 客户端无法识别此标记，所以无论 `minClientVersion` 包含什么内容，它们总是拒绝安装该包。
 
 #### <a name="title"></a>标题
 可在某些 UI 显示中使用的包的友好标题。 (Visual Studio 中的 nuget.org 和包管理器不显示标题)
@@ -204,6 +201,29 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 (3.3+) `<files>` 元素的集合，用来标识包含在使用项目中的内容文件。 这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件。 请参阅下面的[指定包含在包中的文件](#specifying-files-to-include-in-the-package)。
 #### <a name="files"></a>文件 
 `<package>`节点可能`<metadata>` `<metadata>`包含作为`<files>` 同级的节点,以及下的子节点,以指定要包含在包中的程序集`<contentFiles>`和内容文件。 有关详细信息，请参阅本主题后面的[包含程序集文件](#including-assembly-files)和[包含内容文件](#including-content-files)。
+
+### <a name="metadata-attributes"></a>metadata 特性
+
+#### <a name="minclientversion"></a>minClientVersion
+指定可安装此包的最低 NuGet 客户端版本，并由 nuget.exe 和 Visual Studio 程序包管理器强制实施。 只要包依赖于特定 NuGet 客户端版本中添加的 `.nuspec` 文件的特定功能，就会使用此功能。 例如，使用 `developmentDependency` 特性的包应为 `minClientVersion` 指定“2.8”。 同样，使用 `contentFiles` 元素（请参阅下一部分）的包应将 `minClientVersion` 设置为“3.3”。 另请注意，早于 2.5 的 NuGet 客户端无法识别此标记，所以无论 `minClientVersion` 包含什么内容，它们总是拒绝安装该包。
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+    <metadata minClientVersion="100.0.0.1">
+        <id>dasdas</id>
+        <version>2.0.0</version>
+        <title />
+        <authors>dsadas</authors>
+        <owners />
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>My package description.</description>
+    </metadata>
+    <files>
+        <file src="content\one.txt" target="content\one.txt" />
+    </files>
+</package>
+```
 
 ## <a name="replacement-tokens"></a>替换令牌
 
@@ -261,7 +281,7 @@ nuget pack MyProject.csproj
 | 特性 | 描述 |
 | --- | --- |
 | `id` | （必须）依赖项的包 ID，如“EntityFramework”和“NUnit”，同时也是 nuget.org 在包页面上显示的包名称。 |
-| `version` | （必需）可接受作为依赖项的版本范围。 有关准确语法，请参阅[包版本控制](../reference/package-versioning.md#version-ranges-and-wildcards)。 |
+| `version` | （必需）可接受作为依赖项的版本范围。 有关准确语法，请参阅[包版本控制](../reference/package-versioning.md#version-ranges-and-wildcards)。 不支持通配符 (浮动) 版本。 |
 | include | 包括/排除标记的逗号分隔列表（见下文），指示要包含在最终包中的依赖项。 默认值为 `all`。 |
 | exclude | 包括/排除标记的逗号分隔列表（见下文），指示要排除在最终包外的依赖项。 默认值为`build,analyzers`可改写的值。 但`content/ ContentFiles`也隐式排除在无法覆盖的最终包中。 用 `exclude` 指定的标记优先于用 `include` 指定的标记。 例如，`include="runtime, compile" exclude="compile"` 和 `include="runtime"` 相同。 |
 
@@ -318,8 +338,8 @@ nuget pack MyProject.csproj
     </group>
 
     <group targetFramework="net40">
-        <dependency id="jQuery" />
-        <dependency id="WebActivator" />
+        <dependency id="jQuery" version="1.6.2" />
+        <dependency id="WebActivator" version="1.4.4" />
     </group>
 
     <group targetFramework="sl30">
@@ -626,7 +646,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 
 | 特性 | 描述 |
 | --- | --- |
-| **include** | （必需）文件或要包含的文件位置，受 `exclude` 特性指定的排除规则约束。 路径是相对于 `.nuspec` 文件的路径，除非指定了绝对路径。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
+| **include** | （必需）文件或要包含的文件位置，受 `exclude` 特性指定的排除规则约束。 路径相对`contentFiles`于文件夹, 除非指定了绝对路径。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 | **exclude** | 要从 `src` 位置排除的文件或文件模式的分号分隔列表。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 | **buildAction** | 生成操作，用于分配到 MSBuild 的内容项（如 `Content`、`None`、`Embedded Resource`、`Compile` 等）。默认值为 `Compile`。 |
 | **copyToOutput** | 指示是否将内容项复制到生成 (或发布) 输出文件夹的布尔值。 默认值为 false。 |
@@ -644,7 +664,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 - `TxM` 是 NuGet 支持的任何合法目标框架名字对象（请参阅[目标框架](../reference/target-frameworks.md)）。
 - 任何文件夹结构都可以附加到此语法的末尾。
 
-例如：
+例如:
 
     Language- and framework-agnostic:
         /contentFiles/any/any/config.xml

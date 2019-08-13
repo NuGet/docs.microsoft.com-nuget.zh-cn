@@ -5,18 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 0e12944bdd5d43b8b9e84908be480a5249dd924f
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: cab56cb87f46335f9fdebdbc1649fead16459877
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327654"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959722"
 ---
 # <a name="pack-command-nuget-cli"></a>pack 命令 (NuGet CLI)
 
 **适用于:** 创建&bullet;包的**支持版本:** 2.7+
 
-基于指定`.nuspec`的或项目文件创建 NuGet 包。 命令 (请参阅[dotnet 命令](../dotnet-Commands.md)) 和`msbuild -t:pack` (请参阅[MSBuild 目标](../msbuild-targets.md)) 可以用作备用项。 `dotnet pack`
+基于指定的[nuspec](../nuspec.md)或项目文件创建 NuGet 包。 命令 (请参阅[dotnet 命令](../dotnet-Commands.md)) 和`msbuild -t:pack` (请参阅[MSBuild 目标](../msbuild-targets.md)) 可以用作备用项。 `dotnet pack`
 
 > [!Important]
 > 在 Mono 下, 不支持从项目文件创建包。 还需要将文件中的`.nuspec`非本地路径调整为 Unix 样式路径, 因为 nuget.exe 不会转换 Windows 路径名本身。
@@ -33,7 +33,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 | 选项 | 描述 |
 | --- | --- |
-| BasePath | 设置在`.nuspec`文件中定义的文件的基路径。 |
+| BasePath | 设置在[nuspec](../nuspec.md)文件中定义的文件的基路径。 |
 | Build | 指定应在生成包之前生成项目。 |
 | Exclude | 指定创建包时要排除的一个或多个通配符模式。 若要指定多个模式, 请重复-Exclude 标志。 请参阅下面的示例。 |
 | ExcludeEmptyDirectories | 在生成包时阻止包含空目录。 |
