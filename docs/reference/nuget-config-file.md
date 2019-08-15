@@ -3,36 +3,20 @@ title: nuget .config 文件引用
 description: NuGet.Config 文件引用，包括配置、bindingRedirects、packageRestore、解决方案和 packageSource 节。
 author: karann-msft
 ms.author: karann
-ms.date: 10/25/2017
+ms.date: 08/13/2019
 ms.topic: reference
-ms.openlocfilehash: b03bb8da0191a679671e5898ac70fff2024d52f2
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: a2955617b899bfadab42d1ae98dd20c8fc6ddca9
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317224"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020052"
 ---
 # <a name="nugetconfig-reference"></a>nuget.exe 引用
 
 NuGet 行为由不同`NuGet.Config`文件中的设置控制, 如[常见 NuGet 配置](../consume-packages/configuring-nuget-behavior.md)中所述。
 
 `nuget.config` 是包含顶级 `<configuration>` 节点的 XML 文件，而该节点包含本主题中所述的节元素。 每节都包含零个或多个项。 请参阅[示例配置文件](#example-config-file)。 设置名称不区分大小写，并且值可以使用[环境变量](#using-environment-variables)。
-
-本主题内容：
-
-- [配置节](#config-section)
-- [bindingRedirects 节](#bindingredirects-section)
-- [packageRestore 节](#packagerestore-section)
-- [解决方案节](#solution-section)
-- [包源节](#package-source-sections)：
-  - [packageSources](#packagesources)
-  - [packageSourceCredentials](#packagesourcecredentials)
-  - [apikeys](#apikeys)
-  - [disabledPackageSources](#disabledpackagesources)
-  - [activePackageSource](#activepackagesource)
-- [trustedSigners 部分](#trustedsigners-section)
-- [使用环境变量](#using-environment-variables)
-- [示例配置文件](#example-config-file)
 
 <a name="dependencyVersion"></a>
 <a name="globalPackagesFolder"></a>
@@ -149,7 +133,7 @@ NuGet 行为由不同`NuGet.Config`文件中的设置控制, 如[常见 NuGet �
 | Key | 值 |
 | --- | --- |
 | username | 纯文本形式的源用户名。 |
-| 密码 | 源的加密密码。 |
+| password | 源的加密密码。 |
 | cleartextpassword | 源的未加密密码。 |
 
 **示例：**
@@ -240,6 +224,7 @@ NuGet 行为由不同`NuGet.Config`文件中的设置控制, 如[常见 NuGet �
     <add key="All" value="(Aggregate source)" />
 </activePackageSource>
 ```
+
 ## <a name="trustedsigners-section"></a>trustedSigners 部分
 
 存储用于在安装或还原时允许包的可信签名者。 当用户将设置`signatureValidationMode`为`require`时, 此列表不能为空。 
@@ -268,6 +253,50 @@ NuGet 行为由不同`NuGet.Config`文件中的设置控制, 如[常见 NuGet �
         <owners>microsoft;aspnet;nuget</owners>
     </repository>
 </trustedSigners>
+```
+
+## <a name="fallbackpackagefolders-section"></a>fallbackPackageFolders 部分
+
+*(3.5 +)* 提供了一种预安装包的方法, 以便在回退文件夹中发现包时无需执行任何操作。 回退包文件夹与全局包文件夹具有完全相同的文件夹和文件结构: *。 nupkg*存在, 并提取所有文件。
+
+此配置的查找逻辑为:
+
+- 查看全局包文件夹, 查看是否已下载包/版本。
+
+- 查看后备文件夹中是否有包/版本匹配。
+
+如果查找成功, 则无需下载。
+
+如果找不到匹配项, NuGet 将检查文件源, 然后检查 http 源, 然后下载包。
+
+| Key | 值 |
+| --- | --- |
+| (后备文件夹的名称) | 回退文件夹的路径。 |
+
+**示例**：
+
+```xml
+<fallbackPackageFolders>
+   <add key="XYZ Offline Packages" value="C:\somePath\someFolder\"/>
+</fallbackPackageFolders>
+```
+
+## <a name="packagemanagement-section"></a>packageManagement 部分
+
+设置默认包管理格式, 即 package或 PackageReference。 SDK 样式项目始终使用 PackageReference。
+
+| Key | 值 |
+| --- | --- |
+| format | 指示默认包管理格式的布尔值。 如果`1`为, 则格式为 PackageReference。 如果`0`为, 则 format 为*包 .config*。 |
+| 已禁用 | 指示是否在第一次安装包时显示提示选择默认包格式的布尔值。 `False`隐藏提示。 |
+
+**示例**：
+
+```xml
+<packageManagement>
+   <add key="format" value="1" />
+   <add key="disabled" value="False" />
+</packageManagement>
 ```
 
 ## <a name="using-environment-variables"></a>使用环境变量
