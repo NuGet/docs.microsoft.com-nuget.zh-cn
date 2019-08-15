@@ -2,14 +2,12 @@
     "totalHits": 2,
     "data": [
         {
-            "@id": "https://api.nuget.org/v3/registration3/nuget.versioning/index.json",
-            "@type": "Package",
             "registration": "https://api.nuget.org/v3/registration3/nuget.versioning/index.json",
             "id": "NuGet.Versioning",
             "version": "4.4.0",
             "description": "NuGet's implementation of Semantic Versioning.",
             "summary": "",
-            "title": "<span data-ttu-id=\"7449b-101\">NuGet.Versioning</span><span class=\"sxs-lookup\"><span data-stu-id=\"7449b-101\">NuGet.Versioning</span></span>",
+            "title": "<span data-ttu-id=\"20b01-101\">NuGet. 版本控制</span><span class=\"sxs-lookup\"><span data-stu-id=\"20b01-101\">NuGet.Versioning</span></span>",
             "licenseUrl": "https://raw.githubusercontent.com/NuGet/NuGet.Client/dev/LICENSE.txt",
             "tags": [
                 "semver",
@@ -52,7 +50,7 @@
             "version": "2.0.41",
             "description": "Stamps your assemblies with semver 2.0 compliant git commit specific version information and provides NuGet versioning information as well.",
             "summary": "Stamps your assemblies with semver 2.0 compliant git commit specific version information and provides NuGet versioning information as well.",
-            "title": "<span data-ttu-id=\"7449b-102\">Nerdbank.GitVersioning</span><span class=\"sxs-lookup\"><span data-stu-id=\"7449b-102\">Nerdbank.GitVersioning</span></span>",
+            "title": "<span data-ttu-id=\"20b01-102\">Nerdbank.GitVersioning</span><span class=\"sxs-lookup\"><span data-stu-id=\"20b01-102\">Nerdbank.GitVersioning</span></span>",
             "licenseUrl": "https://raw.githubusercontent.com/AArnott/Nerdbank.GitVersioning/ed547462f7/LICENSE.txt",
             "projectUrl": "http://github.com/aarnott/Nerdbank.GitVersioning",
             "tags": [
