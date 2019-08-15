@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: ef4c45451cc52eb08dc627f8442c48e853d8ceaf
-ms.sourcegitcommit: 6ea2ff8aaf7743a6f7c687c8a9400b7b60f21a52
+ms.openlocfilehash: 9d9ea10ccd32bb65ad0d62b591f5e2cb58ea3427
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54324729"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019980"
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>在源代码管理系统中省略 NuGet 包
 
@@ -58,12 +58,12 @@ project.assets.json
 ## <a name="omitting-packages-with-team-foundation-version-control"></a>使用 Team Foundation 版本控制省略包
 
 > [!Note]
-> 向源代码管理添加项目之前，请尽量按照这些说明进行操作。 否则，请手动删除存储库中的 `packages` 文件夹并签入该更改，然后才能继续。
+> 向源代码管理添加项目之前，请尽量按照这些说明进行操作  。 否则，请手动删除存储库中的 `packages` 文件夹并签入该更改，然后才能继续。
 
 要使用 TFVC 为选定的文件禁用源代码管理集成，请执行以下操作：
 
 1. 在解决方案文件夹（`.sln` 文件所在的位置）中创建名为 `.nuget` 的文件夹。
-    - 提示：对于 Windows，若要在 Windows 资源管理器中创建此文件夹，请使用具有尾随点的名称 `.nuget.`。
+    - 提示：对于 Windows，若要在 Windows 资源管理器中创建此文件夹，请使用具有尾随点的名称 `.nuget.`  。
 
 1. 在该文件夹中，创建名为 `NuGet.Config` 的文件，将其打开进行编辑。
 
@@ -89,9 +89,6 @@ project.assets.json
    # Ignore the NuGet packages folder in the root of the repository. If needed, prefix 'packages'
    # with additional folder names if it's not in the same folder as .tfignore.   
    packages
-
-   # Exclude package target files which may be required for MSBuild, again prefixing the folder name as needed.
-   !packages/*.targets
 
    # Omit temporary files
    project.lock.json
