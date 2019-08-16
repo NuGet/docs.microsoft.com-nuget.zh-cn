@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: de76cf610e580a36014be9274b9c2c762b1015ac
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 5f1d3ed6a1b20fb07437f1718faafaac0a193773
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317166"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488700"
 ---
 # <a name="nuget-14-release-notes"></a>NuGet 1.4 发行说明
 
@@ -60,7 +60,7 @@ NuGet 1.4 添加了对在多个项目中同时安装/卸载/更新包的支持�
 默认情况下, 在包`Update-Package`上运行该命令 (或使用对话框更新包) 时, 它将更新为源中的最新版本。 使用更新所有包的新支持, 可能需要将包锁定到特定的版本范围。 例如, 你可能事先知道, 你的应用程序将仅适用于包的版本 2. *, 而不是3.0 和更高版本。 为了防止意外将包更新到 3, NuGet 1.4 添加了对使用新`packages.config` `allowedVersions`属性手动编辑文件, 从而限制包可以升级到的版本范围的支持。
 
 例如, 下面的示例演示如何将`SomePackage`包锁定为版本范围 2.0-3.0 (独占)。
-属性接受使用[版本范围格式](../reference/package-versioning.md#version-ranges-and-wildcards)的值。 `allowedVersions`
+属性接受使用[版本范围格式](../concepts/package-versioning.md#version-ranges-and-wildcards)的值。 `allowedVersions`
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

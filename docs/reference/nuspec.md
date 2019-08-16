@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 67bc95135f746c4a4685773808756df399cbf01e
-ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
+ms.openlocfilehash: f931ed297a6a1e9e24ce5eb30a8158f59925bb39
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959706"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488672"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -36,7 +36,7 @@ ms.locfileid: "68959706"
 
    如果使用`dotnet.exe pack`或`msbuild pack target`创建包, 则建议您在项目文件中的`.nuspec`文件中包含通常包含的[所有属性](../reference/msbuild-targets.md#pack-target)。 但是, 可以改为选择[使用`.nuspec` `dotnet.exe` `msbuild pack target`或打包文件](../reference/msbuild-targets.md#packing-using-a-nuspec)。
 
-- 对于从`packages.config`迁移到[PackageReference](../consume-packages/package-references-in-project-files.md)的项目, `.nuspec`不需要使用文件来创建包。 相反, 请使用[t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)。
+- 对于从`packages.config`迁移到[PackageReference](../consume-packages/package-references-in-project-files.md)的项目, `.nuspec`不需要使用文件来创建包。 相反, 请使用[t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)。
 
 ## <a name="general-form-and-schema"></a>常规形式和架构
 
@@ -74,7 +74,7 @@ ms.locfileid: "68959706"
 #### <a name="id"></a>id 
 不区分大小写的包标识符，在 nuget.org 或包驻留的任意库中必须是唯一的。 ID 不得包含空格或对 URL 无效的字符，通常遵循 .NET 命名空间规则。 有关指南，请参阅[选择唯一的包标识符](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)。
 #### <a name="version"></a>version
-遵循 major.minor.patch 模式的包版本。 版本号可能包括预发布后缀，如[包版本控制](../reference/package-versioning.md#pre-release-versions)中所述。 
+遵循 major.minor.patch 模式的包版本。 版本号可能包括预发布后缀，如[包版本控制](../concepts/package-versioning.md#pre-release-versions)中所述。 
 #### <a name="description"></a>description
 用于 UI 显示的包的详细说明。 
 #### <a name="authors"></a>作者
@@ -95,7 +95,7 @@ ms.locfileid: "68959706"
 包的许可证的 URL, 通常显示在 Ui (如 nuget.org) 中。
 
 #### <a name="license"></a>照
-包中的许可证文件的 SPDX 许可证表达式或路径, 通常显示在 Ui 中, 如 nuget.org。如果要使用常见许可证 (如 MIT 或 BSD-2 子句) 来授权包, 请使用关联的[SPDX 许可证标识符](https://spdx.org/licenses/)。 例如：
+包中的许可证文件的 SPDX 许可证表达式或路径, 通常显示在 Ui 中, 如 nuget.org。如果要使用常见许可证 (如 MIT 或 BSD-2 子句) 来授权包, 请使用关联的[SPDX 许可证标识符](https://spdx.org/licenses/)。 例如:
 
 `<license type="expression">MIT</license>`
 
@@ -106,7 +106,7 @@ ms.locfileid: "68959706"
 
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-如果使用许可证表达式不支持的自定义许可证, 则可以使用许可证文本打包`.txt`或`.md`文件。 例如：
+如果使用许可证表达式不支持的自定义许可证, 则可以使用许可证文本打包`.txt`或`.md`文件。 例如:
 
 ```xml
 <package>
@@ -172,7 +172,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 #### <a name="repository"></a>储存库
 存储库元数据, 包括四个可选`type`属性`url` : 和 *(4.0 +)* `branch` 、 `commit`和和 *(4.6 +)* 。 这些属性允许你将映射`.nupkg`到生成它的存储库, 并且可能会将其作为单个分支名称和/或提交生成包的 sha-1 哈希。 这应该是公开提供的 url, 可由版本控制软件直接调用。 它不应是 html 页面, 因为这是用于计算机的。 对于 "链接到项目" 页, `projectUrl`请改用字段。
 
-例如：
+例如:
 ```xml
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
@@ -281,7 +281,7 @@ nuget pack MyProject.csproj
 | 特性 | 描述 |
 | --- | --- |
 | `id` | （必须）依赖项的包 ID，如“EntityFramework”和“NUnit”，同时也是 nuget.org 在包页面上显示的包名称。 |
-| `version` | （必需）可接受作为依赖项的版本范围。 有关准确语法，请参阅[包版本控制](../reference/package-versioning.md#version-ranges-and-wildcards)。 不支持通配符 (浮动) 版本。 |
+| `version` | （必需）可接受作为依赖项的版本范围。 有关准确语法，请参阅[包版本控制](../concepts/package-versioning.md#version-ranges-and-wildcards)。 不支持通配符 (浮动) 版本。 |
 | include | 包括/排除标记的逗号分隔列表（见下文），指示要包含在最终包中的依赖项。 默认值为 `all`。 |
 | exclude | 包括/排除标记的逗号分隔列表（见下文），指示要排除在最终包外的依赖项。 默认值为`build,analyzers`可改写的值。 但`content/ ContentFiles`也隐式排除在无法覆盖的最终包中。 用 `exclude` 指定的标记优先于用 `include` 指定的标记。 例如，`include="runtime, compile" exclude="compile"` 和 `include="runtime"` 相同。 |
 
@@ -664,7 +664,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 - `TxM` 是 NuGet 支持的任何合法目标框架名字对象（请参阅[目标框架](../reference/target-frameworks.md)）。
 - 任何文件夹结构都可以附加到此语法的末尾。
 
-例如:
+例如：
 
     Language- and framework-agnostic:
         /contentFiles/any/any/config.xml

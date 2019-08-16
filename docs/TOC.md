@@ -27,7 +27,7 @@
 ### [常见的 NuGet 配置](consume-packages/configuring-nuget-behavior.md)
 ## 在项目中引用包
 ### [项目文件中的包引用](consume-packages/package-references-in-project-files.md)
-### [将 packages.config 迁移到 PackageReference](reference/migrate-packages-config-to-package-reference.md)
+### [将 packages.config 迁移到 PackageReference](consume-packages/migrate-packages-config-to-package-reference.md)
 ### [packages.config](reference/packages-config.md)
 # 创建包
 ## [概述和工作流](create-packages/overview-and-workflow.md)
@@ -45,9 +45,9 @@
 ### [创建本地化的包](create-packages/creating-localized-packages.md)
 ## 针对特定内容的指南
 ### [创建 UWP 包](guides/create-uwp-packages.md)
-### [创建本机包](create-packages/native-packages.md)
+### [创建本机包](guides/native-packages.md)
 ### [以 NuGet 包的形式创建 UI 控件](guides/create-UI-controls.md)
-### [以 NuGet 包的形式创建分析器](reference/analyzers-conventions.md)
+### [以 NuGet 包的形式创建分析器](guides/analyzers-conventions.md)
 ### [使用 Visual Studio 2015 为 Xamarin 创建包](guides/create-packages-for-xamarin.md)
 ### [使用 COM 互操作程序集创建包](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## 签名包
@@ -64,8 +64,8 @@
 ### [本地源](hosting-packages/local-feeds.md)
 # 概念
 ## [包安装过程](concepts/package-installation-process.md)
-## [包版本控制](reference/package-versioning.md)
-## [依赖项解析](consume-packages/dependency-resolution.md)
+## [包版本控制](concepts/package-versioning.md)
+## [依赖项解析](concepts/dependency-resolution.md)
 # 参考
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config 文件](reference/nuget-config-file.md)
@@ -342,6 +342,6 @@
 #### [NuGet 1.3](release-notes/NuGet-1.3.md)
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
-## [常见问题解答](faqs/nuget-faq.md)
+## [常见问题解答](resources/nuget-faq.md)
 ## [项目格式](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)

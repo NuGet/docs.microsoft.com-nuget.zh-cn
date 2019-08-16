@@ -6,30 +6,45 @@
       tocHref: /nuget/
       topicHref: /nuget
       items:
-        - name: 快速入门
+        - name: 入门
           tocHref: /nuget/quickstart/
           topicHref: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
-        - name: 参考线
-          tocHref: /nuget/guides/
-          topicHref: /nuget/guides/create-net-standard-packages-vs2017
-        - name: 创建包
-          tocHref: /nuget/create-packages/
-          topicHref: /nuget/create-packages/overview-and-workflow
         - name: 使用包
           tocHref: /nuget/consume-packages/
           topicHref: /nuget/consume-packages/overview-and-workflow
+        - name: 创建包
+          tocHref: /nuget/create-packages/
+          topicHref: /nuget/create-packages/overview-and-workflow
+        - name: 参考线
+          tocHref: /nuget/guides/
+          topicHref: /nuget/guides/create-net-standard-packages-vs2017
+        - name: 概念
+          tocHref: /nuget/concepts/
+          topicHref: /nuget/concepts/package-installation-process
         - name: 参考
           tocHref: /nuget/reference/
           topicHref: /nuget/reference/nuspec
+        - name: API
+          tocHref: /nuget/api/
+          topicHref: /nuget/api/overview
+        - name: 扩展性
+          tocHref: /nuget/reference/extensibility
+          topicHref: /nuget/reference/extensibility/nuget-cross-platform-plugins
         - name: Visual Studio 扩展性
           tocHref: /nuget/visual-studio-extensibility/
           topicHref: /nuget/visual-studio-extensibility/nuget-api-in-visual-studio
+        - name: 发布
+          tocHref: /nuget/hosting-packages/
+          topicHref: /nuget/hosting-packages/overview
         - name: 策略
           tocHref: /nuget/policies/
           topicHref: /nuget/policies/governance
         - name: 发行说明
           tocHref: /nuget/release-notes/
-          topicHref: /nuget/release-notes/index
+          topicHref: /nuget/release-notes/known-issues
+        - name: 资源
+          tocHref: /nuget/resources/
+          topicHref: /nuget/resources/nuget-faq
         - name: NuGet.org
           tocHref: /nuget/nuget-org/
           topicHref: /nuget/nuget-org/organizations-on-nuget-org
