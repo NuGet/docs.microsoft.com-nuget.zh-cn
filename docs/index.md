@@ -7,12 +7,12 @@ ms.date: 02/12/2018
 ms.topic: hub-page
 layout: HubPage
 hide_bc: true
-ms.openlocfilehash: a771fea20db11b573b8e0efc24180e6f54d3e571
-ms.sourcegitcommit: dec3fa44547c6a00d0ae6cbb6c64cdc65660d808
+ms.openlocfilehash: 7c911300bbd743ca7555e12484685c084d78f30a
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68912610"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488891"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -251,7 +251,7 @@ ms.locfileid: "68912610"
                             <a href="release-notes/known-issues.md">发行说明</a>
                         </p>
                         <p>
-                            <a href="faqs/nuget-faq.md">常见问题解答 - NuGet</a>
+                            <a href="resources/nuget-faq.md">常见问题解答 - NuGet</a>
                         </p>
                         <p>
                             <a href="nuget-org/nuget-org-faq.md">常见问题解答 - NuGet.org</a>
