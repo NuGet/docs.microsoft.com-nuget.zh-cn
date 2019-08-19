@@ -5,16 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 287237cf4041870c562a6a7f48f233d8fdc8ef33
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: a1f9f1d03e9a6e58466fa92426bd655d5e8ed83d
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842386"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860622"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>包还原错误疑难解答
 
-本文着重介绍还原包时遇到的常见错误以及相应的解决步骤。 有关还原包的完整详细信息，请参阅[包还原](../consume-packages/package-restore.md#enable-and-disable-package-restore-visual-studio)。
+本文着重介绍还原包时遇到的常见错误以及相应的解决步骤。 
+
+程序包还原试图将所有程序包依赖项安装到与项目文件 (.csproj  ) 或 packages.config  文件中的程序包引用匹配的相应状态。 （在 Visual Studio 中，这些引用位于解决方案资源管理器的“依赖项 \ NuGet”或“引用”节点中。）   请参阅[还原程序包](../consume-packages/package-restore.md#restore-packages)，以按照要求的步骤还原程序包。 若项目文件 (.csproj  ) 或 packages.config  文件中的程序包引用不正确（它们与使用程序包还原时所需的状态不匹配），则不要使用程序包还原，而需要安装或更新程序包。
 
 如果此处的说明对你没有帮助，[请在 GitHub 上提交问题](https://github.com/NuGet/docs.microsoft.com-nuget/issues)，以便我们可以更仔细地检查你的情况。 请勿使用可能出现在该页面上的“此页面有帮助吗?”控件， 因为它无法让我们与你联系以获取详细信息。
 
@@ -44,8 +46,8 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 当你尝试生成包含对一个或多个 NuGet 包的引用的项目，但这些包当前未安装在计算机上或项目中时，发生了此错误。
 
-- 使用 PackageReference 管理格式时，此错误意味着包未安装在 global-packages  文件夹中，如[管理全局包和缓存文件夹](managing-the-global-packages-and-cache-folders.md)中所述。
-- 当使用 `packages.config` 时，此错误意味着包未安装在解决方案根目录中的 `packages` 文件夹中。
+- 使用 [PackageReference](package-references-in-project-files.md) 管理格式时，此错误意味着程序包未安装在 global-packages 文件夹中，如[管理全局程序包和缓存文件夹](managing-the-global-packages-and-cache-folders.md)  中所述。
+- 当使用 [packages.config](../reference/packages-config.md) 时，此错误意味着程序包未安装在解决方案根目录中的 `packages` 文件夹中。
 
 当你从源代码管理或其他下载获得项目的源代码时，通常会发生这种情况。 包通常从源代码管理或下载中省略，因为它们可以从包源（例如 nuget.org）中还原（请参阅[包和源代码管理](Packages-and-Source-Control.md)）。 否则，包含它们会导致存储库膨胀或创建不必要的大型 .zip 文件。
 
@@ -54,10 +56,12 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 使用下列方法之一还原包：
 
 - 如果已移动项目文件，请直接编辑该文件以更新包引用。
-- (Visual Studio) 通过以下方法启用包还原：选择“工具”>“NuGet 包管理器”>“包管理器设置”菜单命令，在“包还原”下设置这两个选项，然后选择“确定”    。 然后再次生成解决方案。
-- (dotnet CLI) 在命令行中，切换到包含项目的文件夹，然后运行 `dotnet restore` 或 `dotnet build`（自动运行还原）。
-- (nuget.exe CLI) 在命令行中，切换到包含项目的文件夹，然后运行 `nuget restore`（使用 `dotnet` CLI 创建的项目除外，在这种情况下，使用 `dotnet restore`）。
-- （迁移到 PackageReference 的项目）在命令行上，运行 `msbuild -t:restore`。
+- [Visual Studio](package-restore.md#restore-using-visual-studio)（[自动还原](package-restore.md#restore-packages-automatically-using-visual-studio)或[手动还原](package-restore.md#restore-packages-manually-using-visual-studio)）
+- [dotnet CLI](package-restore.md#restore-using-the-dotnet-cli)
+- [nuget.exe CLI](package-restore.md#restore-using-the-nugetexe-cli)
+- [MSBuild](package-restore.md#restore-using-msbuild)
+- [Azure Pipelines](package-restore.md#restore-using-azure-pipelines)
+- [Azure DevOps Server](package-restore.md#restore-using-azure-devops-server)
 
 成功还原后，包应显示在 global-packages  文件夹中。 对于使用 PackageReference 的项目，还原应重新创建 `obj/project.assets.json` 文件；对于使用 `packages.config` 的项目，包应显示在项目的 `packages` 文件夹中。 该项目现在应能成功生成。 如果没有，请[在 GitHub 上提交问题](https://github.com/NuGet/docs.microsoft.com-nuget/issues)，以便我们跟进。
 

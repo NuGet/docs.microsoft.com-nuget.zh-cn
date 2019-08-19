@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 16a14a72f8bb2e5d5a56f6c3c277f0988869273d
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 05ece5f36ff7ae5920960c42cfde8b271dc3e712
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426699"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020015"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -105,7 +105,9 @@ ms.locfileid: "67426699"
 | 编译 | `lib` 文件夹的内容，控制项目能否对文件夹中的程序集进行编译 |
 | Runtime — 运行时 | `lib` 和 `runtimes` 文件夹的内容，控制是否会复制这些程序集，以生成输出目录 |
 | contentFiles | `contentfiles` 文件夹中的内容 |
-| 生成 | `build` 文件夹中的属性和目标 |
+| 生成 | `build` 文件夹中的 `.props` 和 `.targets` |
+| buildMultitargeting | `buildMultitargeting` 文件夹中跨框架目标的 `.props` 和 `.targets` |
+| buildTransitive | *(5.0+)* 以可传递的方式流入任意使用项目的资产的 `buildTransitive` 文件夹中的 `.props` 和 `.targets`。 请参阅[功能](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior)页。 |
 | analyzers | .NET 分析器 |
 | 本机 | `native` 文件夹中的内容 |
 | 无 | 不使用以上任何内容。 |

@@ -1,11 +1,7 @@
 ---
 title: 如何使用新的符号包格式“.snupkg”发布 NuGet 符号包 | Microsoft Docs
-author:
-- cristinamanu
-- kraigb
-ms.author:
-- cristinamanu
-- kraigb
+author: cristinamanu
+ms.author: cristinamanu
 manager: skofman
 ms.date: 10/30/2018
 ms.topic: reference
@@ -16,12 +12,12 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 9f9cdd188cf2ec678bc9047604e618f1af9124ae
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: e62d1872497e0e5e703bf7c49a87249ce9a996c7
+ms.sourcegitcommit: 9803981c90a1ed954dc11ed71731264c0e75ea0a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842456"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959681"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
@@ -112,14 +108,17 @@ nuget.org 上支持的符号包具有以下约束
 
 1) .snupkg 将具有与相应 .nupkg 相同的 ID 和版本。
 2) .snupkg 将具有与任何 DLL 或 EXE 文件的 nupkg 完全相同的文件夹结构，区别在于其相应的 PDB 将包含在同一文件夹层次结构中，而不是 DLL/EXE 中。 扩展名不是 PDB 的文件和文件夹将被排除在 snupkg 之外。
-3) .snupkg 中的 .nuspec 文件还将指定一个新的 PackageType，如下所示。 这应该是唯一指定的 PackageType。 
-``` 
-<packageTypes>
-  <packageType name="SymbolsPackage"/>
-</packageTypes>
-```
+3) .snupkg 中的 .nuspec 文件还将指定一个新的 PackageType，如下所示。 这应该是唯一指定的 PackageType。
+
+   ```xml
+   <packageTypes>
+      <packageType name="SymbolsPackage"/>
+   </packageTypes>
+   ```
+
 4) 如果创建者决定使用自定义 nuspec 来构建其 nupkg 和 snupkg，则 snupkg 应该具有 2 中详细描述的同一文件夹层次结构和文件）。
 5) 将从 snupkg 的 nuspec 中排除 ```authors``` 和 ```owners``` 字段。
+6) 不要使用 <license> 元素。 .snupkg 与对应的 .nupk 位于同一个许可证中。
 
 ## <a name="see-also"></a>另请参阅
 

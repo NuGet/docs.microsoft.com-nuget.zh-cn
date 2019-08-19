@@ -3,16 +3,16 @@ title: NuGet 包还原
 description: 概述 NuGet 如何还原项目依赖的包，包括如何禁用还原和约束版本。
 author: karann-msft
 ms.author: karann
-ms.date: 06/24/2019
+ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 0df2b0ebcf438fba99291558f1cf929dcb32618b
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 5bf75bb724846f652725bfcf636908c34adc174f
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68316990"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860671"
 ---
-# <a name="package-restore-options"></a>包还原选项
+# <a name="restore-packages-using-package-restore"></a>使用“程序包还原”还原程序包
 
 为了促成更干净的开发环境并减少存储库大小，NuGet“包还原”安装在项目文件或 `packages.config` 中列出的所有项目依赖项  。 .NET Core 2.0+ `dotnet build` 和 `dotnet run` 命令执行自动包还原。 Visual Studio 可以在构建项目时自动还原包，并且你可以随时通过 Visual Studio、`nuget restore`、`dotnet restore` 和 xoild 在 Mono 上还原包。
 
@@ -29,27 +29,58 @@ ms.locfileid: "68316990"
 
 ## <a name="restore-packages"></a>还原包
 
-可以通过以下任一方式触发包还原：
+程序包还原试图将所有程序包依赖项安装到与项目文件 (.csproj  ) 或 packages.config  文件中的程序包引用匹配的相应状态。 （在 Visual Studio 中，这些引用位于解决方案资源管理器的“依赖项 \ NuGet”或“引用”节点中。）  
 
-- **Visual Studio**：在 Windows 上的 Visual Studio 中，使用以下方法之一。
+1. 若项目文件中的程序包引用正确，则使用你的首选工具还原程序包。
 
-    - 自动还原包。 当根据[启用和禁用包还原](#enable-and-disable-package-restore-visual-studio)中的选项，从模板创建项目或生成项目时会自动执行包还原。 此外，在 NuGet 4.0+ 中，对 SDK 样式的项目（通常是 .NET Core 或 .NET Standard 项目）进行更改时还会自动进行还原。
+   - [Visual Studio](#restore-using-visual-studio)（[自动还原](#restore-packages-automatically-using-visual-studio)或[手动还原](#restore-packages-manually-using-visual-studio)）
+   - [dotnet CLI](#restore-using-the-dotnet-cli)
+   - [nuget.exe CLI](#restore-using-the-nugetexe-cli)
+   - [MSBuild](#restore-using-msbuild)
+   - [Azure Pipelines](#restore-using-azure-pipelines)
+   - [Azure DevOps Server](#restore-using-azure-devops-server)
 
-    - 手动还原包。 要手动还原，请右键单击解决方案资源管理器中的解决方案，选择“还原 NuGet 包”   。 如果仍未正确安装一个或多个单独的包，“解决方案资源管理器”会显示错误图标  。 右键单击并选择“管理 NuGet 包”，然后使用“包管理器”卸载并重新安装受影响的包   。 有关详细信息，请参阅[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md)
+   若项目文件 (.csproj  ) 或 packages.config  文件中的程序包引用不正确（它们与使用程序包还原时所需的状态不匹配），则需要安装或更新程序包。
 
-    如果看到错误“此项目引用此计算机上缺少的 NuGet 包”或者“一个或更多 NuGet 包需要还原但无法还原，因为未授予许可”，则[启用自动还原](#enable-and-disable-package-restore-visual-studio)。 此外，请参阅[迁移到自动包还原](#migrate-to-automatic-package-restore-visual-studio)和[包还原故障排除](Package-restore-troubleshooting.md)。
+   对于使用 PackageReference 的项目，在成功还原后，global-packages 文件夹应显示此包，并且会重新创建 `obj/project.assets.json` 文件。  对于使用 `packages.config` 的项目，项目的 `packages` 文件夹应显示此程序包。 该项目现在应能成功生成。 
 
-- **dotnet CLI**：在命令行中，切换到包含项目的文件夹，然后使用 [dotnet restore](/dotnet/core/tools/dotnet-restore?tabs=netcore2x) 命令还原带有 [PackageReference](../consume-packages/package-references-in-project-files.md) 的项目文件中列出的包。 如果为 .NET Core 2.0 和更高版本，使用 `dotnet build` 和 `dotnet run` 命令可以自动进行还原。  
+2. 运行程序包还原后，若仍出现程序包缺失的情况或与程序包相关的错误（如 Visual Studio 的解决方案资源管理器中出现错误图标），可能需要[重新安装和更新程序包](../consume-packages/reinstalling-and-updating-packages.md)。
 
-- **nuget.exe CLI**：在命令行中，切换到包含项目的文件夹，然后使用 [nuget restore](../reference/cli-reference/cli-ref-restore.md) 命令还原项目或解决方案文件或 `packages.config` 中列出的包。 
+   Visual Studio 中的程序包管理器控制台提供了多个灵活的选项，用于重新安装程序包。 请参阅[使用 Package-Update](reinstalling-and-updating-packages.md#using-update-package)。
 
-- **MSBuild**：使用 [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) 命令通过 PackageReference 还原项目文件中列出的包。 此命令仅适用于 Visual Studio 2017 及更高版本附带的 NuGet 4.x+ 和 MSBuild 15.1+。 `nuget restore` 和 `dotnet restore` 均对适用项目使用此命令。
+## <a name="restore-using-visual-studio"></a>使用 Visual Studio 进行还原
 
-- **Azure Pipelines**：在 Azure Pipelines 上创建生成定义时，请在任意生成任务前将 NuGet [还原](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages) 或 .NET Core [还原](/azure/devops/pipelines/tasks/build/dotnet-core-cli?view=azure-devops) 任务包括在定义中。 默认情况下，某些生成模板包括还原任务。
+在 Windows 上的 Visual Studio 中：
 
-- **Azure DevOps Server**：如果你使用的是 TFS 2013 或更高版本的 Team Build 模板，Azure DevOps Server 和 TFS 2013 及更高版本会在生成期间自动还原包。 对于较早的 TFS 版本，可以包含一个生成步骤来运行命令行还原选项，或者选择将生成模板迁移到更高版本。 有关详细信息，请参阅[使用 Team Foundation Build 设置包还原](../consume-packages/team-foundation-build.md)。
+- 自动还原程序包，或
 
-## <a name="enable-and-disable-package-restore-visual-studio"></a>启用和禁用包还原 (Visual Studio)
+- 手动还原程序包
+
+### <a name="restore-packages-automatically-using-visual-studio"></a>使用 Visual Studio 自动还原程序包
+
+当根据[启用和禁用包还原](#enable-and-disable-package-restore-in-visual-studio)中的选项，从模板创建项目或生成项目时会自动执行包还原。 此外，在 NuGet 4.0+ 中，对 SDK 样式的项目（通常是 .NET Core 或 .NET Standard 项目）进行更改时还会自动进行还原。
+
+1. 按照以下方式启用自动程序包还原：选择“工具” > “选项” > “NuGet 程序包管理器”，然后在“程序包还原”下选择“在 Visual Studio 中生成期间自动检查缺少的程序包”。     
+
+   对于非 SDK 样式项目，首先需要选择“允许 NuGet 下载缺少的程序包”，以启动自动还原选项。 
+
+1. 生成项目。
+
+   如果仍未正确安装一个或多个单独的包，“解决方案资源管理器”会显示错误图标  。 右键单击并选择“管理 NuGet 包”，然后使用“包管理器”卸载并重新安装受影响的包   。 有关详细信息，请参阅[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md)
+
+   如果看到错误“此项目引用此计算机上缺少的 NuGet 包”或者“一个或更多 NuGet 包需要还原但无法还原，因为未授予许可”，则[启用自动还原](#enable-and-disable-package-restore-in-visual-studio)。 对于旧项目，亦请参阅[迁移到自动程序包还原](#migrate-to-automatic-package-restore-visual-studio)。 另请参阅[包还原疑难解答](Package-restore-troubleshooting.md)。
+
+### <a name="restore-packages-manually-using-visual-studio"></a>使用 Visual Studio 手动还原程序包
+
+1. 选择“工具” > “选项” > “NuGet 程序包管理器”，以启用程序包还原。    在“程序包还原”选项下，选择“允许 NuGet 下载缺少的程序包”。  
+
+1. 在“解决方案资源管理器”中，右键单击解决方案并选择“还原 NuGet 程序包”   。
+
+   如果仍未正确安装一个或多个单独的包，“解决方案资源管理器”会显示错误图标  。 右键单击并选择“管理 NuGet 程序包”，然后使用“程序包管理器”卸载并重新安装受影响的程序包   。 有关详细信息，请参阅[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md)
+
+   如果看到错误“此项目引用此计算机上缺少的 NuGet 包”或者“一个或更多 NuGet 包需要还原但无法还原，因为未授予许可”，则[启用自动还原](#enable-and-disable-package-restore-in-visual-studio)。 对于旧项目，亦请参阅[迁移到自动程序包还原](#migrate-to-automatic-package-restore-visual-studio)。 另请参阅[包还原疑难解答](Package-restore-troubleshooting.md)。
+
+### <a name="enable-and-disable-package-restore-in-visual-studio"></a>在 Visual Studio 中启用和禁用程序包还原
 
 在 Visual Studio 中，主要通过“工具” > “选项” > “NuGet 包管理器”控制包还原    ：
 
@@ -88,6 +119,51 @@ ms.locfileid: "68316990"
 
 > [!Important]
 > 如果直接在 `nuget.config` 中编辑 `packageRestore` 设置，请重启 Visual Studio，以便“选项”对话框显示当前值  。
+
+## <a name="restore-using-the-dotnet-cli"></a>使用 dotnet CLI 进行还原
+
+[!INCLUDE [restore-dotnet-cli](includes/restore-dotnet-cli.md)]
+
+> [!IMPORTANT]
+> 若要将缺少的程序包引用添加到项目文件，请使用 [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x)，它也会运行 `restore` 命令。
+
+## <a name="restore-using-the-nugetexe-cli"></a>使用 nuget.exe CLI 进行还原
+
+[!INCLUDE [restore-nuget-exe-cli](includes/restore-nuget-exe-cli.md)]
+
+> [!IMPORTANT]
+> `restore` 命令不会修改项目文件或 packages.config。  要添加依赖项，请通过 Visual Studio 中的包管理器 UI 或控制台添加包，或修改 packages.config  ，然后运行 `install` 或 `restore`。
+
+## <a name="restore-using-msbuild"></a>使用 MSBuild 进行还原
+
+使用 [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) 命令通过 PackageReference 还原项目文件中列出的程序包。 此命令仅适用于 Visual Studio 2017 及更高版本附带的 NuGet 4.x+ 和 MSBuild 15.1+。 `nuget restore` 和 `dotnet restore` 均对适用项目使用此命令。
+
+1. 打开开发人员命令提示符（在“搜索”框中，键入“开发人员命令提示符”）   。
+
+   用户通常习惯从“开始”菜单中启动“适用于 Visual Studio 的开发人员命令提示符”，因为它将使用 MSBuild 的所有必需路径进行配置  。
+
+2. 切换到包含项目文件的文件夹，然后键入以下命令。
+
+   ```cmd
+   # Uses the project file in the current folder by default
+   msbuild -t:restore
+   ```
+
+3. 键入以下命令以重新生成项目。
+
+   ```cmd
+   msbuild
+   ```
+
+   确保 MSBuild 输出指示生成已成功完成。
+
+## <a name="restore-using-azure-pipelines"></a>使用 Azure Pipelines 进行还原
+
+在 Azure Pipelines 上创建生成定义时，请在任意生成任务前将 NuGet [还原](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages) 或 .NET Core [还原](/azure/devops/pipelines/tasks/build/dotnet-core-cli?view=azure-devops) 任务包括在定义中。 默认情况下，某些生成模板包括还原任务。
+
+## <a name="restore-using-azure-devops-server"></a>使用 Azure DevOps Server 进行还原
+
+如果你使用的是 TFS 2013 或更高版本的 Team Build 模板，Azure DevOps Server 和 TFS 2013 及更高版本会在生成期间自动还原包。 对于较早的 TFS 版本，可以包含一个生成步骤来运行命令行还原选项，或者选择将生成模板迁移到更高版本。 有关详细信息，请参阅[使用 Team Foundation Build 设置包还原](../consume-packages/team-foundation-build.md)。
 
 ## <a name="constrain-package-versions-with-restore"></a>使用还原约束包版本
 

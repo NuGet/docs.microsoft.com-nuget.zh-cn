@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: d12b12c4670f5dcb4c1e7e475d77926bd5d3935b
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: 14483264030dd3bb32c7295886f2d37d52e735cc
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342502"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020033"
 ---
 # <a name="support-multiple-net-versions"></a>支持多个 .NET 版本
 
@@ -120,6 +120,32 @@ NuGet 还通过向文件夹末尾追加短划线和配置文件名称，支持�
 - `full`：完整配置文件
 - `wp`：Windows Phone
 - `cf`：Compact Framework
+
+## <a name="declaring-dependencies-advanced"></a>声明依赖项（高级）
+
+打程序包项目文件时，NuGet 尝试从项目自动生成依赖项。 此部分中的信息介绍了如何使用 .nuspec 文件声明依赖项，通常仅高级方案需要使用此信息。 
+
+*（版本 2.0+）* 可以使用 `<dependencies>` 元素中的 `<group>` 元素在目标项目的目标框架对应的 .nuspec 中声明程序包依赖项。  有关详细信息，请参阅[依赖项元素](../reference/nuspec.md#dependencies-element)。
+
+每个组都有一个名为 `targetFramework` 的特性，并包含零个或多个 `<dependency>` 元素。 当目标框架与项目的框架配置文件兼容时，将会一起安装这些依赖项。 有关确切的框架标识符，请参阅[目标框架](../reference/target-frameworks.md)。
+
+建议每个目标框架名字对象 (TFM) 将一个组用于 lib/ 和 ref/ 文件夹中的文件。  
+
+以下示例显示了 `<group>` 元素的不同变体：
+
+```xml
+<dependencies>
+
+    <group targetFramework="net472">
+        <dependency id="jQuery" version="1.10.2" />
+        <dependency id="WebActivatorEx" version="2.2.0" />
+    </group>
+
+    <group targetFramework="net20">
+    </group>
+
+</dependencies>
+```
 
 ## <a name="determining-which-nuget-target-to-use"></a>确定要使用的 NuGet 目标
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: a0db6dc95ffa5ad73741ae53a6be9d6f937c1dbf
-ms.sourcegitcommit: ba8ad1bd13a4bba3df94374e34e20c425a05af2f
+ms.openlocfilehash: 92b42f0a6133565844d0b6df2cb50770793055ec
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68833225"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860637"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>使用 MSBuild 创建 NuGet 包
 
@@ -105,7 +105,7 @@ ms.locfileid: "68833225"
 
 若要从项目中生成 NuGet 包（`.nupkg` 文件），运行 `msbuild -t:pack` 命令，它也会自动生成项目：
 
-在开发人员命令提示符处，键入下列命令：
+在 Visual Studio 开发人员命令提示处，键入以下命令：
 
 ```cmd
 # Uses the project file in the current folder by default

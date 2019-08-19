@@ -5,16 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: 32b01e6066cf60f7a0942508e640fdd5658b4444
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: bc077220e05b14180baac9611fda9234675ad640
+ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68316980"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68860530"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>如何重新安装和更新包
 
 [何时重新安装包](#when-to-reinstall-a-package)中描述了大量有关对包的引用可能在 Visual Studio 项目中损坏的情况。 在这些情况下，卸载并重新安装同一版本的包会将这些应用还原为正常工作状态。 更新包仅意味着安装更新版本，这常常将包还原为正常工作状态。
+
+Visual Studio 中的程序包管理器控制台提供了许多灵活的选项，用于更新和重新安装程序包。
 
 更新和重新安装包按以下方式实现：
 
@@ -25,7 +27,7 @@ ms.locfileid: "68316980"
 | nuget.exe CLI | `nuget update` 命令 | 对于所有包，删除包文件夹，然后运行 `nuget install`。 对于单个包，删除包文件夹并使用 `nuget install <id>` 再安装一个。 |
 
 > [!NOTE]
-> 对于 dotnet CLI，不需要相同的过程。 在类似的情况下，可以[使用 dotnet CLI 还原包](../consume-packages/install-use-packages-dotnet-cli.md#restore-packages)。
+> 对于 dotnet CLI，不需要相同的过程。 在类似的情况下，可以[使用 dotnet CLI 还原包](package-restore.md#restore-using-the-dotnet-cli)。
 
 本文内容：
 
@@ -61,7 +63,7 @@ ms.locfileid: "68316980"
 
 ## <a name="using-update-package"></a>使用 Update-Package
 
-注意下述的[注意事项](#considerations)，可以使用 Visual Studio 包管理器控制台中的 [Update-Package 命令](../reference/ps-reference/ps-ref-update-package.md)（“工具” > “NuGet 包管理器” > “包管理器控制台”）轻松重新安装任意包    ：
+注意下述的[注意事项](#considerations)，可以使用 Visual Studio 程序包管理器控制台中的 [Update-Package 命令](../reference/ps-reference/ps-ref-update-package.md)（“工具” > “NuGet 程序包管理器” > “程序包管理器控制台”）轻松重新安装任意程序包    。
 
 ```ps
 Update-Package -Id <package_name> –reinstall

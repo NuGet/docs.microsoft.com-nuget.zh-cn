@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: b7870bb6aac39f0865d88efc8c16751fdbecc3a8
-ms.sourcegitcommit: cae759ad8518c049575a30ad3bf04fe5d06244fb
+ms.openlocfilehash: 8c1d8a479747f6f7bce388c1555589543c8824a0
+ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616776"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020063"
 ---
 # <a name="support-multiple-net-framework-versions-in-your-project-file"></a>支持项目文件中的多个 .NET Framework 版本
 
@@ -27,9 +27,13 @@ ms.locfileid: "68616776"
 
    建议创建 .NET Standard 类库以获得最佳兼容性。
 
-2. 编辑 .csproj  文件以支持目标框架。
-
-   例如，将 `<TargetFramework>netstandard2.0</TargetFramework>` 更改为 `<TargetFrameworks>netstandard2.0;net45</TargetFrameworks>`。
+2. 编辑 .csproj  文件以支持目标框架。 例如，更改
+   
+   `<TargetFramework>netstandard2.0</TargetFramework>`
+   
+   更改为：
+   
+   `<TargetFrameworks>netstandard2.0;net45</TargetFrameworks>`
 
    确保将 XML 元素从单数更改为复数（将“s”添加到开始和结束标记）。
 
