@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 3d8745ea30115a2d7f3954d171d92b75a434a55b
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: b151547e40e567b38acc2b0b9ee84c50d85000c9
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67843439"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488484"
 ---
 # <a name="identify-the-project-format"></a>标识项目格式
 
@@ -23,7 +23,7 @@ NuGet 适用于所有 .NET 项目。 但是，项目格式（SDK 样式或非 SD
 | .NET Standard | SDK 样式 | [dotnet CLI](../install-nuget-client-tools.md#dotnetexe-cli) | 在 Visual Studio 2017 之前创建的项目为非 SDK 样式。 使用 `nuget.exe` CLI。 |
 | .NET Core | SDK 样式 | [dotnet CLI](../install-nuget-client-tools.md#dotnetexe-cli) | 在 Visual Studio 2017 之前创建的项目为非 SDK 样式。 使用 `nuget.exe` CLI。 |
 | .NET Framework | 非 SDK 样式 | [nuget.exe CLI](../install-nuget-client-tools.md#nugetexe-cli) | 使用其他方法创建的 .NET Framework 项目可能是 SDK 样式项目。 对于这种情况，请改为使用 [dotnet CLI](../install-nuget-client-tools.md#dotnetexe-cli)。 |
-| [迁移的](../reference/migrate-packages-config-to-package-reference.md) .NET 项目 | 非 SDK 样式| 要创建包，请使用 [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration) 创建包。 | 要创建包，建议使用 `msbuild -t:pack`。 否则，使用 [dotnet CLI](../install-nuget-client-tools.md#dotnetexe-cli)。 迁移的项目是非 SDK 样式的项目。 |
+| [迁移的](../consume-packages/migrate-packages-config-to-package-reference.md) .NET 项目 | 非 SDK 样式| 要创建包，请使用 [msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration) 创建包。 | 要创建包，建议使用 `msbuild -t:pack`。 否则，使用 [dotnet CLI](../install-nuget-client-tools.md#dotnetexe-cli)。 迁移的项目是非 SDK 样式的项目。 |
 
 ## <a name="check-the-project-format"></a>检查项目格式
 

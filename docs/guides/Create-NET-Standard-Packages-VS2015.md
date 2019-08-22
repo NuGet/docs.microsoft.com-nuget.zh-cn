@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 02/02/2018
 ms.topic: tutorial
-ms.openlocfilehash: 1198a781543e581f55740cc0ae5a212d3f8a8b61
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 11dce27b93c3d09a2d27dc79f8d4fed86df879ba
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842445"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488977"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>使用 Visual Studio 2015 创建 NET Standard 和 .NET Framework 包
 
@@ -125,7 +125,7 @@ ms.locfileid: "67842445"
 </dependencies>
 ```
 
-此处 version 特性的语法指示可接受版本 8.0.3 或更高版本  。 若要指定不同的版本范围，请参阅[包版本控制](../reference/package-versioning.md)。
+此处 version 特性的语法指示可接受版本 8.0.3 或更高版本  。 若要指定不同的版本范围，请参阅[包版本控制](../concepts/package-versioning.md)。
 
 ### <a name="adding-a-readme"></a>添加自述文件
 
@@ -170,6 +170,6 @@ nuget pack AppLogger.nuspec
 - [将 MSBuild 属性和目标包含到包中](../create-packages/creating-a-package.md#include-msbuild-props-and-targets-in-a-package)
 - [创建本地化包](../create-packages/creating-localized-packages.md)
 - [符号包](../create-packages/symbol-packages.md)
-- [包版本控制](../reference/package-versioning.md)
+- [包版本控制](../concepts/package-versioning.md)
 - [.NET Standard 库文档](/dotnet/articles/standard/library)
 - [从 .NET Framework 移植到 .NET Core](/dotnet/articles/core/porting/index)

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e8949e9964ed19d342df53f08f59bb0f89e5feb0
-ms.sourcegitcommit: 5aa49478dc466c67db5c3edda7c6ce8dcd8ae033
+ms.openlocfilehash: 7ebe3c0f75b8de158879119bce4df26217849251
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817481"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488945"
 ---
 包标识符和版本号是项目中最重要的两个值，因为它们唯一标识包中包含的确切代码。
 
@@ -17,9 +17,9 @@ ms.locfileid: "68817481"
 **针对包版本的最佳做法：**
 
 - 一般情况下，将包的版本设置为与项目（或程序集）相匹配，但这不是必须的。 如果将包限制为单个程序集，那么这是一个简单的问题。 总的来说，请记住解析依赖项时，NuGet 自己处理包版本而不是程序集版本。
-- 使用非标准版本方案时，请确保考虑使用 NuGet 版本控制规则，如[包版本控制](../../reference/package-versioning.md)中所述。 NuGet 主要与 [semver 2 兼容](../../reference/package-versioning.md#semantic-versioning-200)。
+- 使用非标准版本方案时，请确保考虑使用 NuGet 版本控制规则，如[包版本控制](../../concepts/package-versioning.md)中所述。 NuGet 主要与 [semver 2 兼容](../../concepts/package-versioning.md#semantic-versioning-200)。
 
-> 有关依赖项解析的信息，请参阅[使用 PackageReference 的依赖项解析](../../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference)。 对于可能有助于更好地理解版本控制的较旧信息，请参阅此系列博客文章。
+> 有关依赖项解析的信息，请参阅[使用 PackageReference 的依赖项解析](../../concepts/dependency-resolution.md#dependency-resolution-with-packagereference)。 对于可能有助于更好地理解版本控制的较旧信息，请参阅此系列博客文章。
 >
 > - [第 1 部分：解决 DLL 地狱](http://blog.davidebbo.com/2011/01/nuget-versioning-part-1-taking-on-dll.html)
 > - [第 2 部分：核心算法](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html)

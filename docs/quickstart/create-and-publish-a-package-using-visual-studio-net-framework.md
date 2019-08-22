@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: 75160bf2b01f6d4707162e019a6263ddc64a6f5e
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: 7bfe041c01114ac61e811497ecc31ebfdad45029
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342519"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488904"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>快速入门：使用 Visual Studio 创建和发布包（.NET Framework、Windows）
 
@@ -184,5 +184,5 @@ NuGet 包中包含清单（`.nuspec` 文件），其中包含相关的元数据�
 - [发布包](../nuget-org/publish-a-package.md)
 - [预发行包](../create-packages/Prerelease-Packages.md)
 - [支持多个目标框架](../create-packages/supporting-multiple-target-frameworks.md)
-- [包版本控制](../reference/package-versioning.md)
+- [包版本控制](../concepts/package-versioning.md)
 - [创建本地化包](../create-packages/creating-localized-packages.md)

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 92b42f0a6133565844d0b6df2cb50770793055ec
-ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
+ms.openlocfilehash: a965a3049f46af59efcfad2ecf19e0923fda413b
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860637"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488957"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>使用 MSBuild 创建 NuGet 包
 
@@ -68,7 +68,7 @@ ms.locfileid: "68860637"
 > [!NOTE]
 > 对于面向公共使用而生成的包，请特别注意 **PackageTags** 属性，因为这些标记可帮助其他人查找包并了解其用途。
 
-有关声明依赖项并指定版本号的详细信息，请参阅[项目文件中的包引用](../consume-packages/package-references-in-project-files.md)和[包版本控制](../reference/package-versioning.md)。 还可以使用 `<IncludeAssets>` 和 `<ExcludeAssets>` 特性直接在包中呈现依赖项的资产。 有关详细信息，请参阅[控制依赖项资产](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets)。
+有关声明依赖项并指定版本号的详细信息，请参阅[项目文件中的包引用](../consume-packages/package-references-in-project-files.md)和[包版本控制](../concepts/package-versioning.md)。 还可以使用 `<IncludeAssets>` 和 `<ExcludeAssets>` 特性直接在包中呈现依赖项的资产。 有关详细信息，请参阅[控制依赖项资产](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets)。
 
 ## <a name="choose-a-unique-package-identifier-and-set-the-version-number"></a>选择唯一的包标识符并设置版本号
 
@@ -170,7 +170,7 @@ Time Elapsed 00:00:01.21
 你可能还希望扩展包的功能，或者支持其他方案，如以下主题所述：
 
 - [作为 MSBuild 目标的 NuGet 包和还原](../reference/msbuild-targets.md)
-- [包版本控制](../reference/package-versioning.md)
+- [包版本控制](../concepts/package-versioning.md)
 - [支持多个目标框架](../create-packages/multiple-target-frameworks-project-file.md)
 - [源和配置文件的转换](../create-packages/source-and-config-file-transformations.md)
 - [本地化](../create-packages/creating-localized-packages.md)
@@ -180,5 +180,5 @@ Time Elapsed 00:00:01.21
 
 最后，有需要注意的其他包类型：
 
-- [本机包](../create-packages/native-packages.md)
+- [本机包](../guides/native-packages.md)
 - [符号包](../create-packages/symbol-packages.md)

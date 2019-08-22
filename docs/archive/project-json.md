@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/27/2017
 ms.topic: reference
-ms.openlocfilehash: e4d8b5b9ab4605516827ead8939f278d110c7a48
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5ecbcd4855de8ea7b6301a5e307779216baf96fc
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547779"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488283"
 ---
 # <a name="projectjson-reference"></a>project.json 引用
 
-NuGet 3.x+
+NuGet 3.x+ 
 
 `project.json` 文件维护项目中使用的包列表，称为包管理格式。 它会取代 `packages.config`，但在 NuGet 4.0+ 中又被 [PackageReference](../consume-packages/package-references-in-project-files.md) 取代。
 
@@ -62,7 +62,7 @@ NuGet 3.x+
 
 还原包时，`"5.0.0"` 版本约束意味着 `>= 5.0.0`。 也就是说，如果 5.0.0 在服务器上不可用，但 5.0.1 可用，则 NuGet 安装 5.0.1，并发出有关升级的警告。 否则，NuGet 尽可能在服务器上选取最低的版本，以与约束匹配。
 
-请参阅[依赖项解析](../consume-packages/dependency-resolution.md)深入了解解析规则。
+请参阅[依赖项解析](../concepts/dependency-resolution.md)深入了解解析规则。
 
 ### <a name="managing-dependency-assets"></a>管理依赖项资产
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8d732e87f01c55bde87da0a2e382fd6d509886a3
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 87116669c1e685ffd0dbe4142c2f7e357c413497
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317019"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488250"
 ---
 # <a name="projectjson-archive"></a>project.json 存档
 
@@ -54,19 +54,19 @@ NuGet 3.x 引入了 `project.json` 管理格式，并用于某些项目类型。
 
 ## <a name="dependency-resolution-with-packagereference"></a>利用 PackageReference 解析依赖项
 
-*最初在[依赖项解析](../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference)中。*
+*最初在[依赖项解析](../concepts/dependency-resolution.md#dependency-resolution-with-packagereference)中。*
 
 PackageReference 的行为也适用于 `project.json`。 NuGet 还原将依赖项关系图写入 `project.json` 旁边名为 `project.lock.json` 的文件。
 
 ## <a name="managing-dependency-assets"></a>管理依赖项资产
 
-*最初在[依赖项解析](../consume-packages/dependency-resolution.md#managing-dependency-assets)。*
+*最初在[依赖项解析](../concepts/dependency-resolution.md#managing-dependency-assets)。*
 
 使用 `project.json` 格式时，可以控制依赖项中的哪些资产可流入顶层项目。 有关详细信息，请参阅 [project.json](project-json.md)。
 
 ## <a name="excluding-references"></a>排除引用
 
-*最初在[依赖项解析](../consume-packages/dependency-resolution.md#excluding-references)。*
+*最初在[依赖项解析](../concepts/dependency-resolution.md#excluding-references)。*
 
 - `project.json`：在 PackageC 的依赖项中添加 `"exclude" : "all"`：
 
@@ -83,7 +83,7 @@ PackageReference 的行为也适用于 `project.json`。 NuGet 还原将依赖�
 
 ## <a name="resolving-incompatible-package-errors"></a>解决包不兼容错误
 
-*最初在[依赖项解析](../consume-packages/dependency-resolution.md#resolving-incompatible-package-errors)。*
+*最初在[依赖项解析](../concepts/dependency-resolution.md#resolving-incompatible-package-errors)。*
 
 增加的错误解决方式：
 
@@ -124,7 +124,7 @@ PackageReference 的行为也适用于 `project.json`。 NuGet 还原将依赖�
 
 ### <a name="package-versioning"></a>包版本控制
 
-*最初在[包版本控制](../reference/package-versioning.md)中。*
+*最初在[包版本控制](../concepts/package-versioning.md)中。*
 
 使用 `project.json` 格式时，NuGet 还支持使用通配符表示法 \* 来表示版本号的主要、次要、修补程序和预发布后缀部分。
 

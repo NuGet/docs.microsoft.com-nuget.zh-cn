@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 726f983c2522fdb538dfce858fdf2371ec0ce188
-ms.sourcegitcommit: f9e39ff9ca19ba4a26e52b8a5e01e18eb0de5387
+ms.openlocfilehash: a7d07da30daf3f94db99476b88d9abaad1bb8a07
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433340"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488856"
 ---
 # <a name="building-pre-release-packages"></a>生成预发行包
 
@@ -20,7 +20,7 @@ ms.locfileid: "68433340"
 
 稳定版本是指被视为足够可靠，可在生产中使用的版本。 最新稳定版本也指作为包更新安装或在包还原期间安装的版本（受制于[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md)中所述的约束）。
 
-为了支持软件的版本生命周期，NuGet 1.6 及更高版本允许分配预发行包，其中的版本号包括语义化版本控制后缀，如 `-alpha`、`-beta` 或 `-rc`。 有关详细信息，请参阅[包版本控制](../reference/package-versioning.md#pre-release-versions)。
+为了支持软件的版本生命周期，NuGet 1.6 及更高版本允许分配预发行包，其中的版本号包括语义化版本控制后缀，如 `-alpha`、`-beta` 或 `-rc`。 有关详细信息，请参阅[包版本控制](../concepts/package-versioning.md#pre-release-versions)。
 
 可以使用以下方法之一来指定此类版本：
 
@@ -38,7 +38,7 @@ ms.locfileid: "68433340"
     <version>1.0.1-alpha</version>
     ```
 
-在准备好发布稳定版本后，只需删除后缀，此包便会优先于任何预发行版本。 同样，请参阅[包版本控制](../reference/package-versioning.md#pre-release-versions)。
+在准备好发布稳定版本后，只需删除后缀，此包便会优先于任何预发行版本。 同样，请参阅[包版本控制](../concepts/package-versioning.md#pre-release-versions)。
 
 ## <a name="installing-and-updating-pre-release-packages"></a>安装和更新预发行包
 

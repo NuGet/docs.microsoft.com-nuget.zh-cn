@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8c85c1a89469c491c6be1f81961197450744349c
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 34b08f06f04efdcf7bf73efc2cbdb5a5494ae2d9
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43545568"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488201"
 ---
 # <a name="impact-of-projectjson-when-creating-packages"></a>创建包时 project.json 产生的影响
 
@@ -25,7 +25,7 @@ NuGet 3+ 中使用的 `project.json` 系统通过多种方式影响包作者，�
 
 ### <a name="install-and-uninstall-scripts-are-ignored"></a>忽略了安装和卸载脚本
 
-[依赖项解析](../consume-packages/dependency-resolution.md#dependency-resolution-with-packagereference)中介绍的可传递还原模型不具有“包安装时间”概念。 包的状态为存在或不存在，但安装包后不会出现一致的进程。
+[依赖项解析](../concepts/dependency-resolution.md#dependency-resolution-with-packagereference)中介绍的可传递还原模型不具有“包安装时间”概念。 包的状态为存在或不存在，但安装包后不会出现一致的进程。
 
 此外，仅 Visual Studio 支持安装脚本。 其他 IDE 必须模拟 Visual Studio 扩展性 API 以尝试支持此类脚本，且在常见编辑器和命令行工具中不提供支持。
 
@@ -63,7 +63,7 @@ NuGet 3+ 中使用的 `project.json` 系统通过多种方式影响包作者，�
 
 ## <a name="3x-package-format"></a>3.x 包格式
 
-3.x 包格式允许使用 NuGet 2.x 之外的其他几项功能：
+3\.x 包格式允许使用 NuGet 2.x 之外的其他几项功能：
 
 1. 定义一个引用程序集和一组实现程序集，前者用于编译，后者用于不同平台/设备上的运行时。 这样，你就可以利用平台特定的 API，同时为使用者提供常见的外围应用。 具体而言，这有助于更轻松地编写中间可移植库。
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5676239bedb7f8fbe9f74725864afd297405d5c1
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 69ef02e3c935287759b4012aadcfb1cb9811367c
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67842333"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488446"
 ---
 # <a name="what-happens-when-a-nuget-package-is-installed"></a>安装 NuGet 包时会发生什么情况？
 
@@ -39,7 +39,7 @@ ms.locfileid: "67842333"
 
 4. 如下载，请将包安装到每个用户的 global-packages  文件夹中。 NuGet 创建每个包标识符的子文件夹，然后创建每个已安装包版本的子文件夹。
 
-5. NuGet 安装所需的包依赖项。 此过程可能会更新过程中的包版本，如[依赖项解析](../consume-packages/dependency-resolution.md)中所述。
+5. NuGet 安装所需的包依赖项。 此过程可能会更新过程中的包版本，如[依赖项解析](../concepts/dependency-resolution.md)中所述。
 
 6. 更新其他项目文件和文件夹：
 
