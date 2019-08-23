@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5bf75bb724846f652725bfcf636908c34adc174f
-ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
+ms.openlocfilehash: dfe5f2ef4f0ababd81b91073938752aab2bdc01e
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860671"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488811"
 ---
 # <a name="restore-packages-using-package-restore"></a>使用“程序包还原”还原程序包
 
@@ -181,7 +181,7 @@ NuGet 通过任意方法还原包时，将遵守你在 `packages.config` 或项�
     <PackageReference Include="Newtonsoft.json" Version="[6, 7)" />
     ```
 
-在所有情况下，都使用[包版本控制](../reference/package-versioning.md)中介绍的表示法。
+在所有情况下，都使用[包版本控制](../concepts/package-versioning.md)中介绍的表示法。
 
 ## <a name="force-restore-from-package-sources"></a>强制从包源还原
 
