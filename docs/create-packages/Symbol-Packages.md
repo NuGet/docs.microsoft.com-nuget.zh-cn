@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 40f934f3c3fcea62acae66639c22108a93363b8b
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: f7503dd413a976997580aa03da26df0c462ff0e1
+ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426768"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69564548"
 ---
 # <a name="creating-symbol-packages-legacy"></a>创建符号包（旧版）
 
@@ -127,7 +127,7 @@ nuget pack MyProject.csproj -Symbols
     ```
 
    > [!Note]
-   > 在 nuget.exe 4.5.0 或更高版本中，符号包不会自动推送到 symbolsource.org。需要单独推送符号包，如下一步所述。
+   > 在 nuget.exe 4.5.0 或更高版本中，符号包不会自动推送到 symbolsource.org。需要单独推送符号包，如前面步骤所述。
    
 在此情况下，向 nuget.org 发布主包后，NuGet 将 `MyPackage.symbols.nupkg`（如果存在）发布到 https://nuget.smbsrc.net/ （symbolsource.org 的推送 URL）。
 

@@ -3,14 +3,14 @@ title: 在 Windows 上使用 Visual Studio 创建和发布 .NET Standard NuGet �
 description: 在 Windows 上使用 Visual Studio 创建和发布 .NET Standard NuGet 包的演练教程。
 author: karann-msft
 ms.author: karann
-ms.date: 07/09/2019
+ms.date: 08/16/2019
 ms.topic: quickstart
-ms.openlocfilehash: 0fc3b15c6d5ffa93eb6e26660f71cea2286ba77d
-ms.sourcegitcommit: aed04cc04b0902403612de6736a900d41c265afd
+ms.openlocfilehash: 9552f6c5291f950430bfb723cb713bf76a79ea66
+ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68821410"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69564584"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>快速入门：使用 Visual Studio 创建和发布 NuGet 包（仅限 .NET Standard 和 Windows）
 
@@ -21,14 +21,14 @@ ms.locfileid: "68821410"
 
 ## <a name="prerequisites"></a>系统必备
 
-1. 通过与 .NET Core 相关的工作负载从 [visualstudio.com](https://www.visualstudio.com/) 安装任意版本的 Visual Studio 2017 或更高版本。
+1. 通过与 .NET Core 相关的工作负载从 [visualstudio.com](https://www.visualstudio.com/) 安装任意版本的 Visual Studio 2019。
 
 1. 如果尚未安装，则安装 `dotnet` CLI。
 
-   对于 `dotnet` CLI，从 Visual Studio 2017 开始，`dotnet` CLI 将自动随任何与 .NET Core 相关的工作负载一起安装。 否则，请安装 [.NET Core SDK](https://www.microsoft.com/net/download/) 以获取 `dotnet` CLI。 `dotnet` CLI 是使用 [SDK 样式格式](../resources/check-project-format.md)（SDK 属性）的 .NET Standard 项目所必需的。 Visual Studio 2017 及更高版本中的默认类库模板（本文所用模板）使用 SDK 属性。
+   对于 `dotnet` CLI，从 Visual Studio 2017 开始，`dotnet` CLI 将自动随任何与 .NET Core 相关的工作负载一起安装。 否则，请安装 [.NET Core SDK](https://www.microsoft.com/net/download/) 以获取 `dotnet` CLI。 `dotnet` CLI 是使用 [SDK 样式格式](../resources/check-project-format.md)（SDK 属性）的 .NET Standard 项目所必需的。 Visual Studio 2017 及更高版本中的默认 .NET Standard 类库模板（本文所用模板）使用 SDK 属性。
    
    > [!Important]
-   > 对于本文，建议使用 `dotnet` CLI。 虽然可以使用 `nuget.exe` CLI 发布任何 NuGet 包，但本文中的某些步骤特定于 SDK 样式的项目和 dotnet CLI。 nuget.exe CLI 用于[非 SDK 样式的项目](../resources/check-project-format.md)（通常为 .NET Framework）。 如果使用的是非 SDK 样式的项目，请按照[创建和发布 .NET Framework 包 (Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md) 中的过程来创建和发布包。
+   > 如果使用的是非 SDK 样式的项目，请改为按照[创建和发布 .NET Framework 包 (Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md) 中的过程来创建和发布包。 对于本文，建议使用 `dotnet` CLI。 虽然可以使用 `nuget.exe` CLI 发布任何 NuGet 包，但本文中的某些步骤特定于 SDK 样式的项目和 dotnet CLI。 nuget.exe CLI 用于[非 SDK 样式的项目](../resources/check-project-format.md)（通常为 .NET Framework）。
 
 1. 如果你还没有帐户，请[在 nuget.org 上注册一个免费帐户](https://docs.microsoft.com/en-us/nuget/nuget-org/individual-accounts#add-a-new-individual-account)。 创建新帐户会发送确认电子邮件。 必须先确认该帐户，才能上传包。
 
@@ -37,6 +37,9 @@ ms.locfileid: "68821410"
 可以使用现有的 .NET Standard 类库项目用于要打包的代码，或者创建一个简单的项目，如下所示：
 
 1. 在 Visual Studio 中，选择“文件”>“新建”>“项目”，展开“Visual C# > .NET Standard”节点，选择“类库 (.NET Standard)”模板，将项目命名为“AppLogger”，然后单击“确定”。   
+
+   > [!Tip]
+   > 除非你有其他选择理由，否则 .NET Standard 是 NuGet 包的首选目标，因为它提供了与最广泛的使用项目的兼容性。
 
 1. 右键单击生成的项目文件并选择“生成”，确保已正确创建项目。  DLL 位于调试文件夹中（或发布中，如果生成的是该配置）。
 
@@ -55,28 +58,25 @@ namespace AppLogger
 }
 ```
 
-> [!Tip]
-> 除非你有其他选择理由，否则 .NET Standard 是 NuGet 包的首选目标，因为它提供了与最广泛的使用项目的兼容性。
-
 ## <a name="configure-package-properties"></a>配置包属性
 
 1. 在解决方案资源管理器中右键单击该项目，然后选择“属性”  菜单命令，然后选择“包”  选项卡。
 
-   “包”  选项卡仅在 Visual Studio 的 SDK 样式项目中显示，通常是 .NET Standard 或 .NET Core 类库项目；如果要针对非 SDK 样式项目（通常是 .NET Framework），请[迁移项目](../reference/migrate-packages-config-to-package-reference.md)并使用 `dotnet` CLI，或参阅[创建和发布 .NET Framework 包](create-and-publish-a-package-using-visual-studio-net-framework.md)或者改为参阅[创建和发布 .NET Framework 包](create-and-publish-a-package-using-visual-studio-net-framework.md)，以获取分步说明。
+   “包”  选项卡仅在 Visual Studio 的 SDK 样式项目中显示，通常是 .NET Standard 或 .NET Core 类库项目；如果要针对非 SDK 样式项目（通常是 .NET Framework），请[迁移项目](../consume-packages/migrate-packages-config-to-package-reference.md)或者改为参阅[创建和发布 .NET Framework 包](create-and-publish-a-package-using-visual-studio-net-framework.md)，以获取分步说明。
 
     ![Visual Studio 项目中的 NuGet 包属性](media/qs_create-vs-01-package-properties.png)
 
     > [!Note]
     > 对于面向公共使用而生成的包，请特别注意 **Tags** 属性，因为这些标记可帮助其他人查找包并了解其用途。
 
-1. 为包提供一个唯一标识符，并填写任何其他所需的属性。 有关不同属性的说明，请参阅 [.nuspec 文件引用](../reference/nuspec.md)。 这里的所有属性都列入 Visual Studio 为项目创建的 `.nuspec` 清单。
+1. 为包提供一个唯一标识符，并填写任何其他所需的属性。 若要将 MSBuild 属性（SDK 样式项目）映射到 .nuspec 中的属性，请参阅[包目标](../reference/msbuild-targets.md#pack-target)  。 有关属性的说明，请参阅 [.nuspec 文件引用](../reference/nuspec.md)。 这里的所有属性都列入 Visual Studio 为项目创建的 `.nuspec` 清单。
 
     > [!Important]
     > 你必须为包提供一个在 nuget.org 中唯一或你使用的任何主机的标识符。 对于本次演练，我们建议在名称中包含“Sample”或“Test”，因为稍后的发布步骤确实会使该包公开显示（尽管实际上不太可能有人会使用它）。
     >
     > 如果你尝试发布名称已存在的包，则会看到一个错误。
 
-1. 可选：若要直接查看项目文件中的属性，请右击“解决方案资源管理器”中的“项目”，然后选择“编辑 AppLogger.csproj”  。
+1. （可选）若要直接查看项目文件中的属性，请右键单击“解决方案资源管理器”中的“项目”，然后选择“编辑 AppLogger.csproj”  。
 
    此选项从 Visual Studio 2017 开始仅对使用 SDK 样式属性的项目可用。 否则，右键单击项目，并选择“卸载项目”  。 然后右键单击卸载的项目并选择“编辑 AppLogger.csproj”  。
 
@@ -88,7 +88,7 @@ namespace AppLogger
 
     ![Visual Studio 项目上下文菜单上的 NuGet pack 命令](media/qs_create-vs-02-pack-command.png)
 
-    如果没有看到“Pack”  命令，那么项目可能不是 SDK 样式的项目，需要使用 `nuget.exe` CLI。 [迁移项目](../reference/migrate-packages-config-to-package-reference.md)并使用 `dotnet` CLI，或者改为参阅[创建和发布 .NET Framework 包](create-and-publish-a-package-using-visual-studio-net-framework.md)，以获取分步说明。
+    如果没有看到“Pack”  命令，那么项目可能不是 SDK 样式的项目，需要使用 `nuget.exe` CLI。 [迁移项目](../consume-packages/migrate-packages-config-to-package-reference.md)并使用 `dotnet` CLI，或者改为参阅[创建和发布 .NET Framework 包](create-and-publish-a-package-using-visual-studio-net-framework.md)，以获取分步说明。
 
 1. Visual Studio 构建项目并创建 `.nupkg` 文件。 检查“输出”  窗口以查看详细信息（类似于以下内容），其中包含包文件的路径。 另请注意，生成的程序集位于适合 .NET Standard 2.0 目标的 `bin\Release\netstandard2.0` 中。
 
@@ -128,7 +128,11 @@ namespace AppLogger
 
 [!INCLUDE [publish-api-key](includes/publish-api-key.md)]
 
-### <a name="publish-with-dotnet-nuget-push-dotnet-cli"></a>用 dotnet nuget push 发布 (dotnet CLI)
+### <a name="publish-with-the-dotnet-cli-or-nugetexe-cli"></a>使用 dotnet CLI 或 nuget.exe CLI 发布
+
+选择 CLI 工具（.NET Core CLI  (dotnet CLI) 或 NuGet  (nuget.exe CLI)）对应的选项卡。
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
 此步骤是使用 `nuget.exe` 的推荐替代方法。
 
@@ -136,7 +140,7 @@ namespace AppLogger
 
 [!INCLUDE [publish-dotnet](includes/publish-dotnet.md)]
 
-### <a name="publish-with-nuget-push-nugetexe-cli"></a>用 nuget push 发布 (nuget.exe CLI)
+# <a name="nugettabnuget"></a>[NuGet](#tab/nuget)
 
 该步骤是使用 `dotnet.exe` 的替代方法。
 
@@ -158,6 +162,8 @@ namespace AppLogger
     ```
 
 请参阅 [nuget push](../reference/cli-reference/cli-ref-push.md)。
+
+---
 
 ### <a name="publish-errors"></a>发布错误
 
@@ -189,11 +195,11 @@ namespace AppLogger
 
 ## <a name="related-topics"></a>相关主题
 
-- [创建包](../create-packages/creating-a-package.md)
+- [创建包](../create-packages/creating-a-package-dotnet-cli.md)
 - [发布包](../nuget-org/publish-a-package.md)
 - [预发行包](../create-packages/Prerelease-Packages.md)
 - [支持多个目标框架](../create-packages/multiple-target-frameworks-project-file.md)
-- [包版本控制](../reference/package-versioning.md)
+- [包版本控制](../concepts/package-versioning.md)
 - [创建本地化包](../create-packages/creating-localized-packages.md)
 - [.NET Standard 库文档](/dotnet/articles/standard/library)
 - [从 .NET Framework 移植到 .NET Core](/dotnet/articles/core/porting/index)

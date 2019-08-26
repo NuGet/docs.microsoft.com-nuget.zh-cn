@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: a9224ce4e515cf98893a7134077c90a47df1862a
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.openlocfilehash: e4223c25daa1c14c30de1ef063cd0f48df70c8b5
+ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020074"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69564573"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>使用 nuget.exe CLI 创建包
 
@@ -20,7 +20,7 @@ ms.locfileid: "69020074"
 
 - 对于使用 [SDK 样式格式](../resources/check-project-format.md)的 .NET Core 和 .NET Standard 项目，以及任何其他 SDK 样式项目，请参阅[使用 dotnet CLI 创建 NuGet 包](creating-a-package-dotnet-cli.md)。
 
-- 对于从 `packages.config` 迁移到 [PackageReference](../consume-packages/package-references-in-project-files.md) 的项目，使用 [msbuild -t:pack](../reference/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)。
+- 对于从 `packages.config` 迁移到 [PackageReference](../consume-packages/package-references-in-project-files.md) 的项目，使用 [msbuild -t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)。
 
 从技术角度来讲，NuGet 包仅仅是一个使用 `.nupkg` 扩展重命名且其中的内容与特定约定相匹配的 ZIP 文件。 本主题介绍创建满足这些约定的包的详细流程。
 
@@ -138,7 +138,7 @@ ms.locfileid: "69020074"
 </package>
 ```
 
-有关声明依赖项并指定版本号的详细信息，请参阅 [packages.config](../reference/packages-config.md) 和[包版本控制](../reference/package-versioning.md)。 还可以使用 `dependency` 元素上的 `include` 和 `exclude` 特性直接在包中结合依赖项的资产。 请参阅 [.nuspec 引用 - 依赖项](../reference/nuspec.md#dependencies)。
+有关声明依赖项并指定版本号的详细信息，请参阅 [packages.config](../reference/packages-config.md) 和[包版本控制](../concepts/package-versioning.md)。 还可以使用 `dependency` 元素上的 `include` 和 `exclude` 特性直接在包中结合依赖项的资产。 请参阅 [.nuspec 引用 - 依赖项](../reference/nuspec.md#dependencies)。
 
 因为清单包含在从清单创建的包中，所以可以通过检查现有包查找任意数目的其他示例。 计算机上的 global-packages  文件夹是一个不错的源，其位置由以下命令返回：
 
@@ -184,8 +184,8 @@ nuget locals -list global-packages
 | ref/{tfm} | 给定目标框架名字对象 (TFM) 的程序集 (`.dll`) 和符号 (`.pdb`) 文件 | 程序集添加为引用，仅用于编译时；因此，不会向项目 Bin 文件夹复制任何内容。 |
 | runtimes | 特定于体系结构的程序集 (`.dll`)、符号 (`.pdb`) 和本机源 (`.pri`) 文件 | 程序集添加为引用，仅用于运行时；其他文件复制到项目文件夹中。 在 `AnyCPU` 文件夹下应始终具有特定于相应的 (TFM) `/ref/{tfm}` 的程序集，以提供相应的编译时程序集。 请参阅[支持多个目标框架](supporting-multiple-target-frameworks.md)。 |
 | 内容 | 任意文件 | 内容复制到项目根目录。 将“内容”文件夹视为最终使用包的目标应用程序的根目录  。 若要使包在应用程序的 /images 文件夹中添加图片，请将其置于包的 content/images 文件夹中   。 |
-| 生成 | MSBuild `.targets` 和 `.props` 文件 | 自动插入到项目 (NuGet 3.x+)。 |
-| buildMultiTargeting | 跨框架目标的 MSBuild `.targets` 和 `.props` 文件 | 自动插入到项目。 |
+| 生成 | *(3.x+)* MSBuild `.targets` 和 `.props` 文件 | 自动插入到项目。 |
+| buildMultiTargeting | *(4.0+)* 跨框架目标的 MSBuild `.targets` 和 `.props` 文件 | 自动插入到项目。 |
 | buildTransitive | *(5.0+)* 以可传递的方式流入任意使用项目的 MSBuild `.targets` 和 `.props` 文件。 请参阅[功能](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior)页。 | 自动插入到项目。 |
 | 工具 | 可从包管理器控制台访问 Powershell 脚本和程序 | `tools` 文件夹添加到仅适用于包管理器控制台的 `PATH` 环境变量（尤其是不作为 MSBuild 集在生成项目时添加到 `PATH`）  。 |
 
@@ -226,9 +226,8 @@ nuget spec
 # Use in a folder containing a project file <project-name>.csproj or <project-name>.vbproj
 nuget pack myproject.csproj
 ```
-```
 
-A token is delimited by `$` symbols on both sides of the project property. For example, the `<id>` value in a manifest generated in this way typically appears as follows:
+令牌在项目属性的两侧由 `$` 符号分隔。 例如，通过此方法生成的清单中的 `<id>` 值通常如下所示：
 
 ```xml
 <id>$id$</id>
@@ -273,7 +272,7 @@ nuget spec [<package-name>]
 **针对包版本的最佳做法：**
 
 - 一般情况下，将包的版本设置为与库相匹配，但这不是必须的。 如之前在[确定要打包的程序集](#decide-which-assemblies-to-package)中所述，将包限制到单个程序集是一个简单的问题。 总的来说，请记住解析依赖项时，NuGet 自己处理包版本而不是程序集版本。
-- 使用非标准版本方案时，请确保考虑使用 NuGet 版本控制规则，如[包版本控制](../reference/package-versioning.md)中所述。
+- 使用非标准版本方案时，请确保考虑使用 NuGet 版本控制规则，如[包版本控制](../concepts/package-versioning.md)中所述。
 
 > 以下一系列简短博客文章也有助于理解版本控制：
 >
@@ -424,7 +423,7 @@ NuGet 指示需要更正的 `.nuspec` 文件中是否有错误，例如忘记更
 
 你可能还希望扩展包的功能，或者支持其他方案，如以下主题所述：
 
-- [包版本控制](../reference/package-versioning.md)
+- [包版本控制](../concepts/package-versioning.md)
 - [支持多个目标框架](../create-packages/supporting-multiple-target-frameworks.md)
 - [源和配置文件的转换](../create-packages/source-and-config-file-transformations.md)
 - [本地化](../create-packages/creating-localized-packages.md)
@@ -434,5 +433,5 @@ NuGet 指示需要更正的 `.nuspec` 文件中是否有错误，例如忘记更
 
 最后，有需要注意的其他包类型：
 
-- [本机包](../create-packages/native-packages.md)
+- [本机包](../guides/native-packages.md)
 - [符号包](../create-packages/symbol-packages.md)

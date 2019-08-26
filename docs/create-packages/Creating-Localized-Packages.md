@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: b1c2511c1fbafc7f52029c23521fa55671b0b5c5
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: dbc3781bd17f815c6b32fc70b275469337148f41
+ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546890"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69488837"
 ---
 # <a name="creating-localized-nuget-packages"></a>创建本地化 NuGet 包
 
@@ -77,7 +77,7 @@ ms.locfileid: "43546890"
 
 将所有语言捆绑到一个包中存在几个缺点：
 
-1. **共享元数据**：由于 NuGet 包只可包含一个 `.nuspec` 文件，因此仅可以为一种语言提供元数据。 也就是说，NuGet 当前不支持本地化元数据。
+1. **共享元数据**：由于 NuGet 包只可包含一个 `.nuspec` 文件，因此仅可为一种语言提供元数据。 也就是说，NuGet 当前不支持本地化元数据。
 1. **包大小**：根据支持的语言数量，库可能变得相当大，这会减慢包的安装和还原速度。
 1. **同时发布**：将本地化文件捆绑到一个包中需要同时发布该包中的所有资产，而不是能够单独发布每个本地化。 此外，对任何一个本地化的任何更新都需要整个包的新版本。
 
@@ -97,11 +97,11 @@ ms.locfileid: "43546890"
             ContosoUtilities.dll
             ContosoUtilities.xml
 
-附属程序集然后会使用命名约定 `{identifier}.{language}.{version}.nupkg`，如 `ContosoUtilities.de.1.0.0.nupkg`。 标识符必须与主包完全匹配。
+附属程序集然后会使用命名约定 `{identifier}.{language}.{version}.nupkg`，如 `ContosoUtilities.de.1.0.0.nupkg`。 标识符必须与主包完全匹配。 
 
-由于这是单独的包，因此它本身具有包含本地化元数据的 `.nuspec` 文件。 请注意，`.nuspec` 中的语言必须与文件名中所使用的语言匹配。
+由于这是单独的包，因此它本身具有包含本地化元数据的 `.nuspec` 文件。 请注意，`.nuspec` 中的语言必须与文件名中所使用的语言匹配。 
 
-附属程序集还必须使用 [] 版本表示法，将主包的确切版本声明为依赖项（请参阅[包版本控制](../reference/package-versioning.md)）。 例如，`ContosoUtilities.de.1.0.0.nupkg` 必须使用 `[1.0.0]` 表示法声明对 `ContosoUtilities.1.0.0.nupkg` 的依赖项。 当然，附属包的版本号可以与主包不同。
+附属程序集还必须使用 [] 版本表示法，将主包的确切版本声明为依赖项（请参阅[包版本控制](../concepts/package-versioning.md)）。  例如，`ContosoUtilities.de.1.0.0.nupkg` 必须使用 `[1.0.0]` 表示法声明对 `ContosoUtilities.1.0.0.nupkg` 的依赖项。 当然，附属包的版本号可以与主包不同。
 
 然后，附属包结构必须将资源程序集和 XML IntelliSense 包含在与包文件名中的 `{language}` 匹配的子文件夹中：
 
@@ -111,9 +111,9 @@ ms.locfileid: "43546890"
                 ContosoUtilities.resources.dll
                 ContosoUtilities.xml
 
-注意：除非需要特定的子区域性（如 `ja-JP`），否则请始终使用更高级别的语言标识符，如 `ja`。
+注意：除非需要特定的子区域性（如 `ja-JP`），否则请始终使用更高级别的语言标识符，如 `ja`  。
 
-在附属程序集中，NuGet 仅会识别文件名与 `{language}` 匹配的文件夹中的这些文件。 将忽略所有其他成员。
+在附属程序集中，NuGet 仅会识别文件名与 `{language}` 匹配的文件夹中的这些文件。  将忽略所有其他成员。
 
 如果满足所有这些约定，NuGet 会将包识别为附属包并将本地化文件安装到主包的 `lib` 文件夹中，就好像它们最初就进行了捆绑。 卸载附属程序包将从该相同文件夹中删除其文件。
 
@@ -137,7 +137,7 @@ ms.locfileid: "43546890"
 
 使用附属包有几个优点：
 
-1. **包大小**：主包的总内存占用量最小化，而且使用者仅承担要使用的语言的费用。
+1. **包大小**：最大限度地减少主包的总内存占用量，并且使用者仅承担要使用的语言的费用。
 1. **单独的元数据**：每个附属包都有自己的 `.nuspec` 文件，因此也拥有自己的本地化元数据。 借此，一些使用者可通过使用本地化术语搜索 nuget.org，更加轻松地查找包。
 1. **分离发布**：附属程序集可随着时间推移进行发布，而不是一次完成，从而分散了本地化工作量。
 

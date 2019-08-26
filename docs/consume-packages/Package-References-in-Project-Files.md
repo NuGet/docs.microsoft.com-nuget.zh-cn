@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 05ece5f36ff7ae5920960c42cfde8b271dc3e712
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.openlocfilehash: ae80206117eed639140a0c7977043d8330bc37bb
+ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020015"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69564564"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -20,7 +20,7 @@ ms.locfileid: "69020015"
 
 ## <a name="project-type-support"></a>项目类型支持
 
-默认情况下，PackageReference 用于 .NET Core 项目、.NET Standard 项目，以及面向 Windows 10 Build 15063（创意者更新）及更高版本的 UWP 项目（C++ UWP 项目除外）。 .NET 框架项目支持 PackageReference，但当前默认为 `packages.config`。 若要使用 PackageReference，请将 `packages.config` 中的依赖项[迁移](../reference/migrate-packages-config-to-package-reference.md)到项目文件中，然后删除 packages.config。
+默认情况下，PackageReference 用于 .NET Core 项目、.NET Standard 项目，以及面向 Windows 10 Build 15063（创意者更新）及更高版本的 UWP 项目（C++ UWP 项目除外）。 .NET 框架项目支持 PackageReference，但当前默认为 `packages.config`。 若要使用 PackageReference，请将 `packages.config` 中的依赖项[迁移](../consume-packages/migrate-packages-config-to-package-reference.md)到项目文件中，然后删除 packages.config。
 
 面向完整 .NET Framework 的 ASP.NET 应用仅包括对 PackageReference 的[有限支持](https://github.com/NuGet/Home/issues/5877)。 不支持 C++ 和 JavaScript 项目类型。
 
@@ -48,7 +48,7 @@ ms.locfileid: "69020015"
 </ItemGroup>
 ```
 
-在上述示例中，3.6.0 指 >=3.6.0 的任何版本（首选项为最低版本），详见[包版本控制](../reference/package-versioning.md#version-ranges-and-wildcards)。
+在上述示例中，3.6.0 指 >=3.6.0 的任何版本（首选项为最低版本），详见[包版本控制](../concepts/package-versioning.md#version-ranges-and-wildcards)。
 
 ## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a>对没有 PackageReferences 的项目使用 PackageReference
 高级：如果没有在项目中安装包（项目文件中没有 PackageReference，也没有 packages.config 文件），但要将项目还原为 PackageReference 样式，可以在项目文件中将项目属性 RestoreProjectStyle 设置为 PackageReference。
@@ -63,7 +63,7 @@ ms.locfileid: "69020015"
 
 ## <a name="floating-versions"></a>可变版本
 
-`PackageReference` 支持[可变版本](../consume-packages/dependency-resolution.md#floating-versions)：
+`PackageReference` 支持[可变版本](../concepts/dependency-resolution.md#floating-versions)：
 
 ```xml
 <ItemGroup>
@@ -106,7 +106,7 @@ ms.locfileid: "69020015"
 | Runtime — 运行时 | `lib` 和 `runtimes` 文件夹的内容，控制是否会复制这些程序集，以生成输出目录 |
 | contentFiles | `contentfiles` 文件夹中的内容 |
 | 生成 | `build` 文件夹中的 `.props` 和 `.targets` |
-| buildMultitargeting | `buildMultitargeting` 文件夹中跨框架目标的 `.props` 和 `.targets` |
+| buildMultitargeting | *(4.0)* `buildMultitargeting` 文件夹中跨框架目标的 `.props` 和 `.targets` |
 | buildTransitive | *(5.0+)* 以可传递的方式流入任意使用项目的资产的 `buildTransitive` 文件夹中的 `.props` 和 `.targets`。 请参阅[功能](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior)页。 |
 | analyzers | .NET 分析器 |
 | 本机 | `native` 文件夹中的内容 |
@@ -130,6 +130,9 @@ ms.locfileid: "69020015"
 ```
 
 请注意，因为 `PrivateAssets` 未包括 `build`，所以目标和属性将流入上级项目  。 例如，假设在生成名为 AppLogger 的 NuGet 包的项目中使用上述引用。 AppLogger 可以使用 `Contoso.Utility.UsefulStuff` 中的目标和属性，使用 AppLogger 的项目也可以。
+
+> [!NOTE]
+> 在 `.nuspec` 文件中将 `developmentDependency` 设置为 `true` 时，会将包标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。 利用 PackageReference (NuGet 4.8+)  ，此标志还意味着将从编译中排除编译时资产。 有关详细信息，请参阅 [PackageReference 的 DevelopmentDependency 支持](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)。
 
 ## <a name="adding-a-packagereference-condition"></a>添加 PackageReference 条件
 
