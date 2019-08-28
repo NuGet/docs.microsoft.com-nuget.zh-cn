@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: f931ed297a6a1e9e24ce5eb30a8158f59925bb39
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 29c52b6684dff252e9c45bf5365d83b6a3fe5201
+ms.sourcegitcommit: c65e7a889ddf64a8e2ff7bc59ec08edb308e16ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488672"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060242"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -76,7 +76,7 @@ ms.locfileid: "69488672"
 #### <a name="version"></a>version
 遵循 major.minor.patch 模式的包版本。 版本号可能包括预发布后缀，如[包版本控制](../concepts/package-versioning.md#pre-release-versions)中所述。 
 #### <a name="description"></a>description
-用于 UI 显示的包的详细说明。 
+用于 UI 显示的包的说明。
 #### <a name="authors"></a>作者
 包创建者的逗号分隔列表，与 nuget.org 上的配置文件名称一致。这些信息显示在 nuget.org 上的 NuGet 库中，并用于交叉引用同一作者的包。 
 
@@ -106,7 +106,7 @@ ms.locfileid: "69488672"
 
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-如果使用许可证表达式不支持的自定义许可证, 则可以使用许可证文本打包`.txt`或`.md`文件。 例如:
+如果使用许可证表达式不支持的自定义许可证, 则可以使用许可证文本打包`.txt`或`.md`文件。 例如：
 
 ```xml
 <package>
@@ -152,6 +152,9 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 (2.8+) 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。 对于 PackageReference (NuGet 4.8 +), 此标志还意味着它将从编译中排除编译时资产。 请参阅[DevelopmentDependency support For PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)
 
 #### <a name="summary"></a>摘要
+> [!Important]
+> `summary`即将弃用。 请改用 `description`。
+
 用于 UI 显示的包的简要说明。 如果省略，则使用 `description` 的截断版本。
 
 #### <a name="releasenotes"></a>releaseNotes
@@ -172,7 +175,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 #### <a name="repository"></a>储存库
 存储库元数据, 包括四个可选`type`属性`url` : 和 *(4.0 +)* `branch` 、 `commit`和和 *(4.6 +)* 。 这些属性允许你将映射`.nupkg`到生成它的存储库, 并且可能会将其作为单个分支名称和/或提交生成包的 sha-1 哈希。 这应该是公开提供的 url, 可由版本控制软件直接调用。 它不应是 html 页面, 因为这是用于计算机的。 对于 "链接到项目" 页, `projectUrl`请改用字段。
 
-例如:
+例如：
 ```xml
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
@@ -423,7 +426,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 > [!Important]
 > 当包安装到项目中时，NuGet 自动将程序集引用添加到包的 DLL，不包括命名为 `.resources.dll` 的内容，因为它们被假定为本地化的附属程序集。 为此，请避免对包含基本包代码的文件使用 `.resources.dll`。
 
-若要绕过此自动行为，并显式控制包中包含的文件，请将 `<files>` 元素作为 `<package>` 的子元素（和 `<metadata>` 的同级元素），并使用单独的 `<file>` 元素标识每个文件。 例如：
+若要绕过此自动行为，并显式控制包中包含的文件，请将 `<files>` 元素作为 `<package>` 的子元素（和 `<metadata>` 的同级元素），并使用单独的 `<file>` 元素标识每个文件。 例如:
 
 ```xml
 <files>
