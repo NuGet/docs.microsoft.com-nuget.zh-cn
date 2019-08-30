@@ -1,18 +1,18 @@
 ---
-title: 个人帐户
+title: 个人帐户 - NuGet.org
 description: 需要 NuGet.org 上的个人帐户以发布包
 author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: c88b88015bd6d5bae4789765126c0a3dec527e24
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 63c6b5eb5ad635e436b4d53a5f833af35f72d76f
+ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419843"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999965"
 ---
-# <a name="individual-accounts"></a>个人帐户
+# <a name="individual-accounts-on-nugetorg"></a>NuGet.org 上的个人帐户
 
 必须创建个人帐户才能在 NuGet.org 上发布和管理包。
 
@@ -69,3 +69,7 @@ ms.locfileid: "68419843"
    ![启用 2FA](media/nuget-org-enter-code-2fa.png)
 
 5. 按照任何其他说明完成双因素身份验证。
+
+## <a name="delete-a-nugetorg-account"></a>删除 NuGet.org 帐户
+
+有关其他帐户相关任务（例如删除 NuGet.org 帐户）的帮助，请参阅 [NuGet.org 帐户管理](nuget-org-faq.md#nugetorg-account-management)。

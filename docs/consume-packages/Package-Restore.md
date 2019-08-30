@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: dfe5f2ef4f0ababd81b91073938752aab2bdc01e
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 93a94a5468b48179d27b89825cebf2447657c8f2
+ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488811"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69999986"
 ---
 # <a name="restore-packages-using-package-restore"></a>使用“程序包还原”还原程序包
 
@@ -44,7 +44,7 @@ ms.locfileid: "69488811"
 
    对于使用 PackageReference 的项目，在成功还原后，global-packages 文件夹应显示此包，并且会重新创建 `obj/project.assets.json` 文件。  对于使用 `packages.config` 的项目，项目的 `packages` 文件夹应显示此程序包。 该项目现在应能成功生成。 
 
-2. 运行程序包还原后，若仍出现程序包缺失的情况或与程序包相关的错误（如 Visual Studio 的解决方案资源管理器中出现错误图标），可能需要[重新安装和更新程序包](../consume-packages/reinstalling-and-updating-packages.md)。
+2. 运行程序包还原后，若仍出现程序包缺失的情况或与程序包相关的错误（如 Visual Studio 的解决方案资源管理器中出现错误图标），可能需要按照[包还原错误疑难解答](package-restore-troubleshooting.md)中的步骤操作，或[重新安装和更新程序包](../consume-packages/reinstalling-and-updating-packages.md)。
 
    Visual Studio 中的程序包管理器控制台提供了多个灵活的选项，用于重新安装程序包。 请参阅[使用 Package-Update](reinstalling-and-updating-packages.md#using-update-package)。
 
