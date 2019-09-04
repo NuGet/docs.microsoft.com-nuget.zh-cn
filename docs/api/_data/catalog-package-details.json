@@ -31,7 +31,7 @@
     "projectUrl": "https://github.com/NuGet/NuGetGallery",
     "published": "1900-01-01T00:00:00Z",
     "requireLicenseAcceptance": false,
-    "title": "<span data-ttu-id=\"53464-101\">NuGet V3 协议示例</span><span class=\"sxs-lookup\"><span data-stu-id=\"53464-101\">NuGet V3 Protocol Example</span></span>",
+    "title": "<span data-ttu-id=\"63192-101\">NuGet V3 协议示例</span><span class=\"sxs-lookup\"><span data-stu-id=\"63192-101\">NuGet V3 Protocol Example</span></span>",
     "version": "1.0.0",
     "dependencyGroups": [
         {
@@ -56,7 +56,8 @@
                     "id": "WebApi.All",
                     "range": "[0.5.0, )"
                 }
-            ]
+            ],
+            "targetFramework": ".NETFramework4.6"
         }
     ],
     "tags": [
