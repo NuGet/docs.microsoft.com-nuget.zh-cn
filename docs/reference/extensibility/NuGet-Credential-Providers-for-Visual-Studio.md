@@ -1,57 +1,57 @@
 ---
 title: 用于 Visual Studio 的 NuGet 凭据提供程序
-description: NuGet 凭据提供程序通过在 Visual Studio 扩展中实现 IVsCredentialProvider 接口馈送进行身份验证。
+description: 通过在 Visual Studio 扩展中实现 IVsCredentialProvider 接口，NuGet 凭据提供程序对源进行身份验证。
 author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: abe009fee5863c55a188f4d7c71ed0924dd067ff
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 4e781a2462871bceeb1c7f02220320daabdab98a
+ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547949"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70384433"
 ---
-# <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>在 Visual Studio 中使用 NuGet 凭据提供程序的源进行身份验证
+# <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>在 Visual Studio 中通过 NuGet 凭据提供程序对源进行身份验证
 
-NuGet Visual Studio 扩展 3.6 + 支持可以使 NuGet 能够使用已验证的源的凭据提供程序。
-安装 Visual Studio 的 NuGet 凭据提供程序后，NuGet Visual Studio 扩展将自动获取和刷新用于根据需要已验证的源的凭据。
+NuGet Visual Studio 扩展 3.6 + 支持凭据提供程序，这些提供程序允许 NuGet 使用经过身份验证的源。
+安装适用于 Visual Studio 的 NuGet 凭据提供程序后，NuGet Visual Studio 扩展会根据需要自动获取和刷新经过身份验证的源的凭据。
 
-示例实现可在[VsCredentialProvider 示例](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider)。
+可在[VsCredentialProvider 示例](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider)中找到示例实现。
 
-从开始 4.8 + 在 Visual Studio 中的 NuGet 支持，新的跨平台身份验证插件，但它们不是出于性能原因，建议的方法。
+从 Visual Studio 中的 4.8 + NuGet 开始，还支持新的跨平台身份验证插件，但出于性能方面的原因，不建议采用这些方法。
 
 > [!Note]
-> 用于 Visual Studio 的 NuGet 凭据提供程序必须作为常规的 Visual Studio 扩展安装，并且需要[Visual Studio 2017](http://aka.ms/vs/15/release/vs_enterprise.exe)或更高版本。
+> 用于 Visual Studio 的 NuGet 凭据提供程序必须安装为常规 Visual Studio 扩展，并需要[Visual studio 2017](http://aka.ms/vs/15/release/vs_enterprise.exe)或更高版本。
 >
-> 用于 Visual Studio 的 NuGet 凭据提供程序仅适用于 Visual Studio 中 （不在 dotnet 还原或 nuget.exe）。 Nuget.exe 凭据提供程序，请参阅[nuget.exe 凭据提供程序](nuget-exe-Credential-providers.md)。
-> 有关凭据 dotnet 和 msbuild 中的提供程序请参阅[NuGet 跨平台插件](nuget-cross-platform-authentication-plugin.md)
+> 用于 Visual Studio 的 NuGet 凭据提供程序仅适用于 Visual Studio （不在 dotnet restore 或 nuget.exe 中）。 有关 nuget.exe 的凭据提供程序，请参阅[Nuget.exe 凭据提供程序](nuget-exe-Credential-providers.md)。
+> 对于 dotnet 和 msbuild 中的凭据提供程序，请参阅[NuGet 跨平台插件](nuget-cross-platform-authentication-plugin.md)
 
-## <a name="available-nuget-credential-providers-for-visual-studio"></a>Visual Studio 的可用 NuGet 凭据提供程序
+## <a name="available-nuget-credential-providers-for-visual-studio"></a>适用于 Visual Studio 的 NuGet 凭据提供程序
 
-没有内置于 Visual Studio NuGet 扩展的凭据提供程序以支持 Visual Studio Team Services。
+Visual Studio NuGet 扩展中内置了一个凭据提供程序，可支持 Visual Studio Team Services。
 
-NuGet Visual Studio 扩展使用内部`VsCredentialProviderImporter`这还扫描插件凭据提供程序。 这些插件凭据提供程序必须能够发现作为导出类型的 MEF `IVsCredentialProvider`。
+NuGet Visual Studio 扩展使用内部`VsCredentialProviderImporter` ，后者还会扫描插件凭据提供程序。 这些插件凭据提供程序必须可被发现为类型`IVsCredentialProvider`的 MEF 导出。
 
-可用的插件凭据提供程序包括：
+可用插件凭据提供程序包括：
 
-- [适用于 Visual Studio 2017 的 MyGet 凭据提供程序](http://docs.myget.org/docs/reference/credential-provider-for-visual-studio)
+- [适用于 Visual Studio 的 MyGet 凭据提供程序](http://docs.myget.org/docs/reference/credential-provider-for-visual-studio)
 
-## <a name="creating-a-nuget-credential-provider-for-visual-studio"></a>创建 Visual Studio 的 NuGet 凭据提供程序
+## <a name="creating-a-nuget-credential-provider-for-visual-studio"></a>为 Visual Studio 创建 NuGet 凭据提供程序
 
-NuGet Visual Studio 扩展 3.6 + 实现内部 CredentialService 用来获取凭据。 CredentialService 具有内置和插件凭据提供程序的列表。 获取凭据之前，将按顺序尝试每个提供程序。
+NuGet Visual Studio 扩展 3.6 + 实现了用于获取凭据的内部 CredentialService。 CredentialService 包含内置和插件凭据提供程序的列表。 每个提供程序按顺序尝试，直到获取凭据。
 
-在凭据获取凭据服务将尝试按以下顺序停止立即获取凭据的凭据提供程序：
+获取凭据时，凭据服务将按以下顺序尝试凭据提供程序，获取凭据后立即停止：
 
-1. NuGet 配置文件中提取的凭据 (使用内置`SettingsCredentialProvider`)。
-1. 如果包源是在 Visual Studio Team Services`VisualStudioAccountProvider`将使用。
-1. 将按顺序尝试所有其他插件 Visual Studio 的凭据提供程序。
-1. 尝试按顺序使用跨平台的凭据提供程序的所有 NuGet。
-1. 如果已获取不使用凭据，将凭据使用标准的基本身份验证对话框提示用户。
+1. 将从 NuGet 配置文件（使用内置`SettingsCredentialProvider`）中提取凭据。
+1. 如果包源位于 Visual Studio Team Services 上，则`VisualStudioAccountProvider`将使用。
+1. 将按顺序尝试所有其他插件 Visual Studio 凭据提供程序。
+1. 尝试按顺序使用所有 NuGet 跨平台凭据提供程序。
+1. 如果尚未获取任何凭据，则系统会提示用户使用标准的基本身份验证对话框来输入凭据。
 
-### <a name="implementing-ivscredentialprovidergetcredentialsasync"></a>实现 IVsCredentialProvider.GetCredentialsAsync
+### <a name="implementing-ivscredentialprovidergetcredentialsasync"></a>实现 IVsCredentialProvider. GetCredentialsAsync
 
-若要创建 Visual Studio 的 NuGet 凭据提供程序，创建一个 Visual Studio 扩展，公开公共 MEF 导出实现`IVsCredentialProvider`类型，并遵循下面所述的原则。
+若要为 visual studio 创建 NuGet 凭据提供程序，请创建一个 visual studio 扩展，该扩展公开实现该`IVsCredentialProvider`类型的公共 MEF 导出，并遵循下面所述的原则。
 
 ```cs
 public interface IVsCredentialProvider
@@ -66,24 +66,24 @@ public interface IVsCredentialProvider
 }
 ```
 
-示例实现可在[VsCredentialProvider 示例](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider)。
+可在[VsCredentialProvider 示例](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider)中找到示例实现。
 
-Visual Studio 的每个 NuGet 凭据提供程序必须：
+适用于 Visual Studio 的每个 NuGet 凭据提供程序必须：
 
-1. 确定是否它可提供凭据的目标 URI 启动凭据获取之前。 如果提供商无法提供凭据的目标的源，则它应返回`null`。
-1. 如果提供程序无法处理请求的目标 URI，但不能提供的凭据，则应引发异常。
+1. 确定是否可以在启动凭据获取之前为目标 URI 提供凭据。 如果提供程序无法为目标源提供凭据，则它应返回`null`。
+1. 如果提供程序处理目标 URI 的请求，但无法提供凭据，则应引发异常。
 
-Visual Studio 的自定义 NuGet 凭据提供程序必须实现`IVsCredentialProvider`中提供的接口[NuGet.VisualStudio 包](https://www.nuget.org/packages/NuGet.VisualStudio/)。
+Visual Studio 的自定义 NuGet 凭据提供程序必须实现`IVsCredentialProvider` [VisualStudio 包](https://www.nuget.org/packages/NuGet.VisualStudio/)中提供的接口。
 
 #### <a name="getcredentialasync"></a>GetCredentialAsync
 
-| 输入的参数 |描述|
+| 输入参数 |描述|
 | ----------------|-----------|
-| Uri uri | 正在为其请求凭据包源 Uri。|
-| IWebProxy 代理 | 若要在网络上通信时使用的 web 代理。 如果不没有配置任何代理身份验证，则为 null。 |
-| bool isProxyRequest | 如果此请求获取代理身份验证凭据，则为 true。 如果实现用于获取代理凭据无效，应返回 null。 |
-| bool isRetry | 如果凭据以前请求过，此 Uri，但提供的凭据不允许经授权的访问权限，则为 true。 |
-| 非交互式 bool | 如果为 true，则必须取消所有用户提示的凭据提供程序并将其改为使用默认值。 |
-| CancellationToken cancellationToken | 应检查此取消标记，以确定操作要求凭据已被取消。 |
+| Uri uri | 正在为其请求凭据的包源 Uri。|
+| IWebProxy 代理 | 网络上通信时要使用的 Web 代理。 如果未配置代理身份验证，则为 Null。 |
+| bool isProxyRequest | 如果此请求将获取代理身份验证凭据，则为 True。 如果实现对于获取代理凭据无效，则应返回 null。 |
+| bool isRetry | 如果以前已为此 Uri 请求凭据，但提供的凭据不允许授权访问，则为 True。 |
+| bool 非交互式 | 如果为 true，则凭据提供程序必须禁止显示所有用户提示并改用默认值。 |
+| CancellationToken cancellationToken | 应检查此取消标记以确定请求凭据的操作是否已取消。 |
 
-**返回值**： 凭据对象实现[`System.Net.ICredentials`接口](/dotnet/api/system.net.icredentials?view=netstandard-2.0)。
+**返回值**：一个实现[ `System.Net.ICredentials`接口](/dotnet/api/system.net.icredentials?view=netstandard-2.0)的凭据对象。
