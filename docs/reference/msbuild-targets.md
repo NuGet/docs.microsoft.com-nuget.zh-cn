@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: a9331ad2ea0482737d84f4ea9a9babf95da8d66f
-ms.sourcegitcommit: d5cc3f01a92c2d69b794343c09aff07ba9e912e5
+ms.openlocfilehash: 16b8ff532b87a3e3f96029e77dd166eb39294c0b
+ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70385891"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70815346"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -109,6 +109,7 @@ NuGet 4.0+
 - NuspecFile
 - NuspecBasePath
 - NuspecProperties
+- Deterministic
 
 ## <a name="pack-scenarios"></a>包方案
 
@@ -125,7 +126,7 @@ NuGet 4.0+
 
 打包图标图像文件时，需要使用 PackageIcon 属性来指定相对于包根的包路径。 此外，还需要确保文件已包含在包中。 图像文件大小限制为 1 MB。 支持的文件格式包括 JPEG 和 PNG。 建议使用64x64 的图像分辨率。
 
-例如：
+例如:
 
 ```xml
 <PropertyGroup>
@@ -172,6 +173,18 @@ NuGet 4.0+
 <IncludeAssets>
 <ExcludeAssets>
 <PrivateAssets>
+```
+
+### <a name="deterministic"></a>Deterministic
+
+使用`MSBuild -t:pack -p:Deterministic=true`时，包目标的多个调用将生成完全相同的包。
+Pack 命令的输出不受计算机的环境状态影响。 特别是 zip 条目的时间戳为1980-01-01。 若要实现完全确定性，应通过相应的编译器选项（[确定性](/dotnet/csharp/language-reference/compiler-options/deterministic-compiler-option)）生成程序集。
+建议指定如下所示的确定性属性，以便编译器和 NuGet 都遵守此类属性。
+
+```xml
+<PropertyGroup>
+  <Deterministic>true</Deterministic>
+</PropertyGroup>
 ```
 
 ### <a name="including-content-in-a-package"></a>在包中添加内容
@@ -236,7 +249,7 @@ NuGet 4.0+
 
 [了解有关 NuGet.org 所接受的许可证表达式和许可证的详细信息](nuspec.md#license)。
 
-打包许可证文件时，需要使用 PackageLicenseFile 属性来指定相对于包根的包路径。 此外，还需要确保文件已包含在包中。 例如:
+打包许可证文件时，需要使用 PackageLicenseFile 属性来指定相对于包根的包路径。 此外，还需要确保文件已包含在包中。 例如：
 
 ```xml
 <PropertyGroup>
