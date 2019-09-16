@@ -1,17 +1,17 @@
 ---
 title: ID 前缀预留
 description: 包 ID 前缀预留功能说明和作者指南。
-author: diverdan92
-ms.author: diverdan92
-ms.date: 10/09/2017
+author: karann-msft
+ms.author: karann
+ms.date: 09/07/2019
 ms.topic: reference
-ms.reviewer: ananguar
-ms.openlocfilehash: 650f570ec65a665e3d452af732ea22337835d8d9
-ms.sourcegitcommit: cae759ad8518c049575a30ad3bf04fe5d06244fb
+ms.reviewer: karann
+ms.openlocfilehash: 630c2b193500ec0b9aa5a7fe4af3ea95ae52aeec
+ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616802"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70815278"
 ---
 # <a name="package-id-prefix-reservation"></a>包 ID 前缀预留
 
@@ -88,6 +88,8 @@ ms.locfileid: "68616802"
 1. 与包 ID 前缀匹配的包的标识属性是否清晰且一致（尤其是包作者）？
 
 1. 包是否具有许可证（使用[许可证](../reference/nuspec.md#license)元数据元素而不是弃用的 licenseUrl？
+
+1. 如果包具有图标（使用 iconUrl 元数据元素），则这些包是否也使用该[图标](../reference/nuspec.md#icon) 元数据元素（不需要删除 iconUrl）？
 
 ## <a name="third-party-feed-provider-scenarios"></a>第三方源提供程序方案
 

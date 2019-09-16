@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: quickstart
-ms.openlocfilehash: d7aa2e4bdb78dcc6747d9775cbdf0d6c41855b96
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 417388872a74b29a469d6a5c17c079a0d1a35dc3
+ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419810"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70384464"
 ---
 # <a name="install-nuget-client-tools"></a>安装 NuGet 客户端工具
 
@@ -22,7 +22,7 @@ ms.locfileid: "68419810"
 |:------------- |:-------------|:-----|
 | [dotnet.exe](#dotnetexe-cli) | 适用于 .NET Core 和 .NET Standard 库，以及适用于任何 [SDK 样式项目](resources/check-project-format.md)（例如面向 .NET Framework 的项目）的 CLI 工具。 包含在 .NET Core SDK 中，并在所有平台上提供核心 NuGet 功能。 （从 Visual Studio 2017 开始，dotnet CLI 将自动随任何与 .NET Core 相关的工作负载一起安装。）| [.NET Core SDK](https://www.microsoft.com/net/download/) |
 | [nuget.exe](#nugetexe-cli) | 适用于 .NET Framework 库，以及适用于任何 [非 SDK 样式项目](resources/check-project-format.md)（例如面向 .NET Standard 库的项目）的 CLI 工具。 提供 Windows 上的所有 NuGet 功能以及 Mac 和 Linux 上在 Mono 下运行时的大多数功能。 | [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) |
-| [Visual Studio](#visual-studio) | 在 Windows 上，通过包管理器 UI 和包管理器控制台提供 NuGet 功能；包含在与 .NET 相关的工作负荷中。 在 Mac 上，通过 UI 提供某些功能。 在 Visual Studio Code 中，通过扩展提供 NuGet 功能。 | [Visual Studio 2017](https://www.visualstudio.com/downloads/) |
+| [Visual Studio](#visual-studio) | 在 Windows 上，通过包管理器 UI 和包管理器控制台提供 NuGet 功能；包含在与 .NET 相关的工作负荷中。 在 Mac 上，通过 UI 提供某些功能。 在 Visual Studio Code 中，通过扩展提供 NuGet 功能。 | [Visual Studio](https://www.visualstudio.com/downloads/) |
 
 [MSBuild CLI](reference/msbuild-targets.md) 还提供了还原和创建包的功能，该功能主要在生成服务器上使用。 MSBuild 不是与 NuGet 一起使用的通用工具。
 
@@ -73,7 +73,7 @@ ms.locfileid: "68419810"
   - 程序包管理器控制台命令只能在 Windows 的 Visual Studio 中工作，不能在其他 PowerShell 环境中工作。
   - 对于 Visual Studio 2010 及更早版本，请安装“适用于 Visual Studio 的 NuGet 包管理器”扩展。
   - 适用于 Visual Studio 2013 和 2015 的 NuGet 扩展也可以从 [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html) 下载。
-  - 如果希望预览即将推出的 NuGet 功能，请安装 [Visual Studio 2017 预览版](https://www.visualstudio.com/vs/preview/)，该版本与 Visual Studio 稳定版本并行工作。 若要报告问题或分享对预览版的看法，请在 [NuGet GitHub 存储库](https://github.com/Nuget/Home/issues)上打开问题。
+  - 如果希望预览即将推出的 NuGet 功能，请安装 [Visual Studio 预览版](https://www.visualstudio.com/vs/preview/)，该版本与 Visual Studio 稳定版本并行工作。 若要报告问题或分享对预览版的看法，请在 [NuGet GitHub 存储库](https://github.com/Nuget/Home/issues)上打开问题。
 
 ## <a name="feature-availability"></a>功能可用性
 

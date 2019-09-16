@@ -5,23 +5,23 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: 7bfe041c01114ac61e811497ecc31ebfdad45029
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 40e240478918d327fbea0013bbf271ea2ee1fc47
+ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488904"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70384497"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>快速入门：使用 Visual Studio 创建和发布包（.NET Framework、Windows）
 
 若要从 .NET Framework 类库创建 NuGet 包，需要在 Windows 上的 Visual Studio 中创建 DLL，然后使用 nuget.exe 命令行工具创建并发布包。
 
 > [!Note]
-> 本快速入门教程仅适用于 Visual Studio 2017 for Windows。 Visual Studio for Mac 不包括此处所述的功能。 改为使用 [dotnet CLI 工具](create-and-publish-a-package-using-the-dotnet-cli.md)。
+> 本快速入门教程仅适用于 Windows 版的 Visual Studio 2017 和更高版本。 Visual Studio for Mac 不包括此处所述的功能。 改为使用 [dotnet CLI 工具](create-and-publish-a-package-using-the-dotnet-cli.md)。
 
 ## <a name="prerequisites"></a>系统必备
 
-1. 通过任何与 .NET 相关的工作负载从 [visualstudio.com](https://www.visualstudio.com/) 安装任意版本的 Visual Studio 2017。 安装 .NET 工作负载时，Visual Studio 2017 会自动包含 NuGet 功能。
+1. 通过任何与 .NET 相关的工作负载从 [visualstudio.com](https://www.visualstudio.com/) 安装任意版本的 Visual Studio 2017 或更高版本。 安装 .NET 工作负载时，Visual Studio 2017 会自动包含 NuGet 功能。
 
 1. 要安装 `nuget.exe` CLI，从 [nuget.org](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) 下载它，将 `.exe` 文件保存到合适的文件夹，然后将该文件夹添加到 PATH 环境变量中。
 

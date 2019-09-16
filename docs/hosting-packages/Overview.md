@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 737b13be70de9aaa7dec7904d4c2a4ec494ef7b3
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 10651e2cc26f7df4115e4de5dac8c91c93af7374
+ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317551"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70815292"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>承载自己的 NuGet 源
 
@@ -23,19 +23,20 @@ ms.locfileid: "68317551"
 - NuGet.Server：通过本地 HTTP 服务器提供包。 有关详细信息，请参阅 [NuGet.Server](../hosting-packages/nuget-server.md)。
 - NuGet 库：在使用 [NuGet 库项目](https://github.com/NuGet/NuGetGallery#build-and-run-the-gallery-in-arbitrary-number-easy-steps) (github.com) 的 Internet 服务器上承载包。 NuGet 库提供用户管理和功能，如丰富的 Web UI，它允许从浏览器中搜索和浏览包，这与 nuget.org 相似。
 
-还有其他几个 NuGet 承载产品也支持远程专用源，其中包括：
+另外还有其他几种 NuGet 宿主产品支持远程专用源，例如 [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) 和 [GitHub 包注册表](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)。 下面列出了此类产品：
 
-- [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) 也可通过 Team Foundation Server 2017 以及更高版本获得。
-- [MyGet](http://myget.org)
-- Inedo 的 [ProGet](http://inedo.com/proget)
-- [GitHub 包注册表](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
-- [NuGet 服务器](http://nugetserver.net/)，Inedo 的社区项目
-- [NuGet 服务器（开放源代码）](http://nuget-server.net)，与 Inedo 的 NuGet 服务器相似的开放源代码实现
-- [LiGet](https://github.com/ai-traders/liget)：在 docker 中 kestrel 上运行的 NuGet V2 服务器的开放源代码实现
-- [BaGet](https://github.com/loic-sharma/BaGet) 构建与 ASP.NET Core 基础上的 NuGet V3 服务器的开源实现
-- [Sleet](https://github.com/emgarten/sleet)（开放源代码 NuGet V3 静态源生成器）
 - JFrog 的 [Artifactory](https://www.jfrog.com/artifactory/)。
+- [Azure Artifacts](https://www.visualstudio.com/docs/package/nuget/publish) 也可通过 Team Foundation Server 2017 以及更高版本获得。
+- [BaGet](https://github.com/loic-sharma/BaGet) 构建与 ASP.NET Core 基础上的 NuGet V3 服务器的开源实现
+- [Cloudsmith](https://cloudsmith.io/l/nuget-feed/)：一种完全托管的包管理 SaaS
+- [GitHub 包注册表](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
+- [LiGet](https://github.com/ai-traders/liget)：在 docker 中 kestrel 上运行的 NuGet V2 服务器的开放源代码实现
+- [MyGet](http://myget.org)
 - Sonatype 的 [Nexus](http://www.sonatype.org/nexus/)。
+- [NuGet 服务器（开放源代码）](http://nuget-server.net)，与 Inedo 的 NuGet 服务器相似的开放源代码实现
+- [NuGet 服务器](http://nugetserver.net/)，Inedo 的社区项目
+- Inedo 的 [ProGet](http://inedo.com/proget)
+- [Sleet](https://github.com/emgarten/sleet)（开放源代码 NuGet V3 静态源生成器）
 - JetBrains 的 [TeamCity](https://www.jetbrains.com/teamcity/)。
 
 无论包是什么样的承载方式，均可将其添加到 `NuGet.Config` 中的可用源列表以便访问。 此操作可在 Visual Studio 中执行（如[包源](../consume-packages/install-use-packages-visual-studio.md#package-sources)中所述），或使用 [`nuget sources`](../reference/cli-reference/cli-ref-sources.md) 从命令行执行操作。 源的路径可以是本地文件夹路径名、网络名称或 URL。
