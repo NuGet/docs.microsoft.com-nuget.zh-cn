@@ -6,18 +6,18 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 688e4554c6c9e8495fe5a0d2a9bfadd7889819c8
-ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
+ms.openlocfilehash: 66bfe3cbc55f68947e85af5384c37092889c5169
+ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70384482"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094062"
 ---
 # <a name="errors-and-warnings"></a>错误和警告
 
 在 NuGet 4.3.0 + 中，错误和警告按照本主题中的说明进行编号，并提供详细信息来帮助解决所涉及的问题。
 
-此处列出的错误和警告仅适用于[基于 PackageReference 的](../consume-packages/package-references-in-project-files.md)项目和 NuGet 4.3.0 +。 NuGet 还遵循 MSBuild 属性来禁止显示警告或将警告提升为错误。 有关详细信息，请参阅[如何：在 Visual Studio](/visualstudio/ide/how-to-suppress-compiler-warnings)文档中取消显示编译器警告。
+此处列出的错误和警告仅适用于[基于 PackageReference 的](../consume-packages/package-references-in-project-files.md)项目和 NuGet 4.3.0 +。 NuGet 还遵循 MSBuild 属性来禁止显示警告或将警告提升为错误。 有关更多信息，请参见[如何：在 Visual Studio](/visualstudio/ide/how-to-suppress-compiler-warnings)文档中取消显示编译器警告。
 
 ## <a name="errors"></a>错误
 
@@ -42,6 +42,6 @@ ms.locfileid: "70384482"
 | 源警告 | [NU1801](./errors-and-warnings/NU1801.md) |
 | NuGet 内部警告 | [NU1500](./errors-and-warnings/NU1500.md) |
 | 签名包警告（创建和验证） | [NU3000](./errors-and-warnings/NU3000.md)、 [NU3002](./errors-and-warnings/NU3002.md)、 [NU3003](./errors-and-warnings/NU3003.md)、 [NU3006](./errors-and-warnings/NU3006.md)、 [NU3007](./errors-and-warnings/NU3007.md)、 [NU3009](./errors-and-warnings/NU3009.md)、 [NU3010](./errors-and-warnings/NU3010.md)、 [NU3011](./errors-and-warnings/NU3011.md)、 [NU3012](./errors-and-warnings/NU3012.md)、 [NU3013](./errors-and-warnings/NU3013.md)、 [NU3014](./errors-and-warnings/NU3014.md)、 [NU3015](./errors-and-warnings/NU3015.md)、 [NU3016](./errors-and-warnings/NU3016.md)、 [NU3017](./errors-and-warnings/NU3017.md)、 [NU3018](./errors-and-warnings/NU3018.md)、 [NU3019](./errors-and-warnings/NU3019.md)、 [NU3020](./errors-and-warnings/NU3020.md)、 [NU3021](./errors-and-warnings/NU3021.md)、 [NU3022](./errors-and-warnings/NU3022.md)、 [NU3023](./errors-and-warnings/NU3023.md)、 [NU3024](./errors-and-warnings/NU3024.md)、 [NU3025](./errors-and-warnings/NU3025.md)、 [NU3026](./errors-and-warnings/NU3026.md)、 [NU3027](./errors-and-warnings/NU3027.md)、 [NU3028](./errors-and-warnings/NU3028.md)、 [NU3029](./errors-and-warnings/NU3029.md)、[NU3030](./errors-and-warnings/NU3030.md)、 [NU3031](./errors-and-warnings/NU3031.md)、 [NU3032](./errors-and-warnings/NU3032.md)、 [NU3033](./errors-and-warnings/NU3033.md)、 [NU3035](./errors-and-warnings/NU3035.md)、 [NU3036](./errors-and-warnings/NU3036.md)、 [NU3037](./errors-and-warnings/NU3037.md)、 [NU3038](./errors-and-warnings/NU3038.md)、 [NU3040](./errors-and-warnings/NU3040.md) |
-| 包警告 | [NU5100](./errors-and-warnings/NU5100.md)、 [NU5101](./errors-and-warnings/NU5101.md)、 [NU5102](./errors-and-warnings/NU5102.md)、 [NU5103](./errors-and-warnings/NU5103.md)、 [NU5104](./errors-and-warnings/NU5104.md)、 [NU5105](./errors-and-warnings/NU5105.md)、 [NU5106](./errors-and-warnings/NU5106.md)、 [NU5107](./errors-and-warnings/NU5107.md)、 [NU5108](./errors-and-warnings/NU5108.md)、 [NU5109](./errors-and-warnings/NU5109.md)、 [NU5110](./errors-and-warnings/NU5110.md)、 [NU5111](./errors-and-warnings/NU5111.md)、 [NU5112](./errors-and-warnings/NU5112.md)、 [NU5114](./errors-and-warnings/NU5114.md)、 [NU5115](./errors-and-warnings/NU5115.md)、 [NU5116](./errors-and-warnings/NU5116.md)、 [NU5117](./errors-and-warnings/NU5117.md)、 [NU5118](./errors-and-warnings/NU5118.md)、 [NU5119](./errors-and-warnings/NU5119.md)、 [NU5120](./errors-and-warnings/NU5120.md)、 [NU5121](./errors-and-warnings/NU5121.md)、 [NU5122](./errors-and-warnings/NU5122.md)、 [NU5123](./errors-and-warnings/NU5123.md)、 [NU5500](./errors-and-warnings/NU5500.md)
+| 包警告 | [NU5100](./errors-and-warnings/NU5100.md)、 [NU5101](./errors-and-warnings/NU5101.md)、 [NU5102](./errors-and-warnings/NU5102.md)、 [NU5103](./errors-and-warnings/NU5103.md)、 [NU5104](./errors-and-warnings/NU5104.md)、 [NU5105](./errors-and-warnings/NU5105.md)、 [NU5106](./errors-and-warnings/NU5106.md)、 [NU5107](./errors-and-warnings/NU5107.md)、 [NU5108](./errors-and-warnings/NU5108.md)、 [NU5109](./errors-and-warnings/NU5109.md)、 [NU5110](./errors-and-warnings/NU5110.md)、 [NU5111](./errors-and-warnings/NU5111.md)、 [NU5112](./errors-and-warnings/NU5112.md)、 [NU5114](./errors-and-warnings/NU5114.md)、 [NU5115](./errors-and-warnings/NU5115.md)、 [NU5116](./errors-and-warnings/NU5116.md)、 [NU5117](./errors-and-warnings/NU5117.md)、 [NU5118](./errors-and-warnings/NU5118.md)、 [NU5119](./errors-and-warnings/NU5119.md)、 [NU5120](./errors-and-warnings/NU5120.md)、 [NU5121](./errors-and-warnings/NU5121.md)、 [NU5122](./errors-and-warnings/NU5122.md)、 [NU5123](./errors-and-warnings/NU5123.md)、 [NU5128](./errors-and-warnings/NU5128.md)、 [NU5500](./errors-and-warnings/NU5500.md)
 | 许可证特定包警告 | [NU5124](./errors-and-warnings/NU5124.md)、 [NU5125](./errors-and-warnings/NU5125.md)
 | 图标特定包警告 | [NU5046](./errors-and-warnings/NU5046.md)、 [NU5047](./errors-and-warnings/NU5047.md)、 [NU5048](./errors-and-warnings/NU5048.md)
