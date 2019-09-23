@@ -12,12 +12,12 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 109df18bcfd3e6a3fbd3ef3da1707ffada585140
-ms.sourcegitcommit: f4bfdbf62302c95f1f39e81ccf998f8bbc6d56b0
+ms.openlocfilehash: 5546881dbf7577eb289a28b35bc2c0e7dc5cac40
+ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70749030"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094108"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
@@ -92,25 +92,25 @@ NuGet 会将两个包发布到 nuget.org。`MyPackage.nupkg` 先发布，随后 
 
 ## <a name="nugetorg-symbol-server"></a>NuGet.org 符号服务器
 
-NuGet.org 支持自己的符号服务器存储库，只接受新的符号包格式 - `.snupkg`。 包使用者可将 `https://symbols.nuget.org/download/symbols` 添加到 Visual Studio 中的符号源，使用发布到 nuget.org 符号服务器的符号，这允许在 Visual Studio 调试程序中单步执行包代码。 有关该过程的详细信息，请参阅[在 Visual Studio 调试程序中指定符号 (.pdb) 和源文件](https://docs.microsoft.com/en-us/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger?view=vs-2017)。
+NuGet.org 支持自己的符号服务器存储库，只接受新的符号包格式 - `.snupkg`。 包使用者可将 `https://symbols.nuget.org/download/symbols` 添加到 Visual Studio 中的符号源，使用发布到 nuget.org 符号服务器的符号，这允许在 Visual Studio 调试程序中单步执行包代码。 有关该过程的详细信息，请参阅[在 Visual Studio 调试程序中指定符号 (.pdb) 和源文件](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md)。
 
-### <a name="nugetorg-symbol-package-constraints"></a>Nuget.org 符号包约束
+### <a name="nugetorg-symbol-package-constraints"></a>NuGet.org 符号包约束
 
-nuget.org 上支持的符号包具有以下约束
+NuGet.org 对符号包具有以下约束：
 
-- 只允许将以下文件扩展名添加到符号包中。 ```.pdb,.nuspec,.xml,.psmdcp,.rels,.p7s```
-- nuget 符号服务器目前仅支持托管的[可移植 pdb](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md)。
-- 需要使用 Visual Studio 15.9 或更高版本中的编译器构建 pdb 和关联的 nupkg dll（请参阅 [pdb 加密哈希](https://github.com/dotnet/roslyn/issues/24429)）
+- 符号包中仅允许使用以下文件扩展名：`.pdb`、`.nuspec`、`.xml`、`.psmdcp`、`.rels`、`.p7s`
+- NuGet.org 符号服务器目前仅支持托管的[可移植 PDB](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md)。
+- 需要使用 Visual Studio 15.9 或更高版本中的编译器构建 PDB 及其关联的 nupkg DLL（请参阅 [PDB 加密哈希](https://github.com/dotnet/roslyn/issues/24429)）
 
-如果 .snupkg 中包含任何其他文件类型，则 nuget.org 上的符号包发布将失败。
+如果未满足这些约束，则发布到 NuGet.org 的符号包将无法通过验证。 
 
 ### <a name="symbol-package-validation-and-indexing"></a>符号包验证和编制索引
 
-发布到 [NuGet.org](https://www.nuget.org/) 的符号包会进行多项验证，如病毒检查。
+发布到 [NuGet.org](https://www.nuget.org/) 的符号包会接受多项验证，包括恶意软件扫描。 如果包未通过验证检查，则其包详细信息页将显示错误消息。 此外，包的所有者还将收到一封电子邮件，其中包含有关如何解决已识别问题的说明。
 
-包通过所有验证检查后，符号可能需要一段时间才能编入索引和从 NuGet.org 符号服务器中使用。 如果包未通过验证检查，将更新 .nupkg 包详细信息页面以显示相关错误，同时你也会收到包含相关通知的电子邮件。
+当符号包通过所有验证后，NuGet.org 的符号服务器将为其中的符号编制索引。 编制索引后，NuGet.org 符号服务器即可使用这些符号。
 
-包验证和编制索引所需的时间通常不超过 15 分钟。 如果发布包所用时间超出预期，请访问 [status.nuget.org](https://status.nuget.org/) 检查 nuget.org 是否遇到任何中断。 如果所有系统均正常运行，但一个小时之内还未成功发布包，请登录 nuget.org 并使用包详细信息页面上的“联系支持人员”链接与我们联系。
+包验证和编制索引所需的时间通常不超过 15 分钟。 如果发布包所用时间超出预期，请访问 [status.nuget.org](https://status.nuget.org/) 检查 NuGet.org 是否遇到任何中断。 如果所有系统均正常运行，但一个小时之内还未成功发布包，请登录 nuget.org 并使用包详细信息页面上的“联系支持人员”链接与我们联系。
 
 ## <a name="symbol-package-structure"></a>符号包结构
 
@@ -132,4 +132,6 @@ nuget.org 上支持的符号包具有以下约束
 
 ## <a name="see-also"></a>另请参阅
 
-[NuGet 包调试和符号的改进](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements)
+考虑使用源链接来启用 .NET 程序集的源代码调试。 有关详细信息，请参阅[源链接指南](/dotnet/standard/library-guidance/sourcelink.md)。
+
+有关符号包的更多信息，请参阅 [NuGet 包调试与符号改进](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements)设计规范。

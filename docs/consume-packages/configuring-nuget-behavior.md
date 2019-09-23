@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 5309d94fafea9cdfc3699d443393be5d381dd145
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 89127203df0aa1eb24f36b8ec64c5bb4a4d59319
+ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317734"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094076"
 ---
 # <a name="common-nuget-configurations"></a>常见的 NuGet 配置
 
@@ -25,7 +25,7 @@ NuGet 的行为由一个或多个 `NuGet.Config` (XML) 文件（可存在于项�
 | 计算机 | Windows：`%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux：`$XDG_DATA_HOME`。 如果 `$XDG_DATA_HOME` 的值是 null 或为空，将使用 `~/.local/share` 或 `/usr/local/share`（因 OS 版本而异）  | 设置虽然适用于计算机上的所有操作，但会被任何用户级或项目级设置覆盖。 |
 
 针对早期版本的 NuGet 的说明：
-- NuGet 3.3 及更早版本使用 `.nuget` 文件夹作为解决方案范围的设置。 NuGet 3.4+ 中不使用此文件。
+- NuGet 3.3 及更早版本使用 `.nuget` 文件夹作为解决方案范围的设置。 NuGet 3.4+ 中不使用此文件夹。
 - 对于 NuGet 2.6 到 3.x 版本，Windows 上的计算机级配置文件位于 %ProgramData%\NuGet\Config[\\{IDE}[\\{Version}[\\{SKU}]]]\NuGet.Config，其中，{IDE} 可能为 VisualStudio，{Version} 为 Visual Studio 的版本（如 14.0），{SKU} 可能为 Community、Pro 或 Enterprise         。 若要将设置迁移到 NuGet 4.0+，只需将配置文件复制到 %ProgramFiles(x86)%\NuGet\Config 即可。在 Linux 上，此位置以前为 /etc/opt；在 Mac 上为 /Library/Application Support。
 
 ## <a name="changing-config-settings"></a>更改配置设置
