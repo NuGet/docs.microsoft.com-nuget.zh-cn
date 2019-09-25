@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: f16bfe5481009f7924a61f03233d288d25ac618f
-ms.sourcegitcommit: f4bfdbf62302c95f1f39e81ccf998f8bbc6d56b0
+ms.openlocfilehash: 96d176beaa6b2f0c4f53488390e585b70c9ba846
+ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70774085"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71248164"
 ---
 # <a name="nuget-53-release-notes"></a>NuGet 5.3 发行说明
 
@@ -18,11 +18,11 @@ NuGet 分发车辆：
 
 | NuGet 版本 | 适用于 Visual Studio 版本| 适用于 .NET SDK|
 |:---|:---|:---|
-| [**5.3.0-preview3**](https://nuget.org/downloads) | [Visual Studio 2019 版本16.3 预览版3](https://visualstudio.microsoft.com/vs/preview/) | [3.0.100-preview9](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
+| [**5.3.0**](https://nuget.org/downloads) | [Visual Studio 2019 版本16。3](https://visualstudio.microsoft.com/downloads/) | [3.0.100](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
 
 <sup>1</sup>随 Visual Studio 2019 with .NET Core 工作负载一起安装
 
-## <a name="summary-whats-new-in-53-preview-3"></a>摘要:5.3 preview 3 中的新增功能
+## <a name="summary-whats-new-in-53"></a>摘要:5.3 中的新增功能
 
 * [包图标可以嵌入到包中](../reference/msbuild-targets.md#packing-an-icon-image-file)，而无需使用外部 URL。 - [#352](https://github.com/NuGet/Home/issues/352)
 
@@ -32,6 +32,10 @@ NuGet 分发车辆：
 
 **Bug**
 
+* 使用 3.0.100-preview9 SDK 生成的 NuGet 包不能由 2.2 SDK 用户使用 .。。具体取决于时区[#8603](https://github.com/NuGet/Home/issues/8603)
+
+* 引号 "路径中的字符导致" 路径中的非法字符 " `nuget restore` [#8168](https://github.com/NuGet/Home/issues/8168)中的失败
+
 * VS：程序集是完全 ngen-ed，而不是部分 ngen- [#8513](https://github.com/NuGet/Home/issues/8513)
 
 * 减少内存使用量（取消订阅事件）- [#8471](https://github.com/NuGet/Home/issues/8471)
@@ -40,7 +44,7 @@ NuGet 分发车辆：
 
 * NU1403 改进-验证所有包，包括预期/实际 sha 值- [#8424](https://github.com/NuGet/Home/issues/8424)
 
-* NuGetPackageManager. PreviewUpdatePackagesAsync 中的多个枚举- [#8401](https://github.com/NuGet/Home/issues/8401)
+* [#8401](https://github.com/NuGet/Home/issues/8401)中的`NuGetPackageManager.PreviewUpdatePackagesAsync`  - 多个枚举
 
 * 恢复 Pluginprocess.exe 中的 "公共 > 内部" 更改- [#8390](https://github.com/NuGet/Home/issues/8390)
 
@@ -64,7 +68,7 @@ NuGet 分发车辆：
 
 * 在 VS 懒惰[#8156](https://github.com/NuGet/Home/issues/8156)中进行设置读取
 
-* "Nuget 源添加" 中的回归导致 "：" 字符（十六进制值0x3A）不能包含在名称 "errors- [#7948](https://github.com/NuGet/Home/issues/7948)
+* 中`Nuget sources add`的回归导致 "：" 字符（十六进制值0x3A）不能包含在名称 "errors- [#7948](https://github.com/NuGet/Home/issues/7948)
 
 * NuGet 插件凭据提供程序-隐藏进程窗口- [#7511](https://github.com/NuGet/Home/issues/7511)
 
@@ -86,6 +90,4 @@ NuGet 分发车辆：
 
 * 将-SolutionDirectory 和-PackageDirectory 选项添加到 nuget.exe 包- [#7163](https://github.com/NuGet/Home/issues/7163)
 
-* 使 NuGet 包具有确定性[#6229](https://github.com/NuGet/Home/issues/6229)
-
-**[此版本中已解决的所有问题的列表-5.3 预览版3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
+**[此版本中已修复的所有问题的列表-5。3](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%225.3")**
