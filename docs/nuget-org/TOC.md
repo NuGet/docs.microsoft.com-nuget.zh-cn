@@ -5,7 +5,8 @@
 ## [API 密钥](scoped-api-keys.md)
 # 管理 NuGet.org 上的包
 ## [发布包](publish-a-package.md)
-## [打包 ID 前缀预留](id-prefix-reservation.md)
+## [包 ID 前缀预留](id-prefix-reservation.md)
+## [包弃用](deprecate-packages.md)
 # 策略
 ## [数据请求](policies/Data-requests.md)
 ## [争议的解决](policies/dispute-resolution.md)

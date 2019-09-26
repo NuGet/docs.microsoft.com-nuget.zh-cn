@@ -12,12 +12,12 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 5546881dbf7577eb289a28b35bc2c0e7dc5cac40
-ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
+ms.openlocfilehash: 0197902e4dbc18893d68833fbcfe4263f185a594
+ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094108"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71307190"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
@@ -92,7 +92,7 @@ NuGet 会将两个包发布到 nuget.org。`MyPackage.nupkg` 先发布，随后 
 
 ## <a name="nugetorg-symbol-server"></a>NuGet.org 符号服务器
 
-NuGet.org 支持自己的符号服务器存储库，只接受新的符号包格式 - `.snupkg`。 包使用者可将 `https://symbols.nuget.org/download/symbols` 添加到 Visual Studio 中的符号源，使用发布到 nuget.org 符号服务器的符号，这允许在 Visual Studio 调试程序中单步执行包代码。 有关该过程的详细信息，请参阅[在 Visual Studio 调试程序中指定符号 (.pdb) 和源文件](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md)。
+NuGet.org 支持自己的符号服务器存储库，只接受新的符号包格式 - `.snupkg`。 包使用者可将 `https://symbols.nuget.org/download/symbols` 添加到 Visual Studio 中的符号源，使用发布到 nuget.org 符号服务器的符号，这允许在 Visual Studio 调试程序中单步执行包代码。 有关该过程的详细信息，请参阅[在 Visual Studio 调试程序中指定符号 (.pdb) 和源文件](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger)。
 
 ### <a name="nugetorg-symbol-package-constraints"></a>NuGet.org 符号包约束
 
@@ -132,6 +132,6 @@ NuGet.org 对符号包具有以下约束：
 
 ## <a name="see-also"></a>另请参阅
 
-考虑使用源链接来启用 .NET 程序集的源代码调试。 有关详细信息，请参阅[源链接指南](/dotnet/standard/library-guidance/sourcelink.md)。
+考虑使用源链接来启用 .NET 程序集的源代码调试。 有关详细信息，请参阅[源链接指南](/dotnet/standard/library-guidance/sourcelink)。
 
 有关符号包的更多信息，请参阅 [NuGet 包调试与符号改进](https://github.com/NuGet/Home/wiki/NuGet-Package-Debugging-&-Symbols-Improvements)设计规范。
