@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 85a862852761b68db882abdc1ca0e84d83d95f07
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 1053a18926f63e02f0b1c100e7cc1cd293654ced
+ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317643"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71307218"
 ---
 # <a name="signing-nuget-packages"></a>对 NuGet 包进行签名
 
@@ -34,7 +34,7 @@ ms.locfileid: "68317643"
 ## <a name="sign-the-package"></a>对包进行签名
 
 > [!note]
-> 需要 nuget.exe 4.6.0 或更高版本
+> 需要 nuget.exe 4.6.0 或更高版本。 即将推出 dotnet.exe 支持 - [#7939](https://github.com/NuGet/Home/issues/7939)
 
 可使用 [nuget sign](../reference/cli-reference/cli-ref-sign.md) 对包进行签名：
 

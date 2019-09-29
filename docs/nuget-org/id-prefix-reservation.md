@@ -6,16 +6,16 @@ ms.author: karann
 ms.date: 09/07/2019
 ms.topic: reference
 ms.reviewer: karann
-ms.openlocfilehash: 630c2b193500ec0b9aa5a7fe4af3ea95ae52aeec
-ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
+ms.openlocfilehash: f6c4a18366b4df20fb210f718d3779e85c08d550
+ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70815278"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71248124"
 ---
 # <a name="package-id-prefix-reservation"></a>包 ID 前缀预留
 
-包所有者可以通过保留 ID 前缀来保留和保护其标识。 使用包时，包使用者会收到附加信息，即他们使用的包在其标识属性中并不具有欺骗性。 
+包所有者可以通过保留 ID 前缀来保留和保护其标识。 当使用者使用的包在其标识属性中不具有欺骗性时，他们将收到附加信息。 
 
 [nuget.org](https://www.nuget.org/) 和 Visual Studio 2017 15.4 或更高版本只要包与保留的 ID 前缀命名模式匹配，就会显示所有者提交的具有保留的包 ID 前缀的包的视觉提示。 以下参考资料说明了 ID 前缀预留需要的内容，以及所有者如何申请 ID 前缀。
 
