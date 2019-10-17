@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: e4223c25daa1c14c30de1ef063cd0f48df70c8b5
-ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
+ms.openlocfilehash: 353654d12e137222ab24417f30fd22e9f027c324
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69564573"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380712"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>使用 nuget.exe CLI 创建包
 
@@ -434,4 +434,4 @@ NuGet 指示需要更正的 `.nuspec` 文件中是否有错误，例如忘记更
 最后，有需要注意的其他包类型：
 
 - [本机包](../guides/native-packages.md)
-- [符号包](../create-packages/symbol-packages.md)
+- [符号包](../create-packages/symbol-packages-snupkg.md)

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 40a42be91d3848db3e721a674e3fec4096fccd08
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: ec37057d40ddc9ed1826b0628aaa573c342b92b6
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69489014"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380740"
 ---
 # <a name="create-a-nuget-package-using-the-dotnet-cli"></a>使用 dotnet CLI 创建 NuGet 包
 
@@ -131,4 +131,4 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 最后，有需要注意的其他包类型：
 
 - [本机包](../guides/native-packages.md)
-- [符号包](../create-packages/symbol-packages.md)
+- [符号包](../create-packages/symbol-packages-snupkg.md)

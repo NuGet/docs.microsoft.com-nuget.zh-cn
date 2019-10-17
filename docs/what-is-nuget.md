@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: 435103b600f14b9bbf606c09f0c870115204d5c7
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: a08ac24ce6b1d64496c9fc1b20604850e9711dd6
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488496"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380662"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 简介
 
@@ -105,7 +105,7 @@ ms.locfileid: "69488496"
 
 在一个单独的项目中，NuGet 管理整个依赖项关系图，它同样包括解析对同一个包的不同版本的多个引用。 项目在具有相同依赖项的一个或多个包上选取依赖项是很常见的情况。 nuget.org 上的某些最有用的实用程序包即由其他许多包使用。 然后在整个依赖项关系图中，你可以对同一个包的不同版本轻松发起 10 种不同的引用。 为避免将该包的多个版本引入应用程序本身，NuGet 会挑选出一个适合所有使用者的版本。 （有关详细信息，请参阅[依赖项解析](concepts/dependency-resolution.md)。）
 
-除此之外，NuGet 会维护与包的构造方式（包括[本地化](create-packages/creating-localized-packages.md)和[调试符号](create-packages/symbol-packages.md)）以及[引用方式](consume-packages/package-references-in-project-files.md)（包括[版本范围](concepts/package-versioning.md#version-ranges-and-wildcards)和[预发行版本](create-packages/prerelease-packages.md)）相关的所有规范。此外，NuGet 还提供了各种 API 以编程方式使用其服务，并可为编写 Visual Studio 扩展和项目模板的开发人员提供支持。
+除此之外，NuGet 会维护与包的构造方式（包括[本地化](create-packages/creating-localized-packages.md)和[调试符号](create-packages/symbol-packages-snupkg.md)）以及[引用方式](consume-packages/package-references-in-project-files.md)（包括[版本范围](concepts/package-versioning.md#version-ranges-and-wildcards)和[预发行版本](create-packages/prerelease-packages.md)）相关的所有规范。此外，NuGet 还提供了各种 API 以编程方式使用其服务，并可为编写 Visual Studio 扩展和项目模板的开发人员提供支持。
 
 请花一点时间浏览本文档的目录，你会看到其中列出了所有这些功能，以及自 NuGet 首次发行起的发行说明。
 

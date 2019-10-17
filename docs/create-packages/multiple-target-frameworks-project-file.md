@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8c1d8a479747f6f7bce388c1555589543c8824a0
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.openlocfilehash: 1d23759433efb405fa5f0035049befced2c43d6b
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020063"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380679"
 ---
 # <a name="support-multiple-net-framework-versions-in-your-project-file"></a>支持项目文件中的多个 .NET Framework 版本
 
@@ -37,7 +37,7 @@ ms.locfileid: "69020063"
 
    确保将 XML 元素从单数更改为复数（将“s”添加到开始和结束标记）。
 
-3. 如果你有任何仅在一个 TFM 中工作的代码，则可以使用 `#if NET45` 或 `#if NETSTANDARD20` 分隔与 TFM 相关的代码。 （有关详细信息，请参阅[如何实现多目标](/dotnet/core/tutorials/libraries#how-to-multitarget)。）例如，可以使用以下代码：
+3. 如果你有任何仅在一个 TFM 中工作的代码，则可以使用 `#if NET45` 或 `#if NETSTANDARD2_0` 分隔与 TFM 相关的代码。 （有关详细信息，请参阅[如何实现多目标](/dotnet/core/tutorials/libraries#how-to-multitarget)。）例如，可以使用以下代码：
 
    ```csharp
    public string Platform {
