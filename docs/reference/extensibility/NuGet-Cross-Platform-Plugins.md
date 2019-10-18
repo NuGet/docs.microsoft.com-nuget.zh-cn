@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: 74b80b1791dcb403c90bb3032c009717c11ffe57
-ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
+ms.openlocfilehash: 00410214500c7f5256be243dd6fca0907ba9b0c4
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70815301"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380497"
 ---
 # <a name="nuget-cross-platform-plugins"></a>NuGet 跨平台插件
 
@@ -70,12 +70,12 @@ NuGet 客户端工具与插件之间的通信是双向的。 每个请求的超�
 ## <a name="plugin-installation-and-discovery"></a>插件安装和发现
 
 插件将通过基于约定的目录结构来发现。
-CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注意， `NUGET_NETCORE_PLUGIN_PATHS`和仅适用于5.3 版和更高版本的 NuGet 工具。 `NUGET_NETFX_PLUGIN_PATHS`
+CI/CD 方案和超级用户可以使用环境变量来重写此行为。 使用环境变量时，只允许使用绝对路径。 请注意，`NUGET_NETFX_PLUGIN_PATHS` 和 `NUGET_NETCORE_PLUGIN_PATHS` 仅适用于 5.3 + 版本的 NuGet 工具和更高版本。
 
-- `NUGET_NETFX_PLUGIN_PATHS`-定义将由基于 .NET Framework 的工具（Nuget.exe/Msbuild.exe/Visual Studio）使用的插件。 优先于`NUGET_PLUGIN_PATHS`。 （仅 NuGet 版本 5.3 +）
-- `NUGET_NETCORE_PLUGIN_PATHS`-定义将由基于 .NET Core 的工具（dotnet）使用的插件。 优先于`NUGET_PLUGIN_PATHS`。 （仅 NuGet 版本 5.3 +）
-- `NUGET_PLUGIN_PATHS`-定义将用于 NuGet 进程的插件优先级，保留优先级。 如果设置了此环境变量，它将覆盖基于约定的发现。 如果指定了任何一个框架特定的变量，则忽略。
--  用户-位置，中`%UserProfile%/.nuget/plugins`的 NuGet 主页位置。 此位置不能被重写。 .NET Core 和 .NET Framework 插件将使用不同的根目录。
+- `NUGET_NETFX_PLUGIN_PATHS`-定义将由基于 .NET Framework 的工具（Nuget.exe/Msbuild.exe/Visual Studio）使用的插件。 优先于 `NUGET_PLUGIN_PATHS`。 （仅 NuGet 版本 5.3 +）
+- `NUGET_NETCORE_PLUGIN_PATHS`-定义将由基于 .NET Core 的工具（dotnet）使用的插件。 优先于 `NUGET_PLUGIN_PATHS`。 （仅 NuGet 版本 5.3 +）
+- `NUGET_PLUGIN_PATHS`-定义将用于 NuGet 进程的插件，保留优先级。 如果设置了此环境变量，它将覆盖基于约定的发现。 如果指定了任何一个框架特定的变量，则忽略。
+-  用户-位置，`%UserProfile%/.nuget/plugins` 中的 NuGet 主页位置。 此位置不能被重写。 .NET Core 和 .NET Framework 插件将使用不同的根目录。
 
 | 框架 | 根发现位置  |
 | ------- | ------------------------ |
@@ -123,20 +123,20 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注�
 插件的安全验证和实例化成本高昂。 类似于身份验证操作，下载操作的执行频率更高，但平均 NuGet 用户只可能具有身份验证插件。
 为了改进体验，NuGet 将缓存给定请求的操作声明。 此缓存是每个插件，其中插件键是插件路径，此功能缓存的过期时间为30天。 
 
-缓存位于中`%LocalAppData%/NuGet/plugins-cache` ，并被替换为环境变量`NUGET_PLUGINS_CACHE_PATH`。 若要清除此[缓存](../../consume-packages/managing-the-global-packages-and-cache-folders.md)，可以通过`plugins-cache`选项运行局部变量命令。
-`all`局部变量选项现在还将删除插件缓存。 
+缓存位于 `%LocalAppData%/NuGet/plugins-cache` 中，并通过环境变量 `NUGET_PLUGINS_CACHE_PATH` 进行重写。 若要清除此[缓存](../../consume-packages/managing-the-global-packages-and-cache-folders.md)，可以运行带有 `plugins-cache` 选项的局部变量命令。
+现在，`all` 局部变量 "选项也将删除插件缓存。 
 
 ## <a name="protocol-messages-index"></a>协议消息索引
 
 协议版本*1.0.0*消息：
 
 1.  关闭
-    * 请求方向：NuGet-> 插件
+    * 请求方向： NuGet > 插件
     * 请求不包含有效负载
     * 不需要响应。  适当的响应是为了使插件进程及时退出。
 
 2.  复制包中的文件
-    * 请求方向：NuGet-> 插件
+    * 请求方向： NuGet > 插件
     * 该请求将包含：
         * 包 ID 和版本
         * 包源存储库位置
@@ -147,7 +147,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注�
         * 如果操作成功，则为目标目录中复制的文件的完整路径的可枚举
 
 3.  复制包文件（. nupkg）
-    * 请求方向：NuGet-> 插件
+    * 请求方向： NuGet > 插件
     * 该请求将包含：
         * 包 ID 和版本
         * 包源存储库位置
@@ -166,7 +166,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注�
         * 密码（如果可用）
 
 5.  获取包中的文件
-    * 请求方向：NuGet-> 插件
+    * 请求方向： NuGet > 插件
     * 该请求将包含：
         * 包 ID 和版本
         * 包源存储库位置
@@ -175,7 +175,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注�
         * 如果操作成功，则为包中的文件路径的可枚举
 
 6.  获取操作声明 
-    * 请求方向：NuGet-> 插件
+    * 请求方向： NuGet > 插件
     * 该请求将包含：
         * 包源的服务索引 json
         * 包源存储库位置
@@ -187,7 +187,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注�
 > 此消息已在版本*2.0.0*中更新。 它在客户端上，用于保留向后兼容性。
 
 7.  获取包哈希
-    * 请求方向：NuGet-> 插件
+    * 请求方向： NuGet > 插件
     * 该请求将包含：
         * 包 ID 和版本
         * 包源存储库位置
@@ -197,7 +197,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注�
         * 如果操作成功，则使用所请求的哈希算法的包文件哈希
 
 8.  获取包版本
-    * 请求方向：NuGet-> 插件
+    * 请求方向： NuGet > 插件
     * 该请求将包含：
         * 包 ID
         * 包源存储库位置
@@ -214,7 +214,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注�
         * 如果操作成功，则为服务索引
 
 10.  信号
-     * 请求方向：NuGet <-> 插件
+     * 请求方向： NuGet < > 插件
      * 该请求将包含：
          * 当前插件协议版本
          * 支持的最低插件协议版本
@@ -223,7 +223,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注�
          * 如果操作成功，则协商协议版本。  失败将导致插件终止。
 
 11.  Initialize
-     * 请求方向：NuGet-> 插件
+     * 请求方向： NuGet > 插件
      * 该请求将包含：
          * NuGet 客户端工具版本
          * NuGet 客户端工具的有效语言。  如果使用，此操作将考虑 ForceEnglishOutput 设置。
@@ -240,14 +240,14 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注�
          * 指示操作结果的响应代码。
 
 13.  监视 NuGet 进程退出
-     * 请求方向：NuGet-> 插件
+     * 请求方向： NuGet > 插件
      * 该请求将包含：
          * NuGet 进程 ID
      * 响应将包含：
          * 指示操作结果的响应代码。
 
 14.  预提取包
-     * 请求方向：NuGet-> 插件
+     * 请求方向： NuGet > 插件
      * 该请求将包含：
          * 包 ID 和版本
          * 包源存储库位置
@@ -255,7 +255,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注�
          * 指示操作结果的响应代码
 
 15.  设置凭据
-     * 请求方向：NuGet-> 插件
+     * 请求方向： NuGet > 插件
      * 该请求将包含：
          * 包源存储库位置
          * 最后一个已知包源用户名（如果可用）
@@ -266,7 +266,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注�
          * 指示操作结果的响应代码
 
 16.  设置日志级别
-     * 请求方向：NuGet-> 插件
+     * 请求方向： NuGet > 插件
      * 该请求将包含：
          * 默认日志级别
      * 响应将包含：
@@ -276,7 +276,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注�
 
 17. 获取操作声明
 
-* 请求方向：NuGet-> 插件
+* 请求方向： NuGet > 插件
     * 该请求将包含：
         * 包源的服务索引 json
         * 包源存储库位置
@@ -288,11 +288,11 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 请注�
 
 18. 获取身份验证凭据
 
-* 请求方向：NuGet-> 插件
+* 请求方向： NuGet > 插件
 * 该请求将包含：
     * URI
     * isRetry
-    * NonInteractive
+    * 交互
     * CanShowDialog
 * 响应将包含
     * 用户名

@@ -6,34 +6,34 @@ ms.author: karann
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: ea9f699b202d7f32648f0ccfeac3ceb1ca325b7e
-ms.sourcegitcommit: 0f5363353f9dc1c3d68e7718f51b7ff92bb35e21
+ms.openlocfilehash: caa1509fd996c54f7de17e86559ea62ef67f749f
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68342438"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380482"
 ---
 # <a name="target-frameworks"></a>目标框架
 
 NuGet 在各个地方使用目标框架引用，以特别标识和隔离包的框架依赖组件：
 
-- [项目文件](../create-packages/multiple-target-frameworks-project-file.md):对于 SDK 样式项目, *.csproj*包含目标框架引用。
-- [。 nuspec 清单](../reference/nuspec.md):包可以指示要包括在项目中的不同包, 具体取决于项目的目标框架。
-- [. nupkg 文件夹名称](../create-packages/creating-a-package.md#from-a-convention-based-working-directory):包`lib`文件夹内的文件夹可以按照目标框架命名, 其中每个文件夹都包含适用于该框架的 dll 和其他内容。
-- [包 .config](../reference/packages-config.md):依赖`targetframework`项的属性指定要安装的包的变体。
+- [项目文件](../create-packages/multiple-target-frameworks-project-file.md)：对于 SDK 样式项目， *.csproj*包含目标框架引用。
+- [.nuspec 清单](../reference/nuspec.md)：根据项目的目标框架，包可以指示要包含在项目中的不同包。
+- [.nupkg 文件夹名称](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)：包的 `lib` 文件夹内的文件夹可根据目标框架进行命名，每个文件夹都包含适合该框架的 DLL 及其他内容。
+- [packages.config](../reference/packages-config.md)：依赖项的 `targetframework` 特性指定要安装的包的变体。
 
 > [!Note]
 > 计算下方表格的 NuGet 客户端源代码位于以下位置：
-> - 支持的框架名称:[FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
-> - 框架优先级和映射:[DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
+> - 支持的框架名称：[FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
+> - Framework 优先级和映射：[DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 ## <a name="supported-frameworks"></a>支持的框架
 
-通常按简短的目标框架名字对象或 TFM 引用框架。 在 .NET Standard 这也通用化到了*TxM* , 以允许单个引用多个框架。
+通常按简短的目标框架名字对象或 TFM 引用框架。 在 .NET Standard 这也通用化到了*TxM* ，以允许单个引用多个框架。
 
 NuGet 客户端支持下表中的框架。 等效项显示在括号内 []。 请注意，某些工具（如 `dotnet`）可能会在某些文件中使用规范的 TFM 变体。 例如，`dotnet pack` 在 `.nuspec` 文件中使用 `.NETCoreApp2.0`，而非 `netcoreapp2.0` 文件。 各种 NuGet 客户端工具正确处理这些变体，但是在直接编辑文件时，应始终使用规范的 TFM。
 
-| 名称 | 缩写 | TFM/TxM |
+| “属性” | 缩写 | TFM/TxM |
 | ------------- | ------------ | --------- |
 |.NET Framework | net | net11 |
 | | | net20 |
@@ -69,7 +69,7 @@ Windows Phone (SL) | wp | wp [wp7] |
 Windows Phone (UWP) | | wpa81 |
 通用 Windows 平台 | uap | uap [uap10.0] |
 | | | uap10.0 |
-| | | uap 10.0 (其中10.0 是使用应用的目标平台最小版本) |
+| | | uap 10.0 （其中10.0 是使用应用的目标平台最小版本） |
 .NET Standard | netstandard | netstandard1.0 |
 | | | netstandard1.1 |
 | | | netstandard1.2 |
@@ -83,6 +83,7 @@ Windows Phone (UWP) | | wpa81 |
 | | | netcoreapp2.0 |
 | | | netcoreapp2.1 |
 | | | netcoreapp2.2 |
+| | | netcoreapp3.0 |
 Tizen | tizen | tizen3 |
 | | | tizen4 |
 
@@ -123,7 +124,7 @@ Tizen | tizen | tizen3 |
 
 ## <a name="net-standard"></a>NET Standard
 
-[.NET Standard](/dotnet/standard/net-standard)简化了二进制兼容框架之间的引用, 允许单个目标框架引用其他框架的组合。 （有关背景信息，请参阅 [.NET 入门](/dotnet/articles/standard/index)。）
+[.NET Standard](/dotnet/standard/net-standard)简化了二进制兼容框架之间的引用，允许单个目标框架引用其他框架的组合。 （有关背景信息，请参阅 [.NET 入门](/dotnet/articles/standard/index)。）
 
 [NuGet 获取最新框架工具](https://aka.ms/s2m3th)模拟用于从基于项目框架的包中的许多可用框架资产中选择一个框架的 NuGet 逻辑。
 
@@ -132,7 +133,7 @@ NuGet 3.3 及更早版本应该使用 `dotnet` 系列的名字对象；v3.4 及�
 ## <a name="portable-class-libraries"></a>可移植类库
 
 > [!Warning]
-> 建议不要使用 PCL  。 尽管支持 PCL，但包创建者反而应支持 netstandard。 .NET 平台标准是 Pcl 的发展, 它使用与*便携 a + b + c*名字对象相关的单个名字对象来表示跨平台的二进制可移植性。
+> 建议不要使用 PCL。 尽管支持 PCL，但包创建者反而应支持 netstandard。 .NET 平台标准是 Pcl 的发展，它使用与*便携 a + b + c*名字对象相关的单个名字对象来表示跨平台的二进制可移植性。
 
 若要定义一个引用多个子目标框架的目标框架，请使用 `portable` 关键字作为所引用框架列表的前缀。 避免人为地包含非直接编译的额外框架，因为可能会导致这些框架中出现意外的负面效果。
 
@@ -283,7 +284,7 @@ NuGet 3.3 及更早版本应该使用 `dotnet` 系列的名字对象；v3.4 及�
 
 另外，面向 Xamarin 的 NuGet 包可以使用 Xamarin 定义的其他框架。 请参阅[创建适用于 Xamarin 的 NuGet 包](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/)。
 
-| 名称 | 描述 | .NET Standard |
+| “属性” | 描述 | .NET Standard |
 | --- | --- | ---
 | monoandroid | Mono 支持 Android OS | netstandard1.4 |
 | monotouch | Mono 支持 iOS | netstandard1.4 |

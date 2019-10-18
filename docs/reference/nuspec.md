@@ -6,22 +6,22 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: ea40f80a482a290b7399e5a6abc69e0c6fe32b77
-ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
+ms.openlocfilehash: 6bd730db16d8e8783f0d949bb04cf3b52c642cd0
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70384461"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380557"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
 `.nuspec` 文件是包含包元数据的 XML 清单。 此清单同时用于生成包以及为使用者提供信息。 清单始终包含在包中。
 
-本主题内容：
+在本主题中：
 
 - [常规形式和架构](#general-form-and-schema)
 - [替换令牌](#replacement-tokens)（用于 Visual Studio 项目时）
-- [依赖项](#dependencies)
+- [依赖关系](#dependencies)
 - [显式程序集引用](#explicit-assembly-references)
 - [Framework 程序集引用](#framework-assembly-references)
 - [包括程序集文件](#including-assembly-files)
@@ -30,13 +30,13 @@ ms.locfileid: "70384461"
 
 ## <a name="project-type-compatibility"></a>项目类型兼容性
 
-- 对于使用的非`.nuspec`SDK样式项目，请使用`packages.config`。 `nuget.exe pack`
+- 将 `.nuspec` 与使用 `packages.config` 的非 SDK 样式项目 `nuget.exe pack` 使用。
 
-- 创建 sdk[样式项目](../resources/check-project-format.md)包（通常是 .net Core 和使用[sdk 属性](/dotnet/core/tools/csproj#additions).NET Standard 项目）不需要文件。`.nuspec` （请注意， `.nuspec`在创建包时将生成。）
+- 创建[sdk 样式项目](../resources/check-project-format.md)包（通常是 .net Core 和使用[sdk 特性](/dotnet/core/tools/csproj#additions).NET Standard 项目）不需要 `.nuspec` 文件。 （请注意，当你创建包时，将生成一个 `.nuspec`。）
 
-   如果使用`dotnet.exe pack`或`msbuild pack target`创建包，则建议您在项目文件中的`.nuspec`文件中包含通常包含的[所有属性](../reference/msbuild-targets.md#pack-target)。 但是，可以改为选择[使用`.nuspec` `dotnet.exe` `msbuild pack target`或打包文件](../reference/msbuild-targets.md#packing-using-a-nuspec)。
+   如果要使用 `dotnet.exe pack` 或 `msbuild pack target` 创建包，我们建议您改为在项目文件中的 `.nuspec` 文件中[包含所有属性](../reference/msbuild-targets.md#pack-target)。 不过，您可以改为选择[使用 `.nuspec` 文件，以使用 `dotnet.exe` 或 `msbuild pack target` 进行打包](../reference/msbuild-targets.md#packing-using-a-nuspec)。
 
-- 对于从`packages.config`迁移到[PackageReference](../consume-packages/package-references-in-project-files.md)的项目， `.nuspec`不需要使用文件来创建包。 相反，请使用[t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)。
+- 对于从 `packages.config` 迁移到[PackageReference](../consume-packages/package-references-in-project-files.md)的项目，创建包不需要 `.nuspec` 文件。 相反，请使用[t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)。
 
 ## <a name="general-form-and-schema"></a>常规形式和架构
 
@@ -73,17 +73,17 @@ ms.locfileid: "70384461"
 
 #### <a name="id"></a>id 
 不区分大小写的包标识符，在 nuget.org 或包驻留的任意库中必须是唯一的。 ID 不得包含空格或对 URL 无效的字符，通常遵循 .NET 命名空间规则。 有关指南，请参阅[选择唯一的包标识符](../create-packages/creating-a-package.md#choose-a-unique-package-identifier-and-setting-the-version-number)。
-#### <a name="version"></a>version
+#### <a name="version"></a>版本
 遵循 major.minor.patch 模式的包版本。 版本号可能包括预发布后缀，如[包版本控制](../concepts/package-versioning.md#pre-release-versions)中所述。 
-#### <a name="description"></a>description
+#### <a name="description"></a>说明
 用于 UI 显示的包的说明。
 #### <a name="authors"></a>作者
-包创建者的逗号分隔列表，与 nuget.org 上的配置文件名称一致。这些信息显示在 nuget.org 上的 NuGet 库中，并用于交叉引用同一作者的包。 
+以逗号分隔的包作者列表，与 nuget.org 上的配置文件名称匹配。它们显示在 nuget.org 上的 NuGet 库中，并用于通过相同作者交叉引用包。 
 
 ### <a name="optional-metadata-elements"></a>可选元数据元素
 
 #### <a name="owners"></a>所有者
-使用 nuget.org 上的配置文件名称的包创建者的逗号分隔列表。这通常和 `authors` 中的列表相同，将包上传到 nuget.org 时被忽略。请参阅[在 nuget.org 上管理包所有者](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg)。 
+使用 nuget.org 上的配置文件名称的包创建者的逗号分隔列表。这通常与 `authors` 中的列表相同，并且在将包上传到 nuget.org 时将被忽略。请参阅[在 nuget.org 上管理包所有者](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg)。 
 
 #### <a name="projecturl"></a>projectUrl
 包的主页 URL，通常显示在 UI 中以及 nuget.org 中。 
@@ -106,7 +106,7 @@ ms.locfileid: "70384461"
 
 `<license type="expression">BSD-2-Clause OR MIT</license>`
 
-如果使用许可证表达式不支持的自定义许可证，则可以使用许可证文本打包`.txt`或`.md`文件。 例如：
+如果使用许可证表达式不支持的自定义许可证，则可以使用许可证文本打包 `.txt` 或 `.md` 文件。 例如:
 
 ```xml
 <package>
@@ -147,7 +147,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 > [!Important]
 > iconUrl 已被弃用。 改为使用图标。
 
-64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的映像，请使用原始文件 URL， <em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>如。 
+64x64 透明背景图像的 URL，用作 UI 显示中包的图标。 请确保此元素包含直接图像 URL，而不是包含图像的网页的 URL。 例如，若要使用 GitHub 中的映像，请使用<em>https://github.com/\<username\>/\<repository\>/raw/\<branch\>/\<logo.png\></em>等原始文件 URL。 
    
 #### <a name="icon"></a>按钮
 
@@ -182,7 +182,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 
 #### <a name="summary"></a>摘要
 > [!Important]
-> `summary`即将弃用。 请改用 `description`。
+> 即将弃用 `summary`。 请改用 `description` 。
 
 用于 UI 显示的包的简要说明。 如果省略，则使用 `description` 的截断版本。
 
@@ -202,7 +202,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 (3.3+) 仅限内部使用。
 
 #### <a name="repository"></a>储存库
-存储库元数据，包括四个可选`type`属性`url` ：和 *（4.0 +）* `branch` 、 `commit`和和 *（4.6 +）* 。 这些属性允许你将映射`.nupkg`到生成它的存储库，并且可能会将其作为单个分支名称和/或提交生成包的 sha-1 哈希。 这应该是公开提供的 url，可由版本控制软件直接调用。 它不应是 html 页面，因为这是用于计算机的。 对于 "链接到项目" 页， `projectUrl`请改用字段。
+存储库元数据，由四个可选属性组成： `type` 和 `url` *（4.0 +）* 以及 `branch` 和 `commit` *（4.6 +）* 。 通过这些属性，可以将 `.nupkg` 映射到生成它的存储库，并将其作为单独的分支名称和/或提交生成包的 SHA-1 哈希。 这应该是公开提供的 url，可由版本控制软件直接调用。 它不应是 html 页面，因为这是用于计算机的。 对于 "链接到项目" 页，请改用 `projectUrl` 字段。
 
 例如:
 ```xml
@@ -226,13 +226,13 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 #### <a name="dependencies"></a>依赖项
 零个或多个 `<dependency>` 元素的集合，用来指定包的依赖项。 每个 dependency 都具有 id、version、include (3.x+) 和 exclude (3.x+) 特性。 请参阅下面的[依赖项](#dependencies-element)。
 #### <a name="frameworkassemblies"></a>frameworkAssemblies
-(1.2+) 零个或多个 `<frameworkAssembly>` 元素的集合，用来标识此包要求的 .NET Framework 程序集引用，从而确保引用添加到使用该包的项目。 每个 frameworkAssembly 都具有 assemblyName 和 targetFramework 特性。 请参阅下面的[指定 Framework 程序集引用 GAC](#specifying-framework-assembly-references-gac)。 |
+(1.2+) 零个或多个 `<frameworkAssembly>` 元素的集合，用来标识此包要求的 .NET Framework 程序集引用，从而确保引用添加到使用该包的项目。 每个 frameworkAssembly 都具有 assemblyName 和 targetFramework 特性。 请参阅下面的[指定 Framework 程序集引用 GAC](#specifying-framework-assembly-references-gac)。
 #### <a name="references"></a>引用
 (1.5+) 零个或多个 `<reference>` 元素的集合，用来指定包的 `lib` 文件夹中添加为项目引用的程序集。 每个 reference 都具有 file 特性。 `<references>` 也可包含具有 targetFramework 特性的 `<group>` 元素，然后包含 `<reference>` 元素。 如果省略，则包含 `lib` 中的全部引用。 请参阅下面的[指定显式程序集引用](#specifying-explicit-assembly-references)。
 #### <a name="contentfiles"></a>contentFiles
 (3.3+) `<files>` 元素的集合，用来标识包含在使用项目中的内容文件。 这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件。 请参阅下面的[指定包含在包中的文件](#specifying-files-to-include-in-the-package)。
 #### <a name="files"></a>文件 
-`<package>`节点可能`<metadata>` `<metadata>`包含作为`<files>` 同级的节点，以及下的子节点，以指定要包含在包中的程序集`<contentFiles>`和内容文件。 有关详细信息，请参阅本主题后面的[包含程序集文件](#including-assembly-files)和[包含内容文件](#including-content-files)。
+@No__t_0 节点可能包含一个 `<files>` 节点作为 `<metadata>` 的同级，并且在 `<metadata>` 下的 `<contentFiles>` 子节点指定要包含在包中的程序集和内容文件。 有关详细信息，请参阅本主题后面的[包含程序集文件](#including-assembly-files)和[包含内容文件](#including-content-files)。
 
 ### <a name="metadata-attributes"></a>metadata 特性
 
@@ -280,12 +280,12 @@ nuget pack MyProject.csproj
 
 除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
 
-| 标记 | 值来源 | 值
+| 标记 | 值来源 | “值”
 | --- | --- | ---
 | **$id$** | 项目文件 | 项目文件中的 AssemblyName （title） |
 | **$version$** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
 | **$author$** | AssemblyInfo | AssemblyCompany |
-| **$title$** | AssemblyInfo | AssemblyTitle |
+| **$title $** | AssemblyInfo | AssemblyTitle |
 | **$description$** | AssemblyInfo | AssemblyDescription |
 | **$copyright$** | AssemblyInfo | AssemblyCopyright |
 | **$configuration$** | 程序集 DLL | 用于生成程序集的配置，默认为 Debug。 请注意，若要使用 Release 配置创建包，应始终在命令行上使用 `-properties Configuration=Release`。 |
@@ -315,7 +315,7 @@ nuget pack MyProject.csproj
 | `id` | （必须）依赖项的包 ID，如“EntityFramework”和“NUnit”，同时也是 nuget.org 在包页面上显示的包名称。 |
 | `version` | （必需）可接受作为依赖项的版本范围。 有关准确语法，请参阅[包版本控制](../concepts/package-versioning.md#version-ranges-and-wildcards)。 不支持通配符（浮动）版本。 |
 | include | 包括/排除标记的逗号分隔列表（见下文），指示要包含在最终包中的依赖项。 默认值为 `all`。 |
-| exclude | 包括/排除标记的逗号分隔列表（见下文），指示要排除在最终包外的依赖项。 默认值为`build,analyzers`可改写的值。 但`content/ ContentFiles`也隐式排除在无法覆盖的最终包中。 用 `exclude` 指定的标记优先于用 `include` 指定的标记。 例如，`include="runtime, compile" exclude="compile"` 和 `include="runtime"` 相同。 |
+| exclude | 包括/排除标记的逗号分隔列表（见下文），指示要排除在最终包外的依赖项。 默认值为 `build,analyzers`，可以覆盖此值。 但仍会在最终包中隐式排除 `content/ ContentFiles`，这是无法覆盖的。 用 `exclude` 指定的标记优先于用 `include` 指定的标记。 例如，`include="runtime, compile" exclude="compile"` 和 `include="runtime"` 相同。 |
 
 | 包括/排除标记 | 受影响的目标文件夹 |
 | --- | --- |
@@ -346,7 +346,7 @@ nuget pack MyProject.csproj
 ```
 
 > [!Important]
-> 使用`.nuspec` `.nuspec`从项目创建时，该项目中存在的依赖项不会自动包括在生成的文件中。 `nuget spec` 请`nuget pack myproject.csproj`改用，并从生成的*nupkg*文件中获取*nuspec*文件。 *Nuspec*包含依赖项。
+> 使用 `nuget spec` 从项目创建 `.nuspec` 时，该项目中存在的依赖项不会自动包括在生成的 `.nuspec` 文件中。 请改用 `nuget pack myproject.csproj`，并从*nupkg*文件中获取*nuspec*文件。 *Nuspec*包含依赖项。
 
 ### <a name="dependency-groups"></a>依赖项组
 
@@ -383,7 +383,7 @@ nuget pack MyProject.csproj
 
 ## <a name="explicit-assembly-references"></a>显式程序集引用
 
-元素由使用`packages.config`的项目用于显式指定目标项目在使用包时应引用的程序集。 `<references>` 显式引用通常用于仅设计时程序集。 有关详细信息，请参阅有关详细信息，请参阅[选择项目引用的程序集](../create-packages/select-assemblies-referenced-by-projects.md)。
+使用 `packages.config` 的项目使用 `<references>` 元素显式指定目标项目在使用包时应引用的程序集。 显式引用通常用于仅设计时程序集。 有关详细信息，请参阅有关详细信息，请参阅[选择项目引用的程序集](../create-packages/select-assemblies-referenced-by-projects.md)。
 
 例如，以下 `<references>` 元素指示 NuGet 仅对 `xunit.dll` 和 `xunit.extensions.dll` 添加引用，即使包中还有其他程序集：
 
@@ -678,9 +678,9 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 
 | 特性 | 描述 |
 | --- | --- |
-| **include** | （必需）文件或要包含的文件位置，受 `exclude` 特性指定的排除规则约束。 路径相对`contentFiles`于文件夹，除非指定了绝对路径。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
+| **include** | （必需）文件或要包含的文件位置，受 `exclude` 特性指定的排除规则约束。 除非指定了绝对路径，否则路径相对于 `contentFiles` 文件夹。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 | **exclude** | 要从 `src` 位置排除的文件或文件模式的分号分隔列表。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
-| **buildAction** | 生成操作，用于分配到 MSBuild 的内容项（如 `Content`、`None`、`Embedded Resource`、`Compile` 等）。默认值为 `Compile`。 |
+| **buildAction** | 要分配给 MSBuild 内容项的生成操作，例如 `Content`、`None`、`Embedded Resource`、`Compile` 等。默认值为 `Compile`。 |
 | **copyToOutput** | 指示是否将内容项复制到生成（或发布）输出文件夹的布尔值。 默认值为 false。 |
 | **flatten** | 一个布尔值，用于指示是将内容项复制到生成输出中的单个文件夹 (true)，还是保留包中的文件夹结构 (false)。 此标志仅在 copyToOutput 标志设置为 true 时才有效。 默认值为 false。 |
 
@@ -696,7 +696,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 - `TxM` 是 NuGet 支持的任何合法目标框架名字对象（请参阅[目标框架](../reference/target-frameworks.md)）。
 - 任何文件夹结构都可以附加到此语法的末尾。
 
-例如：
+例如:
 
     Language- and framework-agnostic:
         /contentFiles/any/any/config.xml
