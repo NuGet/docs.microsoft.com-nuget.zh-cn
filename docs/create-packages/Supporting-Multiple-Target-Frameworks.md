@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 14483264030dd3bb32c7295886f2d37d52e735cc
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.openlocfilehash: 4413779361dad3a650da36b3c69bbb55b62804ee
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020033"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380737"
 ---
 # <a name="support-multiple-net-versions"></a>支持多个 .NET 版本
 
@@ -65,7 +65,7 @@ ms.locfileid: "69020033"
             \native
             \lib\uap10.0
 
-这些程序集将仅在运行时可用，因此，如果你也想要提供相应的编译时程序集，则在 `/ref{tfm}` 文件夹中设置 `AnyCPU` 程序集。 
+这些程序集将仅在运行时可用，因此，如果你也想要提供相应的编译时程序集，则在 `/ref/{tfm}` 文件夹中设置 `AnyCPU` 程序集。 
 
 请注意，NuGet 始终从一个文件夹选取这些编译或运行时资产，因此，如果在 `/ref` 中存在某些兼容资产，则将忽略 `/lib` 以添加编译时程序集。 同样，如果在 `/runtime` 中有某些兼容资产，则也将为运行时忽略 `/lib`。
 

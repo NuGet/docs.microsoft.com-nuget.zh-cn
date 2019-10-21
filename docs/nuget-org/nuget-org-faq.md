@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1b373f245e934f2447acec2f97472d69999ae679
-ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
+ms.openlocfilehash: 24e35f4b2c047d5f337a1779e63846b11b0c1011
+ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999958"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72380578"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>NuGet.org 常见问题解答
 
@@ -80,7 +80,7 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 
 捕获 MTR： 
 
-- 从 [http://winmtr.net/download/](http://winmtr.net/) 下载 WinMTR
+- 下载 [WinMTR](https://sourceforge.net/projects/winmtr/files/WinMTR-v092.zip/download)。
 - 输入 `api.nuget.org` 作为主机名，然后单击“启动”  。
 - 等待，直到“已发送”列 >= 100  。
 
@@ -148,7 +148,7 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 
 **如果忘记了另一个 NuGet.org 帐户，如何才能将其找出？**
 
-在[登录页面](https://www.nuget.org/users/account/LogOn?returnUrl=%2F# "login page")上使用第二个 Microsoft 帐户登录。 这会登录到当前与第二个 Microsoft 帐户相关联的 NuGet.org 帐户。 然后可以通过此帐户查看已上传的包和进行帐户管理。
+在[登录页面](https://www.nuget.org/users/account/LogOn?returnUrl=%2F# "登录页面")上使用第二个 Microsoft 帐户登录。 这会登录到当前与第二个 Microsoft 帐户相关联的 NuGet.org 帐户。 然后可以通过此帐户查看已上传的包和进行帐户管理。
 
 **我不太关注第二个 NuGet.org 帐户，我希望将第二个 Microsoft 帐户更改为第一个 NuGet.org 帐户的登录名。我该怎么办？**
 

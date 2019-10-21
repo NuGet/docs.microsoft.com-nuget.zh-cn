@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: ae80206117eed639140a0c7977043d8330bc37bb
-ms.sourcegitcommit: 80cf99f40759911324468be1ec815c96aebf376d
+ms.openlocfilehash: 892483760a9f3568da7101663e93c69ce3d70b96
+ms.sourcegitcommit: 8a424829b1f70cf7590e95db61997af6ae2d7a41
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69564564"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72510809"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -236,11 +236,12 @@ ProjectA
 如果 `ProjectA` 在 `PackageX` 版本 `2.0.0` 上具有依赖项并引用依赖于 `PackageX` 版本 `1.0.0` 的 `ProjectB`，则 `ProjectB` 的锁定文件将列出 `PackageX` 版本 `1.0.0` 的依赖项。 但是，当生成 `ProjectA` 时，其锁定文件将包含 `ProjectB` 锁定文件中列出的 `PackageX` 版本 `2.0.0`  （而不是 `1.0.0`  ）上的依赖项。 因此，常用代码项目的锁定文件对依赖于它的项目进行解析的包几乎没有控制。
 
 ### <a name="lock-file-extensibility"></a>锁定文件可扩展性
+
 可以使用以下所述的锁定文件控制各种还原行为：
 
-| 选项 | MSBuild 等效选项 | 
-|:---  |:--- |
-| `--use-lock-file` | 为项目启动锁定文件的使用。 或者，可以在项目文件中设置 `RestorePackagesWithLockFile` 属性 | 
-| `--locked-mode` | 为还原启用锁定模式。 这对于要获取可重复生成的 CI/CD 方案非常有用。 通过将 `RestoreLockedMode` MSBuild 属性设置为 `true` 也可以实现此目的 |  
-| `--force-evaluate` | 对于在项目中定义了浮动版本的包，此选项也非常有用。 默认情况下，NuGet 还原不会在每次还原时自动更新包版本，除非使用 `--force-evaluate` 选项运行还原。 |
-| `--lock-file-path` | 为项目定义自定义锁定文件位置。 这也可以通过设置 MSBuild 属性 `NuGetLockFilePath` 来实现。 默认情况下，NuGet 支持根目录中的 `packages.lock.json`。 如果在同一目录中具有多个项目，则 NuGet 支持特定于项目的锁定文件 `packages.<project_name>.lock.json` |
+| 选项 | MSBuild 等效选项 | 说明|
+|:---  |:--- |:--- |
+| `--use-lock-file` | RestorePackagesWithLockFile | 选择使用锁定文件。 | 
+| `--locked-mode` | RestoreLockedMode | 为还原启用锁定模式。 这对于要获取可重复生成的 CI/CD 方案非常有用。|   
+| `--force-evaluate` | RestoreForceEvaluate | 对于在项目中定义了浮动版本的包，此选项也非常有用。 默认情况下，NuGet 还原不会在每次还原时自动更新包版本，除非使用此选项运行还原。 |
+| `--lock-file-path` | NuGetLockFilePath | 为项目定义自定义锁定文件位置。 默认情况下，NuGet 支持根目录中的 `packages.lock.json`。 如果在同一目录中具有多个项目，则 NuGet 支持特定于项目的锁定文件 `packages.<project_name>.lock.json` |
