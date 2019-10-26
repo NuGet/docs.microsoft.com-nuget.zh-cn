@@ -1,42 +1,40 @@
 ---
 title: NuGet 客户端 SDK
-description: 该 API 是不断变化且不尚有记录，但示例 Dave Glick 博客上可用。
+description: 此 API 已发展，但尚未记录在 Dave Glick 的博客上。
 author: karann-msft
 ms.author: karann
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8f96bf289e8121fd25262fb95c2f36dfc89045c5
-ms.sourcegitcommit: 573af6133a39601136181c1d98c09303f51a1ab2
+ms.openlocfilehash: 873bde467a39653b818b49173d53bc983e99d1b9
+ms.sourcegitcommit: f9645fc5f49c18978e12a292a3f832e162e069d5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58911031"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72924602"
 ---
-# <a name="nuget-client-sdk"></a><span data-ttu-id="b2c2d-103">NuGet 客户端 SDK</span><span class="sxs-lookup"><span data-stu-id="b2c2d-103">NuGet Client SDK</span></span>
+# <a name="nuget-client-sdk"></a><span data-ttu-id="5b1cb-103">NuGet 客户端 SDK</span><span class="sxs-lookup"><span data-stu-id="5b1cb-103">NuGet Client SDK</span></span>
+
+<span data-ttu-id="5b1cb-104">*Nuget 客户端 SDK*指的是一组以[nuget. 命令](https://www.nuget.org/packages/NuGet.Commands)、 [nuget](https://www.nuget.org/packages/NuGet.Packaging)和[nuget](https://www.nuget.org/packages/NuGet.Protocol)为中心的 nuget 包。</span><span class="sxs-lookup"><span data-stu-id="5b1cb-104">The *NuGet Client SDK* refers to a group of NuGet packages centered around [NuGet.Commands](https://www.nuget.org/packages/NuGet.Commands), [NuGet.Packaging](https://www.nuget.org/packages/NuGet.Packaging), and [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol).</span></span> <span data-ttu-id="5b1cb-105">这些包将替换前面的[NuGet](https://www.nuget.org/packages/NuGet.Core/)库。</span><span class="sxs-lookup"><span data-stu-id="5b1cb-105">These packages replace the earlier [NuGet.Core](https://www.nuget.org/packages/NuGet.Core/) library.</span></span>
 
 > [!Note]
-> <span data-ttu-id="b2c2d-104">无法与相混淆[NuGet *Web* API](https://docs.microsoft.com/en-us/nuget/api/overview)</span><span class="sxs-lookup"><span data-stu-id="b2c2d-104">Not to be confused with the [NuGet *Web* API](https://docs.microsoft.com/en-us/nuget/api/overview)</span></span>
+>  <span data-ttu-id="5b1cb-106">有关 NuGet 服务器协议的文档，请参阅[Nuget 服务器 API](~/api/overview.md)。</span><span class="sxs-lookup"><span data-stu-id="5b1cb-106">For documentation on the NuGet server protocol, please refer to the [NuGet Server API](~/api/overview.md).</span></span>
 
-<span data-ttu-id="b2c2d-105">*NuGet 客户端 SDK*表示一组.NET 库围绕[NuGet.Commands](https://www.nuget.org/packages/NuGet.Commands)， [Nuget.Packaging](https://www.nuget.org/packages/NuGet.Packaging)，和[NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol).</span><span class="sxs-lookup"><span data-stu-id="b2c2d-105">The *NuGet Client SDK* refers to a group of .NET libraries centered around [NuGet.Commands](https://www.nuget.org/packages/NuGet.Commands), [Nuget.Packaging](https://www.nuget.org/packages/NuGet.Packaging), and [NuGet.Protocol](https://www.nuget.org/packages/NuGet.Protocol).</span></span> <span data-ttu-id="b2c2d-106">这些包替换较早[NuGet.Core](https://www.nuget.org/packages/NuGet.Core/)库。</span><span class="sxs-lookup"><span data-stu-id="b2c2d-106">These packages replace the earlier [NuGet.Core](https://www.nuget.org/packages/NuGet.Core/) library.</span></span>
+## <a name="source-code"></a><span data-ttu-id="5b1cb-107">源代码</span><span class="sxs-lookup"><span data-stu-id="5b1cb-107">Source code</span></span>
 
-<span data-ttu-id="b2c2d-107">我们正在努力具有稳定的表面区域，我们很快就可以记录。</span><span class="sxs-lookup"><span data-stu-id="b2c2d-107">We are working on having a stable surface area that we can document soon.</span></span>
+<span data-ttu-id="5b1cb-108">源代码在 GitHub 上的项目[NuGet/nuget](https://github.com/NuGet/NuGet.Client)中发布。</span><span class="sxs-lookup"><span data-stu-id="5b1cb-108">The source code is published on GitHub in the project [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client).</span></span>
 
-## <a name="source-code"></a><span data-ttu-id="b2c2d-108">源代码</span><span class="sxs-lookup"><span data-stu-id="b2c2d-108">Source code</span></span>
+## <a name="third-party-documentation"></a><span data-ttu-id="5b1cb-109">第三方文档</span><span class="sxs-lookup"><span data-stu-id="5b1cb-109">Third-party documentation</span></span>
 
-<span data-ttu-id="b2c2d-109">在项目中 GitHub 上已发布的源代码[NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client)。</span><span class="sxs-lookup"><span data-stu-id="b2c2d-109">The source code is published on GitHub in the project [NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client).</span></span>
+<span data-ttu-id="5b1cb-110">可以在以下博客系列中的 Dave Glick （已发布2016：</span><span class="sxs-lookup"><span data-stu-id="5b1cb-110">You can find examples and documentation for some of the API in the following blog series by Dave Glick, published 2016:</span></span>
 
-## <a name="third-party-documentation"></a><span data-ttu-id="b2c2d-110">第三方文档</span><span class="sxs-lookup"><span data-stu-id="b2c2d-110">Third-party documentation</span></span>
-
-<span data-ttu-id="b2c2d-111">以下博客系列由 Dave Glick，发布 2016年中，可以找到示例和文档的某些 API:</span><span class="sxs-lookup"><span data-stu-id="b2c2d-111">You can find examples and documentation for some of the API in the following blog series by Dave Glick, published 2016:</span></span>
-
-- [<span data-ttu-id="b2c2d-112">探索 NuGet v3 库，第 1 部分：简介和概念</span><span class="sxs-lookup"><span data-stu-id="b2c2d-112">Exploring the NuGet v3 Libraries, Part 1: Introduction and concepts</span></span>](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-1)
-- [<span data-ttu-id="b2c2d-113">探索 NuGet v3 库，第 2 部分：搜索包</span><span class="sxs-lookup"><span data-stu-id="b2c2d-113">Exploring the NuGet v3 Libraries, Part 2: Searching for packages</span></span>](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-2)
-- [<span data-ttu-id="b2c2d-114">探索 NuGet v3 库，第 3 部分：安装包</span><span class="sxs-lookup"><span data-stu-id="b2c2d-114">Exploring the NuGet v3 Libraries, Part 3: Installing packages</span></span>](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-3)
+- [<span data-ttu-id="5b1cb-111">浏览 NuGet v3 库，第1部分：简介和概念</span><span class="sxs-lookup"><span data-stu-id="5b1cb-111">Exploring the NuGet v3 Libraries, Part 1: Introduction and concepts</span></span>](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-1)
+- [<span data-ttu-id="5b1cb-112">浏览 NuGet v3 库，第2部分：搜索包</span><span class="sxs-lookup"><span data-stu-id="5b1cb-112">Exploring the NuGet v3 Libraries, Part 2: Searching for packages</span></span>](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-2)
+- [<span data-ttu-id="5b1cb-113">浏览 NuGet v3 库，第3部分：安装包</span><span class="sxs-lookup"><span data-stu-id="5b1cb-113">Exploring the NuGet v3 Libraries, Part 3: Installing packages</span></span>](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-3)
 
 > [!Note]
-> <span data-ttu-id="b2c2d-115">这些博客文章编写后不久**3.4.3** NuGet 客户端 SDK 包已发布的版本。</span><span class="sxs-lookup"><span data-stu-id="b2c2d-115">These blog posts were written shortly after the **3.4.3** version of the NuGet client SDK packages were released.</span></span>
-> <span data-ttu-id="b2c2d-116">包的较新版本可能与博客文章中的信息不兼容。</span><span class="sxs-lookup"><span data-stu-id="b2c2d-116">Newer versions of the packages may be incompatible with the information in the blog posts.</span></span>
+> <span data-ttu-id="5b1cb-114">**3.4.3**版本的 NuGet 客户端 SDK 包发布后，不久就会编写这些博客文章。</span><span class="sxs-lookup"><span data-stu-id="5b1cb-114">These blog posts were written shortly after the **3.4.3** version of the NuGet client SDK packages were released.</span></span>
+> <span data-ttu-id="5b1cb-115">较新版本的包可能与博客文章中的信息不兼容。</span><span class="sxs-lookup"><span data-stu-id="5b1cb-115">Newer versions of the packages may be incompatible with the information in the blog posts.</span></span>
 
-<span data-ttu-id="b2c2d-117">Martin Björkström 未到 Dave Glick 博客系列的后续博客文章，他介绍了不同的方法上使用 NuGet 客户端 SDK 安装 NuGet 包：</span><span class="sxs-lookup"><span data-stu-id="b2c2d-117">Martin Björkström did a follow-up blog post to Dave Glick's blog series where he introduces a different approach on using the NuGet Client SDK for installing NuGet packages:</span></span>
+<span data-ttu-id="5b1cb-116">圣马丁 Björkström 对 Dave Glick 的博客系列进行了跟进博客文章，其中介绍了使用 NuGet 客户端 SDK 安装 NuGet 包的不同方法：</span><span class="sxs-lookup"><span data-stu-id="5b1cb-116">Martin Björkström did a follow-up blog post to Dave Glick's blog series where he introduces a different approach on using the NuGet Client SDK for installing NuGet packages:</span></span>
 
-- [<span data-ttu-id="b2c2d-118">再探 NuGet v3 库</span><span class="sxs-lookup"><span data-stu-id="b2c2d-118">Revisiting the NuGet v3 Libraries</span></span>](https://martinbjorkstrom.com/posts/2018-09-19-revisiting-nuget-client-libraries)
+- [<span data-ttu-id="5b1cb-117">重新进行 NuGet v3 库</span><span class="sxs-lookup"><span data-stu-id="5b1cb-117">Revisiting the NuGet v3 Libraries</span></span>](https://martinbjorkstrom.com/posts/2018-09-19-revisiting-nuget-client-libraries)
