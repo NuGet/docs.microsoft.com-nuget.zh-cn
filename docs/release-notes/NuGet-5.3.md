@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: 3418eb9b60123596eaa361a546e8ea1403396f14
-ms.sourcegitcommit: f9645fc5f49c18978e12a292a3f832e162e069d5
+ms.openlocfilehash: 994a0da3728e05a09b5537d150f2203477922efc
+ms.sourcegitcommit: 904cbee57770af04efcae0b3709301685475bf64
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72924598"
+ms.lasthandoff: 10/26/2019
+ms.locfileid: "72962294"
 ---
 # <a name="nuget-53-release-notes"></a>NuGet 5.3 发行说明
 
@@ -20,6 +20,7 @@ NuGet 分发车辆：
 |:---|:---|:---|
 | [**5.3.0**](https://nuget.org/downloads) | [Visual Studio 2019 版本16。3](https://visualstudio.microsoft.com/downloads/) | [3.0.100](https://dotnet.microsoft.com/download/dotnet-core/3.0)<sup>1</sup> |
 | [**5.3.1**](https://nuget.org/downloads) | [Visual Studio 2019 版本16.3。6](https://visualstudio.microsoft.com/downloads/) | [未来版本：3.0.101](https://dotnet.microsoft.com/download/dotnet-core/3.0) |
+
 <sup>1</sup>随 Visual Studio 2019 with .NET Core 工作负载一起安装
 
 ## <a name="summary-whats-new-in-53"></a>摘要：5.3 中的新增功能
