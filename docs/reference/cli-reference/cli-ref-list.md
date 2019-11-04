@@ -36,7 +36,7 @@ nuget list [search terms] [options]
 | Help | 显示命令的帮助信息。 |
 | IncludeDelisted | *(3.2 +)* 显示未列出的包。 |
 | NonInteractive | 取消显示提示用户输入或确认。 |
-| 早期 | 在列表中包括预发行程序包。 |
+| PreRelease | 在列表中包括预发行程序包。 |
 | Source | 指定要搜索的包源列表。 |
 | Verbosity | 指定在输出中显示的详细信息量: "*正常*"、"*静默*"、"*详细*"。 |
 
