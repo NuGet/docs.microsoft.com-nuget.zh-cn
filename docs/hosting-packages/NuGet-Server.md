@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 734f0a609f243c7bdb218a53ed664de68c707dd7
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 82b353450ff1da23a17e5b1c6a825ad32782bf75
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317648"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610596"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 
@@ -53,7 +53,7 @@ NuGet.Server 是由 .NET Foundation 提供的包，其创建的 ASP.NET 应用�
 
 1. 单击上述框选区域中的“此处”可查看 OData 包源  。
 
-1. 首次运行应用程序时，NuGet.Server 会重新构建 `Packages` 文件夹，以包含每个包的文件夹。 这符合 NuGet 3.3 中引入的用于提高性能的[本地存储布局](http://blog.nuget.org/20151118/nuget-3.3.html#folder-based-repository-commands)。 添加更多包时，请继续遵照此结构。
+1. 首次运行应用程序时，NuGet.Server 会重新构建 `Packages` 文件夹，以包含每个包的文件夹。 这符合 NuGet 3.3 中引入的用于提高性能的[本地存储布局](https://blog.nuget.org/20151118/nuget-3.3.html#folder-based-repository-commands)。 添加更多包时，请继续遵照此结构。
 
 1. 测试本地部署后，请根据需要将应用程序部署到任何其他内部或外部网站。
 

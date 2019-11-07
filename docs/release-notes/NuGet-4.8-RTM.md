@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: f85042b8fe1511934d6a3ac7de34da92c575f6e0
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.openlocfilehash: 6e352fef9fc36646f6feedbc390f847119cb00bf
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432512"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611358"
 ---
 # <a name="nuget-48-release-notes"></a>NuGet 4.8 发行说明
 
@@ -24,7 +24,7 @@ ms.locfileid: "58432512"
 
 ## <a name="summary-whats-new-in-480"></a>摘要:4.8.0 版中的新增功能
 * NuGet.exe 现支持 Windows 10 上的 longfilenames - [#6937](https://github.com/NuGet/Home/issues/6937)
-* 身份验证插件现适用于 MsBuild、DotNet.exe、NuGet.exe 和 Visual Studio（包括跨平台使用）。 MsBuild 的 DotNet.exe 中不支持第一代身份验证插件。 注意:VS 2017 15.9 预览内部版本包含 VSTS 身份验证插件。 [#6486](https://github.com/NuGet/Home/issues/6486)
+* 身份验证插件现适用于 MsBuild、DotNet.exe、NuGet.exe 和 Visual Studio（包括跨平台使用）。 MsBuild 的 DotNet.exe 中不支持第一代身份验证插件。 注意：VS 2017 15.9 预览内部版本包含 VSTS 身份验证插件。 [#6486](https://github.com/NuGet/Home/issues/6486)
 * MsBuild 的 SDK 解析程序现作为 NuGet 的一部分生成，并通过 VS 的 NuGet 工具安装。 这将避免版本无法同步的问题。[#6799](https://github.com/NuGet/Home/issues/6799)
 * PackageReference 现支持 DevelopmentDependency 元数据 - [#4125](https://github.com/NuGet/Home/issues/4125)
 
@@ -36,7 +36,7 @@ ms.locfileid: "58432512"
 ### <a name="installing-signed-packages-on-a-ci-machine-or-in-an-offline-environment-takes-longer-than-usual"></a>在 CI 计算机或在脱机环境中安装签名包所需的时间要比平常长
 
 #### <a name="issue"></a>问题
-如果计算机的 Internet 访问受限（如 CI/CD 方案中的生成计算机），安装/还原签名的 nuget 包将导致警告 ([NU3028](https://docs.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu3028))，因为吊销服务器不可访问。 这是预期情况。 但是，在某些情况下，这可能会产生意外的结果，如安装/还原包花费的时间比平常长。
+如果计算机的 Internet 访问受限（如 CI/CD 方案中的生成计算机），安装/还原签名的 nuget 包将导致警告 ([NU3028](https://docs.microsoft.com/nuget/reference/errors-and-warnings/nu3028))，因为吊销服务器不可访问。 这是预期情况。 但是，在某些情况下，这可能会产生意外的结果，如安装/还原包花费的时间比平常长。
 
 #### <a name="workaround"></a>解决方法
 更新到 Visual Studio 15.8.4 和 NuGet.exe 4.8.1，我们在其中引入了一个环境变量来切换吊销检查模式。
@@ -60,7 +60,7 @@ ms.locfileid: "58432512"
 * 生成还会触发 NuGet 还原的项目
 
 现在应能够看到迁移选项。 请注意，此选项不受支持且不会对 ASP.NET 和 C++ 项目类型显示。
-注意:此问题已在 VS 2017 15.9 预览版 3 中修复
+注意：此问题已在 VS 2017 15.9 预览版 3 中修复
 
 ## <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
 

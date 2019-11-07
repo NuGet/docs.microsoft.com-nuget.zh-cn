@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 0e69491525fce03e504d9d455bee2718510c83c2
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: a86a58f8afb4b0f1affeddd47d6c5606fb465757
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549880"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611005"
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>使用 Team Foundation Build 设置包还原
 
@@ -31,7 +31,7 @@ ms.locfileid: "43549880"
 
 使用 NuGet 的优点是可以用它来避免将二进制文件签入到版本控制系统。
 
-如果使用[分布式版本控制](http://en.wikipedia.org/wiki/Distributed_revision_control)系统（例如 git），这会变得特别有趣，因为开发人员需要先克隆整个存储库（包括完整历史记录），才能在本地开始工作。 签入二进制文件可能导致明显的存储库膨胀，因为二进制文件的存储通常不需要增量压缩。
+如果使用[分布式版本控制](https://en.wikipedia.org/wiki/Distributed_revision_control)系统（例如 git），这会变得特别有趣，因为开发人员需要先克隆整个存储库（包括完整历史记录），才能在本地开始工作。 签入二进制文件可能导致明显的存储库膨胀，因为二进制文件的存储通常不需要增量压缩。
 
 NuGet 支持在生成过程中[还原包](../consume-packages/package-restore.md)，这种状态已经持续了一段较长的时间。 以前的实现对于想要扩展生成过程的包而言存在难分先后的问题，因为 NuGet 在生成项目的同时还原包。 但是，MSBuild 不允许在生成期间扩展生成；有人可能会说这是 MSBuild 的问题，但我认为这是一个固有问题。 根据需要扩展的特性，在还原包时才注册可能已经太迟。
 
@@ -50,7 +50,7 @@ nuget restore path\to\solution.sln
 
 ## <a name="repository-structure"></a>存储库结构
 
-演示项目是一个使用命令行参数来查询必应的简单命令行工具。 它面向 .NET Framework 4 并使用多种 [BCL 包](http://www.nuget.org/profiles/dotnetframework/)（[Microsoft.Net.Http](http://www.nuget.org/packages/Microsoft.Net.Http)、[Microsoft.Bcl](http://www.nuget.org/packages/Microsoft.Bcl)、[Microsoft.Bcl.Async](http://www.nuget.org/packages/Microsoft.Bcl.Async) 和 [Microsoft.Bcl.Build](http://www.nuget.org/packages/Microsoft.Bcl.Build)）。
+演示项目是一个使用命令行参数来查询必应的简单命令行工具。 它面向 .NET Framework 4 并使用多种 [BCL 包](https://www.nuget.org/profiles/dotnetframework/)（[Microsoft.Net.Http](https://www.nuget.org/packages/Microsoft.Net.Http)、[Microsoft.Bcl](https://www.nuget.org/packages/Microsoft.Bcl)、[Microsoft.Bcl.Async](https://www.nuget.org/packages/Microsoft.Bcl.Async) 和 [Microsoft.Bcl.Build](https://www.nuget.org/packages/Microsoft.Bcl.Build)）。
 
 存储库结构如下所示：
 

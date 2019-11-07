@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: fe769f95e3eda4bc07db4369544472c00b35363d
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 0c3c0380fe6efb3c58124ca5ba8bc1306a433340
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488658"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611355"
 ---
 # <a name="nuget-47-release-notes"></a>NuGet 4.7 发行说明
 
@@ -20,7 +20,7 @@ ms.locfileid: "69488658"
 
 * 我们已增强包签名，以便启用[存储库签名包](https://github.com/NuGet/Home/wiki/Repository-Signatures)
 
-* 在 Visual Studio 版本 15.7 中，我们已引入功能改为[迁移使用 packages.config 格式的现有项目以使用 PackageReference](https://docs.microsoft.com/en-us/nuget/consume-packages/migrate-packages-config-to-package-reference)。
+* 在 Visual Studio 版本 15.7 中，我们已引入功能改为[迁移使用 packages.config 格式的现有项目以使用 PackageReference](https://docs.microsoft.com/nuget/consume-packages/migrate-packages-config-to-package-reference)。
 
 ## <a name="summary-whats-new-in-472"></a>摘要:4.7.2 版中的新增功能
 

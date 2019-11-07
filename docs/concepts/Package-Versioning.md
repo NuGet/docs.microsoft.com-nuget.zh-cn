@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 7c6992d6bf3142eb6aca70f1fa3c46f72efd25a0
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: e0014a812ea591ef40c961e13864652d75ebdf6c
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69520347"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610993"
 ---
 # <a name="package-versioning"></a>包版本控制
 
@@ -32,7 +32,7 @@ ms.locfileid: "69520347"
 - *Major*：重大更改
 - *Minor*：新增功能，但可向后兼容
 - *Patch*：仅可向后兼容的 bug 修复
-- *-Suffix*（可选）：连字符后跟字符串，表示预发布版本（遵循[语义化版本控制或 SemVer 1.0 约定](http://semver.org/spec/v1.0.0.html)）。
+- *-Suffix*（可选）：连字符后跟字符串，表示预发布版本（遵循[语义化版本控制或 SemVer 1.0 约定](https://semver.org/spec/v1.0.0.html)）。
 
 **示例：**
 
@@ -55,7 +55,7 @@ ms.locfileid: "69520347"
 - `-rc`：候选发布，通常可能为最终（稳定）版本，除非出现重大 bug。
 
 > [!Note]
-> NuGet 4.3.0+ 支持 [SemVer 2.0.0](http://semver.org/spec/v2.0.0.html)，后者支持采用点表示法的预发布号，如 1.0.1-build.23  中所示。 NuGet 4.3.0 之前的版本不支持点表示法。 可以使用类似于 1.0.1-build23 的形式  。
+> NuGet 4.3.0+ 支持 [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html)，后者支持采用点表示法的预发布号，如 1.0.1-build.23  中所示。 NuGet 4.3.0 之前的版本不支持点表示法。 可以使用类似于 1.0.1-build23 的形式  。
 
 解析包引用时，如果多个包版本只有后缀不同，NuGet 会首先选择不带后缀的版本，然后按反向字母顺序来排列预发布版本的优先顺序。 例如，将按显示的确切顺序选择以下版本：
 
@@ -70,7 +70,7 @@ ms.locfileid: "69520347"
 
 ## <a name="semantic-versioning-200"></a>语义化版本控制 2.0.0
 
-借助 NuGet 4.3.0+ 和 Visual Studio 2017 版本 15.3+，NuGet 支持[语义化版本控制 2.0.0](http://semver.org/spec/v2.0.0.html)。
+借助 NuGet 4.3.0+ 和 Visual Studio 2017 版本 15.3+，NuGet 支持[语义化版本控制 2.0.0](https://semver.org/spec/v2.0.0.html)。
 
 旧客户端不支持 SemVer v2.0.0 的某些语义。 在以下任意一种情况下，NuGet 会将包版本视为特定于 SemVer v2.0.0：
 

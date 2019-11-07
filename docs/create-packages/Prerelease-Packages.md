@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: a7d07da30daf3f94db99476b88d9abaad1bb8a07
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 1c19f962dc9e42154c0f4374432548e867e9538a
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488856"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610713"
 ---
 # <a name="building-pre-release-packages"></a>生成预发行包
 
@@ -56,7 +56,7 @@ ms.locfileid: "69488856"
 
 ## <a name="semantic-versioning"></a>语义化版本控制
 
-[语义化版本控制或 SemVer 约定](http://semver.org/spec/v1.0.0.html)介绍如何利用版本号中的字符串传达基础代码的含义。
+[语义化版本控制或 SemVer 约定](https://semver.org/spec/v1.0.0.html)介绍如何利用版本号中的字符串传达基础代码的含义。
 
 在此约定中，每个版本由三部分组成，即 `Major.Minor.Patch`，其含义分别是：
 
@@ -73,7 +73,7 @@ ms.locfileid: "69488856"
 - `-rc`：候选发布，通常可能为最终（稳定）版本，除非出现重大 bug。
 
 > [!Note]
-> NuGet 4.3.0+ 支持[语义化版本控制 v2.0.0](http://semver.org/spec/v2.0.0.html)，后者支持采用点表示法的预发布号，如 `1.0.1-build.23` 中所示。 NuGet 4.3.0 之前的版本不支持点表示法。 在 NuGet 的早期版本中，可以使用 `1.0.1-build23` 之类的格式，但这始终被视为预发布版本。
+> NuGet 4.3.0+ 支持[语义化版本控制 v2.0.0](https://semver.org/spec/v2.0.0.html)，后者支持采用点表示法的预发布号，如 `1.0.1-build.23` 中所示。 NuGet 4.3.0 之前的版本不支持点表示法。 在 NuGet 的早期版本中，可以使用 `1.0.1-build23` 之类的格式，但这始终被视为预发布版本。
 
 但是，无论使用何种后缀，NuGet 都会按照反向字母顺序向它们赋予优先级：
 

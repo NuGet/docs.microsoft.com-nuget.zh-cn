@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: quickstart
-ms.openlocfilehash: 417388872a74b29a469d6a5c17c079a0d1a35dc3
-ms.sourcegitcommit: a0807671386782021acb7588741390e6f07e94e1
+ms.openlocfilehash: 09c859c0ab6767ea80b6a64c194aa2623ee5c505
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70384464"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610528"
 ---
 # <a name="install-nuget-client-tools"></a>安装 NuGet 客户端工具
 
@@ -46,7 +46,7 @@ ms.locfileid: "70384464"
 
 ### <a name="nugetexe-cli"></a>nuget.exe CLI
 
-`nuget.exe` CLI（即 `nuget.exe`）是适用于 Windows 的命令行实用工具，可提供所有 NuGet 功能；它也可以使用存在一些限制的 [Mono](http://www.mono-project.com/docs/getting-started/install/) 在 Mac OSX 和 Linux 上运行。
+`nuget.exe` CLI（即 `nuget.exe`）是适用于 Windows 的命令行实用工具，可提供所有 NuGet 功能；它也可以使用存在一些限制的 [Mono](https://www.mono-project.com/docs/getting-started/install/) 在 Mac OSX 和 Linux 上运行。
 
 要了解如何在 `nuget.exe` CLI 中使用基本命令，请参阅[使用 nuget.exe CLI 安装并使用包](consume-packages/install-use-packages-nuget-cli.md)。
 

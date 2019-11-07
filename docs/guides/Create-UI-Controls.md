@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: 522dbbb2a39eb1cb6f0d23f39a48158b07c9076d
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: da8c5a05311c790bf6b873bc0f1a077d3ef1db87
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426855"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610621"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>以 NuGet 包形式创建 UI 控件
 
@@ -93,7 +93,7 @@ ms.locfileid: "67426855"
 
 ![工具框图标示例](https://raw.githubusercontent.com/NuGet/docs.microsoft.com-nuget/live/docs/guides/media/ColorPicker_16x16x24.bmp)
 
-运行时将替换粉色背景。 更改 Visual Studio 主题且需要设置背景颜色时，图标会重新着色。 有关详细信息，请参阅 [Visual Studio 的图像和图标](https://docs.microsoft.com/en-us/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio)。
+运行时将替换粉色背景。 更改 Visual Studio 主题且需要设置背景颜色时，图标会重新着色。 有关详细信息，请参阅 [Visual Studio 的图像和图标](https://docs.microsoft.com/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio)。
 
 在以下示例中，项目包含名为“ManagedPackage.MyCustomControl.png”的图像文件。
 

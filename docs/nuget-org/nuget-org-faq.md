@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 24e35f4b2c047d5f337a1779e63846b11b0c1011
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: e2b6a64b8010f16d0fc33cca437b348d8f784fd7
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380578"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610501"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>NuGet.org 常见问题解答
 
@@ -90,7 +90,7 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 
 捕获 Fiddler： 
 
-- 安装最新版本的 [Fiddler](http://www.telerik.com/download/fiddler)。
+- 安装最新版本的 [Fiddler](https://www.telerik.com/download/fiddler)。
 - 启动 Fiddler，使用“文件”>“捕获流量”菜单禁用捕获流量  。
 - 删除所有会话（选中列表中的所有项，按 Delete 键  ）。
 - 配置 Fiddler 以捕获 HTTPS 流量，具体操作方式为：打开“工具”>“Fiddler 选项...”菜单，勾选“HTTPS”选项卡中的“解密 HTTPS 流量”    。
@@ -101,7 +101,7 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 
 注意：若要通过 Fiddler 路由 NuGet，可能需要将 `HTTP_PROXY` 环境变量设置为 `http://127.0.0.1:8888`。
 
-如果该操作失败，请尝试[该 StackOverflow 文章中提到的方法](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall)。
+如果该操作失败，请尝试[该 StackOverflow 文章中提到的方法](https://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall)。
 
 ## <a name="nugetorg-account-management"></a>NuGet.org 帐户管理
 
@@ -228,17 +228,17 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 
 你的帐户似乎在之前注册为 Microsoft 个人帐户，且其使用正常，但现在此帐户似乎已在 Azure Active Directory（用于对 Microsoft 帐户执行身份验证的标识符）中注册为“非托管”租户。 
 
-出现此情况的原因可能是你或你所在组织的其他人员（电子邮件为 @yourdomain.com）注册了某个 AAD 集成服务，或者进行了 [Azure Active Directory 自助注册](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-self-service-signup)，这会对所使用的 Microsoft 帐户域（对你而言为 @yourdomain.com）创建一个“非托管”租户。 
+出现此情况的原因可能是你或你所在组织的其他人员（电子邮件为 @yourdomain.com）注册了某个 AAD 集成服务，或者进行了 [Azure Active Directory 自助注册](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-self-service-signup)，这会对所使用的 Microsoft 帐户域（对你而言为 @yourdomain.com）创建一个“非托管”租户。 
 
 **怎样才可以恢复帐户？**
 
 当前，我们 (NuGet.org) 无法使用 Azure Active Directory 中含有此类“非托管”租户帐户对帐户进行身份验证。 我们正在寻找一种更佳的方式来对此类帐户进行身份验证。
 
-如果要使用 Microsoft 帐户 (@yourdomain.com) 登录 NuGet.org，你（或你所在公司的管理员）需要通过执行 DNS 验证声明 AAD 所有者，以对电子邮件地址为“@yourdomain.com”的用户进行身份验证。 请按照 Azure Active directory 文档[域管理员接管](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/domains-admin-takeover)中的步骤操作。 完成后，应能开始正常登录。
+如果要使用 Microsoft 帐户 (@yourdomain.com) 登录 NuGet.org，你（或你所在公司的管理员）需要通过执行 DNS 验证声明 AAD 所有者，以对电子邮件地址为“@yourdomain.com”的用户进行身份验证。 请按照 Azure Active directory 文档[域管理员接管](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover)中的步骤操作。 完成后，应能开始正常登录。
 
 **我不想使用这种方法，还有什么其他方法可以恢复帐户？**
 
-可以[创建](https://www.microsoft.com/en-us/account)一个新的 Microsoft 帐户（其电子邮件未与 @yourdomain.com 关联）  。 请按照[恢复 NuGet.org 帐户](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account)部分所述的步骤操作。
+可以[创建](https://www.microsoft.com/account)一个新的 Microsoft 帐户（其电子邮件未与 @yourdomain.com 关联）  。 请按照[恢复 NuGet.org 帐户](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account)部分所述的步骤操作。
 
 ### <a name="how-do-i-change-my-nugetorg-account-username"></a>如何更改 NuGet.org 帐户用户名？
 
@@ -250,7 +250,7 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 
 ### <a name="how-to-delete-my-nugetorg-account"></a>如何删除 NuGet.org 帐户？
 
-请注意，要删除帐户，我们建议将你作为其唯一所有者的包的所有权进行转让。 要了解如何执行此操作，请阅读有关[管理包所有者](https://docs.microsoft.com/en-us/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg)的更多信息。 这有助于我们加速处理请求。
+请注意，要删除帐户，我们建议将你作为其唯一所有者的包的所有权进行转让。 要了解如何执行此操作，请阅读有关[管理包所有者](https://docs.microsoft.com/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg)的更多信息。 这有助于我们加速处理请求。
 
 如果要将帐户转换为组织，请按照[将 NuGet.org 帐户转换为组织](#how-to-transform-my-nugetorg-account-to-an-organization)中所述的步骤进行操作。
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 4413779361dad3a650da36b3c69bbb55b62804ee
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: 69e12ce1c78f8d4d50cbad7a0237d767064193ab
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380737"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610655"
 ---
 # <a name="support-multiple-net-versions"></a>支持多个 .NET 版本
 
@@ -151,8 +151,8 @@ NuGet 还通过向文件夹末尾追加短划线和配置文件名称，支持�
 
 当打包面向可移植类库的库时，不容易确定应在文件夹名称和 `.nuspec` 文件中使用的 NuGet 目标，尤其当仅面向 PCL 的子集时。 以下外部资源有助于解决此问题：
 
-- [.NET 中的框架配置文件](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html) (stephenclearly.com)
-- [可移植类库配置文件](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview) (plnkr.co)：枚举 PCL 配置文件及其等效 NuGet 目标的表
+- [.NET 中的框架配置文件](https://blog.stephencleary.com/2012/05/framework-profiles-in-net.html) (stephenclearly.com)
+- [可移植类库配置文件](https://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview) (plnkr.co)：枚举 PCL 配置文件及其等效 NuGet 目标的表
 - [可移植类库的配置文件工具](https://github.com/StephenCleary/PortableLibraryProfiles) (github.com)：用于确定系统上可用的 PCL 配置文件的命令行工具
 
 ## <a name="content-files-and-powershell-scripts"></a>内容文件和 PowerShell 脚本

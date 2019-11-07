@@ -7,12 +7,12 @@ ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 1fb12c6cb9f7702c05990f79a6d43b9dd739e8cc
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 42031f7b5fe4d3c1b4dbe5e1bfbf9197014e0e88
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68328064"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611100"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>在 Visual Studio 中使用包管理器控制台安装和管理包 (PowerShell)
 
@@ -172,9 +172,9 @@ C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 
 ## <a name="use-the-nugetexe-cli-in-the-console"></a>在控制台中使用 nuget.exe CLI
 
-若要在包管理器控制台中使用 [`nuget.exe` CLI](../reference/nuget-exe-cli-reference.md)，请从控制台安装 [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) 包：
+若要在包管理器控制台中使用 [`nuget.exe` CLI](../reference/nuget-exe-cli-reference.md)，请从控制台安装 [NuGet.CommandLine](https://www.nuget.org/packages/NuGet.CommandLine/) 包：
 
 ```ps
-# Other versions are available, see http://www.nuget.org/packages/NuGet.CommandLine/
+# Other versions are available, see https://www.nuget.org/packages/NuGet.CommandLine/
 Install-Package NuGet.CommandLine -Version 4.4.1
 ```

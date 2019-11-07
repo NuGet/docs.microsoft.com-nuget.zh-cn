@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 10651e2cc26f7df4115e4de5dac8c91c93af7374
-ms.sourcegitcommit: 5a741f025e816b684ffe44a81ef7d3fbd2800039
+ms.openlocfilehash: 3ca023c8d39b9b36388f5f517b50ca5cd2347cc0
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70815292"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610459"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>承载自己的 NuGet 源
 
@@ -31,11 +31,11 @@ ms.locfileid: "70815292"
 - [Cloudsmith](https://cloudsmith.io/l/nuget-feed/)：一种完全托管的包管理 SaaS
 - [GitHub 包注册表](https://help.github.com/articles/configuring-nuget-for-use-with-github-package-registry)
 - [LiGet](https://github.com/ai-traders/liget)：在 docker 中 kestrel 上运行的 NuGet V2 服务器的开放源代码实现
-- [MyGet](http://myget.org)
-- Sonatype 的 [Nexus](http://www.sonatype.org/nexus/)。
-- [NuGet 服务器（开放源代码）](http://nuget-server.net)，与 Inedo 的 NuGet 服务器相似的开放源代码实现
+- [MyGet](https://myget.org)
+- Sonatype 的 [Nexus](https://www.sonatype.org/nexus/)。
+- [NuGet 服务器（开放源代码）](https://github.com/svenkle/nuget-server)，与 Inedo 的 NuGet 服务器相似的开放源代码实现
 - [NuGet 服务器](http://nugetserver.net/)，Inedo 的社区项目
-- Inedo 的 [ProGet](http://inedo.com/proget)
+- Inedo 的 [ProGet](https://inedo.com/proget)
 - [Sleet](https://github.com/emgarten/sleet)（开放源代码 NuGet V3 静态源生成器）
 - JetBrains 的 [TeamCity](https://www.jetbrains.com/teamcity/)。
 
