@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 6d183100a8319b517347567f34d276e94eb4e15d
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 937d051ff6dc49e3204f7d0cb22c4f29b99a2a7d
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67427182"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610602"
 ---
 # <a name="publishing-packages"></a>发布包
 
@@ -64,7 +64,7 @@ ms.locfileid: "67427182"
     nuget setApiKey <your_API_key>
     ```
 
-    此命令将 API 密钥存储在 NuGet 配置中，以便需要在同一台计算机上再次重复此步骤。
+    此命令将 API 密钥存储在 NuGet 配置中，以便无需在同一台计算机上再次重复此步骤。
 
 1. 使用以下命令将包推送到 NuGet 库：
 
@@ -115,7 +115,7 @@ ms.locfileid: "67427182"
 1. 在“添加所有者”  下添加所有者，方法是通过输入其用户名和一条消息，然后选择“添加”  。 此操作会向该新共有者发送包含确认链接的电子邮件。 确认后，此人拥有添加和删除所有者的完全权限。 （确认之前，“当前所有者”  部分指示此人的状态为“待审批”。）
 1. 要转让所有权（如变更所有权或在错误的帐户下发布包时），请添加新所有者，他们确认所有权后，即可将你从列表中删除。
 
-要将所有权分配给公司或组，请使用转发到适当团队成员的电子邮件别名创建 nuget.org 帐户。 例如，各种 Microsoft ASP.NET 包由 [microsoft](http://nuget.org/profiles/microsoft) 和 [aspnet](http://nuget.org/profiles/aspnet) 帐户共同拥有，这两个帐户就是此类别名。
+要将所有权分配给公司或组，请使用转发到适当团队成员的电子邮件别名创建 nuget.org 帐户。 例如，各种 Microsoft ASP.NET 包由 [microsoft](https://nuget.org/profiles/microsoft) 和 [aspnet](https://nuget.org/profiles/aspnet) 帐户共同拥有，这两个帐户就是此类别名。
 
 ### <a name="recovering-package-ownership"></a>恢复包的所有权
 

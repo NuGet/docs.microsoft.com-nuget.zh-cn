@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 09/07/2019
 ms.topic: reference
 ms.reviewer: karann
-ms.openlocfilehash: f6c4a18366b4df20fb210f718d3779e85c08d550
-ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
+ms.openlocfilehash: da464cc44d8c874e13c0cdfab871f31e643b577f
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71248124"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610494"
 ---
 # <a name="package-id-prefix-reservation"></a>包 ID 前缀预留
 
@@ -93,7 +93,7 @@ ms.locfileid: "71248124"
 
 ## <a name="third-party-feed-provider-scenarios"></a>第三方源提供程序方案
 
-如果第三方订阅源提供程序有兴趣实现自己的服务以提供前缀预留，则可以通过修改 NuGet V3 源提供程序中的搜索服务来实现。 源搜索服务中的新增功能是添加经验证的属性，下面是 V3 源的示例  。 NuGet 客户端不支持 V2 源中添加的属性。
+如果第三方源提供程序有兴趣实现自己的服务以提供前缀预留，则可以通过修改 NuGet V3 源提供程序中的搜索服务来实现。 源搜索服务中的更改是添加 `verified` 属性。 NuGet 客户端不支持 V2 源中添加的属性。
 
 有关详细信息，请参阅[有关 API 搜索服务的文档](../api/search-query-service-resource.md)。
 
