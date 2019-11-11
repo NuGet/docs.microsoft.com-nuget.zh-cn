@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7b92d07d19a2e9073ecc38ed37b4ee2491080443
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 89b5fcbd76b85b77489ab36caa215c3a2fedf032
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317772"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73610978"
 ---
 # <a name="manage-package-trust-boundaries"></a>管理包信任边界
 
@@ -95,7 +95,7 @@ nuget.exe  trusted-signers Add -Name MyCompanyCert -CertificateFingerprint CE408
 
 ### <a name="sync-repository-certificates"></a>同步存储库证书
 
-包存储库应发布其在[服务索引](../api/service-index.md)中使用的证书。 存储库最终将更新这些证书，例如证书过期时。 出现这种情况时，使用特定策略的客户端将需要更新配置，以包括新添加的证书。 可通过使用 `nuget.exe` [受信任的签名程序同步命令](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-)，轻松升级与某个存储库关联的受信任签名程序。
+包存储库应发布其在[服务索引](../api/service-index.md)中使用的证书。 存储库最终将更新这些证书，例如证书过期时。 出现这种情况时，使用特定策略的客户端将需要更新配置，以包括新添加的证书。 要轻松更新与存储库关联的受信任的签名者，可使用 `nuget.exe` [trusted-signers sync command](../reference/cli-reference/cli-ref-trusted-signers.md#nuget-trusted-signers-sync--name-name
 
 ### <a name="schema-reference"></a>架构参考
 

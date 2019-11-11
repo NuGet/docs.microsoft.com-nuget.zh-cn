@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/27/2019
 ms.topic: conceptual
-ms.openlocfilehash: 97e7b253bed84fc6e9a97922c19756d138dd0381
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.openlocfilehash: 4ea2d2f23a02088b54982b825a5be3c872e27c37
+ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67426922"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73611311"
 ---
 # <a name="export-control-policy"></a>出口管制政策
 
@@ -28,4 +28,4 @@ ms.locfileid: "67426922"
 
 通过上述通知程序从出口管制管辖区域发布公开可用的源代码并不适用于包含或衍生自此类项目的商业软件  。  你仅负责遵守任何包含或派生自通过 NuGet.org 托管的源代码或目标代码的商业软件所适用的出口法律。
 
-有关出口和地域出口限制的更多信息，请访问 https://www.microsoft.com/en-us/exporting 。
+有关导出和异地导出限制的更多信息，请访问 [Microsoft 导出](https://www.microsoft.com/exporting)。
