@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: e98e8d1258377818b3852762d317750a6b3e59ad
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: eb8d59e253f85fbbb8546a5f71856df842ce94d6
+ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73611039"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096891"
 ---
 # <a name="package-metadata"></a>包元数据
 
@@ -70,7 +70,7 @@ RegistrationsBaseUrl/3.6。0      | 包括 SemVer 2.0.0 包
 
 将所有包版本（叶）存储在注册索引中可节省提取包元数据所需的 HTTP 请求数，但这意味着必须下载更大的文档，并且必须分配更多的客户端内存。 另一方面，如果服务器实现立即将注册留在单独的页面文档中，则客户端必须执行更多 HTTP 请求以获取所需的信息。
 
-Nuget.org 使用的试探法如下：如果包有128或更多版本，请将叶分成大小为64的页。 如果版本低于128，则将所有行都置于注册索引中。
+Nuget.org 使用的试探法如下：如果包有128或更多版本，请将叶分成大小为64的页。 如果版本低于128，则将所有行都置于注册索引中。 请注意，这意味着65到127版本的包在索引中将有两页，但这两个页将被内联。
 
     GET {@id}/{LOWER_ID}/index.json
 
@@ -160,6 +160,9 @@ Package `version` 属性是规范化后的完整版本字符串。 这意味着�
 
 `licenseExpression` 属性的值符合[NuGet 许可证表达式语法](https://docs.microsoft.com/nuget/reference/nuspec#license)。
 
+> [!Note]
+> 在 nuget.org 上，当包未列出时，`published` 值设置为1900年。
+
 #### <a name="package-dependency-group"></a>包依赖关系组
 
 每个依赖项组对象具有以下属性：
@@ -183,7 +186,7 @@ id           | string | 是      | 包依赖项的 ID
 range        | 对象 (object) | no       | 依赖项的允许[版本范围](../concepts/package-versioning.md#version-ranges-and-wildcards)
 注册 | string | no       | 此依赖项的注册索引的 URL
 
-如果已排除 `range` 属性或空字符串，则客户端应默认为版本范围 `(, )`。 也就是说，允许使用任何版本的依赖项。
+如果已排除 `range` 属性或空字符串，则客户端应默认为版本范围 `(, )`。 也就是说，允许使用任何版本的依赖项。 `range` 属性不允许 `*` 的值。
 
 #### <a name="package-deprecation"></a>包弃用
 
@@ -193,7 +196,7 @@ range        | 对象 (object) | no       | 依赖项的允许[版本范围](../
 ---------------- | ---------------- | -------- | -----
 原因          | 字符串数组 | 是      | 弃用包的原因
 消息          | string           | no       | 有关此弃用的其他详细信息
-alternatePackage | 对象 (object)           | no       | 应改为使用的包依赖项
+alternatePackage | 对象 (object)           | no       | 应改为使用的备用包
 
 `reasons` 属性必须包含至少一个字符串，并且只应包含下表中的字符串：
 
@@ -204,6 +207,16 @@ CriticalBugs | 包中的 bug 使其不适用于使用
 其他        | 由于未在此列表中的原因，包已弃用
 
 如果 `reasons` 属性包含不是来自已知集的字符串，则应将其忽略。 字符串不区分大小写，因此应将 `legacy` 视为与 `Legacy`相同。 数组没有排序限制，因此字符串可以任意顺序排列。 此外，如果属性仅包含不来自已知集的字符串，则应将其视为只包含 "其他" 字符串。
+
+#### <a name="alternate-package"></a>备用包
+
+备用包对象具有以下属性：
+
+“属性”         | 键入   | 必需 | 注意
+------------ | ------ | -------- | -----
+id           | string | 是      | 备用包的 ID
+range        | 对象 (object) | no       | 允许的[版本范围](../concepts/package-versioning.md#version-ranges-and-wildcards)，或在允许任何版本的情况下 `*`
+注册 | string | no       | 此备用包的注册索引的 URL
 
 ### <a name="sample-request"></a>示例请求
 
@@ -217,7 +230,10 @@ CriticalBugs | 包中的 bug 使其不适用于使用
 
 ## <a name="registration-page"></a>注册页
 
-注册页面包含注册离开。 用于提取注册页的 URL 由前面提到的[注册页对象](#registration-page-object)中的 `@id` 属性确定。
+注册页面包含注册离开。 用于提取注册页的 URL 由前面提到的[注册页对象](#registration-page-object)中的 `@id` 属性确定。 此 URL 并不是可预测的，应始终通过索引文档来发现。
+
+> [!Warning]
+> 在 nuget.org 上，注册页文档恰巧的 URL 包含该页的下限和上限。 不过，客户端永远不应执行此假设，因为只要索引文档具有有效的链接，服务器实现就可以随意更改 URL 的形状。
 
 如果注册索引中未提供 `items` 数组，则 `@id` 值的 HTTP GET 请求将返回一个 JSON 文档，该文档具有作为其根的对象。 对象具有以下属性：
 
@@ -244,7 +260,10 @@ count  | 整数          | 是      | 页面中的注册离开次数
 
 注册叶包含有关特定包 ID 和版本的信息。 有关特定版本的元数据在本文档中可能不可用。 应该从[注册索引](#registration-index)或[注册页](#registration-page)（使用注册索引发现）提取包元数据。
 
-提取注册叶的 URL 是从注册索引或注册页中注册叶对象的 `@id` 属性获取的。
+提取注册叶的 URL 是从注册索引或注册页中注册叶对象的 `@id` 属性获取的。 与页面文档一样。 此 URL 并不是可预测的，应始终通过注册页对象来发现。
+
+> [!Warning]
+> 在 nuget.org 上，注册叶文档恰巧的 URL 包含包版本。 不过，客户端永远不应执行此假设，因为只要父文档具有有效的链接，服务器实现就可以随意更改 URL 的形状。 
 
 注册叶是包含具有以下属性的根对象的 JSON 文档：
 

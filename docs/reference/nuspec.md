@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 6bd730db16d8e8783f0d949bb04cf3b52c642cd0
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: ff8f988a4d47e18d74945d274be5cca78d3ff8e5
+ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380557"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096920"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -174,6 +174,9 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 
 对于 MSBuild 等效项，请查看对[图标图像文件进行打包](msbuild-targets.md#packing-an-icon-image-file)。
 
+> [!Tip]
+> 您可以同时指定 `icon` 和 `iconUrl` 来维护与不支持 `icon`的源的向后兼容性。 在未来版本中，Visual Studio 将支持来自基于文件夹的源的包 `icon`。
+
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 一个布尔值，用于指定客户端是否必须提示使用者接受包许可证后才可安装包。
 
@@ -232,7 +235,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 #### <a name="contentfiles"></a>contentFiles
 (3.3+) `<files>` 元素的集合，用来标识包含在使用项目中的内容文件。 这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件。 请参阅下面的[指定包含在包中的文件](#specifying-files-to-include-in-the-package)。
 #### <a name="files"></a>文件 
-@No__t_0 节点可能包含一个 `<files>` 节点作为 `<metadata>` 的同级，并且在 `<metadata>` 下的 `<contentFiles>` 子节点指定要包含在包中的程序集和内容文件。 有关详细信息，请参阅本主题后面的[包含程序集文件](#including-assembly-files)和[包含内容文件](#including-content-files)。
+`<package>` 节点可能包含一个 `<files>` 节点作为 `<metadata>`的同级，并且在 `<metadata>`下的 `<contentFiles>` 子节点指定要包含在包中的程序集和内容文件。 有关详细信息，请参阅本主题后面的[包含程序集文件](#including-assembly-files)和[包含内容文件](#including-content-files)。
 
 ### <a name="metadata-attributes"></a>metadata 特性
 
