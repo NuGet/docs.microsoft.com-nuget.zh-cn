@@ -6,7 +6,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 08/09/2019
 ms.locfileid: "68860585"
 ---
-使用 [restore](../../reference/cli-reference/cli-ref-restore.md) 命令，该命令可下载并安装“包”文件夹中缺少的所有包  。
+使用 [restore](../../reference/cli-reference/cli-ref-restore.md) 命令可下载并安装“包”文件夹中缺少的所有包。 
 
 对于迁移到 PackageReference 的项目，请使用 [msbuild -t:restore](../package-restore.md#restore-using-msbuild) 还原程序包。
 
