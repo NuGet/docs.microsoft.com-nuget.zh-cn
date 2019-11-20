@@ -1,5 +1,5 @@
 ---
-title: NuGet 包还原
+title: NuGet 程序包还原
 description: 概述 NuGet 如何还原项目依赖的包，包括如何禁用还原和约束版本。
 author: karann-msft
 ms.author: karann
@@ -14,22 +14,22 @@ ms.locfileid: "69999986"
 ---
 # <a name="restore-packages-using-package-restore"></a>使用“程序包还原”还原程序包
 
-为了促成更干净的开发环境并减少存储库大小，NuGet“包还原”安装在项目文件或 `packages.config` 中列出的所有项目依赖项  。 .NET Core 2.0+ `dotnet build` 和 `dotnet run` 命令执行自动包还原。 Visual Studio 可以在构建项目时自动还原包，并且你可以随时通过 Visual Studio、`nuget restore`、`dotnet restore` 和 xoild 在 Mono 上还原包。
+为了促成更干净的开发环境并减少存储库大小，NuGet“程序包还原”安装了项目文件或 `packages.config` 中列出的所有项目依赖项  。 .NET Core 2.0+ `dotnet build` 和 `dotnet run` 命令执行自动程序包还原。 Visual Studio 可以在构建项目时自动还原包，并且你可以随时通过 Visual Studio、`nuget restore`、`dotnet restore` 和 Mono 的 xbuild 来还原包。
 
-包还原确保所有项目的依赖项都可用，无需将其存储在源代码管理中。 要配置源代码管理存储库以排除包二进制文件，请参阅[包和源代码管理](../consume-packages/packages-and-source-control.md)。 
+程序包还原确保所有项目的依赖项都可用，无需将其存储在源代码管理中。 要配置源代码管理存储库以排除包二进制文件，请参阅[包和源代码管理](../consume-packages/packages-and-source-control.md)。 
 
-## <a name="package-restore-overview"></a>包还原概述
+## <a name="package-restore-overview"></a>程序包还原概述
 
-包还原首先根据需要安装项目的直接依赖项，然后在整个依赖项关系图中安装这些包的所有依赖项。
+程序包还原首先根据需要安装项目的直接依赖项，然后在整个依赖项关系图中安装这些包的所有依赖项。
 
-如果尚未安装包，NuGet 首先尝试从[缓存](../consume-packages/managing-the-global-packages-and-cache-folders.md)中检索它。 如果包不在缓存中，NuGet 将尝试从 Visual Studio 的“工具” > “选项” > “NuGet 包管理器” > “包源”下的列表中的所有已启用的源下载包     。 在还原期间，NuGet 会忽略包源的顺序，使用来自任何首先响应请求的源的包。 有关 NuGet 的行为方式的详细信息，请参阅[常见的 NuGet 配置](Configuring-NuGet-Behavior.md)。 
+如果尚未安装包，NuGet 首先尝试从[缓存](../consume-packages/managing-the-global-packages-and-cache-folders.md)中检索它。 如果包不在缓存中，NuGet 将尝试从 Visual Studio 的“工具” > “选项” > “NuGet 包管理器” > “包源”下的列表中的所有已启用的源下载包     。 在还原期间，NuGet 会忽略包源的顺序，使用来自最先响应请求的源的包。 有关 NuGet 的行为方式的详细信息，请参阅[常见的 NuGet 配置](Configuring-NuGet-Behavior.md)。 
 
 > [!Note]
-> 在检查完所有源之前，NuGet 不会指示包还原失败。 届时，NuGet 仅会报告列表中最后一个源的失败。 该错误说明包已不在其他任意源上，尽管那些源中的任何一个都没有单独显示错误  。
+> 在检查完所有源之前，NuGet 不会指示包还原失败。 届时，NuGet 仅会报告列表中最后一个源的失败。 该错误说明包已不在其他任意源上，尽管没有单独显示这些源的错误。 
 
 ## <a name="restore-packages"></a>还原包
 
-程序包还原试图将所有程序包依赖项安装到与项目文件 (.csproj  ) 或 packages.config  文件中的程序包引用匹配的相应状态。 （在 Visual Studio 中，这些引用位于解决方案资源管理器的“依赖项 \ NuGet”或“引用”节点中。）  
+程序包还原试图将所有程序包依赖项安装到与项目文件 (.csproj  ) 或 packages.config  文件中的程序包引用相匹配的正确状态。 （在 Visual Studio 中，这些引用位于解决方案资源管理器的“依赖项 \ NuGet”或“引用”节点中。）  
 
 1. 若项目文件中的程序包引用正确，则使用你的首选工具还原程序包。
 
@@ -44,7 +44,7 @@ ms.locfileid: "69999986"
 
    对于使用 PackageReference 的项目，在成功还原后，global-packages 文件夹应显示此包，并且会重新创建 `obj/project.assets.json` 文件。  对于使用 `packages.config` 的项目，项目的 `packages` 文件夹应显示此程序包。 该项目现在应能成功生成。 
 
-2. 运行程序包还原后，若仍出现程序包缺失的情况或与程序包相关的错误（如 Visual Studio 的解决方案资源管理器中出现错误图标），可能需要按照[包还原错误疑难解答](package-restore-troubleshooting.md)中的步骤操作，或[重新安装和更新程序包](../consume-packages/reinstalling-and-updating-packages.md)。
+2. 运行程序包还原后，若仍出现程序包缺失的情况或与程序包相关的错误（如 Visual Studio 的解决方案资源管理器中出现错误图标），可能需要按照[程序包还原错误疑难解答](package-restore-troubleshooting.md)中的步骤操作，或[重新安装和更新程序包](../consume-packages/reinstalling-and-updating-packages.md)。
 
    Visual Studio 中的程序包管理器控制台提供了多个灵活的选项，用于重新安装程序包。 请参阅[使用 Package-Update](reinstalling-and-updating-packages.md#using-update-package)。
 
@@ -58,7 +58,7 @@ ms.locfileid: "69999986"
 
 ### <a name="restore-packages-automatically-using-visual-studio"></a>使用 Visual Studio 自动还原程序包
 
-当根据[启用和禁用包还原](#enable-and-disable-package-restore-in-visual-studio)中的选项，从模板创建项目或生成项目时会自动执行包还原。 此外，在 NuGet 4.0+ 中，对 SDK 样式的项目（通常是 .NET Core 或 .NET Standard 项目）进行更改时还会自动进行还原。
+从模板创建项目或生成项目时，是否自动执行程序包还原取决于[启用和禁用程序包还原](#enable-and-disable-package-restore-in-visual-studio)中的选项。 此外，在 NuGet 4.0+ 中，对 SDK 样式的项目（通常是 .NET Core 或 .NET Standard 项目）进行更改时还会自动进行还原。
 
 1. 按照以下方式启用自动程序包还原：选择“工具” > “选项” > “NuGet 程序包管理器”，然后在“程序包还原”下选择“在 Visual Studio 中生成期间自动检查缺少的程序包”。     
 
@@ -66,9 +66,9 @@ ms.locfileid: "69999986"
 
 1. 生成项目。
 
-   如果仍未正确安装一个或多个单独的包，“解决方案资源管理器”会显示错误图标  。 右键单击并选择“管理 NuGet 包”，然后使用“包管理器”卸载并重新安装受影响的包   。 有关详细信息，请参阅[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md)
+   如果仍未正确安装一个或多个单独的包，“解决方案资源管理器”会显示错误图标  。 右键单击并选择“管理 NuGet 包”，然后使用“包管理器”卸载并重新安装受影响的包   。 有关详细信息，请参阅[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md)。
 
-   如果看到错误“此项目引用此计算机上缺少的 NuGet 包”或者“一个或更多 NuGet 包需要还原但无法还原，因为未授予许可”，则[启用自动还原](#enable-and-disable-package-restore-in-visual-studio)。 对于旧项目，亦请参阅[迁移到自动程序包还原](#migrate-to-automatic-package-restore-visual-studio)。 另请参阅[包还原疑难解答](Package-restore-troubleshooting.md)。
+   如果看到错误“此项目引用此计算机上缺少的 NuGet 包”或者“一个或更多 NuGet 包需要还原但无法还原，因为未授予许可”，则[启用自动还原](#enable-and-disable-package-restore-in-visual-studio)。 对于旧项目，亦请参阅[迁移到自动程序包还原](#migrate-to-automatic-package-restore-visual-studio)。 另请参阅[程序包还原疑难解答](Package-restore-troubleshooting.md)。
 
 ### <a name="restore-packages-manually-using-visual-studio"></a>使用 Visual Studio 手动还原程序包
 
@@ -76,17 +76,17 @@ ms.locfileid: "69999986"
 
 1. 在“解决方案资源管理器”中，右键单击解决方案并选择“还原 NuGet 程序包”   。
 
-   如果仍未正确安装一个或多个单独的包，“解决方案资源管理器”会显示错误图标  。 右键单击并选择“管理 NuGet 程序包”，然后使用“程序包管理器”卸载并重新安装受影响的程序包   。 有关详细信息，请参阅[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md)
+   如果仍未正确安装一个或多个单独的包，“解决方案资源管理器”会显示错误图标  。 右键单击并选择“管理 NuGet 程序包”，然后使用“程序包管理器”卸载并重新安装受影响的程序包   。 有关详细信息，请参阅[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md)。
 
-   如果看到错误“此项目引用此计算机上缺少的 NuGet 包”或者“一个或更多 NuGet 包需要还原但无法还原，因为未授予许可”，则[启用自动还原](#enable-and-disable-package-restore-in-visual-studio)。 对于旧项目，亦请参阅[迁移到自动程序包还原](#migrate-to-automatic-package-restore-visual-studio)。 另请参阅[包还原疑难解答](Package-restore-troubleshooting.md)。
+   如果看到错误“此项目引用此计算机上缺少的 NuGet 包”或者“一个或更多 NuGet 包需要还原但无法还原，因为未授予许可”，则[启用自动还原](#enable-and-disable-package-restore-in-visual-studio)。 对于旧项目，亦请参阅[迁移到自动程序包还原](#migrate-to-automatic-package-restore-visual-studio)。 另请参阅[程序包还原疑难解答](Package-restore-troubleshooting.md)。
 
 ### <a name="enable-and-disable-package-restore-in-visual-studio"></a>在 Visual Studio 中启用和禁用程序包还原
 
-在 Visual Studio 中，主要通过“工具” > “选项” > “NuGet 包管理器”控制包还原    ：
+在 Visual Studio 中，主要通过“工具” > “选项” > “NuGet 包管理器”控制程序包还原    ：
 
-![通过 NuGet 包管理器选项控制包还原](media/Restore-01-AutoRestoreOptions.png)
+![通过 NuGet 包管理器选项控制程序包还原](media/Restore-01-AutoRestoreOptions.png)
 
-- “允许 NuGet 下载缺失的包”通过更改 `NuGet.Config` 文件中的 [packageRestore 部分](../reference/nuget-config-file.md#packagerestore-section)的 `packageRestore/enabled` 设置控制包还原的所有窗体（该文件在 Windows 上位于 `%AppData%\NuGet\`，在 Mac/Linux 上位于 `~/.nuget/NuGet/`）  。 在 Visual Studio 中，此设置还可启用解决方案上下文菜单中的 Restore NuGet Packages 命令  。
+- “允许 NuGet 下载缺失的包”通过更改 `NuGet.Config` 文件中的 [packageRestore 部分](../reference/nuget-config-file.md#packagerestore-section)的 `packageRestore/enabled` 设置，控制程序包还原的所有窗体（该文件在 Windows 上位于 `%AppData%\NuGet\`，在 Mac/Linux 上位于 `~/.nuget/NuGet/`）  。 在 Visual Studio 中，此设置还可启用解决方案上下文菜单中的 Restore NuGet Packages 命令  。
 
     ```xml
     <configuration>
@@ -115,7 +115,7 @@ ms.locfileid: "69999986"
     </configuration>
     ```
 
-要为计算机上的所有用户启用或禁用包还原，开发人员或公司可以将配置设置添加到全局 `nuget.config` 文件。 全局 `nuget.config` 在 Windows 中位于 `%ProgramData%\NuGet\Config` 下，有时在特定的 `\{IDE}\{Version}\{SKU}\`Visual Studio 文件夹下，或者在 Mac/Linux 中位于 `~/.local/share` 下。 然后，各个用户可以按照项目级别的要求有选择地启用还原。 有关 NuGet 如何设置多个配置文件优先级的详细信息，请参阅[常见 NuGet 配置](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied)。
+要为计算机上的所有用户启用或禁用程序包还原，开发人员或公司可以将配置设置添加到全局 `nuget.config` 文件。 全局 `nuget.config` 在 Windows 中位于 `%ProgramData%\NuGet\Config` 下，有时在特定的 `\{IDE}\{Version}\{SKU}\`Visual Studio 文件夹下，或者在 Mac/Linux 中位于 `~/.local/share` 下。 然后，各个用户可以按照项目级别的要求有选择地启用还原。 有关 NuGet 如何设置多个配置文件优先级的详细信息，请参阅[常见 NuGet 配置](../consume-packages/configuring-nuget-behavior.md#how-settings-are-applied)。
 
 > [!Important]
 > 如果直接在 `nuget.config` 中编辑 `packageRestore` 设置，请重启 Visual Studio，以便“选项”对话框显示当前值  。
@@ -136,7 +136,7 @@ ms.locfileid: "69999986"
 
 ## <a name="restore-using-msbuild"></a>使用 MSBuild 进行还原
 
-使用 [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) 命令通过 PackageReference 还原项目文件中列出的程序包。 此命令仅适用于 Visual Studio 2017 及更高版本附带的 NuGet 4.x+ 和 MSBuild 15.1+。 `nuget restore` 和 `dotnet restore` 均对适用项目使用此命令。
+使用 [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) 命令还原项目文件中通过 PackageReference 列出的程序包。 此命令仅适用于 Visual Studio 2017 及更高版本附带的 NuGet 4.x+ 和 MSBuild 15.1+。 `nuget restore` 和 `dotnet restore` 均对适用项目使用此命令。
 
 1. 打开开发人员命令提示符（在“搜索”框中，键入“开发人员命令提示符”）   。
 
@@ -163,7 +163,7 @@ ms.locfileid: "69999986"
 
 ## <a name="restore-using-azure-devops-server"></a>使用 Azure DevOps Server 进行还原
 
-如果你使用的是 TFS 2013 或更高版本的 Team Build 模板，Azure DevOps Server 和 TFS 2013 及更高版本会在生成期间自动还原包。 对于较早的 TFS 版本，可以包含一个生成步骤来运行命令行还原选项，或者选择将生成模板迁移到更高版本。 有关详细信息，请参阅[使用 Team Foundation Build 设置包还原](../consume-packages/team-foundation-build.md)。
+如果你使用的是 TFS 2013 或更高版本的 Team Build 模板，Azure DevOps Server 和 TFS 2013 及更高版本会在生成期间自动还原包。 对于较早的 TFS 版本，可以包含一个生成步骤来运行命令行还原选项，或者选择将生成模板迁移到更高版本。 有关详细信息，请参阅[使用 Team Foundation Build 设置程序包还原](../consume-packages/team-foundation-build.md)。
 
 ## <a name="constrain-package-versions-with-restore"></a>使用还原约束包版本
 
@@ -201,25 +201,25 @@ NuGet 通过任意方法还原包时，将遵守你在 `packages.config` 或项�
 - 使用 `nuget locals http-cache -clear` 或 `dotnet nuget locals http-cache --clear` 清除缓存。
 - 暂时将 NUGET_HTTP_CACHE_PATH 环境变量设置为其他文件夹。
 
-## <a name="migrate-to-automatic-package-restore-visual-studio"></a>迁移到自动包还原 (Visual Studio)
+## <a name="migrate-to-automatic-package-restore-visual-studio"></a>迁移到自动程序包还原 (Visual Studio)
 
-对于 NuGet 2.6 及更早版本，以前支持集成 MSBuild 的包恢复，但现在不再支持。 （通常通过右键单击 Visual Studio 中的解决方案并选择“启用 NuGet 包还原”  来启用）。 如果项目使用已弃用的集成 MSBuild 的包还原，请迁移到自动包还原。
+对于 NuGet 2.6 及更早版本，以前支持集成 MSBuild 的包恢复，但现在不再支持。 （通常通过右键单击 Visual Studio 中的解决方案并选择“启用 NuGet 程序包还原”  来启用）。 如果项目使用已弃用的集成 MSBuild 的程序包还原，请迁移到自动程序包还原。
 
-使用集成 MSBuild 的包还原的项目通常包含带有三个文件的 .nuget  文件夹：NuGet.config  、nuget.exe  和 NuGet.targets  。 若存在 NuGet.targets  文件，将确定 NuGet 是否将继续使用集成 MSBuild 的方法，因此在迁移期间必须删除此文件。
+使用集成 MSBuild 的程序包还原的项目通常包含带有三个文件的 .nuget  文件夹：NuGet.config  、nuget.exe  和 NuGet.targets  。 NuGet.targets 文件的存在与否决定了 NuGet 是否继续使用集成 MSBuild 的方法，因此在迁移期间必须删除此文件。 
 
-要迁移到自动包还原，请执行以下操作：
+要迁移到自动程序包还原，请执行以下操作：
 
 1. 关闭 Visual Studio。
 2. 删除 .nuget/nuget.exe  和 .nuget/NuGet.targets  。
 3. 对于每个项目文件，删除 `<RestorePackages>` 元素并删除对 NuGet.targets  的任何引用。
 
-要测试自动包还原，请执行以下操作：
+要测试自动程序包还原，请执行以下操作：
 
 1. 删除解决方案中的“packages”文件夹  。
 2. 在 Visual Studio 中打开解决方案并开始生成。
 
-   自动包还原应下载并安装每个依赖包，而不将它们添加到源代码管理中。
+   自动程序包还原应下载并安装每个依赖包，而不将它们添加到源代码管理中。
 
 ## <a name="troubleshooting"></a>疑难解答
 
-请参阅[包还原疑难解答](package-restore-troubleshooting.md)。
+请参阅[程序包还原疑难解答](package-restore-troubleshooting.md)。
