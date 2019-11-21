@@ -12,12 +12,12 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 0197902e4dbc18893d68833fbcfe4263f185a594
-ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
+ms.openlocfilehash: 03ab4e1f3501055abedf430395de095d773bc9da
+ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71307190"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74253930"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
@@ -130,7 +130,7 @@ NuGet.org 对符号包具有以下约束：
 5) 将从 snupkg 的 nuspec 中排除 ```authors``` 和 ```owners``` 字段。
 6) 不要使用 ```<license>``` 元素。 .snupkg 与对应的 .nupk 位于同一个许可证中。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 考虑使用源链接来启用 .NET 程序集的源代码调试。 有关详细信息，请参阅[源链接指南](/dotnet/standard/library-guidance/sourcelink)。
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: c0e6de2c3b9978538d504f4af6e744ece43b4a4d
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 8727f67608593e6ae8b96daa81b7423782dfc219
+ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488932"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096928"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>快速入门：创建并发布包 (dotnet CLI)
 
@@ -33,8 +33,6 @@ ms.locfileid: "69488932"
 1. 类型 `dotnet new classlib`，它使用项目当前文件夹的名称。
 
    这会创建新项目。
-
-1. 使用 `dotnet run` 来测试已正确创建的应用。
 
 ## <a name="add-package-metadata-to-the-project-file"></a>将包元数据添加到项目文件
 
