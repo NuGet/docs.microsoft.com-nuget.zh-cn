@@ -6,12 +6,12 @@ ms.author: anangaur
 ms.date: 09/23/2019
 ms.topic: conceptual
 ms.reviewer: karann-msft
-ms.openlocfilehash: 120b463fda856fe9dd407b6eba32d60e0918f763
-ms.sourcegitcommit: 188ade66b7ac807ba1667c77cfb9325bf89a8a4a
+ms.openlocfilehash: 70666ddf9cd7bdc448d29d4235e57bc91e2c003e
+ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71248881"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74096885"
 ---
 # <a name="deprecating-packages"></a>弃用包
 
@@ -45,7 +45,7 @@ ms.locfileid: "71248881"
 ### <a name="visual-studio"></a>Visual Studio 
 *自 Visual Studio 2019 版本16.3 起可用*
 
-Visual Studio 警告称 `Installed` 选项卡上使用了已弃用的包。它会将你转到此包及其弃用信息（内附弃用原因和改用的备用包（若有））。
+Visual Studio 警告称 `Installed` 选项卡上使用了已弃用的包。它将显示有关此包的警告及其弃用信息（内附弃用原因和改用的备用包（若有））。
 
    ![包管理器的 Visual Studio installed 选项卡上的已弃用的包](media/deprecation-vs.png)
 

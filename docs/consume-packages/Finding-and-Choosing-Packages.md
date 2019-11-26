@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9947a490e4373bb0b8b7fb0814828ff2a60615a8
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 0691660f20f9b5a1ff0dad110ee87c6e29c0a56e
+ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73611075"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74253937"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>针对项目查找和评估 NuGet 包
 
@@ -82,9 +82,12 @@ NuGet 支持本机 C++ 包，这些包可在 Visual Studio 的 C++ 项目中使�
 
     ![包清单页面上的下载统计数据](media/Finding-03-Downloads.png)
 
-- GitHub 使用情况：在包页面上，“GitHub 使用情况”部分会列出依赖于此包的主要 GitHub 存储库   。 许多常见的 GitHub 存储库所依赖的包通常是更好的选择。
+- GitHub 使用情况：在包页面上，“GitHub 使用情况”部分列出了依赖此包且在 GitHub 上星级很高的公共 GitHub 存储库   。 GitHub 存储库的星级通常表示该存储库在 GitHub 用户当中的受欢迎程度（星级越高通常表示越受欢迎）。 请访问 [GitHub 的入门页面](https://help.github.com/en/github/getting-started-with-github/saving-repositories-with-stars#about-stars)，详细了解 GitHub 的星级和存储库排名系统。
 
     ![GitHub 使用情况](media/GitHub-Usage.png)
+
+    > [!Note]
+    > 包的“GitHub 使用情况”部分定期自动生成、无需人工审阅各个存储库且仅用于参考目的，它是为了向你显示依赖此包且在 GitHub 用户当中很受欢迎的 GitHub 存储库。
 
 - *版本历史记录*：在包页面上，可在“信息”下查找最新更新的日期和查看“版本历史记录”   。 维护良好的包应具有最新更新和丰富的版本历史记录。 疏于维护的包则仅具有几次更新，并且通常已长时间未更新。
 

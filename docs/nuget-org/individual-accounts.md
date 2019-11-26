@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 63c6b5eb5ad635e436b4d53a5f833af35f72d76f
-ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
+ms.openlocfilehash: 7951b3db0cdcaee0a1eb955a5bf6fedce24c79c9
+ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999965"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74253954"
 ---
 # <a name="individual-accounts-on-nugetorg"></a>NuGet.org 上的个人帐户
 
@@ -48,7 +48,7 @@ ms.locfileid: "69999965"
 
 ## <a name="enable-two-factor-authentication-2fa"></a>启用双因素身份验证 (2FA)
 
-为了更好地保护你的帐户，请启用双因素身份验证（推荐）。
+双因素身份验证 (2FA) 是登录网站或应用时采用的额外安全保障。 由于 2FA，你必须使用 Microsoft 帐户 (MSA) 进行登录，并另外提供一种只有你知道或有权访问的身份验证形式。 为了更好地保护你的帐户，请启用双因素身份验证（推荐）。
 
 1. 登录到你的帐户后，打开个人资料，然后选择“登录帐户”下的“启用”   。
 
@@ -69,6 +69,9 @@ ms.locfileid: "69999965"
    ![启用 2FA](media/nuget-org-enter-code-2fa.png)
 
 5. 按照任何其他说明完成双因素身份验证。
+
+> [!Tip]
+> 对于可能链接了用于登录 NuGet.org 的 Microsoft 帐户的其他帐户或服务，为 NuGet.org 帐户启用 2FA 不会影响它们的身份验证设置。
 
 ## <a name="delete-a-nugetorg-account"></a>删除 NuGet.org 帐户
 
