@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 231947148295e0c06dcec5aa0e1f479d654a8803
-ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
+ms.openlocfilehash: b6a009832430ee08f51ea1028feb878a39f45222
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74096871"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825138"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -53,6 +53,7 @@ ms.locfileid: "74096871"
 ## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a>对没有 PackageReferences 的项目使用 PackageReference
 
 高级：如果没有在项目中安装包（项目文件中没有 PackageReference，也没有 packages.config 文件），但要将项目还原为 PackageReference 样式，可以在项目文件中将项目属性 RestoreProjectStyle 设置为 PackageReference。
+
 ```xml
 <PropertyGroup>
     <!--- ... -->
@@ -60,6 +61,7 @@ ms.locfileid: "74096871"
     <!--- ... -->
 </PropertyGroup>    
 ```
+
 如果引用 PackageReference 样式的项目（现有 csproj 或 SDK 样式的项目），这可能很有用。 这可让其他项目以“可传递”的方式引用这些项目引用的包。
 
 ## <a name="packagereference-and-sources"></a>PackageReference 和源
@@ -206,16 +208,19 @@ NuGet 4.9  或更高版本以及 Visual Studio 2017 15.9  或更高版本随附�
 对于 CI/CD 和其他方案（不想匆忙更改包依赖项），为此可以将 `lockedmode` 设置为 `true`：
 
 对于 dotnet.exe，请运行：
+
 ```
 > dotnet.exe restore --locked-mode
 ```
 
 对于 msbuild.exe，请运行：
+
 ```
 > msbuild.exe -t:restore -p:RestoreLockedMode=true
 ```
 
 此外，还可以在项目文件中设置此条件 MSBuild 属性：
+
 ```xml
 <PropertyGroup>
     <!--- ... -->
@@ -232,12 +237,14 @@ NuGet 4.9  或更高版本以及 Visual Studio 2017 15.9  或更高版本随附�
 但是，如果你的项目是不交付的库项目或其他项目依赖的常用代码项目，则不应  将锁定文件作为源代码的一部分签入。 保留锁定文件没有任何坏处，但在依赖于此常用代码项目的项目还原/生成期间，锁定文件中列出的常用代码项目的锁定的包依赖项可能无法使用。
 
 例如，
+
 ```
 ProjectA
   |------> PackageX 2.0.0
   |------> ProjectB
              |------>PackageX 1.0.0
 ```
+
 如果 `ProjectA` 在 `PackageX` 版本 `2.0.0` 上具有依赖项并引用依赖于 `PackageX` 版本 `1.0.0` 的 `ProjectB`，则 `ProjectB` 的锁定文件将列出 `PackageX` 版本 `1.0.0` 的依赖项。 但是，当生成 `ProjectA` 时，其锁定文件将包含 `ProjectB` 锁定文件中列出的 `PackageX` 版本 `2.0.0`  （而不是 `1.0.0`  ）上的依赖项。 因此，常用代码项目的锁定文件对依赖于它的项目进行解析的包几乎没有控制。
 
 ### <a name="lock-file-extensibility"></a>锁定文件可扩展性

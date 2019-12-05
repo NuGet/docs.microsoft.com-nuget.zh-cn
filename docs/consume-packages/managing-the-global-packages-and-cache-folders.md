@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: f5d418fd5b6b9bb88958d6b7e9e3034f40485a7d
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: e2672aa0bf57242526364639f0df74f9d1adb934
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419956"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825205"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>管理全局包、缓存和临时文件夹
 
@@ -54,7 +54,7 @@ plugins-cache: C:\Users\user1\AppData\Local\NuGet\plugins-cache
 
 还可以使用 [dotnet nuget locals 命令](/dotnet/core/tools/dotnet-nuget-locals)查看文件夹位置：
 
-```cli
+```dotnetcli
 dotnet nuget locals all --list
 ```
 

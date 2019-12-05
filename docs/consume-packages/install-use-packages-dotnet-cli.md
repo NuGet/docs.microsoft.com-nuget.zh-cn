@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: d9e9f0026e4c907351b4b0cd0adced28a4670575
-ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
+ms.openlocfilehash: 67cca81c48970c7f2e2cf0a64ee5ba57704a31e2
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68860599"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825151"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>使用 dotnet CLI 安装和管理包
 
@@ -32,13 +32,13 @@ dotnet CLI 适用于 .NET Core 和 .NET Standard 项目（SDK 样式的项目类
 
 2. 运行以下命令安装 Nuget 包：
 
-    ```cli
+    ```dotnetcli
     dotnet add package <PACKAGE_NAME>
     ```
 
     例如，若要安装 `Newtonsoft.Json` 包，请使用以下命令
 
-    ```cli
+    ```dotnetcli
     dotnet add package Newtonsoft.Json
     ```
 
@@ -56,13 +56,13 @@ dotnet CLI 适用于 .NET Core 和 .NET Standard 项目（SDK 样式的项目类
 
 如果未指定版本，NuGet 将安装最新版本的包。 还可以使用 [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x) 命令安装特定版本的 Nuget 包：
 
-```cli
+```dotnetcli
 dotnet add package <PACKAGE_NAME> -v <VERSION>
 ```
 
 例如，要添加 12.0.1 版的 `Newtonsoft.Json` 包，请使用以下命令：
 
-```cli
+```dotnetcli
 dotnet add package Newtonsoft.Json -v 12.0.1
 ```
 
@@ -70,7 +70,7 @@ dotnet add package Newtonsoft.Json -v 12.0.1
 
 可以使用 [dotnet list package](/dotnet/core/tools/dotnet-list-package?tabs=netcore2x) 命令列出项目的包引用。
 
-```cli
+```dotnetcli
 dotnet list package
 ```
 
@@ -78,13 +78,13 @@ dotnet list package
 
 使用 [dotnet remove package](/dotnet/core/tools/dotnet-remove-package?tabs=netcore2x) 命令从项目文件中移除包引用。
 
-```cli
+```dotnetcli
 dotnet remove package <PACKAGE_NAME>
 ```
 
 例如，要移除 `Newtonsoft.Json` 包，请使用以下命令
 
-```cli
+```dotnetcli
 dotnet remove package Newtonsoft.Json
 ```
 
