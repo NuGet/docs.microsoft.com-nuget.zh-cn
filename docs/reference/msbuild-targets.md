@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1c2af0b42e88623fa7a1216c17aa269e9b0a58cf
-ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
+ms.openlocfilehash: ed3545454a811c311190a191c566d9e9192f3fcc
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74096913"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825068"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -46,27 +46,27 @@ NuGet 4.0+
 
 请注意，`.nuspec` 的 `Owners` 和 `Summary` 属性不受 MSBuild 支持。
 
-| 属性/NuSpec 值 | MSBuild 属性 | Default | 注意 |
+| 属性/NuSpec 值 | MSBuild 属性 | 默认值 | 注释 |
 |--------|--------|--------|--------|
 | Id | PackageId | AssemblyName | MSBuild 的 $(AssemblyName) |
-| Version | PackageVersion | Version | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
+| {2&gt;版本&lt;2} | PackageVersion | {2&gt;版本&lt;2} | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
 | VersionPrefix | PackageVersionPrefix | 空 | 设置 PackageVersion 会覆盖 PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | 空 | MSBuild 的 $(VersionSuffix)。 设置 PackageVersion 会覆盖 PackageVersionSuffix |
 | Authors | Authors | 当前用户的用户名 | |
 | Owners | 不可用 | NuSpec 中不存在 | |
-| Title | Title | PackageId| |
+| 职务 | 职务 | PackageId| |
 | 描述 | 描述 | “包描述” | |
-| Copyright | Copyright | 空 | |
-| requireLicenseAcceptance | PackageRequireLicenseAcceptance | False | |
-| 照 | PackageLicenseExpression | 空 | 对应于 `<license type="expression">` |
-| 照 | PackageLicenseFile | 空 | 对应到 `<license type="file">`。 需要显式打包所引用的许可证文件。 |
+| 版权信息 | 版权信息 | 空 | |
+| requireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
+| 许可证 | PackageLicenseExpression | 空 | 对应于 `<license type="expression">` |
+| 许可证 | PackageLicenseFile | 空 | 对应到 `<license type="file">`。 需要显式打包所引用的许可证文件。 |
 | LicenseUrl | PackageLicenseUrl | 空 | `PackageLicenseUrl` 已弃用，请使用 PackageLicenseExpression 或 PackageLicenseFile 属性 |
 | ProjectUrl | PackageProjectUrl | 空 | |
 | 图标 | PackageIcon | 空 | 需要显式打包所引用的图标图像文件。|
 | IconUrl | PackageIconUrl | 空 | 为了获得最佳的下层体验，除了 `PackageIcon`之外，还应指定 `PackageIconUrl`。 更长的期限，`PackageIconUrl` 将被弃用。 |
 | Tags | PackageTags | 空 | 使用分号分隔标记。 |
 | ReleaseNotes | PackageReleaseNotes | 空 | |
-| 存储库/Url | RepositoryUrl | 空 | 用于克隆或检索源代码的存储库 URL。 示例： *https://github.com/NuGet/NuGet.Client.git* |
+| 存储库/Url | RepositoryUrl | 空 | 用于克隆或检索源代码的存储库 URL。 例如： https://github.com/NuGet/NuGet.Client.git |
 | 存储库/类型 | RepositoryType | 空 | 存储库类型。 示例： *git*、 *tfs*。 |
 | 存储库/分支 | RepositoryBranch | 空 | 可选存储库分支信息。 还必须为此属性指定要包含的*RepositoryUrl* 。 示例： *master* （NuGet 4.7.0 +） |
 | 存储库/提交 | RepositoryCommit | 空 | 可选的存储库提交或更改集，指示针对其生成包的源。 还必须为此属性指定要包含的*RepositoryUrl* 。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* （NuGet 4.7.0 +） |
@@ -81,7 +81,7 @@ NuGet 4.0+
 - PackageId
 - Authors
 - 描述
-- Copyright
+- 版权信息
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
 - PackageLicenseExpression
@@ -114,7 +114,7 @@ NuGet 4.0+
 
 ### <a name="suppress-dependencies"></a>禁止依赖项
 
-若要取消生成的 NuGet 包中的包依赖项，请将 `SuppressDependenciesWhenPacking` 设置为 `true`，这将允许跳过生成的 nupkg 文件中的所有依赖项。
+若要取消生成的 NuGet 包中的包依赖项，请将 `SuppressDependenciesWhenPacking` 设置为 `true` 这样将允许跳过生成的 nupkg 文件中的所有依赖项。
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
@@ -131,7 +131,7 @@ NuGet 4.0+
 
 打包图标图像文件时，需要使用 `PackageIcon` 属性来指定包路径，相对于包的根。 此外，还需要确保文件已包含在包中。 图像文件大小限制为 1 MB。 支持的文件格式包括 JPEG 和 PNG。 建议使用64x64 的图像分辨率。
 
-例如:
+例如：
 
 ```xml
 <PropertyGroup>
@@ -242,7 +242,7 @@ NuGet 4.0+
 
 [了解有关 NuGet.org 所接受的许可证表达式和许可证的详细信息](nuspec.md#license)。
 
-打包许可证文件时，需要使用 PackageLicenseFile 属性来指定相对于包根的包路径。 此外，还需要确保文件已包含在包中。 例如:
+打包许可证文件时，需要使用 PackageLicenseFile 属性来指定相对于包根的包路径。 此外，还需要确保文件已包含在包中。 例如：
 
 ```xml
 <PropertyGroup>
@@ -262,7 +262,7 @@ NuGet 4.0+
 
 ### <a name="packing-using-a-nuspec"></a>使用 .nuspec 打包
 
-尽管建议你改为在项目文件中包含通常位于 `.nuspec` 文件中的[所有属性](../reference/msbuild-targets.md#pack-target)，但你可以选择使用 `.nuspec` 文件来打包项目。 对于使用 `PackageReference` 的非 SDK 样式项目，必须导入 `NuGet.Build.Tasks.Pack.targets`，以便可以执行包任务。 你仍需要还原项目，然后才能打包 nuspec 文件。 （默认情况下，SDK 样式项目包括包目标。）
+尽管建议你改为在项目文件中包含通常位于 `.nuspec` 文件中的[所有属性](../reference/msbuild-targets.md#pack-target)，但你可以选择使用 `.nuspec` 文件来打包项目。 对于使用 `PackageReference`的非 SDK 样式项目，必须导入 `NuGet.Build.Tasks.Pack.targets` 以便可以执行 pack 任务。 你仍需要还原项目，然后才能打包 nuspec 文件。 （默认情况下，SDK 样式项目包括包目标。）
 
 项目文件的目标框架不相关，并且不会在对 nuspec 进行打包时使用。 以下三个 MSBuild 属性与使用 `.nuspec` 的打包相关：
 
@@ -272,7 +272,7 @@ NuGet 4.0+
 
 如果使用 `dotnet.exe` 打包项目，请使用类似于下面的命令：
 
-```cli
+```dotnetcli
 dotnet pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:NuspecProperties=<> -p:NuspecBasePath=<Base path> 
 ```
 
@@ -308,12 +308,12 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 #### <a name="targetsfortfmspecificbuildoutput"></a>TargetsForTfmSpecificBuildOutput
 
-编写一个自定义目标并将其指定为 `$(TargetsForTfmSpecificBuildOutput)` 属性的值。 对于需要进入 `BuildOutputTargetFolder` （默认情况下为 lib）的任何文件，目标应将这些文件写到 ItemGroup `BuildOutputInPackage` 中，并设置以下两个元数据值：
+编写一个自定义目标并将其指定为 `$(TargetsForTfmSpecificBuildOutput)` 属性的值。 对于需要进入 `BuildOutputTargetFolder` 的任何文件（默认情况下 lib），目标应将这些文件写入 ItemGroup `BuildOutputInPackage` 并设置以下两个元数据值：
 
 - `FinalOutputPath`：文件的绝对路径;如果未提供，则标识用于计算源路径。
-- `TargetPath`：（可选）当文件需要进入 `lib\<TargetFramework>` 内的子文件夹时设置，如在其各自的区域性文件夹下的附属程序集。 默认为文件的名称。
+- `TargetPath`：（可选）当文件需要进入到 `lib\<TargetFramework>` 中的子文件夹时设置，如在其各自的区域性文件夹下的附属程序集。 默认为文件的名称。
 
-示例:
+示例：
 
 ```xml
 <PropertyGroup>
@@ -336,7 +336,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 - `PackagePath`：应在包中输出文件的路径。 如果将多个文件添加到同一个包路径，NuGet 将发出警告。
 - `BuildAction`：要分配给文件的生成操作，只有当包路径在 `contentFiles` 文件夹中时才是必需的。 默认值为 "None"。
 
-例如：
+示例：
 ```xml
 <PropertyGroup>
   <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomContentTarget</TargetsForTfmSpecificContentInPackage>
@@ -385,7 +385,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 | RestoreAdditionalProjectFallbackFoldersExcludes | 排除 `RestoreAdditionalProjectFallbackFolders` 中指定的回退文件夹 |
 | RestoreTaskAssemblyFile | `NuGet.Build.Tasks.dll` 的路径。 |
 | RestoreGraphProjectInput | 要还原的以分号分隔的项目列表，其中应包含绝对路径。 |
-| RestoreUseSkipNonexistentTargets  | 通过 MSBuild 收集项目后，它将确定是否使用 `SkipNonexistentTargets` 优化来收集这些项目。 如果未设置，则默认为 `true`。 如果无法导入项目的目标，则结果是一个故障快速的行为。 |
+| RestoreUseSkipNonexistentTargets  | 通过 MSBuild 收集项目时，它将确定是否使用 `SkipNonexistentTargets` 优化来收集这些项目。 如果未设置，则默认为 `true`。 如果无法导入项目的目标，则结果是一个故障快速的行为。 |
 | MSBuildProjectExtensionsPath | Output 文件夹，默认为 `BaseIntermediateOutputPath` 和 `obj` 文件夹。 |
 | RestoreForce | 在基于 PackageReference 的项目中，将强制解析所有依赖项，即使上次还原已成功。 指定此标志与删除 `project.assets.json` 文件类似。 这不会绕过 http 缓存。 |
 | RestorePackagesWithLockFile | 选择使用锁定文件。 |
@@ -413,7 +413,7 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 
 还原会在生成 `obj` 文件夹中创建以下文件：
 
-| 文件 | 描述 |
+| File | 描述 |
 |--------|--------|
 | `project.assets.json` | 包含所有包引用的依赖项关系图。 |
 | `{projectName}.projectFileExtension.nuget.g.props` | 包中包含的对 MSBuild 属性的引用 |
@@ -434,7 +434,7 @@ msbuild -t:restore,build
 msbuild -t:build -restore
 ```
 
-相同的逻辑也适用于与 `build` 类似的其他目标。
+相同的逻辑也适用于类似于 `build`的其他目标。
 
 ### <a name="packagetargetfallback"></a>PackageTargetFallback
 
