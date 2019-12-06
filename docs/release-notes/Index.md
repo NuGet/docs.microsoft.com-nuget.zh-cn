@@ -5,16 +5,18 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: f97647ec57ad08e654a66d58f6c133f1b9cc18d5
-ms.sourcegitcommit: 575a04d4ca424864b802e98c2d9f7a271ab1c48c
+ms.openlocfilehash: 2e916e96d7ab67f380c3881cd1a73b09c363154e
+ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70839626"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74825230"
 ---
 # <a name="release-notes"></a>发行说明
 
 [已知问题](../release-notes/known-issues.md)
+
+[NuGet 5.4](../release-notes/NuGet-5.4.md)
 
 [NuGet 5.3](../release-notes/NuGet-5.3.md)
 
