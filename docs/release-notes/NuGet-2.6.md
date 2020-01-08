@@ -1,107 +1,107 @@
 ---
 title: NuGet 2.6 发行说明
-description: 发行说明适用于 NuGet 2.6.1 的 WebMatrix 包括已知的问题、 bug 修复、 新增的功能和 Dcr。
+description: NuGet 2.6.1 for WebMatrix 的发行说明，包括已知问题、bug 修复、新增功能和 Dcr。
 author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: f011a8db7ac2067a2ed7db67849d63f7dd40d1ce
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 5e80965aad4caa69130be31a37b7f5f5ffb12ea6
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551938"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75384119"
 ---
 # <a name="nuget-26-release-notes"></a>NuGet 2.6 发行说明
 
-[NuGet 2.5 发行说明](../release-notes/nuget-2.5.md) | [NuGet 2.6.1 for WebMatrix 发行说明](../release-notes/nuget-2.6.1-for-webmatrix.md)
+[Nuget 2.5 发行说明](../release-notes/nuget-2.5.md) | [Nuget 2.6.1 For WebMatrix 发行说明](../release-notes/nuget-2.6.1-for-webmatrix.md)
 
-NuGet 2.6 已于 2013 年 6 月 26 日发布。
+NuGet 2.6 于2013年6月26日发布。
 
-## <a name="notable-features-in-the-release"></a>在版本中值得注意的功能
+## <a name="notable-features-in-the-release"></a>版本中值得注意的功能
 
-### <a name="support-for-visual-studio-2013"></a>对 Visual Studio 2013 的支持
+### <a name="support-for-visual-studio-2013"></a>支持 Visual Studio 2013
 
-NuGet 2.6 是提供对 Visual Studio 2013 的支持的第一个版本。 例如 Visual Studio 2012，NuGet 包管理器扩展包含在 Visual Studio 的每个版本。
+NuGet 2.6 是为 Visual Studio 2013 提供支持的第一个版本。 和 Visual Studio 2012 一样，每个版本的 Visual Studio 中都包含 NuGet 包管理器扩展。
 
-为了提供尽可能最好的支持 Visual Studio 2013，同时仍支持 Visual Studio 2010 和 Visual Studio 2012 中，和保持扩展大小越小越好，我们会生成适用于 Visual Studio 2013 时的单独扩展原来的扩展名继续针对 Visual Studio 2010 和 2012年。
+若要为 Visual Studio 2013 提供尽可能好的支持，同时仍然支持 Visual Studio 2010 和 Visual Studio 2012，并尽可能缩小扩展大小，我们将为 Visual Studio 2013 生成一个单独的扩展，同时原始扩展将继续面向 Visual Studio 2010 和2012。
 
-从 NuGet 2.6 开始，我们将发布两个扩展，按如下所示：
+从 NuGet 2.6 开始，我们将发布两个扩展，如下所示：
 
-1. [NuGet 包管理器](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManager)（适用于 Visual Studio 2010 和 2012年）
+1. [NuGet 包管理器](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManager)（适用于 Visual Studio 2010 和2012）
 1. [Visual Studio 2013 的 NuGet 包管理器](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManagerforVisualStudio2013)
 
-此拆分[nuget.org](https://nuget.org)主页的"安装 NuGet"按钮可转到[安装 NuGet](../install-nuget-client-tools.md)页上，在哪里可以找到有关安装不同的 NuGet 客户端的详细信息。
+使用此拆分时， [nuget.org](https://nuget.org)主页的 "安装 nuget" 按钮将转到 "安装[nuget](../install-nuget-client-tools.md) " 页，您可以在其中找到有关安装不同 nuget 客户端的详细信息。
 
 <a name="xdt"></a>
 
 ### <a name="xdt-webconfig-transformation-support"></a>XDT Web.config 转换支持
 
-NuGet 客户端的高请求功能之一是支持使用 XDT 转换引擎，在 Visual Studio 生成的配置转换中使用该功能更强大的 XML 转换。
+NuGet 客户端最常请求的功能之一就是使用在 Visual Studio 生成配置转换中使用的 XDT 转换引擎，支持更强大的 XML 转换。
 
-在 2013 年 4 月，我们使 XDT 的 NuGet 支持的两个大公告。 第一种是 XDT 库本身已被本身[发布为 NuGet 包](https://nuget.org/packages/Microsoft.Web.Xdt)并[CodePlex 上的开源](http://xdt.codeplex.com/)。 此步骤启用通过包括 NuGet 客户端的其他开放源代码软件自由地使用 XDT 引擎。 第二个公告时计划使用 XDT 引擎支持在 NuGet 客户端中进行转换。 NuGet 2.6 包括此集成。
+2013年4月，我们为 XDT 提供了两个有关 NuGet 支持的重要公告。 第一种是，XDT 库本身[作为 NuGet 包发布](https://nuget.org/packages/Microsoft.Web.Xdt)，并[在 CodePlex 上开放](http://xdt.codeplex.com/)。 此步骤启用了其他开源软件（包括 NuGet 客户端）可自由使用的 XDT 引擎。 第二个公告是在 NuGet 客户端中支持使用 XDT 引擎进行转换的计划。 NuGet 2.6 包括此集成。
 
-#### <a name="how-it-works"></a>其工作原理
+#### <a name="how-it-works"></a>工作原理
 
-若要利用 NuGet 的 XDT 支持，机制类似于那些[当前配置转换功能](../create-packages/source-and-config-file-transformations.md)。
-转换文件添加到包的内容文件夹。 但是，虽然配置转换使用单个文件进行安装和卸载，XDT 转换允许精细地控制这两个过程使用以下文件：
+若要利用 NuGet 的 XDT 支持，该结构与[当前配置转换功能](../create-packages/source-and-config-file-transformations.md)的外观类似。
+转换文件被添加到包的内容文件夹中。 但是，虽然配置转换使用单个文件进行安装和卸载，但 XDT 转换使用以下文件实现对这两个过程的精细控制：
 
 - Web.config.install.xdt
 - Web.config.uninstall.xdt
 
-此外，NuGet 使用文件后缀来确定哪个引擎运行的转换，因此使用现有 web.config.transforms 包将继续工作。 XDT 转换还可以应用于任何 XML 文件 (而不仅仅是 web.config)，因此可以在项目中利用这对于其他应用程序。
+此外，NuGet 使用文件后缀来确定要为转换运行的引擎，以便使用现有 web.config 的包将继续工作。 XDT 转换还可以应用于任何 XML 文件（而不仅仅是 web.config），因此可以将此应用于项目中的其他应用程序。
 
-#### <a name="what-you-can-do-with-xdt"></a>您可以使用 XDT 做什么
+#### <a name="what-you-can-do-with-xdt"></a>可以通过 XDT 执行的操作
 
-XDT 的最大优势之一是其[简单但功能强大的语法](http://msdn.microsoft.com/library/dd465326.aspx)用于操作 XML dom。 结构 而不是只需覆盖到另一个结构的一个固定的文档结构，XDT 提供对匹配的元素中有许多种情况下，从简单的属性名称匹配到完整的 XPath 支持的控制。 这意味着添加、 更新或删除属性，将新元素放置在特定位置，或替换或删除整个，XDT 一旦找到匹配的元素集，提供用于操作元素，一组丰富的函数元素与其子项。
+XDT 的最大优势之一是它的[简单但功能强大的语法](https://docs.microsoft.com/previous-versions/aspnet/dd465326(v=vs.110))，用于处理 XML DOM 的结构。 XDT 可以通过多种方式（从简单的属性名称匹配到完整的 XPath 支持）为匹配元素提供控件，而不是只是将一个固定文档结构覆盖到另一结构。 一旦找到匹配的元素或一组元素，XDT 就提供了一组丰富的用于操作元素的函数，无论是指添加、更新或删除属性、将新元素放在特定位置还是替换或删除整个元素及其子元素。
 
 ### <a name="machine-wide-configuration"></a>计算机范围的配置
 
-NuGet 的很好的优势之一是将拆否则为大型的可执行文件或库为一系列可进行集成，以及最重要的是维护和版本控制独立模块化组件。 此操作，一个副作用，但可能会变得更分段产品或产品系列的常规思路。
-NuGet 的自定义包源功能提供了一种方法的组织包;但是，自定义包源不是靠自己可发现的。
+NuGet 的优点之一是，它将其他大的可执行文件或库分解为一组模块化组件，这些组件可进行集成，并且最重要的维护和版本控制。 不过，这种情况的一个副作用是，产品或产品系列的传统思路可能会产生更多的碎片。
+NuGet 的自定义包源功能提供了一种组织包的方式;但是，自定义包源本身无法发现。
 
-NuGet 2.6 扩展配置的搜索路径 %programdata%/nuget/config 下的文件夹层次结构的 NuGet 逻辑。产品安装程序可以添加自定义 NuGet 配置文件来注册他们的产品的自定义包源此文件夹下。 此外，文件夹结构中支持产品、 版本和甚至 SKU IDE 的语义。 "上次中胜出"优先策略下的顺序应用这些目录中的设置。
+NuGet 2.6 通过在路径% ProgramData%/NuGet/Config. 下搜索文件夹层次结构来扩展用于配置 NuGet 的逻辑。产品安装程序可在此文件夹下添加自定义 NuGet 配置文件，以便为其产品注册自定义包源。 此外，文件夹结构还支持 IDE 的产品、版本甚至 SKU 的语义。 这些目录中的设置将按以下顺序应用，并具有 "last in wins" 优先级策略。
 
 1. %ProgramData%\NuGet\Config\*.config
 2. %ProgramData%\NuGet\Config\{IDE}\*.config
 3. %ProgramData%\NuGet\Config\{IDE}\{Version}\*.config
 4. %ProgramData%\NuGet\Config\{IDE}\{Version}\{SKU}\*.config
 
-在此列表中，{IDE} 占位符是特定于运行 NuGet IDE，因此对于 Visual Studio 中，它将是"visual Studio"。 {Version} 和 {SKU} 占位符 （例如由 IDE 提供"11.0"和"WDExpress"、"VWDExpress"和"Pro"分别)。 该文件夹然后可以包含许多不同 *.config 文件。
-因此，ACME 组件公司可以其产品安装程序的一部分，添加将会看到仅在 Visual Studio 2012 Professional 和 Ultimate 版本中创建以下文件路径的自定义包源：
+在此列表中，{IDE} 占位符特定于运行 NuGet 的 IDE，因此，在 Visual Studio 中，它将为 "VisualStudio"。 IDE （例如 "11.0" 和 "WDExpress"、"VWDExpress" 和 "Pro"）提供了 {Version} 和 {SKU} 占位符。 然后，文件夹可以包含许多不同的 * .config 文件。
+因此，ACME 组件公司可以作为其产品安装程序的一部分，添加自定义包源，仅在 Visual Studio 2012 的专业版和旗舰版（通过创建以下文件路径）中可见：
 
 %ProgramData%\NuGet\Config\VisualStudio\11.0\Pro\acme.config
 
-虽然文件夹结构非常简单的程序，如软件安装程序将计算机范围的包源添加到 NuGet 的配置，NuGet 配置对话框也进行了更新以便为包源的注册任一特定于用户的 （例如注册 %appdata%/nuget/nuget.config 中） 或计算机范围。
+虽然文件夹结构使软件安装程序等程序可以简单地将计算机范围的包源添加到 NuGet 的配置，但还更新了 NuGet 配置对话框，以允许将包源注册为用户特定的（例如，在% AppData%/NuGet/NuGet.Config 中注册）或计算机范围。
 
-通过 Visual Studio 2013 中，在安装文件，其中使用此功能：
+此功能的使用 Visual Studio 2013，其中的文件安装位置如下：
 
 %ProgramData%\NuGet\Config\VisualStudio\12.0\Microsoft.VisualStudio.config
 
-在此文件中，配置名为".NET Framework 包"的新包源。
+在此文件中，将配置名为 ".NET Framework 包" 的新包源。
 
-![NuGet 配置文件的计算机范围的设置](./media/NuGet-Config-File-Machine-Wide.png)
+![NuGet 配置文件计算机范围设置](./media/NuGet-Config-File-Machine-Wide.png)
 
-### <a name="contextualizing-search"></a>不一而足搜索
+### <a name="contextualizing-search"></a>Contextualizing 搜索
 
-由于提供的 NuGet 库包的数量将继续以指数速度增长，在 NuGet 优先级列表的顶部改善搜索曾经留下。 适用于 NuGet 计划推出的功能之一是搜索的项目的上下文搜索，这意味着，NuGet 将使用有关版本和 SKU 的 Visual Studio 的使用和生成的类型信息作为条件用于确定潜在相关性结果。
+随着 NuGet 库所提供的包数量不断增长，在 NuGet 优先级列表的顶部，提高搜索范围。 NuGet 的计划功能之一是上下文搜索，也就是说，NuGet 将使用有关所使用的 Visual Studio 版本和 SKU 的信息，以及要构建为确定潜在搜索相关性的条件的项目类型后果.
 
-从 NuGet 2.6 开始，每次安装包时，安装的上下文记录为安装操作数据的一部分。  搜索还发送相同的上下文信息，这将允许 NuGet 库，以通过上下文安装趋势来提高搜索结果。  NuGet 库的将来更新将启用此上下文相关的相关性提升。
+从 NuGet 2.6 开始，每次安装包时，安装的上下文都将记录为安装操作数据的一部分。  搜索还会发送相同的上下文信息，使 NuGet 库能够按上下文安装趋势增加搜索结果。  对 NuGet 库的未来更新将实现此上下文相关的相关性提升。
 
-### <a name="tracking-direct-installs-vs-dependency-installs"></a>跟踪直接安装 vs。依赖项安装
+### <a name="tracking-direct-installs-vs-dependency-installs"></a>跟踪直接安装与依赖项安装
 
-包创建者将越来越多地依赖于[包的统计信息](http://blog.nuget.org/20130226/Introducing-Package-Statistics.html)NuGet 库中提供。  一个明显缺少数据点作者已要求进行是直接的包将安装与依赖项安装之间的差异。  到目前为止，NuGet 客户端未发送任何上下文周围是否开发人员直接安装包，或者如果它已安装要满足依赖项的安装操作。
-有了 NuGet 2.6 开始针对安装操作将立即发送数据。  NuGet 库包的统计信息将该将数据公开为单独的安装操作，使用"-依赖关系"后缀。
+包作者依赖于 NuGet 库上提供的[包统计信息](http://blog.nuget.org/20130226/Introducing-Package-Statistics.html)。  作者要求的一个重要的数据点是直接包安装和依赖项安装之间的差异。  到现在为止，NuGet 客户端不会在安装操作周围发送任何上下文，无论开发人员是否直接安装了包，或者是否已安装以满足依赖项的需要。
+从 NuGet 2.6 开始，现在将为安装操作发送数据。  NuGet 库中的包统计信息会将这些数据作为单独的安装操作公开，并带有 "-依赖项" 后缀。
 
 * 安装
-* 安装依赖项
+* 安装-依赖项
 * 更新
-* 更新依赖关系
+* 更新-依赖项
 * 重新安装
-* 重新安装依赖项
+* 重新安装-依赖项
 
-除了不同的操作名称，也会安装记录依赖的包 id。  NuGet 库的将来更新将公开该数据在报表内，允许包创建者完全了解开发人员如何安装它们的包。
+除了不同的操作名称外，还会为安装记录依赖程序包 id。  对 NuGet 库的将来更新将在报表中公开这些数据，以使包创作者能够充分了解开发人员安装包的方式。
 
 ## <a name="bug-fixes"></a>Bug 修复
 
-NuGet 2.6 还包括多项 bug 修复。 有关工作的完整列表项固定在 NuGet 2.6 中，请查看[对于此版本的 NuGet 问题跟踪程序](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.6&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=All)。
+NuGet 2.6 还包括多个 bug 修复。 有关 NuGet 2.6 中已修复的工作项的完整列表，请查看[此版本的 NuGet 问题跟踪程序](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.6&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=All)。

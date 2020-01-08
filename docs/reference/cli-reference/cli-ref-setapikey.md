@@ -5,36 +5,39 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: b00e8b1f7a6fda9c1a0c079069fa8ee08a45b419
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 0e2119953e6d07cd3571f156fa0b2665de49f963
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327604"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383964"
 ---
-# <a name="setapikey-command-nuget-cli"></a>setapikey 命令 (NuGet CLI)
+# <a name="setapikey-command-nuget-cli"></a>setapikey 命令（NuGet CLI）
 
-**适用于:** 包消耗, 发布&bullet; **支持的版本:** 全部
+**适用于：** 包使用情况、发布 &bullet;**支持的版本：** 全部
 
-将给定服务器 URL 的 API 密钥保存到`NuGet.Config` , 以便不需要为后续命令输入该 URL。
+将给定服务器 URL 的 API 密钥保存到 `NuGet.Config`，以便不需要为后续命令输入该 URL。
 
-## <a name="usage"></a>用法
+## <a name="usage"></a>用量
 
 ```cli
 nuget setapikey <key> -Source <url> [options]
 ```
 
-其中`<source>`标识服务器, `<key>`是要保存的密钥或密码。 如果`<source>`省略, 则假定为 nuget.org。
+其中 `<source>` 标识服务器，`<key>` 是要保存的密钥或密码。 如果省略 `<source>`，则采用 nuget.org。
+
+> [!NOTE]
+> API 密钥不用于通过专用源进行身份验证。 请参阅[`nuget sources` 命令](../cli-reference/cli-ref-sources.md)，管理凭据以便通过源进行身份验证。
 
 ## <a name="options"></a>选项
 
 | 选项 | 描述 |
 | --- | --- |
-| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定, `%AppData%\NuGet\NuGet.Config`则使用 (Windows `~/.nuget/NuGet/NuGet.Config` ) 或 (Mac/Linux)。|
-| ForceEnglishOutput | *(3.5 +)* 使用固定的、基于英语的区域性强制执行 nuget.exe。 |
-| Help | 显示命令的帮助信息。 |
+| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定，则使用 `%AppData%\NuGet\NuGet.Config` （Windows）或 `~/.nuget/NuGet/NuGet.Config` （Mac/Linux）。|
+| ForceEnglishOutput | *（3.5 +）* 使用固定的、基于英语的区域性强制执行 nuget.exe。 |
+| 帮助 | 显示命令的帮助信息。 |
 | NonInteractive | 取消显示提示用户输入或确认。 |
-| Verbosity | 指定在输出中显示的详细信息量: "*正常*"、"*静默*"、"*详细*"。 |
+| 详细级别 | 指定在输出中显示的详细信息量： "*正常*"、"*静默*"、"*详细*"。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
 
