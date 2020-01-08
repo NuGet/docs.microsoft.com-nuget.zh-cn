@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 57e50ed805496b3511bc3b808f89da6f7ad413fc
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: e1bff9d4b7391d8be87afa4b8f2fbd51ae922140
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327264"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75384851"
 ---
 # <a name="update-package-package-manager-console-in-visual-studio"></a>Update-Package （Visual Studio 中的程序包管理器控制台）
 
@@ -26,7 +26,7 @@ Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Ve
     [-DependencyVersion] [-ToHighestPatch] [-ToHighestMinor] [-WhatIf] [<CommonParameters>]
 ```
 
-在 NuGet 2.8 + 中`Update-Package` , 可以使用来降级项目中的现有包。 例如, 如果安装了 5.1.0-rc1, 以下命令会将其降级到 5.0.0:
+在 NuGet 2.8 + 中，可以使用 `Update-Package` 来降级项目中的现有包。 例如，如果安装了 5.1.0-rc1，以下命令会将其降级到5.0.0：
 
 ```ps
 Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
@@ -36,25 +36,25 @@ Update-Package Microsoft.AspNet.MVC -Version 5.0.0.
 
 |  参数 | 描述 |
 | --- | --- |
-| Id | 要更新的包的标识符。 如果省略, 则更新所有包。 -Id 开关本身是可选的。 |
+| Id | 要更新的包的标识符。 如果省略，则更新所有包。 -Id 开关本身是可选的。 |
 | IgnoreDependencies | 跳过更新包的依赖项。 |
-| ProjectName | 包含要更新的包的项目的名称, 默认为 "所有项目"。 |
-| Version | 要用于升级的版本, 默认为最新版本。 在 NuGet 3.0 + 中, 版本值必须为*最低、最高、HighestMinor*或*HighestPatch* (等效于-安全) 之一。 |
-| 防 | 仅将升级限制为与当前安装的包具有相同的主版本和次版本的版本。 |
-| Source | 要搜索的包源的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径, 也可以是相对于当前文件夹的路径。 如果省略, `Update-Package`则搜索当前选定的包源。 |
+| ProjectName | 包含要更新的包的项目的名称，默认为 "所有项目"。 |
+| {2&gt;版本&lt;2} | 要用于升级的版本，默认为最新版本。 在 NuGet 3.0 + 中，版本值必须为*最低、最高、HighestMinor*或*HighestPatch* （等效于-安全）之一。 |
+| Safe | 仅将升级限制为与当前安装的包具有相同的主版本和次版本的版本。 |
+| Source | 要搜索的包源的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径，也可以是相对于当前文件夹的路径。 如果省略，则 `Update-Package` 搜索当前选定的包源。 |
 | IncludePrerelease | 包含更新的预发布包。 |
 | 重新安装 | 使用当前安装的版本 Resintalls 包。 请参阅[重新安装和更新包](../../consume-packages/reinstalling-and-updating-packages.md)。 |
-| FileConflictAction | 当要求覆盖或忽略项目引用的现有文件时要执行的操作。 可能的值包括*Overwrite、Ignore、None、OverwriteAll*和*IgnoreAll* (3.0 +)。 |
-| DependencyVersion | 要使用的依赖项包的版本, 可以是下列项之一:<br/><ul><li>*最低*(默认值): 最低版本</li><li>*HighestPatch*: 最小主要、次要和最高修补程序的版本</li><li>*HighestMinor*: 最小主要版本号最高的版本, 最高修补程序</li><li>*最高*(不带参数的更新包的默认值): 最高版本</li></ul>您可以使用[`dependencyVersion`](../nuget-config-file.md#config-section) `Nuget.Config`文件中的设置设置默认值。 |
+| FileConflictAction | 当要求覆盖或忽略项目引用的现有文件时要执行的操作。 可能的值包括*Overwrite、Ignore、None、OverwriteAll*和*IgnoreAll* （3.0 +）。 |
+| DependencyVersion | 要使用的依赖项包的版本，可以是下列项之一：<br/><ul><li>*最低*（默认值）：最低版本</li><li>*HighestPatch*：最小主要、次要和最高修补程序的版本</li><li>*HighestMinor*：最小主要版本号最高的版本，最高修补程序</li><li>*最高*（不带参数的更新包的默认值）：最高版本</li></ul>您可以使用 `Nuget.Config` 文件中的[`dependencyVersion`](../nuget-config-file.md#config-section)设置设置默认值。 |
 | ToHighestPatch | 等效于-Safe。 |
 | ToHighestMinor | 仅将升级限制为版本与当前安装的包相同的版本。 |
-| WhatIf | 显示运行命令时, 不实际执行更新的情况。 |
+| WhatIf | 显示运行命令时，不实际执行更新的情况。 |
 
 这些参数都不接受管道输入或通配符。
 
 ### <a name="common-parameters"></a>通用参数
 
-`Update-Package`支持以下[常见的 PowerShell 参数](http://go.microsoft.com/fwlink/?LinkID=113216):调试、错误操作、ErrorVariable、OutBuffer、OutVariable、PipelineVariable、Verbose、WarningAction 和 WarningVariable。
+`Update-Package` 支持以下[常见的 PowerShell 参数](https://go.microsoft.com/fwlink/?LinkID=113216)：调试、错误操作、ErrorVariable、OutBuffer、OutVariable、PipelineVariable、Verbose、WarningAction 和 WarningVariable。
 
 ### <a name="examples"></a>示例
 

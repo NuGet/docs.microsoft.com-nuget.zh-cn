@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: ed3545454a811c311190a191c566d9e9192f3fcc
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: 2c2b5b21569e2644154670d502146f1e0f9c4c81
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825068"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385009"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -52,11 +52,11 @@ NuGet 4.0+
 | {2&gt;版本&lt;2} | PackageVersion | {2&gt;版本&lt;2} | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
 | VersionPrefix | PackageVersionPrefix | 空 | 设置 PackageVersion 会覆盖 PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | 空 | MSBuild 的 $(VersionSuffix)。 设置 PackageVersion 会覆盖 PackageVersionSuffix |
-| Authors | Authors | 当前用户的用户名 | |
-| Owners | 不可用 | NuSpec 中不存在 | |
+| 作者 | 作者 | 当前用户的用户名 | |
+| Owners | 不适用 | NuSpec 中不存在 | |
 | 职务 | 职务 | PackageId| |
 | 描述 | 描述 | “包描述” | |
-| 版权信息 | 版权信息 | 空 | |
+| Copyright | Copyright | 空 | |
 | requireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
 | 许可证 | PackageLicenseExpression | 空 | 对应于 `<license type="expression">` |
 | 许可证 | PackageLicenseFile | 空 | 对应到 `<license type="file">`。 需要显式打包所引用的许可证文件。 |
@@ -71,7 +71,7 @@ NuGet 4.0+
 | 存储库/分支 | RepositoryBranch | 空 | 可选存储库分支信息。 还必须为此属性指定要包含的*RepositoryUrl* 。 示例： *master* （NuGet 4.7.0 +） |
 | 存储库/提交 | RepositoryCommit | 空 | 可选的存储库提交或更改集，指示针对其生成包的源。 还必须为此属性指定要包含的*RepositoryUrl* 。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* （NuGet 4.7.0 +） |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
-| 总结 | 不支持 | | |
+| 摘要 | 不支持 | | |
 
 ### <a name="pack-target-inputs"></a>包目标输入
 
@@ -79,9 +79,9 @@ NuGet 4.0+
 - SuppressDependenciesWhenPacking
 - PackageVersion
 - PackageId
-- Authors
+- 作者
 - 描述
-- 版权信息
+- Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
 - PackageLicenseExpression
@@ -120,7 +120,7 @@ NuGet 4.0+
 
 `PackageIconUrl` 将被弃用，以支持新的[`PackageIcon`](#packageicon)属性。
 
-从 NuGet 5.3 & Visual Studio 2019 版本16.3 开始，如果包元数据仅指定 `PackageIconUrl`，`pack` 将引发[NU5048](errors-and-warnings/nu5048)警告。
+从 NuGet 5.3 & Visual Studio 2019 版本16.3 开始，如果包元数据仅指定 `PackageIconUrl`，`pack` 将引发[NU5048](./errors-and-warnings/nu5048.md)警告。
 
 ### <a name="packageicon"></a>PackageIcon
 
