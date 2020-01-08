@@ -1,77 +1,77 @@
 ---
 title: NuGet 1.8 发行说明
-description: 包括已知的问题、 bug 修复、 新增的功能和 Dcr NuGet 1.8 的发行说明。
+description: NuGet 1.8 的发行说明，包括已知问题、bug 修复、新增功能和 Dcr。
 author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: ff6d12606b1bed479e63eebccd978ff9cd4a7faf
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 973a2d010cb75eeeb383be94baf2fb17a999dd7c
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546616"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383456"
 ---
 # <a name="nuget-18-release-notes"></a>NuGet 1.8 发行说明
 
-[NuGet 1.7 发行说明](../release-notes/nuget-1.7.md) | [NuGet 2.0 发行说明](../release-notes/nuget-2.0.md)
+[Nuget 1.7 发行说明](../release-notes/nuget-1.7.md) | [Nuget 2.0 发行说明](../release-notes/nuget-2.0.md)
 
-NuGet 1.8 已于 2012 年 5 月 23 日发布。
+NuGet 1.8 于年5月 23 2012 日发布。
 
-## <a name="known-installation-issue"></a>已知的安装问题
-如果运行 VS 2010 SP1，你可能会遇到安装错误，尝试升级 NuGet，如果您有安装了旧版本时。
+## <a name="known-installation-issue"></a>已知安装问题
+如果你运行的是 VS 2010 SP1，但如果你安装了较旧的版本，你可能会遇到安装错误。
 
-解决方法是简单地卸载 NuGet，然后从 VS 扩展库安装它。  请参阅[ http://support.microsoft.com/kb/2581019 ](http://support.microsoft.com/kb/2581019)有关详细信息，或[直接转到 VS 修补程序](http://bit.ly/vsixcertfix)。
+解决方法是仅卸载 NuGet，然后从 VS 扩展库安装它。  有关详细信息，请参阅 <https://support.microsoft.com/kb/2581019>，或[直接跳到 VS 修补程序](http://bit.ly/vsixcertfix)。
 
-注意： 如果 Visual Studio 不会使您可以卸载的扩展 （卸载按钮被禁用），然后您可能需要重启 Visual Studio 中使用"以管理员身份运行"。
+注意：如果 Visual Studio 不允许你卸载扩展（"卸载" 按钮已禁用），则可能需要使用 "以管理员身份运行" 重启 Visual Studio。
 
-## <a name="nuget-18-incompatible-with-windows-xp-hotfix-published"></a>NuGet 1.8 兼容 Windows XP 发布的修补程序
+## <a name="nuget-18-incompatible-with-windows-xp-hotfix-published"></a>NuGet 1.8 与 Windows XP 兼容，已发布修补程序
 
-NuGet 1.8 发布不久后，我们了解到 1.8 中的加密更改中断用户在 Windows XP 上。
+在 NuGet 1.8 发布之后不久，我们已了解到1.8 中的密码更改在 Windows XP 上中断了用户。
 
-由于我们已发布，解决了此问题的修补程序。  通过更新 NuGet 通过 Visual Studio 扩展库，你收到此修补程序。
+我们已经发布了解决此问题的修补程序。  通过在 Visual Studio 扩展库中更新 NuGet，你会收到此修补程序。
 
-## <a name="features"></a>功能
+## <a name="features"></a>特征
 
-### <a name="satellite-packages-for-localized-resources"></a>对本地化资源的附属包
-NuGet 1.8 现在支持创建不同的软件包类似于.NET Framework 的附属程序集功能的本地化资源的能力。  附属包创建方式与任何其他 NuGet 包添加了几个约定相同：
+### <a name="satellite-packages-for-localized-resources"></a>本地化资源的附属包
+NuGet 1.8 现在支持为本地化资源创建单独包的功能，类似于 .NET Framework 的附属程序集功能。  附属包的创建方式与任何其他 NuGet 包相同，只是添加了一些约定：
 
-* 附属包 ID 和文件名称应包含匹配的一个标准的后缀[区域性使用的.NET Framework 字符串](http://msdn.microsoft.com/goglobal/bb896001.aspx)。
-* 在其`.nuspec`文件，附属包应定义一个语言元素，具有同一 ID 中使用的区域性字符串
-* 附属包应定义中的依赖项及其`.nuspec`到其核心包，即只需具有相同 ID 去掉语言后缀的包文件。  要成功安装的存储库中可用的核心包要求。
+* 附属包 ID 和文件名应包含与[.NET Framework 使用的标准区域性字符串](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c)之一匹配的后缀。
+* 在其 `.nuspec` 文件中，附属包应定义一个语言元素，该元素具有在 ID 中使用的相同区域性字符串
+* 附属包应将其 `.nuspec` 文件中的依赖项定义为其核心包，这只是 ID 与语言后缀相同的包。  核心包需要在存储库中可用，才能成功安装。
 
-若要使用的本地化资源安装包，开发人员会将本地化的包显式选择从存储库。 目前，NuGet 库不提供任何类型的特殊处理方式为附属包。
+若要安装包含本地化资源的包，开发人员需要从存储库中显式选择本地化包。 目前，NuGet 库不会向附属包提供任何类型的特殊处理。
 
-![包管理器对话框使用本地化包](./media/dlg-w-loc-packs.png)
+![带有本地化包的包管理器对话框](./media/dlg-w-loc-packs.png)
 
-因为附属包列出了其核心包的依赖项，是拉取到 NuGet 包文件夹和安装附属和 core 包。
+由于附属包列出了其核心包的依赖项，因此附属包和核心包都将提取到 NuGet 包文件夹中并安装。
 
-![与本地化包的包文件夹](./media/fldr-loc-packs.png)
+![带有本地化包的包文件夹](./media/fldr-loc-packs.png)
 
-此外，同时安装附属包，NuGet 还可以识别区域性的字符串命名约定，然后将本地化的资源程序集复制到核心包中的正确子文件夹，以便它可以由.NET Framework 中选取。
+此外，在安装附属包时，NuGet 还识别区域性字符串命名约定，然后将本地化的资源程序集复制到核心包内的正确子文件夹中，以便 .NET Framework 可以对其进行选取。
 
-![复制的资源文件夹与核心包文件夹](./media/fldr-copied-loc.png)
+![包含已复制资源文件夹的核心包文件夹](./media/fldr-copied-loc.png)
 
-一个需要注意的附属包的现有 bug 是 NuGet 不会复制到的本地化的资源`bin`网站项目的文件夹。  将 NuGet 的下一个版本中修复此问题。
+附属包需要注意的一个现有 bug 是 NuGet 不会将本地化的资源复制到网站项目的 `bin` 文件夹中。  此问题将在 NuGet 的下一版本中得到解决。
 
-有关演示如何创建和使用附属包的完整示例，请参阅[ https://github.com/NuGet/SatellitePackageSample ](https://github.com/NuGet/SatellitePackageSample)。
+有关演示如何创建和使用附属包的完整示例，请参阅[https://github.com/NuGet/SatellitePackageSample](https://github.com/NuGet/SatellitePackageSample)。
 
-### <a name="package-restore-consent"></a>包还原同意
-在 NuGet 1.8 我们形式放置支持包还原，以保护用户隐私的一个重要约束打下基础。 此约束要求构建项目和使用包还原显式同意包还原的解决方案的开发人员现在可以联机从配置的包源下载包。
+### <a name="package-restore-consent"></a>包还原许可
+在 NuGet 1.8 中，我们为支持包还原中的重要约束设定了基础，以保护用户隐私。 此约束要求开发人员生成项目和解决方案，这些项目和解决方案使用包还原来显式同意包还原的联机状态，以便从配置的包源下载包。
 
-有两种方法来提供此许可。 第一个可在包管理器配置对话框，如下所示。  此方法主要针对开发人员计算机。
+有两种方法可提供此许可。 第一个可以在 "包管理器配置" 对话框中找到，如下所示。  此方法主要用于开发人员计算机。
 
-![包管理器配置对话框](./media/pr-consent-configdlg.png)
+![程序包管理器配置对话框](./media/pr-consent-configdlg.png)
 
-第二种方法是将环境变量"EnableNuGetPackageRestore"设置为值"true"。  此方法适用于无人参与的计算机，如 CI 或生成服务器。
+第二种方法是将环境变量 "EnableNuGetPackageRestore" 设置为值 "true"。  此方法适用于无人参与的计算机，例如 CI 或生成服务器。
 
-现在，如上面所述，我们仅奠定了基础，此功能在 NuGet 1.8 中。  实际上，这意味着，尽管我们已添加的所有逻辑以启用该功能，它当前未强制执行在此版本中。 它将被启用，但是，在下一个版本的 NuGet，因此我们想要让你知道它越早越好，以便可以适当地配置您的环境并因此不会受到影响我们启动时强制执行许可约束。
+现在，如上所述，我们只在 NuGet 1.8 中为此功能奠定了基础。  实际上，这意味着虽然我们添加了所有逻辑来启用此功能，但当前未在此版本中强制执行此功能。 但在 NuGet 的下一版本中会启用此功能，因此，我们希望你尽快了解该功能，以便你可以适当地配置环境，从而在我们开始强制许可约束时不会受到影响。
 
-有关更多详细信息，请参阅[团队博客文章](http://blog.nuget.org/20120518/package-restore-and-consent.html)有关此功能。
+有关更多详细信息，请参阅[团队博客文章](http://blog.nuget.org/20120518/package-restore-and-consent.html)此功能。
 
 ### <a name="nugetexe-performance-improvements"></a>nuget.exe 性能改进
-通过修改安装命令下载和并行安装包，NuGet 1.8 做出了巨大的性能改进 nuget.exe – 且可由扩展包还原。  高级别测试显示 6 包安装到项目的性能提高的 35%NuGet 1.8 中。  增加到 25 的包的数量显示大约 60%的性能提升。
+通过修改安装命令以并行下载和安装包，NuGet 1.8 使 nuget.exe 的性能得到显著改善，并通过扩展包还原提高了性能。  高级别测试表明，将6个包安装到项目中的性能将在 NuGet 1.8 中提高大约35%。  将包数增加到25会显示大约60% 的性能提升。
 
 ## <a name="bug-fixes"></a>Bug 修复
-NuGet 1.8 包括的包管理器控制台和包还原工作流，这是很多 bug 修复，特别是因为它与包还原同意和集成的 Windows 8 Express。
-有关工作的完整列表项中已修复 NuGet 1.8，请查看[对于此版本的 NuGet 问题跟踪程序](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.8&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0)。
+NuGet 1.8 包含非常多的 bug 修复，其中重点介绍了包管理器控制台和包还原工作流，尤其是在它与包还原许可和 Windows 8 Express 集成相关时。
+有关 NuGet 1.8 中已修复的工作项的完整列表，请查看[此版本的 NuGet 问题跟踪程序](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.8&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0)。

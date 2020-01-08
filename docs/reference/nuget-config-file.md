@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/13/2019
 ms.topic: reference
-ms.openlocfilehash: 0b052bd03625172f1b941c365cbedf7629809d6f
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: d6cad228eb052563fe57ea635bff0ea548cedc1f
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825201"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383559"
 ---
 # <a name="nugetconfig-reference"></a>nuget.exe 引用
 
@@ -287,7 +287,7 @@ NuGet 行为由不同 `NuGet.Config` 或 `nuget.config` 文件中的设置控制
 
 | 键 | {2&gt;值&lt;2} |
 | --- | --- |
-| format | 指示默认包管理格式的布尔值。 如果 `1`，格式为 PackageReference。 如果 `0`，则 format 为*包。* |
+| 格式 | 指示默认包管理格式的布尔值。 如果 `1`，格式为 PackageReference。 如果 `0`，则 format 为*包。* |
 | 已禁用 | 指示是否在第一次安装包时显示提示选择默认包格式的布尔值。 `False` 隐藏提示。 |
 
 **示例**：
@@ -305,7 +305,7 @@ NuGet 行为由不同 `NuGet.Config` 或 `nuget.config` 文件中的设置控制
 
 例如，如果 Windows 上的 `HOME` 环境变量设置为 `c:\users\username`，则配置文件中 `%HOME%\NuGetRepository` 的值解析为 `c:\users\username\NuGetRepository`。
 
-同样，如果 Mac/Linux 上的 `HOME` 设置为 `/home/myStuff`，则配置文件中的 `%HOME%/NuGetRepository` 解析为 `/home/myStuff/NuGetRepository`。
+同样，如果 Mac/Linux 上的 `HOME` 设置为 `/home/myStuff`，则配置文件中的 `$HOME/NuGetRepository` 解析为 `/home/myStuff/NuGetRepository`。
 
 如果未找到环境变量，NuGet 会使用配置文件中的文本值。
 
