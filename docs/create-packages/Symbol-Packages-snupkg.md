@@ -12,18 +12,18 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 8528261f90e75e2dfac8cb746b396d227c3741f4
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: de37cbf1f63da3de07774281eceef99c51abdaa5
+ms.sourcegitcommit: 96aab8a1ad35eca0c029679d0158d9cc93d66009
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825177"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75676375"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
 通过符号包可以提高 NuGet 包的调试体验。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 [nuget.exe v4.9.0 或更高版本](https://www.nuget.org/downloads)或 [dotnet.exe v2.2.0 或更高版本](https://www.microsoft.com/net/download/dotnet-core/2.2)，它们实现了所需的 [NuGet 协议](../api/nuget-protocols.md)。
 
@@ -35,8 +35,8 @@ ms.locfileid: "74825177"
 
    ```xml
    <PropertyGroup>
-      <IncludeSymbols>true</IncludeSymbols> 
-      <SymbolPackageFormat>snupkg</SymbolPackageFormat> 
+      <IncludeSymbols>true</IncludeSymbols>
+      <SymbolPackageFormat>snupkg</SymbolPackageFormat>
    </PropertyGroup>
    ```
 
