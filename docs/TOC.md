@@ -49,7 +49,7 @@
 ### [创建本机包](guides/native-packages.md)
 ### [以 NuGet 包的形式创建 UI 控件](guides/create-UI-controls.md)
 ### [以 NuGet 包的形式创建分析器](guides/analyzers-conventions.md)
-### [使用 Visual Studio 2015 为 Xamarin 创建包](guides/create-packages-for-xamarin.md)
+### [使用 Visual Studio 2017 或 2019 为 Xamarin 创建包](guides/create-packages-for-xamarin.md)
 ### [使用 COM 互操作程序集创建包](create-packages/author-packages-with-COM-interop-assemblies.md)
 ## 签名包
 ### [对包进行签名](create-packages/sign-a-package.md)

@@ -4,15 +4,15 @@ description: NuGet 是适用于包含 .NET 的 Microsoft 开发平台的包管�
 author: karann-msft
 ms.author: karann
 ms.date: 02/12/2018
-ms.topic: hub-page
 layout: HubPage
+ms.topic: hub-page
 hide_bc: true
-ms.openlocfilehash: 7c911300bbd743ca7555e12484685c084d78f30a
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: d4208d5eafe054f6f755f6fe7c332854cc39ad41
+ms.sourcegitcommit: 96aab8a1ad35eca0c029679d0158d9cc93d66009
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488891"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75676414"
 ---
 <div id="main" class="v2">
     <div class="container">
