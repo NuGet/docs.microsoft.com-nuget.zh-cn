@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: b104eb39ddeacd9ca1ea45937cf98ad57531112a
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 8f2b33a7290301bd16db3b1979ae496eee602f55
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68317141"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383653"
 ---
 # <a name="known-issues-with-nuget"></a>NuGet 的已知问题
 
@@ -90,7 +90,7 @@ install-package log4net
 查看日志时，可能会看到提到 `SignatureMismatchException`。
 
 若要防止此情况发生，可安装 [Visual Studio 2010 SP1 修补程序](http://bit.ly/vsixcertfix)。
-或者，解决方法是简单地卸载 NuGet（以管理员身份运行 Visual Studio 时），然后从 VS 扩展库安装。  有关详细信息，请参阅 [http://support.microsoft.com/kb/2581019](http://support.microsoft.com/kb/2581019)。
+或者，解决方法是简单地卸载 NuGet（以管理员身份运行 Visual Studio 时），然后从 VS 扩展库安装。 有关更多信息，请参见<https://support.microsoft.com/kb/2581019>。
 
 ## <a name="package-manager-console-throws-an-exception-when-the-reflector-visual-studio-add-in-is-also-installed"></a>当安装了 Reflector Visual Studio 加载项时，包管理器控制台也会引发异常。
 
@@ -159,7 +159,7 @@ or
 
 ## <a name="the-package-manager-console-crashes-when-i-open-it-in-windows-xp-whats-wrong"></a>在 Windows XP 中打开包管理器控制台时崩溃。 为什么会这样？
 
-NuGet 需要 Powershell 2.0 运行时。 默认情况下，Windows XP 没有 Powershell 2.0。 可从 [http://support.microsoft.com/kb/968929](http://support.microsoft.com/kb/968929) 下载 Powershell 2.0 运行时。 安装后，重启 Visual Studio ，应该就能打开包管理器控制台。
+NuGet 需要 Powershell 2.0 运行时。 默认情况下，Windows XP 没有 Powershell 2.0。 可从 <https://support.microsoft.com/kb/968929> 下载 Powershell 2.0 运行时。 安装后，重启 Visual Studio ，应该就能打开包管理器控制台。
 
 ## <a name="visual-studio-2010-sp1-beta-crashes-on-exit-if-the-package-manager-console-is-open"></a>如果包管理器控制台处于打开状态，Visual Studio 2010 SP1 Beta 在退出时崩溃。
 

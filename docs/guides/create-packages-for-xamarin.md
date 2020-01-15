@@ -1,22 +1,22 @@
 ---
-title: 使用 Visual Studio 2015 为 Xamarin 创建 NuGet 包（适用于 iOS、Android 和 Windows）
+title: 使用 Visual Studio 2017 或 2019 为 Xamarin 创建 NuGet 包（适用于 iOS、Android 和 Windows）
 description: 从头到尾演练如何为 Xamarin 创建在 iOS、Android 和 Windows 上使用本机 API 的 NuGet 包。
 author: karann-msft
 ms.author: karann
-ms.date: 01/09/2017
+ms.date: 11/05/2019
 ms.topic: tutorial
-ms.openlocfilehash: 927991429d8d4ce54aa35be3e450475a38141b11
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: fce3c9a92dfee325f9e914bf3d6444601fb38b6c
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488912"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385663"
 ---
-# <a name="create-packages-for-xamarin-with-visual-studio-2015"></a>使用 Visual Studio 2015 为 Xamarin 创建包
+# <a name="create-packages-for-xamarin-with-visual-studio-2017-or-2019"></a>使用 Visual Studio 2017 或 2019 为 Xamarin 创建包
 
 Xamarin 包包含在 iOS、Android 和 Windows 上使用本机 API 的代码，具体取决于运行时操作系统。 虽然这很简单，但最好让开发人员通过通用的 API 外围应用从 PCL 或 .NET Standard 库中使用包。
 
-在本演练中，将使用 Visual Studio 2015 创建可在 iOS、Android 和 Windows 的移动项目中使用的跨平台 NuGet 包。
+在本演练中，将使用 Visual Studio 2017 或 2019 创建可在 iOS、Android 和 Windows 的移动项目中使用的跨平台 NuGet 包。
 
 1. [系统必备](#prerequisites)
 1. [创建项目结构和抽象代码](#create-the-project-structure-and-abstraction-code)
@@ -25,9 +25,9 @@ Xamarin 包包含在 iOS、Android 和 Windows 上使用本机 API 的代码，�
 1. [打包组件](#package-the-component)
 1. [相关主题](#related-topics)
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
-1. 在通用 Windows 平台 (UWP) 和 Xamarin 中使用 Visual Studio 2015。 可以从 [visualstudio.com](https://www.visualstudio.com/) 免费安装 Community 版；当然，也可以使用 Professional 和 Enterprise 版。 若要包含 UWP 和 Xamarin 工具，请选择自定义安装并选中相应的选项。
+1. 在通用 Windows 平台 (UWP) 和 Xamarin 中使用 Visual Studio 2017 或 2019。 可以从 [visualstudio.com](https://www.visualstudio.com/) 免费安装 Community 版；当然，也可以使用 Professional 和 Enterprise 版。 若要包含 UWP 和 Xamarin 工具，请选择自定义安装并选中相应的选项。
 1. NuGet CLI。 从 [nuget.org/downloads](https://nuget.org/downloads) 下载 nuget.exe 的最新版本，将其保存到选择的位置。 然后将该位置添加到 PATH 环境变量（如果尚未添加）。
 
 > [!Note]
@@ -35,23 +35,33 @@ Xamarin 包包含在 iOS、Android 和 Windows 上使用本机 API 的代码，�
 
 ## <a name="create-the-project-structure-and-abstraction-code"></a>创建项目结构和抽象代码
 
-1. 下载并运行适用于 Visual Studio 的 [适用于 Xamarin 的插件模板扩展组件](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates)。 使用这些模板可轻松创建本演练所需的项目结构。
-1. 在 Visual Studio 中，选择“文件”>“新建”>“项目”，搜索 `Plugin`，选择“适用于 Xamarin 的插件”模板，将名称更改为“LoggingLibrary”，然后单击“确定”   。
+1. 下载并运行适用于 Visual Studio 的[跨平台 .NET Standard 插件模板扩展](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates)。 使用这些模板可轻松创建本演练所需的项目结构。
+1. 在 Visual Studio 2017 中，选择“文件”>“新建”>“项目”，搜索 `Plugin`，选择“跨平台 .NET Standard 库插件”模板，将名称更改为“LoggingLibrary”，然后单击“确定”   。
 
-    ![Visual Studio 中的新空白应用（Xamarin.Forms 可移植）](media/CrossPlatform-NewProject.png)
+    ![VS 2017 中的新空白应用（Xamarin.Forms 可移植）](media/CrossPlatform-NewProject.png)
 
-生成的解决方案包含两个 PCL 项目，以及各种平台特定的项目：
+    在 Visual Studio 2019 中，选择“文件”>“新建”>“项目”，搜索 `Plugin`，选择“跨平台 .NET Standard 库插件”模板，然后单击“下一步”   。
 
-- 名为 `Plugin.LoggingLibrary.Abstractions (Portable)` 的 PCL 定义组件的公共接口（API 外围应用），在本例中，即为 ILoggingLibrary.cs 文件中包含的 `ILoggingLibrary` 接口。 你将在此文件中定义库的接口。
-- 另一个 PCL `Plugin.LoggingLibrary (Portable)` 包含 CrossLoggingLibrary.cs 中的代码，这些代码将在运行时定位抽象接口的平台特定实现。 通常不需要修改此文件。
-- 每个平台特定的项目（如 `Plugin.LoggingLibrary.Android`）在其各自的 LoggingLibraryImplementation.cs 文件中都包含该接口的本机实现。 你将在此文件中生成库的代码。
+    ![VS 2019 中的新空白应用（Xamarin.Forms 可移植）](media/CrossPlatform-NewProject19-Part1.png)
 
-默认情况下，Abstractions 项目的 ILoggingLibrary.cs 文件包含接口定义，但不包含方法。 为进行本演练，请按如下所示添加 `Log` 方法：
+    将名称更改为 LoggingLibrary，然后单击“创建”。
+
+    ![VS 2019 中的新空白应用（Xamarin.Forms 可移植）配置](media/CrossPlatform-NewProject19-Part2.png)
+
+生成的解决方案包含两个共享项目，以及各种平台特定的项目：
+
+- `ILoggingLibrary` 项目，该项目包含在 `ILoggingLibrary.shared.cs` 文件中，用于定义组件的公共接口（API 外围应用）。 你将在此文件中定义库的接口。
+- 另一个共享项目包含 `CrossLoggingLibrary.shared.cs` 中的代码，这些代码将在运行时定位抽象接口的平台特定实现。 通常不需要修改此文件。
+- 每个平台特定的项目（如 `LoggingLibrary.android.cs`）在其各自的 `LoggingLibraryImplementation.cs` (VS 2017) 或 `LoggingLibrary.<PLATFORM>.cs` (VS 2019) 文件中都包含该接口的本机实现。 你将在此文件中生成库的代码。
+
+默认情况下，`ILoggingLibrary` 项目的 ILoggingLibrary.shared.cs 文件包含接口定义，但不包含方法。 为进行本演练，请按如下所示添加 `Log` 方法：
 
 ```cs
 using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Plugin.LoggingLibrary.Abstractions
+namespace Plugin.LoggingLibrary
 {
     /// <summary>
     /// Interface for LoggingLibrary
@@ -70,11 +80,12 @@ namespace Plugin.LoggingLibrary.Abstractions
 
 若要实现 `ILoggingLibrary` 接口及其方法的平台特定实现，请执行以下操作：
 
-1. 打开每个平台项目的 `LoggingLibraryImplementation.cs` 文件并添加必要的代码。 例如（使用 `Plugin.LoggingLibrary.Android` 项目）：
+1. 打开每个平台项目的 `LoggingLibraryImplementation.cs` (VS 2017) 或 `LoggingLibrary.<PLATFORM>.cs` (VS 2019) 文件并添加必要的代码。 例如（使用 `Android` 平台项目）：
 
     ```cs
-    using Plugin.LoggingLibrary.Abstractions;
     using System;
+    using System.Collections.Generic;
+    using System.Text;
 
     namespace Plugin.LoggingLibrary
     {
@@ -95,9 +106,10 @@ namespace Plugin.LoggingLibrary.Abstractions
     ```
 
 1. 在想要支持的每个平台的项目中重复此实现。
-1. 右键单击 iOS 项目，选择“属性”，单击“生成”选项卡，然后从“输出路径”和“XML 文档文件”设置中删除“\iPhone”     。 这样做只是为了方便后面的演练。 完成后，保存文件。
-1. 右键单击解决方案，选择“配置管理器...”，然后选中支持的 PCL 和每个平台的“生成”框   。
 1. 右键单击解决方案，选择“生成解决方案”，检查工作并生成接下来将要打包的项目  。 如果遇到关于缺少引用的错误，请右键单击解决方案，选择“还原 NuGet 包”，安装依赖项并重新生成  。
+
+> [!Note]
+> 如果使用的是 Visual Studio 2019，则在选择“还原 NuGet 包”  并尝试重新生成之前，需要将 `MSBuild.Sdk.Extras` 的版本更改为 `LoggingLibrary.csproj` 中的 `2.0.54`。 只能通过以下方式访问此文件：首先右键单击该项目（在解决方案下方）并选择 `Unload Project`，然后右键单击卸载的项目并选择 `Edit LoggingLibrary.csproj`。
 
 > [!Note]
 > 若要为 iOS 生成，需要一台连接到 Visual Studio 的联网 Mac，如 [Introduction to Xamarin.iOS for Visual Studio](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/)（Xamarin.iOS for Visual Studio 简介）中所述。 如果没有可用的 Mac，请清除配置管理器中的 iOS 项目（上面的步骤 3）。
@@ -125,7 +137,7 @@ namespace Plugin.LoggingLibrary.Abstractions
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Awesome application logging utility</description>
         <releaseNotes>First release</releaseNotes>
-        <copyright>Copyright 2016</copyright>
+        <copyright>Copyright 2018</copyright>
         <tags>logger logging logs</tags>
         </metadata>
     </package>
@@ -209,7 +221,7 @@ namespace Plugin.LoggingLibrary.Abstractions
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Awesome application logging utility</description>
     <releaseNotes>First release</releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <copyright>Copyright 2018</copyright>
     <tags>logger logging logs</tags>
         <dependencies>
         <group targetFramework="MonoAndroid">

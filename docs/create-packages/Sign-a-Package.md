@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 1053a18926f63e02f0b1c100e7cc1cd293654ced
-ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
+ms.openlocfilehash: 00fe1d5fa81132b5d6826203a0d26e56aa8d4755
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71307218"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75383977"
 ---
 # <a name="signing-nuget-packages"></a>对 NuGet 包进行签名
 
@@ -19,7 +19,7 @@ ms.locfileid: "71307218"
 
 ## <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
-可从以下公共证书颁发机构获取有效的证书：[Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3)、[DigiCert](https://www.digicert.com/code-signing/)、[Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate)、[Global Sign](https://www.globalsign.com/en/code-signing-certificate/)、[Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)、[Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 等。可从 [http://aka.ms/trustcertpartners](http://aka.ms/trustcertpartners) 获取 Windows 信任的证书颁发机构完整列表。
+可从以下公共证书颁发机构获取有效的证书：[Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3)、[DigiCert](https://www.digicert.com/code-signing/)、[Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate)、[Global Sign](https://www.globalsign.com/en/code-signing-certificate/)、[Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)、[Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 等。可从 [http://aka.ms/trustcertpartners](https://aka.ms/trustcertpartners) 获取 Windows 信任的证书颁发机构完整列表。
 
 可使用自颁发证书进行测试。 但 NuGet.org 不接受使用自颁发证书签名的包。详细了解如何[创建测试证书](#create-a-test-certificate)
 
@@ -92,7 +92,7 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 ## <a name="manage-signing-requirements-for-your-package-on-nugetorg"></a>管理 NuGet.org 上的包的签名要求
 1. [登录](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)到 NuGet.org。
 
-1. 转到 `Manage Packages`  
+1. 转到 `Manage Packages` 
    ![配置包签名程序](../reference/media/configure-package-signers.png)
 
 * 如果你是包的唯一所有者，那么你就是所要求的签名者，即你可使用任何已注册的证书对包进行签名，然后将其发布到 NuGet.org。

@@ -5,14 +5,14 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: d0e368f43171ce71abc60b3e09d08b010d2d8880
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: de164b136a1636b89f674b8626613094fc53e04c
+ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67843479"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385567"
 ---
-## <a name="create-nuget-packages-that-contain-com-interop-assemblies"></a>创建包含 COM 互操作程序集的 NuGet 包
+# <a name="create-nuget-packages-that-contain-com-interop-assemblies"></a>创建包含 COM 互操作程序集的 NuGet 包
 
 包含 COM 互操作程序集的包必须包含合适的[目标文件](creating-a-package.md#include-msbuild-props-and-targets-in-a-package)，使正确的 `EmbedInteropTypes` 元数据使用 PackageReference 格式添加到项目。 默认情况下，使用 PackageReference 时，`EmbedInteropTypes` 元数据对所有程序集一直为 false，所以目标文件显式添加此元数据。 为了避免冲突，目标名称必须是唯一的；理想情况下，使用包名称和嵌入程序集的组合，使用此值替换下例中的 `{InteropAssemblyName}`。 （有关示例，另请参阅 [NuGet.Samples.Interop](https://github.com/NuGet/Samples/tree/master/NuGet.Samples.Interop)。）
 
