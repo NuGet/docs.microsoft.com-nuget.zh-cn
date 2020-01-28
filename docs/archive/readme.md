@@ -1,1 +1,0 @@
-<span data-ttu-id="5faf1-101">此文件夹是保存从主文档删除的内容的位置，通常保存应用于早期版本且很可能会移动到永久存档位置的材料。</span><span class="sxs-lookup"><span data-stu-id="5faf1-101">This folder a holding location for content being removed from the main documentation, typically material that applies to earlier versions that will likely be moved into a permanent archive location.</span></span>
