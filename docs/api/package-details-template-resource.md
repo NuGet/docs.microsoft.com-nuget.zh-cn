@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 3/1/2019
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 3102cb9a20f354e92a0da8bba6457dc2ad0f0f2d
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 1b84c6e88a56216e5747d5bc602219af6695c305
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610956"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76812930"
 ---
 # <a name="package-details-url-template"></a>包详细信息 URL 模板
 
@@ -23,9 +23,9 @@ ms.locfileid: "73610956"
 
 使用以下 `@type` 值：
 
-@type 值                     | 注意
+@type 值                     | 注释
 ------------------------------- | -----
-PackageDetailsUriTemplate/5.1。0 | 初始版本
+PackageDetailsUriTemplate/5.1.0 | 初始版本
 
 ## <a name="url-template"></a>URL 模板
 
@@ -45,12 +45,12 @@ URL 必须是绝对 URL，方案（协议）必须为 HTTPS。
 
 ### <a name="url-placeholders"></a>URL 占位符
 
-“属性”        | 键入    | 必需 | 注意
+Name        | 类型    | 必需 | 注释
 ----------- | ------- | -------- | -----
 `{id}`      | string  | no       | 要获取其详细信息的包 ID
 `{version}` | string  | no       | 要获取其详细信息的包版本
 
-服务器应接受任意大小写形式的 `{id}` 和 `{version}` 值。 此外，服务器不应对版本是否[规范化](https://docs.microsoft.com/nuget/concepts/package-versioning#normalized-version-numbers)敏感。 换句话说，服务器还应接受非标准化版本。
+服务器应接受任意大小写形式的 `{id}` 和 `{version}` 值。 此外，服务器不应对版本是否[规范化](../concepts/package-versioning.md#normalized-version-numbers)敏感。 换句话说，服务器还应接受非标准化版本。
 
 例如，nuget 的包详细信息模板如下所示：
 

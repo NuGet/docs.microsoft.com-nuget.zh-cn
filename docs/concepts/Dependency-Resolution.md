@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: d2294ef0acb9053e74543204ae6f68b9fbc6fb0a
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: c6f50e6eb21826afebcdcd4045c7ab8b6e6489e3
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73611057"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813320"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet 如何解析包依赖项
 
@@ -24,7 +24,7 @@ ms.locfileid: "73611057"
 
 当将包安装到使用 PackageReference 格式的项目中时，NuGet 将添加对相应文件中的平面包关系图的引用并提前解决冲突。 此过程称为“传递还原”  。 重新安装或还原包指的是下载关系图中列出的包的过程，此过程可加快生成的速度和提高其可预测性。 还可以利用通配符（可变）版本（如 2.8.\*），避免对客户端计算机和生成服务器上的 `nuget update` 进行成本高昂且容易出错的调用。
 
-当 NuGet 还原进程在生成之前运行时，它将首先解析内存中的依赖项，然后将生成的关系图写入名为 `project.assets.json` 的文件。 如果[启用了锁定文件功能](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files#locking-dependencies)，它还会将已解析的依赖项写入名为 `packages.lock.json` 的锁定文件。
+当 NuGet 还原进程在生成之前运行时，它将首先解析内存中的依赖项，然后将生成的关系图写入名为 `project.assets.json` 的文件。 如果[启用了锁定文件功能](../consume-packages/package-references-in-project-files.md#locking-dependencies)，它还会将已解析的依赖项写入名为 `packages.lock.json` 的锁定文件。
 资产文件位于 `MSBuildProjectExtensionsPath`，它默认是项目的“obj”文件夹。 MSBuild 随后将读取此文件并将其转换成一组文件夹（可在其中找到潜在引用），然后将它们添加到内存中的项目树。
 
 `project.assets.json` 文件是临时的，不应添加到源代码管理中。 默认情况下，此文件将在 `.gitignore` 和 `.tfignore` 中列出。 请参阅[包与源代码管理](../consume-packages/packages-and-source-control.md)。
@@ -156,4 +156,3 @@ Package restore failed. Rolling back package changes for 'MyProject'.
 
 - 将项目重定向到要使用的包所支持的框架。
 - 联系包创建者并与其协作添加对所选框架的支持。 [nuget.org](https://www.nuget.org/) 中每个列出包的页面均针对此目的提供了“联系所有者”链接  。
-

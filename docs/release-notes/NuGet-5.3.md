@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 09/06/2019
 ms.topic: conceptual
-ms.openlocfilehash: e77219d355f73f3bf01f68283ffb2759813af563
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: ca71c5b9ef546f3ea92e55763d5059466ac3a930
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73611324"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813749"
 ---
 # <a name="nuget-53-release-notes"></a>NuGet 5.3 发行说明
 
@@ -29,7 +29,7 @@ NuGet 分发车辆：
 
 * 提高了对包的 SHA 跟踪和强制执行的安全性- [#7281](https://github.com/NuGet/Home/issues/7281)
 
-* 支持弃用过时/旧 NuGet 包[#2867](https://github.com/NuGet/Home/issues/2867) | [博客文章](https://devblogs.microsoft.com/nuget/deprecating-packages-on-nuget-org/) | [文档](https://docs.microsoft.com/nuget/nuget-org/deprecate-packages)
+* 支持弃用过时/旧 NuGet 包[#2867](https://github.com/NuGet/Home/issues/2867) | [博客文章](https://devblogs.microsoft.com/nuget/deprecating-packages-on-nuget-org/) | [文档](../nuget-org/deprecate-packages.md)
 
 ### <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
 

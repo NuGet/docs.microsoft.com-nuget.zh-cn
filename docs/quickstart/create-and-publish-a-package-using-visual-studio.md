@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/16/2019
 ms.topic: quickstart
-ms.openlocfilehash: ef1bda19c5ca3c6b5a4bd9b9d4e3ef41d7dadb53
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: fe551dfa7f2322e6677c9c0b972c79c9df2e7695
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610640"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813554"
 ---
 # <a name="quickstart-create-and-publish-a-nuget-package-using-visual-studio-net-standard-windows-only"></a>快速入门：使用 Visual Studio 创建和发布 NuGet 包（仅限 .NET Standard 和 Windows）
 
@@ -19,7 +19,7 @@ ms.locfileid: "73610640"
 > [!Note]
 > 如果使用的是 Visual Studio for Mac，请参阅有关创建 NuGet 包的[以下信息](/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library)或使用 [dotnet CLI 工具](create-and-publish-a-package-using-the-dotnet-cli.md)。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 1. 通过与 .NET Core 相关的工作负载从 [visualstudio.com](https://www.visualstudio.com/) 安装任意版本的 Visual Studio 2019。
 
@@ -30,7 +30,7 @@ ms.locfileid: "73610640"
    > [!Important]
    > 如果使用的是非 SDK 样式的项目，请改为按照[创建和发布 .NET Framework 包 (Visual Studio)](create-and-publish-a-package-using-visual-studio-net-framework.md) 中的过程来创建和发布包。 对于本文，建议使用 `dotnet` CLI。 虽然可以使用 `nuget.exe` CLI 发布任何 NuGet 包，但本文中的某些步骤特定于 SDK 样式的项目和 dotnet CLI。 nuget.exe CLI 用于[非 SDK 样式的项目](../resources/check-project-format.md)（通常为 .NET Framework）。
 
-1. 如果你还没有帐户，请[在 nuget.org 上注册一个免费帐户](https://docs.microsoft.com/nuget/nuget-org/individual-accounts#add-a-new-individual-account)。 创建新帐户会发送确认电子邮件。 必须先确认该帐户，才能上传包。
+1. 如果你还没有帐户，请[在 nuget.org 上注册一个免费帐户](../nuget-org/individual-accounts.md#add-a-new-individual-account)。 创建新帐户会发送确认电子邮件。 必须先确认该帐户，才能上传包。
 
 ## <a name="create-a-class-library-project"></a>创建类库项目
 
