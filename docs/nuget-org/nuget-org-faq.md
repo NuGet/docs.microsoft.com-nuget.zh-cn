@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: e2b6a64b8010f16d0fc33cca437b348d8f784fd7
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 915f6e4cfc0b21d2b10006c62e8230720d07ce74
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610501"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813736"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>NuGet.org 常见问题解答
 
@@ -175,7 +175,7 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 
 在 NuGet.org 上创建帐户后，该帐户具有一个关联的通信电子邮件地址。 此地址通常与所关联 Microsoft 帐户的电子邮件地址相同。 但是，可以选择指定不同的电子邮件地址进行通信。 因此，从技术上讲，可以将另一个 Microsoft 帐户（例如电子邮件为 `account2@outlook.com` 的帐户）链接到通信电子邮件地址为 `account1@outlook.com` 的 NuGet.org 帐户。
 
-所以，上述错误表示已存在一个通信电子邮件地址为 `account1@outlook.com` 的 NuGet.org 帐户，但该帐户已关联到电子邮件不是 `account1@outlook.com` 的另一个 Microsoft 帐户  。
+所以，上述错误表示已存在一个通信电子邮件地址为 `account1@outlook.com` 的 NuGet.org 帐户，但该帐户已关联到电子邮件地址不是 `account1@outlook.com` 的另一个 Microsoft 帐户  。
 
 如何查找哪个 Microsoft 帐户已链接到此 NuGet.org 帐户？ 
 
@@ -242,7 +242,7 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 
 ### <a name="how-do-i-change-my-nugetorg-account-username"></a>如何更改 NuGet.org 帐户用户名？
 
-无法更改。 根据策略，截至目前我们不允许更改用户名。 更改用户名的唯一方式是创建采用所需用户名的新帐户。 创建新帐户之前，我们建议删除现有帐户，否则便可能无法重复使用已注册的 Microsoft 帐户。
+无法更改。 根据策略，我们不允许更改用户名。 此外，对于已[根据包所有者定义包信任策略](../consume-packages/installing-signed-packages.md#trust-package-owners)的用户，这是一项重大更改。 更改用户名的唯一方式是创建采用所需用户名的新帐户。 创建新帐户之前，我们建议删除现有帐户，否则便可能无法重复使用已注册的 Microsoft 帐户。
 > [!Important]
 > 删除用户仍会保留 `username`  。 你将无法重复使用相同的用户名，即使更改大小写也不例外  。 例如，创建用户名为 `mycoolname` 的用户然后删除此用户后，要将此用户名改为 `MyCoolName`（大小写更改）是不可实现的。
 
@@ -250,7 +250,7 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 
 ### <a name="how-to-delete-my-nugetorg-account"></a>如何删除 NuGet.org 帐户？
 
-请注意，要删除帐户，我们建议将你作为其唯一所有者的包的所有权进行转让。 要了解如何执行此操作，请阅读有关[管理包所有者](https://docs.microsoft.com/nuget/create-packages/publish-a-package#managing-package-owners-on-nugetorg)的更多信息。 这有助于我们加速处理请求。
+请注意，要删除帐户，我们建议将你作为其唯一所有者的包的所有权进行转让。 要了解如何执行此操作，请阅读有关[管理包所有者](../nuget-org/publish-a-package.md#managing-package-owners-on-nugetorg)的更多信息。 这有助于我们加速处理请求。
 
 如果要将帐户转换为组织，请按照[将 NuGet.org 帐户转换为组织](#how-to-transform-my-nugetorg-account-to-an-organization)中所述的步骤进行操作。
 

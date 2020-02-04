@@ -12,12 +12,12 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: de37cbf1f63da3de07774281eceef99c51abdaa5
-ms.sourcegitcommit: 96aab8a1ad35eca0c029679d0158d9cc93d66009
+ms.openlocfilehash: 0109aea95ec255b3e0abcdff4cf51b4bfeafbb8c
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75676375"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813476"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
@@ -127,7 +127,7 @@ NuGet.org 对符号包具有以下约束：
    ```
 
 4) 如果创建者决定使用自定义 nuspec 来构建其 nupkg 和 snupkg，则 snupkg 应该具有 2 中详细描述的同一文件夹层次结构和文件）。
-5) 将从 snupkg 的 nuspec 中排除 ```authors``` 和 ```owners``` 字段。
+5) 将从 snupkg 的 nuspec 中排除以下字段：```authors```、```owners```、```requireLicenseAcceptance```、```license type```、```licenseUrl``` 和 ```icon```。
 6) 不要使用 ```<license>``` 元素。 .snupkg 与对应的 .nupk 位于同一个许可证中。
 
 ## <a name="see-also"></a>请参阅

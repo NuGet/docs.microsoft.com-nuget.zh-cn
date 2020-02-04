@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/04/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0691660f20f9b5a1ff0dad110ee87c6e29c0a56e
-ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
+ms.openlocfilehash: 9f427005251bc2bf7a8a79285e39b4bd49062dbf
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74253937"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813346"
 ---
 # <a name="finding-and-evaluating-nuget-packages-for-your-project"></a>针对项目查找和评估 NuGet 包
 
@@ -122,25 +122,25 @@ NuGet 支持本机 C++ 包，这些包可在 Visual Studio 的 C++ 项目中使�
 1. 它应有 `<license type="file">license\license.txt</license>` 等标记。 这意味着，许可证文件的命名为 `license.txt`，且它位于 `license` 文件夹的根目录中。
 1. 转到 `license` 文件夹，并打开 `license.txt` 文件。
 
-对于相当于在 `.nuspec` 中设置许可证的 MSBuild，请查看[打包许可证表达式或许可证文件](/nuget/reference/msbuild-targets#packing-a-license-expression-or-a-license-file)。
+对于相当于在 `.nuspec` 中设置许可证的 MSBuild，请查看[打包许可证表达式或许可证文件](../reference/msbuild-targets.md#packing-a-license-expression-or-a-license-file)。
 
 ## <a name="search-syntax"></a>搜索语法
 
 NuGet 包搜索在 nuget.org 上、NuGet CLI 中和 Visual Studio 的 NuGet 包管理器扩展中具有相同的使用方法。 通常可使用关键字和包说明进行搜索。
 
-- **关键字**：搜索操作将查找包含任何给定关键字的相关包。 示例：`modern UI`。 若要搜索包含所有给定关键字的包，请在搜索词之间使用“+”，例如 `modern+UI`。
-- **短语**：在引号内输入搜索词可查找与其大小写完全匹配的匹配项。 示例：`"modern UI" package`
-- **筛选**：可以按照语法 `<property>:<term>` 使用搜索词来搜索特定属性，其中，`<property>`（区分大小写）可为 `id`、`packageid`、`version`、`title`、`tags`、`author`、`description`、`summary` 和 `owner`。 可将搜索词添加在引号中（如需要），还可以同时搜索多个属性。 此外，按 `id` 属性搜索得到的是子字符串匹配项，而按 `packageid` 搜索将得到确切匹配。 示例：
+- **筛选**：可以按照语法 `<property>:<term>` 使用搜索词来搜索特定属性，其中，`<property>`（区分大小写）可为 `id`、`packageid`、`version`、`title`、`tags`、`author`、`description`、`summary` 和 `owner`。 可以同时搜索多个属性。 按 `id` 属性搜索得到的是子字符串匹配项，而按 `packageid` 和 `owner` 搜索将得到不区分大小写的确切匹配。 示例：
 
-    ```
-    id:NuGet.Core                # Match any part of the id property
-    Id:"Nuget.Core"
-    ID:jQuery
-    title:jquery                 # Searches title as shown on the package listing
-    PackageId:jquery             # Match the package id exactly
-    id:jquery id:ui              # Search for multiple terms in the id
-    id:jquery tags:validation    # Search multiple properties
-    id:"jquery.ui"               # Phrase search
-    invalid:jquery ui            # Unsupported properties are ignored, so this
-                                 # is the same as searching on jquery ui
-    ```
+```
+PackageId:jquery             # Match the package ID in an exact, case-insensitive manner
+
+owner:microsoft              # Match the owner in an exact, case-insensitive manner
+
+id:NuGet.Core                # Match any part of the ID property
+Id:"Nuget.Core"
+ID:jQuery
+id:jquery id:ui              # Search for multiple terms in the ID
+id:jquery tags:validation    # Search multiple properties
+
+invalid:jquery ui            # Unsupported properties are ignored, so this
+                             # is the same as searching on ui
+```

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: 6e352fef9fc36646f6feedbc390f847119cb00bf
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: e6f6d9f703dd4761236d166f3772618c100aca09
+ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73611358"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813762"
 ---
 # <a name="nuget-48-release-notes"></a>NuGet 4.8 发行说明
 
@@ -30,13 +30,13 @@ ms.locfileid: "73611358"
 
 ## <a name="summary-whats-new-in-482"></a>摘要:4.8.2 版中的新增功能
 
-* 安全修复：~/.nuget 中创建的文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* 安全修复：~/.nuget 中针对所创建文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
 ## <a name="known-issues"></a>已知问题
 ### <a name="installing-signed-packages-on-a-ci-machine-or-in-an-offline-environment-takes-longer-than-usual"></a>在 CI 计算机或在脱机环境中安装签名包所需的时间要比平常长
 
 #### <a name="issue"></a>问题
-如果计算机的 Internet 访问受限（如 CI/CD 方案中的生成计算机），安装/还原签名的 nuget 包将导致警告 ([NU3028](https://docs.microsoft.com/nuget/reference/errors-and-warnings/nu3028))，因为吊销服务器不可访问。 这是预期情况。 但是，在某些情况下，这可能会产生意外的结果，如安装/还原包花费的时间比平常长。
+如果计算机的 Internet 访问受限（如 CI/CD 方案中的生成计算机），安装/还原签名的 nuget 包将导致警告 ([NU3028](../reference/errors-and-warnings/nu3028.md))，因为吊销服务器不可访问。 这是预期情况。 但是，在某些情况下，这可能会产生意外的结果，如安装/还原包花费的时间比平常长。
 
 #### <a name="workaround"></a>解决方法
 更新到 Visual Studio 15.8.4 和 NuGet.exe 4.8.1，我们在其中引入了一个环境变量来切换吊销检查模式。
