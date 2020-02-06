@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 2c2b5b21569e2644154670d502146f1e0f9c4c81
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 922fc0b25664dede59e33c6cd012dfeedcad0397
+ms.sourcegitcommit: 415c70d7014545c1f65271a2debf8c3c1c5eb688
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75385009"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036924"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -44,32 +44,32 @@ NuGet 4.0+
 
 下表描述了可以添加到项目文件第一个 `<PropertyGroup>` 节点中的 MSBuild 属性。 在 Visual Studio 2017 及更高版本中，通过右键单击项目并选择上下文菜单上的“编辑 {project_name}”，即可轻松进行这些编辑。 为方便起见，表由 [`.nuspec` 文件](../reference/nuspec.md)中的等效属性组织。
 
-请注意，`.nuspec` 的 `Owners` 和 `Summary` 属性不受 MSBuild 支持。
+请注意，`Owners` 的 `Summary` 和 `.nuspec` 属性不受 MSBuild 支持。
 
-| 属性/NuSpec 值 | MSBuild 属性 | 默认值 | 注释 |
+| 属性/NuSpec 值 | MSBuild 属性 | 默认 | 注意 |
 |--------|--------|--------|--------|
-| Id | PackageId | AssemblyName | MSBuild 的 $(AssemblyName) |
-| {2&gt;版本&lt;2} | PackageVersion | {2&gt;版本&lt;2} | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
-| VersionPrefix | PackageVersionPrefix | 空 | 设置 PackageVersion 会覆盖 PackageVersionPrefix |
-| VersionSuffix | PackageVersionSuffix | 空 | MSBuild 的 $(VersionSuffix)。 设置 PackageVersion 会覆盖 PackageVersionSuffix |
-| 作者 | 作者 | 当前用户的用户名 | |
-| Owners | 不适用 | NuSpec 中不存在 | |
+| ID | PackageId | AssemblyName | MSBuild 的 $(AssemblyName) |
+| 版本 | PackageVersion | 版本 | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
+| VersionPrefix | PackageVersionPrefix | empty | 设置 PackageVersion 会覆盖 PackageVersionPrefix |
+| VersionSuffix | PackageVersionSuffix | empty | MSBuild 的 $(VersionSuffix)。 设置 PackageVersion 会覆盖 PackageVersionSuffix |
+| Authors | Authors | 当前用户的用户名 | |
+| 所有者 | 不可用 | NuSpec 中不存在 | |
 | 职务 | 职务 | PackageId| |
-| 描述 | 描述 | “包描述” | |
-| Copyright | Copyright | 空 | |
-| requireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
-| 许可证 | PackageLicenseExpression | 空 | 对应于 `<license type="expression">` |
-| 许可证 | PackageLicenseFile | 空 | 对应到 `<license type="file">`。 需要显式打包所引用的许可证文件。 |
-| LicenseUrl | PackageLicenseUrl | 空 | `PackageLicenseUrl` 已弃用，请使用 PackageLicenseExpression 或 PackageLicenseFile 属性 |
-| ProjectUrl | PackageProjectUrl | 空 | |
-| 图标 | PackageIcon | 空 | 需要显式打包所引用的图标图像文件。|
-| IconUrl | PackageIconUrl | 空 | 为了获得最佳的下层体验，除了 `PackageIcon`之外，还应指定 `PackageIconUrl`。 更长的期限，`PackageIconUrl` 将被弃用。 |
-| Tags | PackageTags | 空 | 使用分号分隔标记。 |
-| ReleaseNotes | PackageReleaseNotes | 空 | |
-| 存储库/Url | RepositoryUrl | 空 | 用于克隆或检索源代码的存储库 URL。 例如： https://github.com/NuGet/NuGet.Client.git |
-| 存储库/类型 | RepositoryType | 空 | 存储库类型。 示例： *git*、 *tfs*。 |
-| 存储库/分支 | RepositoryBranch | 空 | 可选存储库分支信息。 还必须为此属性指定要包含的*RepositoryUrl* 。 示例： *master* （NuGet 4.7.0 +） |
-| 存储库/提交 | RepositoryCommit | 空 | 可选的存储库提交或更改集，指示针对其生成包的源。 还必须为此属性指定要包含的*RepositoryUrl* 。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* （NuGet 4.7.0 +） |
+| 说明 | 说明 | “包描述” | |
+| 版权信息 | 版权信息 | empty | |
+| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
+| 许可证 | PackageLicenseExpression | empty | 对应于 `<license type="expression">` |
+| 许可证 | PackageLicenseFile | empty | 对应到 `<license type="file">`。 需要显式打包所引用的许可证文件。 |
+| LicenseUrl | PackageLicenseUrl | empty | `PackageLicenseUrl` 已弃用，请使用 PackageLicenseExpression 或 PackageLicenseFile 属性 |
+| ProjectUrl | PackageProjectUrl | empty | |
+| 图标 | PackageIcon | empty | 需要显式打包所引用的图标图像文件。|
+| IconUrl | PackageIconUrl | empty | 为了获得最佳的下层体验，除了 `PackageIcon`之外，还应指定 `PackageIconUrl`。 更长的期限，`PackageIconUrl` 将被弃用。 |
+| Tags | PackageTags | empty | 使用分号分隔标记。 |
+| ReleaseNotes | PackageReleaseNotes | empty | |
+| 存储库/Url | RepositoryUrl | empty | 用于克隆或检索源代码的存储库 URL。 示例： *https://github.com/NuGet/NuGet.Client.git* |
+| 存储库/类型 | RepositoryType | empty | 存储库类型。 示例： *git*、 *tfs*。 |
+| 存储库/分支 | RepositoryBranch | empty | 可选存储库分支信息。 还必须为此属性指定要包含的*RepositoryUrl* 。 示例： *master* （NuGet 4.7.0 +） |
+| 存储库/提交 | RepositoryCommit | empty | 可选的存储库提交或更改集，指示针对其生成包的源。 还必须为此属性指定要包含的*RepositoryUrl* 。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* （NuGet 4.7.0 +） |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | 摘要 | 不支持 | | |
 
@@ -79,9 +79,9 @@ NuGet 4.0+
 - SuppressDependenciesWhenPacking
 - PackageVersion
 - PackageId
-- 作者
-- 描述
-- Copyright
+- Authors
+- 说明
+- 版权信息
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
 - PackageLicenseExpression
@@ -129,7 +129,7 @@ NuGet 4.0+
 
 #### <a name="packing-an-icon-image-file"></a>打包图标图像文件
 
-打包图标图像文件时，需要使用 `PackageIcon` 属性来指定包路径，相对于包的根。 此外，还需要确保文件已包含在包中。 图像文件大小限制为 1 MB。 支持的文件格式包括 JPEG 和 PNG。 建议使用64x64 的图像分辨率。
+打包图标图像文件时，需要使用 `PackageIcon` 属性来指定包路径，相对于包的根。 此外，还需要确保文件已包含在包中。 图像文件大小限制为 1 MB。 支持的文件格式包括 JPEG 和 PNG。 建议使用128x128 的图像分辨率。
 
 例如：
 
@@ -199,7 +199,7 @@ NuGet 4.0+
 </Content>
 ```
 
-如果仅希望将所有内容都复制到特定根文件夹（而不是 `content` 和 `contentFiles`），可使用 MSBuild 属性 `ContentTargetFolders`，其默认值为“content;contentFiles”，但可以设置为任何其他文件夹名称。 请注意，基于 `buildAction`，仅在 `ContentTargetFolders` 中指定“contentFiles”会将文件置于 `contentFiles\any\<target_framework>` 或 `contentFiles\<language>\<target_framework>` 下。
+如果仅希望将所有内容都复制到特定根文件夹（而不是 `content` 和 `contentFiles`），可使用 MSBuild 属性 `ContentTargetFolders`，其默认值为“content;contentFiles”，但可以设置为任何其他文件夹名称。 请注意，基于 `ContentTargetFolders`，仅在 `contentFiles\any\<target_framework>` 中指定“contentFiles”会将文件置于 `contentFiles\<language>\<target_framework>` 或 `buildAction` 下。
 
 `PackagePath` 可以是一组以分号分隔的目标路径。 指定空的包路径会将文件添加到包的根目录。 例如，以下操作会将 `libuv.txt` 添加到 `content\myfiles`、`content\samples` 和包的根目录：
 
@@ -212,7 +212,7 @@ NuGet 4.0+
 
 另外还有 MSBuild 属性 `$(IncludeContentInPack)`，默认值为 `true`。 如果在任何项目中将此值设置为 `false`，则该项目的内容不会包括在 nuget 包中。
 
-其他可在任何上述项上设置的特定于包的元数据包括 ```<PackageCopyToOutput>``` 和 ```<PackageFlatten>```，后者在输出 nuspec 中的 ```contentFiles``` 条目上设置 ```CopyToOutput``` 和 ```Flatten``` 值。
+其他可在任何上述项上设置的特定于包的元数据包括 ```<PackageCopyToOutput>``` 和 ```<PackageFlatten>```，后者在输出 nuspec 中的 ```CopyToOutput``` 条目上设置 ```Flatten``` 和 ```contentFiles``` 值。
 
 > [!Note]
 > 除了“Content”项，`<Pack>` 和 `<PackagePath>` 元数据还可以在具有 Compile、EmbeddedResource、ApplicationDefinition、Page、Resource、SplashScreen、DesignData、DesignDataWithDesignTimeCreateableTypes、CodeAnalysisDictionary、AndroidAsset、AndroidResource、BundleResource 或 None 生成操作的文件上进行设置。
@@ -225,7 +225,7 @@ NuGet 4.0+
 
 ### <a name="includesource"></a>IncludeSource
 
-这与 `IncludeSymbols` 相同，但它还会连同 `.pdb` 文件复制源文件。 类型为 `Compile` 的所有文件都会复制到 `src\<ProjectName>\`，并保留生成包中的相对路径文件夹结构。 对于将 `TreatAsPackageReference` 设置为 `false` 的任何 `ProjectReference` 的源文件也是如此。
+这与 `IncludeSymbols` 相同，但它还会连同 `.pdb` 文件复制源文件。 类型为 `Compile` 的所有文件都会复制到 `src\<ProjectName>\`，并保留生成包中的相对路径文件夹结构。 对于将 `ProjectReference` 设置为 `TreatAsPackageReference` 的任何 `false` 的源文件也是如此。
 
 如果类型为 Compile 的文件位于项目文件夹外，则它只添加到了 `src\<ProjectName>\`。
 
@@ -258,7 +258,7 @@ NuGet 4.0+
 
 ### <a name="istool"></a>IsTool
 
-使用 `MSBuild -t:pack -p:IsTool=true` 时，所有输出文件（如[输出程序集](#output-assemblies)方案中所指定）都被复制到 `tools` 文件夹，而不是 `lib` 文件夹。 请注意，这不同于 `DotNetCliTool`，后者通过在 `.csproj` 文件中设置 `PackageType` 进行指定。
+使用 `MSBuild -t:pack -p:IsTool=true` 时，所有输出文件（如[输出程序集](#output-assemblies)方案中所指定）都被复制到 `tools` 文件夹，而不是 `lib` 文件夹。 请注意，这不同于 `DotNetCliTool`，后者通过在 `PackageType` 文件中设置 `.csproj` 进行指定。
 
 ### <a name="packing-using-a-nuspec"></a>使用 .nuspec 打包
 
@@ -371,7 +371,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 其他的还原设置可能来自项目文件中的 MSBuild 属性。 还可以从命令行使用 `-p:` 开关设置值（请参阅以下示例）。
 
-| Property | 描述 |
+| 属性 | 说明 |
 |--------|--------|
 | RestoreSources | 以分号分隔的包源列表。 |
 | RestorePackagesPath | 用户包文件夹路径。 |
@@ -413,7 +413,7 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 
 还原会在生成 `obj` 文件夹中创建以下文件：
 
-| File | 描述 |
+| 文件 | 说明 |
 |--------|--------|
 | `project.assets.json` | 包含所有包引用的依赖项关系图。 |
 | `{projectName}.projectFileExtension.nuget.g.props` | 包中包含的对 MSBuild 属性的引用 |
@@ -448,7 +448,7 @@ msbuild -t:build -restore
 </PackageTargetFallback>
 ```
 
-若要声明项目中所有目标的回退，请停止 `Condition` 属性。 还可以通过包括 `$(PackageTargetFallback)` 扩展任何现有 `PackageTargetFallback`，如下所示：
+若要声明项目中所有目标的回退，请停止 `Condition` 属性。 还可以通过包括 `PackageTargetFallback` 扩展任何现有 `$(PackageTargetFallback)`，如下所示：
 
 ```xml
 <PackageTargetFallback>

@@ -1,4 +1,4 @@
-# [Docs 概览](index.md)
+# [Docs 概览](index.yml)
 # [什么是 NuGet？](what-is-nuget.md)
 # 入门
 ## [安装 NuGet 客户端工具](install-nuget-client-tools.md)
