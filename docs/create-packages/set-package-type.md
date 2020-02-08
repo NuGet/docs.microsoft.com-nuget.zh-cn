@@ -5,24 +5,26 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8a3ba6af19125b75af17cab8c093e89485e20324
-ms.sourcegitcommit: 0dea3b153ef823230a9d5f38351b7cef057cb299
+ms.openlocfilehash: 22e8ac2e9e2086a1280c5b0c3be8a032b7998b36
+ms.sourcegitcommit: 415c70d7014545c1f65271a2debf8c3c1c5eb688
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67843489"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036911"
 ---
 # <a name="set-a-nuget-package-type"></a>设置 NuGet 包类型
 
-通过 NuGet 3.5+ 可以使用特定的包类型标记包以指示其预期用途  。 未标记类型的包（包含使用更早版本的 NuGet 创建的所有包）默认为 `Dependency` 类型。
+通过 NuGet 3.5+ 可以使用特定的包类型标记包以指示其预期用途。 未标记类型的包（包含使用更早版本的 NuGet 创建的所有包）默认为 `Dependency` 类型。
 
 - `Dependency` 类型包将生成或运行时资产添加到库和应用程序，并且可以在任何项目类型中安装（假设它们相互兼容）。
 
-- `DotnetCliTool` 类型包是 [dotnet CLI](/dotnet/articles/core/tools/index) 的扩展，并且从命令行中调用。 该包仅在 .NET Core 项目中安装并且不影响还原操作。 [.NET Core 扩展性](/dotnet/articles/core/tools/extensibility#per-project-based-extensibility)文档中提供更多有关这些项目扩展的详细信息。
+- `DotnetTool` 类型包是 [dotnet CLI](/dotnet/articles/core/tools/index) 的扩展，并且从命令行中调用。 该包仅在 .NET Core 项目中安装并且不影响还原操作。 [.NET Core 扩展性](/dotnet/articles/core/tools/extensibility#per-project-based-extensibility)文档中提供更多有关这些项目扩展的详细信息。
 
-- 自定义类型包使用与包 ID 遵守相同格式规则的任意类型标识符。 但是，任何不是 `Dependency` 和 `DotnetCliTool` 的类型不会被 Visual Studio 中的 NuGet 包管理器识别。
+- `Template` 类型包提供[自定义模板](/dotnet/core/tools/custom-templates)，这些模板可以用来创建文件或项目，例如应用、服务、工具或类库。
 
-包类型在 `.nuspec` 文件中设置。 后向兼容最好不显式设置 `Dependency` 类型，而是依赖 NuGet 在没有指定类型时假设此类型  。
+- 自定义类型包使用与包 ID 遵守相同格式规则的任意类型标识符。 但是，任何不是 `Dependency` 和 `DotnetTool` 的类型不会被 Visual Studio 中的 NuGet 包管理器识别。
+
+包类型在 `.nuspec` 文件中设置。 后向兼容最好不显式设置 `Dependency` 类型，而是依赖 NuGet 在没有指定类型时假设此类型。
 
 - `.nuspec`：指明 `packageTypes\packageType` 节点中 `<metadata>` 元素下的包类型：
 
@@ -32,7 +34,7 @@ ms.locfileid: "67843489"
         <metadata>
         <!-- ... -->
         <packageTypes>
-            <packageType name="DotnetCliTool" />
+            <packageType name="DotnetTool" />
         </packageTypes>
         </metadata>
     </package>

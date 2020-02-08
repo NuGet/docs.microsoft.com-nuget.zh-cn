@@ -12,24 +12,24 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 0109aea95ec255b3e0abcdff4cf51b4bfeafbb8c
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: 839c38ec165372bab9b93dec25e5c8e8e9439bfa
+ms.sourcegitcommit: 415c70d7014545c1f65271a2debf8c3c1c5eb688
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813476"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036885"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
-通过符号包可以提高 NuGet 包的调试体验。
+良好的调试体验依赖于调试符号的存在，因为它们提供了一些关键信息，例如已编译的代码与源代码之间的关联、局部变量的名称、堆栈跟踪等。 你可以使用符号包 (.snupkg) 来分发这些符号，并改善 NuGet 包的调试体验。
 
 ## <a name="prerequisites"></a>先决条件
 
-[nuget.exe v4.9.0 或更高版本](https://www.nuget.org/downloads)或 [dotnet.exe v2.2.0 或更高版本](https://www.microsoft.com/net/download/dotnet-core/2.2)，它们实现了所需的 [NuGet 协议](../api/nuget-protocols.md)。
+[nuget.exe v4.9.0 或更高版本](https://www.nuget.org/downloads)或 [dotnet CLI v2.2.0 或更高版本](https://www.microsoft.com/net/download/dotnet-core/2.2)，它们实现了所需的 [NuGet 协议](../api/nuget-protocols.md)。
 
 ## <a name="creating-a-symbol-package"></a>创建符号包
 
-如果使用 dotnet.exe 或 MSBuild，则除 .nupkg 文件外，还需要设置 `IncludeSymbols` 和 `SymbolPackageFormat` 属性创建 .snupkg 文件。
+如果使用 dotnet CLI 或 MSBuild，则除 .nupkg 文件外，还需要设置 `IncludeSymbols` 和 `SymbolPackageFormat` 属性以创建 .snupkg 文件。
 
 * 要么将以下属性添加到 .csproj 文件：
 
@@ -108,17 +108,17 @@ NuGet.org 对符号包具有以下约束：
 
 发布到 [NuGet.org](https://www.nuget.org/) 的符号包会接受多项验证，包括恶意软件扫描。 如果包未通过验证检查，则其包详细信息页将显示错误消息。 此外，包的所有者还将收到一封电子邮件，其中包含有关如何解决已识别问题的说明。
 
-当符号包通过所有验证后，NuGet.org 的符号服务器将为其中的符号编制索引。 编制索引后，NuGet.org 符号服务器即可使用这些符号。
+当符号包通过所有验证后，NuGet.org 的符号服务器将为其中的符号编制索引，并且这些符号将可供使用。
 
 包验证和编制索引所需的时间通常不超过 15 分钟。 如果发布包所用时间超出预期，请访问 [status.nuget.org](https://status.nuget.org/) 检查 NuGet.org 是否遇到任何中断。 如果所有系统均正常运行，但一个小时之内还未成功发布包，请登录 nuget.org 并使用包详细信息页面上的“联系支持人员”链接与我们联系。
 
 ## <a name="symbol-package-structure"></a>符号包结构
 
-.nupkg 文件将和现在一模一样，但 .snupkg 文件具有以下特征：
+符号包 (.snupkg) 具有以下特征：
 
-1) .snupkg 将具有与相应 .nupkg 相同的 ID 和版本。
-2) .snupkg 将具有与任何 DLL 或 EXE 文件的 nupkg 完全相同的文件夹结构，区别在于其相应的 PDB 将包含在同一文件夹层次结构中，而不是 DLL/EXE 中。 扩展名不是 PDB 的文件和文件夹将被排除在 snupkg 之外。
-3) .snupkg 中的 .nuspec 文件还将指定一个新的 PackageType，如下所示。 这应该是唯一指定的 PackageType。
+1) .snupkg 与相应的 NuGet 包 (.nupkg) 具有相同的 ID 和版本。
+2) .snupkg 具有与任何 DLL 或 EXE 文件的相应 .nupkg 相同的文件夹结构，区别在于其相应的 PDB 将包含在同一文件夹层次结构中，而不是 DLL/EXE 中。 扩展名不是 PDB 的文件和文件夹将被排除在 snupkg 之外。
+3) 符号包的 .nuspec 文件具有 `SymbolsPackage` 包类型：
 
    ```xml
    <packageTypes>

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 69ef02e3c935287759b4012aadcfb1cb9811367c
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 1ae030c308b14b8884fb608c1683c8c46000b0bd
+ms.sourcegitcommit: 415c70d7014545c1f65271a2debf8c3c1c5eb688
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488446"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036898"
 ---
 # <a name="what-happens-when-a-nuget-package-is-installed"></a>安装 NuGet 包时会发生什么情况？
 
@@ -23,9 +23,9 @@ ms.locfileid: "69488446"
    如果安装工具是 Visual Studio 或 dotnet CLI，则该工具首先尝试安装包。 如果不兼容，则不会将包添加到项目文件或 `packages.config` 中。
 
 2. 获取包：
-   - 检查包是否（通过标识符和版本号）已安装在 global-packages  文件夹中，如[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)中所述。
+   - 检查包是否（通过标识符和版本号）已安装在 global-packages 文件夹中，如[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)中所述。
 
-   - 如果包不在 global-packages  文件夹中，请尝试从[配置文件](../consume-packages/Configuring-NuGet-Behavior.md)中列出的源检索包。 对于在线源，请首先尝试从 HTTP 缓存中检索包，除非通过 `nuget.exe` 命令指定 `-NoCache` 或通过 `dotnet restore` 指定 `--no-cache`。 （Visual Studio 和 `dotnet add package` 始终使用缓存。）如果从缓存中使用包，“缓存”将出现在输出中。 缓存有 30 分钟的到期时间。
+   - 如果包不在 global-packages 文件夹中，则尝试从[配置文件](../consume-packages/Configuring-NuGet-Behavior.md)中列出的源中检索它。 对于在线源，请首先尝试从 HTTP 缓存中检索包，除非通过 `nuget.exe` 命令指定 `-NoCache` 或通过 `dotnet restore` 指定 `--no-cache`。 （Visual Studio 和 `dotnet add package` 始终使用缓存。）如果从缓存中使用包，“缓存”将出现在输出中。 缓存有 30 分钟的到期时间。
 
    - 如果包不在 HTTP 缓存中，请尝试从配置中列出的源下载包。 如果下载包，则会在输出中出现“GET”和“OK”。 NuGet 以常规详细级别记录 http 流量。
 
@@ -35,9 +35,9 @@ ms.locfileid: "69488446"
 
    - NuGet 将首先检查源本地文件夹和网络共享，然后再检查 HTTP 源。
 
-3. 保存包副本和 http-cache  文件夹中的其他信息，如[管理全局包和缓存文件夹中所述](../consume-packages/managing-the-global-packages-and-cache-folders.md)。
+3. 保存包副本和 http-cache 文件夹中的其他信息，如[管理全局包和缓存文件夹中所述](../consume-packages/managing-the-global-packages-and-cache-folders.md)。
 
-4. 如下载，请将包安装到每个用户的 global-packages  文件夹中。 NuGet 创建每个包标识符的子文件夹，然后创建每个已安装包版本的子文件夹。
+4. 如下载，请将包安装到每个用户的 global-packages 文件夹中。 NuGet 创建每个包标识符的子文件夹，然后创建每个已安装包版本的子文件夹。
 
 5. NuGet 安装所需的包依赖项。 此过程可能会更新过程中的包版本，如[依赖项解析](../concepts/dependency-resolution.md)中所述。
 
