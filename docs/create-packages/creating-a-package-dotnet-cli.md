@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 535d5a16a559cde065ee0277471edfbaf1aea084
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: c198bb73f0e4f5a59826db905eaf4622fe8543bc
+ms.sourcegitcommit: 1799d4ac23c8aacee7498fdc72c40dd1646d267b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825269"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77476251"
 ---
 # <a name="create-a-nuget-package-using-the-dotnet-cli"></a>使用 dotnet CLI 创建 NuGet 包
 
@@ -122,6 +122,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 - [包版本控制](../concepts/package-versioning.md)
 - [支持多个目标框架](../create-packages/multiple-target-frameworks-project-file.md)
+- [添加包图标](../reference/nuspec.md#icon)
 - [源和配置文件的转换](../create-packages/source-and-config-file-transformations.md)
 - [本地化](../create-packages/creating-localized-packages.md)
 - [预发布版本](../create-packages/prerelease-packages.md)

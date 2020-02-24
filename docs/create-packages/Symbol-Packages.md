@@ -1,34 +1,34 @@
 ---
-title: 如何创建 NuGet 符号包
+title: 创建旧式符号包 (.symbols.nupkg)
 description: 如何在 Visual Studio 中创建仅包含符号的 NuGet 包以支持调试其他 NuGet 包。
 author: karann-msft
 ms.author: karann
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 97a533171d698792d66a78550dacfe8eaf29a440
-ms.sourcegitcommit: fc0f8c950829ee5c96e3f3f32184bc727714cfdb
+ms.openlocfilehash: 374e9ccfc01cd06508e76529765db3f849342222
+ms.sourcegitcommit: 1799d4ac23c8aacee7498fdc72c40dd1646d267b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74253914"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77476264"
 ---
-# <a name="creating-symbol-packages-legacy"></a>创建符号包（旧版）
+# <a name="creating-legacy-symbol-packages-symbolsnupkg"></a>创建旧式符号包 (.symbols.nupkg)
 
 > [!Important]
 > 符号包的新推荐格式为 .snupkg。 请参阅[创建符号包 (.snupkg)](Symbol-Packages-snupkg.md)。 </br>
 > .symbols.nupkg 仍受支持，但仅出于兼容性原因。
 
-除了为 nuget.org 或其他源生成包之外，NuGet 还支持创建关联的符号包并将其发布到 SymbolSource 存储库。
+除了为 nuget.org 或其他源生成包之外，NuGet 还支持创建可发布到符号服务器的关联符号包。 旧式符号包格式 .symbols.nupkg 可以推送到 SymbolSource 存储库。
 
 然后，包使用者可将 `https://nuget.smbsrc.net` 添加到 Visual Studio 中的符号源，它允许在 Visual Studio 调试程序中单步执行包代码。 有关该过程的详细信息，请参阅[在 Visual Studio 调试程序中指定符号 (.pdb) 和源文件](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger)。
 
-## <a name="creating-a-symbol-package"></a>创建符号包
+## <a name="creating-a-legacy-symbol-package"></a>创建旧式符号包
 
-若要创建符号包，请按照以下约定操作：
+若要创建旧式符号包，请按照以下约定操作：
 
 - （使用代码）将主包命名为 `{identifier}.nupkg`，并包括除 `.pdb` 文件之外的所有文件。
-- 将符号包命名为 `{identifier}.symbols.nupkg`，并包括程序集 DLL、`.pdb` 文件、XMLDOC 文件和源文件（请参阅以下各节）。
+- 将旧式符号包命名为 `{identifier}.symbols.nupkg`，并包括程序集 DLL、`.pdb` 文件、XMLDOC 文件和源文件（请参阅以下各节）。
 
 可使用 `-Symbols` 选项从 `.nuspec` 文件或项目文件中同时创建这两个包：
 
@@ -40,11 +40,11 @@ nuget pack MyProject.csproj -Symbols
 
 请注意，`pack` 要求在 Mac OS X 上使用 Mono 4.4.2，但不能在 Linux 系统上使用。 在 Mac 上，还必须将 `.nuspec` 文件中的 Windows 路径名转换为 Unix 样式的路径。
 
-## <a name="symbol-package-structure"></a>符号包结构
+## <a name="legacy-symbol-package-structure"></a>旧式符号包结构
 
-符号包面向多个目标框架的方式可与库包的方式相同，因此 `lib` 文件夹的结构应与主包的结构完全相同，即仅包括 `.pdb` 和 DLL 文件。
+旧式符号包面向多个目标框架的方式可与库包的方式相同，因此 `lib` 文件夹的结构应与主包的结构完全相同，即仅包括 `.pdb` 和 DLL 文件。
 
-例如，面向 .NET 4.0 和 Silverlight 4 的符号包具有以下布局：
+例如，面向 .NET 4.0 和 Silverlight 4 的旧式符号包具有以下布局：
 
     \lib
         \net40
@@ -70,7 +70,7 @@ nuget pack MyProject.csproj -Symbols
                 \MySilverlightExtensions.cs
                 \MyAssembly.csproj (producing \lib\sl4\MyAssembly.dll)
 
-除了 `lib` 文件夹之外，符号包需要包含以下布局：
+除了 `lib` 文件夹之外，旧式符号包需要包含以下布局：
 
     \src
         \Common
@@ -85,7 +85,7 @@ nuget pack MyProject.csproj -Symbols
 
 ## <a name="referring-to-files-in-the-nuspec"></a>引用 nuspec 中的文件
 
-可以通过约定从文件夹结构中生成符号包（如上一部分所述），也可以通过在清单的 `files` 部分中指定内容进行生成。 例如，若要生成上一部分中显示的包，请使用 `.nuspec` 文件中的以下内容：
+可以通过约定从文件夹结构中生成旧式符号包（如上一部分所述），也可以通过在清单的 `files` 部分中指定内容进行生成。 例如，若要生成上一部分中显示的包，请使用 `.nuspec` 文件中的以下内容：
 
 ```xml
 <files>
@@ -97,7 +97,7 @@ nuget pack MyProject.csproj -Symbols
 </files>
 ```
 
-## <a name="publishing-a-symbol-package"></a>发布符号包
+## <a name="publishing-a-legacy-symbol-package"></a>发布旧式符号包
 
 > [!Important]
 > 若要将包推送到 nuget.org，必须使用实现所需 [NuGet 协议](../api/nuget-protocols.md)的 [nuget.exe v4.9.1 或更高版本](https://www.nuget.org/downloads)。
@@ -108,13 +108,13 @@ nuget pack MyProject.csproj -Symbols
     nuget SetApiKey Your-API-Key
     ```
 
-2. 将主包发布到 nuget.org 后，按照以下方式推送符号包，由于文件名中的 `.symbols`，此步骤将 symbolsource.org 自动用作目标：
+2. 将主包发布到 nuget.org 后，按照以下方式推送旧式符号包，由于文件名中的 `.symbols`，此步骤将 symbolsource.org 自动用作目标：
 
     ```cli
     nuget push MyPackage.symbols.nupkg
     ```
 
-3. 若要发布到另一符号存储库或推送不遵循命名约定的符号包，请使用 `-Source` 选项：
+3. 若要发布到另一符号存储库或推送不遵循命名约定的旧式符号包，请使用 `-Source` 选项：
 
     ```cli
     nuget push MyPackage.symbols.nupkg -source https://nuget.smbsrc.net/
@@ -133,4 +133,5 @@ nuget pack MyProject.csproj -Symbols
 
 ## <a name="see-also"></a>请参阅
 
-[移动到新的 SymbolSource 引擎](https://tripleemcoder.com/2015/10/04/moving-to-the-new-symbolsource-engine/) (symbolsource.org)
+* [创建符号包 (.snupkg)](Symbol-Packages-snupkg.md) - 符号包的新推荐格式
+* [移动到新的 SymbolSource 引擎](https://tripleemcoder.com/2015/10/04/moving-to-the-new-symbolsource-engine/) (symbolsource.org)
