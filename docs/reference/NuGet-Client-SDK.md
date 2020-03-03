@@ -5,23 +5,60 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 873bde467a39653b818b49173d53bc983e99d1b9
-ms.sourcegitcommit: f9645fc5f49c18978e12a292a3f832e162e069d5
+ms.openlocfilehash: a5c542379318f24ee35ccf25651d0e8de91253ba
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72924602"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231235"
 ---
 # <a name="nuget-client-sdk"></a>NuGet 客户端 SDK
 
-*Nuget 客户端 SDK*指的是一组以[nuget. 命令](https://www.nuget.org/packages/NuGet.Commands)、 [nuget](https://www.nuget.org/packages/NuGet.Packaging)和[nuget](https://www.nuget.org/packages/NuGet.Protocol)为中心的 nuget 包。 这些包将替换前面的[NuGet](https://www.nuget.org/packages/NuGet.Core/)库。
+*Nuget 客户端 SDK*引用一组 NuGet 包：
+
+* [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) -用于与基于 HTTP 和文件的 NuGet 源交互
+* [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging) -用于与 NuGet 包交互。 `NuGet.Protocol` 依赖于此包
+
+你可以在[NuGet/nuget。客户端](https://github.com/NuGet/NuGet.Client)GitHub 存储库中找到这些包的源代码。
 
 > [!Note]
->  有关 NuGet 服务器协议的文档，请参阅[Nuget 服务器 API](~/api/overview.md)。
+> 有关 NuGet 服务器协议的文档，请参阅[Nuget 服务器 API](~/api/overview.md)。
 
-## <a name="source-code"></a>源代码
+## <a name="getting-started"></a>入门
 
-源代码在 GitHub 上的项目[NuGet/nuget](https://github.com/NuGet/NuGet.Client)中发布。
+### <a name="install-the-package"></a>安装包
+
+```ps1
+dotnet add package NuGet.Protocol
+```
+
+## <a name="examples"></a>示例
+
+你可以在 GitHub 上的[nuget.exe](https://github.com/NuGet/Samples/tree/master/NuGetProtocolSamples)项目上找到这些示例。
+
+### <a name="list-package-versions"></a>列出包版本
+
+使用[NuGet V3 包内容 API](../api/package-base-address-resource.md#enumerate-package-versions)查找 newtonsoft.json 的所有版本：
+
+[!code-csharp[ListPackageVersions](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=ListPackageVersions)]
+
+### <a name="download-a-package"></a>下载包
+
+使用[NuGet V3 包内容 API](../api/package-base-address-resource.md)下载 newtonsoft.json v 12.0.1：
+
+[!code-csharp[DownloadPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=DownloadPackage)]
+
+### <a name="get-package-metadata"></a>获取包元数据
+
+使用[NuGet V3 包元数据 API](../api/registration-base-url-resource.md)获取 "newtonsoft.json" 包的元数据：
+
+[!code-csharp[GetPackageMetadata](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=GetPackageMetadata)]
+
+### <a name="search-packages"></a>搜索包
+
+使用[NuGet V3 搜索 API](../api/search-query-service-resource.md)搜索 "json" 包：
+
+[!code-csharp[SearchPackages](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=SearchPackages)]
 
 ## <a name="third-party-documentation"></a>第三方文档
 

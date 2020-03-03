@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 00e2ee760698afd8591909570d76e4bfe475a682
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 2358cedc05520a3ec82a39aef34b6d467e44460b
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75383990"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231157"
 ---
 # <a name="pack-command-nuget-cli"></a>pack 命令（NuGet CLI）
 
@@ -22,7 +22,7 @@ ms.locfileid: "75383990"
 > 为基于[PackageReference](../../consume-packages/package-references-in-project-files.md)的项目使用[`dotnet pack`](../dotnet-Commands.md)或[`msbuild -t:pack`](../msbuild-targets.md) 。
 > 在 Mono 下，不支持从项目文件创建包。 还需要将 `.nuspec` 文件中的非本地路径调整为 Unix 样式路径，因为 nuget.exe 不会转换 Windows 路径名本身。
 
-## <a name="usage"></a>用量
+## <a name="usage"></a>使用情况
 
 ```cli
 nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
@@ -32,10 +32,10 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 ## <a name="options"></a>选项
 
-| 选项 | 描述 |
+| 选项 | 说明 |
 | --- | --- |
 | BasePath | 设置在[nuspec](../nuspec.md)文件中定义的文件的基路径。 |
-| 生成 | 指定应在生成包之前生成项目。 |
+| 构建 | 指定应在生成包之前生成项目。 |
 | 排除 | 指定创建包时要排除的一个或多个通配符模式。 若要指定多个模式，请重复-Exclude 标志。 请参阅以下示例。 |
 | ExcludeEmptyDirectories | 在生成包时阻止包含空目录。 |
 | ForceEnglishOutput | *（3.5 +）* 使用固定的、基于英语的区域性强制执行 nuget.exe。 |
@@ -48,12 +48,12 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 | NoDefaultExcludes | 禁止默认排除 NuGet 包文件以及以点（例如 `.svn` 和 `.gitignore`）开头的文件和文件夹。 |
 | NoPackageAnalysis | 指定 pack 不应在生成包后运行包分析。 |
 | OutputDirectory | 指定在其中存储创建的包的文件夹。 如果未指定文件夹，则使用当前文件夹。 |
-| 属性 | 应在其他选项后出现在命令行的最后。 指定重写项目文件中的值的属性的列表;请参阅属性名称的[常用 MSBuild 项目属性](/visualstudio/msbuild/common-msbuild-project-properties)。 此处的 Properties 参数是由分号分隔的标记 = 值对列表，其中每个 `$token$` 出现在 `.nuspec` 文件中，都将替换为给定的值。 值可以是用引号引起来的字符串。 请注意，对于 "配置" 属性，默认值为 "调试"。 若要更改为发布配置，请使用 `-Properties Configuration=Release`。 |
-| 后缀 | *（3.4.4 +）* 将后缀追加到内部生成的版本号，通常用于追加生成或其他预发行标识符。 例如，使用 `-suffix nightly` 会创建一个包，其中包含 `1.2.3-nightly`等版本号。 后缀必须以字母开头，以避免与不同版本的 NuGet 和 NuGet 包管理器的警告、错误和可能的不兼容性。 |
-| 符号 | 指定包包含源和符号。 与 `.nuspec` 文件一起使用时，将创建一个常规 NuGet 包文件和相应的符号包。 默认情况下，它会创建[旧的符号包](../../create-packages/Symbol-Packages.md)。 符号包的新推荐格式为 .snupkg。 请参阅[创建符号包 (.snupkg)](../../create-packages/Symbol-Packages-snupkg.md)。 |
+| 属性 | 应在其他选项后出现在命令行的最后。 指定重写项目文件中的值的属性的列表;请参阅属性名称的[常用 MSBuild 项目属性](/visualstudio/msbuild/common-msbuild-project-properties)。 此处的 Properties 参数是由分号分隔的标记 = 值对列表，其中每个 `$token$` 出现在 `.nuspec` 文件中，都将替换为给定的值。 值可以是用引号引起来的字符串。 请注意，对于 "配置" 属性，默认值为 "调试"。 若要更改为发布配置，请使用 `-Properties Configuration=Release`。 **一般**情况下，属性应该与在相应 `nuget build`中使用的属性相同，以避免潜在的异常行为。 |
+| Suffix | *（3.4.4 +）* 将后缀追加到内部生成的版本号，通常用于追加生成或其他预发行标识符。 例如，使用 `-suffix nightly` 会创建一个包，其中包含 `1.2.3-nightly`等版本号。 后缀必须以字母开头，以避免与不同版本的 NuGet 和 NuGet 包管理器的警告、错误和可能的不兼容性。 |
+| “符号” | 指定包包含源和符号。 与 `.nuspec` 文件一起使用时，将创建一个常规 NuGet 包文件和相应的符号包。 默认情况下，它会创建[旧的符号包](../../create-packages/Symbol-Packages.md)。 符号包的新推荐格式为 .snupkg。 请参阅[创建符号包 (.snupkg)](../../create-packages/Symbol-Packages-snupkg.md)。 |
 | 工具 | 指定应将项目的输出文件放在 `tool` 文件夹中。 |
-| 详细级别 | 指定在输出中显示的详细信息量： "*正常*"、"*静默*"、"*详细*"。 |
-| {2&gt;版本&lt;2} | 覆盖 `.nuspec` 文件中的版本号。 |
+| 详细程度 | 指定在输出中显示的详细信息量： "*正常*"、"*静默*"、"*详细*"。 |
+| 版本 | 覆盖 `.nuspec` 文件中的版本号。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
 
@@ -75,6 +75,14 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 ```
 
 对于此项目，`nuget pack` 创建的包将依赖于 `jQuery` 和 `microsoft-web-helpers` 但不 `netfx-Guard`。
+
+## <a name="suppressing-pack-warnings"></a>抑制包警告
+
+尽管建议你在包操作期间解决所有 NuGet 警告，但在某些情况下禁止它们是保证的。
+
+可以通过以下方式实现此目的： 
+
+> nuget.exe 包 nuspec-Properties NoWarn = NU5104
 
 ## <a name="examples"></a>示例
 

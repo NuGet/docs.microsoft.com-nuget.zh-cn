@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 906d07eb22599eb423b00300954ff2601dd33369
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 13b6f5abe93a17c809564265990f86f6780aa67e
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75383546"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230806"
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>在 Visual Studio 中通过 NuGet 凭据提供程序对源进行身份验证
 
@@ -19,6 +19,8 @@ NuGet Visual Studio 扩展 3.6 + 支持凭据提供程序，这些提供程序�
 
 可在[VsCredentialProvider 示例](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider)中找到示例实现。
 
+在 Visual Studio 中，NuGet 使用内部 `VsCredentialProviderImporter`，这也会扫描插件凭据提供程序。 这些插件凭据提供程序必须可被视为 `IVsCredentialProvider`类型的 MEF 导出。
+
 从 Visual Studio 中的 4.8 + NuGet 开始，还支持新的跨平台身份验证插件，但出于性能方面的原因，不建议采用这些方法。
 
 > [!Note]
@@ -26,16 +28,6 @@ NuGet Visual Studio 扩展 3.6 + 支持凭据提供程序，这些提供程序�
 >
 > 用于 Visual Studio 的 NuGet 凭据提供程序仅适用于 Visual Studio （不在 dotnet restore 或 nuget.exe 中）。 有关 nuget.exe 的凭据提供程序，请参阅[Nuget.exe 凭据提供程序](nuget-exe-Credential-providers.md)。
 > 对于 dotnet 和 msbuild 中的凭据提供程序，请参阅[NuGet 跨平台插件](nuget-cross-platform-authentication-plugin.md)
-
-## <a name="available-nuget-credential-providers-for-visual-studio"></a>适用于 Visual Studio 的 NuGet 凭据提供程序
-
-Visual Studio NuGet 扩展中内置了一个凭据提供程序，可支持 Visual Studio Team Services。
-
-NuGet Visual Studio 扩展使用内部 `VsCredentialProviderImporter`，这也会扫描插件凭据提供程序。 这些插件凭据提供程序必须可被视为 `IVsCredentialProvider`类型的 MEF 导出。
-
-可用插件凭据提供程序包括：
-
-- [适用于 Visual Studio 的 MyGet 凭据提供程序](http://docs.myget.org/docs/reference/credential-provider-for-visual-studio)
 
 ## <a name="creating-a-nuget-credential-provider-for-visual-studio"></a>为 Visual Studio 创建 NuGet 凭据提供程序
 
@@ -77,7 +69,7 @@ Visual Studio 的自定义 NuGet 凭据提供程序必须实现[VisualStudio 包
 
 #### <a name="getcredentialasync"></a>GetCredentialAsync
 
-| 输入参数 |描述|
+| 输入参数 |说明|
 | ----------------|-----------|
 | Uri uri | 正在为其请求凭据的包源 Uri。|
 | IWebProxy 代理 | 网络上通信时要使用的 Web 代理。 如果未配置代理身份验证，则为 Null。 |

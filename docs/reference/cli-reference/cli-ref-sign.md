@@ -6,12 +6,12 @@ ms.author: dtivel
 ms.date: 03/06/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 746f7a421bd855b77716388b4af2fecbd5cf5a68
-ms.sourcegitcommit: 96aab8a1ad35eca0c029679d0158d9cc93d66009
+ms.openlocfilehash: e596fd5eb3de8ca4802d9b7b8e7cb623568e3dcb
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75676401"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231118"
 ---
 # <a name="sign-command-nuget-cli"></a>sign 命令 (NuGet CLI)
 
@@ -22,7 +22,7 @@ ms.locfileid: "75676401"
 > [!Note]
 > .NET Core、Mono 或非 Windows 平台上尚不支持包签名。
 
-## <a name="usage"></a>用量
+## <a name="usage"></a>使用情况
 
 ```cli
 nuget sign <package(s)> [options]
@@ -32,7 +32,7 @@ nuget sign <package(s)> [options]
 
 ## <a name="options"></a>选项
 
-| 选项 | 描述 |
+| 选项 | 说明 |
 | --- | --- |
 | CertificateFingerprint | 指定用于搜索证书的本地证书存储区的证书的 SHA-1 指纹。 |
 | CertificatePassword | 如果需要，指定证书密码。 如果证书受密码保护，但未提供密码，则该命令将在运行时提示输入密码，除非传递了-非交互式选项。 |
@@ -42,14 +42,14 @@ nuget sign <package(s)> [options]
 | CertificateSubjectName | 指定用于在本地证书存储区中搜索证书的证书的使用者名称。  搜索是使用提供的值进行区分大小写的字符串比较，它将查找使用者名称包含该字符串的所有证书，而与其他使用者值无关。  可以通过-CertificateStoreName 和-CertificateStoreLocation 选项指定证书存储区。 |
 | ConfigFile | 要应用的 NuGet 配置文件。 如果未指定，则使用 `%AppData%\NuGet\NuGet.Config` （Windows）或 `~/.nuget/NuGet/NuGet.Config` （Mac/Linux）。|
 | ForceEnglishOutput | 使用固定的、基于英语的区域性强制执行 nuget.exe。 |
-| HashAlgorithm | 用于对包进行签名的哈希算法。 默认值为 SHA256。 |
+| HashAlgorithm | 用于对包进行签名的哈希算法。 默认值为 SHA256。 可能的值为 SHA256、SHA384 和 SHA512。 |
 | 帮助 | 显示命令的帮助信息。 |
 | NonInteractive | 取消显示提示用户输入或确认。 |
 | OutputDirectory | 指定应将已签名的包保存到的目录。 默认情况下，已签名的包将覆盖原始包。 |
-| 覆盖 | 切换以指示是否应覆盖当前签名。 默认情况下，如果包已有签名，则该命令将失败。 |
+| Overwrite | 切换以指示是否应覆盖当前签名。 默认情况下，如果包已有签名，则该命令将失败。 |
 | Timestamper | RFC 3161 时间戳服务器的 URL。 |
 | TimestampHashAlgorithm | RFC 3161 时间戳服务器使用的哈希算法。 默认值为 SHA256。 |
-| 详细级别 | 指定在输出中显示的详细信息量： "*正常*"、"*静默*"、"*详细*"。 |
+| 详细程度 | 指定在输出中显示的详细信息量： "*正常*"、"*静默*"、"*详细*"。 |
 
 ## <a name="examples"></a>示例
 

@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: caa1509fd996c54f7de17e86559ea62ef67f749f
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: 995f15ae2ad823d9c814cb7e78facddee713cc8f
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380482"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230507"
 ---
 # <a name="target-frameworks"></a>目标框架
 
@@ -31,9 +31,9 @@ NuGet 在各个地方使用目标框架引用，以特别标识和隔离包的�
 
 通常按简短的目标框架名字对象或 TFM 引用框架。 在 .NET Standard 这也通用化到了*TxM* ，以允许单个引用多个框架。
 
-NuGet 客户端支持下表中的框架。 等效项显示在括号内 []。 请注意，某些工具（如 `dotnet`）可能会在某些文件中使用规范的 TFM 变体。 例如，`dotnet pack` 在 `.nuspec` 文件中使用 `.NETCoreApp2.0`，而非 `netcoreapp2.0` 文件。 各种 NuGet 客户端工具正确处理这些变体，但是在直接编辑文件时，应始终使用规范的 TFM。
+NuGet 客户端支持下表中的框架。 等效项显示在括号内 []。 请注意，某些工具（如 `dotnet`）可能会在某些文件中使用规范的 TFM 变体。 例如，`dotnet pack` 在 `.NETCoreApp2.0` 文件中使用 `.nuspec`，而非 `netcoreapp2.0` 文件。 各种 NuGet 客户端工具正确处理这些变体，但是在直接编辑文件时，应始终使用规范的 TFM。
 
-| “属性” | 缩写 | TFM/TxM |
+| 名称 | 缩写 | TFM/TxM |
 | ------------- | ------------ | --------- |
 |.NET Framework | net | net11 |
 | | | net20 |
@@ -78,12 +78,14 @@ Windows Phone (UWP) | | wpa81 |
 | | | netstandard1.5 |
 | | | netstandard1.6 |
 | | | netstandard2.0 |
+| | | netstandard2.1 |
 .NET Core 应用 | netcoreapp | netcoreapp1.0 |
 | | | netcoreapp1.1 |
 | | | netcoreapp2.0 |
 | | | netcoreapp2.1 |
 | | | netcoreapp2.2 |
 | | | netcoreapp3.0 |
+| | | netcoreapp3.1 |
 Tizen | tizen | tizen3 |
 | | | tizen4 |
 
@@ -91,7 +93,7 @@ Tizen | tizen | tizen3 |
 
 以下框架已弃用。 定位这些框架的包应迁移到指明的替代框架。
 
-| 弃用的框架 | Replacement
+| 弃用的框架 | 替代功能
 | --- | ---
 | aspnet50 | netcoreapp |
 | aspnetcore50 |
@@ -139,7 +141,7 @@ NuGet 3.3 及更早版本应该使用 `dotnet` 系列的名字对象；v3.4 及�
 
 由第三方定义的附加框架提供了与其他环境的兼容性，这些环境可通过此方式进行访问。 此外，还有速记配置文件编号，可用于以 `Profile#` 形式引用相关框架的组合，但不建议通过此方法引用这些编号，因为这会降低文件夹和 `.nuspec` 的可读性。
 
-| 配置文件编号 | 框架 | 全称 | .NET Standard |
+| 配置文件编号 | 框架 | 完全名称 | .NET Standard |
  --- | --- | --- | ---
  Profile2 | .NETFramework 4.0 | portable-net40+win8+sl4+wp7 |
  | | Windows 8.0 | |
@@ -284,7 +286,7 @@ NuGet 3.3 及更早版本应该使用 `dotnet` 系列的名字对象；v3.4 及�
 
 另外，面向 Xamarin 的 NuGet 包可以使用 Xamarin 定义的其他框架。 请参阅[创建适用于 Xamarin 的 NuGet 包](https://developer.xamarin.com/guides/cross-platform/advanced/nuget/)。
 
-| “属性” | 描述 | .NET Standard |
+| 名称 | 说明 | .NET Standard |
 | --- | --- | ---
 | monoandroid | Mono 支持 Android OS | netstandard1.4 |
 | monotouch | Mono 支持 iOS | netstandard1.4 |

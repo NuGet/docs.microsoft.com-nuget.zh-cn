@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 8ba61fa87118108c36e9dc73f30d964380d02dab
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: d1768a741e3f1c48e94d854fa7d365ebfa3513ea
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380461"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231144"
 ---
 # <a name="restore-command-nuget-cli"></a>restore 命令（NuGet CLI）
 
@@ -20,7 +20,7 @@ ms.locfileid: "72380461"
 
 在 Mono 上带有 CLI 的 Mac OSX 和 Linux 上，PackageReference 不支持还原包。
 
-## <a name="usage"></a>用法
+## <a name="usage"></a>使用情况
 
 ```cli
 nuget restore <projectPath> [options]
@@ -30,28 +30,32 @@ nuget restore <projectPath> [options]
 
 ## <a name="options"></a>选项
 
-| 选项 | 描述 |
+| 选项 | 说明 |
 | --- | --- |
-| Read-configfile | 要应用的 NuGet 配置文件。 如果未指定，则使用 `%AppData%\NuGet\NuGet.Config` （Windows）或 `~/.nuget/NuGet/NuGet.Config` （Mac/Linux）。|
+| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定，则使用 `%AppData%\NuGet\NuGet.Config` （Windows）或 `~/.nuget/NuGet/NuGet.Config` （Mac/Linux）。|
 | DirectDownload | *（4.0 +）* 直接下载包，而不填充包含任何二进制文件或元数据的缓存。 |
 | DisableParallelProcessing | 禁用并行还原多个包。 |
 | FallbackSource | *（3.2 +）* 在主或默认源中找不到包时要用作回退的包的列表。 使用分号分隔列表项。 |
+| Force | 在基于 PackageReference 的项目中，将强制解析所有依赖项，即使上次还原已成功。 指定此标志与删除 `project.assets.json` 文件类似。 这不会绕过 http 缓存。 |
 | ForceEnglishOutput | *（3.5 +）* 使用固定的、基于英语的区域性强制执行 nuget.exe。 |
+| ForceEvaluate | 强制还原以重新计算所有依赖项，即使已经存在一个锁定文件。 |
 | 帮助 | 显示命令的帮助信息。 |
+| LockFilePath | 写入项目锁定文件的输出位置。 默认情况下，这是 "PROJECT_ROOT \packages.lock.json"。 |
+| LockedMode | 不允许更新项目锁定文件。 |
 | MSBuildPath | *（4.0 +）* 指定要与命令一起使用的 MSBuild 的路径，其优先级高于 `-MSBuildVersion`。 |
 | MSBuildVersion | *（3.2 +）* 指定要与此命令一起使用的 MSBuild 版本。 支持的值为4、12、14、15.1、15.3、15.4、15.5、15.6、15.7、15.8、15.9。 默认情况下，将选取路径中的 MSBuild，否则默认为已安装的最高版本的 MSBuild。 |
 | NoCache | 阻止 NuGet 使用缓存的包。 请参阅[管理全局包和缓存文件夹](../../consume-packages/managing-the-global-packages-and-cache-folders.md)。 |
-| 交互 | 禁止提示用户输入或确认。 |
+| NonInteractive | 取消显示提示用户输入或确认。 |
 | OutputDirectory | 指定在其中安装包的文件夹。 如果未指定文件夹，则使用当前文件夹。 当使用 `packages.config` 文件进行还原时必需，除非使用 `PackagesDirectory` 或 `SolutionDirectory`。|
-| PackageSaveMode | 指定包安装后要保存的文件的类型： `nuspec`、`nupkg` 或 `nuspec;nupkg` 之一。 |
+| PackageSaveMode | 指定包安装后要保存的文件的类型： `nuspec`、`nupkg`或 `nuspec;nupkg`之一。 |
 | PackagesDirectory | 与 `OutputDirectory` 相同。 当使用 `packages.config` 文件进行还原时必需，除非使用 `OutputDirectory` 或 `SolutionDirectory`。 |
 | Project2ProjectTimeOut | 解析项目到项目引用的超时时间（秒）。 |
-| recursive | *（4.0 +）* 还原 UWP 和 .NET Core 项目的所有引用项目。 不适用于使用 `packages.config` 的项目。 |
+| Recursive | *（4.0 +）* 还原 UWP 和 .NET Core 项目的所有引用项目。 不适用于使用 `packages.config`的项目。 |
 | RequireConsent | 验证在下载和安装包之前是否启用了还原包。 有关详细信息，请参阅[包还原](../../consume-packages/package-restore.md)。 |
 | SolutionDirectory | 指定解决方案文件夹。 还原解决方案的包时无效。 当使用 `packages.config` 文件进行还原时必需，除非使用 `PackagesDirectory` 或 `OutputDirectory`。 |
 | 源 | 指定要用于还原的包源（作为 Url）的列表。 如果省略，则该命令将使用配置文件中提供的源，请参阅[配置 NuGet 行为](../../consume-packages/configuring-nuget-behavior.md)。 使用分号分隔列表项。 |
-| 团队 | 在基于 PackageReference 的项目中，将强制解析所有依赖项，即使上次还原已成功。 指定此标志与删除 `project.assets.json` 文件类似。 这不会绕过 http 缓存。 |
-| 详细级别 | 指定在输出中显示的详细信息量： "*正常*"、"*静默*"、"*详细*"。 |
+| UseLockFile | 允许生成项目锁定文件并将其与 restore 一起使用。 |
+| 详细程度 | 指定在输出中显示的详细信息量： "*正常*"、"*静默*"、"*详细*"。 |
 
 另请参阅[环境变量](cli-ref-environment-variables.md)
 
@@ -71,8 +75,8 @@ Restore 命令执行以下步骤：
 
 2. 使用以下优先级顺序确定包文件夹（如果找不到这些文件夹，则 NuGet 会出现错误）：
 
-    - @No__t_0 指定的文件夹。
-    - @No__t_1 中的 `repositoryPath` 值
+    - `-PackagesDirectory`指定的文件夹。
+    - `Nuget.Config` 中的 `repositoryPath` 值
     - 用 `-SolutionDirectory` 指定的文件夹
     - `$(SolutionDir)\packages`
 
