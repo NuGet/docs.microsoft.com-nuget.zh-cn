@@ -24,6 +24,7 @@
 ### [重新安装和更新包](consume-packages/reinstalling-and-updating-packages.md)
 ### [管理全局包和缓存文件夹](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ### [管理包信任边界](consume-packages/installing-signed-packages.md)
+### [使用已通过身份验证的源](consume-packages/consuming-packages-authenticated-feeds.md)
 ### [使用源代码管理系统](consume-packages/packages-and-source-control.md)
 ### [常见的 NuGet 配置](consume-packages/configuring-nuget-behavior.md)
 ## 在项目中引用包
@@ -45,7 +46,8 @@
 ### [设置包类型](create-packages/set-package-type.md)
 ### [创建本地化的包](create-packages/creating-localized-packages.md)
 ## 针对特定内容的指南
-### [创建 UWP 包](guides/create-uwp-packages.md)
+### [创建 UWP 包 (C++)](guides/create-uwp-packages.md)
+### [创建 UWP 包 (C#)](guides/create-uwp-packages-CS.md)
 ### [创建本机包](guides/native-packages.md)
 ### [以 NuGet 包的形式创建 UI 控件](guides/create-UI-controls.md)
 ### [以 NuGet 包的形式创建分析器](guides/analyzers-conventions.md)
