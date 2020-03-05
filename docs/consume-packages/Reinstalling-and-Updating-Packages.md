@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: c48980bc3f955a62962ca6e9619ce09f4a94a835
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 101c6d6b9d93da912f60c40b27559e80327154b8
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488080"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231183"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>如何重新安装和更新包
 
@@ -59,7 +59,7 @@ Visual Studio 中的程序包管理器控制台提供了许多灵活的选项，
 </packages>
 ```
 
-在所有情况下，都使用[包版本控制](../concepts/package-versioning.md#version-ranges-and-wildcards)中介绍的表示法。
+在所有情况下，都使用[包版本控制](../concepts/package-versioning.md#version-ranges)中介绍的表示法。
 
 ## <a name="using-update-package"></a>使用 Update-Package
 
