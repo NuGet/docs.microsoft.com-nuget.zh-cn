@@ -21,12 +21,12 @@
   "branches_to_filter": [
     "live"
   ],
-   "git_repository_url_open_to_public_contributors": "https://github.com/NuGet/docs.microsoft.com-nuget.zh-cn",
-"git_repository_branch_open_to_public_contributors": "live",
+  "git_repository_url_open_to_public_contributors": "https://github.com/NuGet/docs.microsoft.com-nuget.zh-cn",
+  "git_repository_branch_open_to_public_contributors": "live",
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
-  		  "contribution_branch_mappings": {
-		       "live-sxs": "live"
+  "contribution_branch_mappings": {
+    "live-sxs": "live"
   },
   "dependent_repositories": [
     {
@@ -51,9 +51,9 @@
     }
   ],
   "branch_target_mapping": {
-     "live-sxs": [
-        "Publish",
-        "Pdf" 
+    "live-sxs": [
+      "Publish",
+      "Pdf"
     ],
     "live": [
       "Publish",
@@ -66,5 +66,8 @@
     "Pdf": {
       "template_folder": "_themes.pdf"
     }
+  },
+  "docs_build_engine": {
+    "name": "docfx_v3"
   }
 }
