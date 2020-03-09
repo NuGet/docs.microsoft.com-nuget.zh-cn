@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: c6f50e6eb21826afebcdcd4045c7ab8b6e6489e3
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: 4b95251e4b055523a9533b4125589b2650be932d
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813320"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231079"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet 如何解析包依赖项
 
@@ -22,7 +22,7 @@ ms.locfileid: "76813320"
 
 ## <a name="dependency-resolution-with-packagereference"></a>利用 PackageReference 解析依赖项
 
-当将包安装到使用 PackageReference 格式的项目中时，NuGet 将添加对相应文件中的平面包关系图的引用并提前解决冲突。 此过程称为“传递还原”  。 重新安装或还原包指的是下载关系图中列出的包的过程，此过程可加快生成的速度和提高其可预测性。 还可以利用通配符（可变）版本（如 2.8.\*），避免对客户端计算机和生成服务器上的 `nuget update` 进行成本高昂且容易出错的调用。
+当将包安装到使用 PackageReference 格式的项目中时，NuGet 将添加对相应文件中的平面包关系图的引用并提前解决冲突。 此过程称为“传递还原”  。 重新安装或还原包指的是下载关系图中列出的包的过程，此过程可加快生成的速度和提高其可预测性。 还可以利用 2.8.\* 等可变版本，以避免为了能使用最新版本的包而修改项目。
 
 当 NuGet 还原进程在生成之前运行时，它将首先解析内存中的依赖项，然后将生成的关系图写入名为 `project.assets.json` 的文件。 如果[启用了锁定文件功能](../consume-packages/package-references-in-project-files.md#locking-dependencies)，它还会将已解析的依赖项写入名为 `packages.lock.json` 的锁定文件。
 资产文件位于 `MSBuildProjectExtensionsPath`，它默认是项目的“obj”文件夹。 MSBuild 随后将读取此文件并将其转换成一组文件夹（可在其中找到潜在引用），然后将它们添加到内存中的项目树。
@@ -53,16 +53,16 @@ ms.locfileid: "76813320"
 
 <a name="floating-versions"></a>
 
-#### <a name="floating-wildcard-versions"></a>可变（通配符）版本
+#### <a name="floating-versions"></a>可变版本
 
-可变或通配符依赖项版本通过 \* 通配符（如 6.0.\*）进行指定。 此版本规格表示“使用最新的 6.0.x 版本”；4.\* 则表示“使用最新的 4.x 版本”。 使用通配符可允许依赖项包继续延伸，但无需更改所使用的应用程序（或包）。
+可变依赖项版本由 \* 字符指定。 例如 `6.0.*`。 此版本规格表示“使用最新的 6.0.x 版本”；`4.*` 则表示“使用最新的 4.x 版本”。 使用可变版本可减少对项目文件的更改，同时确保始终使用最新版本的依赖项。
 
-使用通配符时，NuGet 将解析与版本模式匹配的最高包版本，例如，请求 6.0\* 将获得以 6.0 开头的最高包版本：
+使用可变版本时，NuGet 将解析与版本模式匹配的最高包版本，例如，请求 `6.0.*` 将获得以 6.0 开头的最高包版本：
 
 ![请求可变版本 6.0.* 时，选取版本 6.0.1](media/projectJson-dependency-4.png)
 
 > [!Note]
-> 有关通配符和预发行版本的行为的信息，请参阅[包版本控制](package-versioning.md#version-ranges-and-wildcards)。
+> 有关可变版本和预发行版本的行为的信息，请参阅[包版本控制](package-versioning.md#version-ranges)。
 
 
 <a name="nearest-wins"></a>

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: b6a009832430ee08f51ea1028feb878a39f45222
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.openlocfilehash: a5833df60c5f7905359f421141347b1237f45d86
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74825138"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230611"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -48,7 +48,7 @@ ms.locfileid: "74825138"
 </ItemGroup>
 ```
 
-在上述示例中，3.6.0 指 >=3.6.0 的任何版本（首选项为最低版本），详见[包版本控制](../concepts/package-versioning.md#version-ranges-and-wildcards)。
+在上述示例中，3.6.0 指 >=3.6.0 的任何版本（首选项为最低版本），详见[包版本控制](../concepts/package-versioning.md#version-ranges)。
 
 ## <a name="using-packagereference-for-a-project-with-no-packagereferences"></a>对没有 PackageReferences 的项目使用 PackageReference
 
@@ -99,7 +99,7 @@ ms.locfileid: "74825138"
 
 以下元数据标记控制依赖项资产：
 
-| 标记 | 说明 | 默认值 |
+| 标记 | 描述 | 默认值 |
 | --- | --- | --- |
 | IncludeAssets | 将使用这些资产 | 全部 |
 | ExcludeAssets | 不会使用这些资产 | 无 |
@@ -107,14 +107,14 @@ ms.locfileid: "74825138"
 
 以下是这些标记的允许值，其中用分号分隔多个值（但 `all` 和 `none` 必须单独显示）：
 
-| 值 | 说明 |
+| “值” | 描述 |
 | --- | ---
 | 编译 | `lib` 文件夹的内容，控制项目能否对文件夹中的程序集进行编译 |
 | Runtime — 运行时 | `lib` 和 `runtimes` 文件夹的内容，控制是否会复制这些程序集，以生成输出目录 |
 | contentFiles | `contentfiles` 文件夹中的内容 |
 | 生成 | `build` 文件夹中的 `.props` 和 `.targets` |
-| buildMultitargeting | *(4.0)* `buildMultitargeting` 文件夹中跨框架目标的 `.props` 和 `.targets` |
-| buildTransitive | *(5.0+)* 以可传递的方式流入任意使用项目的资产的 `buildTransitive` 文件夹中的 `.props` 和 `.targets`。 请参阅[功能](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior)页。 |
+| buildMultitargeting | (4.0) `buildMultitargeting` 文件夹中跨框架目标的 `.props` 和 `.targets`  |
+| buildTransitive | (5.0+) 以可传递的方式流入任意使用项目的资产的 `buildTransitive` 文件夹中的 `.props` 和 `.targets`  。 请参阅[功能](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior)页。 |
 | analyzers | .NET 分析器 |
 | 本机 | `native` 文件夹中的内容 |
 | 无 | 不使用以上任何内容。 |
@@ -170,10 +170,110 @@ ms.locfileid: "74825138"
 </ItemGroup>
 ```
 
+## <a name="generatepathproperty"></a>GeneratePathProperty
+
+NuGet 5.0 或更高版本以及 Visual Studio 2019 16.0 或更高版本随附此功能   。
+
+有时需要从 MSBuild 目标引用包中的文件。
+在基于 `packages.config` 的项目中，包安装在项目文件所在的文件夹中。 但是，在 PackageReference 中，包是在 global-packages 文件夹中[使用](../concepts/package-installation-process.md)的，此文件可能会因计算机而异  。
+
+为了消除这种差异，NuGet 引入了一个指向包使用位置的属性。
+
+示例：
+
+```xml
+  <ItemGroup>
+      <PackageReference Include="Some.Package" Version="1.0.0" GeneratePathProperty="true" />
+  </ItemGroup>
+
+  <Target Name="TakeAction" AfterTargets="Build">
+    <Exec Command="$(PkgSome_Package)\something.exe" />
+  </Target>
+````
+
+此外，NuGet 会对包含 tools 文件夹的包自动生成属性。
+
+```xml
+  <ItemGroup>
+      <PackageReference Include="Package.With.Tools" Version="1.0.0" />
+  </ItemGroup>
+
+  <Target Name="TakeAction" AfterTargets="Build">
+    <Exec Command="$(PkgPackage_With_Tools)\tools\tool.exe" />
+  </Target>
+````
+
+MSBuild 属性和包标识不具有相同的限制，因此包标识需要改为一个 MSBuild 易记名称（以 `Pkg` 为前缀）。
+若要验证生成的属性的确切名称，请查看生成的 [nuget.g.props](../reference/msbuild-targets.md#restore-outputs) 文件。
+
+## <a name="nuget-warnings-and-errors"></a>NuGet 警告和错误
+
+NuGet 4.3  或更高版本以及 Visual Studio 2017 15.3  或更高版本随附此功能。 
+
+对于许多打包和还原方案，所有 NuGet 警告和错误都经过编码，且以 `NU****` 开头。 所有 NuGet 警告和错误都列在[参考](../reference/errors-and-warnings.md)文档中。
+
+NuGet 遵循以下警告属性：
+
+- `TreatWarningsAsErrors` 将所有警告视为错误
+- `WarningsAsErrors` 将特定警告报告为错误
+- `NoWarn` 隐藏项目范围或包范围内的特定警告。
+
+示例：
+
+```xml
+<PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+</PropertyGroup>
+...
+<PropertyGroup>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1603;NU1605</WarningsAsErrors>
+</PropertyGroup>
+...
+<PropertyGroup>
+    <NoWarn>$(NoWarn);NU5124</NoWarn>
+</PropertyGroup>
+...
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0" NoWarn="NU1605" />
+</ItemGroup>
+```
+
+### <a name="suppressing-nuget-warnings"></a>阻止 NuGet 警告
+
+虽然推荐在打包和还原操作期间解决所有 NuGet 警告，在某些情况下可以禁止显示警告。
+若要禁止显示项目范围内的警告，请考虑执行以下操作：
+
+```xml
+<PropertyGroup>
+    <PackageVersion>5.0.0</PackageVersion>
+    <NoWarn>$(NoWarn);NU5104</NoWarn>
+</PropertyGroup>
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0-beta.1"/>
+</ItemGroup>
+```
+
+有时，警告仅适用于图中的特定包。 通过对 PackageReference 项目添加 `NoWarn`，我们可以有更多地选择来禁止显示该警告。 
+
+```xml
+<PropertyGroup>
+    <PackageVersion>5.0.0</PackageVersion>
+</PropertyGroup>
+<ItemGroup>
+    <PackageReference Include="Contoso.Package" Version="1.0.0-beta.1" NoWarn="NU1603" />
+</ItemGroup>
+```
+
+#### <a name="suppressing-nuget-package-warnings-in-visual-studio"></a>在 Visual Studio 中禁止显示 NuGet 包警告
+
+在 Visual Studio 中，还可以通过 IDE [禁止显示警告](/visualstudio/ide/how-to-suppress-compiler-warnings#suppress-warnings-for-nuget-packages
+)。
+
 ## <a name="locking-dependencies"></a>锁定依赖项
+
 NuGet 4.9  或更高版本以及 Visual Studio 2017 15.9  或更高版本随附此功能。 
 
-对 NuGet 还原的输入是项目文件中的一组包引用（顶级或直接依赖项），而输出则是所有包依赖项的完整闭包，其中包括可传递依赖项。 如果输入 PackageReference 列表尚未更改，则 NuGet 尝试始终生成相同的完整闭包。 但是，在某些情况下，它无法执行此操作。 例如:
+对 NuGet 还原的输入是项目文件中的一组包引用（顶级或直接依赖项），而输出则是所有包依赖项的完整闭包，其中包括可传递依赖项。 如果输入 PackageReference 列表尚未更改，则 NuGet 尝试始终生成相同的完整闭包。 但是，在某些情况下，它无法执行此操作。 例如：
 
 * 在使用 `<PackageReference Include="My.Sample.Lib" Version="4.*"/>` 等浮动版本时。 尽管在此处这样做的目的是浮动到每个包还原的最新版本，但是在某些情况下，用户需要在一个显式动作后，将图形锁定到某个最新版本并浮动到更高版本（如果有可用的更高版本）。
 * 匹配 PackageReference 版本要求的较新版本已发布。 例如， 
@@ -185,6 +285,7 @@ NuGet 4.9  或更高版本以及 Visual Studio 2017 15.9  或更高版本随附�
 * 给定包版本将从存储库中删除。 尽管 nuget.org 不允许包删除，但并非所有包存储库都具有此约束。 这导致 NuGet 在无法解析到已删除的版本时查找最佳匹配项。
 
 ### <a name="enabling-lock-file"></a>启用锁定文件
+
 为了保留包依赖项的完整闭包，可以选择锁定文件功能，方法是通过设置项目的 MSBuild 属性 `RestorePackagesWithLockFile`：
 
 ```xml
@@ -245,15 +346,15 @@ ProjectA
              |------>PackageX 1.0.0
 ```
 
-如果 `ProjectA` 在 `PackageX` 版本 `2.0.0` 上具有依赖项并引用依赖于 `PackageX` 版本 `1.0.0` 的 `ProjectB`，则 `ProjectB` 的锁定文件将列出 `PackageX` 版本 `1.0.0` 的依赖项。 但是，当生成 `ProjectA` 时，其锁定文件将包含 `ProjectB` 锁定文件中列出的 `PackageX` 版本 `2.0.0`  （而不是 `1.0.0`  ）上的依赖项。 因此，常用代码项目的锁定文件对依赖于它的项目进行解析的包几乎没有控制。
+如果 `ProjectA` 在 `PackageX` 版本 `2.0.0` 上具有依赖项并引用依赖于 `PackageX` 版本 `1.0.0` 的 `ProjectB`，则 `ProjectB` 的锁定文件将列出 `PackageX` 版本 `1.0.0` 的依赖项。 但是，当生成 `ProjectA` 时，其锁定文件将包含 `ProjectB` 锁定文件中列出的 `PackageX` 版本 `2.0.0`（而不是 `1.0.0`）上的依赖项   。 因此，常用代码项目的锁定文件对依赖于它的项目进行解析的包几乎没有控制。
 
 ### <a name="lock-file-extensibility"></a>锁定文件可扩展性
 
 可以使用以下所述的锁定文件控制各种还原行为：
 
-| 选项 | MSBuild 等效选项 | 说明|
-|:---  |:--- |:--- |
-| `--use-lock-file` | RestorePackagesWithLockFile | 选择使用锁定文件。 | 
-| `--locked-mode` | RestoreLockedMode | 为还原启用锁定模式。 这对于要获取可重复生成的 CI/CD 方案非常有用。|   
-| `--force-evaluate` | RestoreForceEvaluate | 对于在项目中定义了浮动版本的包，此选项也非常有用。 默认情况下，NuGet 还原不会在每次还原时自动更新包版本，除非使用此选项运行还原。 |
-| `--lock-file-path` | NuGetLockFilePath | 为项目定义自定义锁定文件位置。 默认情况下，NuGet 支持根目录中的 `packages.lock.json`。 如果在同一目录中具有多个项目，则 NuGet 支持特定于项目的锁定文件 `packages.<project_name>.lock.json` |
+| NuGet.exe 选项 | dotnet 选项 | MSBuild 等效选项 | 描述 |
+|:--- |:--- |:--- |:--- |
+| `-UseLockFile` |`--use-lock-file` | RestorePackagesWithLockFile | 选择使用锁定文件。 |
+| `-LockedMode` | `--locked-mode` | RestoreLockedMode | 为还原启用锁定模式。 这对于要获取可重复生成的 CI/CD 方案非常有用。|   
+| `-ForceEvaluate` | `--force-evaluate` | RestoreForceEvaluate | 对于在项目中定义了浮动版本的包，此选项也非常有用。 默认情况下，NuGet 还原不会在每次还原时自动更新包版本，除非使用此选项运行还原。 |
+| `-LockFilePath` | `--lock-file-path` | NuGetLockFilePath | 为项目定义自定义锁定文件位置。 默认情况下，NuGet 支持根目录中的 `packages.lock.json`。 如果在同一目录中具有多个项目，则 NuGet 支持特定于项目的锁定文件 `packages.<project_name>.lock.json` |

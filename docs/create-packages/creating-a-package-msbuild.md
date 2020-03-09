@@ -3,14 +3,14 @@ title: 使用 MSBuild 创建 NuGet 包
 description: 设计和创建 NuGet 包流程的详细指南，包含文件和版本控制等关键决策点。
 author: karann-msft
 ms.author: karann
-ms.date: 08/05/2019
+ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: b45c25a92c0134228fb507ab321cb00ce156527f
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 7166d622ef9d3975fc1c931d30caf570a765a6da
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610559"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231313"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>使用 MSBuild 创建 NuGet 包
 
@@ -34,6 +34,10 @@ ms.locfileid: "73610559"
 - 包标题应出现在主机上（例如 nuget.org）
 - `Authors`，作者和所有者信息。 如果未指定，默认值为 `AssemblyName`。
 - `Company`，公司名称。 如果未指定，默认值为 `AssemblyName`。
+
+此外，如要打包使用 PackageReference 的非 SDK 类项目，则需要满足以下要求：
+
+- `PackageOutputPath`（调用 pack 时生成的包的输出文件夹）。
 
 在 Visual Studio 中，可以在项目属性中设置这些值（在解决方案资源管理器中右键单击项目，选择“属性”  ，然后选择“包”  选项卡）。 也可以直接在项目文件 (.csproj) 中设置这些属性  。
 
@@ -69,6 +73,10 @@ ms.locfileid: "73610559"
 > 对于面向公共使用而生成的包，请特别注意 **PackageTags** 属性，因为这些标记可帮助其他人查找包并了解其用途。
 
 有关声明依赖项并指定版本号的详细信息，请参阅[项目文件中的包引用](../consume-packages/package-references-in-project-files.md)和[包版本控制](../concepts/package-versioning.md)。 还可以使用 `<IncludeAssets>` 和 `<ExcludeAssets>` 特性直接在包中呈现依赖项的资产。 有关详细信息，请参阅[控制依赖项资产](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets)。
+
+## <a name="add-an-optional-description-field"></a>添加可选说明字段
+
+[!INCLUDE [add description to package](includes/add-description.md)]
 
 ## <a name="choose-a-unique-package-identifier-and-set-the-version-number"></a>选择唯一的包标识符并设置版本号
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 93a94a5468b48179d27b89825cebf2447657c8f2
-ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
+ms.openlocfilehash: c1f1957c58839ac763238938b476eb0882c56a59
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69999986"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231198"
 ---
 # <a name="restore-packages-using-package-restore"></a>使用“程序包还原”还原程序包
 
@@ -120,6 +120,17 @@ ms.locfileid: "69999986"
 > [!Important]
 > 如果直接在 `nuget.config` 中编辑 `packageRestore` 设置，请重启 Visual Studio，以便“选项”对话框显示当前值  。
 
+### <a name="choose-default-package-management-format"></a>选择默认包管理格式
+
+![通过 NuGet 包管理器选项控制默认包管理格式](media/Restore-02-PackageFormatOptions.png)
+
+NuGet 提供项目可使用包的两种格式：[`PackageReference`](package-references-in-project-files.md) 和 [`packages.config`](../reference/packages-config.md)。 默认格式可从“包管理”标题下的下拉菜单中选择  。 在项目中安装首个包时还会出现一个提示选项。
+
+> [!Note]
+> 如果这两种包管理格式均不受项目支持，则会使用与项目兼容的包管理格式，因此所用格式可能并非选项中的默认设置。 此外，NuGet 不会在安装首个包时显示选择提示，即使选项窗口中已选中此选项时亦是如此。
+>
+> 如果使用包管理器控制台在项目中安装首个包，则即使选项窗口中已选中该选项，NuGet 也不会提示选择格式。
+
 ## <a name="restore-using-the-dotnet-cli"></a>使用 dotnet CLI 进行还原
 
 [!INCLUDE [restore-dotnet-cli](includes/restore-dotnet-cli.md)]
@@ -169,13 +180,13 @@ ms.locfileid: "69999986"
 
 NuGet 通过任意方法还原包时，将遵守你在 `packages.config` 或项目文件中指定的任何约束：
 
-- 在 `packages.config` 中，可在依赖项的 `allowedVersion` 属性中指定版本范围。 有关详细信息，请参阅[约束升级版本](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions)。 例如:
+- 在 `packages.config` 中，可在依赖项的 `allowedVersion` 属性中指定版本范围。 有关详细信息，请参阅[约束升级版本](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions)。 例如：
 
     ```xml
     <package id="Newtonsoft.json" version="6.0.4" allowedVersions="[6,7)" />
     ```
 
-- 在项目文件中，可以使用 PackageReference 直接指定依赖项的范围。 例如:
+- 在项目文件中，可以使用 PackageReference 直接指定依赖项的范围。 例如：
 
     ```xml
     <PackageReference Include="Newtonsoft.json" Version="[6, 7)" />

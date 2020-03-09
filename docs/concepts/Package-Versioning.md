@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: e0014a812ea591ef40c961e13864652d75ebdf6c
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 912c0d015e2f499bc7386483bc6c35ecd765d3d4
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610993"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230858"
 ---
 # <a name="package-versioning"></a>包版本控制
 
@@ -22,7 +22,7 @@ ms.locfileid: "73610993"
 本主题内容：
 
 - [版本基础知识](#version-basics)，包括预发布后缀。
-- [版本范围和通配符](#version-ranges-and-wildcards)
+- [版本范围](#version-ranges)
 - [规范化的版本号](#normalized-version-numbers)
 
 ## <a name="version-basics"></a>版本基础知识
@@ -98,11 +98,11 @@ ms.locfileid: "73610993"
 <!-- For compatibility with previous dependency-versions page -->
 <a name="version-ranges"></a>
 
-## <a name="version-ranges-and-wildcards"></a>版本范围和通配符
+## <a name="version-ranges"></a>版本范围
 
 引用包依赖项时，NuGet 支持使用间隔表示法来指定版本范围，汇总如下：
 
-| Notation | 应用的规则 | 说明 |
+| Notation | 应用的规则 | 描述 |
 |----------|--------------|-------------|
 | 1.0 | x ≥ 1.0 | 最低版本（包含） |
 | (1.0,) | x > 1.0 | 最低版本（独占） |
@@ -114,7 +114,7 @@ ms.locfileid: "73610993"
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | 混合了最低版本（包含）和最高版本（独占） |
 | (1.0)    | 无效 | 无效 |
 
-使用 PackageReference 格式时，NuGet 还支持使用通配符表示法 \* 来表示版本号的主要、次要、修补程序和预发布后缀部分。 `packages.config` 格式不支持使用通配符。
+使用 PackageReference 格式时，NuGet 还支持使用浮点表示法 \* 来表示版本号的主要、次要、修补程序和预发布后缀部分。 `packages.config` 格式不支持可变版本。
 
 > [!Note]
 > PackageReference 中的版本范围包括预发布版本。 按照设计，可变版本不会解析预发布版本，除非选择加入。 有关相关功能请求的状态，请参阅[问题 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297)。

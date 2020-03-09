@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 92fc78a88733d0308dc26e10c5b0bafb86b78045
-ms.sourcegitcommit: e4b0ff4460865db6dc7bc9f20e9f644d98493011
+ms.openlocfilehash: 96e138561390984d9def495ba5e091c43023cc92
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71307230"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231326"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>快速入门：在 Visual Studio 中安装和使用包（仅适用于 Windows）
 
@@ -21,7 +21,7 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 > [!Tip]
 > **nuget.org 入门**：为查找可在自己的应用程序中重用的组件，.NET 开发人员通常都会浏览 nuget.org  。 可以直接搜索 nuget.org 或根据本文中的介绍，在 Visual Studio 中查找和安装包  。 有关一般信息，请参阅[查找和评估 NuGet 包](../consume-packages/finding-and-choosing-packages.md)。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 - Visual Studio 2019 .NET 桌面开发工作流。
 
@@ -124,6 +124,12 @@ Visual Studio 创建项目，该项目将在解决方案资源管理器中打开
 1. 选择按钮，查看替换为某些 JSON 文本的 TextBlock 的内容：
 
     ![选择按钮后 WPF 应用的输出](media/QS_Use-07-AppEnd.png)
+
+## <a name="related-video"></a>相关视频
+
+> [!Video https://channel9.msdn.com/Series/NuGet-101/Install-and-Use-a-NuGet-Package-with-Visual-Studio-2-of-5/player]
+
+在[第 9 频道](https://channel9.msdn.com/Series/NuGet-101)和 [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_) 上查找更多 NuGet 视频。
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: a08ac24ce6b1d64496c9fc1b20604850e9711dd6
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.openlocfilehash: c326cf184ff20fb798a5770f0a4cf9bf42bed3f5
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380662"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78230689"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 简介
 
@@ -43,7 +43,7 @@ ms.locfileid: "72380662"
 
 除托管支持外，NuGet 还提供各种供创建者和使用者使用的工具。 有关如何获取特定工具的信息，请参阅[安装 NuGet 客户端工具](install-nuget-client-tools.md)。
 
-| 工具 | 平台 | 适用方案 | 说明 |
+| 工具 | 平台 | 适用方案 | 描述 |
 | --- | --- | --- | --- |
 | [dotnet CLI](consume-packages/install-use-packages-dotnet-cli.md) | 全部 | 创建、使用 | 用于 .NET Core 和 .NET Standard 库，以及用于面向 .NET Framework 的 SDK 样式项目的 CLI 工具（请参阅 [SDK 属性](/dotnet/core/tools/csproj#additions)）。 直接在 .NET Core 工具链中提供特定 NuGet CLI 功能。 与 `nuget.exe` CLI 一样，dotnet CLI 不会与 Visual Studio 项目交互。 |
 | [nuget.exe CLI](consume-packages/install-use-packages-nuget-cli.md) | 全部 | 创建、使用 | 用于 .NET Framework 库和面向 .NET Standard 库的非 SDK 样式项目的 CLI 工具。 提供所有 NuGet 功能，包括一些专门适用于包创建者、仅适用于使用者和适用于两者的命令。 例如，包创建者使用 `nuget pack` 命令通过各种程序集和相关文件创建包，包使用者使用 `nuget install` 在项目文件夹中包含包，而所有人都可使用 `nuget config` 设置 NuGet 配置变量。 作为与平台无关的工具，NuGet CLI 不会与 Visual Studio 项目交互。 |
@@ -105,9 +105,15 @@ ms.locfileid: "72380662"
 
 在一个单独的项目中，NuGet 管理整个依赖项关系图，它同样包括解析对同一个包的不同版本的多个引用。 项目在具有相同依赖项的一个或多个包上选取依赖项是很常见的情况。 nuget.org 上的某些最有用的实用程序包即由其他许多包使用。 然后在整个依赖项关系图中，你可以对同一个包的不同版本轻松发起 10 种不同的引用。 为避免将该包的多个版本引入应用程序本身，NuGet 会挑选出一个适合所有使用者的版本。 （有关详细信息，请参阅[依赖项解析](concepts/dependency-resolution.md)。）
 
-除此之外，NuGet 会维护与包的构造方式（包括[本地化](create-packages/creating-localized-packages.md)和[调试符号](create-packages/symbol-packages-snupkg.md)）以及[引用方式](consume-packages/package-references-in-project-files.md)（包括[版本范围](concepts/package-versioning.md#version-ranges-and-wildcards)和[预发行版本](create-packages/prerelease-packages.md)）相关的所有规范。此外，NuGet 还提供了各种 API 以编程方式使用其服务，并可为编写 Visual Studio 扩展和项目模板的开发人员提供支持。
+除此之外，NuGet 会维护与包的构造方式（包括[本地化](create-packages/creating-localized-packages.md)和[调试符号](create-packages/symbol-packages-snupkg.md)）以及[引用方式](consume-packages/package-references-in-project-files.md)（包括[版本范围](concepts/package-versioning.md#version-ranges)和[预发行版本](create-packages/prerelease-packages.md)）相关的所有规范。此外，NuGet 还提供了各种 API 以编程方式使用其服务，并可为编写 Visual Studio 扩展和项目模板的开发人员提供支持。
 
 请花一点时间浏览本文档的目录，你会看到其中列出了所有这些功能，以及自 NuGet 首次发行起的发行说明。
+
+## <a name="related-video"></a>相关视频
+
+> [!Video https://channel9.msdn.com/Series/NuGet-101/What-is-NuGet-1-of-5/player]
+
+在[第 9 频道](https://channel9.msdn.com/Series/NuGet-101)和 [YouTube](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVLvfkFk8O9h6v2Dcdh2bh_) 上查找更多 NuGet 视频。
 
 ## <a name="comments-contributions-and-issues"></a>评论、建议和问题
 

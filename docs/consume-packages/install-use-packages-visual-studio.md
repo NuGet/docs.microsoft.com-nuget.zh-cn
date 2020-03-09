@@ -10,12 +10,12 @@ f1_keywords:
 - vs.toolsoptionspages.nuget_package_manager.general
 - vs.toolsoptionspages.nuget_package_manager.package_sources
 - vs.nuget.packagemanager.ui
-ms.openlocfilehash: 7e4ea59b9954e787e7ab060adc964f3097a8240b
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.openlocfilehash: 3adceac8c725d9ea1610aea090753c9c1d8bc818
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68419970"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231002"
 ---
 # <a name="install-and-manage-packages-in-visual-studio-using-the-nuget-package-manager"></a>使用 NuGet 包管理器在 Visual Studio 中安装和管理包
 
@@ -42,6 +42,9 @@ ms.locfileid: "68419970"
 
 > [!Tip]
 > 若要在搜索中包含预发布版本，并在版本下拉列表中提供预发布版本，请选中“包含预发布版本”  选项。
+
+> [!Note]
+> NuGet 提供项目可使用包的两种格式：[`PackageReference`](package-references-in-project-files.md) 和 [`packages.config`](../reference/packages-config.md)。 [默认项可以在 Visual Studio 的选项窗口中设置](Package-Restore.md#choose-default-package-management-format)。
 
 ## <a name="uninstall-a-package"></a>卸载包
 

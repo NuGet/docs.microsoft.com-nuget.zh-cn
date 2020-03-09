@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 6f659af6b09a12be54a5ef843d34f956119b33f4
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.openlocfilehash: 8e825410d621ff2946e23e80173292f24f9d21f2
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69520487"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231262"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>从 packages.config 迁移到 PackageReference
 
@@ -29,6 +29,8 @@ Visual Studio 2017 版本 15.7 及更高版本支持将项目从 [packages.confi
 * NuGet PackageReference 在 Visual Studio 2015 及更早版本中不可用。 只能在 Visual Studio 2017 及更高版本中打开已迁移的项目。
 * 目前，C++ 和 ASP.NET 项目无法进行迁移。
 * 某些包可能与 PackageReference 不完全兼容。 有关详细信息，请参阅[包兼容性问题](#package-compatibility-issues)。
+
+此外，PackageReferences 的工作原理与 packages.config 相比存在一些差异。例如，PackageReference 不支持[约束升级版本](../consume-packages/reinstalling-and-updating-packages.md#constraining-upgrade-versions)，但添加了对[可变版本](../consume-packages/package-references-in-project-files.md#floating-versions)的支持。
 
 ### <a name="known-issues"></a>已知问题
 

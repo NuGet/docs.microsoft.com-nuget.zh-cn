@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 937d051ff6dc49e3204f7d0cb22c4f29b99a2a7d
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.openlocfilehash: 02c6c8f3018bfd063c2d16a10381f88b54cac840
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73610602"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231339"
 ---
 # <a name="publishing-packages"></a>发布包
 
@@ -65,6 +65,10 @@ ms.locfileid: "73610602"
     ```
 
     此命令将 API 密钥存储在 NuGet 配置中，以便无需在同一台计算机上再次重复此步骤。
+
+    > [!NOTE]
+    > API 密钥不用于向专用源进行身份验证。 请参考 [`nuget sources` 命令](../reference/cli-reference/cli-ref-sources.md)来管理用于向源进行身份验证的凭据。
+    > API 密钥可以从单个 NuGet 服务器获取。 要为 nuget.org 创建和管理 APIKey，请参阅 [publish-api-key](../quickstart/includes/publish-api-key.md)
 
 1. 使用以下命令将包推送到 NuGet 库：
 

@@ -6,20 +6,18 @@ ms.author: karann
 ms.date: 04/24/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 830714269ac422a4784c15b000e374195f02332f
-ms.sourcegitcommit: ffbdf147f84f8bd60495d3288dff9a5275491c17
+ms.openlocfilehash: 2fefd9cff4d151111023521c31d58878743775bf
+ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51580275"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78231170"
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>转换源代码和配置文件
 
-对于使用 `packages.config` 的项目，NuGet 支持在安装和卸载包时将包转换为源代码和配置文件的功能。 使用 [PackageReference](../consume-packages/package-references-in-project-files.md) 在项目中安装包时，仅应用源代码转换。
+安装包时，“源代码转化”会对包的 `content` 或 `contentFiles` 文件夹（对于为 `PackageReference` 使用 `packages.config` 和 `contentFiles` 的用户，则为 `content`）中的文件应用单向令牌替换，其中令牌表示 Visual Studio [项目属性](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7)  。 这样就可以将文件插入到项目的命名空间中，或者自定义通常转到 ASP.NET 项目的 `global.asax` 中的代码。
 
-安装包时，“源代码转化”会对包的 `content` 或 `contentFiles` 文件夹（对于为 `PackageReference` 使用 `packages.config` 和 `contentFiles` 的用户，则为 `content`）中的文件应用单向令牌替换，其中令牌表示 Visual Studio [项目属性](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7)。 这样就可以将文件插入到项目的命名空间中，或者自定义通常转到 ASP.NET 项目的 `global.asax` 中的代码。
-
-通过“配置文件转换”可以修改目标项目中已存在的文件，例如 `web.config` 和 `app.config`。 例如，包可能需要将某个项添加到配置文件中的 `modules` 部分。 此转换通过将特殊文件包含在描述要添加到配置文件的部分的包中完成。 卸载包时，会接着反转相同的更改，使其变为双向转换。
+通过“配置文件转换”可以修改目标项目中已存在的文件，例如 `web.config` 和 `app.config`  。 例如，包可能需要将某个项添加到配置文件中的 `modules` 部分。 此转换通过将特殊文件包含在描述要添加到配置文件的部分的包中完成。 卸载包时，会接着反转相同的更改，使其变为双向转换。
 
 ## <a name="specifying-source-code-transformations"></a>指定源代码转换
 
@@ -110,9 +108,12 @@ NuGet 安装包后，`web.config` 将显示为：
 
 若要检查其 `web.config.transform` 文件，请从上述链接下载 ELMAH 包，将包扩展名从 `.nupkg` 更改为 `.zip`，然后打开该 ZIP 文件中的 `content\web.config.transform`。
 
-若要查看安装和卸载包的影响，请在 Visual Studio 中创建新的 ASP.NET 项目（模板位于“新建项目”对话框的“Visual C#”>“Web”下），并选择一个空的 ASP.NET 应用程序。 打开 `web.config` 查看其初始状态。 然后右键单击项目，选择“管理 NuGet 包”，在 nuget.org 上浏览 ELMAH 并安装最新版本。 注意对 `web.config` 进行的所有更改。 现在卸载包，你会看见 `web.config` 还原到其之前的状态。
+若要查看安装和卸载包的影响，请在 Visual Studio 中创建新的 ASP.NET 项目（模板位于“新建项目”对话框的“Visual C#”>“Web”下），并选择一个空的 ASP.NET 应用程序  。 打开 `web.config` 查看其初始状态。 然后右键单击项目，选择“管理 NuGet 包”，在 nuget.org 上浏览 ELMAH 并安装最新版本  。 注意对 `web.config` 进行的所有更改。 现在卸载包，你会看见 `web.config` 还原到其之前的状态。
 
 ### <a name="xdt-transforms"></a>XDT 转换
+
+> [!Note]
+> 如[从 `packages.config` 迁移到 `PackageReference` 文档的包兼容性问题一节](../consume-packages/migrate-packages-config-to-package-reference.md#package-compatibility-issues)所述，下述 XDT 转换仅受 `packages.config` 支持。 如果将以下文件添加到包中，则使用者在使用具有 `PackageReference` 的包时无需应用转换（参考[本示例](https://github.com/NuGet/Samples/tree/master/XDTransformExample)，了解如何让 XDT 转换适用于 `PackageReference`）。
 
 可以使用 [XDT 语法](https://msdn.microsoft.com/library/dd465326.aspx)修改配置文件。 此外，还可通过在 `$` 分隔符内包含属性名称（不区分大小写），让 NuGet 将令牌替换为[项目属性](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7)。
 
