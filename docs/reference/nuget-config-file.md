@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 08/13/2019
 ms.topic: reference
 ms.openlocfilehash: cd321084c46709e3d1d22872c37485edacd33afa
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230521"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428401"
 ---
 # <a name="nugetconfig-reference"></a>nuget.exe 引用
 

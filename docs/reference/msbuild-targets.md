@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
 ms.openlocfilehash: 922fc0b25664dede59e33c6cd012dfeedcad0397
-ms.sourcegitcommit: 415c70d7014545c1f65271a2debf8c3c1c5eb688
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036924"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428341"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -46,20 +46,20 @@ NuGet 4.0+
 
 请注意，`Owners` 的 `Summary` 和 `.nuspec` 属性不受 MSBuild 支持。
 
-| 属性/NuSpec 值 | MSBuild 属性 | 默认 | 注意 |
+| 属性/NuSpec 值 | MSBuild 属性 | 默认 | 说明 |
 |--------|--------|--------|--------|
 | ID | PackageId | AssemblyName | MSBuild 的 $(AssemblyName) |
 | 版本 | PackageVersion | 版本 | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
 | VersionPrefix | PackageVersionPrefix | empty | 设置 PackageVersion 会覆盖 PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | empty | MSBuild 的 $(VersionSuffix)。 设置 PackageVersion 会覆盖 PackageVersionSuffix |
 | Authors | Authors | 当前用户的用户名 | |
-| 所有者 | 不可用 | NuSpec 中不存在 | |
-| 职务 | 职务 | PackageId| |
+| 所有者 | 空值 | NuSpec 中不存在 | |
+| 标题 | 标题 | PackageId| |
 | 说明 | 说明 | “包描述” | |
 | 版权信息 | 版权信息 | empty | |
 | RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
-| 许可证 | PackageLicenseExpression | empty | 对应于 `<license type="expression">` |
-| 许可证 | PackageLicenseFile | empty | 对应到 `<license type="file">`。 需要显式打包所引用的许可证文件。 |
+| license | PackageLicenseExpression | empty | 对应于 `<license type="expression">` |
+| license | PackageLicenseFile | empty | 对应到 `<license type="file">`。 需要显式打包所引用的许可证文件。 |
 | LicenseUrl | PackageLicenseUrl | empty | `PackageLicenseUrl` 已弃用，请使用 PackageLicenseExpression 或 PackageLicenseFile 属性 |
 | ProjectUrl | PackageProjectUrl | empty | |
 | 图标 | PackageIcon | empty | 需要显式打包所引用的图标图像文件。|
@@ -71,7 +71,7 @@ NuGet 4.0+
 | 存储库/分支 | RepositoryBranch | empty | 可选存储库分支信息。 还必须为此属性指定要包含的*RepositoryUrl* 。 示例： *master* （NuGet 4.7.0 +） |
 | 存储库/提交 | RepositoryCommit | empty | 可选的存储库提交或更改集，指示针对其生成包的源。 还必须为此属性指定要包含的*RepositoryUrl* 。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* （NuGet 4.7.0 +） |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
-| 摘要 | 不支持 | | |
+| 总结 | 不支持 | | |
 
 ### <a name="pack-target-inputs"></a>包目标输入
 
@@ -371,7 +371,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 其他的还原设置可能来自项目文件中的 MSBuild 属性。 还可以从命令行使用 `-p:` 开关设置值（请参阅以下示例）。
 
-| 属性 | 说明 |
+| properties | 说明 |
 |--------|--------|
 | RestoreSources | 以分号分隔的包源列表。 |
 | RestorePackagesPath | 用户包文件夹路径。 |

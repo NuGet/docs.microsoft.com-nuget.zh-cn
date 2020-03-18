@@ -7,11 +7,11 @@ ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
 ms.openlocfilehash: 7384e8b30cb2ec5fe53ea0fe485858bc1f7b3c43
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78231248"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428281"
 ---
 # <a name="signed-packages"></a>已签名的包
 
