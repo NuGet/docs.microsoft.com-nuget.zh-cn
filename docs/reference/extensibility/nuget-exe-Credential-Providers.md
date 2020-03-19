@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 12/12/2017
 ms.topic: conceptual
 ms.openlocfilehash: 41e3e63138351bafd5e3a56080268faef10d85a3
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230780"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428299"
 ---
 # <a name="authenticating-feeds-with-nugetexe-credential-providers"></a>用 nuget.exe 凭据提供程序对源进行身份验证
 
@@ -56,17 +56,17 @@ ms.locfileid: "78230780"
 
 | 代码 |结果 | 说明 |
 |----------------|-----------|-----------|
-| 0 | Success | 已成功获取凭据并已将其写入 stdout。|
+| 0 | 成功 | 已成功获取凭据并已将其写入 stdout。|
 | 1 | ProviderNotApplicable | 当前提供程序不提供给定 URI 的凭据。|
 | 2 | 失败 | 提供程序是给定 URI 的正确提供程序，但不能提供凭据。 在这种情况下，nuget.exe 不会重试身份验证，并且会失败。 典型的示例是用户取消交互式登录时。 |
 
 ### <a name="standard-output"></a>标准输出
 
-| properties |说明|
+| 属性 |注意|
 |----------------|-----------|
 | 用户名 | 经过身份验证的请求的用户名。|
-| 密码 | 经过身份验证的请求的密码。|
-| 消息 | 有关响应的可选详细信息，仅用于显示故障情况下的其他详细信息。 |
+| Password | 经过身份验证的请求的密码。|
+| Message | 有关响应的可选详细信息，仅用于显示故障情况下的其他详细信息。 |
 
 示例 stdout：
 

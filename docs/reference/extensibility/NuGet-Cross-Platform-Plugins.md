@@ -6,11 +6,11 @@ ms.author: nikolev
 ms.date: 07/01/2018
 ms.topic: conceptual
 ms.openlocfilehash: 00410214500c7f5256be243dd6fca0907ba9b0c4
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380497"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428383"
 ---
 # <a name="nuget-cross-platform-plugins"></a>NuGet 跨平台插件
 
@@ -75,7 +75,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 使用�
 - `NUGET_NETFX_PLUGIN_PATHS`-定义将由基于 .NET Framework 的工具（Nuget.exe/Msbuild.exe/Visual Studio）使用的插件。 优先于 `NUGET_PLUGIN_PATHS`。 （仅 NuGet 版本 5.3 +）
 - `NUGET_NETCORE_PLUGIN_PATHS`-定义将由基于 .NET Core 的工具（dotnet）使用的插件。 优先于 `NUGET_PLUGIN_PATHS`。 （仅 NuGet 版本 5.3 +）
 - `NUGET_PLUGIN_PATHS`-定义将用于 NuGet 进程的插件，保留优先级。 如果设置了此环境变量，它将覆盖基于约定的发现。 如果指定了任何一个框架特定的变量，则忽略。
--  用户-位置，`%UserProfile%/.nuget/plugins` 中的 NuGet 主页位置。 此位置不能被重写。 .NET Core 和 .NET Framework 插件将使用不同的根目录。
+-  用户-位置，`%UserProfile%/.nuget/plugins`中的 NuGet 主页位置。 此位置不能被重写。 .NET Core 和 .NET Framework 插件将使用不同的根目录。
 
 | 框架 | 根发现位置  |
 | ------- | ------------------------ |
@@ -123,7 +123,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 使用�
 插件的安全验证和实例化成本高昂。 类似于身份验证操作，下载操作的执行频率更高，但平均 NuGet 用户只可能具有身份验证插件。
 为了改进体验，NuGet 将缓存给定请求的操作声明。 此缓存是每个插件，其中插件键是插件路径，此功能缓存的过期时间为30天。 
 
-缓存位于 `%LocalAppData%/NuGet/plugins-cache` 中，并通过环境变量 `NUGET_PLUGINS_CACHE_PATH` 进行重写。 若要清除此[缓存](../../consume-packages/managing-the-global-packages-and-cache-folders.md)，可以运行带有 `plugins-cache` 选项的局部变量命令。
+缓存位于 `%LocalAppData%/NuGet/plugins-cache` 中，并通过环境变量 `NUGET_PLUGINS_CACHE_PATH`进行重写。 若要清除此[缓存](../../consume-packages/managing-the-global-packages-and-cache-folders.md)，可以运行带有 `plugins-cache` 选项的局部变量命令。
 现在，`all` 局部变量 "选项也将删除插件缓存。 
 
 ## <a name="protocol-messages-index"></a>协议消息索引
@@ -196,7 +196,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 使用�
         * 指示操作结果的响应代码
         * 如果操作成功，则使用所请求的哈希算法的包文件哈希
 
-8.  获取包版本
+8.  获取包的版本
     * 请求方向： NuGet > 插件
     * 该请求将包含：
         * 包 ID
@@ -213,7 +213,7 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 使用�
         * 指示操作结果的响应代码
         * 如果操作成功，则为服务索引
 
-10.  信号
+10.  握手
      * 请求方向： NuGet < > 插件
      * 该请求将包含：
          * 当前插件协议版本
@@ -292,11 +292,11 @@ CI/CD 方案和超级用户可以使用环境变量来重写此行为。 使用�
 * 该请求将包含：
     * URI
     * isRetry
-    * 交互
+    * NonInteractive
     * CanShowDialog
 * 响应将包含
     * 用户名
     * Password
-    * 消息
+    * Message
     * 身份验证类型列表
     * MessageResponseCode
