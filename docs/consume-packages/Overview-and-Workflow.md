@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 03/22/2018
 ms.topic: conceptual
 ms.openlocfilehash: ddd1d163e18ed4ce1e7cbf41ed152acc40c1c423
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69488783"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428515"
 ---
 # <a name="package-consumption-workflow"></a>包使用工作流
 
@@ -45,7 +45,7 @@ NuGet 还可以确保包支持的目标框架与你的项目兼容。 如果包�
 
 使用下表中的任何方法下载和安装 NuGet 包。
 
-| 工具 | 说明 |
+| 工具 | 描述 |
 | --- | --- |
 | [dotnet.exe CLI](install-use-packages-dotnet-cli.md) | （所有平台）用于 .NET Core 和 .NET Standard 库，以及用于面向 .NET Framework 的 SDK 样式项目的 CLI 工具（请参阅 [SDK 属性](/dotnet/core/tools/csproj#additions)）。 检索由 \<package_name\> 标识的包，并添加对项目文件的引用。 同时还要检索和安装依赖项。 |
 | Visual Studio | （Windows 和 Mac）提供 UI，用户可以通过此 UI 浏览、选择包，并从指定包源将包及其依赖项安装到项目中。 将对已安装的程序包引用添加到项目文件。<ul><li>[使用 Visual Studio 安装和管理包](install-use-packages-visual-studio.md)</li><li>[在项目中包括 NuGet 包 (Mac)](/visualstudio/mac/nuget-walkthrough)</li></ul> |

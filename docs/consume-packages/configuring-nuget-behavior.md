@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
 ms.openlocfilehash: 89127203df0aa1eb24f36b8ec64c5bb4a4d59319
-ms.sourcegitcommit: 1eda83ab537c86cc27316e7bc67f95a358766e63
+ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094076"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79428539"
 ---
 # <a name="common-nuget-configurations"></a>常见的 NuGet 配置
 
@@ -18,7 +18,7 @@ NuGet 的行为由一个或多个 `NuGet.Config` (XML) 文件（可存在于项�
 
 ## <a name="config-file-locations-and-uses"></a>配置文件的位置和使用
 
-| 范围 | NuGet.Config 文件的位置 | 说明 |
+| 范围 | NuGet.Config 文件的位置 | 描述 |
 | --- | --- | --- |
 | 解决方案 | 当前文件夹（又称解决方案文件夹）或上至驱动器根目录的任何文件夹。| 在解决方案文件夹中，设置应用于子文件夹中的所有项目。 请注意，如果配置文件位于项目文件夹中，则对该项目没有任何影响。 |
 | 用户 | Windows：`%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux：`~/.config/NuGet/NuGet.Config` 或 `~/.nuget/NuGet/NuGet.Config`（因 OS 版本而异） | 设置应用于所有操作，但可被任何项目级的设置替代。 |
