@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: fadb6091f9f1e4f380c3896f790fd61ce80e9683
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.openlocfilehash: b615bcb78ad2eaf8524bfbf17864d4652e546ff1
+ms.sourcegitcommit: 1a63a84da2719c8141823ac89a20bf507fd22b00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78230564"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80151220"
 ---
-在包的 NuGet.org 页面上所示的包可选说明从用于 `.csproj` 文件中的 `<description></description` 拉取，或者通过 [.nuspec 文件](../../reference/nuspec.md)中的 `$description` 拉取。
+在包的 NuGet.org 页面上所示的包可选说明从用于 `.csproj` 文件中的 `<description></description>` 拉取，或者通过 [.nuspec 文件](../../reference/nuspec.md)中的 `$description` 拉取。
 
 有关 description 字段的示例，请参阅 .NET 包的 `.csproj` 文件中的以下 XML 文本  ：
 
