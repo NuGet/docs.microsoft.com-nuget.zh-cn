@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 96e138561390984d9def495ba5e091c43023cc92
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.openlocfilehash: 10bc34653d294cf70b5c91ce79a79cf6532fba1b
+ms.sourcegitcommit: 1a63a84da2719c8141823ac89a20bf507fd22b00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78231326"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80147482"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>快速入门：在 Visual Studio 中安装和使用包（仅适用于 Windows）
 
-NuGet 包包含其他开发人员提供的在项目中使用的可重用代码。 请参阅[什么是 NuGet？](../What-is-NuGet.md)，了解背景信息。 使用 NuGet 包管理器或包管理器控制台在 Visual Studio 项目中安装包。 本文介绍使用热门的 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) 包和 Windows Presentation Foundation (WPF) 项目的过程。 相同的过程适用于任何其他 .NET 或 .NET Core 项目。
+NuGet 包包含其他开发人员提供的在项目中使用的可重用代码。 请参阅[什么是 NuGet？](../What-is-NuGet.md)，了解背景信息。 使用 NuGet 包管理器、[包管理器控制台](../consume-packages/install-use-packages-powershell)或 [dotnet CLI](install-and-use-a-package-using-the-dotnet-cli.md) 在 Visual Studio 项目中安装包。 本文介绍使用热门的 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) 包和 Windows Presentation Foundation (WPF) 项目的过程。 相同的过程适用于任何其他 .NET 或 .NET Core 项目。
 
 安装完成后，请引用具有 `using <namespace>` 的代码中的包，其中 \<namespace\> 特定于正在使用的包。 建立引用后，可通过相应的 API 调用包。
 

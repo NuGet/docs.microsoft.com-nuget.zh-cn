@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 912c0d015e2f499bc7386483bc6c35ecd765d3d4
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.openlocfilehash: c79976c2f4ded2fba3796fb847d3c90807d7b86c
+ms.sourcegitcommit: 1a63a84da2719c8141823ac89a20bf507fd22b00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79428473"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80147443"
 ---
 # <a name="package-versioning"></a>包版本控制
 
@@ -221,6 +221,10 @@ ms.locfileid: "79428473"
 
         1.0.0.0 is treated as 1.0.0
         1.0.01.0 is treated as 1.0.1
+        
+- 已删除 SemVer 2.0.0 生成元数据
+
+        1.0.7+r3456 is treated as 1.0.7
 
 `pack` 和 `restore` 操作可尽可能规范化版本。 对于已生成的包，此规范化不会影响包本身的版本号；仅影响 NuGet 在解析依赖项时匹配版本的方式。
 
