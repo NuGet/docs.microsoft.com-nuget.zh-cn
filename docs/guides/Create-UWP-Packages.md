@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 03/21/2017
 ms.topic: tutorial
 ms.openlocfilehash: 77aa186291122a8d05018ecacd1329da459badad
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "72380754"
 ---
 # <a name="create-uwp-packages"></a>创建 UWP 包
@@ -18,7 +18,7 @@ ms.locfileid: "72380754"
 
 在本演练中，将创建一个具有本机 UWP 组件（包括 XAML 控件）的 NuGet 包，以便在托管项目和本机项目中使用。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 1. Visual Studio 2017 或 Visual Studio 2015。 可以从 [visualstudio.com](https://www.visualstudio.com/) 免费安装 2017 Community 版；也可以使用 Professional 和 Enterprise 版。
 

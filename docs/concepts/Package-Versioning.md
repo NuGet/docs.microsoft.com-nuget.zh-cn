@@ -7,10 +7,10 @@ ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
 ms.openlocfilehash: c79976c2f4ded2fba3796fb847d3c90807d7b86c
-ms.sourcegitcommit: 1a63a84da2719c8141823ac89a20bf507fd22b00
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "80147443"
 ---
 # <a name="package-versioning"></a>包版本控制

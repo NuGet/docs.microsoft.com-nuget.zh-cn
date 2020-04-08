@@ -7,10 +7,10 @@ ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: 00fe1d5fa81132b5d6826203a0d26e56aa8d4755
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428617"
 ---
 # <a name="signing-nuget-packages"></a>对 NuGet 包进行签名

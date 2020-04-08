@@ -6,19 +6,19 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: quickstart
 ms.openlocfilehash: 8c09d6d5662ed6ff0deffa5d45b823ad0992f399
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231300"
 ---
-# <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>快速入门：创建并发布包 (dotnet CLI)
+# <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>快速入门：创建和发布包 (dotnet CLI)
 
 从 .NET 类库创建 NuGet 包并使用 `dotnet` 命令行接口 (CLI) 将其发布到 nuget.org 是很简单的过程。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
-1. 安装包括 `dotnet` CLI 的 [.NET Core SDK](https://www.microsoft.com/net/download/)。 从 Visual Studio 2017 开始，dotnet CLI 将自动随任何与 .NET Core 相关的工作负载一起安装。
+1. 安装包括 [ CLI 的 ](https://www.microsoft.com/net/download/).NET Core SDK`dotnet`。 从 Visual Studio 2017 开始，dotnet CLI 将自动随任何与 .NET Core 相关的工作负载一起安装。
 
 1. 如果你还没有帐户，请[在 nuget.org 上注册一个免费帐户](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)。 创建新帐户会发送确认电子邮件。 必须先确认该帐户，才能上传包。
 
@@ -77,7 +77,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 ### <a name="automatically-generate-package-on-build"></a>在生成期间自动生成包
 
-若要在运行 `dotnet build` 时自动运行 `dotnet pack`，请将以下行添加到 `<PropertyGroup>` 中的项目文件内：
+若要在运行 `dotnet pack` 时自动运行 `dotnet build`，请将以下行添加到 `<PropertyGroup>` 中的项目文件内：
 
 ```xml
 <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

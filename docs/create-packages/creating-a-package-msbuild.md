@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 02/20/2020
 ms.topic: conceptual
 ms.openlocfilehash: 7166d622ef9d3975fc1c931d30caf570a765a6da
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231313"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>使用 MSBuild 创建 NuGet 包

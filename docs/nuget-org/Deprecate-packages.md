@@ -7,10 +7,10 @@ ms.date: 09/23/2019
 ms.topic: conceptual
 ms.reviewer: karann-msft
 ms.openlocfilehash: 70666ddf9cd7bdc448d29d4235e57bc91e2c003e
-ms.sourcegitcommit: 60414a17af65237652c1de9926475a74856b91cc
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "74096885"
 ---
 # <a name="deprecating-packages"></a>弃用包

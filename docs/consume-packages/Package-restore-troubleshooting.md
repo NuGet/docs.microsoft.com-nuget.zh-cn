@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
 ms.openlocfilehash: a1f9f1d03e9a6e58466fa92426bd655d5e8ed83d
-ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "68860622"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>包还原错误疑难解答

@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
 ms.openlocfilehash: 8f2b33a7290301bd16db3b1979ae496eee602f55
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "75383653"
 ---
 # <a name="known-issues-with-nuget"></a>NuGet 的已知问题
@@ -27,7 +27,7 @@ ms.locfileid: "75383653"
 
 $PAT = "Your personal access token" $Feed = "Your url" .\nuget.exe sources add -Name Test -Source $Feed -UserName $UserName -Password $PAT
 
-**临时解决方法：**
+**解决方法：**
 
 使用 [-StorePasswordInClearText](../reference/cli-reference/cli-ref-sources.md) 选项以明文形式存储密码。
 
@@ -39,7 +39,7 @@ $PAT = "Your personal access token" $Feed = "Your url" .\nuget.exe sources add -
 
 ![没有源的 NuGet 配置](./media/knownIssue-34-NoSources.PNG)
 
-`%AppData%\NuGet\` (Windows) 或 `~/.nuget/` (Mac/Linux) 文件夹中的 `NuGet.Config` 文件意外被清空。 若要解决此问题，请执行以下操作：关闭 Visual Studio（适用于 Windows），删除 `NuGet.Config` 文件，然后再次尝试操作。 NuGet 生成了新的 `NuGet.Config` 文件，你应该可以继续操作。
+`NuGet.Config` (Windows) 或 `%AppData%\NuGet\` (Mac/Linux) 文件夹中的 `~/.nuget/` 文件意外被清空。 若要解决此问题，请执行以下操作：关闭 Visual Studio（适用于 Windows），删除 `NuGet.Config` 文件，然后再次尝试操作。 NuGet 生成了新的 `NuGet.Config` 文件，你应该可以继续操作。
 
 ## <a name="error-installing-packages-with-nuget-27"></a>在 NuGet 2.7 中安装包时出现错误
 
@@ -65,7 +65,7 @@ install-package log4net
 
 **解决方案：** :
 
-从提升的提示符运行此命令，重新注册 `VSLangProj.dll` 的类型库 
+从提升的提示符运行此命令，重新注册  **的类型库**`VSLangProj.dll`
 
     regsvr32 "C:\Program Files (x86)\Common Files\microsoft shared\MSEnv\VsLangproj.olb"
 
@@ -75,7 +75,7 @@ install-package log4net
 
 ## <a name="build-failure-after-package-update-in-vs-2012"></a>在 VS 2012 中更新包之后生成失败
 
-问题：你使用的是 VS 2012 RTM。 更新 NuGet 包时，收到以下消息：“无法完全卸载一个或多个包。” 并提示你重启 Visual Studio。 VS 重启后，收到奇怪的生成错误。
+问题：使用 VS 2012 RTM。 更新 NuGet 包时，出现此消息：“无法完全卸载一个或多个包。”， 并提示你重启 Visual Studio。 VS 重启后，收到奇怪的生成错误。
 
 原因是旧包中的某些文件被后台 MSBuild 进程锁定。 即使 VS 重启，后台 MSBuild 进程仍在使用旧包中的文件，导致生成失败。
 
@@ -90,7 +90,7 @@ install-package log4net
 查看日志时，可能会看到提到 `SignatureMismatchException`。
 
 若要防止此情况发生，可安装 [Visual Studio 2010 SP1 修补程序](http://bit.ly/vsixcertfix)。
-或者，解决方法是简单地卸载 NuGet（以管理员身份运行 Visual Studio 时），然后从 VS 扩展库安装。 有关更多信息，请参见<https://support.microsoft.com/kb/2581019>。
+或者，解决方法是简单地卸载 NuGet（以管理员身份运行 Visual Studio 时），然后从 VS 扩展库安装。 有关详细信息，请参阅<https://support.microsoft.com/kb/2581019>。
 
 ## <a name="package-manager-console-throws-an-exception-when-the-reflector-visual-studio-add-in-is-also-installed"></a>当安装了 Reflector Visual Studio 加载项时，包管理器控制台也会引发异常。
 
@@ -105,7 +105,7 @@ install-package log4net
     Command execution stopped because the preference variable "ErrorActionPreference" or common parameter
     is set to Stop: Unable to find type
 
-or
+或
 
     System.Management.Automation.CmdletInvocationException: Could not load file or assembly 'Scripts\nuget.psm1' or one of its dependencies. <br />The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) ---&gt; System.IO.FileLoadException: Could not load file or <br />assembly 'Scripts\nuget.psm1' or one of its dependencies. The parameter is incorrect. (Exception from HRESULT: 0x80070057 (E_INVALIDARG)) <br />---&gt; System.ArgumentException: Illegal characters in path.
        at System.IO.Path.CheckInvalidPathChars(String path)
@@ -171,7 +171,7 @@ NuGet 需要 Powershell 2.0 运行时。 默认情况下，Windows XP 没有 Pow
 
 ## <a name="attempting-to-install-or-uninstall-results-in-the-error-cannot-create-a-file-when-that-file-already-exists"></a>尝试安装或卸载导致错误“文件已存在时，无法创建该文件。”
 
-出于某种原因，Visual Studio 扩展呈现奇怪的状态，即已卸载了 VSIX 扩展，但遗留了一些文件。 解决此问题：
+出于某种原因，Visual Studio 扩展呈现奇怪的状态，即已卸载了 VSIX 扩展，但遗留了一些文件。 若要解决此问题，请执行以下操作：
 
 1. 退出 Visual Studio
 1. 打开以下文件夹（可能位于计算机上的其他驱动器上）

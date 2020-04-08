@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 07/15/2019
 ms.topic: conceptual
 ms.openlocfilehash: 1d23759433efb405fa5f0035049befced2c43d6b
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "72380679"
 ---
 # <a name="support-multiple-net-framework-versions-in-your-project-file"></a>支持项目文件中的多个 .NET Framework 版本

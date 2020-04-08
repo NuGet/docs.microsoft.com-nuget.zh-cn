@@ -7,10 +7,10 @@ ms.date: 09/07/2019
 ms.topic: reference
 ms.reviewer: karann
 ms.openlocfilehash: da464cc44d8c874e13c0cdfab871f31e643b577f
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "73610494"
 ---
 # <a name="package-id-prefix-reservation"></a>包 ID 前缀预留

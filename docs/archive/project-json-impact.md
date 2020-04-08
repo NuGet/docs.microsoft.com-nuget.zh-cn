@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
 ms.openlocfilehash: 34b08f06f04efdcf7bf73efc2cbdb5a5494ae2d9
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "69488201"
 ---
 # <a name="impact-of-projectjson-when-creating-packages"></a>创建包时 project.json 产生的影响

@@ -6,10 +6,10 @@ ms.author: zivkan
 ms.date: 05/24/2019
 ms.topic: conceptual
 ms.openlocfilehash: b32075c3f2c06c15c07d36602bdabdaee8b9405a
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "67427472"
 ---
 # <a name="select-assemblies-referenced-by-projects"></a>选择项目引用的程序集
@@ -31,7 +31,7 @@ ms.locfileid: "67427472"
 
 ## <a name="packagesconfig-support"></a>`packages.config` 支持
 
-使用 `packages.config` 管理 NuGet 包的项目通常会向 `lib\<tfm>\` 目录中的所有程序集添加引用。 添加 `ref\` 目录以支持 `PackageReference`，因此在使用 `packages.config` 时不予考虑。 要使用 `packages.config` 以显式方式设置项目引用的程序集，包必须使用 [nuspec 文件中的 `<references>` 元素](../reference/nuspec.md#explicit-assembly-references)。 例如:
+使用 `packages.config` 管理 NuGet 包的项目通常会向 `lib\<tfm>\` 目录中的所有程序集添加引用。 添加 `ref\` 目录以支持 `PackageReference`，因此在使用 `packages.config` 时不予考虑。 要使用 `packages.config` 以显式方式设置项目引用的程序集，包必须使用 [nuspec 文件中的 `<references>` 元素](../reference/nuspec.md#explicit-assembly-references)。 例如：
 
 ```xml
 <references>
@@ -42,7 +42,7 @@ ms.locfileid: "67427472"
 ```
 
 > [!Note]
-> `packages.config` 项目使用名为 [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/master/documentation/wiki/ResolveAssemblyReference.md) 的进程将程序集复制到 `bin\<configuration>\` 输出目录。 复制项目的程序集，然后构建系统查看引用程序集的程序集清单，然后复制这些程序集并递归重复所有程序集。 这意味着，如果 `lib\<tfm>\` 目录中的任何程序集不在任何其他程序集的清单中作为依赖项列出（如果在运行时使用 `Assembly.Load`、MEF 或其他依赖项注入框架加载程序集）那么即使在 `bin\<tfm>\` 中，也不能将其复制到项目的 `bin\<configuration>\` 输出目录中。
+> `packages.config` 项目使用名为 [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/master/documentation/wiki/ResolveAssemblyReference.md) 的进程将程序集复制到 `bin\<configuration>\` 输出目录。 复制项目的程序集，然后构建系统查看引用程序集的程序集清单，然后复制这些程序集并递归重复所有程序集。 这意味着，如果 `lib\<tfm>\` 目录中的任何程序集不在任何其他程序集的清单中作为依赖项列出（如果在运行时使用 `Assembly.Load`、MEF 或其他依赖项注入框架加载程序集）那么即使在 `bin\<configuration>\` 中，也不能将其复制到项目的 `bin\<tfm>\` 输出目录中。
 
 ## <a name="example"></a>示例
 

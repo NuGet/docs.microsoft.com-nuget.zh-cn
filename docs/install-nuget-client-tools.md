@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 06/20/2019
 ms.topic: quickstart
 ms.openlocfilehash: 2769f0ef0373b26eedb4bac6242fee0e814310c5
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428461"
 ---
 # <a name="install-nuget-client-tools"></a>安装 NuGet 客户端工具

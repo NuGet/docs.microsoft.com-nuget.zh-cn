@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
 ms.openlocfilehash: 2aaaf41b3fc4ef3621333e5099780b5d7ef393bc
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549445"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64500400"
 ---
 # <a name="nuget-governance"></a>NuGet 治理
 
@@ -82,7 +82,7 @@ NuGet 核心团队自任命为仁慈独裁者或项目领导。 但是，由于�
     - 政府颁发的官方死亡证明（如果以前的帐户持有者已死亡），或
     - 公证文件，例如负责照顾无行为能力帐户持有者的医疗专业人员签名的证明。
 1. 可证明你拥有所有权的以下文档之一： 
-    - 可证明你是帐户持有者的依然健在的配偶的结婚证，
+    - 可证明你是帐户持有者的依然健在的配偶/伴侣的结婚证，
     - 签名委托书，
     - 将你命名为执行人或受益人的遗嘱或信托文件复印件，
     - 帐户持有者的出生证明（如果你是其父母），或

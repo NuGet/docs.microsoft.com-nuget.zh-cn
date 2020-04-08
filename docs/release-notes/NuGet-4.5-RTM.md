@@ -6,11 +6,11 @@ ms.author: anangaur
 ms.date: 12/4/2017
 ms.topic: conceptual
 ms.openlocfilehash: 321aedb471bc6f86e9c03878093b199267e31195
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432499"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496572"
 ---
 # <a name="nuget-45-release-notes"></a>NuGet 4.5 发行说明
 
@@ -20,7 +20,7 @@ ms.locfileid: "58432499"
 
 ## <a name="summary-whats-new-in-452"></a>摘要:4.5.2 版中的新增功能
 
-* 安全修复：~/.nuget 中创建的文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* 安全修复：~/.nuget 中针对所创建文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
 ## <a name="summary-whats-new-in-453"></a>摘要:4.5.3 版中的新增功能
 
@@ -66,7 +66,7 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 有关 NuGet 4.4 RTM 中已修复问题的信息，请参阅[NuGet 4.4 RTM 发行说明](../release-notes/nuget-4.4-RTM.md) 
 
-### <a name="features"></a>功能
+### <a name="features"></a>特征
 
 - 禁用符号包的自动推送 - [#6113](https://github.com/NuGet/Home/issues/6113)
 
@@ -90,6 +90,6 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 - 搜索超出注册 blob 时，UI 客户端无法显示任何错误或警告 - [# 2149](https://github.com/NuGet/Home/issues/2149)
 - Get-Packages -Updates 生成不正确的查询 - [# 2135](https://github.com/NuGet/Home/issues/2135)
 
-## <a name="links-to-github-issues-fixed-in-45-rtm"></a>4.5 RTM 中已修复 GitHub 问题的链接
+## <a name="links-to-github-issues-fixed-in-45-rtm"></a>4\.5 RTM 中已修复 GitHub 问题的链接
 
 [问题列表](https://github.com/NuGet/Home/issues?q=is%3Aissue+milestone%3A4.5+is%3Aclosed)

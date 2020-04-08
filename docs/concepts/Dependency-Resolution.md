@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.openlocfilehash: 4b95251e4b055523a9533b4125589b2650be932d
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428467"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet 如何解析包依赖项
@@ -24,7 +24,7 @@ ms.locfileid: "79428467"
 
 当将包安装到使用 PackageReference 格式的项目中时，NuGet 将添加对相应文件中的平面包关系图的引用并提前解决冲突。 此过程称为“传递还原”  。 重新安装或还原包指的是下载关系图中列出的包的过程，此过程可加快生成的速度和提高其可预测性。 还可以利用 2.8.\* 等可变版本，以避免为了能使用最新版本的包而修改项目。
 
-当 NuGet 还原进程在生成之前运行时，它将首先解析内存中的依赖项，然后将生成的关系图写入名为 `project.assets.json` 的文件。 如果[启用了锁定文件功能](../consume-packages/package-references-in-project-files.md#locking-dependencies)，它还会将已解析的依赖项写入名为 `packages.lock.json` 的锁定文件。
+当 NuGet 还原进程在生成之前运行时，它将首先解析内存中的依赖项，然后将生成的关系图写入名为 `project.assets.json` 的文件。 如果`packages.lock.json`启用了锁定文件功能[，它还会将已解析的依赖项写入名为 ](../consume-packages/package-references-in-project-files.md#locking-dependencies) 的锁定文件。
 资产文件位于 `MSBuildProjectExtensionsPath`，它默认是项目的“obj”文件夹。 MSBuild 随后将读取此文件并将其转换成一组文件夹（可在其中找到潜在引用），然后将它们添加到内存中的项目树。
 
 `project.assets.json` 文件是临时的，不应添加到源代码管理中。 默认情况下，此文件将在 `.gitignore` 和 `.tfignore` 中列出。 请参阅[包与源代码管理](../consume-packages/packages-and-source-control.md)。
@@ -55,7 +55,7 @@ ms.locfileid: "79428467"
 
 #### <a name="floating-versions"></a>可变版本
 
-可变依赖项版本由 \* 字符指定。 例如 `6.0.*`。 此版本规格表示“使用最新的 6.0.x 版本”；`4.*` 则表示“使用最新的 4.x 版本”。 使用可变版本可减少对项目文件的更改，同时确保始终使用最新版本的依赖项。
+可变依赖项版本由 \* 字符指定。 例如，`6.0.*` 。 此版本规格表示“使用最新的 6.0.x 版本”；`4.*` 则表示“使用最新的 4.x 版本”。 使用可变版本可减少对项目文件的更改，同时确保始终使用最新版本的依赖项。
 
 使用可变版本时，NuGet 将解析与版本模式匹配的最高包版本，例如，请求 `6.0.*` 将获得以 6.0 开头的最高包版本：
 
@@ -102,7 +102,7 @@ ms.locfileid: "79428467"
 
 利用 `packages.config`，NuGet 可尝试解决在安装每个单独包期间出现的依赖项冲突。 也就是说，如果正在安装包 A 并且其依赖于包 B，同时包 B 已作为其他项的依赖项在 `packages.config` 中列出，则 NuGet 将比较所请求的包 B 版本，并尝试找到满足所有版本约束的版本。 具体而言，NuGet 将选择可满足依赖项的较低 major.minor 版本  。
 
-默认情况下，NuGet 2.8 会查找最低的修补程序版本（请参阅 [NuGet 2.8 发行说明](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies)）。 可以通过 `Nuget.Config` 中的 `DependencyVersion` 属性和命令行上的 `-DependencyVersion` 开关控制此设置。  
+默认情况下，NuGet 2.8 会查找最低的修补程序版本（请参阅 [NuGet 2.8 发行说明](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies)）。 可以通过 `DependencyVersion` 中的 `Nuget.Config` 属性和命令行上的 `-DependencyVersion` 开关控制此设置。  
 
 用于解析依赖项的 `packages.config` 进程会随着依赖项关系图的规模增大而愈加复杂。 每次安装新包都需要遍历整个关系图，并且可能引发版本冲突。 发生冲突时，安装将停止，此时项目处于不确定状态，很可能导致项目文件本身发生更改。 使用其他包管理格式时则不会出现此问题。
 
@@ -110,7 +110,7 @@ ms.locfileid: "79428467"
 
 使用 PackageReference 格式时，可以控制依赖项中的哪些资产可流入顶层项目。 有关详细信息，请参阅 [PackageReference](../consume-packages/package-references-in-project-files.md#controlling-dependency-assets)。
 
-当顶层项目本身是一个包时，还需要使用其依赖项在 `.nuspec` 文件中列出的 `include` 和 `exclude` 属性来控制此流。 请参阅 [.nuspec 引用 - 依赖项](../reference/nuspec.md#dependencies)。
+当顶层项目本身是一个包时，还需要使用其依赖项在 `include` 文件中列出的 `exclude` 和 `.nuspec` 属性来控制此流。 请参阅 [.nuspec 引用 - 依赖项](../reference/nuspec.md#dependencies)。
 
 ## <a name="excluding-references"></a>排除引用
 

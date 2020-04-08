@@ -6,10 +6,10 @@ ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
 ms.openlocfilehash: 8cc990e0c9eed07c59c8dffb04d104be47051736
-ms.sourcegitcommit: 7c9f157ba02d9be543de34ab06813ab1ec10192a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/23/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "69999944"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题

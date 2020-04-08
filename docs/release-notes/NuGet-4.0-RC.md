@@ -7,11 +7,11 @@ ms.date: 02/03/2017
 ms.topic: conceptual
 ms.reviewer: ananguar
 ms.openlocfilehash: 2d0bb6356c0a20843bdc884b68f5f61838b82e73
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549241"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496643"
 ---
 # <a name="nuget-40-rc-release-notes"></a>NuGet 4.0 RC 发行说明
 
@@ -56,7 +56,7 @@ ms.locfileid: "43549241"
 
 - System.Xml.XmlException：核心属性部分存在无法识别的根元素。 行：2，位置：2 - [#2718](https://github.com/NuGet/Home/issues/2718)
 
-- 文本字段中具有转义 &lt; 或 &gt; 的 `.nuspec` 不再生成 - [#2651](https://github.com/NuGet/Home/issues/2651)
+- 文本字段中具有转义 `.nuspec` 或 &lt; 的 &gt; 不再生成 - [#2651](https://github.com/NuGet/Home/issues/2651)
 
 - nuget.exe delete 不会提示输入凭据（处于非交互模式）- [#2626](https://github.com/NuGet/Home/issues/2626)
 

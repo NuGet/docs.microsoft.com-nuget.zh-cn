@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 07/09/2019
 ms.topic: conceptual
 ms.openlocfilehash: 1d869f616ce0291cf1c0a17b7ff20fc61e6a3bd5
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78230819"
 ---
 # <a name="set-a-nuget-package-type"></a>设置 NuGet 包类型
@@ -24,9 +24,9 @@ ms.locfileid: "78230819"
 
 - 自定义类型包使用与包 ID 遵守相同格式规则的任意类型标识符。 但是，任何不是 `Dependency` 和 `DotnetTool` 的类型不会被 Visual Studio 中的 NuGet 包管理器识别。
 
-包类型在 `.nuspec` 文件中设置。 后向兼容最好不显式设置 `Dependency` 类型，而是依赖 NuGet 在没有指定类型时假设此类型  。
+包类型在 `.nuspec` 文件中设置。 后向兼容最好不显式设置  *类型，而是依赖 NuGet 在没有指定类型时假设此类型*`Dependency`。
 
-- `.nuspec`：指明 `packageTypes\packageType` 节点中 `<metadata>` 元素下的包类型：
+- `.nuspec`：指示 `packageTypes\packageType` 元素的 `<metadata>` 节点中的包类型：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>

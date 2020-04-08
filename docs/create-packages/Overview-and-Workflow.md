@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 07/26/2017
 ms.topic: conceptual
 ms.openlocfilehash: e4b9f6dae3a4be69e523888cc9bd2f212b45829c
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "69488847"
 ---
 # <a name="package-creation-workflow"></a>包创建工作流

@@ -6,17 +6,17 @@ ms.author: karann
 ms.date: 01/09/2017
 ms.topic: reference
 ms.openlocfilehash: f1a11eb63c07a5d737a9474870f5653f6f7d850a
-ms.sourcegitcommit: 09107c5092050f44a0c6abdfb21db73878f78bd0
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50980971"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64495918"
 ---
 # <a name="nuget-api-in-visual-studio"></a>Visual Studio 中的 NuGet API
 
 除了 Visual Studio 中的包管理器 UI 和控制台，NuGet 还会通过 [Managed Extensibility Framework (MEF)](/dotnet/framework/mef/index) 导出一些有用服务。 此接口允许 Visual Studio 中的其他组件与 NuGet 交互，可用于安装和卸载包，以及获取有关已安装包的信息。
 
-从 NuGet 3.3+ 开始，NuGet 会导出以下所有服务，它们全部驻留于 `NuGet.VisualStudio.dll` 程序集中的 `NuGet.VisualStudio` 命名空间：
+从 NuGet 3.3+ 开始，NuGet 会导出以下所有服务，它们全部驻留于 `NuGet.VisualStudio` 程序集中的 `NuGet.VisualStudio.dll` 命名空间：
 
 - [`IRegistryKey`](#iregistrykey-interface)：检索注册表子项中的值的方法。
 - [`IVsPackageInstaller`](#ivspackageinstaller-interface)：将 NuGet 包安装到项目中的方法。
@@ -29,13 +29,13 @@ ms.locfileid: "50980971"
 - [`IVsPackageRestorer`](#ivspackagerestorer-interface)：还原项目中已安装包的方法。
 - [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface)：检索 NuGet 包源列表的方法。
 - [`IVsPackageUninstaller`](#ivspackageuninstaller-interface)：从项目中卸载 NuGet 包的方法。
-- [`IVsTemplateWizard`](#ivstemplatewizard-interface)：专为项目/项模板设计，用以包括预安装的包；此接口并非要从代码中调用，且没有任何公共方法。
+- [`IVsTemplateWizard`](#ivstemplatewizard-interface)：专为项目/项模板设计，用以包括预安装的包；此接口并非要从代码中调用，且没有任何公共方法。 
 
 ## <a name="using-nuget-services"></a>使用 NuGet 服务
 
 1. 将 [`NuGet.VisualStudio`](https://www.nuget.org/packages/NuGet.VisualStudio) 包安装到项目中，其中包含 `NuGet.VisualStudio.dll` 程序集。
 
-    安装后，包会自动将程序集引用的“嵌入互操作类型”属性设置为“True”。 当用户更新到较新版本的 NuGet 时，代码能够更适应版本更改。
+    安装后，包会自动将程序集引用的“嵌入互操作类型”属性设置为“True”。   当用户更新到较新版本的 NuGet 时，代码能够更适应版本更改。
 
 > [!Warning]
 > 除了公共接口，请不要在代码中使用任何其他类型，也不要引用任何其他 NuGet 程序集，包括 `NuGet.Core.dll`。

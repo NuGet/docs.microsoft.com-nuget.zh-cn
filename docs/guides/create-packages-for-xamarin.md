@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 11/05/2019
 ms.topic: tutorial
 ms.openlocfilehash: 0cb653bad9e853d908039b3f7a94e1dd7eefdde5
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78230897"
 ---
 # <a name="create-packages-for-xamarin-with-visual-studio-2017-or-2019"></a>使用 Visual Studio 2017 或 2019 为 Xamarin 创建包
@@ -18,14 +18,14 @@ Xamarin 包包含在 iOS、Android 和 Windows 上使用本机 API 的代码，�
 
 在本演练中，将使用 Visual Studio 2017 或 2019 创建可在 iOS、Android 和 Windows 的移动项目中使用的跨平台 NuGet 包。
 
-1. [系统必备](#prerequisites)
+1. [先决条件](#prerequisites)
 1. [创建项目结构和抽象代码](#create-the-project-structure-and-abstraction-code)
 1. [编写平台特定的代码](#write-your-platform-specific-code)
 1. [创建并更新 .nuspec 文件](#create-and-update-the-nuspec-file)
 1. [打包组件](#package-the-component)
 1. [相关主题](#related-topics)
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 1. 在通用 Windows 平台 (UWP) 和 Xamarin 中使用 Visual Studio 2017 或 2019。 可以从 [visualstudio.com](https://www.visualstudio.com/) 免费安装 Community 版；当然，也可以使用 Professional 和 Enterprise 版。 若要包含 UWP 和 Xamarin 工具，请选择自定义安装并选中相应的选项。
 1. NuGet CLI。 从 [nuget.org/downloads](https://nuget.org/downloads) 下载 nuget.exe 的最新版本，将其保存到选择的位置。 然后将该位置添加到 PATH 环境变量（如果尚未添加）。
@@ -36,11 +36,11 @@ Xamarin 包包含在 iOS、Android 和 Windows 上使用本机 API 的代码，�
 ## <a name="create-the-project-structure-and-abstraction-code"></a>创建项目结构和抽象代码
 
 1. 下载并运行适用于 Visual Studio 的[跨平台 .NET Standard 插件模板扩展](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates)。 使用这些模板可轻松创建本演练所需的项目结构。
-1. 在 Visual Studio 2017 中，选择“文件”>“新建”>“项目”，搜索 `Plugin`，选择“跨平台 .NET Standard 库插件”模板，将名称更改为“LoggingLibrary”，然后单击“确定”   。
+1. 在 Visual Studio 2017 中，选择“文件”>“新建”>“项目”，搜索 **，选择“跨平台 .NET Standard 库插件”模板，将名称更改为“LoggingLibrary”，然后单击“确定”** `Plugin`  。
 
     ![VS 2017 中的新空白应用（Xamarin.Forms 可移植）](media/CrossPlatform-NewProject.png)
 
-    在 Visual Studio 2019 中，选择“文件”>“新建”>“项目”，搜索 `Plugin`，选择“跨平台 .NET Standard 库插件”模板，然后单击“下一步”   。
+    在 Visual Studio 2019 中，选择“文件”>“新建”>“项目”，搜索 **，选择“跨平台 .NET Standard 库插件”模板，然后单击“下一步”** `Plugin`  。
 
     ![VS 2019 中的新空白应用（Xamarin.Forms 可移植）](media/CrossPlatform-NewProject19-Part1.png)
 
@@ -109,14 +109,14 @@ namespace Plugin.LoggingLibrary
 1. 右键单击解决方案，选择“生成解决方案”，检查工作并生成接下来将要打包的项目  。 如果遇到关于缺少引用的错误，请右键单击解决方案，选择“还原 NuGet 包”，安装依赖项并重新生成  。
 
 > [!Note]
-> 如果使用的是 Visual Studio 2019，则在选择“还原 NuGet 包”  并尝试重新生成之前，需要将 `MSBuild.Sdk.Extras` 的版本更改为 `LoggingLibrary.csproj` 中的 `2.0.54`。 只能通过以下方式访问此文件：首先右键单击该项目（在解决方案下方）并选择 `Unload Project`，然后右键单击卸载的项目并选择 `Edit LoggingLibrary.csproj`。
+> 如果使用的是 Visual Studio 2019，则在选择“还原 NuGet 包”  并尝试重新生成之前，需要将 `MSBuild.Sdk.Extras` 的版本更改为 `2.0.54` 中的 `LoggingLibrary.csproj`。 只能通过以下方式访问此文件：首先右键单击该项目（在解决方案下方）并选择 `Unload Project`，然后右键单击卸载的项目并选择 `Edit LoggingLibrary.csproj`。
 
 > [!Note]
 > 若要为 iOS 生成，需要一台连接到 Visual Studio 的联网 Mac，如 [Introduction to Xamarin.iOS for Visual Studio](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/)（Xamarin.iOS for Visual Studio 简介）中所述。 如果没有可用的 Mac，请清除配置管理器中的 iOS 项目（上面的步骤 3）。
 
 ## <a name="create-and-update-the-nuspec-file"></a>创建并更新 .nuspec 文件
 
-1. 打开命令提示符，导航到 `.sln` 文件下一级的 `LoggingLibrary` 文件夹，然后运行 NuGet `spec` 命令，创建初始 `Package.nuspec` 文件：
+1. 打开命令提示符，导航到 `LoggingLibrary` 文件下一级的 `.sln` 文件夹，然后运行 NuGet `spec` 命令，创建初始 `Package.nuspec` 文件：
 
     ```cli
     nuget spec
@@ -148,7 +148,7 @@ namespace Plugin.LoggingLibrary
 
 ### <a name="add-reference-assemblies"></a>添加引用程序集
 
-若要包含平台特定的引用程序集，请将以下内容添加到 `LoggingLibrary.nuspec` 的 `<files>` 元素，以适用于支持的平台：
+若要包含平台特定的引用程序集，请将以下内容添加到 `<files>` 的 `LoggingLibrary.nuspec` 元素，以适用于支持的平台：
 
 ```xml
 <!-- Insert below <metadata> element -->
@@ -178,7 +178,7 @@ namespace Plugin.LoggingLibrary
 
 ### <a name="add-dependencies"></a>添加依赖项
 
-如果有特定的本机实现依赖项，请使用带有 `<group>` 元素的 `<dependencies>` 元素来指定它们，例如：
+如果有特定的本机实现依赖项，请使用带有 `<dependencies>` 元素的 `<group>` 元素来指定它们，例如：
 
 ```xml
 <!-- Insert within the <metadata> element -->
@@ -265,7 +265,7 @@ namespace Plugin.LoggingLibrary
 nuget pack LoggingLibrary.nuspec
 ```
 
-将生成 `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`。 在类似 [NuGet 包资源管理器](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)的工具中打开此文件并展开所有节点，即可看到以下内容：
+这将生成 `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`。 在类似 [NuGet 包资源管理器](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)的工具中打开此文件并展开所有节点，即可看到以下内容：
 
 ![显示 LoggingLibrary 包的 NuGet 包资源管理器](media/Cross-Platform-PackageExplorer.png)
 

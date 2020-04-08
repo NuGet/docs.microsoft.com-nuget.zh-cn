@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: conceptual
 ms.openlocfilehash: 8e825410d621ff2946e23e80173292f24f9d21f2
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428521"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>从 packages.config 迁移到 PackageReference

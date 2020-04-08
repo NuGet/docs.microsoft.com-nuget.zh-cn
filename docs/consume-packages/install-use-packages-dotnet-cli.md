@@ -6,10 +6,10 @@ ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
 ms.openlocfilehash: 67cca81c48970c7f2e2cf0a64ee5ba57704a31e2
-ms.sourcegitcommit: fe34b1fc79d6a9b2943a951f70b820037d2dd72d
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "74825151"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>使用 dotnet CLI 安装和管理包
@@ -20,7 +20,7 @@ dotnet CLI 适用于 .NET Core 和 .NET Standard 项目（SDK 样式的项目类
 
 本文介绍了一些最常见的 dotnet CLI 命令的基本用法。 对于这些中的大多数命令，CLI 工具在当前目录中查找项目文件，除非在命令中指定了项目文件（项目文件是一个可选开关）。 如需获取命令的完整列表和可能使用的参数，请参阅 [.NET Core 命令行界面 (CLI) 工具](../reference/dotnet-commands.md)。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>必备条件
 
 - [.NET Core SDK](https://www.microsoft.com/net/download/)，提供 `dotnet` 命令行工具。 从 Visual Studio 2017 开始，dotnet CLI 将自动随任何与 .NET Core 相关的工作负载一起安装。
 
@@ -60,7 +60,7 @@ dotnet CLI 适用于 .NET Core 和 .NET Standard 项目（SDK 样式的项目类
 dotnet add package <PACKAGE_NAME> -v <VERSION>
 ```
 
-例如，要添加 12.0.1 版的 `Newtonsoft.Json` 包，请使用以下命令：
+例如，要添加 `Newtonsoft.Json` 包的 12.0.1 版，请使用以下命令：
 
 ```dotnetcli
 dotnet add package Newtonsoft.Json -v 12.0.1
@@ -74,7 +74,7 @@ dotnet add package Newtonsoft.Json -v 12.0.1
 dotnet list package
 ```
 
-## <a name="remove-a-package"></a>移除包
+## <a name="remove-a-package"></a>删除包
 
 使用 [dotnet remove package](/dotnet/core/tools/dotnet-remove-package?tabs=netcore2x) 命令从项目文件中移除包引用。
 

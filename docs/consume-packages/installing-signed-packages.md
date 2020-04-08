@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 11/29/2018
 ms.topic: conceptual
 ms.openlocfilehash: 034b9dd9699af529e4d82d6ee5b1c42214673341
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428599"
 ---
 # <a name="manage-package-trust-boundaries"></a>管理包信任边界
@@ -24,7 +24,7 @@ ms.locfileid: "79428599"
 > [!Note]
 > 在 Windows 上需要 NuGet 4.9.0+ 和 Visual Studio 版本 15.9 及更高版本
 
-可使用 [`nuget config`](../reference/cli-reference/cli-ref-config.md) 命令，通过在 [nuget.config](../reference/nuget-config-file.md) 文件中将 `signatureValidationMode` 设置为 `require`，配置 NuGet 客户端包签名的验证方式。
+可使用 `signatureValidationMode``require`[ 命令，通过在 ](../reference/nuget-config-file.md)nuget.config[ 文件中将 `nuget config` 设置为 ](../reference/cli-reference/cli-ref-config.md)，配置 NuGet 客户端包签名的验证方式。
 
 ```cmd
 nuget.exe config -set signatureValidationMode=require

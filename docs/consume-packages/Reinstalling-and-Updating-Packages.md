@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 12/07/2017
 ms.topic: conceptual
 ms.openlocfilehash: 101c6d6b9d93da912f60c40b27559e80327154b8
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428425"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>如何重新安装和更新包
@@ -37,8 +37,8 @@ Visual Studio 中的程序包管理器控制台提供了许多灵活的选项，
 ## <a name="when-to-reinstall-a-package"></a>何时重新安装包
 
 1. **包还原后的损坏引用**：如果已打开项目并还原了 NuGet 包，但仍看见了损坏的引用，请尝试重新安装每个包。
-1. **项目因删除文件损坏**：NuGet 不会阻止移除从包添加的项，因此很容易在无意中修改从包安装的内容并损坏项目。 要还原项目，请重新安装受影响的包。
-1. **包更新损坏了项目**：如果包的更新损坏了项目，则故障通常由可能也被损坏的依赖项包引起。 要还原依赖项的状态，请重新安装该特定包。
+1. **项目因删除文件损坏**：NuGet 不会阻止删除从包添加的项，因此很容易在无意中修改从包安装的内容并损坏项目。 要还原项目，请重新安装受影响的包。
+1. **包更新损坏了项目**：如果包的更新损坏了项目，则故障通常由可能也已更新的依赖项包引起。 要还原依赖项的状态，请重新安装该特定包。
 1. **项目重定向或升级**：这在项目已重定向或升级时并且如果包因为更改目标框架需要重新安装时有用。 NuGet 在项目重定向后立即显示该情况下的生成错误，后续生成警告会提醒你包可能需要重新安装。 对于项目升级，NuGet 显示项目升级日志中的错误。
 1. **开发期间重新安装包**：包创作者常常需要重新安装与他们开发来测试行为的包版本相同的包。 `Install-Package` 命令不提供强制重新安装选项，所以换成使用 `Update-Package -reinstall`。
 
@@ -63,7 +63,7 @@ Visual Studio 中的程序包管理器控制台提供了许多灵活的选项，
 
 ## <a name="using-update-package"></a>使用 Update-Package
 
-注意下述的[注意事项](#considerations)，可以使用 Visual Studio 程序包管理器控制台中的 [Update-Package 命令](../reference/ps-reference/ps-ref-update-package.md)（“工具” > “NuGet 程序包管理器” > “程序包管理器控制台”）轻松重新安装任意程序包    。
+注意下述的[注意事项](#considerations)，可以使用 Visual Studio 程序包管理器控制台中的 [Update-Package 命令](../reference/ps-reference/ps-ref-update-package.md)（“工具” **“NuGet 程序包管理器”** “程序包管理器控制台”）轻松重新安装任意程序包 >    >   。
 
 ```ps
 Update-Package -Id <package_name> –reinstall
@@ -84,7 +84,7 @@ Update-Package <package_name>
 Update-Package <package_name> -ProjectName MyProject -reinstall
 ```
 
-要更新一个项目中的所有包（或者使用 `-reinstall` 重新安装），请使用 `-ProjectName` 而无需指定任意特定的包  ：
+要更新一个项目中的所有包（或者使用 *重新安装），请使用* 而无需指定任意特定的包`-reinstall``-ProjectName`：
 
 ```ps
 Update-Package -ProjectName MyProject
@@ -113,7 +113,7 @@ Update-Package
         - 如果重定向应用程序后重新安装包导致生成或运行时错误，则可能需要还原目标框架，或者搜索正确支持新目标框架的替换包。
 
 1. **项目重定向或升级后添加到 packages.config 中的 requireReinstallation 属性**
-    - 如果 NuGet 检测到包受到重定向或升级项目的影响，它会将 `packages.config` 中的 `requireReinstallation="true"` 属性添加到所有受影响的包引用。 因此，Visual Studio 中的每个后续生成会引发这些包的生成警告，提醒你重新安装它们。
+    - 如果 NuGet 检测到包受到重定向或升级项目的影响，它会将 `requireReinstallation="true"` 中的 `packages.config` 属性添加到所有受影响的包引用。 因此，Visual Studio 中的每个后续生成会引发这些包的生成警告，提醒你重新安装它们。
 
 1. **使用依赖项重新安装包**
     - `Update-Package –reinstall` 重新安装与初始包相同的版本，但是，如果没有提供特定的版本约束，则安装依赖项的最新版本。 这样可以按需仅更新依赖项以解决问题。 但是，如果这将依赖项滚动回早期版本，则可以使用 `Update-Package <dependency_name>` 重新安装该依赖项，而不会影响依赖的包。

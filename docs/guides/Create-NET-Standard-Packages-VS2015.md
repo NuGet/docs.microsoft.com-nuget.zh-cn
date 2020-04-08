@@ -6,21 +6,21 @@ ms.author: karann
 ms.date: 02/02/2018
 ms.topic: tutorial
 ms.openlocfilehash: b16bf422e2627be3b8516a875d749639734064a9
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "72380722"
 ---
 # <a name="create-net-standard-and-net-framework-packages-with-visual-studio-2015"></a>使用 Visual Studio 2015 创建 NET Standard 和 .NET Framework 包
 
-**注意：** 建议使用 Visual Studio 2017 来开发 .NET Standard 库。 Visual Studio 2015 可以工作，但 .NET Core 工具仅处于预览状态。 有关使用 NuGet 4.x+ 和 Visual Studio 2017 的详细信息，请参阅[使用 Visual Studio 2017 创建和发布包](../quickstart/create-and-publish-a-package-using-visual-studio.md)。
+注意：  建议使用 Visual Studio 2017 来开发 .NET Standard 库。 Visual Studio 2015 可以工作，但 .NET Core 工具仅处于预览状态。 有关使用 NuGet 4.x+ 和 Visual Studio 2017 的详细信息，请参阅[使用 Visual Studio 2017 创建和发布包](../quickstart/create-and-publish-a-package-using-visual-studio.md)。
 
 [.NET Standard 库](/dotnet/articles/standard/library)是一套正式的 .NET API 规范，有望在所有 .NET 运行时推出，借此在 .NET 生态系统中建立更强的一致性。 .NET Standard 库为要实现的所有 .NET 平台定义一组统一的、与工作负荷无关的 BCL（基类库）API。 它使得开发人员可以生成跨所有 .NET 运行时可用的代码，并减少（如果不能消除）共享代码中平台特定的条件编译指令。
 
 本指南将为你逐步介绍如何创建面向 .NET Standard 库 1.4 的 NuGet 包或面向 .NET Framework 4.6 的包。 .NET Standard 1.4 库可在 .NET Framework 4.6.1、通用 Windows 平台 10、.NET Core 和 Mono/Xamarin 上使用。 有关详细信息，请参阅 [.NET Standard 映射表](/dotnet/standard/net-standard#net-implementation-support)（.NET 文档）。 如果需要，可以选择其他版本的 .NET Standard 库。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>必备条件
 
 1. Visual Studio 2015 Update 3
 1. （仅适用于 .NET Standard）[.NET Core SDK](https://www.microsoft.com/net/download/)
@@ -41,7 +41,7 @@ ms.locfileid: "72380722"
 
     ![将目标设置为 .NET Standard 1.4](media/NetStandard-ChangeTarget.png)
 
-1. 单击“生成”选项卡，将“配置”更改为 `Release`，然后选中“XML 文档文件”框    。
+1. 单击“生成”选项卡，将“配置”更改为 **，然后选中“XML 文档文件”框**  `Release`  。
 
 1. 将代码添加到组件，例如：
 
@@ -114,7 +114,7 @@ ms.locfileid: "72380722"
 
 ### <a name="declaring-dependencies"></a>声明依赖项
 
-如果具有其他 NuGet 包的任何依赖项，请使用 `<group>` 元素在清单的 `<dependencies>` 元素中列出这些依赖项。 例如，若要在 NewtonSoft.Json 8.0.3 或更高版本上声明依赖项，请添加以下内容：
+如果具有其他 NuGet 包的任何依赖项，请使用 `<dependencies>` 元素在清单的 `<group>` 元素中列出这些依赖项。 例如，若要在 NewtonSoft.Json 8.0.3 或更高版本上声明依赖项，请添加以下内容：
 
 ```xml
 <!-- Insert within the <metadata> element -->

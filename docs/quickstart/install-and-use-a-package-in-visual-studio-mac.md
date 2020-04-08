@@ -6,10 +6,10 @@ ms.author: jomatthi
 ms.date: 08/14/2019
 ms.topic: quickstart
 ms.openlocfilehash: 6f3fd4f2ffec0037a48aec845fddee258b5c1e7f
-ms.sourcegitcommit: ac9a00ccaf90e539a381e92b650074910b21eb0d
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "70238473"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-for-mac"></a>快速入门：在 Visual Studio for Mac 中安装和使用包
@@ -21,7 +21,7 @@ NuGet 包包含其他开发人员提供的在项目中使用的可重用代码�
 > [!Tip]
 > **nuget.org 入门**：为查找可在自己的应用程序中重用的组件，.NET 开发人员通常都会浏览 nuget.org  。 可以直接搜索 nuget.org 或根据本文中的介绍，在 Visual Studio 中查找和安装包  。 有关一般信息，请参阅[查找和评估 NuGet 包](../consume-packages/finding-and-choosing-packages.md)。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 - Visual Studio 2019 for Mac。
 

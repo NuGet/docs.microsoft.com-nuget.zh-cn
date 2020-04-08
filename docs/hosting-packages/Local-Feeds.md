@@ -6,17 +6,17 @@ ms.author: karann
 ms.date: 12/06/2017
 ms.topic: conceptual
 ms.openlocfilehash: 42a5c30c058a9efb35338c1b484235b6ad111bd0
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "68317594"
 ---
 # <a name="local-feeds"></a>本地源
 
 本地 NuGet 包源只是本地网络（甚至自己的计算机）上放置包的分层文件夹结构。 然后，这些源可在使用 CLI、包管理器 UI 和包管理器控制台的所有其他 NuGet 操作中用作包源。
 
-若要启用源，请使用[包管理器 UI](../consume-packages/install-use-packages-visual-studio.md#package-sources) 或 [`nuget sources`](../reference/cli-reference/cli-ref-sources.md) 命令将其路径名（如 `\\myserver\packages`）添加到源列表中。
+若要启用源，请使用`\\myserver\packages`包管理器 UI[ 或 ](../consume-packages/install-use-packages-visual-studio.md#package-sources)[`nuget sources` 命令将其路径名（如 ](../reference/cli-reference/cli-ref-sources.md)）添加到源列表中。
 
 > [!Note]
 > NuGet 3.3+ 中支持分层文件夹结构。 较旧版本的 NuGet 仅使用包含包的一个文件夹，其性能远低于层次结构。

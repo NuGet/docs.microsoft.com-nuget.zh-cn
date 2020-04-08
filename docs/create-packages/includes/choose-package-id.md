@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: c92f6e0c34347ee8555d416140d95ea2df5a3fbb
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "73610552"
 ---
 包标识符和版本号是项目中最重要的两个值，因为它们唯一标识包中包含的确切代码。

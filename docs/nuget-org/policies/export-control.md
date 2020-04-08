@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 06/27/2019
 ms.topic: conceptual
 ms.openlocfilehash: 4ea2d2f23a02088b54982b825a5be3c872e27c37
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "73611311"
 ---
 # <a name="export-control-policy"></a>出口管制政策

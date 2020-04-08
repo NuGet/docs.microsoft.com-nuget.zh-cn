@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: b0af2000b1f43cd0b91f2c95dfc0c11540a94cab
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64495943"
+---
 `push` 命令中的错误通常表示存在问题。 例如，你可能会忘记更新项目中的版本号，因此尝试发布已存在的包。
 
 尝试使用主机上已存在的标识符发布包时，你也会看到错误。 例如，名称“AppLogger”已经存在。 在这种情况下，`push` 命令会给出以下错误：

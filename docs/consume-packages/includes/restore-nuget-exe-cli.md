@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 2fc62e7161a07d739760ed638653fbdec0dfc330
-ms.sourcegitcommit: e763d9549cee3b6254ec2d6382baccb44433d42c
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "68860585"
 ---
 使用 [restore](../../reference/cli-reference/cli-ref-restore.md) 命令可下载并安装“包”文件夹中缺少的所有包。 
@@ -14,7 +14,7 @@ ms.locfileid: "68860585"
 
 与其他 `nuget.exe` CLI 命令一样，先打开命令行并切换到包含项目文件的目录。
 
-使用 `restore` 还原包：
+要使用 `restore` 还原包：
 
 ```cli
 nuget restore MySolution.sln

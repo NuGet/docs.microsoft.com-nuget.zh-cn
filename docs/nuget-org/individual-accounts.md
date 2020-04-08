@@ -6,10 +6,10 @@ ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
 ms.openlocfilehash: 7951b3db0cdcaee0a1eb955a5bf6fedce24c79c9
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428629"
 ---
 # <a name="individual-accounts-on-nugetorg"></a>NuGet.org 上的个人帐户
@@ -18,9 +18,9 @@ ms.locfileid: "79428629"
 
 ## <a name="individual-accounts-vs-organization-accounts"></a>个人帐户与组织帐户
 
-个人（用户）帐户是你在 NuGet.org 上的标识，可以是任意数量的组织的成员。 包可以属于组织帐户，也可以属于个人帐户。 包使用者看不到个人帐户或组织帐户之间的任何差异：两者都显示为包 `owners`。
+个人（用户）帐户是你在 NuGet.org 上的标识，可以是任意数量的组织的成员。 包可以属于组织帐户，就像它可以属于个人帐户一样。 包使用者看不到个人帐户或组织帐户之间的任何差异：两者都显示为包 `owners`。
 
-组织帐户具有一个或多个个人帐户作为其成员。 这些成员可以管理一组包，同时保持所有权的单一标识。
+组织帐户的成员可以是一个或多个个人帐户。 这些成员可以管理一组包，同时保持所有权的单一标识。
 
 ## <a name="add-a-new-individual-account"></a>添加新的个人帐户
 

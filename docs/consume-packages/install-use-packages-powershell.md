@@ -8,10 +8,10 @@ ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
 ms.openlocfilehash: 42031f7b5fe4d3c1b4dbe5e1bfbf9197014e0e88
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79428575"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>在 Visual Studio 中使用包管理器控制台安装和管理包 (PowerShell)

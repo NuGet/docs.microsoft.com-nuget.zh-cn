@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 01/09/2017
 ms.topic: reference
 ms.openlocfilehash: 00a64d95c943e9e5cb3a279358a6495125a1bd87
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551365"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64495923"
 ---
 # <a name="nuget-support-for-the-visual-studio-project-system"></a>NuGet 对 Visual Studio 项目系统的支持
 
@@ -25,7 +25,7 @@ ms.locfileid: "43551365"
 
 NuGet 客户端基于[项目功能](https://github.com/Microsoft/VSProjectSystem/blob/master/doc/overview/about_project_capabilities.md)确定与项目类型兼容的包，如下表所述。
 
-| 功能 | 描述 |
+| 功能 | 说明 |
 | --- | --- |
 | AssemblyReferences | 指示项目支持程序集引用（与 WinRTReferences 不同）。 |
 | DeclaredSourceItems | 指示项目是一个典型的 MSBuild 项目（不是 DNX），因为它在项目本身中声明源项目。 |
@@ -101,7 +101,7 @@ class VsProjectCapabilitiesPresenceChecker : IVsBooleanSymbolPresenceChecker
 
 ## <a name="responding-to-queries"></a>对查询作出响应
 
-项目通过 `IVsHierarchy::GetProperty` 支持 `VSHPROPID_ProjectCapabilitiesChecker` 属性来声明此功能。 它应返回 `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker` 的实例，`Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll` 程序集中对其进行了定义。 通过安装[相应的 NuGet 包](https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime)引用此程序集。
+项目通过 `VSHPROPID_ProjectCapabilitiesChecker` 支持 `IVsHierarchy::GetProperty` 属性来声明此功能。 它应返回 `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker` 的实例，`Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll` 程序集中对其进行了定义。 通过安装[相应的 NuGet 包](https://www.nuget.org/packages/Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime)引用此程序集。
 
 例如，可将以下 `case` 语句添加到 `IVsHierarchy::GetProperty` 方法的 `switch` 语句中：
 

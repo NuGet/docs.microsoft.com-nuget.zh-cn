@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 5/14/2018
 ms.topic: conceptual
 ms.openlocfilehash: e6f6d9f703dd4761236d166f3772618c100aca09
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "76813762"
 ---
 # <a name="nuget-48-release-notes"></a>NuGet 4.8 发行说明

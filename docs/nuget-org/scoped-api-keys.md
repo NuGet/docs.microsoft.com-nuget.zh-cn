@@ -6,17 +6,17 @@ ms.author: mikejo
 ms.date: 06/04/2019
 ms.topic: conceptual
 ms.openlocfilehash: 12d12d5294a474c4d3e4f5d3cad468bb515d21d5
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "67426942"
 ---
 # <a name="scoped-api-keys"></a>范围内的 API 密钥
 
 为了使 NuGet 成为一个更安全的包分发环境，可以通过添加范围来控制 API 密钥。
 
-借助向 API 密钥提供范围的功能可更好地控制 API。 你可以：
+借助向 API 密钥提供范围的功能可更好地控制 API。 可以：
 
 - 创建多个范围内的 API 密钥，可用于具有不同到期时间表的不同包。
 - 安全地获取 API 密钥。
@@ -88,7 +88,7 @@ ms.locfileid: "67426942"
 
 ### <a name="can-i-delete-my-legacy-api-key-or-discontinue-using-now"></a>我是否可以删除旧 API 密钥或立即停止使用？
 
-可以。 你可以并且应该删除你的旧 API 密钥。
+是的。 你可以并且应该删除你的旧 API 密钥。
 
 ### <a name="can-i-get-back-my-api-key-that-i-deleted-by-mistake"></a>我是否可以找回错误删除的 API 密钥？
 

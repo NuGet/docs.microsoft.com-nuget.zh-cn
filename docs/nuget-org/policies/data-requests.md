@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 05/01/2018
 ms.topic: conceptual
 ms.openlocfilehash: ef054f741755bccf56eedfd462915b8e9fd6931a
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "67426982"
 ---
 # <a name="user-data-requests"></a>用户数据请求

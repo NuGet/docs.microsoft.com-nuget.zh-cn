@@ -6,17 +6,17 @@ ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
 ms.openlocfilehash: da8c5a05311c790bf6b873bc0f1a077d3ef1db87
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "73610621"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>以 NuGet 包形式创建 UI 控件
 
 从 Visual Studio 2017 开始，可以利用在 NuGet 包中提供的 UWP 和 WPF 控件的附加功能。 本指南使用 [ExtensionSDKasNuGetPackage 示例](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)来演练 UWP 控件上下文中的这些功能。 这同样适用于 WPF 控件，除非另行指定。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 1. Visual Studio 2017
 1. 了解如何[创建 UWP 包](create-uwp-packages.md)

@@ -12,18 +12,18 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 839c38ec165372bab9b93dec25e5c8e8e9439bfa
-ms.sourcegitcommit: 415c70d7014545c1f65271a2debf8c3c1c5eb688
+ms.openlocfilehash: c42032f1869f4be0af44ffa8fbd5ad522f73c459
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036885"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80380413"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
 良好的调试体验依赖于调试符号的存在，因为它们提供了一些关键信息，例如已编译的代码与源代码之间的关联、局部变量的名称、堆栈跟踪等。 你可以使用符号包 (.snupkg) 来分发这些符号，并改善 NuGet 包的调试体验。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 [nuget.exe v4.9.0 或更高版本](https://www.nuget.org/downloads)或 [dotnet CLI v2.2.0 或更高版本](https://www.microsoft.com/net/download/dotnet-core/2.2)，它们实现了所需的 [NuGet 协议](../api/nuget-protocols.md)。
 
@@ -46,7 +46,7 @@ ms.locfileid: "77036885"
      dotnet pack MyPackage.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
      ```
 
-  or
+  或
 
   ```cli
   msbuild MyPackage.csproj /t:pack /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
@@ -99,7 +99,7 @@ NuGet.org 支持自己的符号服务器存储库，只接受新的符号包格�
 NuGet.org 对符号包具有以下约束：
 
 - 符号包中仅允许使用以下文件扩展名：`.pdb`、`.nuspec`、`.xml`、`.psmdcp`、`.rels`、`.p7s`
-- NuGet.org 符号服务器目前仅支持托管的[可移植 PDB](https://github.com/dotnet/corefx/blob/master/src/System.Reflection.Metadata/specs/PortablePdb-Metadata.md)。
+- NuGet.org 符号服务器目前仅支持托管的[可移植 PDB](https://github.com/dotnet/runtime/blob/87572a799bfd37779c079faf28544e3f9a16be58/src/libraries/System.Reflection.Metadata/specs/PortablePdb-Metadata.md)。
 - 需要使用 Visual Studio 15.9 或更高版本中的编译器构建 PDB 及其关联的 nupkg DLL（请参阅 [PDB 加密哈希](https://github.com/dotnet/roslyn/issues/24429)）
 
 如果未满足这些约束，则发布到 NuGet.org 的符号包将无法通过验证。 
@@ -130,7 +130,7 @@ NuGet.org 对符号包具有以下约束：
 5) 将从 snupkg 的 nuspec 中排除以下字段：```authors```、```owners```、```requireLicenseAcceptance```、```license type```、```licenseUrl``` 和 ```icon```。
 6) 不要使用 ```<license>``` 元素。 .snupkg 与对应的 .nupk 位于同一个许可证中。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 考虑使用源链接来启用 .NET 程序集的源代码调试。 有关详细信息，请参阅[源链接指南](/dotnet/standard/library-guidance/sourcelink)。
 

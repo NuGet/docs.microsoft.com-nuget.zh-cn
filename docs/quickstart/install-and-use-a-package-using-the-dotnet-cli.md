@@ -6,26 +6,26 @@ ms.author: karann
 ms.date: 01/23/2018
 ms.topic: quickstart
 ms.openlocfilehash: 006fff8360ac62393e4b88c1a253514591d22f4c
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231265"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>快速入门：使用 dotnet CLI 安装并使用包
 
-NuGet 包包含其他开发人员提供的在项目中使用的可重用代码。 请参阅[什么是 NuGet？](../What-is-NuGet.md)，了解背景信息。 使用如本文所述的适用于常用 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) 包的 `dotnet add package` 命令将包安装到 .NET Core 项目中。
+NuGet 包包含其他开发人员提供的在项目中使用的可重用代码。 请参阅[什么是 NuGet？](../What-is-NuGet.md)，了解背景信息。 使用如本文所述的适用于常用 `dotnet add package`Newtonsoft.Json[ 包的 ](https://www.nuget.org/packages/Newtonsoft.Json/) 命令将包安装到 .NET Core 项目中。
 
 安装完成后，请引用具有 `using <namespace>` 的代码中的包，其中 \<namespace\> 特定于正在使用的包。 然后，可以使用包的 API。
 
 > [!Tip]
-> **nuget.org 入门**：若要查找可在自己的应用程序中重用的组件，.NET 开发人员通常都会浏览 nuget.org。 你可以直接搜索 nuget.org 或根据本文中的介绍，在 Visual Studio 中查找和安装包。
+> **nuget.org 入门**：浏览 nuget.org 是 .NET 开发人员通常在自己的应用程序中查找可重用组件的方式。 你可以直接搜索 nuget.org 或根据本文中的介绍，在 Visual Studio 中查找和安装包。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 - [.NET Core SDK](https://www.microsoft.com/net/download/)，提供 `dotnet` 命令行工具。 从 Visual Studio 2017 开始，dotnet CLI 将自动随任何与 .NET Core 相关的工作负载一起安装。
 
-## <a name="create-a-project"></a>创建项目
+## <a name="create-a-project"></a>创建一个项目
 
 可以将 NuGet 包安装到某种类型的 .NET 项目。 在本演练中，如下所示创建一个简单的 .NET Core 控制台项目：
 

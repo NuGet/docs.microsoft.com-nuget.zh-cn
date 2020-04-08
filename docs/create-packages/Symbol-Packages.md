@@ -7,10 +7,10 @@ ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: 374e9ccfc01cd06508e76529765db3f849342222
-ms.sourcegitcommit: 1799d4ac23c8aacee7498fdc72c40dd1646d267b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "77476264"
 ---
 # <a name="creating-legacy-symbol-packages-symbolsnupkg"></a>创建旧式符号包 (.symbols.nupkg)

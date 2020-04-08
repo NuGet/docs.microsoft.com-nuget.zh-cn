@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 11/20/2018
 ms.topic: conceptual
 ms.openlocfilehash: e0dea74fe179c0dce4996f3e498185bb3a491856
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432486"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496467"
 ---
 # <a name="nuget-49-release-notes"></a>NuGet 4.9 发行说明
 
@@ -142,12 +142,12 @@ NuGet 分发车辆：
 
 ## <a name="summary-whats-new-in-494"></a>摘要:4.9.4 版中的新增功能
 
-* 安全修复：~/.nuget 中创建的文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* 安全修复：~/.nuget 中针对所创建文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
 
 ## <a name="known-issues"></a>已知问题
 
-### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519httpsgithubcomnugethomeissues7519"></a>dotnet nuget push --interactive 在 Mac 上抛出错误。 - [#7519](https://github.com/NuGet/Home/issues/7519)
+### <a name="dotnet-nuget-push---interactive-gives-an-error-on-mac---7519"></a>dotnet nuget push --interactive 在 Mac 上抛出错误。 - [#7519](https://github.com/NuGet/Home/issues/7519)
 
 #### <a name="issue"></a>问题
 `--interactive` 参数无法由 dotnet cli 转发，因此导致错误 `error: Missing value for option 'interactive'` 出现
@@ -155,7 +155,7 @@ NuGet 分发车辆：
 #### <a name="workaround"></a>解决方法
 将 interactive 选项与其他任何 dotnet 命令一起运行（如 `dotnet restore --interactive`），并进行身份验证。 凭据提供程序可能会缓存身份验证。 然后，运行 `dotnet nuget push`。
 
-### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414httpsgithubcomnugethomeissues7414"></a>FallbackFolders 中由 .NET Core SDK 安装的包是自定义安装的，无法通过签名验证。 - [#7414](https://github.com/NuGet/Home/issues/7414)
+### <a name="packages-in-fallbackfolders-installed-by-net-core-sdk-are-custom-installed-and-fail-signature-validation---7414"></a>FallbackFolders 中由 .NET Core SDK 安装的包是自定义安装的，无法通过签名验证。 - [#7414](https://github.com/NuGet/Home/issues/7414)
 
 #### <a name="issue"></a>问题
 使用 dotnet.exe 2.x 还原多重定位 netcoreapp 1.x 和 netcoreapp 2.x 的项目时，回退文件夹被视为文件源。 也就是说，在还原时，NuGet 将从回退文件夹中选取包，并尝试将它安装到全局包文件夹，再执行失败的常规签名验证。

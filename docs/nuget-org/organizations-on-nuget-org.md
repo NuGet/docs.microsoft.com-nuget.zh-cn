@@ -9,10 +9,10 @@ ms.reviewer:
 - kraigb
 - camsoper
 ms.openlocfilehash: 152de360bfa31a0c8c60fac0b12149748773b13e
-ms.sourcegitcommit: b6810860b77b2d50aab031040b047c20a333aca3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "67427072"
 ---
 # <a name="your-organization-on-nugetorg"></a>NuGet.org 上的组织
@@ -61,9 +61,9 @@ ms.locfileid: "67427072"
 | 权限 | 协作者 | 管理员 |
 | --- | --- | --- |
 | 管理组织的包<br/>（提交新包，更新或取消列出现有包） | 是 | 是 |
-| 更改组织元数据<br/>（电子邮件地址、通知设置） | No | 是 |
-| 管理组织成员 | No | 是 |
-| 提出或处理组织包的共同所有权请求 | No | 是 |
+| 更改组织元数据<br/>（电子邮件地址、通知设置） | 否 | 是 |
+| 管理组织成员 | 否 | 是 |
+| 提出或处理组织包的共同所有权请求 | 否 | 是 |
 
 ## <a name="managing-packages"></a>管理包
 

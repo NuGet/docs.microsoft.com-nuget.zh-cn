@@ -6,10 +6,10 @@ ms.author: rrelyea
 ms.date: 02/28/2020
 ms.topic: tutorial
 ms.openlocfilehash: 61f46f2623769927f881877cfe3f96132211b442
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78231751"
 ---
 # <a name="create-uwp-packages-c"></a>创建 UWP 包 (C#)
@@ -18,11 +18,11 @@ ms.locfileid: "78231751"
 
 在本演练中，将创建一个具有 C# UWP 组件（包括 XAML 控件）的 NuGet 包，以便在托管项目和本机项目中使用。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 1. Visual Studio 2019。 可以从 [visualstudio.com](https://www.visualstudio.com/) 免费安装 2019 Community 版；也可以使用 Professional 和 Enterprise 版。
 
-1. NuGet CLI。 从 [nuget.org/downloads](https://nuget.org/downloads) 下载 `nuget.exe` 的最新版本，将其保存到选择的位置（`.exe` 是直接下载的）。 然后将该位置添加到 PATH 环境变量（如果尚未添加）。 [更多详细信息](/nuget/reference/nuget-exe-cli-reference#windows)。
+1. NuGet CLI。 从 `nuget.exe`nuget.org/downloads[ 下载 ](https://nuget.org/downloads) 的最新版本，将其保存到选择的位置（`.exe` 是直接下载的）。 然后将该位置添加到 PATH 环境变量（如果尚未添加）。 [更多详细信息](/nuget/reference/nuget-exe-cli-reference#windows)。
 
 ## <a name="create-a-uwp-windows-runtime-component"></a>创建 UWP Windows 运行时组件
 

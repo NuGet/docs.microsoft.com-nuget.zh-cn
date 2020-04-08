@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
 ms.openlocfilehash: a86a58f8afb4b0f1affeddd47d6c5606fb465757
-ms.sourcegitcommit: 39f2ae79fbbc308e06acf67ee8e24cfcdb2c831b
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "73611005"
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>使用 Team Foundation Build 设置包还原
@@ -84,7 +84,7 @@ nuget restore path\to\solution.sln
 ### <a name="ignore-files"></a>忽略文件
 
 > [!Note]
-> [NuGet 客户端当前存在一个已知 bug](https://nuget.codeplex.com/workitem/4072)，它导致客户端依然将 `packages` 文件夹添加到版本控制。 一种解决方法是禁用源代码管理集成。 为了做到这一点，与解决方案并行的 `.nuget` 文件夹中需要一个 `Nuget.Config ` 文件。 如果此文件夹尚不存在，请先创建一个。 在 [`Nuget.Config`](../consume-packages/configuring-nuget-behavior.md) 中，添加以下内容：
+> [NuGet 客户端当前存在一个已知 bug](https://nuget.codeplex.com/workitem/4072)，它导致客户端依然将 `packages` 文件夹添加到版本控制。 一种解决方法是禁用源代码管理集成。 为了做到这一点，与解决方案并行的 `Nuget.Config ` 文件夹中需要一个 `.nuget` 文件。 如果此文件夹尚不存在，请先创建一个。 在 [`Nuget.Config`](../consume-packages/configuring-nuget-behavior.md) 中，添加以下内容：
 
 ```xml
 <configuration>
@@ -113,7 +113,7 @@ nuget restore path\to\solution.sln
     packages
     !packages/**/*.targets
 
-这将排除所有 `packages` 文件夹，但会重新包含所有包含的 `.targets` 文件。 顺便说一下，可以[在此](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore)找到专门针对 Visual Studio 开发人员需求定制的 `.gitignore` 文件模板。
+这将排除所有 `packages` 文件夹，但会重新包含所有包含的 `.targets` 文件。 顺便说一下，可以`.gitignore`在此[找到专门针对 Visual Studio 开发人员需求定制的 ](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) 文件模板。
 
 TF 版本控制通过 [.tfignore](/vsts/tfvc/add-files-server#customize-which-files-are-ignored-by-version-control) 文件支持相似的机制。 语法几乎是相同的：
 

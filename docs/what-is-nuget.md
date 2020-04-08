@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 05/24/2019
 ms.topic: overview
 ms.openlocfilehash: c326cf184ff20fb798a5770f0a4cf9bf42bed3f5
-ms.sourcegitcommit: c81561e93a7be467c1983d639158d4e3dc25b93a
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "78230689"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 简介

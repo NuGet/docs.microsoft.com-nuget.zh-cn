@@ -6,10 +6,10 @@ ms.author: mikejo
 ms.date: 07/09/2019
 ms.topic: conceptual
 ms.openlocfilehash: b151547e40e567b38acc2b0b9ee84c50d85000c9
-ms.sourcegitcommit: 7441f12f06ca380feb87c6192ec69f6108f43ee3
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/15/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "69488484"
 ---
 # <a name="identify-the-project-format"></a>标识项目格式
@@ -62,7 +62,7 @@ NuGet 适用于所有 .NET 项目。 但是，项目格式（SDK 样式或非 SD
 
    然后，右键单击卸载的项目并选择“编辑 myprojectname.csproj”  。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [使用 dotnet CLI 创建 .NET Standard 包](../quickstart/create-and-publish-a-package-using-the-dotnet-cli.md)
 - [使用 Visual Studio 创建 .NET Standard 包](../quickstart/create-and-publish-a-package-using-visual-studio.md)

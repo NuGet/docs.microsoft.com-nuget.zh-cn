@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 03/13/2018
 ms.topic: conceptual
 ms.openlocfilehash: 098375b2bba13675ba5d80a27e0226dc2ee39e77
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "79059509"
 ---
 # <a name="nugetserver"></a>NuGet.Server

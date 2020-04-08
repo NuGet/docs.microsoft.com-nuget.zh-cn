@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 05/13/2018
 ms.topic: quickstart
 ms.openlocfilehash: e00aac83a710e2f745d5e4bb9aec741ee686e595
-ms.sourcegitcommit: 363ec6843409b4714c91b75b105619a3a3184b43
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "72380641"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>快速入门：使用 Visual Studio 创建和发布包（.NET Framework、Windows）
@@ -19,7 +19,7 @@ ms.locfileid: "72380641"
 > [!Note]
 > 本快速入门教程仅适用于 Windows 版的 Visual Studio 2017 和更高版本。 Visual Studio for Mac 不包括此处所述的功能。 改为使用 [dotnet CLI 工具](create-and-publish-a-package-using-the-dotnet-cli.md)。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 1. 通过任何与 .NET 相关的工作负载从 [visualstudio.com](https://www.visualstudio.com/) 安装任意版本的 Visual Studio 2017 或更高版本。 安装 .NET 工作负载时，Visual Studio 2017 会自动包含 NuGet 功能。
 

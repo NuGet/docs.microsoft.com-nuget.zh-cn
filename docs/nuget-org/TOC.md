@@ -9,7 +9,7 @@
 ## [包弃用](deprecate-packages.md)
 # 策略
 ## [数据请求](policies/Data-requests.md)
-## [争议的解决](policies/dispute-resolution.md)
+## [争议解决](policies/dispute-resolution.md)
 ## [删除包](policies/deleting-packages.md)
 ## [导出控件](policies/export-control.md)
 # 参考

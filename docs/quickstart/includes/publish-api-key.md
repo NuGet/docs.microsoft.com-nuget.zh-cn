@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 20851cd71cc5eb6735fe5e0cd8b0f314f9100be4
-ms.sourcegitcommit: e65180e622f6233b51bb0b41d0e919688083eb26
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "68419917"
 ---
 1. [登录你的 nuget.org 帐户](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)，或创建一个帐户（如果你还没有帐户）。
@@ -18,6 +18,6 @@ ms.locfileid: "68419917"
 
     ![将 API 密钥复制到剪贴板](../media/QS_Create-02-APIKey.png)
 
-1. **重要说明**：将密钥保存在安全位置，因为以后无法再次复制密钥。 如果返回到 API 密钥页，则需要重新生成密钥以对其进行复制。 如果不再希望通过 CLI 推送包，还可以删除 API 密钥。
+1. **重要事项**：将你的密钥保存在安全位置，因为以后无法再次复制密钥。 如果返回到 API 密钥页，则需要重新生成密钥以对其进行复制。 如果不再希望通过 CLI 推送包，还可以删除 API 密钥。
 
 范围允许创建针对不同用途的单独 API 密钥。 每个密钥都有其过期时间，并且可以将范围限定为特定包（或 glob 模式）。 每个密钥还将范围限定为特定操作：新包和更新推送、仅更新推送，或者从列表中删除。 通过范围限定，可以为管理组织不同包的不同人员创建 API 密钥，这样他们就只有所需的权限。 有关详细信息，请参阅[范围内的 API 密钥](../../nuget-org/scoped-api-keys.md)。

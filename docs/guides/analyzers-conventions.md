@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
 ms.openlocfilehash: 4d337299f725b38981b0121069d5e6295b05e34e
-ms.sourcegitcommit: f9645fc5f49c18978e12a292a3f832e162e069d5
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "72924628"
 ---
 # <a name="analyzer-nuget-formats"></a>分析器 NuGet 格式
