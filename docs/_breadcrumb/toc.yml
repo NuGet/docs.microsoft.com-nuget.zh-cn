@@ -15,7 +15,7 @@
         - name: 创建包
           tocHref: /nuget/create-packages/
           topicHref: /nuget/create-packages/overview-and-workflow
-        - name: 参考线
+        - name: 指南
           tocHref: /nuget/guides/
           topicHref: /nuget/guides/create-net-standard-packages-vs2017
         - name: 概念

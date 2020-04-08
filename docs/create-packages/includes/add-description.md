@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: b615bcb78ad2eaf8524bfbf17864d4652e546ff1
-ms.sourcegitcommit: 1a63a84da2719c8141823ac89a20bf507fd22b00
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "80151220"
 ---
-<span data-ttu-id="5df48-101">在包的 NuGet.org 页面上所示的包可选说明从用于 `.csproj` 文件中的 `<description></description>` 拉取，或者通过 [.nuspec 文件](../../reference/nuspec.md)中的 `$description` 拉取。</span><span class="sxs-lookup"><span data-stu-id="5df48-101">The package's optional description, displayed on the package's NuGet.org page, is either pulled in from the `<description></description>` used in the `.csproj` file or pulled in via the `$description` in the [.nuspec file](../../reference/nuspec.md).</span></span>
+<span data-ttu-id="14836-101">在包的 NuGet.org 页面上所示的包可选说明从用于 `<description></description>` 文件中的 `.csproj` 拉取，或者通过 `$description`.nuspec 文件[中的 ](../../reference/nuspec.md) 拉取。</span><span class="sxs-lookup"><span data-stu-id="14836-101">The package's optional description, displayed on the package's NuGet.org page, is either pulled in from the `<description></description>` used in the `.csproj` file or pulled in via the `$description` in the [.nuspec file](../../reference/nuspec.md).</span></span>
 
-<span data-ttu-id="5df48-102">有关 description 字段的示例，请参阅 .NET 包的 `.csproj` 文件中的以下 XML 文本  ：</span><span class="sxs-lookup"><span data-stu-id="5df48-102">An example of a _description_ field is shown in the following XML text of the `.csproj` file for a .NET package:</span></span>
+<span data-ttu-id="14836-102">有关 description 字段的示例，请参阅 .NET 包的  _文件中的以下 XML 文本_`.csproj`：</span><span class="sxs-lookup"><span data-stu-id="14836-102">An example of a _description_ field is shown in the following XML text of the `.csproj` file for a .NET package:</span></span>
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
