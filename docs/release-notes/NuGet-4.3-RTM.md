@@ -7,11 +7,11 @@ ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: 72d707cb9bacd8abbac873ee10b2fd00f233d3cc
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432473"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496596"
 ---
 # <a name="nuget-43-release-notes"></a>NuGet 4.3 发行说明
 
@@ -21,7 +21,7 @@ ms.locfileid: "58432473"
 
 ## <a name="summary-whats-new-in-431"></a>摘要:4.3.1 版中的新增功能
 
-* 安全修复：~/.nuget 中创建的文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* 安全修复：~/.nuget 中针对所创建文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 * 安全修复：NUPKGs 中的文件可以具有高于 NUPKG 目录的相对路径 [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>已知问题
@@ -74,7 +74,7 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 [NuGet 4.0 RTM 发行说明](../release-notes/nuget-4.0-RTM.md) - 列出所有 NuGet 4.0 RTM 修复的问题
 
-### <a name="features"></a>功能
+### <a name="features"></a>特征
 
 - 提升 NuGet 还原性能 - 为命令行还原和 VS 实现更小的 NoOp - [#5080](https://github.com/NuGet/Home/issues/5080)
 
@@ -129,6 +129,6 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 - 将依赖项诊断放在锁定文件中 - [#1599](https://github.com/NuGet/Home/issues/1599)
 
-## <a name="links-to-github-issues-fixed-in-43-rtm"></a>4.3 RTM 中已修复 GitHub 问题的链接
+## <a name="links-to-github-issues-fixed-in-43-rtm"></a>4\.3 RTM 中已修复 GitHub 问题的链接
 
 [问题列表](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%224.3")

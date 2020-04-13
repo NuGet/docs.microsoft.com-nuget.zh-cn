@@ -7,11 +7,11 @@ ms.date: 11/02/2017
 ms.topic: tutorial
 ms.reviewer: kraigb
 ms.openlocfilehash: 0bd21c427b5b89ae9e5f1500d75e1bf63a96e828
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43551073"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64498223"
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>查询所有发布到 nuget.org 的包
 
@@ -32,7 +32,7 @@ ms.locfileid: "43551073"
 
 ## <a name="overview"></a>概述
 
-本指南的中心是 [NuGet API](../../api/overview.md) 中称为“目录”的资源。 目录是仅限追加的 API，它允许调用方查看在 nuget.org 中添加、修改和删除的包的完整历史记录。如果对发布到 nuget.org 的所有包甚至是包的子集感兴趣，则最好用目录来跟进了解当前可用的包集。
+本指南的中心是 [NuGet API](../../api/overview.md) 中称为“目录”的资源  。 目录是仅限追加的 API，它允许调用方查看在 nuget.org 中添加、修改和删除的包的完整历史记录。如果对发布到 nuget.org 的所有包甚至是包的子集感兴趣，则最好用目录来跟进了解当前可用的包集。
 
 本指南旨在提供高级演练，如果你对目录的详情细节感兴趣，请参阅它的 [API 引用文档](../../api/catalog-resource.md)。
 
@@ -110,7 +110,7 @@ git clone https://github.com/NuGet/Samples.git
 
 ### <a name="catalog-sdk"></a>目录 SDK
 
-使用目录最简单的方法是使用预发布 .NET 目录 SDK 包：[NuGet.Protocol.Catalog](https://dotnet.myget.org/feed/nuget-build/package/nuget/NuGet.Protocol.Catalog)。 此包可在 `nuget-build` MyGet 源`https://dotnet.myget.org/F/nuget-build/api/v3/index.json`上获得，可以使用 NuGet 包源 URL 找到该源。
+使用目录最简单的方法是使用预发布 .NET 目录 SDK 包：[NuGet.Protocol.Catalog](https://dotnet.myget.org/feed/nuget-build/package/nuget/NuGet.Protocol.Catalog). 此包可在 `nuget-build` MyGet 源`https://dotnet.myget.org/F/nuget-build/api/v3/index.json`上获得，可以使用 NuGet 包源 URL 找到该源。
 
 可以将此包安装到与 `netstandard1.3` 或更高版本（例如 .NET Framework 4.6）兼容的项目。
 

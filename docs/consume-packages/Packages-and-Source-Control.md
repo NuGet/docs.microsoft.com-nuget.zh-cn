@@ -6,10 +6,10 @@ ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
 ms.openlocfilehash: 9d9ea10ccd32bb65ad0d62b591f5e2cb58ea3427
-ms.sourcegitcommit: fc1b716afda999148eb06d62beedb350643eb346
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
+ms.lasthandoff: 04/07/2020
 ms.locfileid: "69019980"
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>在源代码管理系统中省略 NuGet 包

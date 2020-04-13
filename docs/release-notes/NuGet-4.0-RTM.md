@@ -6,11 +6,11 @@ ms.author: anangaur
 ms.date: 03/03/2017
 ms.topic: conceptual
 ms.openlocfilehash: c27d0aa2e5c9af9cb15d2f487b93e93aca666214
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43547756"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64496606"
 ---
 # <a name="nuget-40-rtm-release-notes"></a>NuGet 4.0 RTM 发行说明
 
@@ -112,7 +112,7 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 [NuGet 4.0 RC 发行说明](../release-notes/nuget-4.0-RC.md) - 列出了所有 NuGet 4.0 RC 中已修复的问题
 
-### <a name="features"></a>功能
+### <a name="features"></a>特征
 
 - 对 NuGet.Core.sln 中的字符串进行本地化 - [#2041](https://github.com/NuGet/Home/issues/2041)
 
@@ -182,7 +182,7 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 - 使用 packageref 在 C++ 项目中添加 nuget 时，出现 NullReferenceException - [#4378](https://github.com/NuGet/Home/issues/4378)
 
-- 辅助功能：讲述人不讲述用于选择要安装包的项目的复选框 - [#4366](https://github.com/NuGet/Home/issues/4366)
+- 辅助功能：讲述人不读出用于选择要将包安装到的项目的复选框 - [#4366](https://github.com/NuGet/Home/issues/4366)
 
 - NuGet VS17 偶尔无法连接到 VSO/VSTS 源 - VS Bug 365798 - [#4365](https://github.com/NuGet/Home/issues/4365)
 
@@ -264,11 +264,11 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 - 运送的 NuGet.Build.Tasks.Pack.dll 延迟了 VS2017 (d15rel 26014.00) 中的签名 - [#4122](https://github.com/NuGet/Home/issues/4122)
 
-- VSFeedback：使用 CMake 3.7.1 生成的 VS 2015 项目的还原失败 - [#4114](https://github.com/NuGet/Home/issues/4114)
+- VSFeedback：使用 CMake 3.7.1 生成的 VS 2015 项目还原失败 - [#4114](https://github.com/NuGet/Home/issues/4114)
 
 - VSFeedback：还原错误可能掩盖生成可提供的更完整的错误消息 - [#4113](https://github.com/NuGet/Home/issues/4113)
 
-- [VSFeedback] 还原网站项目的 NuGet 包时出现错误：值不能为 Null。 - [#4092](https://github.com/NuGet/Home/issues/4092)
+- [VSFeedback] 还原网站项目的 NuGet 包时出现错误：值不能为空。 - [#4092](https://github.com/NuGet/Home/issues/4092)
 
 - 迁移在 NuGet.PackageManagement.VisualStudio.SolutionRestoreWorker 中引发“对象引用异常”- [#4067](https://github.com/NuGet/Home/issues/4067)
 

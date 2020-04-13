@@ -7,11 +7,11 @@ ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
 ms.openlocfilehash: 3be24a86cc92c4e6d07fcae1dc625a150f28d7b4
-ms.sourcegitcommit: 74bf831e013470da8b0c1f43193df10bfb1f4fe6
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58432564"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64498700"
 ---
 # <a name="nuget-44-release-notes"></a>NuGet 4.4 发行说明
 
@@ -21,7 +21,7 @@ ms.locfileid: "58432564"
 
 ## <a name="summary-whats-new-in-442"></a>摘要:4.4.2 版中的新增功能
 
-* 安全修复：~/.nuget 中创建的文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* 安全修复：~/.nuget 中针对所创建文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
 ## <a name="summary-whats-new-in-443"></a>摘要:4.4.3 版中的新增功能
 
@@ -77,7 +77,7 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 [NuGet 4.3 RTM 发行说明](../release-notes/nuget-4.3-RTM.md)- 列出了 NuGet 4.3 RTM 已修复的所有问题
 
-### <a name="features"></a>功能
+### <a name="features"></a>特征
 
 - 支持 PMC 和 NuGet PM UI 方案中的轻量型解决方案加载 - [#5180](https://github.com/NuGet/Home/issues/5180)
 
@@ -193,7 +193,7 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 - 文档中有关 NuGet 警告和错误的更新 - [#5857](https://github.com/NuGet/Home/issues/5857)
 
-## <a name="links-to-github-issues-fixed-in-44-rtm"></a>4.4 RTM 中已修复 GitHub 问题的链接
+## <a name="links-to-github-issues-fixed-in-44-rtm"></a>4\.4 RTM 中已修复 GitHub 问题的链接
 
 [问题列表 1](https://github.com/NuGet/Home/issues?q=is:issue+is:closed+milestone:"4.4")
 

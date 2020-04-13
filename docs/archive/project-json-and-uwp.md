@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 07/17/2017
 ms.topic: conceptual
 ms.openlocfilehash: ac3c137dd0ba50571737093eef11c8ab0ef932b2
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43548659"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "64494382"
 ---
 # <a name="projectjson-and-uwp"></a>project.json 和 UWP
 
@@ -39,7 +39,7 @@ ms.locfileid: "43548659"
 
 有两种方法可以查找要列出的依赖项：
 
-1. 使用 [NuSpec 依赖项生成器](https://github.com/onovotny/ReferenceGenerator)第三方工具。 该工具自动执行该过程，并使用生成时依赖的包更新 `.nuspec` 文件。 该工具通过 NuGet 包 [NuSpec.ReferenceGenerator](https://www.nuget.org/packages/NuSpec.ReferenceGenerator/) 提供。
+1. 使用 [NuSpec 依赖项生成器](https://github.com/onovotny/ReferenceGenerator)第三方工具  。 该工具自动执行该过程，并使用生成时依赖的包更新 `.nuspec` 文件。 该工具通过 NuGet 包 [NuSpec.ReferenceGenerator](https://www.nuget.org/packages/NuSpec.ReferenceGenerator/) 提供。
 
 1. （复杂方法）使用 `ILDasm` 检查 `.dll`，查看运行时实际需要的程序集。 然后确定这些程序集分别来自哪个 NuGet 包。
 
@@ -65,7 +65,7 @@ ms.locfileid: "43548659"
 
 NuGet 包可能包含 `.targets` 和 `.props` 文件，这些文件被导入到包安装到的任何 MSBuild 项目中。 在 NuGet 2.x 中，此操作是通过向 `.csproj` 文件注入 `<Import>` 语句而完成的；在 NuGet 3.0 中，没有特定的“安装到项目”操作。 而是包还原过程写入 `[projectname].nuget.props` 和 `[projectname].NuGet.targets` 两个文件。
 
-MSBuild 知道查找这两个文件，并在项目生成过程开始和结束时自动导入它们。 此行为与 NuGet 2.x 非常相似，但有一个主要区别：在此情况下，无法保证目标/道属性文件的顺序。 但是，MSBuild 通过 `<Target>` 定义的 `BeforeTargets` 和 `AfterTargets` 特性（请参阅 [Target 元素 (MSBuild)](/visualstudio/msbuild/target-element-msbuild)）提供了对目标进行排序的方法。
+MSBuild 知道查找这两个文件，并在项目生成过程开始和结束时自动导入它们。 此行为与 NuGet 2.x 非常相似，但有一个主要区别：在此情况下，无法保证目标/道属性文件的顺序  。 但是，MSBuild 通过 `<Target>` 定义的 `BeforeTargets` 和 `AfterTargets` 特性（请参阅 [Target 元素 (MSBuild)](/visualstudio/msbuild/target-element-msbuild)）提供了对目标进行排序的方法。
 
 ## <a name="lib-and-ref"></a>Lib 和引用
 
