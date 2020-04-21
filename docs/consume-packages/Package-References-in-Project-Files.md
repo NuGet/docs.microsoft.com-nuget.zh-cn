@@ -113,8 +113,8 @@ ms.locfileid: "79428503"
 | runtime | `lib` 和 `runtimes` 文件夹的内容，控制是否会复制这些程序集，以生成输出目录 |
 | contentFiles | `contentfiles` 文件夹中的内容 |
 | build | `.props` 文件夹中的 `.targets` 和 `build` |
-| buildMultitargeting | (4.0) *文件夹中跨框架目标的* 和 `.props``.targets``buildMultitargeting` |
-| buildTransitive | (5.0+) 以可传递的方式流入任意使用项目的资产的 *文件夹中的* 和 `.props``.targets``buildTransitive`。 请参阅[功能](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior)页。 |
+| buildMultitargeting | (4.0) *文件夹中跨框架目标的* 和 `.props` `.targets` `buildMultitargeting` |
+| buildTransitive | (5.0+) 以可传递的方式流入任意使用项目的资产的 *文件夹中的* 和 `.props` `.targets` `buildTransitive`。 请参阅[功能](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior)页。 |
 | analyzers | .NET 分析器 |
 | native | `native` 文件夹中的内容 |
 | none | 不使用以上任何内容。 |
@@ -346,7 +346,7 @@ ProjectA
              |------>PackageX 1.0.0
 ```
 
-如果 `ProjectA` 在 `PackageX` 版本 `2.0.0` 上具有依赖项并引用依赖于 `ProjectB` 版本 `PackageX` 的 `1.0.0`，则 `ProjectB` 的锁定文件将列出 `PackageX` 版本 `1.0.0` 的依赖项。 但是，当生成 `ProjectA` 时，其锁定文件将包含 `PackageX` 锁定文件中列出的 **版本 `2.0.0`（而不是**）上的依赖项  `1.0.0``ProjectB`。 因此，常用代码项目的锁定文件对依赖于它的项目进行解析的包几乎没有控制。
+如果 `ProjectA` 在 `PackageX` 版本 `2.0.0` 上具有依赖项并引用依赖于 `ProjectB` 版本 `PackageX` 的 `1.0.0`，则 `ProjectB` 的锁定文件将列出 `PackageX` 版本 `1.0.0` 的依赖项。 但是，当生成 `ProjectA` 时，其锁定文件将包含 `PackageX` 锁定文件中列出的 **版本 `2.0.0`（而不是**）上的依赖项  `1.0.0` `ProjectB`。 因此，常用代码项目的锁定文件对依赖于它的项目进行解析的包几乎没有控制。
 
 ### <a name="lock-file-extensibility"></a>锁定文件可扩展性
 
