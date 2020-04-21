@@ -109,14 +109,14 @@ ms.locfileid: "79428503"
 
 | 值 | 说明 |
 | --- | ---
-| 编译 | `lib` 文件夹的内容，控制项目能否对文件夹中的程序集进行编译 |
-| 运行库 | `lib` 和 `runtimes` 文件夹的内容，控制是否会复制这些程序集，以生成输出目录 |
+| compile | `lib` 文件夹的内容，控制项目能否对文件夹中的程序集进行编译 |
+| runtime | `lib` 和 `runtimes` 文件夹的内容，控制是否会复制这些程序集，以生成输出目录 |
 | contentFiles | `contentfiles` 文件夹中的内容 |
 | build | `.props` 文件夹中的 `.targets` 和 `build` |
 | buildMultitargeting | (4.0) *文件夹中跨框架目标的* 和 `.props``.targets``buildMultitargeting` |
 | buildTransitive | (5.0+) 以可传递的方式流入任意使用项目的资产的 *文件夹中的* 和 `.props``.targets``buildTransitive`。 请参阅[功能](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior)页。 |
 | analyzers | .NET 分析器 |
-| 本机 | `native` 文件夹中的内容 |
+| native | `native` 文件夹中的内容 |
 | none | 不使用以上任何内容。 |
 | all | 以上都是（除 `none` 之外） |
 
