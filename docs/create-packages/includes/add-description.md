@@ -6,9 +6,9 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 04/07/2020
 ms.locfileid: "80151220"
 ---
-<span data-ttu-id="14836-101">在包的 NuGet.org 页面上所示的包可选说明从用于 `<description></description>` 文件中的 `.csproj` 拉取，或者通过 `$description`.nuspec 文件[中的 ](../../reference/nuspec.md) 拉取。</span><span class="sxs-lookup"><span data-stu-id="14836-101">The package's optional description, displayed on the package's NuGet.org page, is either pulled in from the `<description></description>` used in the `.csproj` file or pulled in via the `$description` in the [.nuspec file](../../reference/nuspec.md).</span></span>
+<span data-ttu-id="65dd8-101">在包的 NuGet.org 页面上所示的包可选说明从用于 `.csproj` 文件中的 `<description></description>` 拉取，或者通过 [.nuspec 文件](../../reference/nuspec.md)中的 `$description` 拉取。</span><span class="sxs-lookup"><span data-stu-id="65dd8-101">The package's optional description, displayed on the package's NuGet.org page, is either pulled in from the `<description></description>` used in the `.csproj` file or pulled in via the `$description` in the [.nuspec file](../../reference/nuspec.md).</span></span>
 
-<span data-ttu-id="14836-102">有关 description 字段的示例，请参阅 .NET 包的  _文件中的以下 XML 文本_`.csproj`：</span><span class="sxs-lookup"><span data-stu-id="14836-102">An example of a _description_ field is shown in the following XML text of the `.csproj` file for a .NET package:</span></span>
+<span data-ttu-id="65dd8-102">有关 description 字段的示例，请参阅 .NET 包的 `.csproj` 文件中的以下 XML 文本：</span><span class="sxs-lookup"><span data-stu-id="65dd8-102">An example of a _description_ field is shown in the following XML text of the `.csproj` file for a .NET package:</span></span>
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
