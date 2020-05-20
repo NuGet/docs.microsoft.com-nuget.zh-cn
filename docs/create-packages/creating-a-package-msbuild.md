@@ -30,7 +30,7 @@ ms.locfileid: "78231313"
 创建包需要以下属性。
 
 - `PackageId`，包标识符，在托管包的库中必须是唯一的。 如果未指定，默认值为 `AssemblyName`。
-- `Version`，窗体 Major.Minor.Patch[-Suffix] 中特定的版本号，其中 -Suffix 标识[预发布版本](prerelease-packages.md)   。 如果未指定，默认值为 1.0.0。
+- `Version`，窗体 Major.Minor.Patch[-Suffix] 中特定的版本号，其中 -Suffix 标识[预发布版本](prerelease-packages.md)。 如果未指定，默认值为 1.0.0。
 - 包标题应出现在主机上（例如 nuget.org）
 - `Authors`，作者和所有者信息。 如果未指定，默认值为 `AssemblyName`。
 - `Company`，公司名称。 如果未指定，默认值为 `AssemblyName`。

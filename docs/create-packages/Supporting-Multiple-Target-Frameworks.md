@@ -42,7 +42,7 @@ ms.locfileid: "79428623"
         \netcore
             \MyAssembly.dll
 
-若要在生成包时轻松包括所有这些文件，请在 `**` 的 `<files>` 部分中使用递归 `.nuspec` 通配符：
+若要在生成包时轻松包括所有这些文件，请在 `.nuspec` 的 `<files>` 部分中使用递归 `**` 通配符：
 
 ```xml
 <files>
@@ -52,7 +52,7 @@ ms.locfileid: "79428623"
 
 ### <a name="architecture-specific-folders"></a>特定于体系结构的文件夹
 
-如果具有特定于体系结构的程序集，即面向 ARM、x86 和 x64 的单独程序集，必须将它们放置在名为 `runtimes` 或 `{platform}-{architecture}\lib\{framework}` 的子文件夹内名为 `{platform}-{architecture}\native` 的文件夹中。 例如，以下文件夹结构可以容纳面向 Windows 10 的本机和托管 DLL 以及 `uap10.0` 框架：
+如果具有特定于体系结构的程序集，即面向 ARM、x86 和 x64 的单独程序集，必须将它们放置在名为 `{platform}-{architecture}\lib\{framework}` 或 `{platform}-{architecture}\native` 的子文件夹内名为 `runtimes` 的文件夹中。 例如，以下文件夹结构可以容纳面向 Windows 10 的本机和托管 DLL 以及 `uap10.0` 框架：
 
     \runtimes
         \win10-arm
@@ -65,11 +65,11 @@ ms.locfileid: "79428623"
             \native
             \lib\uap10.0
 
-这些程序集将仅在运行时可用，因此，如果你也想要提供相应的编译时程序集，则在 `AnyCPU` 文件夹中设置 `/ref/{tfm}` 程序集。 
+这些程序集将仅在运行时可用，因此，如果你也想要提供相应的编译时程序集，则在 `/ref/{tfm}` 文件夹中设置 `AnyCPU` 程序集。 
 
 请注意，NuGet 始终从一个文件夹选取这些编译或运行时资产，因此，如果在 `/ref` 中存在某些兼容资产，则将忽略 `/lib` 以添加编译时程序集。 同样，如果在 `/runtimes` 中有某些兼容资产，则也将为运行时忽略 `/lib`。
 
-有关在 [ 清单中引用这些文件的示例，请参阅](../guides/create-uwp-packages.md)创建 UWP 包`.nuspec`。
+有关在 `.nuspec` 清单中引用这些文件的示例，请参阅[创建 UWP 包](../guides/create-uwp-packages.md)。
 
 此外，请参阅[使用 NuGet 打包 Windows 存储应用组件](https://blogs.msdn.microsoft.com/mim/2013/09/02/packaging-a-windows-store-apps-component-with-nuget-part-2)
 
@@ -125,7 +125,7 @@ NuGet 还通过向文件夹末尾追加短划线和配置文件名称，支持�
 
 打程序包项目文件时，NuGet 尝试从项目自动生成依赖项。 此部分中的信息介绍了如何使用 .nuspec 文件声明依赖项，通常仅高级方案需要使用此信息。 
 
-*（版本 2.0+）* 可以使用 *元素中的* 元素在目标项目的目标框架对应的 .nuspec 中声明程序包依赖项。`<group>``<dependencies>` 有关详细信息，请参阅[依赖项元素](../reference/nuspec.md#dependencies-element)。
+*（版本 2.0+）* 可以使用 `<dependencies>` 元素中的 `<group>` 元素在目标项目的目标框架对应的 .nuspec 中声明程序包依赖项。 有关详细信息，请参阅[依赖项元素](../reference/nuspec.md#dependencies-element)。
 
 每个组都有一个名为 `targetFramework` 的特性，并包含零个或多个 `<dependency>` 元素。 当目标框架与项目的框架配置文件兼容时，将会一起安装这些依赖项。 有关确切的框架标识符，请参阅[目标框架](../reference/target-frameworks.md)。
 

@@ -24,7 +24,7 @@ ms.locfileid: "79428599"
 > [!Note]
 > 在 Windows 上需要 NuGet 4.9.0+ 和 Visual Studio 版本 15.9 及更高版本
 
-可使用 `signatureValidationMode``require`[ 命令，通过在 ](../reference/nuget-config-file.md)nuget.config[ 文件中将 `nuget config` 设置为 ](../reference/cli-reference/cli-ref-config.md)，配置 NuGet 客户端包签名的验证方式。
+可使用 [`nuget config`](../reference/cli-reference/cli-ref-config.md) 命令，通过在 [nuget.config](../reference/nuget-config-file.md) 文件中将 `signatureValidationMode` 设置为 `require`，配置 NuGet 客户端包签名的验证方式。
 
 ```cmd
 nuget.exe config -set signatureValidationMode=require

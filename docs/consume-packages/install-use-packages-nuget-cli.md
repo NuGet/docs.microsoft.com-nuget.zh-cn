@@ -19,7 +19,7 @@ ms.locfileid: "79428413"
 `nuget.exe` CLI 适用于 .NET Framework 项目和非 SDK 样式项目（例如，面向 .NET Standard 库的非 SDK 样式项目）。 如果你使用的是已迁移到 `PackageReference` 的非 SDK 样式项目，请改用 `dotnet` CLI。 `nuget.exe` CLI 需要 [packages.config](../reference/packages-config.md) 文件来进行包引用。
 
 > [!NOTE]
-> 在大多数情况下，建议[将使用 ](../consume-packages/migrate-packages-config-to-package-reference.md) 的非 SDK 样式项目迁移至 PackageReference`packages.config`，然后可以使用 `dotnet` CLI 而不是 `nuget.exe` CLI。 目前，C++ 和 ASP.NET 项目无法进行迁移。
+> 在大多数情况下，建议[将使用 `packages.config` 的非 SDK 样式项目迁移至 PackageReference](../consume-packages/migrate-packages-config-to-package-reference.md)，然后可以使用 `dotnet` CLI 而不是 `nuget.exe` CLI。 目前，C++ 和 ASP.NET 项目无法进行迁移。
 
 本文介绍了一些最常见的 `nuget.exe` CLI 命令的基本用法。 对于大多数这些命令，CLI 工具在当前目录中查找项目文件，除非在命令中指定了项目文件。 有关命令和可能使用的参数的完整列表，请参阅 [nuget.exe CLI 参考](../reference/nuget-exe-cli-reference.md)。
 
@@ -102,7 +102,7 @@ nuget list <search term>
 
 ## <a name="update-all-packages"></a>更新所有包
 
-使用 [update](../reference/cli-reference/cli-ref-update.md) 命令更新所有包。 将项目中的所有包（使用 `packages.config`）更新为其最新可用版本。 建议在运行 `restore` 之前运行 `update`。
+使用 [update](../reference/cli-reference/cli-ref-update.md) 命令更新所有包。 将项目中的所有包（使用 `packages.config`）更新为其最新可用版本。 建议在运行 `update` 之前运行 `restore`。
 
 ```cli
 nuget update

@@ -42,7 +42,7 @@ ms.locfileid: "67427472"
 ```
 
 > [!Note]
-> `packages.config` 项目使用名为 [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/master/documentation/wiki/ResolveAssemblyReference.md) 的进程将程序集复制到 `bin\<configuration>\` 输出目录。 复制项目的程序集，然后构建系统查看引用程序集的程序集清单，然后复制这些程序集并递归重复所有程序集。 这意味着，如果 `lib\<tfm>\` 目录中的任何程序集不在任何其他程序集的清单中作为依赖项列出（如果在运行时使用 `Assembly.Load`、MEF 或其他依赖项注入框架加载程序集）那么即使在 `bin\<configuration>\` 中，也不能将其复制到项目的 `bin\<tfm>\` 输出目录中。
+> `packages.config` 项目使用名为 [ResolveAssemblyReference](https://github.com/Microsoft/msbuild/blob/master/documentation/wiki/ResolveAssemblyReference.md) 的进程将程序集复制到 `bin\<configuration>\` 输出目录。 复制项目的程序集，然后构建系统查看引用程序集的程序集清单，然后复制这些程序集并递归重复所有程序集。 这意味着，如果 `lib\<tfm>\` 目录中的任何程序集不在任何其他程序集的清单中作为依赖项列出（如果在运行时使用 `Assembly.Load`、MEF 或其他依赖项注入框架加载程序集）那么即使在 `bin\<tfm>\` 中，也不能将其复制到项目的 `bin\<configuration>\` 输出目录中。
 
 ## <a name="example"></a>示例
 

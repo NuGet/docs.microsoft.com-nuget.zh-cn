@@ -24,9 +24,9 @@ ms.locfileid: "78230819"
 
 - 自定义类型包使用与包 ID 遵守相同格式规则的任意类型标识符。 但是，任何不是 `Dependency` 和 `DotnetTool` 的类型不会被 Visual Studio 中的 NuGet 包管理器识别。
 
-包类型在 `.nuspec` 文件中设置。 后向兼容最好不显式设置  *类型，而是依赖 NuGet 在没有指定类型时假设此类型*`Dependency`。
+包类型在 `.nuspec` 文件中设置。 后向兼容最好不显式设置 `Dependency` 类型，而是依赖 NuGet 在没有指定类型时假设此类型。
 
-- `.nuspec`：指示 `packageTypes\packageType` 元素的 `<metadata>` 节点中的包类型：
+- `.nuspec`：指示 `<metadata>` 元素的 `packageTypes\packageType` 节点中的包类型：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>

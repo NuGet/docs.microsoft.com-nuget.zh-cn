@@ -15,9 +15,9 @@ ms.locfileid: "78231170"
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>转换源代码和配置文件
 
-安装包时，“源代码转化”会对包的 `content` 或 `contentFiles` 文件夹（对于为 `PackageReference` 使用 `packages.config` 和 `contentFiles` 的用户，则为 `content`）中的文件应用单向令牌替换，其中令牌表示 Visual Studio [项目属性](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7)  。 这样就可以将文件插入到项目的命名空间中，或者自定义通常转到 ASP.NET 项目的 `global.asax` 中的代码。
+安装包时，“源代码转化”会对包的 `content` 或 `contentFiles` 文件夹（对于为 `PackageReference` 使用 `packages.config` 和 `contentFiles` 的用户，则为 `content`）中的文件应用单向令牌替换，其中令牌表示 Visual Studio [项目属性](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7)。 这样就可以将文件插入到项目的命名空间中，或者自定义通常转到 ASP.NET 项目的 `global.asax` 中的代码。
 
-通过“配置文件转换”可以修改目标项目中已存在的文件，例如 `web.config` 和 `app.config`  。 例如，包可能需要将某个项添加到配置文件中的 `modules` 部分。 此转换通过将特殊文件包含在描述要添加到配置文件的部分的包中完成。 卸载包时，会接着反转相同的更改，使其变为双向转换。
+通过“配置文件转换”可以修改目标项目中已存在的文件，例如 `web.config` 和 `app.config`。 例如，包可能需要将某个项添加到配置文件中的 `modules` 部分。 此转换通过将特殊文件包含在描述要添加到配置文件的部分的包中完成。 卸载包时，会接着反转相同的更改，使其变为双向转换。
 
 ## <a name="specifying-source-code-transformations"></a>指定源代码转换
 

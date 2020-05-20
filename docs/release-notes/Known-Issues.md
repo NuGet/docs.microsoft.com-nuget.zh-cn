@@ -39,7 +39,7 @@ $PAT = "Your personal access token" $Feed = "Your url" .\nuget.exe sources add -
 
 ![没有源的 NuGet 配置](./media/knownIssue-34-NoSources.PNG)
 
-`NuGet.Config` (Windows) 或 `%AppData%\NuGet\` (Mac/Linux) 文件夹中的 `~/.nuget/` 文件意外被清空。 若要解决此问题，请执行以下操作：关闭 Visual Studio（适用于 Windows），删除 `NuGet.Config` 文件，然后再次尝试操作。 NuGet 生成了新的 `NuGet.Config` 文件，你应该可以继续操作。
+`%AppData%\NuGet\` (Windows) 或 `~/.nuget/` (Mac/Linux) 文件夹中的 `NuGet.Config` 文件意外被清空。 若要解决此问题，请执行以下操作：关闭 Visual Studio（适用于 Windows），删除 `NuGet.Config` 文件，然后再次尝试操作。 NuGet 生成了新的 `NuGet.Config` 文件，你应该可以继续操作。
 
 ## <a name="error-installing-packages-with-nuget-27"></a>在 NuGet 2.7 中安装包时出现错误
 
@@ -65,7 +65,7 @@ install-package log4net
 
 **解决方案：** :
 
-从提升的提示符运行此命令，重新注册  **的类型库**`VSLangProj.dll`
+从提升的提示符运行此命令，重新注册 `VSLangProj.dll` 的类型库
 
     regsvr32 "C:\Program Files (x86)\Common Files\microsoft shared\MSEnv\VsLangproj.olb"
 

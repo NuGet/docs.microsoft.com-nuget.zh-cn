@@ -69,7 +69,7 @@ namespace AppLogger
     > [!Note]
     > 对于面向公共使用而生成的包，请特别注意 **Tags** 属性，因为这些标记可帮助其他人查找包并了解其用途。
 
-1. 为包提供一个唯一标识符，并填写任何其他所需的属性。 若要将 MSBuild 属性（SDK 样式项目）映射到 .nuspec 中的属性，请参阅[包目标](../reference/msbuild-targets.md#pack-target)  。 有关属性的说明，请参阅 [.nuspec 文件引用](../reference/nuspec.md)。 这里的所有属性都列入 Visual Studio 为项目创建的 `.nuspec` 清单。
+1. 为包提供一个唯一标识符，并填写任何其他所需的属性。 若要将 MSBuild 属性（SDK 样式项目）映射到 .nuspec 中的属性，请参阅[包目标](../reference/msbuild-targets.md#pack-target)。 有关属性的说明，请参阅 [.nuspec 文件引用](../reference/nuspec.md)。 这里的所有属性都列入 Visual Studio 为项目创建的 `.nuspec` 清单。
 
     > [!Important]
     > 你必须为包提供一个在 nuget.org 中唯一或你使用的任何主机的标识符。 对于本次演练，我们建议在名称中包含“Sample”或“Test”，因为稍后的发布步骤确实会使该包公开显示（尽管实际上不太可能有人会使用它）。
@@ -114,7 +114,7 @@ namespace AppLogger
 
 ### <a name="optional-pack-with-msbuild"></a>（可选）使用 MSBuild 打包
 
-作为使用“打包”菜单命令的备选项，当项目包含必要的包数据时，NuGet 4.x+ 和 MSBuild 15.1+ 支持 `pack` 目标  。 打开命令提示符，导航到项目文件夹并运行以下命令。 （用户通常习惯从“开始”菜单中启动“适用于 Visual Studio 的开发人员命令提示符”，因为它将使用 MSBuild 的所有必需路径进行配置。）
+作为使用“打包”菜单命令的备选项，当项目包含必要的包数据时，NuGet 4.x+ 和 MSBuild 15.1+ 支持 `pack` 目标。 打开命令提示符，导航到项目文件夹并运行以下命令。 （用户通常习惯从“开始”菜单中启动“适用于 Visual Studio 的开发人员命令提示符”，因为它将使用 MSBuild 的所有必需路径进行配置。）
 
 有关详细信息，请参阅[使用 MSBuild 创建包](../create-packages/creating-a-package-msbuild.md)。
 

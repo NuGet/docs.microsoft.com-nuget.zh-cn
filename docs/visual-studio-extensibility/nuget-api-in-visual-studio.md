@@ -16,7 +16,7 @@ ms.locfileid: "64495918"
 
 除了 Visual Studio 中的包管理器 UI 和控制台，NuGet 还会通过 [Managed Extensibility Framework (MEF)](/dotnet/framework/mef/index) 导出一些有用服务。 此接口允许 Visual Studio 中的其他组件与 NuGet 交互，可用于安装和卸载包，以及获取有关已安装包的信息。
 
-从 NuGet 3.3+ 开始，NuGet 会导出以下所有服务，它们全部驻留于 `NuGet.VisualStudio` 程序集中的 `NuGet.VisualStudio.dll` 命名空间：
+从 NuGet 3.3+ 开始，NuGet 会导出以下所有服务，它们全部驻留于 `NuGet.VisualStudio.dll` 程序集中的 `NuGet.VisualStudio` 命名空间：
 
 - [`IRegistryKey`](#iregistrykey-interface)：检索注册表子项中的值的方法。
 - [`IVsPackageInstaller`](#ivspackageinstaller-interface)：将 NuGet 包安装到项目中的方法。

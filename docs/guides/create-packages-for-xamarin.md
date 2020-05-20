@@ -36,11 +36,11 @@ Xamarin 包包含在 iOS、Android 和 Windows 上使用本机 API 的代码，�
 ## <a name="create-the-project-structure-and-abstraction-code"></a>创建项目结构和抽象代码
 
 1. 下载并运行适用于 Visual Studio 的[跨平台 .NET Standard 插件模板扩展](https://marketplace.visualstudio.com/items?itemName=vs-publisher-473885.PluginForXamarinTemplates)。 使用这些模板可轻松创建本演练所需的项目结构。
-1. 在 Visual Studio 2017 中，选择“文件”>“新建”>“项目”，搜索 **，选择“跨平台 .NET Standard 库插件”模板，将名称更改为“LoggingLibrary”，然后单击“确定”** `Plugin`  。
+1. 在 Visual Studio 2017 中，选择“文件”>“新建”>“项目”，搜索 `Plugin`，选择“跨平台 .NET Standard 库插件”模板，将名称更改为“LoggingLibrary”，然后单击“确定”。
 
     ![VS 2017 中的新空白应用（Xamarin.Forms 可移植）](media/CrossPlatform-NewProject.png)
 
-    在 Visual Studio 2019 中，选择“文件”>“新建”>“项目”，搜索 **，选择“跨平台 .NET Standard 库插件”模板，然后单击“下一步”** `Plugin`  。
+    在 Visual Studio 2019 中，选择“文件”>“新建”>“项目”，搜索 `Plugin`，选择“跨平台 .NET Standard 库插件”模板，然后单击“下一步”。
 
     ![VS 2019 中的新空白应用（Xamarin.Forms 可移植）](media/CrossPlatform-NewProject19-Part1.png)
 
@@ -109,14 +109,14 @@ namespace Plugin.LoggingLibrary
 1. 右键单击解决方案，选择“生成解决方案”，检查工作并生成接下来将要打包的项目  。 如果遇到关于缺少引用的错误，请右键单击解决方案，选择“还原 NuGet 包”，安装依赖项并重新生成  。
 
 > [!Note]
-> 如果使用的是 Visual Studio 2019，则在选择“还原 NuGet 包”  并尝试重新生成之前，需要将 `MSBuild.Sdk.Extras` 的版本更改为 `2.0.54` 中的 `LoggingLibrary.csproj`。 只能通过以下方式访问此文件：首先右键单击该项目（在解决方案下方）并选择 `Unload Project`，然后右键单击卸载的项目并选择 `Edit LoggingLibrary.csproj`。
+> 如果使用的是 Visual Studio 2019，则在选择“还原 NuGet 包”并尝试重新生成之前，需要将 `MSBuild.Sdk.Extras` 的版本更改为 `LoggingLibrary.csproj` 中的 `2.0.54`。 只能通过以下方式访问此文件：首先右键单击该项目（在解决方案下方）并选择 `Unload Project`，然后右键单击卸载的项目并选择 `Edit LoggingLibrary.csproj`。
 
 > [!Note]
 > 若要为 iOS 生成，需要一台连接到 Visual Studio 的联网 Mac，如 [Introduction to Xamarin.iOS for Visual Studio](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/introduction_to_xamarin_ios_for_visual_studio/)（Xamarin.iOS for Visual Studio 简介）中所述。 如果没有可用的 Mac，请清除配置管理器中的 iOS 项目（上面的步骤 3）。
 
 ## <a name="create-and-update-the-nuspec-file"></a>创建并更新 .nuspec 文件
 
-1. 打开命令提示符，导航到 `LoggingLibrary` 文件下一级的 `.sln` 文件夹，然后运行 NuGet `spec` 命令，创建初始 `Package.nuspec` 文件：
+1. 打开命令提示符，导航到 `.sln` 文件下一级的 `LoggingLibrary` 文件夹，然后运行 NuGet `spec` 命令，创建初始 `Package.nuspec` 文件：
 
     ```cli
     nuget spec
@@ -148,7 +148,7 @@ namespace Plugin.LoggingLibrary
 
 ### <a name="add-reference-assemblies"></a>添加引用程序集
 
-若要包含平台特定的引用程序集，请将以下内容添加到 `<files>` 的 `LoggingLibrary.nuspec` 元素，以适用于支持的平台：
+若要包含平台特定的引用程序集，请将以下内容添加到 `LoggingLibrary.nuspec` 的 `<files>` 元素，以适用于支持的平台：
 
 ```xml
 <!-- Insert below <metadata> element -->
@@ -178,7 +178,7 @@ namespace Plugin.LoggingLibrary
 
 ### <a name="add-dependencies"></a>添加依赖项
 
-如果有特定的本机实现依赖项，请使用带有 `<dependencies>` 元素的 `<group>` 元素来指定它们，例如：
+如果有特定的本机实现依赖项，请使用带有 `<group>` 元素的 `<dependencies>` 元素来指定它们，例如：
 
 ```xml
 <!-- Insert within the <metadata> element -->

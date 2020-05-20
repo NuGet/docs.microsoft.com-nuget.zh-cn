@@ -37,11 +37,11 @@ ms.locfileid: "72380722"
 
 1. 在显示的“添加可移植类库”  对话框中，选择 `.NET Framework 4.6` 和 `ASP.NET Core 1.0` 选项。 （如果面向 .NET Framework，则可以选择任何相应选项。）
 
-1. 如果面向 .NET Standard，右键单击解决方案资源管理器中的 `AppLogger (Portable)`，选择“属性”  ，选择“库”  选项卡，然后选择“目标”  部分中的“目标 .NET 平台标准”  。 此操作将提示进行确认，在确认后可以从下拉列表中选择 `.NET Standard 1.4`（或其他可用版本）：
+1. 如果面向 .NET Standard，右键单击解决方案资源管理器中的 `AppLogger (Portable)`，选择“属性”，选择“库”选项卡，然后选择“目标”部分中的“目标 .NET 平台标准”。 此操作将提示进行确认，在确认后可以从下拉列表中选择 `.NET Standard 1.4`（或其他可用版本）：
 
     ![将目标设置为 .NET Standard 1.4](media/NetStandard-ChangeTarget.png)
 
-1. 单击“生成”选项卡，将“配置”更改为 **，然后选中“XML 文档文件”框**  `Release`  。
+1. 单击“生成”选项卡，将“配置”更改为 `Release`，然后选中“XML 文档文件”框。
 
 1. 将代码添加到组件，例如：
 
@@ -114,7 +114,7 @@ ms.locfileid: "72380722"
 
 ### <a name="declaring-dependencies"></a>声明依赖项
 
-如果具有其他 NuGet 包的任何依赖项，请使用 `<dependencies>` 元素在清单的 `<group>` 元素中列出这些依赖项。 例如，若要在 NewtonSoft.Json 8.0.3 或更高版本上声明依赖项，请添加以下内容：
+如果具有其他 NuGet 包的任何依赖项，请使用 `<group>` 元素在清单的 `<dependencies>` 元素中列出这些依赖项。 例如，若要在 NewtonSoft.Json 8.0.3 或更高版本上声明依赖项，请添加以下内容：
 
 ```xml
 <!-- Insert within the <metadata> element -->
