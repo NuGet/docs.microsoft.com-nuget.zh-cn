@@ -14,7 +14,7 @@ ms.locfileid: "83727805"
 ---
 # <a name="nuget-56-release-notes"></a>NuGet 5.6 发行说明
 
-NuGet 分发车辆：
+NuGet 分发工具：
 
 | NuGet 版本 | 适用于 Visual Studio 版本| 适用于 .NET SDK|
 |:---|:---|:---|
