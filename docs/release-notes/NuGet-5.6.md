@@ -71,7 +71,7 @@ NuGet 分发车辆：
 * `-DependencyVersion`的支持参数 `NuGet.exe update` ，类似于安装命令- [#7694](https://github.com/NuGet/Home/issues/7694)
 
 
-**Dcr**
+**DCRs**
 
 * 添加对 net 5.0 目标框架的初始支持- [#9584](https://github.com/NuGet/Home/issues/9584)
 
