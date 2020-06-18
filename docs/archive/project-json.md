@@ -176,6 +176,6 @@ NuGet 使用的 `project.json` 文件是 ASP.NET Core 项目中该文件的子�
 
 ## <a name="projectlockjson"></a>project.lock.json
 
-在还原使用 `project.lock.json` 的项目中的 NuGet 包的过程中，会生成 `project.json` 文件。 它拥有 NuGet 在走包的关系图时生成的所有信息的快照，并包括项目中所有包的版本、内容和依赖项。 生成项目时，生成系统根据此快照从相关的全局位置选择包，而不是依靠项目本身中的本地包文件夹。 这使得生成性能更快，因为仅需读取 `project.lock.json` 而不是许多单独的 `.nuspec` 文件。
+在还原使用 `project.json` 的项目中的 NuGet 包的过程中，会生成 `project.lock.json` 文件。 它拥有 NuGet 在走包的关系图时生成的所有信息的快照，并包括项目中所有包的版本、内容和依赖项。 生成项目时，生成系统根据此快照从相关的全局位置选择包，而不是依靠项目本身中的本地包文件夹。 这使得生成性能更快，因为仅需读取 `project.lock.json` 而不是许多单独的 `.nuspec` 文件。
 
 `project.lock.json` 在包还原时自动生成，因此可通过将其添加到 `.gitignore` 和 `.tfignore` 文件，将其从源代码管理去掉（请参阅[包和源代码管理](../consume-packages/packages-and-source-control.md)）。 但是，如果将其包括在源代码管理中，更改历史记录会显示随着时间推移解析的依赖项的更改。

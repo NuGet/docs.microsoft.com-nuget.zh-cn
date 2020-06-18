@@ -14,13 +14,13 @@ ms.locfileid: "79428503"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
-使用 `PackageReference` 节点的包引用可直接在项目文件中管理 NuGet 依赖项（无需单独的 `packages.config` 文件）。 使用所谓的 PackageReference 不会影响 NuGet 的其他方面；例如，仍按照`NuGet.config`常规 NuGet 配置[中的说明应用 ](configuring-nuget-behavior.md) 文件（包括包源）中的设置。
+使用 `PackageReference` 节点的包引用可直接在项目文件中管理 NuGet 依赖项（无需单独的 `packages.config` 文件）。 使用所谓的 PackageReference 不会影响 NuGet 的其他方面；例如，仍按照[常规 NuGet 配置](configuring-nuget-behavior.md)中的说明应用 `NuGet.config` 文件（包括包源）中的设置。
 
 借助 PackageReference，还可使用 MSBuild 条件按目标框架或其他分组选择包引用。 它还允许对依赖项和内容流实行精细控制。 （有关更多详细信息，请参阅[NuGet 打包和还原为 MSBuild 目标](../reference/msbuild-targets.md)。）
 
 ## <a name="project-type-support"></a>项目类型支持
 
-默认情况下，PackageReference 用于 .NET Core 项目、.NET Standard 项目，以及面向 Windows 10 Build 15063（创意者更新）及更高版本的 UWP 项目（C++ UWP 项目除外）。 .NET 框架项目支持 PackageReference，但当前默认为 `packages.config`。 若要使用 PackageReference，请将 [ 中的依赖项](../consume-packages/migrate-packages-config-to-package-reference.md)迁移`packages.config`到项目文件中，然后删除 packages.config。
+默认情况下，PackageReference 用于 .NET Core 项目、.NET Standard 项目，以及面向 Windows 10 Build 15063（创意者更新）及更高版本的 UWP 项目（C++ UWP 项目除外）。 .NET 框架项目支持 PackageReference，但当前默认为 `packages.config`。 若要使用 PackageReference，请将 `packages.config` 中的依赖项[迁移](../consume-packages/migrate-packages-config-to-package-reference.md)到项目文件中，然后删除 packages.config。
 
 面向完整 .NET Framework 的 ASP.NET 应用仅包括对 PackageReference 的[有限支持](https://github.com/NuGet/Home/issues/5877)。 不支持 C++ 和 JavaScript 项目类型。
 
@@ -70,7 +70,7 @@ ms.locfileid: "79428503"
 
 ## <a name="floating-versions"></a>可变版本
 
-[ 支持](../concepts/dependency-resolution.md#floating-versions)可变版本`PackageReference`：
+`PackageReference` 支持[可变版本](../concepts/dependency-resolution.md#floating-versions)：
 
 ```xml
 <ItemGroup>
@@ -109,14 +109,14 @@ ms.locfileid: "79428503"
 
 | 值 | 说明 |
 | --- | ---
-| compile | `lib` 文件夹的内容，控制项目能否对文件夹中的程序集进行编译 |
-| runtime | `lib` 和 `runtimes` 文件夹的内容，控制是否会复制这些程序集，以生成输出目录 |
+| 编译 | `lib` 文件夹的内容，控制项目能否对文件夹中的程序集进行编译 |
+| 运行库 | `lib` 和 `runtimes` 文件夹的内容，控制是否会复制这些程序集，以生成输出目录 |
 | contentFiles | `contentfiles` 文件夹中的内容 |
-| build | `.props` 文件夹中的 `.targets` 和 `build` |
-| buildMultitargeting | (4.0) *文件夹中跨框架目标的* 和 `.props` `.targets` `buildMultitargeting` |
-| buildTransitive | (5.0+) 以可传递的方式流入任意使用项目的资产的 *文件夹中的* 和 `.props` `.targets` `buildTransitive`。 请参阅[功能](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior)页。 |
+| build | `build` 文件夹中的 `.props` 和 `.targets` |
+| buildMultitargeting | (4.0) *文件夹中跨框架目标的* 和 `.props``.targets``buildMultitargeting` |
+| buildTransitive | (5.0+) 以可传递的方式流入任意使用项目的资产的 *文件夹中的* 和 `.props``.targets``buildTransitive`。 请参阅[功能](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior)页。 |
 | analyzers | .NET 分析器 |
-| native | `native` 文件夹中的内容 |
+| 本机 | `native` 文件夹中的内容 |
 | none | 不使用以上任何内容。 |
 | all | 以上都是（除 `none` 之外） |
 
@@ -136,10 +136,10 @@ ms.locfileid: "79428503"
 </ItemGroup>
 ```
 
-请注意，因为 `build` 未包括 `PrivateAssets`，所以目标和属性将流入上级项目  。 例如，假设在生成名为 AppLogger 的 NuGet 包的项目中使用上述引用。 AppLogger 可以使用 `Contoso.Utility.UsefulStuff` 中的目标和属性，使用 AppLogger 的项目也可以。
+请注意，因为 `PrivateAssets` 未包括 `build`，所以目标和属性将流入上级项目。 例如，假设在生成名为 AppLogger 的 NuGet 包的项目中使用上述引用。 AppLogger 可以使用 `Contoso.Utility.UsefulStuff` 中的目标和属性，使用 AppLogger 的项目也可以。
 
 > [!NOTE]
-> 在 `developmentDependency` 文件中将 `true` 设置为 `.nuspec` 时，会将包标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。 利用 PackageReference (NuGet 4.8+)  ，此标志还意味着将从编译中排除编译时资产。 有关详细信息，请参阅 [PackageReference 的 DevelopmentDependency 支持](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)。
+> 在 `.nuspec` 文件中将 `developmentDependency` 设置为 `true` 时，会将包标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。 利用 PackageReference (NuGet 4.8+)  ，此标志还意味着将从编译中排除编译时资产。 有关详细信息，请参阅 [PackageReference 的 DevelopmentDependency 支持](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)。
 
 ## <a name="adding-a-packagereference-condition"></a>添加 PackageReference 条件
 
@@ -208,7 +208,7 @@ MSBuild 属性和包标识不具有相同的限制，因此包标识需要改为
 
 ## <a name="nuget-warnings-and-errors"></a>NuGet 警告和错误
 
-NuGet 4.3 ***或更高版本以及 Visual Studio 2017 15.3** **或更高版本随附此功能。***
+NuGet 4.3 或更高版本以及 Visual Studio 2017 15.3 或更高版本随附此功能。
 
 对于许多打包和还原方案，所有 NuGet 警告和错误都经过编码，且以 `NU****` 开头。 所有 NuGet 警告和错误都列在[参考](../reference/errors-and-warnings.md)文档中。
 
@@ -271,7 +271,7 @@ NuGet 遵循以下警告属性：
 
 ## <a name="locking-dependencies"></a>锁定依赖项
 
-NuGet 4.9 ***或更高版本以及 Visual Studio 2017 15.9** **或更高版本随附此功能。***
+NuGet 4.9 或更高版本以及 Visual Studio 2017 15.9 或更高版本随附此功能。
 
 对 NuGet 还原的输入是项目文件中的一组包引用（顶级或直接依赖项），而输出则是所有包依赖项的完整闭包，其中包括可传递依赖项。 如果输入 PackageReference 列表尚未更改，则 NuGet 尝试始终生成相同的完整闭包。 但是，在某些情况下，它无法执行此操作。 例如：
 
@@ -346,7 +346,7 @@ ProjectA
              |------>PackageX 1.0.0
 ```
 
-如果 `ProjectA` 在 `PackageX` 版本 `2.0.0` 上具有依赖项并引用依赖于 `ProjectB` 版本 `PackageX` 的 `1.0.0`，则 `ProjectB` 的锁定文件将列出 `PackageX` 版本 `1.0.0` 的依赖项。 但是，当生成 `ProjectA` 时，其锁定文件将包含 `PackageX` 锁定文件中列出的 **版本 `2.0.0`（而不是**）上的依赖项  `1.0.0` `ProjectB`。 因此，常用代码项目的锁定文件对依赖于它的项目进行解析的包几乎没有控制。
+如果 `ProjectA` 在 `PackageX` 版本 `2.0.0` 上具有依赖项并引用依赖于 `PackageX` 版本 `1.0.0` 的 `ProjectB`，则 `ProjectB` 的锁定文件将列出 `PackageX` 版本 `1.0.0` 的依赖项。 但是，当生成 `ProjectA` 时，其锁定文件将包含 `PackageX` 锁定文件中列出的 **版本 `2.0.0`（而不是**）上的依赖项  `1.0.0``ProjectB`。 因此，常用代码项目的锁定文件对依赖于它的项目进行解析的包几乎没有控制。
 
 ### <a name="lock-file-extensibility"></a>锁定文件可扩展性
 

@@ -20,7 +20,7 @@
 ## 配置 NuGet
 ### 包还原选项
 #### [还原包](consume-packages/package-restore.md)
-#### [故障排除](consume-packages/package-restore-troubleshooting.md)
+#### [疑难解答](consume-packages/package-restore-troubleshooting.md)
 ### [重新安装和更新包](consume-packages/reinstalling-and-updating-packages.md)
 ### [管理全局包和缓存文件夹](consume-packages/managing-the-global-packages-and-cache-folders.md)
 ### [管理包信任边界](consume-packages/installing-signed-packages.md)
@@ -81,13 +81,13 @@
 ### [delete](reference/cli-reference/cli-ref-delete.md)
 ### [help or ?](reference/cli-reference/cli-ref-help.md)
 ### [init](reference/cli-reference/cli-ref-init.md)
-### [安装](reference/cli-reference/cli-ref-install.md)
+### [install](reference/cli-reference/cli-ref-install.md)
 ### [list](reference/cli-reference/cli-ref-list.md)
 ### [locals](reference/cli-reference/cli-ref-locals.md)
 ### [mirror](reference/cli-reference/cli-ref-mirror.md)
 ### [pack](reference/cli-reference/cli-ref-pack.md)
 ### [push](reference/cli-reference/cli-ref-push.md)
-### [还原 (restore)](reference/cli-reference/cli-ref-restore.md)
+### [restore](reference/cli-reference/cli-ref-restore.md)
 ### [setapikey](reference/cli-reference/cli-ref-setapikey.md)
 ### [sign](reference/cli-reference/cli-ref-sign.md)
 ### [sources](reference/cli-reference/cli-ref-sources.md)
@@ -289,6 +289,7 @@
 ## 发行说明
 ### [已知问题](release-notes/known-issues.md)
 ### NuGet 5.x
+#### [NuGet 5.6](release-notes/NuGet-5.6.md)
 #### [NuGet 5.5](release-notes/NuGet-5.5.md)
 #### [NuGet 5.4](release-notes/NuGet-5.4.md)
 #### [NuGet 5.3](release-notes/NuGet-5.3.md)
@@ -357,6 +358,6 @@
 #### [NuGet 1.3](release-notes/NuGet-1.3.md)
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
-## [常见问题](resources/nuget-faq.md)
+## [常见问题解答](resources/nuget-faq.md)
 ## [项目格式](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)

@@ -6,9 +6,9 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 04/07/2020
 ms.locfileid: "80151220"
 ---
-在包的 NuGet.org 页面上所示的包可选说明从用于 `<description></description>` 文件中的 `.csproj` 拉取，或者通过 `$description`.nuspec 文件[中的 ](../../reference/nuspec.md) 拉取。
+在包的 NuGet.org 页面上所示的包可选说明从用于 `.csproj` 文件中的 `<description></description>` 拉取，或者通过 [.nuspec 文件](../../reference/nuspec.md)中的 `$description` 拉取。
 
-有关 description 字段的示例，请参阅 .NET 包的  _文件中的以下 XML 文本_`.csproj`：
+有关 description 字段的示例，请参阅 .NET 包的 `.csproj` 文件中的以下 XML 文本：
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">

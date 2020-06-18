@@ -64,7 +64,7 @@ Microsoft 对 NuGet 的开发做出了巨大的贡献。 Microsoft 员工做出�
 - [Orchard](http://www.orchardproject.net/)（CMS 模块从 Orchard 库中托管的 v1 NuGet 源提取）
 - [NuGet 服务器的 Java 实现](http://jonnyzzz.com/blog/2012/03/07/nuget-server-in-pure-java/)
 - [NuGetLatest](https://twitter.com/NuGetLatest)（发表新包发布推文的 Twitter 自动程序）
-- [DefinitelyTyped](http://definitelytyped.org/)（[发布到 NuGet](https://github.com/DefinitelyTyped/NugetAutomation/) 的[自动化](http://www.nuget.org/packages?q=DefinitelyTyped) TypeScript 类型定义）
+- [DefinitelyTyped](http://definitelytyped.org/)（[发布到 NuGet](http://www.nuget.org/packages?q=DefinitelyTyped) 的[自动化](https://github.com/DefinitelyTyped/NugetAutomation/) TypeScript 类型定义）
 
 ## <a name="training-materials-and-references"></a>培训材料和参考资料
 

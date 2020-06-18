@@ -9,12 +9,12 @@ ms.reviewer:
 - skofman
 - anangaur
 - kraigb
-ms.openlocfilehash: 9e60c0236bd4e6f1374b50a236447faf80dddb38
-ms.sourcegitcommit: e9c1dd0679ddd8ba3ee992d817b405f13da0472a
+ms.openlocfilehash: 372304255bf8849693947b22539e012ccdd48966
+ms.sourcegitcommit: 0a63956bf12aaf1b1b45e680bc8e90f97347988c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813190"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83367929"
 ---
 # <a name="rate-limits"></a>速率限制
 
@@ -45,14 +45,22 @@ NuGet.org API 强制实施速率限制以防止滥用。 超出速率限制的�
 
 | API | 限制类型 | 限制值 | API 用例 |
 |:---|:---|:---|:---|
-**获取**`/api/v1/Packages` | IP | 1000/分钟 | 通过 v1 OData 查询 NuGet 包元数据 `Packages` 收集 |
-**获取**`/api/v1/Search()` | IP | 3000/分钟 | 通过 v1 搜索终结点搜索 NuGet 包 | 
-**获取**`/api/v2/Packages` | IP | 20000/分钟 | 通过 v2 OData `Packages` 收集查询 NuGet 包元数据 | 
-**获取**`/api/v2/Packages/$count` | IP | 100/分钟 | 通过 v2 OData 查询 NuGet 包计数 `Packages` 收集 | 
+**GET** `/api/v1/Packages` | IP | 1000/分钟 | 通过 v1 OData 集合查询 NuGet 包元数据 `Packages` |
+**GET** `/api/v1/Search()` | IP | 3000/分钟 | 通过 v1 搜索终结点搜索 NuGet 包 | 
+**GET** `/api/v2/Packages` | IP | 20000/分钟 | 通过 v2 OData 集合查询 NuGet 包元数据 `Packages` | 
+**GET** `/api/v2/Packages/$count` | IP | 100/分钟 | 通过 v2 OData 集合查询 NuGet 包计数 `Packages` | 
 
 ## <a name="package-push-and-unlist"></a>包推送和取消列出
 
 | API | 限制类型 | 限制值 | API 用例 | 
 |:---|:---|:---|:--- |
-**PUT** `/api/v2/package` | API 密钥 | 350/小时 | 通过 v2 推送终结点上传新的 NuGet 包（版本） 
+**PUT**`/api/v2/package` | API 密钥 | 350/小时 | 通过 v2 推送终结点上传新的 NuGet 包（版本） 
 **删除**`/api/v2/package/{id}/{version}` | API 密钥 | 250/小时 | 通过 v2 终结点取消列出 NuGet 包（版本） 
+
+## <a name="nugetorg-website-page-views"></a>nuget.org 网站页面视图
+
+如果以编程方式访问 nuget.org 网页，请考虑调查我们记录的[V3 api](overview.md)。 通过这些终结点，可以更简单地访问包元数据和内容。 V3 API 具有更好的可用性，性能高于访问 NuGet 库网页（专为 web 浏览器交互）。
+
+| API | 限制类型 | 限制值 | API 用例 | 
+|:---|:---|:---|:--- |
+**GET** `/package/{id}/{version}` | IP | 50/分钟 | 显示包（版本）详细信息页。 

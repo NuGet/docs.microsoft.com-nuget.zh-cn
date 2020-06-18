@@ -22,7 +22,7 @@ ms.locfileid: "78231751"
 
 1. Visual Studio 2019。 可以从 [visualstudio.com](https://www.visualstudio.com/) 免费安装 2019 Community 版；也可以使用 Professional 和 Enterprise 版。
 
-1. NuGet CLI。 从 `nuget.exe`nuget.org/downloads[ 下载 ](https://nuget.org/downloads) 的最新版本，将其保存到选择的位置（`.exe` 是直接下载的）。 然后将该位置添加到 PATH 环境变量（如果尚未添加）。 [更多详细信息](/nuget/reference/nuget-exe-cli-reference#windows)。
+1. NuGet CLI。 从 [nuget.org/downloads](https://nuget.org/downloads) 下载 `nuget.exe` 的最新版本，将其保存到选择的位置（`.exe` 是直接下载的）。 然后将该位置添加到 PATH 环境变量（如果尚未添加）。 [更多详细信息](/nuget/reference/nuget-exe-cli-reference#windows)。
 
 ## <a name="create-a-uwp-windows-runtime-component"></a>创建 UWP Windows 运行时组件
 

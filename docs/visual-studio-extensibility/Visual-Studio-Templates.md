@@ -66,7 +66,7 @@ ms.locfileid: "64498239"
 
 VSIX 本身可用作模板所需包的源：
 
-1. 修改 `<packages>` 文件中的 `.vstemplate` 元素，如下所示：
+1. 修改 `.vstemplate` 文件中的 `<packages>` 元素，如下所示：
 
     ```xml
     <packages repository="extension" repositoryId="MyTemplateContainerExtensionId">
@@ -74,11 +74,11 @@ VSIX 本身可用作模板所需包的源：
     </packages>
     ```
 
-    `repository` 属性将存储库类型指定为 `extension`，而 `repositoryId` 是 VSIX 本身的唯一标识符（它是扩展的 `ID` 文件中 `vsixmanifest` 属性的值，请参阅 [VSIX 扩展架构 2.0 参考](/visualstudio/extensibility/vsix-extension-schema-2-0-reference)）。
+    `repository` 属性将存储库类型指定为 `extension`，而 `repositoryId` 是 VSIX 本身的唯一标识符（它是扩展的 `vsixmanifest` 文件中 `ID` 属性的值，请参阅 [VSIX 扩展架构 2.0 参考](/visualstudio/extensibility/vsix-extension-schema-2-0-reference)）。
 
 1. 将 `nupkg` 文件放置于 VSIX 中名为 `Packages` 的文件夹中。
 
-1. 添加必要的包文件作为 `<Asset>`文件中的 `vsixmanifest`（请参阅 [VSIX 扩展架构 2.0 参考](/visualstudio/extensibility/vsix-extension-schema-2-0-reference)：
+1. 添加必要的包文件作为 `vsixmanifest`文件中的 `<Asset>`（请参阅 [VSIX 扩展架构 2.0 参考](/visualstudio/extensibility/vsix-extension-schema-2-0-reference)：
 
     ```xml
     <Asset Type="Moq.4.0.10827.nupkg" d:Source="File" Path="Packages\Moq.4.0.10827.nupkg" d:VsixSubPath="Packages" />
@@ -90,7 +90,7 @@ VSIX 本身可用作模板所需包的源：
 
 如果仅分发一个项目/项模板且无需将多个模板打包在一起，则可使用更为简单但受限更多的方法，该方法直接在项目/项模板 ZIP 文件中添加包：
 
-1. 修改 `<packages>` 文件中的 `.vstemplate` 元素，如下所示：
+1. 修改 `.vstemplate` 文件中的 `<packages>` 元素，如下所示：
 
     ```xml
     <packages repository="template"">
@@ -116,10 +116,10 @@ VSIX 本身可用作模板所需包的源：
     - 项名称：使用唯一的名称。 例如，适用于 VS 2012 的 ASP.NET MVC 4 模板使用 `AspNetMvc4VS11`。
     - 值：包文件夹的完整路径。
 
-1. 在 `<packages>` 文件的 `.vstemplate` 元素中，添加属性 `repository="registry"` 并在 `keyName` 属性中指定注册表项名称。
+1. 在 `.vstemplate` 文件的 `<packages>` 元素中，添加属性 `repository="registry"` 并在 `keyName` 属性中指定注册表项名称。
 
     - 如果已预先解压缩包，请使用 `isPreunzipped="true"` 属性。
-    - (NuGet 3.2 +) 如果希望在包安装结束时强制执行设计时生成，请添加  *属性。* `forceDesignTimeBuild="true"`
+    - (NuGet 3.2 +) 如果希望在包安装结束时强制执行设计时生成，请添加 `forceDesignTimeBuild="true"` 属性。
     - 作为优化，添加 `skipAssemblyReferences="true"`，因为模板本身已包括必要的引用。
 
         ```xml
@@ -141,6 +141,6 @@ VSIX 本身可用作模板所需包的源：
     <!-- ... -->
     ```
 
-1. 通过在 [ 文件中包括 `<PromptForSaveOnCreation>true</PromptForSaveOnCreation>`](/visualstudio/extensibility/promptforsaveoncreation-element-visual-studio-templates)`.vstemplate`，要求在创建时保存项目/项模板。
+1. 通过在 `.vstemplate` 文件中包括 [`<PromptForSaveOnCreation>true</PromptForSaveOnCreation>`](/visualstudio/extensibility/promptforsaveoncreation-element-visual-studio-templates)，要求在创建时保存项目/项模板。
 
 1. 模板不包括 `packages.config` 文件，也不包括安装 NuGet 包时将添加的任何引用或内容。

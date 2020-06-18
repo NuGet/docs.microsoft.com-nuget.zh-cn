@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: a2f1fed578f1635296892ab925219f0f27883c02
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7e725d8114cde3de189dc3a648bc5a6c0b0e785b
+ms.sourcegitcommit: 0a63956bf12aaf1b1b45e680bc8e90f97347988c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "67426932"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83367942"
 ---
 # <a name="resolving-disputes-over-nuget-package-names"></a>解决对 NuGet 包名称的争议
 
@@ -20,10 +20,10 @@ ms.locfileid: "67426932"
 
 在此情况中，Nancy 的行为似乎没有恶意，只是通过贡献自己的时间和代码支持 Northwind 的工具和客户。 同时，Northwind 是 Northwind 名称的合法所有者。
 
-通过遵照以下流程，Northwind 和 Nancy 可以共同协作，商讨出合适的解决方案，因为双方都希望为开发人员社区提供服务。 通常不需要 NuGet 团队进行干涉；协作通常是最佳解决方案。 事实上，引起 NuGet 团队注意的每个争议均得到了解决，无需团队做出裁决。
+通过遵照以下流程，Northwind 和 Nancy 可以共同协作，商讨出合适的解决方案，因为双方都希望为开发人员社区提供服务。 通常不需要 NuGet 团队进行干涉；协作通常是最佳解决方案。
 
 ## <a name="process"></a>进程
 
-1. 请使用包详细信息页面上的“联系所有者”  链接，联系你对其有争议的包的所有者。 请友好并直接地阐述问题。
+1. 使用包详细信息页上的“联系所有者”链接，联系与其有争议的包的所有者  。 以友好和直接的方式说明问题。
 2. 将邮件副本发送到 [support@nuget.org](mailto:support@nuget.org)，以便 NuGet 和 .NET Foundation 了解此争议。
 3. 最长需等待 30 天才能解决，之后请再次通知 [support@nuget.org](mailto:support@nuget.org)。 nuget.org 支持团队将参与商讨，与双方共同解决争议。
