@@ -7,7 +7,7 @@
     "catalog:commitId": "49fe04d8-5694-45a5-9822-3be61bda871b",
     "catalog:commitTimeStamp": "2015-02-01T11:18:40.8589193Z",
     "created": "2011-12-02T20:21:23.74Z",
-    "description": "This package is an example for the V3 protocol.",
+    "description": "此包是 V3 协议的示例。",
     "deprecation": {
         "reasons": [
             "Legacy",
@@ -28,10 +28,17 @@
     "packageHash": "2edCwKLcbcgFJpsAwa883BLtOy8bZpWwbQpiIb71E74k5t2f2WzXEGWbPwntRleUEgSrcxJrh9Orm/TAmgO4NQ==",
     "packageHashAlgorithm": "SHA512",
     "packageSize": 118348,
+    "packageTypes": [
+        {
+            "@id": "https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json#packagetypes/DotnetTool",
+            "@type": "PackageType",
+            "name": "DotnetTool"
+        }
+    ],
     "projectUrl": "https://github.com/NuGet/NuGetGallery",
     "published": "1900-01-01T00:00:00Z",
     "requireLicenseAcceptance": false,
-    "title": "<span data-ttu-id=\"63192-101\">NuGet V3 协议示例</span><span class=\"sxs-lookup\"><span data-stu-id=\"63192-101\">NuGet V3 Protocol Example</span></span>",
+    "title": "NuGet V3 协议示例",
     "version": "1.0.0",
     "dependencyGroups": [
         {
