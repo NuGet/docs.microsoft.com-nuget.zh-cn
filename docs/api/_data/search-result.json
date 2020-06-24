@@ -5,7 +5,7 @@
             "registration": "https://api.nuget.org/v3/registration3/nuget.versioning/index.json",
             "id": "NuGet.Versioning",
             "version": "4.4.0",
-            "description": "NuGet's implementation of Semantic Versioning.",
+            "description": "NuGet 的语义版本控制实现。",
             "summary": "",
             "title": "NuGet. 版本控制",
             "licenseUrl": "https://raw.githubusercontent.com/NuGet/NuGet.Client/dev/LICENSE.txt",
@@ -19,6 +19,11 @@
             ],
             "totalDownloads": 141896,
             "verified": true,
+            "packageTypes": [
+                {
+                    "name": "Dependency"
+                }
+            ],
             "versions": [
                 {
                     "version": "3.3.0",
@@ -48,7 +53,7 @@
             "registration": "https://api.nuget.org/v3/registration3/nerdbank.gitversioning/index.json",
             "id": "Nerdbank.GitVersioning",
             "version": "2.0.41",
-            "description": "Stamps your assemblies with semver 2.0 compliant git commit specific version information and provides NuGet versioning information as well.",
+            "description": "用 semver 2.0 兼容 git 标记程序集，并提交特定版本信息并提供 NuGet 版本信息。",
             "summary": "Stamps your assemblies with semver 2.0 compliant git commit specific version information and provides NuGet versioning information as well.",
             "title": "Nerdbank.GitVersioning",
             "licenseUrl": "https://raw.githubusercontent.com/AArnott/Nerdbank.GitVersioning/ed547462f7/LICENSE.txt",

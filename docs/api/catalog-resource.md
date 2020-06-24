@@ -1,97 +1,97 @@
 ---
 title: 目录资源，NuGet V3 API
-description: 目录是所有程序包创建并删除在 nuget.org 上的索引。
+description: 目录是在 nuget.org 上创建和删除的所有包的索引。
 author: joelverhagen
 ms.author: jver
 ms.date: 10/30/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 8e4fb376e471a207333d241aeb414da7d5c3571e
-ms.sourcegitcommit: 2a9d149bc6f5ff76b0b657324820bd0429cddeef
+ms.openlocfilehash: ffbcb8dc18542f39c32a6d84b279c8eccaf98fc3
+ms.sourcegitcommit: 7e9c0630335ef9ec1e200e2ee9065f702e52a8ec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67496545"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85292303"
 ---
-# <a name="catalog"></a>Catalog
+# <a name="catalog"></a>目录
 
-**目录**是记录之类的创建和删除的包源上的所有包操作的资源。 目录资源具有`Catalog`中键入[服务索引](service-index.md)。 可以使用此资源，使[查询所有已发布的包](../guides/api/query-for-all-published-packages.md)。
-
-> [!Note]
-> 由于该目录不由官方 NuGet 客户端，并非所有包源都实现目录。
+**目录**是记录包源上所有包操作（如创建和删除）的资源。 目录资源的 `Catalog` [服务索引](service-index.md)中包含类型。 您可以使用此资源[查询所有已发布的包](../guides/api/query-for-all-published-packages.md)。
 
 > [!Note]
-> 目前，nuget.org 目录不是在中国推出的。 有关更多详细信息，请参阅[NuGet/NuGetGallery #4949](https://github.com/NuGet/NuGetGallery/issues/4949)。
+> 由于官方 NuGet 客户端不使用目录，因此并非所有包源都实现目录。
 
-## <a name="versioning"></a>版本管理
+> [!Note]
+> 目前，nuget.org 目录在中国不可用。 有关更多详细信息，请参阅[NuGet/NuGetGallery # 4949](https://github.com/NuGet/NuGetGallery/issues/4949)。
 
-以下`@type`使用值：
+## <a name="versioning"></a>版本控制
 
-@type 值   | 说明
+使用以下 `@type` 值：
+
+@type 值   | 备注
 ------------- | -----
-Catalog/3.0.0 | 初始版本
+Catalog/3.0。0 | 初始版本
 
 ## <a name="base-url"></a>基 URL
 
-以下 Api 的入口点 URL 是的值`@id`属性与前面提到的资源相关联`@type`值。 本主题使用占位符 URL `{@id}`。
+以下 Api 的入口点 URL 是 `@id` 与上述资源值关联的属性的值 `@type` 。 本主题使用占位符 URL `{@id}` 。
 
 ## <a name="http-methods"></a>HTTP 方法
 
-仅 HTTP 方法位于目录资源支持的所有 Url`GET`和`HEAD`。
+在目录资源中找到的所有 Url 仅支持 HTTP 方法 `GET` 和 `HEAD` 。
 
 ## <a name="catalog-index"></a>目录索引
 
-目录索引是具有一系列目录项，按时间顺序排列的已知位置中的文档。 它是目录资源的入口点。
+目录索引是众所周知位置的文档，其中包含目录项列表，按时间顺序排列。 它是目录资源的入口点。
 
-索引组成目录页。 每个目录页包含目录项。 每个目录项表示有关时间点的单个包的事件。 目录项可以表示已创建，未列出、 重新列出或删除从包源的包。 通过处理中按时间顺序的目录项，客户端可以生成 V3 包源上存在的每个包的最新视图。
+此索引由目录页组成。 每个目录页面都包含目录项。 每个目录项都表示一个事件，该事件涉及到某个时间点的单个包。 目录项可以表示从包源创建、未列出、重新列出或删除的包。 通过按时间顺序处理目录项，客户端可以生成在 V3 包源上存在的每个包的最新视图。
 
-简单地说，目录的 blob 具有以下层次结构：
+简而言之，目录 blob 具有以下层次结构：
 
-- **索引**： 目录的入口点。
-- **页**： 目录项的分组。
-- **叶**: 文档，表示一个目录项，它是单个包的状态的快照。
+- **Index**：目录的入口点。
+- **页面**：目录项的分组。
+- **叶**：表示目录项的文档，该目录项是单个包状态的快照。
 
-每个目录对象具有一个名为属性`commitTimeStamp`表示项添加到目录中时。 目录项添加到名为提交的批次中的目录页。 在同一提交中的所有目录项都具有相同提交时间戳 (`commitTimeStamp`) 和提交 ID (`commitId`)。 目录项放置在同一提交中表示时间上的包源围绕同一点发生的事件。 目录提交中没有排序。
+每个目录对象都有一个名为的属性，该属性 `commitTimeStamp` 表示将项添加到目录的时间。 目录项将添加到名为 "提交" 的批次的目录页中。 同一提交中的所有目录项都具有相同的提交时间戳（ `commitTimeStamp` ）和提交 ID （ `commitId` ）。 放置在同一提交中的目录项表示在包源上的同一时间点附近发生的事件。 目录提交中没有排序。
 
-因为每个包 ID 和版本是唯一的将永远不会有多个目录项的提交中。 这可确保，单个包的目录项可始终明确地排序方面提交时间戳。
+由于每个包 ID 和版本都是唯一的，因此在一个提交中将永远不会有多个目录项。 这可确保单个包的目录项始终可以明确地按提交时间戳进行排序。
 
-没有永远不会为每个目录的多个提交`commitTimeStamp`。 换而言之，`commitId`是冗余的`commitTimeStamp`。
+每个目录的提交永远不会超过一个 `commitTimeStamp` 。 换言之， `commitId` 是的冗余 `commitTimeStamp` 。
 
-与此相反[包元数据资源](registration-base-url-resource.md)、 包 ID 索引、 目录是索引 （和可查询） 只能由时间。
+与按包 ID 编制索引的[包元数据资源](registration-base-url-resource.md)不同，目录仅通过时间进行索引（和查询）。
 
-目录项总是会添加到的目录中的单调递增的、 按时间顺序。 这意味着，如果在时间 X 添加目录提交则没有目录提交会不断添加时间小于或等于 X。
+目录项始终按单调递增的时间顺序添加到目录中。 这意味着，如果在时间 X 添加目录提交，则不会使用小于或等于 X 的时间来添加目录提交。
 
-以下请求提取目录索引。
+以下请求将获取目录索引。
 
     GET {@id}
 
-目录索引是包含具有以下属性的对象的 JSON 文档：
+目录索引是一个 JSON 文档，其中包含具有以下属性的对象：
 
-名称            | 类型             | 必需 | 说明
+名称            | 类型             | 必需 | 备注
 --------------- | ---------------- | -------- | -----
-commitId        | string           | 是      | 与最新提交关联的唯一 ID
-commitTimeStamp | string           | 是      | 最新的提交时间戳
-count           | 整数          | 是      | 在索引中的页面数
-项           | 对象的数组 | 是      | 对象，表示页的每个对象的数组
+commitId        | 字符串           | 是      | 与最新提交关联的唯一 ID
+commitTimeStamp | 字符串           | 是      | 最近提交的时间戳
+count           | integer          | 是      | 索引中的页数
+items           | 对象数组 | 是      | 对象的数组，每个对象表示一个页
 
-在每个元素`items`数组是具有一些有关每个页面的最小的详细信息的对象。 这些页面对象不包含目录叶 （项）。 未定义此数组中元素的顺序。 可按内存使用中的客户端排序页及其`commitTimeStamp`属性。
+数组中的每个元素 `items` 都是一个对象，其中包含有关每个页面的一些最少的详细信息。 这些页面对象不包含目录叶（items）。 未定义此数组中元素的顺序。 客户端可以使用其属性在内存中对页面进行排序 `commitTimeStamp` 。
 
-由于新的页进行介绍，`count`递增和新对象将显示在`items`数组。
+随着新页的引入， `count` 将递增，新的对象将出现在数组中 `items` 。
 
-将项目添加到目录，该索引的`commitId`将更改和`commitTimeStamp`会增加。 这两个属性是通过所有页实质上是摘要`commitId`并`commitTimeStamp`中的值以`items`数组。
+在将项添加到目录中时，索引的 `commitId` 将会更改，并且 `commitTimeStamp` 将增加。 这两个属性本质上是对 `commitId` 数组中所有页面和值的汇总 `commitTimeStamp` `items` 。
 
-### <a name="catalog-page-object-in-the-index"></a>在索引中的目录页对象
+### <a name="catalog-page-object-in-the-index"></a>索引中的目录页对象
 
-目录索引中找到的目录页对象`items`属性具有以下属性：
+在目录索引的属性中找到的目录页对象 `items` 具有以下属性：
 
-名称            | 类型    | 必需 | 说明
+名称            | 类型    | 必需 | 备注
 --------------- | ------- | -------- | -----
-@id             | string  | 是      | 提取目录页面的 URL
-commitId        | string  | 是      | 使用此页中的最新提交关联的唯一 ID
-commitTimeStamp | string  | 是      | 在此页中的最新提交的时间戳
-count           | 整数 | 是      | 在目录页中的项的数目
+@id             | 字符串  | 是      | 要提取目录页的 URL
+commitId        | 字符串  | 是      | 与此页中的最新提交关联的唯一 ID
+commitTimeStamp | 字符串  | 是      | 此页中的最新提交的时间戳
+count           | integer | 是      | 目录页中的项数
 
-与此相反[包元数据资源](registration-base-url-resource.md)在某些情况下，内嵌元素离开到索引中，目录叶是永远不会内联到索引，始终必须通过使用页面的提取`@id`URL。
+与[包元数据资源](registration-base-url-resource.md)相比，在某些情况下，inlines 留在索引中，目录叶从不内联到索引中，必须始终使用页面的 URL 来提取 `@id` 。
 
 ### <a name="sample-request"></a>示例请求
 
@@ -103,47 +103,47 @@ count           | 整数 | 是      | 在目录页中的项的数目
 
 ## <a name="catalog-page"></a>目录页
 
-目录页是目录项的集合。 这是使用其中一个提取的文档`@id`目录索引中找到的值。 目录页面的 URL 不应为可预测，并应使用仅目录索引发现。
+"目录" 页是目录项的集合。 它是使用 `@id` 目录索引中找到的值之一提取的文档。 目录页的 URL 不应是可预测的，只应使用目录索引来发现。
 
-新目录项添加到目录索引只能与最高的提交时间戳中的页或到新页面。 一旦具有更高版本的提交时间戳的页面添加到目录中，较早的页面永远不会添加或更改。
+新的目录项仅添加到具有最高提交时间戳或新页的目录索引页面。 将具有较高提交时间戳的页面添加到目录后，将永远不会将较旧的页面添加到或更改。
 
-目录页文档是具有以下属性的 JSON 对象：
+目录页文档是包含以下属性的 JSON 对象：
 
-名称            | 类型             | 必需 | 说明
+名称            | 类型             | 必需 | 备注
 --------------- | ---------------- | -------- | -----
-commitId        | string           | 是      | 使用此页中的最新提交关联的唯一 ID
-commitTimeStamp | string           | 是      | 在此页中的最新提交的时间戳
-count           | 整数          | 是      | 在页中的项的数目
-项           | 对象的数组 | 是      | 此页中的目录项
-父级 (parent)          | string           | 是      | 到目录索引 URL
+commitId        | 字符串           | 是      | 与此页中的最新提交关联的唯一 ID
+commitTimeStamp | 字符串           | 是      | 此页中的最新提交的时间戳
+count           | integer          | 是      | 页面中的项目数
+items           | 对象数组 | 是      | 此页中的目录项
+父级 (parent)          | 字符串           | 是      | 目录索引的 URL
 
-在每个元素`items`数组是具有一些有关目录项的最小的详细信息的对象。 这些项对象不包含的所有目录项的数据。 在页面的项的顺序`items`数组未定义。 可按内存使用中的客户端排序项及其`commitTimeStamp`属性。
+数组中的每个元素 `items` 都是一个对象，其中包含有关目录项的一些最少的详细信息。 这些项对象不包含目录项的所有数据。 页的数组中项的顺序 `items` 未定义。 客户端可以使用其属性在内存中对项进行排序 `commitTimeStamp` 。
 
-在页面中的目录项的数目由服务器实现定义。 对于 nuget.org，最多有 550 项在每个页中，尽管的实际数目的时间可能会更小，具体取决于在下一步提交批大小某些页面。
+页中目录项的数目由服务器实现定义。 对于 nuget.org，每个页面中最多包含550个项目，但对于某些页面，实际数字可能较小，具体取决于下一个提交批处理的时间点大小。
 
-引入了新项，如`count`递增和新的目录项对象出现在`items`数组。
+引入新项 `count` 后，会递增，新目录项对象会出现在数组中 `items` 。
 
-将项目添加到页上，`commitId`更改和`commitTimeStamp`会增加。 这两个属性对所有是实质上是摘要`commitId`并`commitTimeStamp`中的值以`items`数组。
+当向页面添加项时，所 `commitId` 做的更改和将 `commitTimeStamp` 增加。 这两个属性本质上是对 `commitId` 数组中所有和值的汇总 `commitTimeStamp` `items` 。
 
-### <a name="catalog-item-object-in-a-page"></a>目录项在页面中的对象
+### <a name="catalog-item-object-in-a-page"></a>页面中的目录项对象
 
-在目录页中找到的目录项对象`items`属性具有以下属性：
+在目录页的属性中找到的目录项对象 `items` 具有以下属性：
 
-名称            | 类型    | 必需 | 说明
+名称            | 类型    | 必需 | 备注
 --------------- | ------- | -------- | -----
-@id             | string  | 是      | 要提取的目录项的 URL
-@type           | string  | 是      | 目录项的类型
-commitId        | string  | 是      | 与此目录项关联的提交 ID
-commitTimeStamp | string  | 是      | 此目录项的提交时间戳
-nuget:id        | string  | 是      | 该叶与包 ID
-nuget:version   | string  | 是      | 该叶与包版本
+@id             | 字符串  | 是      | 要提取目录项的 URL
+@type           | 字符串  | 是      | 目录项的类型
+commitId        | 字符串  | 是      | 与此目录项关联的提交 ID
+commitTimeStamp | 字符串  | 是      | 此目录项的提交时间戳
+nuget： id        | 字符串  | 是      | 此叶相关的包 ID
+nuget：版本   | 字符串  | 是      | 此叶相关的包版本
 
-`@type`值将是以下两个值之一：
+`@type`该值将是以下两个值之一：
 
-1. `nuget:PackageDetails`： 这对应于`PackageDetails`目录叶文档中的类型。
-1. `nuget:PackageDelete`： 这对应于`PackageDelete`目录叶文档中的类型。
+1. `nuget:PackageDetails`：对应于 `PackageDetails` 目录叶文档中的类型。
+1. `nuget:PackageDelete`：对应于 `PackageDelete` 目录叶文档中的类型。
 
-有关详细信息意味着每个类型，请参阅[相对应的项类型](#item-types)下面。
+有关每种类型含义的更多详细信息，请参阅下面的[相应项类型](#item-types)。
 
 ### <a name="sample-request"></a>示例请求
 
@@ -155,79 +155,87 @@ nuget:version   | string  | 是      | 该叶与包版本
 
 ## <a name="catalog-leaf"></a>目录叶
 
-目录叶包含有关特定包 ID 和版本在某个时间点的元数据的时间。 这是使用提取的文档`@id`目录页中找到的值。 为目录叶的 URL 不应为可预测，并且应使用目录页发现。
+目录叶包含某些时间点特定包 ID 和版本的相关元数据。 它是使用 `@id` 目录页中的值提取的文档。 目录叶的 URL 不应是可预测的，应仅使用目录页来发现。
 
-目录叶文档是具有以下属性的 JSON 对象：
+目录叶文档是包含以下属性的 JSON 对象：
 
-名称                    | 类型                       | 必需 | 说明
+名称                    | 类型                       | 必需 | 备注
 ----------------------- | -------------------------- | -------- | -----
 @type                   | 字符串或字符串数组 | 是      | 目录项的类型
-catalog:commitId        | string                     | 是      | 一个与此目录项关联的提交 ID
-catalog:commitTimeStamp | string                     | 是      | 此目录项的提交时间戳
-id                      | string                     | 是      | 目录项的包 ID
-已发布               | string                     | 是      | 包的目录项的发布的日期
-version                 | string                     | 是      | 目录项的包版本
+目录： commitId        | 字符串                     | 是      | 与此目录项关联的提交 ID
+目录： commitTimeStamp | 字符串                     | 是      | 此目录项的提交时间戳
+id                      | 字符串                     | 是      | 目录项的包 ID
+published               | 字符串                     | 是      | 包目录项的发布日期
+版本                 | 字符串                     | 是      | 目录项的包版本
 
 ### <a name="item-types"></a>项类型
 
-`@type`属性为字符串数组。 为方便起见，如果`@type`值是一个字符串，它应视为一个大小的任何数组。 并非所有可能值`@type`记录。 但是，每个目录项有两个以下字符串类型值之一：
+`@type`属性是字符串或字符串数组。 为方便起见，如果 `@type` 值为字符串，则应将其视为大小为1的任意数组。 并非的所有可能值 `@type` 都有记录。 但是，每个目录项都有以下两个字符串类型值中的一个：
 
-1. `PackageDetails`： 表示包元数据的快照
-1. `PackageDelete`： 表示已删除的包
+1. `PackageDetails`：表示包元数据的快照
+1. `PackageDelete`：表示已删除的包
 
-### <a name="package-details-catalog-items"></a>包的详细信息的目录项
+### <a name="package-details-catalog-items"></a>包详细信息目录项
 
-目录项类型的`PackageDetails`包含特定包 （ID 和版本组合） 的包元数据的快照。 如果包源遇到的任何以下情况下，则会生成包目录项的详细信息：
+类型为的目录项 `PackageDetails` 包含特定包的包元数据（ID 和版本组合）的快照。 包源遇到以下任何情况时，将生成包详细信息目录项：
 
-1. 包是**推送**。
-1. 包是**列出**。
-1. 包是**未列出**。
-1. 包是**重排**。
+1. **推送**包。
+1. 已**列出**包。
+1. 未**列出**包。
+1. 包为**重排**。
 
-包重排是实质上是生成包本身的虚设推送，无需更改现有包的管理手势。 在 nuget.org 中，使用目录的后台作业之一修复 bug 后使用重排。
+包重排是一种管理手势，它实质上生成了现有包的虚设推送，无对包本身的任何更改。 在 nuget.org 上，在使用目录的后台作业之一中修复 bug 后，将使用重排。
 
-客户端使用的目录项不应尝试确定哪种方案生成的目录项目。 相反，客户端应只需更新任何维护的视图或索引使用的目录项目中包含的元数据。 此外，应妥善处理重复或冗余目录项 （幂等方式）。
+使用目录项的客户端不应尝试确定哪些方案生成了目录项。 相反，客户端只需用目录项中包含的元数据更新任何已维护的视图或索引。 此外，应妥善处理重复或冗余的目录项目（幂等方式）。
 
-包详细信息的目录项具有以下属性除了[包含在所有目录叶](#catalog-leaf)。
+包详细信息目录项除[包含在所有目录叶上](#catalog-leaf)的属性外，还具有以下属性。
 
-名称                    | 类型                       | 必需 | 说明
+名称                    | 类型                       | 必需 | 备注
 ----------------------- | -------------------------- | -------- | -----
-作者                 | string                     | 否       |
-created                 | string                     | 否       | 首次创建包的时间戳。 回退属性： `published`。
-dependencyGroups        | 对象的数组           | 否       | 按目标框架的包的依赖项分组 ([与包元数据资源相同的格式](registration-base-url-resource.md#package-dependency-group))
-不推荐使用             | object                     | 否       | 不推荐使用与包相关联 ([与包元数据资源相同的格式](registration-base-url-resource.md#package-deprecation))
-说明             | string                     | 否       |
-iconUrl                 | string                     | 否       |
-isPrerelease            | boolean                    | 否       | 是否是预发行包版本。 可以从检测到`version`。
-语言                | string                     | 否       |
-licenseUrl              | string                     | 否       |
-列出                  | boolean                    | 否       | 该程序包是否将列
-minClientVersion        | string                     | 否       |
-packageHash             | string                     | 是      | 使用编码的包的哈希[标准 base64](https://tools.ietf.org/html/rfc4648#section-4)
-packageHashAlgorithm    | string                     | 是      |
-packageSize             | 整数                    | 是      | 包.nupkg 以字节为单位的大小
-projectUrl              | string                     | 否       |
-releaseNotes            | string                     | 否       |
-requireLicenseAgreement | boolean                    | 否       | 假定`false`如果排除
-摘要                 | string                     | 否       |
-标记                    | 字符串数组           | 否       |
-标题                   | string                     | 否       |
-verbatimVersion         | string                     | 否       | 因为它的版本字符串最初位于.nuspec
+作者                 | 字符串                     | 否       |
+created                 | 字符串                     | 否       | 首次创建包时的时间戳。 回退属性： `published` 。
+dependencyGroups        | 对象数组           | 否       | 包的依赖项，按目标框架分组（与[包元数据资源的格式相同](registration-base-url-resource.md#package-dependency-group)）
+弃用             | 对象 (object)                     | 否       | 与包关联的弃用（与[包元数据资源的格式相同](registration-base-url-resource.md#package-deprecation)）
+description             | 字符串                     | 否       |
+iconUrl                 | 字符串                     | 否       |
+isPrerelease            | boolean                    | 否       | 包版本是否为预发布版本。 可以从中检测到 `version` 。
+语言                | 字符串                     | 否       |
+licenseUrl              | 字符串                     | 否       |
+列出                  | boolean                    | 否       | 是否列出包
+minClientVersion        | 字符串                     | 否       |
+packageHash             | 字符串                     | 是      | 包哈希，使用[标准基 64](https://tools.ietf.org/html/rfc4648#section-4)编码
+packageHashAlgorithm    | 字符串                     | 是      |
+packageSize             | integer                    | 是      | 包的大小（以字节为单位） nupkg
+packageTypes            | 对象数组           | 否       | 作者指定的包类型。
+projectUrl              | 字符串                     | 否       |
+releaseNotes            | 字符串                     | 否       |
+requireLicenseAgreement | boolean                    | 否       | 假设 `false` 排除
+摘要                 | 字符串                     | 否       |
+tags                    | 字符串数组           | 否       |
+title                   | 字符串                     | 否       |
+verbatimVersion         | 字符串                     | 否       | 最初在中找到的版本字符串。 nuspec
 
-包`version`属性是在执行规范化后的完整版本字符串。 这意味着，SemVer 2.0.0 生成数据可以包含此处。
+Package `version` 属性是规范化后的完整版本字符串。 这意味着，可以在此处包括 SemVer 2.0.0 生成数据。
 
-`created`包已首次接收到包源，这通常是短时间之前目录项的提交时间戳时时间戳。
+`created`时间戳是包源首次接收包时的时间戳，通常是目录项的提交时间戳之前的短暂时间。
 
-`packageHashAlgorithm`是由服务器实现表示哈希算法用于生成定义的字符串`packageHash`。 始终使用 nuget.org`packageHashAlgorithm`的值`SHA512`。
+`packageHashAlgorithm`是一个由服务器实现定义的字符串，该字符串表示用于生成的哈希算法 `packageHash` 。 nuget.org 始终使用的 `packageHashAlgorithm` 值 `SHA512` 。
+
+`packageTypes`仅当作者指定了包类型时，才会显示该属性。 如果存在，它将始终至少具有一个（1）条目。 数组中的每一项 `packageTypes` 都是具有以下属性的 JSON 对象：
+
+名称      | 类型    | 必需 | 说明
+--------- | ------- | -------- | -----
+name      | 字符串  | 是      | 包类型的名称。
+版本    | 字符串  | 否       | 包类型的版本。 只有在作者显式指定了 nuspec 中的版本时，才会出现此情况。
 
 `published`时间戳是上次列出包的时间。
 
 > [!Note]
-> 在 nuget.org 中，`published`值设置为 1900 年时取消列出包。
+> 在 nuget.org 上， `published` 当包未列出时，该值将设置为1900年。
 
 #### <a name="sample-request"></a>示例请求
 
-获取 https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
+GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
 
 #### <a name="sample-response"></a>示例响应
 
@@ -235,95 +243,95 @@ verbatimVersion         | string                     | 否       | 因为它的�
 
 ### <a name="package-delete-catalog-items"></a>包删除目录项
 
-目录项类型的`PackageDelete`包含少量的包从包源已被删除并且不再可用于任何包的操作 （如还原），指示向目录客户端的信息。
+类型为的目录项 `PackageDelete` 包含一组最小的信息，用于对客户端进行分类，指出包已从包源中删除并且不再可用于任何包操作（如还原）。
 
 > [!NOTE]
-> 很可能要删除的包和更高版本重新发布使用的相同包 ID 和版本。 在 nuget.org 中，这是极少数情况下，因为这会破坏的包 ID 和版本表示特定包内容的官方客户端的假设。 在 nuget.org 上包删除的详细信息，请参阅[我们的策略](../nuget-org/policies/deleting-packages.md)。
+> 包可能会被删除，以后使用相同的包 ID 和版本重新发布。 在 nuget.org 上，这种情况非常罕见，因为它打破了某个包 ID 和版本表示特定包内容的正式客户端假设。 有关 nuget.org 上的包删除的详细信息，请参阅[策略](../nuget-org/policies/deleting-packages.md)。
 
-包删除目录项不包含其他属性除了[包含在所有目录叶](#catalog-leaf)。
+除了[所有目录叶上包含](#catalog-leaf)的属性外，包删除目录项还没有其他属性。
 
-`version`属性是在包.nuspec 中找到的原始版本字符串。
+`version`属性是在 nuspec 中找到的原始版本字符串。
 
-`published`属性是包被删除时，这通常是作为目录项的提交时间戳之前的短时间的时间。
+`published`属性是删除包的时间，通常是目录项的提交时间戳之前的短暂时间。
 
 #### <a name="sample-request"></a>示例请求
 
-获取 https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
+GET https://api.nuget.org/v3/catalog0/data/2017.11.02.00.40.00/netstandard1.4_lib.1.0.0-test.json
 
 #### <a name="sample-response"></a>示例响应
 
 [!code-JSON [catalog-package-delete.json](./_data/catalog-package-delete.json)]
 
-## <a name="cursor"></a>Cursor
+## <a name="cursor"></a>游标
 
 ### <a name="overview"></a>概述
 
-本部分介绍的客户端概念，尽管不一定是托管协议，但应为任何实际目录客户端实现的一部分。
+本部分介绍了尽管协议不一定是由协议强制的客户端概念，但它应是任何实际的目录客户端实现的一部分。
 
-因为目录是时间索引的仅限追加的数据结构，应存储在客户端**游标**本地，最多的时间点在客户端表示已处理目录项。 请注意，应永远不会使用客户端的计算机时钟生成此游标值。 相反，值应来自于目录对象的`commitTimestamp`值。
+由于目录是按时间编制索引的仅限追加的数据结构，因此客户端应在本地存储**游标**，这表示客户端处理目录项的时间点。 请注意，此游标值永远不应使用客户端的计算机时钟生成。 相反，该值应来自目录对象的 `commitTimestamp` 值。
 
-每次客户端想要处理的包源上的新事件，它需要仅查询目录的提交时间戳的所有目录项大于其存储的游标。 客户端已成功处理所有新的目录项后，它会记录作为它的新游标值只是处理目录项的最新的提交时间戳。
+每当客户端想要处理包源上的新事件时，它只需查询其提交时间戳大于其存储游标的所有目录项的目录。 当客户端成功处理所有新的目录项后，它会记录刚刚作为新的游标值处理的目录项的最新提交时间戳。
 
-使用此方法，而客户端可以确保永远不会错过包源发生的任何包事件。
-此外，客户端绝不会重新处理在游标的记录的提交时间戳之前的旧事件。
+使用此方法，客户端可以确保永远不会错过包源上发生的任何包事件。
+此外，客户端永远不需要在游标记录的提交时间戳之前重新处理旧事件。
 
-这一功能强大的游标概念用于许多 nuget.org 后台作业，用于使 V3 API 本身保持最新。 
+这一功能强大的游标概念用于 nuget.org 后台作业，并用于使 V3 API 本身保持最新。 
 
 ### <a name="initial-value"></a>初始值
 
-当目录客户端第一次启动 （并因此具有任何游标值） 时，它应使用默认游标的值。NET 的`System.DateTimeOffset.MinValue`或最小可表示的时间戳的一些此类类似概念。
+当目录客户端首次启动时（因此没有游标值），它应使用的默认游标值。NET `System.DateTimeOffset.MinValue` 或一些这种类似的最小表示时间戳概念。
 
-### <a name="iterating-over-catalog-items"></a>循环访问目录项
+### <a name="iterating-over-catalog-items"></a>遍历目录项
 
 若要查询下一组要处理的目录项，客户端应：
 
-1. 从本地存储区中提取记录的游标值。
+1. 从本地存储提取记录的游标值。
 1. 下载并反序列化目录索引。
-1. 查找所有目录页提交时间戳*大于*光标。
-1. 声明目录项，以便处理空的列表。
-1. 为在步骤 3 中匹配每个目录页：
+1. 查找提交时间戳*大于*游标的所有目录页。
+1. 声明要处理的目录项的空列表。
+1. 对于步骤3中匹配的每个目录页：
    1. 下载并反序列化目录页。
-   1. 查找所有目录项提交时间戳*大于*光标。
-   1. 将所有匹配的目录项添加到在步骤 4 中声明的列表。
-1. 对目录项列表按提交时间戳进行排序。
+   1. 查找提交时间戳*大于*游标的所有目录项。
+   1. 将所有匹配目录项添加到步骤4中声明的列表。
+1. 按提交时间戳对目录项列表进行排序。
 1. 按顺序处理每个目录项：
-   1. 下载并反序列化的目录项目。
-   1. 相应地作出反应到目录项的类型。
-   1. 处理目录项文档以特定于客户端的方式。
-1. 记录为的新游标值的最后一个目录项的提交时间戳。
+   1. 下载并反序列化目录项。
+   1. 对目录项的类型做出适当的反应。
+   1. 以客户端特定的方式处理目录项文档。
+1. 将最后一个目录项的提交时间戳记录为新的游标值。
 
-使用此基本算法，客户端实现可以构建包源上可用的所有包的完整视图。 客户端仅需要执行此算法会定期以始终要清楚的包源的最新更改。
+使用此基本算法，客户端实现可以生成包源上可用的所有包的完整视图。 客户端只需要定期执行此算法，以便始终了解包源的最新更改。
 
 > [!Note]
-> 这是算法的 nuget.org 用来保持[包元数据](registration-base-url-resource.md)，[包内容](package-base-address-resource.md)，[搜索](search-query-service-resource.md)并[记忆式键入功能](search-autocomplete-service-resource.md)最新的资源。
+> 这是 nuget.org 用于保持[包元数据](registration-base-url-resource.md)、[包内容](package-base-address-resource.md)、[搜索](search-query-service-resource.md)和[自动完成](search-autocomplete-service-resource.md)资源最新的算法。
 
-### <a name="dependent-cursors"></a>依赖的游标
+### <a name="dependent-cursors"></a>依赖游标
 
-假设有两个目录客户端具有固有的依赖关系，其中一个客户端的输出取决于另一个客户端的输出。 
+假设有两个目录客户端具有固有的依赖项，其中一个客户端的输出依赖于另一个客户端的输出。 
 
 #### <a name="example"></a>示例
 
-例如，在 nuget.org 上的新发布的包不应出现在搜索资源才会出现在包元数据资源。 这是因为"还原"操作执行的官方 NuGet 客户端使用的包元数据资源。 如果客户将发现使用搜索服务包，他们应能够成功还原该包使用的包元数据资源。 换而言之，搜索资源依赖于包元数据资源。 每个资源都有目录客户端后台作业，更新该资源。 每个客户端具有其自己的光标。
+例如，在 nuget.org 上，新发布的包在包元数据资源中出现之前不应出现在搜索资源中。 这是因为官方 NuGet 客户端执行的 "还原" 操作使用包元数据资源。 如果客户使用搜索服务发现包，他们应该能够使用包元数据资源成功还原该包。 换句话说，搜索资源依赖于包元数据资源。 每个资源都有一个更新该资源的目录客户端后台作业。 每个客户端都有自己的游标。
 
-由于这两个资源是从目录更新搜索资源的目录客户端游标*必须不超过*包元数据目录客户端游标。
+由于这两个资源都是从目录中生成的，因此，更新搜索资源的目录客户端的游标*不得超出*包元数据目录客户端的光标。
 
 #### <a name="algorithm"></a>算法
 
-若要实现这一限制，只需修改上面为算法：
+若要实现此限制，只需将上述算法修改为：
 
-1. 从本地存储区中提取记录的游标值。
+1. 从本地存储提取记录的游标值。
 1. 下载并反序列化目录索引。
-1. 查找所有目录页提交时间戳*大于*光标**小于或等于依赖项的游标。**
-1. 声明目录项，以便处理空的列表。
-1. 为在步骤 3 中匹配每个目录页：
+1. 查找提交时间戳*大于***或等于依赖项的游标**的所有目录页。
+1. 声明要处理的目录项的空列表。
+1. 对于步骤3中匹配的每个目录页：
    1. 下载并反序列化目录页。
-   1. 查找所有目录项提交时间戳*大于*光标**小于或等于依赖项的游标。**
-   1. 将所有匹配的目录项添加到在步骤 4 中声明的列表。
-1. 对目录项列表按提交时间戳进行排序。
+   1. 查找提交时间戳*大于***或等于依赖项的游标**的所有目录项。
+   1. 将所有匹配目录项添加到步骤4中声明的列表。
+1. 按提交时间戳对目录项列表进行排序。
 1. 按顺序处理每个目录项：
-   1. 下载并反序列化的目录项目。
-   1. 相应地作出反应到目录项的类型。
-   1. 处理目录项文档以特定于客户端的方式。
-1. 记录为的新游标值的最后一个目录项的提交时间戳。
+   1. 下载并反序列化目录项。
+   1. 对目录项的类型做出适当的反应。
+   1. 以客户端特定的方式处理目录项文档。
+1. 将最后一个目录项的提交时间戳记录为新的游标值。
 
-使用此修改后的算法，您可以构建系统的依赖目录客户端的所有生成其自己的特定索引、 项目等。
+使用此修改后的算法，可以生成依赖目录客户端的系统，所有这些客户端都生成其自己的特定索引、项目等。
