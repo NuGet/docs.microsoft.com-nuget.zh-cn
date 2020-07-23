@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: a1f9f1d03e9a6e58466fa92426bd655d5e8ed83d
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: b162990eae2160961f560b6c6ee73e47cb4121d6
+ms.sourcegitcommit: f29fa9b93fd59e679fab50d7413bbf67da3ea5b3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "68860622"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86451146"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>包还原错误疑难解答
 
@@ -114,7 +114,7 @@ during build.' You can also give consent by setting the environment variable
 
 ## <a name="other-potential-conditions"></a>其他潜在条件
 
-- 由于缺少文件，你可能会遇到生成错误，并看到提示使用 NuGet 还原来下载它们的消息。 但是，运行还原时可能会出现：“所有包都已安装，无可还原项。” 在这种情况下，请删除 `packages` 文件夹（使用 `packages.config` 时）或 `obj/project.assets.json` 文件（使用 PackageReference 时）并再次运行还原。 如果错误仍然存在，请使用命令行中的 `nuget locals all -clear` 或 `dotnet locals all --clear` 以清除 global-packages  文件夹和缓存文件夹，如[管理全局包和缓存文件夹](managing-the-global-packages-and-cache-folders.md)中所述。
+- 由于缺少文件，你可能会遇到生成错误，并看到提示使用 NuGet 还原来下载它们的消息。 但是，运行还原时可能会出现：“所有包都已安装，无可还原项。” 在这种情况下，请删除 `packages` 文件夹（使用 `packages.config` 时）或 `obj/project.assets.json` 文件（使用 PackageReference 时）并再次运行还原。 如果错误仍然存在，请使用命令行中的 `nuget locals all -clear` 或 `dotnet nuget locals all --clear` 以清除 global-packages  文件夹和缓存文件夹，如[管理全局包和缓存文件夹](managing-the-global-packages-and-cache-folders.md)中所述。
 
 - 从源代码管理获取项目时，项目文件夹可能设置为只读。 更改文件夹权限并尝试重新还原包。
 
