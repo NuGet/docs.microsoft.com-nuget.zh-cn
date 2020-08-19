@@ -1,37 +1,37 @@
 ---
 title: NuGet CLI 验证命令
-description: Nuget.exe 验证命令的参考
+description: nuget.exe verify 命令的参考
 author: dtivel
 ms.author: dtivel
 ms.date: 03/06/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 9510f7323fe0cb860e0dbde51c1eda761846ee27
-ms.sourcegitcommit: efc18d484fdf0c7a8979b564dcb191c030601bb4
+ms.openlocfilehash: 2c501753a16820c5d027441001561c6b637ccda9
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327494"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622598"
 ---
-# <a name="verify-command-nuget-cli"></a>verify 命令 (NuGet CLI)
+# <a name="verify-command-nuget-cli"></a> (NuGet CLI 验证命令) 
 
-**适用于:** 包&bullet;使用**受支持的版本:** 4.6 +
+**适用于：** 包使用 &bullet; **受支持的版本：** 4.6 +
 
 验证包。
 
-在 .NET Core、Mono 或非 Windows 平台上, 尚不支持验证已签名的包。
+在 .NET Core、Mono 或非 Windows 平台上，尚不支持验证已签名的包。
 
-## <a name="usage"></a>用法
+## <a name="usage"></a>使用情况
 
 ```cli
 nuget verify <-All|-Signatures> <package(s)> [options]
 ```
 
-其中`<package(s)>` , 是一个或`.nupkg`多个文件。
+其中 `<package(s)>` ，是一个或多个 `.nupkg` 文件。
 
 ## <a name="nuget-verify--all"></a>nuget 验证-全部
 
-指定应在包上执行所有验证。
+指定应在)  (上执行所有验证。
 
 ## <a name="nuget-verify--signatures"></a>nuget 验证-签名
 
@@ -39,18 +39,31 @@ nuget verify <-All|-Signatures> <package(s)> [options]
 
 ## <a name="options-for-verify--signatures"></a>用于 "验证-签名" 的选项
 
-| 选项 | 描述 |
-| --- | --- |
-| CertificateFingerprint | 指定一个或多个证书的一个或多256个证书指纹, 证书必须用来签名包。 证书 256 SHA-1 指纹是证书的 SHA-256 哈希。 多个输入应以分号分隔。 |
+- **`-CertificateFingerprint`**
+
+  指定一个或多256个证书证书指纹 (s，) 必须用来签署哪些签名包。 证书 256 SHA-1 指纹是证书的 SHA-256 哈希。 多个输入应以分号分隔。
 
 ## <a name="options"></a>选项
 
-| 选项 | 描述 |
-| --- | --- |
-| ConfigFile | 要应用的 NuGet 配置文件。 如果未指定, `%AppData%\NuGet\NuGet.Config`则使用 (Windows `~/.nuget/NuGet/NuGet.Config` ) 或 (Mac/Linux)。|
-| ForceEnglishOutput | 使用固定的、基于英语的区域性强制执行 nuget.exe。 |
-| Help | 显示命令的帮助信息。 |
-| Verbosity | 指定在输出中显示的详细信息量: "*正常*"、"*静默*"、"*详细*"。 |
+- **`-ConfigFile`**
+
+  要应用的 NuGet 配置文件。 如果未指定，则 `%AppData%\NuGet\NuGet.Config` 使用 (Windows) `~/.nuget/NuGet/NuGet.Config` 或 `~/.config/NuGet/NuGet.Config` (Mac/Linux) 。
+
+- **`-ForceEnglishOutput`**
+
+  使用固定的、基于英语的区域性强制运行 nuget.exe。
+
+- **`-?|-help`**
+
+  显示命令的帮助信息。
+
+- **`-NonInteractive`**
+
+  禁止提示用户输入或确认。
+
+- **`-Verbosity [normal|quiet|detailed]`**
+
+  指定在输出中显示的详细信息的数量： `normal` (默认) 、 `quiet` 或 `detailed` 。
 
 ## <a name="examples"></a>示例
 
