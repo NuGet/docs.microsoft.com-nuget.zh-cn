@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/03/2018
 ms.topic: conceptual
-ms.openlocfilehash: be7c10fb6ce60375f77e38f9b604ec33063e52fc
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 2dfbd793eee05169f051d9c8943bc065945b92da
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64498239"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622637"
 ---
 # <a name="packages-in-visual-studio-templates"></a>Visual Studio 模板中的包
 
@@ -93,7 +93,7 @@ VSIX 本身可用作模板所需包的源：
 1. 修改 `.vstemplate` 文件中的 `<packages>` 元素，如下所示：
 
     ```xml
-    <packages repository="template"">
+    <packages repository="template">
         <!-- ... -->
     </packages>
     ```
@@ -119,7 +119,7 @@ VSIX 本身可用作模板所需包的源：
 1. 在 `.vstemplate` 文件的 `<packages>` 元素中，添加属性 `repository="registry"` 并在 `keyName` 属性中指定注册表项名称。
 
     - 如果已预先解压缩包，请使用 `isPreunzipped="true"` 属性。
-    - (NuGet 3.2 +) 如果希望在包安装结束时强制执行设计时生成，请添加 `forceDesignTimeBuild="true"` 属性。
+    - (NuGet 3.2 +) 如果希望在包安装结束时强制执行设计时生成，请添加 `forceDesignTimeBuild="true"` 属性。**
     - 作为优化，添加 `skipAssemblyReferences="true"`，因为模板本身已包括必要的引用。
 
         ```xml

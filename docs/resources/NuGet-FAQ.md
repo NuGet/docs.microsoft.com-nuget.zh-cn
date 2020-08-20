@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8cc990e0c9eed07c59c8dffb04d104be47051736
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 937a0083ca47ba5668059736a7e99f7ca88e8908
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "69999944"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622611"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
@@ -119,37 +119,33 @@ Visual Studio 自动化对象模型中的顶层对象称为 DTE （开发工具�
 
 ## <a name="working-with-packages"></a>使用包
 
-项目级包和解决方案级包之间有何差异？ 
-
-解决方案级包 (NuGet 3.x+) 只需在解决方案上安装一次，随后即可用于该解决方案中的所有项目。 项目级包需在使用它的每个项目中进行安装。 解决方案级包还可以安装可从包管理器控制台中调用的新命令。
-
-是否可以在没有 Internet 连接时安装 NuGet 包？ 
+是否可以在没有 Internet 连接时安装 NuGet 包？****
 
 可以，请参阅 Scott Hanselman 的博客文章 [How to access NuGet when nuget.org is down (or you're on a plane)](http://www.hanselman.com/blog/HowToAccessNuGetWhenNuGetorgIsDownOrYoureOnAPlane.aspx)（如何在 nuget.org 不可用（或用户在飞机上）时访问 NuGet）(hanselman.com)。
 
-如何在默认包文件夹以外的其他位置安装包？ 
+如何在默认包文件夹以外的其他位置安装包？****
 
 请使用 `nuget config -set repositoryPath=<path>` 设置 `Nuget.Config` 中的 [`repositoryPath`](../reference/nuget-config-file.md#config-section) 设置。
 
-如何避免将 NuGet 包文件夹中添加到源代码管理中？ 
+如何避免将 NuGet 包文件夹中添加到源代码管理中？****
 
 请将 `Nuget.Config` 中的 [`disableSourceControlIntegration`](../reference/nuget-config-file.md#solution-section) 设置为 `true`。 此密钥适用于解决方案级别，因此需要添加到 `$(Solutiondir)\.nuget\Nuget.Config` 文件中。 从 Visual Studio 中启用包还原将自动创建此文件。
 
-如何关闭包还原？ 
+如何关闭包还原？****
 
 请参阅[启用和禁用包还原](../consume-packages/package-restore.md#enable-and-disable-package-restore-in-visual-studio)。
 
-安装具有远程依赖项的本地包时，为何会出现“无法解析依赖项”错误？ 
+安装具有远程依赖项的本地包时，为何会出现“无法解析依赖项”错误？****
 
-将本地包安装到项目中时，需要选择“所有”源  。 这样可以聚合所有源，而不只是一个源。 本地存储库用户通常不希望因为公司政策而意外安装远程包，因此才会出现此错误。
+将本地包安装到项目中时，需要选择“所有”源****。 这样可以聚合所有源，而不只是一个源。 本地存储库用户通常不希望因为公司政策而意外安装远程包，因此才会出现此错误。
 
-如果同一文件夹中有多个项目，如何使用每个项目单独的 packages.config 文件？ 
+如果同一文件夹中有多个项目，如何使用每个项目单独的 packages.config 文件？****
 
 对于各个项目位于单独文件夹中的大多数项目，用户不必考虑此问题，因为 NuGet 会识别每个项目中的 `packages.config` 文件。 如果使用 NuGet 3.3+ 并且同一文件夹中有多个项目，可将项目名称插入 `packages.config` 文件名（使用 `packages.{project-name}.config` 模式），然后 NuGet 将使用该文件。
 
 使用 PackageReference 时不必考虑此问题，因为每个项目文件仅包含自己的依赖项列表。
 
-存储库列表中未显示 nuget.org，应如何让其重新显示？ 
+存储库列表中未显示 nuget.org，应如何让其重新显示？****
 
 - 将 `https://api.nuget.org/v3/index.json` 添加到源列表；或
 - 删除 `%appdata%\.nuget\NuGet.Config` (Windows) 或 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) 并指示 NuGet 重新创建它。
