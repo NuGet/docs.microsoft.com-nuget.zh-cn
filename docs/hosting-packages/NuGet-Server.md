@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 098375b2bba13675ba5d80a27e0226dc2ee39e77
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7a806e6b586c63c701642c9e43865cb077d7999c
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79059509"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88623040"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 
@@ -26,7 +26,7 @@ NuGet.Server 是由 .NET Foundation 提供的包，其创建的 ASP.NET 应用�
 
 ## <a name="create-and-deploy-an-aspnet-web-application-with-nugetserver"></a>使用 NuGet.Server 创建和部署 ASP.NET Web 应用程序
 
-1. 在 Visual Studio 中，选择“文件”>“新建”>“项目”  ，搜索“ASP.NET Web 应用程序 (.NET Framework)”，选择适用于 C# 的匹配模板。
+1. 在 Visual Studio 中，选择“文件”>“新建”>“项目”，搜索“ASP.NET Web 应用程序(.NET Framework)”，然后选择与 C# 匹配的模板 。
 
     ![选择 .NET Framework Web 项目模板](media/Hosting_00-NuGet.Server-ProjectType.png)
 

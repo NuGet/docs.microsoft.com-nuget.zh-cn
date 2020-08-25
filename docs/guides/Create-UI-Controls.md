@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: da8c5a05311c790bf6b873bc0f1a077d3ef1db87
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e1ebf5042597693ee55d986a4f93e797c27ad30a
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73610621"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88622702"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>以 NuGet 包形式创建 UI 控件
 
@@ -46,7 +46,7 @@ ms.locfileid: "73610621"
 ```xml
 <FileList>
   <File Reference = "your_package_file">
-    <ToolboxItems VSCategory="vs_category" BlendCategory="blend_category">
+    <ToolboxItems UIFramework="WPF" VSCategory="vs_category" BlendCategory="blend_category">
       <Item Type="type_full_name_1" />
 
       <!-- Any number of additional Items -->
@@ -61,6 +61,7 @@ ms.locfileid: "73610621"
 
 - *your_package_file*：控件文件的名称，例如 `ManagedPackage.winmd`（“ManagedPackage”是本示例中随意起的名称，没有其他意义）。
 - *vs_category*：Visual Studio 设计器工具箱中应出现控件的组的标签。 `VSCategory` 对控件出现在工具箱中是必要的。
+*ui_framework*：框架的名称（例如“WPF”），请注意，Visual Studio 16.7 预览版 3 或更高版本的 ToolboxItems 节点上必须具有 `UIFramework` 属性，控件才能出现在工具箱中。
 - *blend_category*：Blend 设计器的“资产”窗格中应出现控件的组的标签。 `BlendCategory` 对控件出现在“资产”中是必要的。
 - *type_full_name_n*：每个控件的完全限定名称，包括命名空间，例如 `ManagedPackage.MyCustomControl`。 注意，点格式用于托管和本机类型。
 
@@ -71,7 +72,7 @@ ms.locfileid: "73610621"
 ```xml
 <FileList>
   <File Reference = "ManagedPackage.winmd">
-    <ToolboxItems VSCategory="Managed Package" BlendCategory="Managed Package">
+    <ToolboxItems UIFramework="WPF" VSCategory="Managed Package" BlendCategory="Managed Package">
       <Item Type="ManagedPackage.MyCustomControl" />
     </ToolboxItems>
   </File>
@@ -120,7 +121,7 @@ NuGet 将自动检查正在使用项目的 TPMinV，如果低于 Windows 10 Anni
 
 ## <a name="add-design-time-support"></a>添加设计时支持
 
-要配置控件属性在属性检查器中显示的位置、添加自定义装饰器等，请将 `design.dll` 文件放在目标平台对应的 `lib\uap10.0.14393\Design` 文件夹中。 此外，要确保[“编辑模板”>“编辑副本”](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)功能正常工作，必须包含 `Generic.xaml` 及其在 `<your_assembly_name>\Themes` 文件夹中合并的任何资源字典（同样，使用实际的程序集名称）  。 （此文件对控件的运行时行为不产生影响。）文件夹结构将如下所示：
+要配置控件属性在属性检查器中显示的位置、添加自定义装饰器等，请将 `design.dll` 文件放在目标平台对应的 `lib\uap10.0.14393\Design` 文件夹中。 此外，要确保[“编辑模板”>“编辑副本”](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)功能正常工作，必须包含 `Generic.xaml` 及其在 `<your_assembly_name>\Themes` 文件夹中合并的任何资源字典（同样，使用实际的程序集名称）****。 （此文件对控件的运行时行为不产生影响。）文件夹结构将如下所示：
 
     \lib
       \uap10.0.14393
@@ -146,14 +147,14 @@ NuGet 将自动检查正在使用项目的 TPMinV，如果低于 Windows 10 Anni
 
 ## <a name="use-strings-and-resources"></a>使用字符串和资源
 
-可以将字符创资源 (`.resw`) 嵌入在控件或者使用的 UWP 项目可使用的包中，将 `.resw` 文件的“生成操作”属性设为 PRIResource   。
+可以将字符创资源 (`.resw`) 嵌入在控件或者使用的 UWP 项目可使用的包中，将 `.resw` 文件的“生成操作”属性设为 PRIResource********。
 
 有关示例，请参考 ExtensionSDKasNuGetPackage 示例中的 [MyCustomControl.cs](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/ManagedPackage/MyCustomControl.cs)。
 
 > [!Note]
 > 这仅适用于 UWP 控件。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [创建 UWP 包](create-uwp-packages.md)
 - [ExtensionSDKasNuGetPackage 示例](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)

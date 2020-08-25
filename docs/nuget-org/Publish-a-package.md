@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 02c6c8f3018bfd063c2d16a10381f88b54cac840
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: dc20e43bfb43a4b6e47297fb3446319860034d46
+ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428635"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88623016"
 ---
 # <a name="publishing-packages"></a>发布包
 
@@ -46,7 +46,8 @@ ms.locfileid: "79428635"
 
 ### <a name="command-line"></a>命令行
 
-若要将包推送到 nuget.org，必须使用实现所需 [NuGet 协议](../api/nuget-protocols.md)的 [nuget.exe v4.1.0 或更高版本](https://www.nuget.org/downloads)。 还需要在 nuget.org 上创建的 API 密钥。
+若要将包推送到 nuget.org，首先需要一个 API 密钥，该密钥是在 nuget.org 上创建的。必须使用 dotnet.exe (.NET Core) 或 nuget.exe v4.1.0 或更高版本，它可实现所需的 NuGet 协议。
+有关详细信息，请参阅 [.NET Core](https://docs.microsoft.com/dotnet/core/install/)、[nuget.exe](https://www.nuget.org/downloads) 和 [NuGet 协议](../api/nuget-protocols.md)。
 
 #### <a name="create-api-keys"></a>创建 API 密钥
 
@@ -68,7 +69,7 @@ ms.locfileid: "79428635"
 
     > [!NOTE]
     > API 密钥不用于向专用源进行身份验证。 请参考 [`nuget sources` 命令](../reference/cli-reference/cli-ref-sources.md)来管理用于向源进行身份验证的凭据。
-    > API 密钥可以从单个 NuGet 服务器获取。 要为 nuget.org 创建和管理 APIKey，请参阅 [publish-api-key](../quickstart/includes/publish-api-key.md)
+    > API 密钥可以从单个 NuGet 服务器获取。 若要为 nuget.org 创建和管理 APIKey，请参阅[创建 API 密钥](#create-api-keys)。
 
 1. 使用以下命令将包推送到 NuGet 库：
 
