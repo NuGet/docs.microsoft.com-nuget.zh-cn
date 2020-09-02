@@ -5,12 +5,12 @@ author: advay26
 ms.author: t-adtand
 ms.date: 08/17/2020
 ms.topic: reference
-ms.openlocfilehash: 35e4906960534299418cb2a17c190476708b2634
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 8d63efefb8f14c03fbe3986d8d7eebcc3eb5bcac
+ms.sourcegitcommit: 6cda91f135e58cf57a2471b0c7c4a2f748f40024
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623250"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359677"
 ---
 # <a name="search-command-nuget-cli"></a> (NuGet CLI) 搜索命令
 
@@ -31,20 +31,18 @@ nuget search [search terms] [options]
 | 名称 | 说明 | 使用情况 |
 | ---  |     ---     |  :-:  |
 | 早期 | 默认情况下不包括预发行包，但可以通过使用此参数包含这些包 | -预发行版 |
-| 源 | 要搜索的特定包源 () ，而不是查询中的默认源 __nuget.config__ | -源 `<Source URL>`|
+| Source | 要搜索的特定包源 () ，而不是查询中的默认源 __nuget.config__ | -源 `<Source URL>`|
 | Take | 要返回的结果数。 默认值为 20。 | -Take `<positive integer>` |
-| 详细程度 | 要在输出中显示的详细信息的级别。 默认值为 " _正常_"。  (参见下面的注释)   | -详细级别 `<quiet\|normal\|detailed>` |
+| 详细程度 | 要在输出中显示的详细信息的级别。 默认值为 " _正常_"。  (参见下面的注释)   | -详细级别 `<quiet|normal|detailed>` |
 | 帮助 | 显示命令的帮助信息 | -Help |
 
 另请参阅 [环境变量](cli-ref-environment-variables.md)
 
-注意
-
-详细级别：
-
-* _quiet_ -程序包 ID，版本
-* _标准_ 包 ID、版本、下载、说明预览
-* _详细_ -包 ID、版本、下载、完整说明、其他信息，如查询 URL
+> [!NOTE] 
+> 详细级别：
+> * _quiet_ -程序包 ID，版本
+> * _标准_ 包 ID、版本、下载、说明预览
+> * _详细_ -包 ID、版本、下载、完整说明、其他信息，如查询 URL
 
 ## <a name="examples"></a>示例
 
