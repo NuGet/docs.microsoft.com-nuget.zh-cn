@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b615bcb78ad2eaf8524bfbf17864d4652e546ff1
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: c604d20c6358b7da5b1294ae48d9b7452794102f
+ms.sourcegitcommit: 6cda91f135e58cf57a2471b0c7c4a2f748f40024
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80151220"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359640"
 ---
 在包的 NuGet.org 页面上所示的包可选说明从用于 `.csproj` 文件中的 `<description></description>` 拉取，或者通过 [.nuspec 文件](../../reference/nuspec.md)中的 `$description` 拉取。
 
@@ -25,5 +25,5 @@ ms.locfileid: "80151220"
       REST API Reference for Blob Service - https://docs.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api
     </Description>
   </PropertyGroup>
-</PropertyGroup>
+</Project>
 ```
