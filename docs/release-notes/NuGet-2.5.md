@@ -6,50 +6,50 @@ ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
 ms.openlocfilehash: 940582d5173f5a53dcd04cf1258fc02a2439af4e
-ms.sourcegitcommit: ddb52131e84dd54db199ce8331f6da18aa3feea1
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79428293"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237073"
 ---
 # <a name="nuget-25-release-notes"></a>NuGet 2.5 发行说明
 
-[Nuget 2.2.1 发行说明](../release-notes/nuget-2.2.1.md) | [Nuget 2.6 发行说明](../release-notes/nuget-2.6.md)
+[NuGet 2.2.1 发行说明](../release-notes/nuget-2.2.1.md)  | [NuGet 2.6 发行说明](../release-notes/nuget-2.6.md)
 
-NuGet 2.5 于2013年4月25日发布。 此版本非常大，我们认为我们会跳过版本2.3 和2.4！ 迄今为止，这是我们为 NuGet 提供的最大版本，其中包含160多个[工作项](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.5&status=all)。
+NuGet 2.5 于2013年4月25日发布。 此版本非常大，我们认为我们会跳过版本2.3 和2.4！ 迄今为止，这是我们为 NuGet 提供的最大版本，其中包含160多个 [工作项](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.5&status=all) 。
 
 ## <a name="acknowledgements"></a>致谢
 
 我们想感谢以下外部参与者对 NuGet 2.5 的重大贡献：
 
-1. [Daniel Plaisted](https://www.codeplex.com/site/users/view/dsplaisted) （[@dsplaisted](https://twitter.com/dsplaisted)）
+1. [Daniel Plaisted](https://www.codeplex.com/site/users/view/dsplaisted) ([@dsplaisted](https://twitter.com/dsplaisted)) 
     - [#2847](https://nuget.codeplex.com/workitem/2847) -将 MonoAndroid、Monotouch.dialog 和 MonoMac 添加到已知目标框架标识符的列表。
-2. [Andres Aragoneses](https://www.codeplex.com/site/users/view/knocte) （[@knocte](https://twitter.com/knocte)）
-    - [#2865](https://nuget.codeplex.com/workitem/2865) -修复区分大小写的操作系统的 `NuGet.targets` 的拼写
-3. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) （[@davidfowl](https://twitter.com/davidfowl)）
+2. [Andres Aragoneses](https://www.codeplex.com/site/users/view/knocte) ([@knocte](https://twitter.com/knocte)) 
+    - [#2865](https://nuget.codeplex.com/workitem/2865) -修复 `NuGet.targets` 区分大小写的操作系统的拼写
+3. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl)) 
     - 使解决方案在 Mono 上构建。
-4. [Andrew Theken](https://www.codeplex.com/site/users/view/atheken) （[@atheken](https://twitter.com/atheken)）
+4. [Andrew Theken](https://www.codeplex.com/site/users/view/atheken) ([@atheken](https://twitter.com/atheken)) 
     - 修复 Mono 上失败的单元测试。
-5. [Marc-olivier Dagenais](https://www.codeplex.com/site/users/view/OliIsCool) （[@OliIsCool](https://twitter.com/oliiscool)）
-    - [#2920](https://nuget.codeplex.com/workitem/2920) -nuget.exe 包命令未将属性传播到 MSBuild
-6. [Miroslav Bajtos](https://www.codeplex.com/site/users/view/MiroslavBajtos) （[@bajtos](https://twitter.com/bajtos)）
+5. [Marc-olivier Dagenais](https://www.codeplex.com/site/users/view/OliIsCool) ([@OliIsCool](https://twitter.com/oliiscool)) 
+    - [#2920](https://nuget.codeplex.com/workitem/2920) nuget.exe pack 命令未将属性传播到 MSBuild
+6. [Miroslav Bajtos](https://www.codeplex.com/site/users/view/MiroslavBajtos) ([@bajtos](https://twitter.com/bajtos)) 
     - 用于保留格式的[#1511](https://nuget.codeplex.com/workitem/1511)修改的 XML 处理代码。
-7. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) （[@adamralph](https://twitter.com/adamralph)）
+7. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph)) 
     - 已将识别的字词添加到自定义字典，以允许成功生成 .cmd。
 8. [Bruno Roggeri](https://www.codeplex.com/site/users/view/broggeri)
     - 在本地化和中运行时修复单元测试
 9. [Gareth Evans](https://www.codeplex.com/site/users/view/garethevans)
     - 已从 PackageService 中提取接口
-10. [Maxime Brugidou](https://www.codeplex.com/site/users/view/brugidou) （[@brugidou](https://twitter.com/brugidou)）
+10. [Maxime Brugidou](https://www.codeplex.com/site/users/view/brugidou) ([@brugidou](https://twitter.com/brugidou)) 
      - [#936](https://nuget.codeplex.com/workitem/936) -在打包时处理项目依赖项
-11. [Xavier Decoster](https://www.codeplex.com/site/users/view/XavierDecoster) （[@XavierDecoster](https://twitter.com/xavierdecoster)）
-     - [#2991](https://nuget.codeplex.com/workitem/2991)，在 cofig 文件中存储包源凭据时， [#3164](https://nuget.codeplex.com/workitem/3164)支持明文密码
-12. [James Manning](http://www.codeplex.com/site/users/view/jmanning) （[@manningj](https://twitter.com/manningj)）
-     - [#3190](http://nuget.codeplex.com/workitem/3190)， [#3191](http://nuget.codeplex.com/workitem/3191)修复获取包帮助说明
+11. [Xavier Decoster](https://www.codeplex.com/site/users/view/XavierDecoster) ([@XavierDecoster](https://twitter.com/xavierdecoster)) 
+     - [#2991](https://nuget.codeplex.com/workitem/2991)，在 cofig 文件中存储包源凭据时， [#3164](https://nuget.codeplex.com/workitem/3164) 支持明文密码
+12. [James Manning](http://www.codeplex.com/site/users/view/jmanning) ([@manningj](https://twitter.com/manningj)) 
+     - [#3190](http://nuget.codeplex.com/workitem/3190)， [#3191](http://nuget.codeplex.com/workitem/3191) 修复 Get-Package 帮助说明
 
 此外，我们还会感谢以下人员查找在最终版本之前批准和修复的 NuGet 2.5 Beta/RC bug：
 
-1. [Tony 墙](https://www.codeplex.com/site/users/view/CodeChief)（[@CodeChief](https://twitter.com/codechief)）
+1. [Tony 墙](https://www.codeplex.com/site/users/view/CodeChief) ([@CodeChief](https://twitter.com/codechief)) 
     - [#3200](https://nuget.codeplex.com/workitem/3200) -MSTest 中断了最新 NuGet 2.4 和2.5 版本
 
 ## <a name="notable-features-in-the-release"></a>版本中值得注意的功能
@@ -60,19 +60,19 @@ NuGet 2.5 于2013年4月25日发布。 此版本非常大，我们认为我们�
 
 ![覆盖内容文件](./media/NuGet-2.5/overwrite-file.png)
 
-"nuget.exe update" 和 "安装包" 现在都有一个新选项 "-FileConflictAction" 用于为命令行方案设置某些默认值。
+"nuget.exe 更新" 和 "安装包" 现在都有一个新选项 "-FileConflictAction" 用于为命令行方案设置某些默认值。
 
 当目标项目中已存在来自包的文件时，设置默认操作。 设置为 "覆盖" 以始终覆盖文件。 设置为 "Ignore" 可跳过文件。 如果未指定，则会提示输入每个冲突的文件。
 
 ### <a name="automatic-import-of-msbuild-targets-and-props-files"></a>MSBuild 目标和属性文件的自动导入
 
-已在 NuGet 包的顶层创建了一个新的传统文件夹。  作为对等的 `\lib`、`\content`和 `\tools`，你现在可以在包中包含 `\build` 文件夹。  在此文件夹下，可以将两个具有固定名称的文件、`{packageid}.targets` 或 `{packageid}.props`。 这两个文件可以直接位于 `build` 下，也可以在特定于框架的文件夹下直接进行，就像其他文件夹一样。 选择最佳匹配框架文件夹的规则与这些文件夹的规则完全相同。
+已在 NuGet 包的顶层创建了一个新的传统文件夹。  作为对、和的对等， `\lib` `\content` `\tools` 你现在可以 `\build` 在包中包含一个文件夹。  在此文件夹下，您可以放置两个具有固定名称的文件， `{packageid}.targets` 或 `{packageid}.props` 。 这两个文件可以直接位于 `build` 框架特定的文件夹下，也可以在其下，就像其他文件夹一样。 选择最佳匹配框架文件夹的规则与这些文件夹的规则完全相同。
 
-当 NuGet 安装带有 \build 文件的包时，它会将项目文件中的 MSBuild `<Import>` 元素添加到 `.targets` 并 `.props` 文件中。 `.props` 文件会添加到顶部，而 `.targets` 文件会添加到底部。
+当 NuGet 使用 \build 文件安装包时，它将 `<Import>` 在指向和文件的项目文件中添加 MSBuild 元素 `.targets` `.props` 。 `.props`文件将添加到顶部，而 `.targets` 文件将添加到底部。
 
-### <a name="specify-different-references-per-platform-using-references-element"></a>使用 `<References/>` 元素为每个平台指定不同的引用
+### <a name="specify-different-references-per-platform-using-references-element"></a>使用元素为每个平台指定不同的引用 `<References/>`
 
-在2.5 之前，用户只能在 `.nuspec` 文件中指定要为所有框架添加的引用文件。 现在，在2.5 中提供了这项新功能，用户可以为每个受支持的平台创作 `<reference/>` 元素，例如：
+在2.5 之前， `.nuspec` 用户只能为所有框架指定要添加的引用文件。 现在，在2.5 中提供了这项新功能，用户可以 `<reference/>` 为每个受支持的平台创作元素，例如：
 
 ```xml
 <references>
@@ -88,15 +88,15 @@ NuGet 2.5 于2013年4月25日发布。 此版本非常大，我们认为我们�
 </references>
 ```
 
-下面是 NuGet 如何根据 `.nuspec` 文件添加对项目的引用的流程：
+下面是 NuGet 如何根据文件添加对项目的引用的流程 `.nuspec` ：
 
-1. 查找适用于目标框架的 `lib` 文件夹，并从该文件夹获取程序集列表
+1. 查找 `lib` 适用于目标框架的文件夹，并从该文件夹获取程序集列表
 1. 分别查找适用于目标框架的引用组，并从该组获取程序集列表。 未指定目标框架的引用组是回退组。
 1. 查找两个列表的交集，并将其用作要添加的引用
 
-如果需要在多个 `lib` 文件夹中包含重复的程序集，则此新功能将允许包作者使用 "引用" 功能将程序集的子集应用于不同框架。
+如果需要在多个文件夹中包含重复的程序集，则此新功能将允许包作者使用 "引用" 功能将程序集的子集应用于不同框架 `lib` 。
 
-注意：你目前必须使用 nuget.exe 包才能使用此功能;NuGet 包资源管理器尚不支持。
+注意：你目前必须使用 nuget.exe pack 才能使用此功能;NuGet 包资源管理器尚不支持。
 
 ### <a name="update-all-button-to-allow-updating-all-packages-at-once"></a>"全部更新" 按钮允许同时更新所有包
 
@@ -111,25 +111,25 @@ NuGet 2.5 于2013年4月25日发布。 此版本非常大，我们认为我们�
 
 ![对话框中的 "全部更新" 按钮](./media/NuGet-2.5/update-all.png)
 
-### <a name="improved-project-reference-support-for-nugetexe-pack"></a>改进了对 nuget 包的项目引用支持
+### <a name="improved-project-reference-support-for-nugetexe-pack"></a>提高了对 nuget.exe Pack 的项目引用支持
 
-现在，nuget.exe 包命令处理具有以下规则的引用项目：
+现在 nuget.exe pack 命令处理具有以下规则的引用项目：
 
-1. 如果引用的项目具有相应的 `.nuspec` 文件（例如，在与 `proj1.csproj`相同的文件夹中有一个名为 `proj1.nuspec` 的文件，则会使用从 `.nuspec` 文件中读取的 id 和版本将此项目作为依赖项添加到包中。
+1. 如果引用的项目具有相应的 `.nuspec` 文件（例如，在与相同的文件夹中有一个名为的文件）， `proj1.nuspec` `proj1.csproj` 则此项目将作为依赖项添加到包，并使用从文件中读取的 id 和版本 `.nuspec` 。
 1. 否则，被引用项目的文件捆绑到包中。 然后，将以递归方式使用 sames 规则处理此项目引用的项目。
-1. 添加所有 DLL、`.pdb`和 `.exe` 文件。
+1. 添加所有 DLL、 `.pdb` 和 `.exe` 文件。
 1. 添加了其他所有内容文件。
 1. 所有依赖项都将合并。
 
-这允许将引用的项目视为依赖项（如果存在 `.nuspec` 文件），否则它将成为包的一部分。
+这允许将引用的项目视为依赖项（如果存在 `.nuspec` 文件），否则它会成为包的一部分。
 
-更多详细信息： [http://nuget.codeplex.com/workitem/936](http://nuget.codeplex.com/workitem/936)
+有关详细信息，请参阅： [http://nuget.codeplex.com/workitem/936](http://nuget.codeplex.com/workitem/936)
 
 ### <a name="add-a-minimum-nuget-version-property-to-packages"></a>向包中添加 "最小 NuGet 版本" 属性
 
 名为 "minClientVersion" 的新元数据属性现在可以指示使用包所需的最小 NuGet 客户端版本。
 
-此功能有助于包作者指定仅在特定版本的 NuGet 后使用包。 由于新的 `.nuspec` 功能将在 NuGet 2.5 后添加，因此包将能够声明最低版本的 NuGet。
+此功能有助于包作者指定仅在特定版本的 NuGet 后使用包。 由于在 `.nuspec` NuGet 2.5 后添加了新功能，包将能够声明最低版本的 nuget。
 
 ```xml
 <metadata minClientVersion="2.6">
@@ -147,30 +147,30 @@ NuGet 2.5 于2013年4月25日发布。 此版本非常大，我们认为我们�
 
 **方案：**
 
-1. 源存储库包含版本1.0.0 和1.0.2 的包 B。 它还包含在 B （> = 1.0.0）上依赖的包 A。
+1. 源存储库包含版本1.0.0 和1.0.2 的包 B。 它还包含包 A，它依赖于 B ( # B0 = 1.0.0) 。
 1. 假定当前项目已安装了包 B 1.0.0 版。 现在，你想要安装包 A。
 
 **在 NuGet 2.2 和更早版本中：**
 
-* 安装包 A 时，NuGet 将自动更新 B 到1.0.2，即使现有版本1.0.0 已经满足依赖项版本约束，该约束 > = 1.0.0。
+* 安装包 A 时，NuGet 将自动更新 B 到1.0.2，即使现有版本1.0.0 已经满足依赖项版本约束，该约束 >= 1.0.0。
 
 **在 NuGet 2.5 和更高版本中：**
 
 * NuGet 将不再更新 B，因为它检测到现有版本1.0.0 满足依赖项版本约束。
 
-有关此更改的更多背景信息，请阅读详细的[工作项](http://nuget.codeplex.com/workitem/1681)和相关的[讨论线索](http://nuget.codeplex.com/discussions/436712)。
+有关此更改的更多背景信息，请阅读详细的 [工作项](http://nuget.codeplex.com/workitem/1681) 和相关的 [讨论线索](http://nuget.codeplex.com/discussions/436712)。
 
 ### <a name="nugetexe-outputs-http-requests-with-detailed-verbosity"></a>nuget.exe 输出 http 请求以及详细详细信息
 
-如果你正在排查 nuget.exe 问题，或者只是想要在操作过程中发出 HTTP 请求，"-详细信息" 开关现在会输出发出的所有 HTTP 请求。
+如果正在排查 nuget.exe 或只想知道在操作期间发出了哪些 HTTP 请求，"-详细信息" 开关现在会输出发出的所有 HTTP 请求。
 
-![Nuget.exe 的 HTTP 输出](./media/NuGet-2.5/verbosity.png)
+![nuget.exe 的 HTTP 输出](./media/NuGet-2.5/verbosity.png)
 
 ### <a name="nugetexe-push-now-supports-unc-and-folder-sources"></a>nuget.exe 推送现在支持 UNC 和文件夹源
 
-在 NuGet 2.5 之前，如果尝试根据 UNC 路径或本地文件夹将 "nuget.exe push" 运行到包源，则推送会失败。 使用最近添加的层次结构配置功能，nuget.exe 需要将 UNC/文件夹源或基于 HTTP 的 NuGet 库作为目标。
+在 NuGet 2.5 之前，如果尝试根据 UNC 路径或本地文件夹运行 "nuget.exe 推送" 到包源，推送会失败。 使用最近添加的层次结构配置功能，nuget.exe 需要以 UNC/文件夹源或基于 HTTP 的 NuGet 库为目标。
 
-从 NuGet 2.5 开始，如果 nuget.exe 标识 UNC/文件夹源，将对源执行文件复制。
+从 NuGet 2.5 开始，如果 nuget.exe 标识 UNC/文件夹源，则将对源执行文件复制。
 
 现在可以使用以下命令：
 
@@ -180,7 +180,7 @@ nuget push -source \\mycompany\repo\ mypackage.1.0.0.nupkg
 
 ### <a name="nugetexe-supports-explicitly-specified-config-files"></a>nuget.exe 支持显式指定的配置文件
 
-访问配置（除 "spec" 和 "pack" 之外的所有文件）的 nuget.exe 命令现在支持新的 "-Read-configfile" 选项，该选项强制使用特定的配置文件来替代%Appdata%\nuget\nuget.config 上的默认配置文件。
+访问配置 (除 "spec" 和 "pack ) " 之外的所有 nuget.exe 命令现在支持新的 "-Read-configfile" 选项，该选项强制使用特定的配置文件来代替% AppData% \nuget\Nuget.Config 的默认配置文件。
 
 示例：
 
@@ -190,6 +190,6 @@ nuget sources add -name test -source http://test -ConfigFile C:\test\.nuget\Nuge
 
 ### <a name="support-for-native-projects"></a>对本机项目的支持
 
-使用 NuGet 2.5，NuGet 工具现在可用于 Visual Studio 中的本机项目。 我们预计大多数本机包都将使用[CoApp 项目](http://coapp.org)创建的工具来利用上述 MSBuild 导入功能。 有关详细信息，请参阅 coapp.org 网站上[有关该工具的详细](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html)信息。
+使用 NuGet 2.5，NuGet 工具现在可用于 Visual Studio 中的本机项目。 我们预计大多数本机包都将使用 [CoApp 项目](http://coapp.org)创建的工具来利用上述 MSBuild 导入功能。 有关详细信息，请参阅 coapp.org 网站上 [有关该工具的详细](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) 信息。
 
-当包安装到本机项目中时，将为包引入 "本机" 的目标框架名称，以包括 \build、\content 和 \tools 中的文件。  \`lib "文件夹不用于本机项目。
+当包安装到本机项目中时，将为包引入 "本机" 的目标框架名称，以包括 \build、\content 和 \tools 中的文件。  \`Lib 文件夹不用于本机项目。

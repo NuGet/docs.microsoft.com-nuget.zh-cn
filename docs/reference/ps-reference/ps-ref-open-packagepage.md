@@ -1,20 +1,20 @@
 ---
-title: NuGet PackagePage PowerShell 参考
-description: Visual Studio 中的 NuGet 包管理器控制台中的 PackagePage PowerShell 命令参考。
+title: NuGet Open-PackagePage PowerShell 参考
+description: Visual Studio 中的 NuGet 包管理器控制台中 Open-PackagePage PowerShell 命令参考。
 author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 39199ebfc37756ed40158a1c07afca7709067350
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: ba90e09c017ec66d73c35a60025474bc77cf65a7
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75384423"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238057"
 ---
-# <a name="open-packagepage-package-manager-console-in-visual-studio"></a>Open-PackagePage （Visual Studio 中的程序包管理器控制台）
+# <a name="open-packagepage-package-manager-console-in-visual-studio"></a>在 Visual Studio 中 Open-PackagePage (程序包管理器控制台) 
 
-*3.0 + 中弃用仅在 Windows 上的 Visual Studio 中的[包管理器控制台](../../consume-packages/install-use-packages-powershell.md)内可用。*
+*3.0 + 中弃用仅在 Windows 上的 Visual Studio 中的 [包管理器控制台](../../consume-packages/install-use-packages-powershell.md) 内可用。*
 
 用指定包的项目、许可证或报表滥用 URL 启动默认浏览器。
 
@@ -25,13 +25,13 @@ Open-PackagePage [-Id] <string> [-Version] [-Source] [-License] [-ReportAbuse]
     [-PassThru] [<CommonParameters>]
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>parameters
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --- | --- |
-| Id | 所需包的包 ID。 -Id 开关本身是可选的。 |
-| {2&gt;版本&lt;2} | 包的版本，默认为最新版本。 |
-| Source | 包源，默认为 "源" 下拉选项中的所选源。 |
+| ID | 所需包的包 ID。 -Id 开关本身是可选的。 |
+| 版本 | 包的版本，默认为最新版本。 |
+| 源 | 包源，默认为 "源" 下拉选项中的所选源。 |
 | 许可证 | 打开浏览器，直至包的许可证 URL。 如果未指定-License 和-ReportAbuse，则浏览器将打开包的项目 URL。 |
 | ReportAbuse | 打开浏览器，指向包的 "报告滥用 URL"。 如果未指定-License 和-ReportAbuse，则浏览器将打开包的项目 URL。 |
 | PassThru | 显示 URL;使用 with-WhatIf 来禁止打开浏览器。 |
@@ -40,7 +40,7 @@ Open-PackagePage [-Id] <string> [-Version] [-Source] [-License] [-ReportAbuse]
 
 ## <a name="common-parameters"></a>通用参数
 
-`Open-PackagePage` 支持以下[常见的 PowerShell 参数](https://go.microsoft.com/fwlink/?LinkID=113216)：调试、错误操作、ErrorVariable、OutBuffer、OutVariable、PipelineVariable、Verbose、WarningAction 和 WarningVariable。
+`Open-PackagePage` 支持以下 [常见的 PowerShell 参数](/powershell/module/microsoft.powershell.core/about/about_commonparameters)：调试、错误操作、ErrorVariable、OutBuffer、OutVariable、PipelineVariable、Verbose、WarningAction 和 WarningVariable。
 
 ## <a name="examples"></a>示例
 

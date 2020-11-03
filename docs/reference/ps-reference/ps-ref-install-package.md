@@ -1,20 +1,20 @@
 ---
-title: NuGet 安装包 PowerShell 参考
-description: Visual Studio 中的 NuGet 包管理器控制台中的安装包 PowerShell 命令参考。
+title: NuGet Install-Package PowerShell 参考
+description: Visual Studio 中的 NuGet 包管理器控制台中 Install-Package PowerShell 命令参考。
 author: karann-msft
 ms.author: karann
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: a65ba63ed070f40e82c43d12e5fad12d86f28112
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 5bda888e0fb526faca79e88da93b0ceb9aff5348
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75384436"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237200"
 ---
-# <a name="install-package-package-manager-console-in-visual-studio"></a>Install-Package （Visual Studio 中的程序包管理器控制台）
+# <a name="install-package-package-manager-console-in-visual-studio"></a>在 Visual Studio 中 Install-Package (程序包管理器控制台) 
 
-*本主题介绍 Windows 上 Visual Studio 中的[包管理器控制台](../../consume-packages/install-use-packages-powershell.md)内的命令。对于 "通用 PowerShell 安装包" 命令，请参阅[PowerShell PackageManagement 参考](/powershell/module/packagemanagement/?view=powershell-6)。*
+*本主题介绍 Windows 上 Visual Studio 中的 [包管理器控制台](../../consume-packages/install-use-packages-powershell.md) 内的命令。有关通用 PowerShell Install-Package 命令，请参阅 [PowerShell PackageManagement 参考](/powershell/module/packagemanagement/?view=powershell-6)。*
 
 将包及其依赖项安装到项目中。
 
@@ -26,31 +26,31 @@ Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-
     [-WhatIf] [<CommonParameters>]
 ```
 
-在 NuGet 2.8 + 中，`Install-Package` 可以在项目中降级现有包。 例如，如果安装了 5.1.0-rc1，以下命令会将其降级到5.0.0：
+在 NuGet 2.8 + 中， `Install-Package` 可以降级项目中的现有包。 例如，如果安装了 5.1.0-rc1，以下命令会将其降级到5.0.0：
 
 ```ps
 Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>parameters
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | --- | --- |
-| Id | 请求要安装的包的标识符。 （*3.0 +* ）标识符可以是 `packages.config` 文件或 `.nupkg` 文件的路径或 URL。 -Id 开关本身是可选的。 |
+| ID | 需要 () 要安装的包的标识符。  ( *3.0 +* ) 该标识符可以是 `packages.config` 文件或文件的路径或 URL `.nupkg` 。 -Id 开关本身是可选的。 |
 | IgnoreDependencies | 仅安装此程序包，而不安装其依赖项。 |
-| ProjectName | 要在其中安装包的项目，默认为默认项目。 |
-| Source | 要搜索的包源的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径，也可以是相对于当前文件夹的路径。 如果省略，则 `Install-Package` 搜索当前选定的包源。 |
-| {2&gt;版本&lt;2} | 要安装的包的版本，默认为最新版本。 |
+| 项目名称 | 要在其中安装包的项目，默认为默认项目。 |
+| 源 | 要搜索的包源的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径，也可以是相对于当前文件夹的路径。 如果省略，则 `Install-Package` 搜索当前选定的包源。 |
+| 版本 | 要安装的包的版本，默认为最新版本。 |
 | IncludePrerelease | 考虑安装的预发行程序包。 如果省略，则只考虑稳定程序包。 |
-| FileConflictAction | 当要求覆盖或忽略项目引用的现有文件时要执行的操作。 可能的值包括*Overwrite、Ignore、None、OverwriteAll*和 *（3.0 +）* *IgnoreAll*。 |
-| DependencyVersion | 要使用的依赖项包的版本，可以是下列项之一：<br/><ul><li>*最低*（默认值）：最低版本</li><li>*HighestPatch*：最小主要、次要和最高修补程序的版本</li><li>*HighestMinor*：最小主要版本号最高的版本，最高修补程序</li><li>*最高*（不带参数的更新包的默认值）：最高版本</li></ul>您可以使用 `Nuget.Config` 文件中的[`dependencyVersion`](../nuget-config-file.md#config-section)设置设置默认值。 |
+| FileConflictAction | 当要求覆盖或忽略项目引用的现有文件时要执行的操作。 可能的值包括 *Overwrite、Ignore、None、OverwriteAll* 和 *(3.0 +)* *IgnoreAll* 。 |
+| DependencyVersion | 要使用的依赖项包的版本，可以是下列项之一：<br/><ul><li>*最低* (默认) ：最低版本</li><li>*HighestPatch* ：最小主要、次要和最高修补程序的版本</li><li>*HighestMinor* ：最小主要版本号最高的版本，最高修补程序</li><li>不带参数的 Update-Package 的 *最高* (默认值) ：最高版本</li></ul>您可以使用文件中的设置设置默认值 [`dependencyVersion`](../nuget-config-file.md#config-section) `Nuget.Config` 。 |
 | WhatIf | 显示运行命令时，如果不实际执行安装，会发生什么情况。 |
 
 这些参数都不接受管道输入或通配符。
 
 ## <a name="common-parameters"></a>通用参数
 
-`Install-Package` 支持以下[常见的 PowerShell 参数](https://go.microsoft.com/fwlink/?LinkID=113216)：调试、错误操作、ErrorVariable、OutBuffer、OutVariable、PipelineVariable、Verbose、WarningAction 和 WarningVariable。
+`Install-Package` 支持以下 [常见的 PowerShell 参数](/powershell/module/microsoft.powershell.core/about/about_commonparameters)：调试、错误操作、ErrorVariable、OutBuffer、OutVariable、PipelineVariable、Verbose、WarningAction 和 WarningVariable。
 
 ## <a name="examples"></a>示例
 

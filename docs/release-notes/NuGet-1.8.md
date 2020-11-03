@@ -5,25 +5,25 @@ author: karann-msft
 ms.author: karann
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 973a2d010cb75eeeb383be94baf2fb17a999dd7c
-ms.sourcegitcommit: 26a8eae00af2d4be581171e7a73009f94534c336
+ms.openlocfilehash: 9d55534ffe765137731b7fbf4be4bbaa618c769c
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75383456"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93236826"
 ---
 # <a name="nuget-18-release-notes"></a>NuGet 1.8 发行说明
 
-[Nuget 1.7 发行说明](../release-notes/nuget-1.7.md) | [Nuget 2.0 发行说明](../release-notes/nuget-2.0.md)
+[NuGet 1.7 发行说明](../release-notes/nuget-1.7.md)  | [NuGet 2.0 发行说明](../release-notes/nuget-2.0.md)
 
 NuGet 1.8 于年5月 23 2012 日发布。
 
 ## <a name="known-installation-issue"></a>已知安装问题
 如果你运行的是 VS 2010 SP1，但如果你安装了较旧的版本，你可能会遇到安装错误。
 
-解决方法是仅卸载 NuGet，然后从 VS 扩展库安装它。  有关详细信息，请参阅 <https://support.microsoft.com/kb/2581019>，或[直接跳到 VS 修补程序](http://bit.ly/vsixcertfix)。
+解决方法是仅卸载 NuGet，然后从 VS 扩展库安装它。  <https://support.microsoft.com/kb/2581019>有关详细信息，请参阅，或[直接访问 VS 修补程序](http://bit.ly/vsixcertfix)。
 
-注意：如果 Visual Studio 不允许你卸载扩展（"卸载" 按钮已禁用），则可能需要使用 "以管理员身份运行" 重启 Visual Studio。
+注意：如果 Visual Studio 不允许卸载扩展 (禁用了 "卸载" 按钮) ，则可能需要使用 "以管理员身份运行" 重启 Visual Studio。
 
 ## <a name="nuget-18-incompatible-with-windows-xp-hotfix-published"></a>NuGet 1.8 与 Windows XP 兼容，已发布修补程序
 
@@ -31,14 +31,14 @@ NuGet 1.8 于年5月 23 2012 日发布。
 
 我们已经发布了解决此问题的修补程序。  通过在 Visual Studio 扩展库中更新 NuGet，你会收到此修补程序。
 
-## <a name="features"></a>特征
+## <a name="features"></a>功能
 
 ### <a name="satellite-packages-for-localized-resources"></a>本地化资源的附属包
 NuGet 1.8 现在支持为本地化资源创建单独包的功能，类似于 .NET Framework 的附属程序集功能。  附属包的创建方式与任何其他 NuGet 包相同，只是添加了一些约定：
 
-* 附属包 ID 和文件名应包含与[.NET Framework 使用的标准区域性字符串](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c)之一匹配的后缀。
+* 附属包 ID 和文件名应包含与 [.NET Framework 使用的标准区域性字符串](/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c)之一匹配的后缀。
 * 在其 `.nuspec` 文件中，附属包应定义一个语言元素，该元素具有在 ID 中使用的相同区域性字符串
-* 附属包应将其 `.nuspec` 文件中的依赖项定义为其核心包，这只是 ID 与语言后缀相同的包。  核心包需要在存储库中可用，才能成功安装。
+* 附属包应将其文件中的依赖项定义 `.nuspec` 为其核心包，这只是 ID 与语言后缀相同的包。  核心包需要在存储库中可用，才能成功安装。
 
 若要安装包含本地化资源的包，开发人员需要从存储库中显式选择本地化包。 目前，NuGet 库不会向附属包提供任何类型的特殊处理。
 
@@ -52,9 +52,9 @@ NuGet 1.8 现在支持为本地化资源创建单独包的功能，类似于 .NE
 
 ![包含已复制资源文件夹的核心包文件夹](./media/fldr-copied-loc.png)
 
-附属包需要注意的一个现有 bug 是 NuGet 不会将本地化的资源复制到网站项目的 `bin` 文件夹中。  此问题将在 NuGet 的下一版本中得到解决。
+附属包需要注意的一个现有 bug 是 NuGet 不会将已本地化的资源复制到 `bin` 网站项目的文件夹中。  此问题将在 NuGet 的下一版本中得到解决。
 
-有关演示如何创建和使用附属包的完整示例，请参阅[https://github.com/NuGet/SatellitePackageSample](https://github.com/NuGet/SatellitePackageSample)。
+有关演示如何创建和使用附属包的完整示例，请参阅 [https://github.com/NuGet/SatellitePackageSample](https://github.com/NuGet/SatellitePackageSample) 。
 
 ### <a name="package-restore-consent"></a>包还原许可
 在 NuGet 1.8 中，我们为支持包还原中的重要约束设定了基础，以保护用户隐私。 此约束要求开发人员生成项目和解决方案，这些项目和解决方案使用包还原来显式同意包还原的联机状态，以便从配置的包源下载包。
@@ -67,11 +67,11 @@ NuGet 1.8 现在支持为本地化资源创建单独包的功能，类似于 .NE
 
 现在，如上所述，我们只在 NuGet 1.8 中为此功能奠定了基础。  实际上，这意味着虽然我们添加了所有逻辑来启用此功能，但当前未在此版本中强制执行此功能。 但在 NuGet 的下一版本中会启用此功能，因此，我们希望你尽快了解该功能，以便你可以适当地配置环境，从而在我们开始强制许可约束时不会受到影响。
 
-有关更多详细信息，请参阅[团队博客文章](http://blog.nuget.org/20120518/package-restore-and-consent.html)此功能。
+有关更多详细信息，请参阅 [团队博客文章](http://blog.nuget.org/20120518/package-restore-and-consent.html) 此功能。
 
 ### <a name="nugetexe-performance-improvements"></a>nuget.exe 性能改进
-通过修改安装命令以并行下载和安装包，NuGet 1.8 使 nuget.exe 的性能得到显著改善，并通过扩展包还原提高了性能。  高级别测试表明，将6个包安装到项目中的性能将在 NuGet 1.8 中提高大约35%。  将包数增加到25会显示大约60% 的性能提升。
+通过修改安装命令以并行下载和安装包，NuGet 1.8 使 nuget.exe 的性能和扩展包还原的性能得到显著提高。  高级别测试表明，将6个包安装到项目中的性能将在 NuGet 1.8 中提高大约35%。  将包数增加到25会显示大约60% 的性能提升。
 
 ## <a name="bug-fixes"></a>Bug 修复
 NuGet 1.8 包含非常多的 bug 修复，其中重点介绍了包管理器控制台和包还原工作流，尤其是在它与包还原许可和 Windows 8 Express 集成相关时。
-有关 NuGet 1.8 中已修复的工作项的完整列表，请查看[此版本的 NuGet 问题跟踪程序](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.8&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0)。
+有关 NuGet 1.8 中已修复的工作项的完整列表，请查看 [此版本的 NuGet 问题跟踪程序](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.8&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0)。

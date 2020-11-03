@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 84f939188ac190f6d539f8ee2b422049a274f178
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 106c4027f03d8e8c1d19545b3ca9b6cd5263830e
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622572"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93236784"
 ---
 # <a name="update-command-nuget-cli"></a> (NuGet CLI) 更新命令
 
@@ -37,6 +37,10 @@ nuget update <configPath> [options]
 - **`-ConfigFile`**
 
   要应用的 NuGet 配置文件。 如果未指定，则 `%AppData%\NuGet\NuGet.Config` 使用 (Windows) `~/.nuget/NuGet/NuGet.Config` 或 `~/.config/NuGet/NuGet.Config` (Mac/Linux) 。
+  
+- **`-DependencyVersion [Lowest, HighestPatch, HighestMinor, Highest, Ignore]`**
+
+  指定要使用的依赖项包的版本，可以是下列项之一：<br/><ul><li>*最低* (默认) ：最低版本</li><li>*HighestPatch* ：最小主要、次要和最高修补程序的版本</li><li>*HighestMinor* ：最小主要版本号最高的版本，最高修补程序</li><li>*最高* ：最高版本</li><li>*忽略* ：将不使用任何依赖项包</li></ul>
 
 - **`-FileConflictAction [PromptUser, Overwrite, Ignore]`**
 
@@ -46,7 +50,7 @@ nuget update <configPath> [options]
 
 - **`-ForceEnglishOutput`**
 
-  * (3.5 +) * 使用固定的、基于英语的区域性强制运行 nuget.exe。
+  *(3.5 +)* 使用固定的、基于英语的区域性强制运行 nuget.exe。
 
 - **`-?|-help`**
 
@@ -58,11 +62,11 @@ nuget update <configPath> [options]
 
 - **`-MSBuildPath`**
 
-  * (4.0 +) * 指定要与命令一起使用的 MSBuild 的路径，优先于 `-MSBuildVersion` 。
+  *(4.0 +)* 指定要与命令一起使用的 MSBuild 的路径，优先于 `-MSBuildVersion` 。
 
 - **`-MSBuildVersion`**
 
-  * (3.2 +) * 指定要与此命令一起使用的 MSBuild 版本。 支持的值为4、12、14、15.1、15.3、15.4、15.5、15.6、15.7、15.8、15.9。 默认情况下，将选取路径中的 MSBuild，否则默认为已安装的最高版本的 MSBuild。
+  *(3.2 +)* 指定要与此命令一起使用的 MSBuild 版本。 支持的值为4、12、14、15.1、15.3、15.4、15.5、15.6、15.7、15.8、15.9。 默认情况下，将选取路径中的 MSBuild，否则默认为已安装的最高版本的 MSBuild。
 
 - **`-NonInteractive`**
 

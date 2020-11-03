@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/13/2019
 ms.topic: reference
-ms.openlocfilehash: 28fae46a65bd4c2b7050e12568c21123fc8658c1
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 371f0d934fcd3c1f111d277131553c1eed0200be
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623157"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238096"
 ---
 # <a name="nugetconfig-reference"></a>nuget.config 引用
 
@@ -29,7 +29,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 `dependencyVersion` 和 `repositoryPath` 仅适用于使用 `packages.config` 的项目。 `globalPackagesFolder` 仅适用于使用 PackageReference 格式的项目。
 
-| 密钥 | 值 |
+| 键 | Value |
 | --- | --- |
 | dependencyVersion（仅限于 `packages.config`） | 包安装、还原和更新的默认 `DependencyVersion` 值（未直接指定 `-DependencyVersion` 开关时）。 NuGet 包管理器 UI 也使用此值。 值为 `Lowest`、`HighestPatch`、`HighestMinor`、`Highest`。 |
 | 仅使用 PackageReference (项目的 globalPackagesFolder)  | 默认全局包文件夹的位置。 默认值为 `%userprofile%\.nuget\packages` (Windows) 或 `~/.nuget/packages` (Mac/Linux)。 相对路径可在项目特定的 `nuget.config` 文件中使用。 此设置由 NUGET_PACKAGES 环境变量重写，该变量优先。 |
@@ -38,7 +38,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 | http_proxy http_proxy.user http_proxy.password no_proxy | 连接到包源时要使用的代理设置；`http_proxy` 应为 `http://<username>:<password>@<domain>` 格式。 密码已加密，且不能手动添加。 对于 `no_proxy`，该值是绕过代理服务器的域的列表（以逗号分隔）。 可将 http_proxy 和 no_proxy 环境变量交替用于这些值。 有关其他详细信息，请参阅 [NuGet 代理设置](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html) (skolima.blogspot.com)。 |
 | signatureValidationMode | 指定用于验证包签名以便安装和还原的验证模式。 值为 `accept` 、 `require` 。 默认为 `accept`。
 
-**示例**：
+**示例** ：
 
 ```xml
 <config>
@@ -54,11 +54,11 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 在安装包时，配置 NuGet 是否执行自动绑定重定向。
 
-| 密钥 | 值 |
+| 键 | Value |
 | --- | --- |
 | skip | 指示是否跳过自动绑定重定向的布尔。 默认值为 false。 |
 
-**示例**：
+**示例** ：
 
 ```xml
 <bindingRedirects>
@@ -70,12 +70,12 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 在生成期间控制包还原。
 
-| 密钥 | 值 |
+| 键 | Value |
 | --- | --- |
-| 已启用 | 指示 NuGet 是否可执行自动还原的布尔。 还可以使用 `True` 的值设置 `EnableNuGetPackageRestore` 环境变量，而不是在配置文件中设置此密钥。 |
+| enabled | 指示 NuGet 是否可执行自动还原的布尔。 还可以使用 `True` 的值设置 `EnableNuGetPackageRestore` 环境变量，而不是在配置文件中设置此密钥。 |
 | automatic | 指示 NuGet 是否应在生成期间检查缺少的包。 |
 
-**示例**：
+**示例** ：
 
 ```xml
 <packageRestore>
@@ -88,11 +88,11 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 控制解决方案的 `packages` 文件夹是否包括在源代码管理中。 此节仅适用于解决方案文件夹中的 `nuget.config` 文件。
 
-| 密钥 | 值 |
+| 键 | Value |
 | --- | --- |
-| disableSourceControlIntegration | 指示在使用源代码管理时是否忽略包文件夹的布尔。 默认值为 false。 |
+| disableSourceControlIntegration | 指示在使用源代码管理时是否忽略包文件夹的布尔。 默认值为 False。 |
 
-**示例**：
+**示例** ：
 
 ```xml
 <solution>
@@ -112,11 +112,11 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 列出所有已知包源。 在还原操作和任何使用 PackageReference 格式的项目中，将忽略此顺序。 NuGet 遵循使用的项目进行安装和更新操作的源顺序 `packages.config` 。
 
-| 密钥 | 值 |
+| 键 | Value |
 | --- | --- |
 | （要分配给包源的名称） | 包源的路径或 URL。 |
 
-**示例**：
+**示例** ：
 
 ```xml
 <packageSources>
@@ -134,7 +134,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 存储源的用户名和密码，通常通过 `nuget sources` 使用 `-username` 和 `-password` 开关指定。 默认情况下密码会进行加密，除非还使用了 `-storepasswordincleartext` 选项。
 或者，可以在开关中指定有效的身份验证类型 `-validauthenticationtypes` 。
 
-| 密钥 | 值 |
+| 键 | Value |
 | --- | --- |
 | username | 纯文本形式的源用户名。 |
 | password | 源的加密密码。 仅在 Windows 上支持加密密码，并且仅当在同一台计算机上使用加密密码时，才可以对其进行解密。 |
@@ -209,11 +209,11 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 存储使用 API 密钥身份验证的源的密钥，使用[ `nuget setapikey` 命令](../reference/cli-reference/cli-ref-setapikey.md)进行设置。
 
-| 密钥 | 值 |
+| 键 | Value |
 | --- | --- |
 | （源 URL） | 加密的 API 密钥。 |
 
-**示例**：
+**示例** ：
 
 ```xml
 <apikeys>
@@ -225,7 +225,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 标识当前已禁用的源。 可能为空。
 
-| 密钥 | 值 |
+| 键 | Value |
 | --- | --- |
 | （源名称） | 指示源是否禁用的布尔。 |
 
@@ -246,11 +246,11 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 标识到当前活动的源或指示所有源的聚合。
 
-| 密钥 | 值 |
+| 键 | Value |
 | --- | --- |
 | （源名称）或 `All` | 如果密钥是源的名称，则值为源路径或 URL。 如果为 `All`，值应为 `(Aggregate source)`，从而组合其他未禁用的所有包源。 |
 
-**示例**：
+**示例** ：
 
 ```xml
 <activePackageSource>
@@ -268,7 +268,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 可以通过[ `nuget trusted-signers` 命令](../reference/cli-reference/cli-ref-trusted-signers.md)更新此部分。
 
-**架构**：
+**架构** ：
 
 受信任的签名者具有一个 `certificate` 项的集合，这些项将登记标识给定签名者的所有证书。 受信任的签名者可以是 `Author` 或 `Repository` 。
 
@@ -278,12 +278,13 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 如果为，则在将 `certificate` `allowUntrustedRoot` `true` 证书链作为签名验证的一部分生成时，允许将指定的证书链接到不受信任的根。
 
-**示例**：
+**示例** ：
 
 ```xml
 <trustedSigners>
     <author name="microsoft">
         <certificate fingerprint="3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+        <certificate fingerprint="AA12DA22A49BCE7D5C1AE64CC1F3D892F150DA76140F210ABD2CBFFCA2C18A27" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
     </author>
     <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
         <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
@@ -294,7 +295,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 ## <a name="fallbackpackagefolders-section"></a>fallbackPackageFolders 部分
 
-* (3.5 +) * 提供了一种预安装包的方法，以便在回退文件夹中发现包时无需执行任何操作。 回退包文件夹与全局包文件夹具有完全相同的文件夹和文件结构： *。 nupkg* 存在，并提取所有文件。
+*(3.5 +)* 提供了一种预安装包的方法，以便在回退文件夹中发现包时无需执行任何操作。 回退包文件夹与全局包文件夹具有完全相同的文件夹和文件结构： *。 nupkg* 存在，并提取所有文件。
 
 此配置的查找逻辑为：
 
@@ -306,11 +307,11 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 如果找不到匹配项，NuGet 将检查文件源，然后检查 http 源，然后下载包。
 
-| 密钥 | 值 |
+| 键 | Value |
 | --- | --- |
 | 后备文件夹 (名称)  | 回退文件夹的路径。 |
 
-**示例**：
+**示例** ：
 
 ```xml
 <fallbackPackageFolders>
@@ -322,12 +323,12 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 设置默认包管理格式， *packages.config* 或 PackageReference。 SDK 样式项目始终使用 PackageReference。
 
-| 密钥 | 值 |
+| 键 | Value |
 | --- | --- |
-| format | 指示默认包管理格式的布尔值。 如果 `1` 为，则格式为 PackageReference。 如果 `0` 为，则 *packages.config*格式。 |
+| format | 指示默认包管理格式的布尔值。 如果 `1` 为，则格式为 PackageReference。 如果 `0` 为，则 *packages.config* 格式。 |
 | disabled | 指示是否在第一次安装包时显示提示选择默认包格式的布尔值。 `False` 隐藏提示。 |
 
-**示例**：
+**示例** ：
 
 ```xml
 <packageManagement>
@@ -431,6 +432,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
     <trustedSigners>
         <author name="microsoft">
             <certificate fingerprint="3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+            <certificate fingerprint="AA12DA22A49BCE7D5C1AE64CC1F3D892F150DA76140F210ABD2CBFFCA2C18A27" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
         </author>
         <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
             <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />

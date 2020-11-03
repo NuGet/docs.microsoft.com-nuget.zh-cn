@@ -1,18 +1,18 @@
 ---
-title: NuGet BindingRedirect PowerShell 参考
-description: Visual Studio 中的 NuGet 包管理器控制台中的 BindingRedirect PowerShell 命令参考。
+title: NuGet Add-BindingRedirect PowerShell 参考
+description: Visual Studio 中的 NuGet 包管理器控制台中 Add-BindingRedirect PowerShell 命令参考。
 author: karann-msft
 ms.author: karann
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: f5ba4bd8140fa8cac7da8bf1351ad5448671b768
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 382ba9b179428c70e3eb16db86a363e095207d61
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623118"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237252"
 ---
-# <a name="add-bindingredirect-package-manager-console-in-visual-studio"></a>在 Visual Studio 中添加-BindingRedirect (程序包管理器控制台) 
+# <a name="add-bindingredirect-package-manager-console-in-visual-studio"></a>在 Visual Studio 中 Add-BindingRedirect (程序包管理器控制台) 
 
 *仅在 Windows 上的 Visual Studio 中的 [包管理器控制台](../../consume-packages/install-use-packages-powershell.md) 内可用。*
 
@@ -29,7 +29,7 @@ ms.locfileid: "88623118"
 Add-BindingRedirect [-ProjectName] <string> [<CommonParameters>]
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>parameters
 
 | 参数 | 说明 |
 | --- | --- |
@@ -39,7 +39,7 @@ Add-BindingRedirect [-ProjectName] <string> [<CommonParameters>]
 
 ## <a name="common-parameters"></a>通用参数
 
-`Add-BindingRedirect` 支持以下 [常见的 PowerShell 参数](https://go.microsoft.com/fwlink/?LinkID=113216)：调试、错误操作、ErrorVariable、OutBuffer、OutVariable、PipelineVariable、Verbose、WarningAction 和 WarningVariable。
+`Add-BindingRedirect` 支持以下 [常见的 PowerShell 参数](/powershell/module/microsoft.powershell.core/about/about_commonparameters)：调试、错误操作、ErrorVariable、OutBuffer、OutVariable、PipelineVariable、Verbose、WarningAction 和 WarningVariable。
 
 ## <a name="examples"></a>示例
 

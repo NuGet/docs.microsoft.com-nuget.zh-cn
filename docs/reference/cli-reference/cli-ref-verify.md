@@ -6,12 +6,12 @@ ms.author: dtivel
 ms.date: 03/06/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 2c501753a16820c5d027441001561c6b637ccda9
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 7ce08f11195437e94bfe69883ff525e9ad3a73f0
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622598"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238135"
 ---
 # <a name="verify-command-nuget-cli"></a> (NuGet CLI 验证命令) 
 
@@ -19,7 +19,7 @@ ms.locfileid: "88622598"
 
 验证包。
 
-在 .NET Core、Mono 或非 Windows 平台上，尚不支持验证已签名的包。
+Mono 不支持验证已签名的包。
 
 ## <a name="usage"></a>使用情况
 
@@ -31,7 +31,7 @@ nuget verify <-All|-Signatures> <package(s)> [options]
 
 ## <a name="nuget-verify--all"></a>nuget 验证-全部
 
-指定应在)  (上执行所有验证。
+指定应对包执行的所有可能的验证。
 
 ## <a name="nuget-verify--signatures"></a>nuget 验证-签名
 

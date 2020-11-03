@@ -6,12 +6,12 @@ ms.author: patbel
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 2753f92601b3d8b43593762cc07cd8384646feea
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 9e25f439617a76d30880bea3c10a5d063e681a41
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622663"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238148"
 ---
 # <a name="trusted-signers-command-nuget-cli"></a> (NuGet CLI 的受信任的签名者命令) 
 
@@ -46,6 +46,7 @@ Registered trusted signers:
  2.   microsoft [author]
       Certificate fingerprint(s):
         SHA256 - 3F9001EA83C560D712C24CF213C3D312CB3BFF51EE89435D3430BD06B5D0EECE
+        SHA256 - AA12DA22A49BCE7D5C1AE64CC1F3D892F150DA76140F210ABD2CBFFCA2C18A27
 
  3.   myUntrustedAuthorSignature [author]
       Certificate fingerprint(s):
@@ -89,7 +90,7 @@ nuget trusted-signers add <package(s)> -Name <name> [options]
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_注意_：此选项将只添加受信任的存储库。 
+_注意_ ：此选项将只添加受信任的存储库。 
 
 - **`-AllowUntrustedRoot`**
 
@@ -109,7 +110,7 @@ _注意_：此选项将只添加受信任的存储库。
 nuget trusted-signers add -Name <name> [options]
 ```
 
-_注意_：如果已存在具有给定名称的受信任的签名者，则会将证书项目添加到该签名者。 否则，将创建一个受信任的作者，其中包含来自给定证书信息的证书项目。
+_注意_ ：如果已存在具有给定名称的受信任的签名者，则会将证书项目添加到该签名者。 否则，将创建一个受信任的作者，其中包含来自给定证书信息的证书项目。
 
 
 - **`-AllowUntrustedRoot`**
@@ -132,7 +133,7 @@ _注意_：如果已存在具有给定名称的受信任的签名者，则会将
 
 请求当前受信任的存储库中使用的最新证书列表，以更新受信任的签名者中的现有证书列表。
 
-_注意_：此笔势将删除当前的证书列表，并将其替换为存储库中的最新列表。
+_注意_ ：此笔势将删除当前的证书列表，并将其替换为存储库中的最新列表。
 
 ## <a name="options"></a>选项
 
