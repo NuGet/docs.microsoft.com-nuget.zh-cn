@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: dc20e43bfb43a4b6e47297fb3446319860034d46
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: fe5625247dca51c10d82fffe82022c40a4716069
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623016"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237927"
 ---
 # <a name="publishing-packages"></a>发布包
 
@@ -24,7 +24,7 @@ ms.locfileid: "88623016"
 
 ## <a name="publish-to-nugetorg"></a>发布到 nuget.org
 
-对于 nuget.org，必须使用 Microsoft 帐户进行登录，将需要在 nuget.org 中注册此帐户。此外可以使用较旧版本的门户创建的 nuget.org 帐户进行登录。
+对于 nuget.org，必须使用 Microsoft 帐户进行登录，将需要在 nuget.org 中注册此帐户。
 
 ![NuGet 登录位置](media/publish_NuGetSignIn.png)
 
@@ -47,7 +47,7 @@ ms.locfileid: "88623016"
 ### <a name="command-line"></a>命令行
 
 若要将包推送到 nuget.org，首先需要一个 API 密钥，该密钥是在 nuget.org 上创建的。必须使用 dotnet.exe (.NET Core) 或 nuget.exe v4.1.0 或更高版本，它可实现所需的 NuGet 协议。
-有关详细信息，请参阅 [.NET Core](https://docs.microsoft.com/dotnet/core/install/)、[nuget.exe](https://www.nuget.org/downloads) 和 [NuGet 协议](../api/nuget-protocols.md)。
+有关详细信息，请参阅 [.NET Core](/dotnet/core/install/)、[nuget.exe](https://www.nuget.org/downloads) 和 [NuGet 协议](../api/nuget-protocols.md)。
 
 #### <a name="create-api-keys"></a>创建 API 密钥
 

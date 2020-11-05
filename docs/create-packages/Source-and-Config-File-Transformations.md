@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 04/24/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 2fefd9cff4d151111023521c31d58878743775bf
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 8e3eade14c70782563ba82894f072f9b3a611923
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78231170"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237979"
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>转换源代码和配置文件
 
@@ -52,7 +52,7 @@ ms.locfileid: "78231170"
 如以下部分所述，可以通过两种方法完成配置文件转换：
 
 - 在包的 `content` 文件夹中包含 `app.config.transform` 和 `web.config.transform` 文件，其中 `.transform` 扩展名告知 NuGet 这些文件包含在安装包时要与现有配置文件合并的 XML。 卸载包时，该相同 XML 被删除。
-- 在包的 `content` 文件夹中包含 `app.config.install.xdt` 和 `web.config.install.xdt` 文件，并使用 [XDT 语法](https://msdn.microsoft.com/library/dd465326.aspx)描述所需更改。 使用此选项还可以包含 `.uninstall.xdt` 文件，在从项目删除包时撤销更改。
+- 在包的 `content` 文件夹中包含 `app.config.install.xdt` 和 `web.config.install.xdt` 文件，并使用 [XDT 语法](/previous-versions/aspnet/dd465326(v=vs.110))描述所需更改。 使用此选项还可以包含 `.uninstall.xdt` 文件，在从项目删除包时撤销更改。
 
 > [!Note]
 > 转换不适用于在 Visual Studio 中作为链接引用的 `.config` 文件。
@@ -115,7 +115,7 @@ NuGet 安装包后，`web.config` 将显示为：
 > [!Note]
 > 如[从 `packages.config` 迁移到 `PackageReference` 文档的包兼容性问题一节](../consume-packages/migrate-packages-config-to-package-reference.md#package-compatibility-issues)所述，下述 XDT 转换仅受 `packages.config` 支持。 如果将以下文件添加到包中，则使用者在使用具有 `PackageReference` 的包时无需应用转换（参考[本示例](https://github.com/NuGet/Samples/tree/master/XDTransformExample)，了解如何让 XDT 转换适用于 `PackageReference`）。
 
-可以使用 [XDT 语法](https://msdn.microsoft.com/library/dd465326.aspx)修改配置文件。 此外，还可通过在 `$` 分隔符内包含属性名称（不区分大小写），让 NuGet 将令牌替换为[项目属性](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7)。
+可以使用 [XDT 语法](/previous-versions/aspnet/dd465326(v=vs.110))修改配置文件。 此外，还可通过在 `$` 分隔符内包含属性名称（不区分大小写），让 NuGet 将令牌替换为[项目属性](/dotnet/api/vslangproj.projectproperties?view=visualstudiosdk-2017&viewFallbackFrom=netframework-4.7)。
 
 例如，以下 `app.config.install.xdt` 文件会将 `appSettings` 元素插入到包含项目 `FullPath`、`FileName` 和 `ActiveConfigurationSettings` 值的 `app.config` 中：
 

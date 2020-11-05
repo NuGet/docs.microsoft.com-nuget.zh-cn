@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7166d622ef9d3975fc1c931d30caf570a765a6da
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 47a20c5566affec1cdc7772c86d8101dab162d85
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78231313"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237966"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>使用 MSBuild 创建 NuGet 包
 
-从代码中创建 NuGet 包时，会将该功能打包到一个组件中，该组件可以与任意数量的其他开发人员共享和使用。 本文介绍如何使用 MSBuild 创建包。 MSBuild 预安装了包含 NuGet 的所有 Visual Studio 工作负荷。 此外，还可以通过 dotnet CLI 借助 [dotnet msbuild](https://docs.microsoft.com/dotnet/core/tools/dotnet-msbuild) 来使用 MSBuild。
+从代码中创建 NuGet 包时，会将该功能打包到一个组件中，该组件可以与任意数量的其他开发人员共享和使用。 本文介绍如何使用 MSBuild 创建包。 MSBuild 预安装了包含 NuGet 的所有 Visual Studio 工作负荷。 此外，还可以通过 dotnet CLI 借助 [dotnet msbuild](/dotnet/core/tools/dotnet-msbuild) 来使用 MSBuild。
 
 对于使用 [SDK 样式格式](../resources/check-project-format.md)的 .NET Core 和 .NET Standard 项目，以及任何其他 SDK 样式项目，NuGet 直接使用项目文件中的信息创建包。  对于使用 `<PackageReference>` 的非 SDK 样式的项目，NuGet 还使用项目文件来创建包。
 

@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 4d337299f725b38981b0121069d5e6295b05e34e
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 9de890d14747a74a13a660109a3b6812a5e08acc
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "72924628"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237914"
 ---
 # <a name="analyzer-nuget-formats"></a>分析器 NuGet 格式
 
-借助 .NET Compiler Platform（也称为“Roslyn”），开发人员可创建 [分析器](https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix)，用于在写入代码时检查其语法树和语义。 这为开发人员提供了创建域特定的分析工具（如帮助指导如何使用特定 API 或库的工具）的方法。 可以在 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub wiki 上找到详细信息。 另请参阅下文：MSDN 杂志中的[使用 Roslyn 编写 API 的实时代码分析器](https://msdn.microsoft.com/magazine/dn879356.aspx)
+借助 .NET Compiler Platform（也称为“Roslyn”），开发人员可创建 [分析器](https://github.com/dotnet/roslyn/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix)，用于在写入代码时检查其语法树和语义。 这为开发人员提供了创建域特定的分析工具（如帮助指导如何使用特定 API 或库的工具）的方法。 可以在 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub wiki 上找到详细信息。 另请参阅下文：MSDN 杂志中的[使用 Roslyn 编写 API 的实时代码分析器](/archive/msdn-magazine/2014/special-issue/csharp-and-visual-basic-use-roslyn-to-write-a-live-code-analyzer-for-your-api)
 
 分析器本身通常作为实现 API 或相关库的 NuGet 包的一部分进行打包和分发。
 
@@ -46,8 +46,8 @@ ms.locfileid: "72924628"
     $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
 
 - framework_name 和版本：所包含的 DLL 需要运行的 .NET framework 的可选 API 外围应用    。 `dotnet` 是目前唯一有效的值，因为 Roslyn 是唯一可运行分析器的主机。 如果未指定目标，则假定 DLL 适用于所有目标。 
-- **supported_language**：DLL 适用的语言，`cs` (C#)、`vb` (Visual Basic) 和 `fs` 中的一种。 语言表示应仅为使用该语言的项目加载分析器。 如果未指定任何语言，则假定 DLL 适用于支持分析器的所有语言  。
-- **analyzer_name**：指定分析器的 DLL。 如果需要 DLL 以外的其他文件，必须通过目标或属性文件包括它们。
+- **supported_language** ：DLL 适用的语言，`cs` (C#)、`vb` (Visual Basic) 和 `fs` 中的一种。 语言表示应仅为使用该语言的项目加载分析器。 如果未指定任何语言，则假定 DLL 适用于支持分析器的所有语言  。
+- **analyzer_name** ：指定分析器的 DLL。 如果需要 DLL 以外的其他文件，必须通过目标或属性文件包括它们。
 
 
 ## <a name="install-and-uninstall-scripts"></a>安装和卸载脚本

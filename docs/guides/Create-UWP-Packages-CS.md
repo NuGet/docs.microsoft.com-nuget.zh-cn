@@ -5,12 +5,12 @@ author: rrelyea
 ms.author: rrelyea
 ms.date: 02/28/2020
 ms.topic: tutorial
-ms.openlocfilehash: 61f46f2623769927f881877cfe3f96132211b442
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 6f8037f439d627af158b6d5b7746a633b053e514
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78231751"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238005"
 ---
 # <a name="create-uwp-packages-c"></a>创建 UWP 包 (C#)
 
@@ -22,7 +22,7 @@ ms.locfileid: "78231751"
 
 1. Visual Studio 2019。 可以从 [visualstudio.com](https://www.visualstudio.com/) 免费安装 2019 Community 版；也可以使用 Professional 和 Enterprise 版。
 
-1. NuGet CLI。 从 [nuget.org/downloads](https://nuget.org/downloads) 下载 `nuget.exe` 的最新版本，将其保存到选择的位置（`.exe` 是直接下载的）。 然后将该位置添加到 PATH 环境变量（如果尚未添加）。 [更多详细信息](/nuget/reference/nuget-exe-cli-reference#windows)。
+1. NuGet CLI。 从 [nuget.org/downloads](https://nuget.org/downloads) 下载 `nuget.exe` 的最新版本，将其保存到选择的位置（`.exe` 是直接下载的）。 然后将该位置添加到 PATH 环境变量（如果尚未添加）。 [更多详细信息](../reference/nuget-exe-cli-reference.md#windows)。
 
 ## <a name="create-a-uwp-windows-runtime-component"></a>创建 UWP Windows 运行时组件
 
@@ -52,7 +52,7 @@ ms.locfileid: "78231751"
 若要创建初始 `.nuspec` 文件，请执行以下三个步骤。 后续部分将引导你完成其他必要的更新。
 
 1. 打开命令提示符并导航到包含 `ImageEnhancer.csproj` 的文件夹（这将是解决方案文件下方的子文件夹）。
-1. 运行 [`NuGet spec`](/nuget/reference/cli-reference/cli-ref-spec) 命令生成 `ImageEnhancer.nuspec`（此文件的名称取自 `.csroj` 文件的名称）：
+1. 运行 [`NuGet spec`](../reference/cli-reference/cli-ref-spec.md) 命令生成 `ImageEnhancer.nuspec`（此文件的名称取自 `.csroj` 文件的名称）：
 
     ```cli
     nuget spec
@@ -197,7 +197,7 @@ Windows 运行时组件需要描述其所有公共可用类型的元数据，这
 
 ## <a name="package-the-component"></a>打包组件
 
-如果已完成的 `.nuspec` 引用需要包含在包中的所有文件，便可运行 [`nuget pack`](/nuget/reference/cli-reference/cli-ref-pack) 命令：
+如果已完成的 `.nuspec` 引用需要包含在包中的所有文件，便可运行 [`nuget pack`](../reference/cli-reference/cli-ref-pack.md) 命令：
 
 ```cli
 nuget pack ImageEnhancer.nuspec

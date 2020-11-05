@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 915f6e4cfc0b21d2b10006c62e8230720d07ce74
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7076378b53c439eef51a243fa6efcfb01b8cfa73
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428533"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237901"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>NuGet.org 常见问题解答
 
@@ -127,7 +127,7 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 1. 转到[登录页面](https://www.nuget.org/users/account/LogOn)，单击“Microsoft 登录”，然后使用当前关联的 Microsoft 帐户（即 `account1@outlook.com`）登录   。
 1. 登录后，请转到[帐户设置](https://www.nuget.org/account)页面。
 1. 展开“登录帐户”部分  。 单击“更改帐户”按钮  。
-1. 系统会重定向至 Microsoft 登录页面。 请使用要更改为关联帐户的帐户登录，即 `account2@outlook.com`。**注意**：登录过程中，可能需要单击“注销并使用另一个帐户登录”，才能使用其他 Microsoft 帐户登录  。
+1. 系统会重定向至 Microsoft 登录页面。 请使用要更改为关联帐户的帐户登录，即 `account2@outlook.com`。 **注意** ：登录过程中，可能需要单击“注销并使用另一个帐户登录”，才能使用其他 Microsoft 帐户登录  。
 1. 如果看到如下类似错误，请查看 [Microsoft 帐户已链接到另一个 NuGet.org 帐户](#microsoft-account-is-linked-with-another-nugetorg-account)，了解详细信息。
     >_无法将此 Microsoft 帐户更新为“account2 <account2@outlook.com>”。原因可能是该帐户已链接到另一个 NuGet 帐户。有关详细信息，请联系支持人员。_
 
@@ -188,11 +188,11 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 ### <a name="unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account"></a>无法使用 Microsoft 登录，如何恢复 NuGet.org 帐户？
 
 如果尝试使用[登录帮助](#which-microsoft-account-is-linked-to-my-nugetorg-account) , 但无权访问与 NuGet.org 帐户关联的 Microsoft 帐户，请按照下面的步骤将新的 Microsoft 帐户链接到你的 NuGet.org 帐户。
-1. **要求**：有权访问某 Microsoft 帐户，此帐户并未关联到任何现有 NuGet.org 帐户。 如果没有帐户，请[创建](https://signup.live.com)帐户。
+1. **要求** ：有权访问某 Microsoft 帐户，此帐户并未关联到任何现有 NuGet.org 帐户。 如果没有帐户，请[创建](https://signup.live.com)帐户。
 2. 如果忘记了 NuGet.org 帐户的用户名和密码，请按照[恢复密码登录的步骤](#how-to-recover-nugetorg-password-login)操作。
 3. 通过用户名/密码登录方法[登录 NuGet.org](https://www.nuget.org/users/account/LogOnNuGetAccount)。
 4. 登录后会弹出如下所示的对话框。 这是密码终止对话框。
-5. **注意**：请忽略有关使用指定 Microsoft 帐户登录的说明。 现在可以将你的 NuGet.org 帐户链接到任何其他 Microsoft 登录名。
+5. **注意** ：请忽略有关使用指定 Microsoft 帐户登录的说明。 现在可以将你的 NuGet.org 帐户链接到任何其他 Microsoft 登录名。
 6. 单击“Microsoft 登录”按钮，然后按步骤 1 所述，使用具有访问权限的 Microsoft 帐户登录  。
 7. 现在，你的帐户将链接到新 Microsoft 帐户，你可以使用它来登录 NuGet.org。
 
@@ -203,7 +203,7 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 如要将帐户转换为组织帐户，且此帐户已与 Microsoft 帐户登录关联，请按照 [nuget org 上的组织](organizations-on-nuget-org.md)文档中的步骤操作。
 
 但是，如果你的 NuGet.org 帐户未关联到 Microsoft 帐户，则可以按照以下步骤将此帐户转换为组织。
-1. **要求**：需要首先在 NuGet.org 上创建一个个人帐户，以用作组织帐户的管理员。 如果没有，请[创建新的 NuGet.org 帐户](individual-accounts.md)
+1. **要求** ：需要首先在 NuGet.org 上创建一个个人帐户，以用作组织帐户的管理员。 如果没有，请[创建新的 NuGet.org 帐户](individual-accounts.md)
 2. 如果使用密码登录，请按照[此处所述的步骤](#how-to-recover-nugetorg-password-login)为你的 NuGet.org 帐户恢复密码登录，否则请跳过此步骤。
 3. 通过用户名/密码登录方法[登录 NuGet.org](https://www.nuget.org/users/account/LogOnNuGetAccount)。
 4. 登录后会弹出如下所示的对话框。 这是密码终止对话框。 
@@ -228,13 +228,13 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 
 你的帐户似乎在之前注册为 Microsoft 个人帐户，且其使用正常，但现在此帐户似乎已在 Azure Active Directory（用于对 Microsoft 帐户执行身份验证的标识符）中注册为“非托管”租户。 
 
-出现此情况的原因可能是你或你所在组织的其他人员（电子邮件为 @yourdomain.com）注册了某个 AAD 集成服务，或者进行了 [Azure Active Directory 自助注册](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-self-service-signup)，这会对所使用的 Microsoft 帐户域（对你而言为 @yourdomain.com）创建一个“非托管”租户。 
+出现此情况的原因可能是你或你所在组织的其他人员（电子邮件为 @yourdomain.com）注册了某个 AAD 集成服务，或者进行了 [Azure Active Directory 自助注册](/azure/active-directory/users-groups-roles/directory-self-service-signup)，这会对所使用的 Microsoft 帐户域（对你而言为 @yourdomain.com）创建一个“非托管”租户。 
 
 **怎样才可以恢复帐户？**
 
 当前，我们 (NuGet.org) 无法使用 Azure Active Directory 中含有此类“非托管”租户帐户对帐户进行身份验证。 我们正在寻找一种更佳的方式来对此类帐户进行身份验证。
 
-如果要使用 Microsoft 帐户 (@yourdomain.com) 登录 NuGet.org，你（或你所在公司的管理员）需要通过执行 DNS 验证声明 AAD 所有者，以对电子邮件地址为“@yourdomain.com”的用户进行身份验证。 请按照 Azure Active directory 文档[域管理员接管](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover)中的步骤操作。 完成后，应能开始正常登录。
+如果要使用 Microsoft 帐户 (@yourdomain.com) 登录 NuGet.org，你（或你所在公司的管理员）需要通过执行 DNS 验证声明 AAD 所有者，以对电子邮件地址为“@yourdomain.com”的用户进行身份验证。 请按照 Azure Active directory 文档[域管理员接管](/azure/active-directory/users-groups-roles/domains-admin-takeover)中的步骤操作。 完成后，应能开始正常登录。
 
 **我不想使用这种方法，还有什么其他方法可以恢复帐户？**
 

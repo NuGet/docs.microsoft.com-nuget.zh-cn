@@ -7,12 +7,12 @@ ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 42031f7b5fe4d3c1b4dbe5e1bfbf9197014e0e88
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 8b23b6cc22eff5413e317fbe619edd3d4f4716ee
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428575"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237395"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>在 Visual Studio 中使用包管理器控制台安装和管理包 (PowerShell)
 
@@ -168,7 +168,7 @@ $profile
 C:\Users\<user>\Documents\WindowsPowerShell\NuGet_profile.ps1
 ```
 
-有关更多详细信息，请参阅 [Windows PowerShell 配置文件](https://technet.microsoft.com/library/bb613488.aspx)。
+有关更多详细信息，请参阅 [Windows PowerShell 配置文件](/previous-versions//bb613488(v=vs.85))。
 
 ## <a name="use-the-nugetexe-cli-in-the-console"></a>在控制台中使用 nuget.exe CLI
 

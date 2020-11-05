@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 937a0083ca47ba5668059736a7e99f7ca88e8908
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: aae6f0474cc6e8e8aa5c269b79be6fd949d9184c
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622611"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237992"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
@@ -41,7 +41,7 @@ NuGet 是否支持 Mono？
 - Windows 版 Visual Studio 支持[包管理器 UI](../consume-packages/install-use-packages-visual-studio.md) 和[包管理器控制台](../consume-packages/install-use-packages-powershell.md)。
 - Visual Studio for Mac 具有内置 NuGet 功能，如[在项目中包括 NuGet 包](/visualstudio/mac/nuget-walkthrough)中所述。
 - Visual Studio Code（所有平台）与 NuGet 不存在任何直接集成。 请使用 [NuGet CLI](../reference/nuget-exe-cli-reference.md) 或 [dotnet CLI](../reference/dotnet-commands.md)。
-- Azure DevOps 提供[还原 NuGet 包的生成步骤](/vsts/build-release/tasks/package/nuget)。 还可以[在 Azure DevOps 上托管私有 NuGet 包源](https://docs.microsoft.com/azure/devops/artifacts/nuget/publish)。
+- Azure DevOps 提供[还原 NuGet 包的生成步骤](/vsts/build-release/tasks/package/nuget)。 还可以[在 Azure DevOps 上托管私有 NuGet 包源](/azure/devops/artifacts/nuget/publish)。
 
 **如何查看安装的 NuGet 工具的确切版本？**
 
@@ -103,7 +103,7 @@ Visual Studio 自动化对象模型中的顶层对象称为 DTE （开发工具�
 
 如何在源中列出我的包？ 
 
-请参阅[创建和发布包](../quickstart/create-and-publish-a-package.md)。
+请参阅[创建和发布包](../quickstart/create-and-publish-a-package-using-visual-studio.md)。
 
 我有面向不同版本的 .NET Framework 的多个版本的库。  如何才能生成一个支持此方案的包？
 
@@ -119,33 +119,33 @@ Visual Studio 自动化对象模型中的顶层对象称为 DTE （开发工具�
 
 ## <a name="working-with-packages"></a>使用包
 
-是否可以在没有 Internet 连接时安装 NuGet 包？****
+是否可以在没有 Internet 连接时安装 NuGet 包？
 
 可以，请参阅 Scott Hanselman 的博客文章 [How to access NuGet when nuget.org is down (or you're on a plane)](http://www.hanselman.com/blog/HowToAccessNuGetWhenNuGetorgIsDownOrYoureOnAPlane.aspx)（如何在 nuget.org 不可用（或用户在飞机上）时访问 NuGet）(hanselman.com)。
 
-如何在默认包文件夹以外的其他位置安装包？****
+如何在默认包文件夹以外的其他位置安装包？
 
 请使用 `nuget config -set repositoryPath=<path>` 设置 `Nuget.Config` 中的 [`repositoryPath`](../reference/nuget-config-file.md#config-section) 设置。
 
-如何避免将 NuGet 包文件夹中添加到源代码管理中？****
+如何避免将 NuGet 包文件夹中添加到源代码管理中？
 
 请将 `Nuget.Config` 中的 [`disableSourceControlIntegration`](../reference/nuget-config-file.md#solution-section) 设置为 `true`。 此密钥适用于解决方案级别，因此需要添加到 `$(Solutiondir)\.nuget\Nuget.Config` 文件中。 从 Visual Studio 中启用包还原将自动创建此文件。
 
-如何关闭包还原？****
+如何关闭包还原？
 
 请参阅[启用和禁用包还原](../consume-packages/package-restore.md#enable-and-disable-package-restore-in-visual-studio)。
 
-安装具有远程依赖项的本地包时，为何会出现“无法解析依赖项”错误？****
+安装具有远程依赖项的本地包时，为何会出现“无法解析依赖项”错误？
 
-将本地包安装到项目中时，需要选择“所有”源****。 这样可以聚合所有源，而不只是一个源。 本地存储库用户通常不希望因为公司政策而意外安装远程包，因此才会出现此错误。
+将本地包安装到项目中时，需要选择“所有”源。 这样可以聚合所有源，而不只是一个源。 本地存储库用户通常不希望因为公司政策而意外安装远程包，因此才会出现此错误。
 
-如果同一文件夹中有多个项目，如何使用每个项目单独的 packages.config 文件？****
+如果同一文件夹中有多个项目，如何使用每个项目单独的 packages.config 文件？
 
 对于各个项目位于单独文件夹中的大多数项目，用户不必考虑此问题，因为 NuGet 会识别每个项目中的 `packages.config` 文件。 如果使用 NuGet 3.3+ 并且同一文件夹中有多个项目，可将项目名称插入 `packages.config` 文件名（使用 `packages.{project-name}.config` 模式），然后 NuGet 将使用该文件。
 
 使用 PackageReference 时不必考虑此问题，因为每个项目文件仅包含自己的依赖项列表。
 
-存储库列表中未显示 nuget.org，应如何让其重新显示？****
+存储库列表中未显示 nuget.org，应如何让其重新显示？
 
 - 将 `https://api.nuget.org/v3/index.json` 添加到源列表；或
 - 删除 `%appdata%\.nuget\NuGet.Config` (Windows) 或 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) 并指示 NuGet 重新创建它。

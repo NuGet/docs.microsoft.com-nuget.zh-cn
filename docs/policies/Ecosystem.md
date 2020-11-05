@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 31243076f36f6ff274c4377c1773ea59dda8c834
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 165587fb64be5a5f4dbfdece7dc3a1e6402b733e
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64495510"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237421"
 ---
 # <a name="an-overview-of-the-nuget-ecosystem"></a>NuGet 生态系统概述
 
@@ -68,7 +68,7 @@ Microsoft 对 NuGet 的开发做出了巨大的贡献。 Microsoft 员工做出�
 
 ## <a name="training-materials-and-references"></a>培训材料和参考资料
 
-使用新工具或技术通常伴有学习曲线。 幸运的是，NuGet 完全没有陡峭的学习曲线！ 事实上，任何人都可以快速[入门包的使用](../quickstart/use-a-package.md)。
+使用新工具或技术通常伴有学习曲线。 幸运的是，NuGet 完全没有陡峭的学习曲线！ 事实上，任何人都可以快速[入门包的使用](../quickstart/install-and-use-a-package-in-visual-studio.md)。
 
 即便如此，创作包（尤其是好的包）以及在自动生成和部署过程中利用 NuGet，需要在以下资源上花费更多时间：
 

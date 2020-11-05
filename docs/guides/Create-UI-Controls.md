@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: e1ebf5042597693ee55d986a4f93e797c27ad30a
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 17062d83349fe1b8cd28e57dd888686a226ac9cb
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622702"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93238018"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>以 NuGet 包形式创建 UI 控件
 
@@ -59,11 +59,11 @@ ms.locfileid: "88622702"
 
 其中：
 
-- *your_package_file*：控件文件的名称，例如 `ManagedPackage.winmd`（“ManagedPackage”是本示例中随意起的名称，没有其他意义）。
-- *vs_category*：Visual Studio 设计器工具箱中应出现控件的组的标签。 `VSCategory` 对控件出现在工具箱中是必要的。
-*ui_framework*：框架的名称（例如“WPF”），请注意，Visual Studio 16.7 预览版 3 或更高版本的 ToolboxItems 节点上必须具有 `UIFramework` 属性，控件才能出现在工具箱中。
-- *blend_category*：Blend 设计器的“资产”窗格中应出现控件的组的标签。 `BlendCategory` 对控件出现在“资产”中是必要的。
-- *type_full_name_n*：每个控件的完全限定名称，包括命名空间，例如 `ManagedPackage.MyCustomControl`。 注意，点格式用于托管和本机类型。
+- *your_package_file* ：控件文件的名称，例如 `ManagedPackage.winmd`（“ManagedPackage”是本示例中随意起的名称，没有其他意义）。
+- *vs_category* ：Visual Studio 设计器工具箱中应出现控件的组的标签。 `VSCategory` 对控件出现在工具箱中是必要的。
+*ui_framework* ：框架的名称（例如“WPF”），请注意，Visual Studio 16.7 预览版 3 或更高版本的 ToolboxItems 节点上必须具有 `UIFramework` 属性，控件才能出现在工具箱中。
+- *blend_category* ：Blend 设计器的“资产”窗格中应出现控件的组的标签。 `BlendCategory` 对控件出现在“资产”中是必要的。
+- *type_full_name_n* ：每个控件的完全限定名称，包括命名空间，例如 `ManagedPackage.MyCustomControl`。 注意，点格式用于托管和本机类型。
 
 在更高级的方案中，当单个包包含多个控件程序集时，还可以在 `<FileList>` 中包括多个 `<File>` 元素。 如果需要将控件整理为单独的分类，则还可以在单个 `<File>` 中有多个 `<ToolboxItems>` 节点。
 
@@ -94,7 +94,7 @@ ms.locfileid: "88622702"
 
 ![工具框图标示例](https://raw.githubusercontent.com/NuGet/docs.microsoft.com-nuget/live/docs/guides/media/ColorPicker_16x16x24.bmp)
 
-运行时将替换粉色背景。 更改 Visual Studio 主题且需要设置背景颜色时，图标会重新着色。 有关详细信息，请参阅 [Visual Studio 的图像和图标](https://docs.microsoft.com/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio)。
+运行时将替换粉色背景。 更改 Visual Studio 主题且需要设置背景颜色时，图标会重新着色。 有关详细信息，请参阅 [Visual Studio 的图像和图标](/visualstudio/extensibility/ux-guidelines/images-and-icons-for-visual-studio)。
 
 在以下示例中，项目包含名为“ManagedPackage.MyCustomControl.png”的图像文件。
 
@@ -121,7 +121,7 @@ NuGet 将自动检查正在使用项目的 TPMinV，如果低于 Windows 10 Anni
 
 ## <a name="add-design-time-support"></a>添加设计时支持
 
-要配置控件属性在属性检查器中显示的位置、添加自定义装饰器等，请将 `design.dll` 文件放在目标平台对应的 `lib\uap10.0.14393\Design` 文件夹中。 此外，要确保[“编辑模板”>“编辑副本”](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)功能正常工作，必须包含 `Generic.xaml` 及其在 `<your_assembly_name>\Themes` 文件夹中合并的任何资源字典（同样，使用实际的程序集名称）****。 （此文件对控件的运行时行为不产生影响。）文件夹结构将如下所示：
+要配置控件属性在属性检查器中显示的位置、添加自定义装饰器等，请将 `design.dll` 文件放在目标平台对应的 `lib\uap10.0.14393\Design` 文件夹中。 此外，要确保[“编辑模板”>“编辑副本”](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)功能正常工作，必须包含 `Generic.xaml` 及其在 `<your_assembly_name>\Themes` 文件夹中合并的任何资源字典（同样，使用实际的程序集名称）。 （此文件对控件的运行时行为不产生影响。）文件夹结构将如下所示：
 
     \lib
       \uap10.0.14393
@@ -147,7 +147,7 @@ NuGet 将自动检查正在使用项目的 TPMinV，如果低于 Windows 10 Anni
 
 ## <a name="use-strings-and-resources"></a>使用字符串和资源
 
-可以将字符创资源 (`.resw`) 嵌入在控件或者使用的 UWP 项目可使用的包中，将 `.resw` 文件的“生成操作”属性设为 PRIResource********。
+可以将字符创资源 (`.resw`) 嵌入在控件或者使用的 UWP 项目可使用的包中，将 `.resw` 文件的“生成操作”属性设为 PRIResource。
 
 有关示例，请参考 ExtensionSDKasNuGetPackage 示例中的 [MyCustomControl.cs](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/ManagedPackage/MyCustomControl.cs)。
 
