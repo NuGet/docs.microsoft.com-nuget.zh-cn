@@ -6,11 +6,11 @@ ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
 ms.openlocfilehash: a5833df60c5f7905359f421141347b1237f45d86
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428503"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237635"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -240,7 +240,7 @@ NuGet 遵循以下警告属性：
 
 ### <a name="suppressing-nuget-warnings"></a>阻止 NuGet 警告
 
-虽然推荐在打包和还原操作期间解决所有 NuGet 警告，在某些情况下可以禁止显示警告。
+虽然推荐在打包和还原操作期间解决所有 NuGet 警告，但在某些情况下可以禁止显示警告。
 若要禁止显示项目范围内的警告，请考虑执行以下操作：
 
 ```xml
@@ -253,7 +253,7 @@ NuGet 遵循以下警告属性：
 </ItemGroup>
 ```
 
-有时，警告仅适用于图中的特定包。 通过对 PackageReference 项目添加 `NoWarn`，我们可以有更多地选择来禁止显示该警告。 
+有时，警告仅适用于图中的特定包。 通过对 PackageReference 项目添加 `NoWarn`，我们可以有更有选择性地禁止显示该警告。 
 
 ```xml
 <PropertyGroup>
@@ -346,7 +346,7 @@ ProjectA
              |------>PackageX 1.0.0
 ```
 
-如果 `ProjectA` 在 `PackageX` 版本 `2.0.0` 上具有依赖项并引用依赖于 `PackageX` 版本 `1.0.0` 的 `ProjectB`，则 `ProjectB` 的锁定文件将列出 `PackageX` 版本 `1.0.0` 的依赖项。 但是，当生成 `ProjectA` 时，其锁定文件将包含 `PackageX` 锁定文件中列出的 **版本 `2.0.0`（而不是**）上的依赖项  `1.0.0``ProjectB`。 因此，常用代码项目的锁定文件对依赖于它的项目进行解析的包几乎没有控制。
+如果 `ProjectA` 在 `PackageX` 版本 `2.0.0` 上具有依赖项并引用依赖于 `PackageX` 版本 `1.0.0` 的 `ProjectB`，则 `ProjectB` 的锁定文件将列出 `PackageX` 版本 `1.0.0` 的依赖项。 但是，当生成 `ProjectA` 时，其锁定文件将包含 `PackageX` 锁定文件中列出的 **版本 `2.0.0`（而不是** ）上的依赖项  `1.0.0``ProjectB`。 因此，常用代码项目的锁定文件对依赖于它的项目进行解析的包几乎没有控制。
 
 ### <a name="lock-file-extensibility"></a>锁定文件可扩展性
 
