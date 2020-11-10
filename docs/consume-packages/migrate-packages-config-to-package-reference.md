@@ -1,16 +1,16 @@
 ---
 title: 从 package.config 迁移到 PackageReference 格式
-description: 详细介绍了如何将项目从 package.config 管理格式迁移到 NuGet 4.0+、VS2017 以及 .NET Core 2.0 支持的 PackageReference
+description: 详细介绍了如何将项目从 packages.config 管理格式迁移到 NuGet 4.0+、VS2017 以及 .NET Core 2.0 支持的 PackageReference
 author: karann-msft
 ms.author: karann
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8e825410d621ff2946e23e80173292f24f9d21f2
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 23bd936707173f49a651a8ba432fa8773fa53881
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428521"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237830"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>从 packages.config 迁移到 PackageReference
 
@@ -18,11 +18,11 @@ Visual Studio 2017 版本 15.7 及更高版本支持将项目从 [packages.confi
 
 ## <a name="benefits-of-using-packagereference"></a>使用 PackageReference 的好处
 
-* **在一个位置管理所有项目依赖项**：与项目到项目的引用和程序集引用一样，NuGet 包引用（使用 `PackageReference` 节点）直接在项目文件中进行管理，而不是使用单独的 packages.config 文件进行管理。
-* **顶级依赖项的有序视图**：与 packages.config 不同，PackageReference 仅列出那些直接安装在项目中的 NuGet 包。 因此，NuGet 包管理器 UI 和项目文件不会与低级依赖项混在一起。
-* **性能改进**：使用 PackageReference 时，包保留在 global-packages  文件夹中（而不是解决方案中的 `packages` 文件夹中），如[管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)中所述。 因此，PackageReference 的执行速度更快，但占用的磁盘空间更少。
-* **更好地控制依赖项和内容流**：使用 MSBuild 的现有功能可以[有条件地引用 NuGet 包](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition)，并选择每个目标框架、配置、平台或其他透视的包引用。
-* **PackageReference 正处于积极开发阶段**：请参阅 [GitHub 上的 PackageReference 问题](https://aka.ms/nuget-pr-improvements)。 packages.config 不再处于积极开发阶段。
+* **在一个位置管理所有项目依赖项** ：与项目到项目的引用和程序集引用一样，NuGet 包引用（使用 `PackageReference` 节点）直接在项目文件中进行管理，而不是使用单独的 packages.config 文件进行管理。
+* **顶级依赖项的有序视图** ：与 packages.config 不同，PackageReference 仅列出那些直接安装在项目中的 NuGet 包。 因此，NuGet 包管理器 UI 和项目文件不会与低级依赖项混在一起。
+* **性能改进** ：使用 PackageReference 时，包保留在 global-packages  文件夹中（而不是解决方案中的 `packages` 文件夹中），如 [管理全局包和缓存文件夹](../consume-packages/managing-the-global-packages-and-cache-folders.md)中所述。 因此，PackageReference 的执行速度更快，但占用的磁盘空间更少。
+* **更好地控制依赖项和内容流** ：使用 MSBuild 的现有功能可以 [有条件地引用 NuGet 包](../consume-packages/Package-References-in-Project-Files.md#adding-a-packagereference-condition)，并选择每个目标框架、配置、平台或其他透视的包引用。
+* **PackageReference 正处于积极开发阶段** ：请参阅 [GitHub 上的 PackageReference 问题](https://aka.ms/nuget-pr-improvements)。 packages.config 不再处于积极开发阶段。
 
 ### <a name="limitations"></a>限制
 

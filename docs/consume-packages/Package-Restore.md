@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 11d0a7c321e6cd12c82b83054ec85d5f05755434
-ms.sourcegitcommit: 0a63956bf12aaf1b1b45e680bc8e90f97347988c
+ms.openlocfilehash: 0edfa1f61e6b18ef38689ed2272b2c5992a46ae6
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83367916"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237843"
 ---
 # <a name="restore-packages-using-package-restore"></a>使用“程序包还原”还原程序包
 
@@ -167,6 +167,14 @@ NuGet 提供项目可使用包的两种格式：[`PackageReference`](package-ref
    ```
 
    确保 MSBuild 输出指示生成已成功完成。
+   
+> [!Note]
+> msbuild 具有 `-restore` 开关，它将运行 `Restore`、重载项目，然后生成。 请参阅[使用一个 MSBuild 命令来还原和生成](/nuget/reference/msbuild-targets#restoring-and-building-with-one-msbuild-command)。
+
+```cmd
+# Will restore the project, then build, since build is the default target.
+msbuild -restore
+```
 
 ## <a name="restore-using-azure-pipelines"></a>使用 Azure Pipelines 进行还原
 
@@ -216,7 +224,7 @@ NuGet 通过任意方法还原包时，将遵守你在 `packages.config` 或项�
 
 对于 NuGet 2.6 及更早版本，以前支持集成 MSBuild 的包恢复，但现在不再支持。 （通常通过右键单击 Visual Studio 中的解决方案并选择“启用 NuGet 程序包还原”  来启用）。 如果项目使用已弃用的集成 MSBuild 的程序包还原，请迁移到自动程序包还原。
 
-使用集成 MSBuild 的程序包还原的项目通常包含带有三个文件的 .nuget  文件夹：NuGet.config  、nuget.exe  和 NuGet.targets  。 NuGet.targets 文件的存在与否决定了 NuGet 是否继续使用集成 MSBuild 的方法，因此在迁移期间必须删除此文件。 
+使用集成 MSBuild 的程序包还原的项目通常包含带有三个文件的 .nuget  文件夹：NuGet.config  、nuget.exe  和 NuGet.targets  。 NuGet.targets 文件的存在与否决定了 NuGet 是否继续使用集成 MSBuild 的方法，因此在迁移期间必须删除此文件。
 
 要迁移到自动程序包还原，请执行以下操作：
 

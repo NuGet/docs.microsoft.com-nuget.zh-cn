@@ -6,12 +6,12 @@ ms.author: karann
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: c79976c2f4ded2fba3796fb847d3c90807d7b86c
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 4cb12f439d796d583f52d657225c39418d5a4836
+ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80147443"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93237356"
 ---
 # <a name="package-versioning"></a>包版本控制
 
@@ -29,10 +29,10 @@ ms.locfileid: "80147443"
 
 特定版本号的格式为 Major.Minor.Patch[-Suffix]  ，其中的组件具有以下含义：
 
-- *Major*：重大更改
-- *Minor*：新增功能，但可向后兼容
-- *Patch*：仅可向后兼容的 bug 修复
-- *-Suffix*（可选）：连字符后跟字符串，表示预发布版本（遵循[语义化版本控制或 SemVer 1.0 约定](https://semver.org/spec/v1.0.0.html)）。
+- *Major* ：重大更改
+- *Minor* ：新增功能，但可向后兼容
+- *Patch* ：仅可向后兼容的 bug 修复
+- *-Suffix* （可选）：连字符后跟字符串，表示预发布版本（遵循 [语义化版本控制或 SemVer 1.0 约定](https://semver.org/spec/v1.0.0.html)）。
 
 **示例：**
 
@@ -114,7 +114,7 @@ ms.locfileid: "80147443"
 | [1.0,2.0) | 1.0 ≤ x < 2.0 | 混合了最低版本（包含）和最高版本（独占） |
 | (1.0)    | 无效 | 无效 |
 
-使用 PackageReference 格式时，NuGet 还支持使用浮点表示法 \* 来表示版本号的主要、次要、修补程序和预发布后缀部分。 `packages.config` 格式不支持可变版本。
+使用 PackageReference 格式时，NuGet 还支持使用浮点表示法 \* 来表示版本号的主要、次要、修补程序和预发布后缀部分。 `packages.config` 格式不支持可变版本。 指定可变版本后，规则是解析为与版本描述匹配的现有最高版本。 下面是可变版本和解析方法的示例。
 
 > [!Note]
 > PackageReference 中的版本范围包括预发布版本。 按照设计，可变版本不会解析预发布版本，除非选择加入。 有关相关功能请求的状态，请参阅[问题 6434](https://github.com/NuGet/Home/issues/6434#issuecomment-358782297)。
@@ -126,28 +126,43 @@ ms.locfileid: "80147443"
 #### <a name="references-in-project-files-packagereference"></a>项目文件中的引用 (PackageReference)
 
 ```xml
-<!-- Accepts any version 6.1 and above. -->
+<!-- Accepts any version 6.1 and above.
+     Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="6.1" />
 
-<!-- Accepts any 6.x.y version. -->
+<!-- Accepts any 6.x.y version.
+     Will resolve to the highest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="6.*" />
-<PackageReference Include="ExamplePackage" Version="[6,7)" />
 
 <!-- Accepts any version above, but not including 4.1.3. Could be
-     used to guarantee a dependency with a specific bug fix. -->
+     used to guarantee a dependency with a specific bug fix. 
+     Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="(4.1.3,)" />
 
 <!-- Accepts any version up below 5.x, which might be used to prevent pulling in a later
      version of a dependency that changed its interface. However, this form is not
-     recommended because it can be difficult to determine the lowest version. -->
+     recommended because it can be difficult to determine the lowest version. 
+     Will resolve to the smallest acceptable stable version.
+     -->
 <PackageReference Include="ExamplePackage" Version="(,5.0)" />
 
-<!-- Accepts any 1.x or 2.x version, but not 0.x or 3.x and higher. -->
+<!-- Accepts any 1.x or 2.x version, but not 0.x or 3.x and higher.
+     Will resolve to the smallest acceptable stable version.-->
 <PackageReference Include="ExamplePackage" Version="[1,3)" />
 
-<!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher. -->
+<!-- Accepts 1.3.2 up to 1.4.x, but not 1.5 and higher.
+     Will resolve to the smallest acceptable stable version. -->
 <PackageReference Include="ExamplePackage" Version="[1.3.2,1.5)" />
 ```
+
+#### <a name="floating-version-resolutions"></a>可变版本解析方法 
+
+| 版本 | 服务器上存在的版本 | 解决方法 | 原因 | 说明 |
+|----------|--------------|-------------|-------------|-------------|
+| * | 1.1.0 <br> 1.1.1 <br> 1.2.0 <br> 1.3.0-alpha 版本  | 1.2.0 | 最高稳定版本。 |
+| 1.1.* | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha 版本 <br> 1.2.0-alpha 版本 | 1.1.1 | 遵循指定模式的最高稳定版本。|
+| * - * | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha 版本 <br> 1.3.0-beta 版本  | 1.3.0-beta 版本 | 包含不稳定版本的最高版本。 | 在 Visual Studio 版本 16.6、NuGet 版本5.6、.NET Core SDK 版本 3.1.300 中提供 |
+| 1.1.* - * | 1.1.0 <br> 1.1.1 <br> 1.1.2-alpha 版本 <br> 1.1.2-beta 版本 <br> 1.3.0-beta 版本  | 1.1.2-beta 版本 | 遵循模式并包含不稳定版本的最高版本。 | 在 Visual Studio 版本 16.6、NuGet 版本5.6、.NET Core SDK 版本 3.1.300 中提供 |
 
 **`packages.config` 中的引用：**
 
@@ -228,4 +243,4 @@ ms.locfileid: "80147443"
 
 `pack` 和 `restore` 操作可尽可能规范化版本。 对于已生成的包，此规范化不会影响包本身的版本号；仅影响 NuGet 在解析依赖项时匹配版本的方式。
 
-但是，NuGet 包存储库必须以与 NuGet 相同的方式处理这些值，以防止包版本重复。 因此，包含包版本 1.0 的存储库还不应将版本 1.0.0 作为单独的不同包进行托管   。
+但是，NuGet 包存储库必须以与 NuGet 相同的方式处理这些值，以防止包版本重复。 因此，包含包版本 1.0 的存储库还不应将版本 1.0.0 作为单独的不同包进行托管。
