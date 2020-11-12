@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 0edfa1f61e6b18ef38689ed2272b2c5992a46ae6
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 05fa68ad3a0b353117a14e2b3e1cdf13dc806127
+ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237843"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94550383"
 ---
 # <a name="restore-packages-using-package-restore"></a>使用“程序包还原”还原程序包
 
@@ -169,7 +169,7 @@ NuGet 提供项目可使用包的两种格式：[`PackageReference`](package-ref
    确保 MSBuild 输出指示生成已成功完成。
    
 > [!Note]
-> msbuild 具有 `-restore` 开关，它将运行 `Restore`、重载项目，然后生成。 请参阅[使用一个 MSBuild 命令来还原和生成](/nuget/reference/msbuild-targets#restoring-and-building-with-one-msbuild-command)。
+> msbuild 具有 `-restore` 开关，它将运行 `Restore`、重载项目，然后生成。 请参阅[使用一个 MSBuild 命令来还原和生成](../reference/msbuild-targets.md#restoring-and-building-with-one-msbuild-command)。
 
 ```cmd
 # Will restore the project, then build, since build is the default target.

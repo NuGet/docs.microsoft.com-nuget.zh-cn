@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 81f8695d7b3cec73f3e18f90ddf38dfe6c3ecf4d
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 64b28c29ae3b533bde7c8f41dd38a4ab0a5afef7
+ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237583"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94550370"
 ---
 # <a name="signing-nuget-packages"></a>对 NuGet 包进行签名
 
@@ -54,7 +54,7 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 要发布已签名的包，必须先使用 NuGet.org 注册证书。需要将证书设置为二进制 DER 格式的 `.cer` 文件。
 
 1. [登录](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)到 NuGet.org。
-1. 转到 `Account settings`（如果希望使用组织帐户注册证书，则转到 `Manage Organization` **>** `Edit Organziation`）。
+1. 转到 `Account settings`（如果希望使用组织帐户注册证书，则转到 `Manage Organization` **>** `Edit Organization`）。
 1. 展开 `Certificates` 部分，并选择 `Register new`。
 1. 浏览并选择前面导出的证书文件。
   ![已注册的证书](../reference/media/registered-certs.png)
