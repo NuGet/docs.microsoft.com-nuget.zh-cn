@@ -5,12 +5,12 @@ author: dominofire
 ms.author: feaguila
 ms.date: 11/9/2020
 ms.topic: conceptual
-ms.openlocfilehash: 86e173b9d760578454df8f5f817533f64e193996
-ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
+ms.openlocfilehash: 09fb98eec79ee4ed08d85a1c557a420d6b265f11
+ms.sourcegitcommit: f4b74b500e3db9e468f11142df48d87880382267
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550739"
+ms.locfileid: "94572826"
 ---
 # <a name="nuget-58-release-notes"></a>NuGet 5.8 发行说明
 
@@ -28,6 +28,8 @@ NuGet 分发车辆：
 
 ## <a name="summary-whats-new-in-58"></a>摘要：5.8 中的新增功能
 🎉 **这是第一个版本，用于为面向 .net 5.0 的 NuGet 包提供完整创作和还原支持** 🎉
+
+* 使用 mmap/ [#9807](https://github.com/NuGet/Home/issues/9807) CreateFileMapping 提高 nupkg 提取速度
 
 * 包管理器 UI 包详细信息窗格中显示包漏洞详细信息- [#9850](https://github.com/NuGet/Home/issues/9850)
 
