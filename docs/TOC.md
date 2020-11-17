@@ -290,6 +290,7 @@
 ## 发行说明
 ### [已知问题](release-notes/known-issues.md)
 ### NuGet 5.x
+#### [NuGet 5.8](release-notes/NuGet-5.8.md)
 #### [NuGet 5.7](release-notes/NuGet-5.7.md)
 #### [NuGet 5.6](release-notes/NuGet-5.6.md)
 #### [NuGet 5.5](release-notes/NuGet-5.5.md)
