@@ -5,16 +5,16 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 16fd7b9103ef5ac335f0b2e5493dd2983b182f50
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 4a04c6dd7993fc47bcf7a6fe46236ed700a0d105
+ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623170"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96738924"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
-NuGet 4.0+**
+NuGet 4.0+
 
 使用 [PackageReference](../consume-packages/package-references-in-project-files.md) 格式，NuGet 4.0 + 可以直接将所有清单元数据存储在项目文件中，而不是使用单独的 `.nuspec` 文件。
 
@@ -42,13 +42,13 @@ NuGet 4.0+**
 
 对于使用 PackageReference 格式的 .NET Standard 项目，使用 `msbuild -t:pack` 可以从项目文件绘制输入，以在创建 NuGet 包时使用。
 
-下表描述了可以添加到项目文件第一个 `<PropertyGroup>` 节点中的 MSBuild 属性。 在 Visual Studio 2017 及更高版本中，通过右键单击项目并选择上下文菜单上的“编辑 {project_name}”，即可轻松进行这些编辑。**** 为方便起见，表按[ `.nuspec` 文件](../reference/nuspec.md)中的等效属性进行组织。
+下表描述了可以添加到项目文件第一个 `<PropertyGroup>` 节点中的 MSBuild 属性。 在 Visual Studio 2017 及更高版本中，通过右键单击项目并选择上下文菜单上的“编辑 {project_name}”，即可轻松进行这些编辑。 为方便起见，表按[ `.nuspec` 文件](../reference/nuspec.md)中的等效属性进行组织。
 
 请注意，`.nuspec` 的 `Owners` 和 `Summary` 属性不受 MSBuild 支持。
 
 | 属性/NuSpec 值 | MSBuild 属性 | 默认 | 说明 |
 |--------|--------|--------|--------|
-| ID | PackageId | AssemblyName | MSBuild 的 $(AssemblyName) |
+| Id | PackageId | AssemblyName | MSBuild 的 $(AssemblyName) |
 | 版本 | PackageVersion | 版本 | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
 | VersionPrefix | PackageVersionPrefix | empty | 设置 PackageVersion 会覆盖 PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | empty | MSBuild 的 $(VersionSuffix)。 设置 PackageVersion 会覆盖 PackageVersionSuffix |
@@ -68,8 +68,8 @@ NuGet 4.0+**
 | ReleaseNotes | PackageReleaseNotes | empty | |
 | 存储库/Url | RepositoryUrl | empty | 用于克隆或检索源代码的存储库 URL。 实例 *https://github.com/NuGet/NuGet.Client.git* |
 | 存储库/类型 | RepositoryType | empty | 存储库类型。 示例： *git*、 *tfs*。 |
-| 存储库/分支 | RepositoryBranch | empty | 可选存储库分支信息。 还必须为此属性指定要包含的*RepositoryUrl* 。 示例： *master* (NuGet 4.7.0 +)  |
-| 存储库/提交 | RepositoryCommit | empty | 可选的存储库提交或更改集，指示针对其生成包的源。 还必须为此属性指定要包含的*RepositoryUrl* 。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +)  |
+| 存储库/分支 | RepositoryBranch | empty | 可选存储库分支信息。 还必须为此属性指定要包含的 *RepositoryUrl* 。 示例： *master* (NuGet 4.7.0 +)  |
+| 存储库/提交 | RepositoryCommit | empty | 可选的存储库提交或更改集，指示针对其生成包的源。 还必须为此属性指定要包含的 *RepositoryUrl* 。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +)  |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
 | 总结 | 不支持 | | |
 
@@ -80,7 +80,7 @@ NuGet 4.0+**
 - PackageVersion
 - PackageId
 - Authors
-- 说明
+- 描述
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
@@ -221,7 +221,7 @@ NuGet 4.0+**
 
 ### <a name="includesymbols"></a>IncludeSymbols
 
-使用 `MSBuild -t:pack -p:IncludeSymbols=true` 时，相应的 `.pdb` 文件将随其他输出文件（`.dll`、`.exe`、`.winmd`、`.xml`、`.json`、`.pri`）一起复制。 请注意，设置 `IncludeSymbols=true` 会创建常规包和符号包**。
+使用 `MSBuild -t:pack -p:IncludeSymbols=true` 时，相应的 `.pdb` 文件将随其他输出文件（`.dll`、`.exe`、`.winmd`、`.xml`、`.json`、`.pri`）一起复制。 请注意，设置 `IncludeSymbols=true` 会创建常规包和符号包。
 
 ### <a name="includesource"></a>IncludeSource
 
@@ -365,13 +365,14 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 1. 下载包
 1. 编写资产文件、目标和属性
 
-`restore`目标**仅**适用于使用 PackageReference 格式的项目。 它不适 **用于** 使用格式的项目 `packages.config` ; 请改用 [nuget 还原](../reference/cli-reference/cli-ref-restore.md) 。
+`restore`目标适用于使用 PackageReference 格式的项目。
+`MSBuild 16.5+` 还具有对格式的 [选择支持](#restoring-packagereference-and-packages.config-with-msbuild) `packages.config` 。
 
 ### <a name="restore-properties"></a>还原属性
 
 其他的还原设置可能来自项目文件中的 MSBuild 属性。 还可以从命令行使用 `-p:` 开关设置值（请参阅以下示例）。
 
-| 属性 | 说明 |
+| Property | 描述 |
 |--------|--------|
 | RestoreSources | 以分号分隔的包源列表。 |
 | RestorePackagesPath | 用户包文件夹路径。 |
@@ -391,7 +392,8 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 | RestorePackagesWithLockFile | 选择使用锁定文件。 |
 | RestoreLockedMode | 在锁定模式下运行还原。 这意味着，还原将不会重新评估依赖关系。 |
 | NuGetLockFilePath | 锁定文件的自定义位置。 默认位置为项目旁边，名为 `packages.lock.json` 。 |
-| RestoreForceEvaluate | 强制执行还原，重新计算依赖项并更新锁定文件，而不会出现任何警告。 | 
+| RestoreForceEvaluate | 强制执行还原，重新计算依赖项并更新锁定文件，而不会出现任何警告。 |
+| RestorePackagesConfig | 一个选择使用开关，用 packages.config 还原项目。仅支持 `MSBuild -t:restore` 。 |
 
 #### <a name="examples"></a>示例
 
@@ -413,7 +415,7 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 
 还原会在生成 `obj` 文件夹中创建以下文件：
 
-| 文件 | 说明 |
+| 文件 | 描述 |
 |--------|--------|
 | `project.assets.json` | 包含所有包引用的依赖项关系图。 |
 | `{projectName}.projectFileExtension.nuget.g.props` | 包中包含的对 MSBuild 属性的引用 |
@@ -435,6 +437,17 @@ msbuild -t:build -restore
 ```
 
 相同的逻辑也适用于类似于的其他目标 `build` 。
+
+### <a name="restoring-packagereference-and-packagesconfig-with-msbuild"></a>通过 MSBuild 还原 PackageReference 和 packages.config
+
+对于 MSBuild 16.5 +，还支持 packages.config `msbuild -t:restore` 。
+
+```cli
+msbuild -t:restore -p:RestorePackagesConfig=true
+```
+
+> [!NOTE]
+> `packages.config` restore 仅适用于 `MSBuild 16.5+` ，而不适用于 `dotnet.exe`
 
 ### <a name="packagetargetfallback"></a>PackageTargetFallback
 
