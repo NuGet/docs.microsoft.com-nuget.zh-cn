@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 05fa68ad3a0b353117a14e2b3e1cdf13dc806127
-ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
+ms.openlocfilehash: be68d3bd1c7dfcc5661276c0b62d46722af61a00
+ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550383"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96738950"
 ---
 # <a name="restore-packages-using-package-restore"></a>使用“程序包还原”还原程序包
 
@@ -147,7 +147,10 @@ NuGet 提供项目可使用包的两种格式：[`PackageReference`](package-ref
 
 ## <a name="restore-using-msbuild"></a>使用 MSBuild 进行还原
 
-使用 [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) 命令还原项目文件中通过 PackageReference 列出的程序包。 此命令仅适用于 Visual Studio 2017 及更高版本附带的 NuGet 4.x+ 和 MSBuild 15.1+。 `nuget restore` 和 `dotnet restore` 均对适用项目使用此命令。
+使用 [msbuild -t:restore](../reference/msbuild-targets.md#restore-target) 命令还原项目文件中列出的包（参见 [PackageReference](../../consume-packages/package-references-in-project-files.md)），从 MSBuild 16.5 以上版本、`packages.config` 项目开始。
+
+ 此命令仅适用于 Visual Studio 2017 及更高版本附带的 NuGet 4.x+ 和 MSBuild 15.1+。
+从 MSBuild 16.5 以上版本开始，此命令还可以在使用 `packages.config` 运行时还原基于 `-p:RestorePackagesConfig=true` 的项目。
 
 1. 打开开发人员命令提示符（在“搜索”框中，键入“开发人员命令提示符”）   。
 
