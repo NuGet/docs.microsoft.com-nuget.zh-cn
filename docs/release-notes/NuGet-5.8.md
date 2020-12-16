@@ -5,12 +5,12 @@ author: dominofire
 ms.author: feaguila
 ms.date: 11/9/2020
 ms.topic: conceptual
-ms.openlocfilehash: 09fb98eec79ee4ed08d85a1c557a420d6b265f11
-ms.sourcegitcommit: f4b74b500e3db9e468f11142df48d87880382267
+ms.openlocfilehash: 329fdf6479d0799ae4b15cc3493848ba2d999853
+ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94572826"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97523443"
 ---
 # <a name="nuget-58-release-notes"></a>NuGet 5.8 发行说明
 
@@ -33,7 +33,7 @@ NuGet 分发车辆：
 
 * 包管理器 UI 包详细信息窗格中显示包漏洞详细信息- [#9850](https://github.com/NuGet/Home/issues/9850)
 
-* 用新的命令 #8051 验证已签名 [`dotnet nuget verify`](https://docs.microsoft.com/dotnet/core/tools/dotnet-nuget-verify) 的[#8051](https://github.com/NuGet/Home/issues/8051) NuGet 包
+* 用新的命令 #8051 验证已签名 [`dotnet nuget verify`](https://docs.microsoft.com/dotnet/core/tools/dotnet-nuget-verify) 的[](https://github.com/NuGet/Home/issues/8051) NuGet 包
 
 * [`dotnet add package`](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package#:~:text=dotnet%20add%20package%201%20Name%202%20Synopsis%203,when%20targeting%20a%20specific%20framework.%20...%206%20Examples) 支持 `--prerelease` 添加包的最新版本的选项，其中包括预发行版本- [#4699](https://github.com/NuGet/Home/issues/4699)
 
@@ -48,7 +48,7 @@ NuGet 分发车辆：
 * Visual Studio 中的其他几个 NuGet 性能改进- [#9982](https://github.com/NuGet/Home/issues/9982)、 [#9984](https://github.com/NuGet/Home/issues/9984)、 [#10052](https://github.com/NuGet/Home/issues/10052) [#9903](https://github.com/NuGet/Home/issues/9903)
 
 
-### <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
+### <a name="issues-fixed-in-this-release"></a>此版本修复的问题
 
 **Dcr**
 
@@ -84,7 +84,7 @@ NuGet 分发车辆：
 
 * XPlat 不应具有公共 Api- [#9821](https://github.com/NuGet/Home/issues/9821)
 
-* 通过使用 #9822 阻止线程池线程来减少解决方案加载时的资源争用 `BlockingCollection.Take()`  -  [#9822](https://github.com/NuGet/Home/issues/9822)
+* 通过使用 #9822 阻止线程池线程来减少解决方案加载时的资源争用 `BlockingCollection.Take()`  -  [](https://github.com/NuGet/Home/issues/9822)
 
 * 在命令行还原中，对于多目标项目，NuGet 应从内部版本中读取与目标框架相关的信息 [#9869](https://github.com/NuGet/Home/issues/9869)
 
@@ -144,5 +144,5 @@ NuGet 分发车辆：
 
 ## <a name="feedback-welcome"></a>欢迎反馈
 
-反馈对我们非常重要。  如果此版本有任何问题，请查看有关现有问题的 [GitHub 问题](https://github.com/NuGet/Home/issues) 和 [Visual Studio 开发人员社区](https://developercommunity.visualstudio.com/) 。  对于 NuGet 中的新问题，请报告 [GitHub 问题](hhttps://github.com/NuGet/Home/issues/new)。
-对于一般的 NuGet 体验问题，请通过 "帮助" 下的 "你喜欢的 IDE" 中的 " [报告问题](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio) " 选项告知我们 **> 报告问题** 。
+反馈对我们非常重要。  如果此版本有任何问题，请查看有关现有问题的 [GitHub 问题](https://github.com/NuGet/Home/issues) 和 [Visual Studio 开发人员社区](https://developercommunity.visualstudio.com/) 。  对于 NuGet 中的新问题，请报告 [GitHub 问题](https://github.com/NuGet/Home/issues/new)。
+对于一般的 NuGet 体验问题，请通过 "帮助" 下的 "你喜欢的 IDE" 中的 " [报告问题](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio) " 选项告知我们 **> 报告问题**。
