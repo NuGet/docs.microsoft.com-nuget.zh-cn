@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 11/02/2017
 ms.topic: tutorial
 ms.reviewer: kraigb
-ms.openlocfilehash: 0bd21c427b5b89ae9e5f1500d75e1bf63a96e828
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 749d9466976d51c7cb65332c8b149e3a30862e63
+ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64498223"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97523400"
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>查询所有发布到 nuget.org 的包
 
@@ -110,7 +110,7 @@ git clone https://github.com/NuGet/Samples.git
 
 ### <a name="catalog-sdk"></a>目录 SDK
 
-使用目录最简单的方法是使用预发布 .NET 目录 SDK 包：[NuGet.Protocol.Catalog](https://dotnet.myget.org/feed/nuget-build/package/nuget/NuGet.Protocol.Catalog). 此包可在 `nuget-build` MyGet 源`https://dotnet.myget.org/F/nuget-build/api/v3/index.json`上获得，可以使用 NuGet 包源 URL 找到该源。
+使用目录的最简单方法是使用预发行版 .NET 目录 SDK 包 `NuGet.Protocol.Catalog`，通过以下 NuGet 包源 URL 在 Azure Artifacts 上可以获取此包：`https://pkgs.dev.azure.com/dnceng/public/_packaging/nuget-build/nuget/v3/index.json`。
 
 可以将此包安装到与 `netstandard1.3` 或更高版本（例如 .NET Framework 4.6）兼容的项目。
 
