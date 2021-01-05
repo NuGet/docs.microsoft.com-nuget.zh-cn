@@ -1,16 +1,16 @@
 ---
 title: 作为 MSBuild 目标的 NuGet 包和还原
 description: NuGet 包和还原可作为 MSBuild 目标直接用于 NuGet 4.0+。
-author: karann-msft
-ms.author: karann
+author: nkolev92
+ms.author: nikolev
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 4a04c6dd7993fc47bcf7a6fe46236ed700a0d105
-ms.sourcegitcommit: e39e5a5ddf68bf41e816617e7f0339308523bbb3
+ms.openlocfilehash: 66df4e0e4739300608fd5f9e44eea5bcd00079c8
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96738924"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699891"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -48,12 +48,12 @@ NuGet 4.0+
 
 | 属性/NuSpec 值 | MSBuild 属性 | 默认 | 说明 |
 |--------|--------|--------|--------|
-| Id | PackageId | AssemblyName | MSBuild 的 $(AssemblyName) |
+| ID | PackageId | AssemblyName | MSBuild 的 $(AssemblyName) |
 | 版本 | PackageVersion | 版本 | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
 | VersionPrefix | PackageVersionPrefix | empty | 设置 PackageVersion 会覆盖 PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | empty | MSBuild 的 $(VersionSuffix)。 设置 PackageVersion 会覆盖 PackageVersionSuffix |
 | Authors | Authors | 当前用户的用户名 | |
-| 所有者 | 不可用 | NuSpec 中不存在 | |
+| 所有者 | 空值 | NuSpec 中不存在 | |
 | Title | Title | PackageId| |
 | 说明 | 说明 | “包描述” | |
 | Copyright | Copyright | empty | |
@@ -80,7 +80,7 @@ NuGet 4.0+
 - PackageVersion
 - PackageId
 - Authors
-- 描述
+- 说明
 - Copyright
 - PackageRequireLicenseAcceptance
 - DevelopmentDependency
@@ -256,6 +256,23 @@ NuGet 4.0+
 
 [许可证文件示例](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample)。
 
+### <a name="packing-a-file-without-an-extension"></a>打包不带扩展名的文件
+
+在某些情况下（如打包许可证文件时），可能需要包含不带扩展名的文件。
+由于历史原因，NuGet & MSBuild 将没有扩展的路径视为目录。
+
+```xml
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" PackagePath=""/>
+  </ItemGroup>  
+```
+
+[不带扩展的文件示例](https://github.com/NuGet/Samples/blob/master/PackageLicenseFileExtensionlessExample/)。
 ### <a name="istool"></a>IsTool
 
 使用 `MSBuild -t:pack -p:IsTool=true` 时，所有输出文件（如[输出程序集](#output-assemblies)方案中所指定）都被复制到 `tools` 文件夹，而不是 `lib` 文件夹。 请注意，这不同于 `DotNetCliTool`，后者通过在 `.csproj` 文件中设置 `PackageType` 进行指定。
@@ -366,13 +383,16 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 1. 编写资产文件、目标和属性
 
 `restore`目标适用于使用 PackageReference 格式的项目。
-`MSBuild 16.5+` 还具有对格式的 [选择支持](#restoring-packagereference-and-packages.config-with-msbuild) `packages.config` 。
+`MSBuild 16.5+` 还具有对格式的 [选择支持](#restoring-packagereference-and-packagesconfig-with-msbuild) `packages.config` 。
+
+> [!NOTE]
+> `restore`目标[不应](#restoring-and-building-with-one-msbuild-command)与目标组合运行 `build` 。
 
 ### <a name="restore-properties"></a>还原属性
 
 其他的还原设置可能来自项目文件中的 MSBuild 属性。 还可以从命令行使用 `-p:` 开关设置值（请参阅以下示例）。
 
-| Property | 描述 |
+| 属性 | 说明 |
 |--------|--------|
 | RestoreSources | 以分号分隔的包源列表。 |
 | RestorePackagesPath | 用户包文件夹路径。 |
@@ -415,7 +435,7 @@ msbuild -t:restore -p:RestoreConfigFile=<path>
 
 还原会在生成 `obj` 文件夹中创建以下文件：
 
-| 文件 | 描述 |
+| 文件 | 说明 |
 |--------|--------|
 | `project.assets.json` | 包含所有包引用的依赖项关系图。 |
 | `{projectName}.projectFileExtension.nuget.g.props` | 包中包含的对 MSBuild 属性的引用 |
