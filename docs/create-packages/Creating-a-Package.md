@@ -1,16 +1,16 @@
 ---
 title: 使用 nuget.exe CLI 创建 NuGet 包
-description: 设计和创建 NuGet 包流程的详细指南，包含文件和版本控制等关键决策点。
+description: 设计和创建 NuGet 包（包含文件和版本控制）的详细指南。
 author: karann-msft
-ms.author: karann
+ms.author: feaguila
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: b3e6f0efc9e2e12de186ffd4ce29d496d07d5fc4
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: ec06a8f721b7b67ddc5d72323305b9b22f292de6
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428569"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699800"
 ---
 # <a name="create-a-package-using-the-nugetexe-cli"></a>使用 nuget.exe CLI 创建包
 
@@ -68,8 +68,8 @@ ms.locfileid: "79428569"
 - 对 [Visual Studio 中的包管理器 UI](../consume-packages/install-use-packages-visual-studio.md) 的简短说明
 - 区域设置 ID
 - 项目 URL
-- 作为表达式或文件的许可证（`licenseUrl` 将被弃用，请使用 [`license` nuspec 元数据元素](../reference/nuspec.md#license)）
-- 图标 URL
+- 作为表达式或文件的许可证（`licenseUrl` 将被弃用，请改为使用 [`license` nuspec 元数据元素](../reference/nuspec.md#license)）
+- 图标文件（`iconUrl` 将被弃用，请改为使用 [`icon` nuspec 元数据元素](../reference/nuspec.md#icon)）
 - 依赖项和引用的列表
 - 协助库搜索的标记
 
@@ -79,11 +79,11 @@ ms.locfileid: "79428569"
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <!-- The identifier that must be unique within the hosting gallery -->
+        <!-- Identifier that must be unique within the hosting gallery -->
         <id>Contoso.Utility.UsefulStuff</id>
 
-        <!-- The package version number that is used when resolving dependencies -->
-        <version>1.8.3-beta</version>
+        <!-- Package version number that is used when resolving dependencies -->
+        <version>1.8.3</version>
 
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Dejana Tesic, Rajeev Dey</authors>
@@ -101,8 +101,8 @@ ms.locfileid: "79428569"
         <license type="expression">Apache-2.0</license>
         
 
-        <!-- The icon is used in Visual Studio's package manager UI -->
-        <iconUrl>http://github.com/contoso/UsefulStuff/nuget_icon.png</iconUrl>
+        <!-- Icon is used in Visual Studio's package manager UI -->
+        <icon>icon.png</icon>
 
         <!-- 
             If true, this value prompts the user to accept the license when
@@ -134,6 +134,7 @@ ms.locfileid: "79428569"
     <!-- A readme.txt to display when the package is installed -->
     <files>
         <file src="readme.txt" target="" />
+        <file src="icon.png" target="" />
     </files>
 </package>
 ```
@@ -255,7 +256,7 @@ NuGet 在 `.nuget` 文件夹的 `packages.config` 文件（而不是项目的 `p
 nuget spec [<package-name>]
 ```
 
-如果忽略 \<package-name\>，生成的文件是 `Package.nuspec`。 如果提供 `Contoso.Utility.UsefulStuff` 等名称，则文件是 `Contoso.Utility.UsefulStuff.nuspec`。
+如果省略 \<package-name\>，将生成 `Package.nuspec` 文件。 如果提供 `Contoso.Utility.UsefulStuff` 等名称，则文件是 `Contoso.Utility.UsefulStuff.nuspec`。
 
 生成的 `.nuspec` 包含值的占位符（例如 `projectUrl`）。 请确保在使用文件创建最终 `.nupkg` 文件前编辑该文件。
 
@@ -316,6 +317,7 @@ nuget spec [<package-name>]
 
 根 `\build` 文件夹中的文件被视为适用于所有目标框架。 若要提供特定于框架的文件，首先将其放置到合适的子文件夹中，如下所示：
 
+```
     \build
         \netstandard1.4
             \Contoso.Utility.UsefulStuff.props
@@ -323,6 +325,7 @@ nuget spec [<package-name>]
         \net462
             \Contoso.Utility.UsefulStuff.props
             \Contoso.Utility.UsefulStuff.targets
+```
 
 然后在 `.nuspec` 文件中，确保参阅 `<files>` 节点中的这些文件：
 

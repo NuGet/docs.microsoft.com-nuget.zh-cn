@@ -7,12 +7,12 @@ ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 8b23b6cc22eff5413e317fbe619edd3d4f4716ee
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 31fa51bc017eaaf9306d5f267e5d4b0d7a15ec9c
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237395"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699830"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>在 Visual Studio 中使用包管理器控制台安装和管理包 (PowerShell)
 
@@ -20,11 +20,14 @@ ms.locfileid: "93237395"
 
 Windows 版 Visual Studio 中内置了该控制台。 Visual Studio for Mac 或 Visual Studio Code 中未提供该控制台。
 
+> [!Important]
+> 此处列出的命令特定于 Visual Studio 中的包管理器控制台，它不同于常规 PowerShell 环境中提供的[包管理模块命令](/powershell/module/packagemanagement/)。 具体而言，每个环境都有一些命令，这些命令在其他环境中不可用，而具有相同名称的命令在其特定参数中也可能不同。 使用 Visual Studio 中的包管理控制台时，本主题中所述的命令和参数适用。
+
 ## <a name="find-and-install-a-package"></a>查找和安装包
 
 例如，通过三个简单的步骤查找和安装包：
 
-1. 在 Visual Studio 中打开项目/解决方案，然后使用“工具”>“NuGet 包管理器”>“包管理器控制台”命令打开控制台  。
+1. 在 Visual Studio 中打开项目/解决方案，然后使用“工具”>“NuGet 包管理器”>“包管理器控制台”命令打开控制台。
 
 1. 找到要安装的包。 如果你已经知道此操作步骤，请跳至步骤 3。
 
@@ -48,7 +51,7 @@ Windows 版 Visual Studio 中内置了该控制台。 Visual Studio for Mac 或 
 
 ## <a name="opening-the-console-and-console-controls"></a>打开控制台和控制台控件
 
-1. 在 Visual Studio 中使用“工具”>“NuGet 包管理器”>“包管理器控制台”命令打开控制台  。 控制台是一个 Visual Studio 窗口，可以根据需要进行排列和放置（请参阅[在 Visual Studio 中自定义窗口布局](/visualstudio/ide/customizing-window-layouts-in-visual-studio)）。
+1. 在 Visual Studio 中使用“工具”>“NuGet 包管理器”>“包管理器控制台”命令打开控制台。 控制台是一个 Visual Studio 窗口，可以根据需要进行排列和放置（请参阅[在 Visual Studio 中自定义窗口布局](/visualstudio/ide/customizing-window-layouts-in-visual-studio)）。
 
 1. 默认情况下，控制台命令针对窗口顶部控件中设置的特定包源和项目执行操作：
 
@@ -56,7 +59,7 @@ Windows 版 Visual Studio 中内置了该控制台。 Visual Studio for Mac 或 
 
 1. 选择不同的包源和/或项目会更改后续命令的默认值。 要在不更改默认值的情况下覆盖这些设置，大多数命令都支持 `-Source` 和 `-ProjectName` 选项。
 
-1. 若要管理包源，请选择齿轮图标。 这是“工具”>“选项”>“NuGet 包管理器”>“包源”  对话框的快捷方式，如[包管理器 UI](install-use-packages-visual-studio.md#package-sources) 页中所述。 此外，项目选择器右侧的控件可清除控制台的内容：
+1. 若要管理包源，请选择齿轮图标。 这是“工具”>“选项”>“NuGet 包管理器”>“包源”对话框的快捷方式，如[包管理器 UI](install-use-packages-visual-studio.md#package-sources) 页中所述。 此外，项目选择器右侧的控件可清除控制台的内容：
 
     ![包管理器控制台设置和清除控件](media/PackageManagerConsoleControls2.png)
 
@@ -79,7 +82,7 @@ Install-Package Elmah -ProjectName UtilitiesLib
 在控制台中安装包执行的步骤与[安装包时会发生什么情况](../concepts/package-installation-process.md)相同，只不过它添加了以下内容：
 
 - 控制台在其窗口中显示适用的许可条款，并附带隐含协议。 如果你不同意这些条款，应立即卸载包。
-- 此外，对包的引用也会添加到项目文件中，并显示在“引用”节点下的“解决方案资源管理器”中，需要保存项目才能直接查看项目文件中的更改   。
+- 此外，对包的引用也会添加到项目文件中，并显示在“引用”节点下的“解决方案资源管理器”中，需要保存项目才能直接查看项目文件中的更改。
 
 ## <a name="uninstall-a-package"></a>卸载包
 
@@ -98,7 +101,7 @@ Uninstall-Package Elmah -Force
 
 卸载包将执行以下操作：
 
-- 从项目中删除对包的引用（以及正在使用的任何管理格式）。 引用不再出现在“解决方案资源管理器”中  。 （可能需要重建项目才能看到它已从 Bin 文件夹中删除  。）
+- 从项目中删除对包的引用（以及正在使用的任何管理格式）。 引用不再出现在“解决方案资源管理器”中。 （可能需要重建项目才能看到它已从 Bin 文件夹中删除。）
 - 安装包后，撤销对 `app.config` 或 `web.config` 的任何更改。
 - 如果没有其余包使用这些依赖项，则删除以前安装的依赖项。
 
@@ -141,9 +144,9 @@ Find-Package jquery -AllVersions -ExactMatch
 
 ## <a name="availability-of-the-console"></a>控制台的可用性
 
-从 Visual Studio 2017 开始，当你选择任何与 .NET 相关的工作负载时，会自动安装 NuGet 和 NuGet 包管理器；不过，也可以通过在 Visual Studio 安装程序中选中“单个组件”>“代码工具”>“NuGet 包管理器”选项来单独安装它  。
+从 Visual Studio 2017 开始，当你选择任何与 .NET 相关的工作负载时，会自动安装 NuGet 和 NuGet 包管理器；不过，也可以通过在 Visual Studio 安装程序中选中“单个组件”>“代码工具”>“NuGet 包管理器”选项来单独安装它。
 
-另外，如果你在 Visual Studio 2015 及更早版本中缺少 NuGet 包管理器，请选中“工具”>“扩展和更新...”  并搜索“NuGet 包管理器”扩展。 如果无法在 Visual Studio 中使用扩展安装程序，可以直接从 [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html) 下载扩展。
+另外，如果你在 Visual Studio 2015 及更早版本中缺少 NuGet 包管理器，请选中“工具”>“扩展和更新...”并搜索“NuGet 包管理器”扩展。 如果无法在 Visual Studio 中使用扩展安装程序，可以直接从 [https://dist.nuget.org/index.html](https://dist.nuget.org/index.html) 下载扩展。
 
 Visual Studio for Mac 目前不提供包管理器控制台。 但是，可以通过 [NuGet CLI](../reference/nuget-exe-CLI-reference.md) 获取等效命令。 Visual Studio for Mac 确实有一个用于管理 NuGet 包的 UI。 请参阅[在项目中包括 NuGet 包](/visualstudio/mac/nuget-walkthrough)。
 

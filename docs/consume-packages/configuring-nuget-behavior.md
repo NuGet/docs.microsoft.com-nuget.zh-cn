@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 89127203df0aa1eb24f36b8ec64c5bb4a4d59319
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e81c380eab3f1a8635e50e62811c7ae463ec3653
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428539"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699774"
 ---
 # <a name="common-nuget-configurations"></a>常见的 NuGet 配置
 
@@ -21,12 +21,12 @@ NuGet 的行为由一个或多个 `NuGet.Config` (XML) 文件（可存在于项�
 | 范围 | NuGet.Config 文件的位置 | 描述 |
 | --- | --- | --- |
 | 解决方案 | 当前文件夹（又称解决方案文件夹）或上至驱动器根目录的任何文件夹。| 在解决方案文件夹中，设置应用于子文件夹中的所有项目。 请注意，如果配置文件位于项目文件夹中，则对该项目没有任何影响。 |
-| 用户 | Windows：`%appdata%\NuGet\NuGet.Config`<br/>Mac/Linux：`~/.config/NuGet/NuGet.Config` 或 `~/.nuget/NuGet/NuGet.Config`（因 OS 版本而异） | 设置应用于所有操作，但可被任何项目级的设置替代。 |
-| 计算机 | Windows：`%ProgramFiles(x86)%\NuGet\Config`<br/>Mac/Linux：`$XDG_DATA_HOME`。 如果 `$XDG_DATA_HOME` 的值是 null 或为空，将使用 `~/.local/share` 或 `/usr/local/share`（因 OS 版本而异）  | 设置虽然适用于计算机上的所有操作，但会被任何用户级或项目级设置覆盖。 |
+| 用户 | **Windows：** `%appdata%\NuGet\NuGet.Config`<br/>**Mac/Linux：** `~/.config/NuGet/NuGet.Config` 或 `~/.nuget/NuGet/NuGet.Config`（因 OS 发行版而异） <br/>所有平台都支持其他配置。 这些配置无法通过工具进行编辑。 </br> **Windows：** `%appdata%\NuGet\config\*.Config` <br/>**Mac/Linux：** `~/.config/NuGet/config/*.config` 或 `~/.nuget/config/*.config` | 设置应用于所有操作，但可被任何项目级的设置替代。 |
+| Computer | **Windows：** `%ProgramFiles(x86)%\NuGet\Config`<br/>**Mac/Linux：** `$XDG_DATA_HOME`。 如果 `$XDG_DATA_HOME` 的值是 null 或为空，将使用 `~/.local/share` 或 `/usr/local/share`（因 OS 版本而异）  | 设置虽然适用于计算机上的所有操作，但会被任何用户级或项目级设置覆盖。 |
 
 针对早期版本的 NuGet 的说明：
 - NuGet 3.3 及更早版本使用 `.nuget` 文件夹作为解决方案范围的设置。 NuGet 3.4+ 中不使用此文件夹。
-- 对于 NuGet 2.6 到 3.x 版本，Windows 上的计算机级配置文件位于 %ProgramData%\NuGet\Config[\\{IDE}[\\{Version}[\\{SKU}]]]\NuGet.Config，其中，{IDE} 可能为 VisualStudio，{Version} 为 Visual Studio 的版本（如 14.0），{SKU} 可能为 Community、Pro 或 Enterprise         。 若要将设置迁移到 NuGet 4.0+，只需将配置文件复制到 %ProgramFiles(x86)%\NuGet\Config 即可。在 Linux 上，此位置以前为 /etc/opt；在 Mac 上为 /Library/Application Support。
+- 对于 NuGet 2.6 到 3.x 版本，Windows 上的计算机级配置文件位于 %ProgramData%\NuGet\Config[\\{IDE}[\\{Version}[\\{SKU}]]]\NuGet.Config，其中，{IDE} 可能为 VisualStudio，{Version} 为 Visual Studio 的版本（如 14.0），{SKU} 可能为 Community、Pro 或 Enterprise。 若要将设置迁移到 NuGet 4.0+，只需将配置文件复制到 %ProgramFiles(x86)%\NuGet\Config 即可。在 Linux 上，此位置以前为 /etc/opt；在 Mac 上为 /Library/Application Support。
 
 ## <a name="changing-config-settings"></a>更改配置设置
 
@@ -43,7 +43,7 @@ NuGet 的行为由一个或多个 `NuGet.Config` (XML) 文件（可存在于项�
 
 ### <a name="setting-a-value"></a>设置值
 
-Windows：
+Windows:
 
 ```cli
 # Set repositoryPath in the user-level config file
@@ -186,13 +186,25 @@ NuGet 在这些文件中找到设置时，设置将按如下方式应用：
 
 接下来，NuGet 将按如下方式加载和应用设置，具体取决于调用设置的位置：
 
-- **从 disk_drive_1/users 调用**：仅使用用户级配置文件 (A) 中列出的默认存储库，因为这是 disk_drive_1 中的唯一文件。
+- **从 disk_drive_1/users 调用**：仅使用用户级配置文件 (A) 中列出的默认存储库，因为这是在 disk_drive_1 中找到的唯一文件。
 
 - **从 disk_drive_2/ 或 disk_drive_/tmp 调用**：首先加载用户级文件 (A)，然后 NuGet 转到 disk_drive_2 的根目录并查找文件 (B)。 NuGet 还将在 /tmp 中查找配置文件，但不会找到此类文件。 因此，此时将使用 nuget.org 上的默认存储库、启用包还原并在 disk_drive_2/tmp 中展开包。
 
-- **从 disk_drive_2/Project1 或 disk_drive_2/Project1/Source 调用**：首先加载用户级文件 (A)，然后 NuGet 从 disk_drive_2 的根目录依次加载文件 (B) 和文件 (C)。 (C) 中的设置会替代 (B) 和 (A) 中的设置，因此安装包的 `repositoryPath` 将为 disk_drive_2/Project1/External/Packages，而非 disk_drive_2/tmp  。 此外，由于 (C) 清除了 `<packageSources>`，因此 nuget.org 将不再可用作源，并仅留下 `https://MyPrivateRepo/ES/nuget`。
+- **从 disk_drive_2/Project1 或 disk_drive_2/Project1/Source 调用**：首先加载用户级文件 (A)，然后 NuGet 依次加载 disk_drive_2 根目录中的文件 (B) 和文件 (C)。 (C) 中的设置会替代 (B) 和 (A) 中的设置，因此安装包的 `repositoryPath` 将为 disk_drive_2/Project1/External/Packages，而非 disk_drive_2/tmp。 此外，由于 (C) 清除了 `<packageSources>`，因此 nuget.org 将不再可用作源，并仅留下 `https://MyPrivateRepo/ES/nuget`。
 
 - **从 disk_drive_2/Project2 或 disk_drive_2/Project2/Source 调用**：首先加载用户级文件 (A)，然后依次加载文件 (B) 和文件 (D)。 由于未清除 `packageSources`，因此 `nuget.org` 和 `https://MyPrivateRepo/DQ/nuget` 都可用作源。 按 (B) 中的指定，包将在 disk_drive_2/tmp 中展开。
+
+## <a name="additional-user-wide-configuration"></a>其他用户范围配置
+
+从版本 5.7 开始，NuGet 添加了对其他用户范围配置文件的支持。 此更新允许第三方供应商在不升级的情况下添加其他用户配置文件。
+这些配置文件位于 `config` 子文件夹内的标准用户范围配置文件夹中。
+将考虑以 `.config` 或 `.Config` 结尾的所有文件。
+标准工具无法编辑这些文件。
+
+| OS 平台  | 其他配置 |
+| --- | --- |
+| Windows      | `%appdata%\NuGet\config\*.Config` |
+| Mac/Linux    | `~/.config/NuGet/config/*.config` 或 `~/.nuget/config/*.config` |
 
 ## <a name="nuget-defaults-file"></a>NuGet 默认文件
 
@@ -207,7 +219,7 @@ NuGet 在这些文件中找到设置时，设置将按如下方式应用：
 
 下表根据目标操作系统描述 `NuGetDefaults.Config` 文件应存储的位置：
 
-| 操作系统平台  | NuGetDefaults.Config 的位置 |
+| OS 平台  | NuGetDefaults.Config 的位置 |
 | --- | --- |
 | Windows      | **Visual Studio 2017 或 NuGet 4.x+：** `%ProgramFiles(x86)%\NuGet\Config` <br />**Visual Studio 2015 及更低版本或 NuGet 3.x 及更低版本：** `%PROGRAMDATA%\NuGet` |
 | Mac/Linux    | `$XDG_DATA_HOME`（通常为 `~/.local/share` 或 `/usr/local/share`，具体视 OS 版本而定）|

@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: b162990eae2160961f560b6c6ee73e47cb4121d6
-ms.sourcegitcommit: f29fa9b93fd59e679fab50d7413bbf67da3ea5b3
+ms.openlocfilehash: 9f680a714717d1bde0472f2e1266cacfd8bd4d5f
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86451146"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699719"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>包还原错误疑难解答
 
@@ -46,7 +46,7 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 当你尝试生成包含对一个或多个 NuGet 包的引用的项目，但这些包当前未安装在计算机上或项目中时，发生了此错误。
 
-- 使用 [PackageReference](package-references-in-project-files.md) 管理格式时，此错误意味着程序包未安装在 global-packages 文件夹中，如[管理全局程序包和缓存文件夹](managing-the-global-packages-and-cache-folders.md)  中所述。
+- 使用 [PackageReference](package-references-in-project-files.md) 管理格式时，此错误可能是在将 packages.config 迁移到 PackageReference 时遗留下来的，需要从项目文件中[手动删除](../resources/NuGet-FAQ.md#working-with-packages)。
 - 当使用 [packages.config](../reference/packages-config.md) 时，此错误意味着程序包未安装在解决方案根目录中的 `packages` 文件夹中。
 
 当你从源代码管理或其他下载获得项目的源代码时，通常会发生这种情况。 包通常从源代码管理或下载中省略，因为它们可以从包源（例如 nuget.org）中还原（请参阅[包和源代码管理](Packages-and-Source-Control.md)）。 否则，包含它们会导致存储库膨胀或创建不必要的大型 .zip 文件。

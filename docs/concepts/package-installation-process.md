@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 06/20/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1ae030c308b14b8884fb608c1683c8c46000b0bd
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 634c421499b06f6b62d88a95f8703614dec5ace8
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "77036898"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699755"
 ---
 # <a name="what-happens-when-a-nuget-package-is-installed"></a>安装 NuGet 包时会发生什么情况？
 
@@ -27,6 +27,9 @@ ms.locfileid: "77036898"
 
    - 如果包不在 global-packages 文件夹中，则尝试从[配置文件](../consume-packages/Configuring-NuGet-Behavior.md)中列出的源中检索它  。 对于在线源，请首先尝试从 HTTP 缓存中检索包，除非通过 `nuget.exe` 命令指定 `-NoCache` 或通过 `dotnet restore` 指定 `--no-cache`。 （Visual Studio 和 `dotnet add package` 始终使用缓存。）如果从缓存中使用包，“缓存”将出现在输出中。 缓存有 30 分钟的到期时间。
 
+   - 如果已使用[浮动版本](../consume-packages/Package-References-in-Project-Files.md#floating-versions)指定了包，或者没有最低版本，则 NuGet 将联系所有源以找出最佳匹配项。
+   示例：`1.*`、`(, 2.0.0]`。
+
    - 如果包不在 HTTP 缓存中，请尝试从配置中列出的源下载包。 如果下载包，则会在输出中出现“GET”和“OK”。 NuGet 以常规详细级别记录 http 流量。
 
    - 如果无法从任何源成功获取包，安装将失败，并显示诸如 [NU1103](../reference/errors-and-warnings/NU1103.md) 之类的错误。 注意，来自 `nuget.exe` 命令的错误仅显示最后检查的源，但意味着无法从任何源获取包。
@@ -35,9 +38,9 @@ ms.locfileid: "77036898"
 
    - NuGet 将首先检查源本地文件夹和网络共享，然后再检查 HTTP 源。
 
-3. 保存包副本和 http-cache  文件夹中的其他信息，如[管理全局包和缓存文件夹中所述](../consume-packages/managing-the-global-packages-and-cache-folders.md)。
+3. 保存包副本和 http-cache 文件夹中的其他信息，如[管理全局包和缓存文件夹中所述](../consume-packages/managing-the-global-packages-and-cache-folders.md)。
 
-4. 如下载，请将包安装到每个用户的 global-packages  文件夹中。 NuGet 创建每个包标识符的子文件夹，然后创建每个已安装包版本的子文件夹。
+4. 如下载，请将包安装到每个用户的 global-packages 文件夹中。 NuGet 创建每个包标识符的子文件夹，然后创建每个已安装包版本的子文件夹。
 
 5. NuGet 安装所需的包依赖项。 此过程可能会更新过程中的包版本，如[依赖项解析](../concepts/dependency-resolution.md)中所述。
 

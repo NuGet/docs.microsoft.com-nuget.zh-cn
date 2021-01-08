@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: aae6f0474cc6e8e8aa5c269b79be6fd949d9184c
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: be24660d05f34242e45f223e2248b943ecc38616
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237992"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699649"
 ---
 # <a name="nuget-frequently-asked-questions"></a>NuGet 常见问题
 
@@ -149,3 +149,10 @@ Visual Studio 自动化对象模型中的顶层对象称为 DTE （开发工具�
 
 - 将 `https://api.nuget.org/v3/index.json` 添加到源列表；或
 - 删除 `%appdata%\.nuget\NuGet.Config` (Windows) 或 `~/.nuget/NuGet/NuGet.Config` (Mac/Linux) 并指示 NuGet 重新创建它。
+
+**我迁移到了 PackageReference，为什么生成会失败 `This project references NuGet package(s) that are missing on this computer.`？**
+
+在 package. .config 项目中，如果安装了带 `build` 属性或目标的包，NuGet 将添加一个 `EnsureNuGetPackageBuildImports` 目标，以验证在生成之前是否已导入包 msbuild 内容。
+如果已手动修改 `target`，NuGet 可能无法检测到它需要在迁移时删除。
+
+如果项目是 `PackageReference`，并且在项目文件中仍有此目标，则可以放心删除。

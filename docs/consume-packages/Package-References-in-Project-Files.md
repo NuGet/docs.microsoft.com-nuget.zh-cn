@@ -5,12 +5,12 @@ author: karann-msft
 ms.author: karann
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: a5833df60c5f7905359f421141347b1237f45d86
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 1127e7aee27d57abd5f14dd3bea82dfff3ba6d93
+ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237635"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97699783"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -201,10 +201,42 @@ NuGet 5.0 或更高版本以及 Visual Studio 2019 16.0 或更高版本随附此
   <Target Name="TakeAction" AfterTargets="Build">
     <Exec Command="$(PkgPackage_With_Tools)\tools\tool.exe" />
   </Target>
-````
+```
 
 MSBuild 属性和包标识不具有相同的限制，因此包标识需要改为一个 MSBuild 易记名称（以 `Pkg` 为前缀）。
 若要验证生成的属性的确切名称，请查看生成的 [nuget.g.props](../reference/msbuild-targets.md#restore-outputs) 文件。
+
+## <a name="packagereference-aliases"></a>PackageReference 别名
+
+在某些极少数情况下，不同的包将包含相同命名空间中的类。 从 NuGet 5.7 和 Visual Studio 2019 Update 7 开始，等效于 ProjectReference，PackageReference 支持 [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases)。
+默认情况下，不提供别名。 指定别名后，需要使用别名来引用来自带批注的包的所有程序集。
+
+可以在 [NuGet\Samples](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample) 处查看示例用法。
+
+在项目文件中，按如下所示指定别名：
+
+```xml
+  <ItemGroup>
+    <PackageReference Include="NuGet.Versioning" Version="5.8.0" Aliases="ExampleAlias" />
+  </ItemGroup>
+```
+
+在代码中，按如下所示使用别名：
+
+```cs
+extern alias ExampleAlias;
+
+namespace PackageReferenceAliasesExample
+{
+...
+        {
+            var version = ExampleAlias.NuGet.Versioning.NuGetVersion.Parse("5.0.0");
+            Console.WriteLine($"Version : {version}");
+        }
+...
+}
+
+```
 
 ## <a name="nuget-warnings-and-errors"></a>NuGet 警告和错误
 
@@ -346,7 +378,7 @@ ProjectA
              |------>PackageX 1.0.0
 ```
 
-如果 `ProjectA` 在 `PackageX` 版本 `2.0.0` 上具有依赖项并引用依赖于 `PackageX` 版本 `1.0.0` 的 `ProjectB`，则 `ProjectB` 的锁定文件将列出 `PackageX` 版本 `1.0.0` 的依赖项。 但是，当生成 `ProjectA` 时，其锁定文件将包含 `PackageX` 锁定文件中列出的 **版本 `2.0.0`（而不是** ）上的依赖项  `1.0.0``ProjectB`。 因此，常用代码项目的锁定文件对依赖于它的项目进行解析的包几乎没有控制。
+如果 `ProjectA` 在 `PackageX` 版本 `2.0.0` 上具有依赖项并引用依赖于 `PackageX` 版本 `1.0.0` 的 `ProjectB`，则 `ProjectB` 的锁定文件将列出 `PackageX` 版本 `1.0.0` 的依赖项。 但是，当生成 `ProjectA` 时，其锁定文件将包含 `PackageX` 锁定文件中列出的 **版本 `2.0.0`（而不是**）上的依赖项  `1.0.0``ProjectB`。 因此，常用代码项目的锁定文件对依赖于它的项目进行解析的包几乎没有控制。
 
 ### <a name="lock-file-extensibility"></a>锁定文件可扩展性
 
