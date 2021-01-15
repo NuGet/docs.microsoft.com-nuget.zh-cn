@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: 7384e8b30cb2ec5fe53ea0fe485858bc1f7b3c43
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: ac9efadc1d29bec86ca9b7821d5587e0171613aa
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238174"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235706"
 ---
 # <a name="signed-packages"></a>已签名的包
 
@@ -20,13 +20,13 @@ ms.locfileid: "93238174"
 NuGet 包可以包含一个数字签名，该签名提供针对篡改内容的保护。 此签名是通过 x.509 证书生成的，该证书还将授权校样添加到包的实际来源。
 
 签名包提供了最强大的端到端验证。 NuGet 签名有两种不同的类型：
-- **作者签名** 。 作者签名可保证自作者对包进行签名后包未修改，无论包传送到哪个存储库或传输方法。 此外，创作签名包还为 nuget.org 发布管道提供额外的身份验证机制，因为必须提前注册签名证书。 有关详细信息，请参阅 [注册证书](#signature-requirements-on-nugetorg)。
-- **存储库签名** 。 存储库签名为存储库中的 **所有** 包提供完整性保证，无论它们是否为作者签名，即使这些包是从其签名的原始存储库以外的位置获取的。   
+- **作者签名**。 作者签名可保证自作者对包进行签名后包未修改，无论包传送到哪个存储库或传输方法。 此外，创作签名包还为 nuget.org 发布管道提供额外的身份验证机制，因为必须提前注册签名证书。 有关详细信息，请参阅 [注册证书](#signature-requirements-on-nugetorg)。
+- **存储库签名**。 存储库签名为存储库中的 **所有** 包提供完整性保证，无论它们是否为作者签名，即使这些包是从其签名的原始存储库以外的位置获取的。   
 
-有关创建作者签名包的详细信息，请参阅 [签署包](../create-packages/Sign-a-package.md) 和 [nuget 签名命令](../reference/cli-reference/cli-ref-sign.md)。
+有关创建作者签名包的详细信息，请参阅 [签署包](../create-packages/Sign-a-package.md) 和 [nuget 签名命令](../reference/cli-reference/cli-ref-sign.md)。 可以使用 [dotnet nuget 验证](/dotnet/core/tools/dotnet-nuget-verify.md) 或 [nuget 验证](../reference/cli-reference/cli-ref-verify.md) 命令验证包的签名。
 
 > [!Important]
-> 当前仅在使用 Windows 上的 nuget.exe 时才支持包签名。 [目前仅在使用 nuget.exe或 Windows 上的 Visual Studio 时，才支持验证已签名的包 ](../reference/cli-reference/cli-ref-verify.md) 。
+> 目前仅支持 Windows 上的 nuget.exe 创作签名包。 但是，上传到 nuget.org 的所有包会自动存储存储库。
 
 ## <a name="certificate-requirements"></a>证书要求
 
@@ -57,4 +57,6 @@ nuget.org 对接受签名的包有其他要求：
 ## <a name="related-articles"></a>相关文章
 
 - [对 NuGet 包进行签名](../create-packages/Sign-a-Package.md)
+- [使用 dotnet CLI 验证已签名的包](/dotnet/core/tools/dotnet-nuget-verify.md)
+- [使用 nuget.exe验证已签名的包 ](../reference/cli-reference/cli-ref-verify.md)
 - [管理包信任边界](../consume-packages/installing-signed-packages.md)

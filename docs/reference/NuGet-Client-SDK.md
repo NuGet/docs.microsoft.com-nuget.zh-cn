@@ -5,38 +5,33 @@ author: karann-msft
 ms.author: karann
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 39a4de4071eec70c88a2add158f2a3a734f7d7b7
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 0eca8478b4d6509dbc1407560d2c86069c7575dd
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622923"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235732"
 ---
 # <a name="nuget-client-sdk"></a>NuGet 客户端 SDK
 
-*Nuget 客户端 SDK*引用一组 NuGet 包：
+*Nuget 客户端 SDK* 引用一组 NuGet 包：
 
 * [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) -用于与基于 HTTP 和文件的 NuGet 源交互
 * [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging) -用于与 NuGet 包交互。 `NuGet.Protocol` 依赖于此包
 
 你可以在 [NuGet/nuget。客户端](https://github.com/NuGet/NuGet.Client) GitHub 存储库中找到这些包的源代码。
+可以在 GitHub 上的 [nuget.exe](https://github.com/NuGet/Samples/tree/master/NuGetProtocolSamples) 项目中找到这些示例的源代码。
 
 > [!Note]
 > 有关 NuGet 服务器协议的文档，请参阅 [Nuget 服务器 API](~/api/overview.md)。
 
-## <a name="getting-started"></a>入门
+## <a name="nugetprotocol"></a>NuGet。协议
 
-### <a name="install-the-packages"></a>安装包
+安装 `NuGet.Protocol` 包以与 HTTP 和基于文件夹的 NuGet 包源交互：
 
 ```ps1
-dotnet add package NuGet.Protocol  # interact with HTTP and folder-based NuGet package feeds, includes NuGet.Packaging
-
-dotnet add package NuGet.Packaging # interact with .nupkg and .nuspec files from a stream
+dotnet add package NuGet.Protocol
 ```
-
-## <a name="examples"></a>示例
-
-你可以在 GitHub 上的 [nuget.exe](https://github.com/NuGet/Samples/tree/master/NuGetProtocolSamples) 项目上找到这些示例。
 
 ### <a name="list-package-versions"></a>列出包版本
 
@@ -61,6 +56,36 @@ dotnet add package NuGet.Packaging # interact with .nupkg and .nuspec files from
 使用 [NuGet V3 搜索 API](../api/search-query-service-resource.md)搜索 "json" 包：
 
 [!code-csharp[SearchPackages](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=SearchPackages)]
+
+### <a name="push-a-package"></a>推送包
+
+使用 [NuGet V3 推送和删除 API](../api/package-publish-resource.md)推送包：
+
+[!code-csharp[PushPackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=PushPackage)]
+
+### <a name="delete-a-package"></a>删除包
+
+使用 [NuGet V3 推送和删除 API](../api/package-publish-resource.md)删除包：
+
+> [!Note]
+> NuGet 服务器可以自由地将包删除请求解释为 "硬删除"、"软删除" 或 "取消列出"。
+> 例如，nuget.org 将包删除请求解释为 "取消列出"。 有关这种做法的详细信息，请参阅 [删除包](../nuget-org/policies/deleting-packages.md) 策略。
+
+[!code-csharp[DeletePackage](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=DeletePackage)]
+
+### <a name="work-with-authenticated-feeds"></a>使用经过身份验证的源
+
+用于 [`NuGet.Protocol`](https://www.nuget.org/packages/NuGet.Protocol) 处理已验证的源。
+
+[!code-csharp[AuthenticatedFeed](~/../nuget-samples/NuGetProtocolSamples/Program.cs?name=AuthenticatedFeed)]
+
+## <a name="nugetpackaging"></a>NuGet。打包
+
+安装 `NuGet.Packaging` 包以与 `.nupkg` `.nuspec` 流中的文件进行交互：
+
+```ps1
+dotnet add package NuGet.Packaging
+```
 
 ### <a name="create-a-package"></a>创建包
 
@@ -88,7 +113,7 @@ dotnet add package NuGet.Packaging # interact with .nupkg and .nuspec files from
 - [浏览 NuGet v3 库，第3部分：安装包](http://daveaglick.com/posts/exploring-the-nuget-v3-libraries-part-3)
 
 > [!Note]
-> **3.4.3**版本的 NuGet 客户端 SDK 包发布后，不久就会编写这些博客文章。
+> **3.4.3** 版本的 NuGet 客户端 SDK 包发布后，不久就会编写这些博客文章。
 > 较新版本的包可能与博客文章中的信息不兼容。
 
 圣马丁 Björkström 对 Dave Glick 的博客系列进行了跟进博客文章，其中介绍了使用 NuGet 客户端 SDK 安装 NuGet 包的不同方法：

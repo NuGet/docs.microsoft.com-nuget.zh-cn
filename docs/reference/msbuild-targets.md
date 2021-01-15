@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 66df4e0e4739300608fd5f9e44eea5bcd00079c8
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: 7de3f0f1133a89848e9268d489751293fb3cbf25
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699891"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235693"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -49,7 +49,7 @@ NuGet 4.0+
 | 属性/NuSpec 值 | MSBuild 属性 | 默认 | 说明 |
 |--------|--------|--------|--------|
 | ID | PackageId | AssemblyName | MSBuild 的 $(AssemblyName) |
-| 版本 | PackageVersion | 版本 | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
+| Version | PackageVersion | Version | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
 | VersionPrefix | PackageVersionPrefix | empty | 设置 PackageVersion 会覆盖 PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | empty | MSBuild 的 $(VersionSuffix)。 设置 PackageVersion 会覆盖 PackageVersionSuffix |
 | Authors | Authors | 当前用户的用户名 | |
@@ -71,7 +71,7 @@ NuGet 4.0+
 | 存储库/分支 | RepositoryBranch | empty | 可选存储库分支信息。 还必须为此属性指定要包含的 *RepositoryUrl* 。 示例： *master* (NuGet 4.7.0 +)  |
 | 存储库/提交 | RepositoryCommit | empty | 可选的存储库提交或更改集，指示针对其生成包的源。 还必须为此属性指定要包含的 *RepositoryUrl* 。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +)  |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
-| 总结 | 不支持 | | |
+| 摘要 | 不支持 | | |
 
 ### <a name="pack-target-inputs"></a>包目标输入
 
@@ -413,7 +413,8 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 | RestoreLockedMode | 在锁定模式下运行还原。 这意味着，还原将不会重新评估依赖关系。 |
 | NuGetLockFilePath | 锁定文件的自定义位置。 默认位置为项目旁边，名为 `packages.lock.json` 。 |
 | RestoreForceEvaluate | 强制执行还原，重新计算依赖项并更新锁定文件，而不会出现任何警告。 |
-| RestorePackagesConfig | 一个选择使用开关，用 packages.config 还原项目。仅支持 `MSBuild -t:restore` 。 |
+| RestorePackagesConfig | 一种选择使用开关，用 packages.config 还原项目。仅支持 `MSBuild -t:restore` 。 |
+| RestoreUseStaticGraphEvaluation | 选择使用静态图形 MSBuild 计算，而不是标准计算。 静态图形评估是一项试验性功能，它对于大型存储库和解决方案的速度显著提高。 |
 
 #### <a name="examples"></a>示例
 
@@ -469,25 +470,40 @@ msbuild -t:restore -p:RestorePackagesConfig=true
 > [!NOTE]
 > `packages.config` restore 仅适用于 `MSBuild 16.5+` ，而不适用于 `dotnet.exe`
 
-### <a name="packagetargetfallback"></a>PackageTargetFallback
+### <a name="restoring-with-msbuild-static-graph-evaluation"></a>通过 MSBuild 静态图形计算进行还原
 
-`PackageTargetFallback` 元素可用于指定要在还原包时使用的一组兼容目标。 旨在允许使用 dotnet [TxM](../reference/target-frameworks.md) 的包与未声明 dotnet TxM 的兼容包结合使用。 也就是说，如果项目使用 dotnet TxM，那么所依赖的所有包也必须有 dotnet TxM，除非将 `<PackageTargetFallback>` 添加到项目中，以允许非 dotnet 平台与 dotnet 兼容。
+> [!NOTE]
+> 使用 MSBuild 16.6 +，NuGet 添加了一项试验性功能，可用于从命令行使用静态图形计算，从而大幅缩短大型存储库的还原时间。
 
-例如，如果项目使用的是 `netstandard1.6` TxM，且从属包仅包含 `lib/net45/a.dll` 和 `lib/portable-net45+win81/a.dll`，则项目将无法生成。 如果需要的是后一种 DLL，则可以按照如下所示添加 `PackageTargetFallback`，声明 `portable-net45+win81` DLL 是兼容的：
-
-```xml
-<PackageTargetFallback Condition="'$(TargetFramework)'=='netstandard1.6'">
-    portable-net45+win81
-</PackageTargetFallback>
+```cli
+msbuild -t:restore -p:RestoreUseStaticGraphEvaluation=true
 ```
 
-若要声明项目中所有目标的回退，请停止 `Condition` 属性。 还可以通过包括 `$(PackageTargetFallback)` 扩展任何现有 `PackageTargetFallback`，如下所示：
+也可以通过设置属性中的属性来启用它。
 
 ```xml
-<PackageTargetFallback>
-    $(PackageTargetFallback);portable-net45+win81
-</PackageTargetFallback >
+<Project>
+  <PropertyGroup>
+    <RestoreUseStaticGraphEvaluation>true</RestoreUseStaticGraphEvaluation>
+  </PropertyGroup>
+</Project>
 ```
+
+> [!NOTE]
+> 从 Visual Studio 2019. x 和 NuGet 1.x 中，此功能被视为实验性并选择加入。 有关默认情况下何时启用此功能的详细信息，请遵循 [NuGet/Home # 9803](https://github.com/NuGet/Home/issues/9803) 。
+
+静态图形还原更改还原的 msbuild 部分、项目读取和评估，但不更改还原算法！ 所有 NuGet 工具 ( # A0、MSBuild.exe、dotnet.exe 和 Visual Studio) 中的还原算法都是相同的。
+
+在极少数情况下，静态图形还原的行为可能与当前还原不同，并且某些声明的 PackageReferences 或 Projectreference 可能已丢失。
+
+若要轻松地在迁移到静态图形时进行一次检查，请考虑运行：
+
+```cli
+msbuild.exe -t:restore -p:RestoreUseStaticGraphEvaluation
+msbuild.exe -t:restore
+```
+
+NuGet *不* 应报告任何更改。 如果看不到差异，请在 [NuGet/Home](https://github.com/nuget/home/issues/new)上发布问题。
 
 ### <a name="replacing-one-library-from-a-restore-graph"></a>从还原图中替换一个库
 

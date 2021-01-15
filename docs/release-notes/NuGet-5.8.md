@@ -5,12 +5,12 @@ author: dominofire
 ms.author: feaguila
 ms.date: 11/9/2020
 ms.topic: conceptual
-ms.openlocfilehash: 329fdf6479d0799ae4b15cc3493848ba2d999853
-ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
+ms.openlocfilehash: 7f641c669cdb0cc979d698f6b219cbb4f2692a2e
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97523443"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235745"
 ---
 # <a name="nuget-58-release-notes"></a>NuGet 5.8 发行说明
 
@@ -19,6 +19,7 @@ NuGet 分发车辆：
 | NuGet 版本 | 适用于 Visual Studio 版本 | 适用于 .NET SDK |
 |:---|:---|:---|
 | [**5.8**](https://nuget.org/downloads) | [Visual Studio 2019 版本 16.8](https://visualstudio.microsoft.com/downloads/) | [5.0](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.8.1**](https://nuget.org/downloads) | [Visual Studio 2019 版本16.8。4](https://visualstudio.microsoft.com/downloads/) | |
 
 <sup>1</sup> 与带有 .net Core 工作负载的 Visual Studio 2019 一起安装
   
@@ -48,7 +49,7 @@ NuGet 分发车辆：
 * Visual Studio 中的其他几个 NuGet 性能改进- [#9982](https://github.com/NuGet/Home/issues/9982)、 [#9984](https://github.com/NuGet/Home/issues/9984)、 [#10052](https://github.com/NuGet/Home/issues/10052) [#9903](https://github.com/NuGet/Home/issues/9903)
 
 
-### <a name="issues-fixed-in-this-release"></a>此版本修复的问题
+### <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
 
 **Dcr**
 
@@ -125,7 +126,7 @@ NuGet 分发车辆：
 
 **[此版本中已修复的所有问题的列表-5。8](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f03519b777e78b4ffb2edeb)**
 
-**[此版本中已修复的问题/提交列表-5。8](https://github.com/NuGet/NuGet.Client/compare/5.7.0.6726...5.8.0.6930)**
+**[此版本中的问题列表-5。8](https://github.com/NuGet/NuGet.Client/compare/5.7.0.6726...5.8.0.6930)**
 
 ### <a name="community-contributions"></a>社区参与
 
@@ -141,6 +142,15 @@ NuGet 分发车辆：
 [Therzok](https://github.com/Therzok) | [3636](https://github.com/NuGet/NuGet.Client/pull/3636) | `RuntimeEnvironmentHelper.IsRunningOnVisualStudio`Mono [#9989](https://github.com/NuGet/Home/issues/9989)上的性能问题
 [thomaslevesque](https://github.com/thomaslevesque) | [3442](https://github.com/NuGet/NuGet.Client/pull/3442) | 为 SemanticVersion 类添加 TypeConverter- [#9125](https://github.com/NuGet/Home/issues/9125)
 
+## <a name="summary-whats-new-in-581"></a>摘要：5.8.1 中的新增功能
+
+* packages.config package.lock.js在 5.8- [#10257](https://github.com/NuGet/Home/issues/10257)中使用了错误的目标框架
+
+* 当混合 PackageReference 和 packages.config [#10326](https://github.com/NuGet/Home/issues/10326)时，5.8 + 16.8 无法解析可传递项目依赖项
+
+**[此版本中已修复的所有问题的列表-5.8。1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5ff7aeae16150e3b19910391)**
+
+**[此版本中的提交列表-5.8。1](https://github.com/NuGet/NuGet.Client/compare/5.8.0.6930...5.8.1.7021)**
 
 ## <a name="feedback-welcome"></a>欢迎反馈
 
