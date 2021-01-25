@@ -12,12 +12,12 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: c42032f1869f4be0af44ffa8fbd5ad522f73c459
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: fbcc035a6b800617f995d3bcebd7e1764aa467b0
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80380413"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235719"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
@@ -63,7 +63,7 @@ nuget pack MyPackage.csproj -Symbols -SymbolPackageFormat snupkg
 [`SymbolPackageFormat`](/dotnet/core/tools/csproj#symbolpackageformat) 属性可以有下列两个值之一：`symbols.nupkg`（默认值）或 `snupkg`。 如果未指定此属性，将会创建旧的符号包。
 
 > [!Note]
-> 仍支持旧格式 `.symbols.nupkg`，但仅出于兼容性原因（请参阅[旧版符号包](Symbol-Packages.md)）。 NuGet.org 的符号服务器只接受新的符号包格式，即 `.snupkg`。
+> 旧格式 `.symbols.nupkg` 仍受支持，但只是出于兼容性的原因，例如本机包（请参阅[旧版符号包](Symbol-Packages.md)）。 NuGet.org 的符号服务器只接受新的符号包格式，即 `.snupkg`。
 
 ## <a name="publishing-a-symbol-package"></a>发布符号包
 
@@ -103,6 +103,9 @@ NuGet.org 对符号包具有以下约束：
 - 需要使用 Visual Studio 15.9 或更高版本中的编译器构建 PDB 及其关联的 nupkg DLL（请参阅 [PDB 加密哈希](https://github.com/dotnet/roslyn/issues/24429)）
 
 如果未满足这些约束，则发布到 NuGet.org 的符号包将无法通过验证。 
+
+> [!NOTE]
+> 本机项目（如 C++ 项目）生成 Windows PDB，而不是可移植的 PDB。 NuGet.org 的符号服务器不支持这些 PDB。 请改用[旧版符号包](Symbol-Packages.md)。
 
 ### <a name="symbol-package-validation-and-indexing"></a>符号包验证和编制索引
 

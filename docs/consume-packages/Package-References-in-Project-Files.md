@@ -1,16 +1,16 @@
 ---
 title: NuGet PackageReference 格式（项目文件中的包引用）
 description: 详细介绍项目文件中 NuGet 4.0+、VS2017 和 .NET Core 2.0 支持的 NuGet PackageReference
-author: karann-msft
-ms.author: karann
+author: nkolev92
+ms.author: nikolev
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1127e7aee27d57abd5f14dd3bea82dfff3ba6d93
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: dcaed83ca54e3234702e963ffc2ebbde4cd75b28
+ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699783"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98235758"
 ---
 # <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
 
@@ -390,3 +390,34 @@ ProjectA
 | `-LockedMode` | `--locked-mode` | RestoreLockedMode | 为还原启用锁定模式。 这对于要获取可重复生成的 CI/CD 方案非常有用。|   
 | `-ForceEvaluate` | `--force-evaluate` | RestoreForceEvaluate | 对于在项目中定义了浮动版本的包，此选项也非常有用。 默认情况下，NuGet 还原不会在每次还原时自动更新包版本，除非使用此选项运行还原。 |
 | `-LockFilePath` | `--lock-file-path` | NuGetLockFilePath | 为项目定义自定义锁定文件位置。 默认情况下，NuGet 支持根目录中的 `packages.lock.json`。 如果在同一目录中具有多个项目，则 NuGet 支持特定于项目的锁定文件 `packages.<project_name>.lock.json` |
+
+## <a name="assettargetfallback"></a>AssetTargetFallback
+
+`AssetTargetFallback` 属性可用于为你的项目引用的项目以及你的项目所使用的 NuGet 包指定其他兼容的框架版本。
+
+如果使用 `PackageReference` 指定包依赖项，但该包不包含与项目的目标框架兼容的资产，则可使用 `AssetTargetFallback` 属性。 使用 `AssetTargetFallback` 中指定的每个目标框架重新检查引用包的兼容性。
+通过 `AssetTargetFallback` 引用 `project` 或 `package` 时，将引发 [NU1701](../reference/errors-and-warnings/NU1701.md) 警告。
+
+有关 `AssetTargetFallback` 如何影响兼容性的示例，请参阅下表。
+
+| 项目框架 | AssetTargetFallback | 包框架 | 结果 |
+|-------------------|---------------------|--------------------|--------|
+| .NET Framework 4.7.2 | | .NET Standard 2.0 | .NET Standard 2.0 |
+| .NET Core 应用 3.1 | | .NET Standard 2.0、.NET Framework 4.7.2 | .NET Standard 2.0 |
+| .NET Core 应用 3.1 | | .NET Framework 4.7.2 | 不兼容，失败并引发 [`NU1202`](../reference/errors-and-warnings/NU1202.md) |
+| .NET Core 应用 3.1 | net472;net471 | .NET Framework 4.7.2 | .NET Framework 4.7.2，引发 [`NU1701`](../reference/errors-and-warnings/NU1701.md) |
+
+可以使用 `;` 作为分隔符来指定多个框架。 若要添加回退框架，可以执行以下操作：
+
+```xml
+<AssetTargetFallback Condition=" '$(TargetFramework)'=='netcoreapp3.1' ">
+    $(AssetTargetFallback);net472;net471
+</AssetTargetFallback>
+```
+
+如果希望覆盖，而不是添加到现有 `AssetTargetFallback` 值，则可以退出 `$(AssetTargetFallback)`。
+
+> [!NOTE]
+> 如果你使用的是[基于 .NET SDK 的项目](/dotnet/core/sdk)，系统会配置相应的 `$(AssetTargetFallback)` 值，而无需你手动设置这些值。
+>
+> `$(PackageTargetFallback)` 是尝试解决这一难题的早期功能，但从根本上来说是无效的，因此不应使用该功能。 若要从 `$(PackageTargetFallback)` 迁移到 `$(AssetTargetFallback)`，只需更改属性名称。
