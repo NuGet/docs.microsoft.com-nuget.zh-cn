@@ -1,28 +1,28 @@
 ---
 title: NuGet 2.8.6 发行说明
-description: NuGet 2.8.6 包括的发行说明的已知问题、 bug 修复、 新增的功能和 Dcr。
-author: karann-msft
-ms.author: karann
+description: NuGet 2.8.6 的发行说明，包括已知问题、bug 修复、新增功能和 Dcr。
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: d57c658999ed3c79b962de84fd973276833ef3fd
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: ea291bdf7a5b6cc3ac3bde526030e517db4632d7
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546486"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776702"
 ---
-# <a name="nuget-286-release-notes"></a><span data-ttu-id="98cd3-103">NuGet 2.8.6 发行说明</span><span class="sxs-lookup"><span data-stu-id="98cd3-103">NuGet 2.8.6 Release Notes</span></span>
+# <a name="nuget-286-release-notes"></a><span data-ttu-id="82670-103">NuGet 2.8.6 发行说明</span><span class="sxs-lookup"><span data-stu-id="82670-103">NuGet 2.8.6 Release Notes</span></span>
 
-<span data-ttu-id="98cd3-104">[NuGet 2.8.5 发行说明](../release-notes/nuget-2.8.5.md) | [NuGet 2.8.7 发行说明](../release-notes/nuget-2.8.7.md)</span><span class="sxs-lookup"><span data-stu-id="98cd3-104">[NuGet 2.8.5 Release Notes](../release-notes/nuget-2.8.5.md) | [NuGet 2.8.7 Release Notes](../release-notes/nuget-2.8.7.md)</span></span>
+<span data-ttu-id="82670-104">[NuGet 2.8.5 发行说明](../release-notes/nuget-2.8.5.md)  | [NuGet 2.8.7 发行说明](../release-notes/nuget-2.8.7.md)</span><span class="sxs-lookup"><span data-stu-id="82670-104">[NuGet 2.8.5 Release Notes](../release-notes/nuget-2.8.5.md) | [NuGet 2.8.7 Release Notes](../release-notes/nuget-2.8.7.md)</span></span>
 
-<span data-ttu-id="98cd3-105">发布 NuGet 2.8.6 2015 年 7 月 20 日作为一项次要更新到我们 2.8.5 VSIX 某些目标修复和改进功能以支持具有支持的 Windows 10 UWP 开发模型可能会发送的包。</span><span class="sxs-lookup"><span data-stu-id="98cd3-105">NuGet 2.8.6 was released July 20, 2015 as a minor update to our 2.8.5 VSIX with some targeted fixes and improvements to support packages that may be delivered with support for the Windows 10 UWP development model.</span></span>
+<span data-ttu-id="82670-105">NuGet 2.8.6 发布于2015年7月20日，作为对我们的 2.8.5 VSIX 的次要更新，其中包含一些目标修补程序和改进功能，可通过支持 Windows 10 UWP 开发模型提供支持。</span><span class="sxs-lookup"><span data-stu-id="82670-105">NuGet 2.8.6 was released July 20, 2015 as a minor update to our 2.8.5 VSIX with some targeted fixes and improvements to support packages that may be delivered with support for the Windows 10 UWP development model.</span></span>
 
-<span data-ttu-id="98cd3-106">此版本的 NuGet 包管理器扩展提供仅支持 Visual Studio 2013。</span><span class="sxs-lookup"><span data-stu-id="98cd3-106">This version of the NuGet package manager extension provides support for Visual Studio 2013 only.</span></span>
+<span data-ttu-id="82670-106">此版本的 NuGet 包管理器扩展仅为 Visual Studio 2013 提供支持。</span><span class="sxs-lookup"><span data-stu-id="82670-106">This version of the NuGet package manager extension provides support for Visual Studio 2013 only.</span></span>
 
-<span data-ttu-id="98cd3-107">此版本中，在 NuGet 包管理器对话框中必须添加对的支持：</span><span class="sxs-lookup"><span data-stu-id="98cd3-107">In this release, the NuGet Package Manager dialog had support added for:</span></span>
+<span data-ttu-id="82670-107">在此版本中，NuGet 包管理器对话框为添加了支持：</span><span class="sxs-lookup"><span data-stu-id="82670-107">In this release, the NuGet Package Manager dialog had support added for:</span></span>
 
-* <span data-ttu-id="98cd3-108">引入了 UAP 目标框架名字对象以支持 Windows 10 应用程序开发。</span><span class="sxs-lookup"><span data-stu-id="98cd3-108">Introduced the UAP Target Framework Moniker to support Windows 10 Application Development.</span></span>
-* <span data-ttu-id="98cd3-109">NuGet 的协议版本 3 终结点</span><span class="sxs-lookup"><span data-stu-id="98cd3-109">NuGet protocol version 3 endpoints</span></span>
-* <span data-ttu-id="98cd3-110">为支持[Nuget.Config](../consume-packages/configuring-nuget-behavior.md) protocolVersion 属性存储库源。</span><span class="sxs-lookup"><span data-stu-id="98cd3-110">Support for [Nuget.Config](../consume-packages/configuring-nuget-behavior.md) protocolVersion attribute on repository sources.</span></span> <span data-ttu-id="98cd3-111">默认值为"2"</span><span class="sxs-lookup"><span data-stu-id="98cd3-111">Default value is "2"</span></span>
-* <span data-ttu-id="98cd3-112">回退到远程存储库如果所需的包版本在本地缓存中不可用</span><span class="sxs-lookup"><span data-stu-id="98cd3-112">Falling back to remote repository if a required package version is not available in the local cache</span></span>
+* <span data-ttu-id="82670-108">引入了 UAP 目标框架名字对象，以支持 Windows 10 应用程序开发。</span><span class="sxs-lookup"><span data-stu-id="82670-108">Introduced the UAP Target Framework Moniker to support Windows 10 Application Development.</span></span>
+* <span data-ttu-id="82670-109">NuGet 协议版本3终结点</span><span class="sxs-lookup"><span data-stu-id="82670-109">NuGet protocol version 3 endpoints</span></span>
+* <span data-ttu-id="82670-110">支持存储库源上 [Nuget.Config](../consume-packages/configuring-nuget-behavior.md) protocolVersion 属性。</span><span class="sxs-lookup"><span data-stu-id="82670-110">Support for [Nuget.Config](../consume-packages/configuring-nuget-behavior.md) protocolVersion attribute on repository sources.</span></span> <span data-ttu-id="82670-111">默认值为 "2"</span><span class="sxs-lookup"><span data-stu-id="82670-111">Default value is "2"</span></span>
+* <span data-ttu-id="82670-112">如果本地缓存中不提供所需的包版本，则回退到远程存储库</span><span class="sxs-lookup"><span data-stu-id="82670-112">Falling back to remote repository if a required package version is not available in the local cache</span></span>
