@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI 帮助命令
 description: nuget.exe help 命令的参考
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 12776b7c16aeef223a0b682ee2468edec8ea3295
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 5d91638c4a6f167ea8a04e5dfa2905cb55084ddd
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623105"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779357"
 ---
 # <a name="help-or--command-nuget-cli"></a>help or ?  (NuGet CLI) 的命令
 
@@ -42,7 +42,7 @@ nuget ? [command] [options]
 
 - **`-ForceEnglishOutput`**
 
-  * (3.5 +) * 使用固定的、基于英语的区域性强制运行 nuget.exe。
+  *(3.5 +)* 使用固定的、基于英语的区域性强制运行 nuget.exe。
 
 - **`-?|-help`**
 

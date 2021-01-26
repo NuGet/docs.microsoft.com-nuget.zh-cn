@@ -1,117 +1,117 @@
 ---
 title: NuGet 3.2 发行说明
-description: 包括已知的问题、 bug 修复、 新增的功能和 Dcr NuGet 3.2 的发行说明。
-author: karann-msft
-ms.author: karann
+description: NuGet 3.2 的发行说明，包括已知问题、bug 修复、新增功能和 Dcr。
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 5bdd2aa5621eead9ce79794052663cc2f8a63d45
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: 38a56b1572770b02ff09135a3b0290742ca80f41
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549517"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780298"
 ---
 # <a name="nuget-32-release-notes"></a>NuGet 3.2 发行说明
 
-[NuGet 3.2 RC 发行说明](../release-notes/nuget-3.2-RC.md) | [NuGet 3.2.1 发行说明](../release-notes/nuget-3.2.1.md)
+[NuGet 3.2-RC 发行说明](../release-notes/nuget-3.2-RC.md)  | [NuGet 3.2.1 发行说明](../release-notes/nuget-3.2.1.md)
 
-发布 NuGet 3.2 2015 年 9 月 16 日作为一系列改进和修复了 3.1.1 发布并且可从这两个[dist.nuget.org](http://dist.nuget.org/index.html)并[Visual Studio 库](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManagerforVisualStudio2015)。
+NuGet 3.2 于9月16日发布2015，作为3.1.1 版本的改进和修补程序的集合，可从 [dist.nuget.org](http://dist.nuget.org/index.html) 和 [Visual Studio 库](https://marketplace.visualstudio.com/items?itemName=NuGetTeam.NuGetPackageManagerforVisualStudio2015)中获得。
 
-## <a name="new-features"></a>新增功能
+## <a name="new-features"></a>新功能
 
-* 位于相同的文件夹的项目现在可以具有不同`project.json`特定于每个项目的文件夹中的文件。  对于每个项目，命名`project.json`文件`{ProjectName}.project.json`，NuGet 会相应地提供首选项设置为每个项目的配置。  与安装的 Windows 10 工具 1.1 版才支持此[1102年](https://github.com/NuGet/Home/issues/1102)
-* NuGet 客户端支持指定全局 NUGET_PACKAGES 环境变量指定的位置中使用的共享的全局包文件夹`project.json`托管使用 Windows 10 工具 1.1 版的项目。
+* 位于同一文件夹中的项目现在可以 `project.json` 在该文件夹中具有特定于每个项目的不同文件。  对于每个项目，将文件命名为， `project.json` `{ProjectName}.project.json` NuGet 将相应地为每个项目的配置提供首选项。  仅安装了 Windows 10 Tools v1.1- [1102](https://github.com/NuGet/Home/issues/1102)支持此项
+* NuGet 客户端支持指定全局 NUGET_PACKAGES 环境变量，以指定使用 `project.json` Windows 10 工具 v1.1 的托管项目中使用的共享全局包文件夹的位置。
 
-## <a name="command-line-updates"></a>命令行的更新
+## <a name="command-line-updates"></a>命令行更新
 
-这是支持 NuGet v3 服务器的 nuget.exe 客户端的第一个版本，使用还原项目包管理`project.json`文件。
+这是 nuget.exe 客户端的第一个版本，它支持 NuGet v3 服务器，并为使用文件管理的项目还原包 `project.json` 。
 
-没有大量的经过身份验证源的问题已解决在此版本中以提高与客户端之间的交互。
+在此版本中解决了许多经过身份验证的源问题，以改善与客户端的交互。
 
-* 安装 / 还原交互只能提交到经过身份验证数据源的初始请求凭据[1300年](https://github.com/NuGet/Home/issues/1300)， [456](https://github.com/NuGet/Home/issues/456)
-* Push 命令不能解决从配置的凭据[1248年](https://github.com/NuGet/Home/issues/1248)
-* 用户代理和标头现在提交到 NuGet 存储库，以便统计信息跟踪- [929](https://github.com/NuGet/Home/issues/929)
+* 安装/还原交互仅向经过身份验证的源的初始请求提交凭据- [1300](https://github.com/NuGet/Home/issues/1300)， [456](https://github.com/NuGet/Home/issues/456)
+* Push 命令不能解析配置中的凭据- [1248](https://github.com/NuGet/Home/issues/1248)
+* 用户代理和标头现在已提交到 NuGet 存储库以帮助进行统计跟踪- [929](https://github.com/NuGet/Home/issues/929)
 
-我们做了大量改进，可尝试使用远程 NuGet 存储库时更好地处理网络故障：
+我们进行了大量改进，以便在尝试使用远程 NuGet 存储库时更好地处理网络故障：
 
-* 改进了错误消息时无法连接到远程源- [1238年](https://github.com/NuGet/Home/issues/1238)
-* 更正了 NuGet 还原命令时将发生错误情况的正确返回 1 [1186年](https://github.com/NuGet/Home/issues/1186)
-* 现在重试网络连接最多 5 次尝试 HTTP 5xx 故障-的情况下每隔 200 毫秒[1120年](https://github.com/NuGet/Home/issues/1120)
-* 改进的服务器重定向响应的处理期间推送命令- [1051年](https://github.com/NuGet/Home/issues/1051)
-* `nuget install -source` 现在支持作为自变量的 Nuget.Config 中的 URL 或存储库名称[1046年](https://github.com/NuGet/Home/issues/1046)
-* 在还原过程中已不在存储库位于的缺失包现在报告为错误而不是警告[1038年](https://github.com/NuGet/Home/issues/1038)
-* 更正的 Unix/Linux 方案-\r\n multipartwebrequest 处理[776](https://github.com/NuGet/Home/issues/776)
+* 改善了无法连接到远程源时的错误消息- [1238](https://github.com/NuGet/Home/issues/1238)
+* 更正了 NuGet restore 命令，以便在出现错误情况时正确返回 1- [1186](https://github.com/NuGet/Home/issues/1186)
+* 现在，重试每个200毫秒的网络连接，在出现 HTTP 5xx 失败时最多执行5次尝试- [1120](https://github.com/NuGet/Home/issues/1120)
+* 改进了推送命令期间服务器重定向响应的处理- [1051](https://github.com/NuGet/Home/issues/1051)
+* `nuget install -source` 现在支持作为参数的 Nuget.Config 中的 URL 或存储库名称- [1046](https://github.com/NuGet/Home/issues/1046)
+* 还原期间缺少存储库中的程序包现在会报告为错误，而不是警告 [1038](https://github.com/NuGet/Home/issues/1038)
+* 更正了针对 Unix/Linux 方案的 \r\n multipartwebrequest 处理- [776](https://github.com/NuGet/Home/issues/776)
 
-有大量的各种命令的问题的修补程序：
+有多个针对各种命令的问题的修补程序：
 
-* Push 命令不会再对包源的 PUT 前 GET [1237年](https://github.com/NuGet/Home/issues/1237)
-* 列表命令不再重复版本号- [1185年](https://github.com/NuGet/Home/issues/1185)
-* 包使用的生成参数现在正确地支持 C# 6.0- [1107年](https://github.com/NuGet/Home/issues/1107)
-* 已更正的问题尝试打包 F # 项目使用 Visual Studio 2015-生成[1048年](https://github.com/NuGet/Home/issues/1048)
-* 不还原现在进行任何操作时的包已经存在- [1040年](https://github.com/NuGet/Home/issues/1040)
-* 改进的错误消息何时`packages.config`文件的格式不正确- [1034年](https://github.com/NuGet/Home/issues/1034)
-* 更正了带-SolutionDirectory 开关还原命令，可以使用相对路径- [992](https://github.com/NuGet/Home/issues/992)
-* 改进了更新命令，以支持解决方案级更新- [924](https://github.com/NuGet/Home/issues/924)
+* 在针对包源进行 PUT 之前，推送命令不再执行 GET- [1237](https://github.com/NuGet/Home/issues/1237)
+* List 命令不再重复版本号- [1185](https://github.com/NuGet/Home/issues/1185)
+* 带有-build 参数的 Pack 现在正确支持 c # 6.0- [1107](https://github.com/NuGet/Home/issues/1107)
+* 更正了尝试打包使用 Visual Studio 2015- [1048](https://github.com/NuGet/Home/issues/1048)生成的 F # 项目的问题
+* 如果包已存在，则立即还原为非 ops- [1040](https://github.com/NuGet/Home/issues/1040)
+* 文件格式错误时改进的错误消息 `packages.config` - [1034](https://github.com/NuGet/Home/issues/1034)
+* 使用-SolutionDirectory 开关更正了 restore 命令，以便使用相对路径- [992](https://github.com/NuGet/Home/issues/992)
+* 改进了更新的命令来支持解决方案范围的更新- [924](https://github.com/NuGet/Home/issues/924)
 
-在此版本中已解决的问题的完整列表可在 NuGet GitHub[命令行里程碑](https://github.com/nuget/home/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3A3.2.0-commandline+is%3Aclosed+-label%3AClosedAs%3ADuplicate)。
+此版本中解决的问题的完整列表可在 NuGet GitHub [命令行里程碑](https://github.com/nuget/home/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3A3.2.0-commandline+is%3Aclosed+-label%3AClosedAs%3ADuplicate)中找到。
 
 ## <a name="visual-studio-extension-updates"></a>Visual Studio 扩展更新
 
-### <a name="new-features-in-visual-studio"></a>Visual Studio 中的新增功能
+### <a name="new-features-in-visual-studio"></a>Visual Studio 中的新功能
 
-* 新的上下文菜单项已添加到解决方案资源管理器允许包在还原时不用生成解决方案的解决方案节点上 ([1274年](https://github.com/NuGet/Home/issues/1274))。
+* 已将新的上下文菜单项添加到 "解决方案" 节点上的解决方案资源管理器，这允许在不生成解决方案 ([1274](https://github.com/NuGet/Home/issues/1274)) 的情况下还原包。
 
-![新还原包上下文菜单项](./media/NuGet-3.2/newContextMenu.png)
+![新的 "还原包" 上下文菜单项](./media/NuGet-3.2/newContextMenu.png)
 
-### <a name="updates-and-fixes-in-visual-studio"></a>更新和修补程序在 Visual Studio 中
+### <a name="updates-and-fixes-in-visual-studio"></a>Visual Studio 中的更新和修补程序
 
-已验证的源的修补程序已累加起来，并且也在扩展中解决。  以下身份验证项还已扩展中得到解决:
+经过身份验证的源的修补程序也会在扩展中汇总和寻址。  以下身份验证项目也在扩展中进行了说明：
 
-* 现在正确，正确处理 NuGet v3 已验证的源而不是 v2 已经过身份验证源- [1216年](https://github.com/NuGet/Home/issues/1216)
-* 在项目中使用的身份验证凭据的已更正的请求`project.json`以及与 v2 源-通信[1082年](https://github.com/NuGet/Home/issues/1082)
+* 现在正确地正确对待 NuGet v3 身份验证源，而不是作为 v2 身份验证源- [1216](https://github.com/NuGet/Home/issues/1216)
+* 更正 `project.json` 了使用和与 v2 源通信的项目中身份验证凭据的请求- [1082](https://github.com/NuGet/Home/issues/1082)
 
-网络连接有影响 Visual Studio 中的用户界面和我们解决了此与以下修补程序：
+网络连接已影响 Visual Studio 中的用户界面，我们通过以下修补程序解决了这一问题：
 
-* 改进的包版本的本地缓存维护[1096年](https://github.com/NuGet/Home/issues/1096)
-* 连接到源到无法再尝试将其视为 v2 源-v3 时更改失败行为[1253年](https://github.com/NuGet/Home/issues/1253)
-* 用多个包源的安装包时，现在阻止安装故障[1183年](https://github.com/NuGet/Home/issues/1183)
+* 提高了包版本（ [1096](https://github.com/NuGet/Home/issues/1096) ）的本地缓存的维护
+* 在连接到 v3 源时更改了失败行为，不再尝试将其视为 v2 源- [1253](https://github.com/NuGet/Home/issues/1253)
+* 现在，在安装包含多个包源的包时阻止安装失败- [1183](https://github.com/NuGet/Home/issues/1183)
 
-我们改进了与生成操作之间的交互的处理：
+改进了对生成操作的交互处理：
 
-* 现在，继续生成项目，如果还原包，为单个项目失败- [1169年](https://github.com/NuGet/Home/issues/1169)
-* 将包安装到解决方案中的另一个项目依赖的项目强制解决方案重新生成- [981](https://github.com/NuGet/Home/issues/981)
-* 更正失败的包安装到项目的正确回滚更改[1265年](https://github.com/NuGet/Home/issues/1265)
-* 更正了无意中的删除`developmentDependency`属性中的包`packages.config`  -  [1263年](https://github.com/NuGet/Home/issues/1263)
-* 调用`install.ps1`现在具有适当`$package.AssemblyReferences`传递的对象[1245年](https://github.com/NuGet/Home/issues/1245)
-* 不再阻止卸载包在 UWP 项目中的项目时处于错误状态- [1128年](https://github.com/NuGet/Home/issues/1128)
-* 其中包含的各种解决方案`packages.config`并`project.json`而无需第二个现在正确地生成项目生成操作- [1122年](https://github.com/NuGet/Home/issues/1122)
-* 如果链接或位于不同的文件夹的正确查找 app.config 文件[1111年](https://github.com/NuGet/Home/issues/1111)， [894](https://github.com/NuGet/Home/issues/894)
-* UWP 项目现在可以安装取消列出的包- [1109年](https://github.com/NuGet/Home/issues/1109)
-* 当解决方案处于不处于已保存的状态-现在允许包还原[1081年](https://github.com/NuGet/Home/issues/1081)
+* 如果为单个项目还原包失败，现在继续生成项目- [1169](https://github.com/NuGet/Home/issues/1169)
+* 将包安装到由解决方案中其他项目依赖的项目中会强制解决方案重新生成- [981](https://github.com/NuGet/Home/issues/981)
+* 更正了已失败的包安装以正确回滚对项目的更改- [1265](https://github.com/NuGet/Home/issues/1265)
+* 更正了 `developmentDependency` `packages.config`  -  [1263](https://github.com/NuGet/Home/issues/1263)中对包的属性的意外删除
+* 对的调用 `install.ps1` 现在传递了正确的 `$package.AssemblyReferences` 对象- [1245](https://github.com/NuGet/Home/issues/1245)
+* 当项目处于错误状态时，不再阻止卸载 UWP 项目中的包- [1128](https://github.com/NuGet/Home/issues/1128)
+* `packages.config`现在可正确生成包含和项目组合的解决方案， `project.json` 而无需进行第二次生成操作- [1122](https://github.com/NuGet/Home/issues/1122)
+* 如果文件已链接或位于其他文件夹中，则正确查找 app.config 文件- [1111](https://github.com/NuGet/Home/issues/1111)、 [894](https://github.com/NuGet/Home/issues/894)
+* UWP 项目现在可以安装未列出的包- [1109](https://github.com/NuGet/Home/issues/1109)
+* 当解决方案未处于保存状态时，现在允许使用包还原- [1081](https://github.com/NuGet/Home/issues/1081)
 
-处理的配置文件已更正的更新：
+已更正处理配置文件的更新：
 
-* 从在后续版本中的包不能再删除目标文件传送`project.json`托管的项目- [1288年](https://github.com/NuGet/Home/issues/1288)
-* 在 ASP.NET 5 解决方案生成的过程不能再修改 Nuget.Config 文件[1201年](https://github.com/NuGet/Home/issues/1201)
-* 允许在包更新的过程不能再更改版本约束[1130年](https://github.com/NuGet/Home/issues/1130)
-* 锁定文件现在保持锁定状态期间生成的[1127年](https://github.com/NuGet/Home/issues/1127)
-* 现在修改`packages.config`并不在更新的过程中重写该[585](https://github.com/NuGet/Home/issues/585)
+* 不再从托管项目的后续版本中删除包中提供的目标文件 `project.json` - [1288](https://github.com/NuGet/Home/issues/1288)
+* ASP.NET 5 解决方案版本期间不再修改 Nuget.Config 文件- [1201](https://github.com/NuGet/Home/issues/1201)
+* 在包更新期间不再更改允许的版本约束- [1130](https://github.com/NuGet/Home/issues/1130)
+* 锁定文件现在在生成期间保持锁定状态- [1127](https://github.com/NuGet/Home/issues/1127)
+* 现在 `packages.config` ，在更新过程中修改和不重写此项- [585](https://github.com/NuGet/Home/issues/585)
 
-与 TFS 源代码管理的交互得到改进：
+与 TFS 源代码管理的交互经过改进：
 
-* 不能再失败的包的绑定到 TFS 的安装[1164年](https://github.com/NuGet/Home/issues/1164)， [980](https://github.com/NuGet/Home/issues/980)
-* 更正了的 NuGet 用户界面，以允许 TFS 2013 集成- [1071年](https://github.com/NuGet/Home/issues/1071)
-* 更正了对已还原到正确来自的 packages 文件夹中的包的引用[1004年](https://github.com/NuGet/Home/issues/1004)
+* 对于绑定到 TFS- [1164](https://github.com/NuGet/Home/issues/1164)、 [980](https://github.com/NuGet/Home/issues/980)的包，不会再安装失败。
+* 更正了 NuGet 用户界面以允许 TFS 2013 集成- [1071](https://github.com/NuGet/Home/issues/1071)
+* 更正了对从包文件夹中正确还原的包的引用- [1004](https://github.com/NuGet/Home/issues/1004)
 
-最后，我们还改进了这些项：
+最后，我们还改进了以下各项：
 
-* 日志消息的详细级别可以减少`project.json`托管项目- [1163年](https://github.com/NuGet/Home/issues/1163)
-* 现在，正确的用户界面中显示安装的包版本[1061年](https://github.com/NuGet/Home/issues/1061)
-* 现在指定其 nuspec 中的依赖项范围的包具有稳定的包版本-安装这些依赖项的预发布版本[1304年](https://github.com/NuGet/Home/issues/1304)
+* 针对托管项目减少的日志消息详细级别 `project.json` - [1163](https://github.com/NuGet/Home/issues/1163)
+* 现在正确地在用户界面中显示包的安装版本- [1061](https://github.com/NuGet/Home/issues/1061)
+* 具有在 nuspec 中指定的依赖关系范围的包现在具有为稳定包版本安装的这些依赖项的预发布版本- [1304](https://github.com/NuGet/Home/issues/1304)
 
-可以在 NuGet GitHub 中找到 Visual Studio 扩展的已解决的问题的完整列表[3.2 里程碑](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+-label%3AClosedAs%3ADuplicate+milestone%3A3.2)
+有关 Visual Studio 扩展的问题的完整列表，请参阅 NuGet GitHub [3.2 里程碑](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+-label%3AClosedAs%3ADuplicate+milestone%3A3.2)
 
 ## <a name="known-issues"></a>已知问题
 
-我们继续来跟踪我们的 GitHub 问题中，可以在中找到的问题： [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)
+我们继续跟踪 GitHub 问题列表中的问题，可在以下位置找到： [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)

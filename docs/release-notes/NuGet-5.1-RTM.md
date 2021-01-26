@@ -1,16 +1,16 @@
 ---
 title: NuGet 5.1 RTM 发行说明
 description: NuGet 5.1 的发行说明，包括新功能、bug 修复和 Dcr。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/21/2019
 ms.topic: conceptual
-ms.openlocfilehash: 2a94360dc375ba90b90c1045f4acbcfca81fea5b
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: d6f6bffc6b5fda9ee1b9d9830f6d7d3c0f5be654
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699861"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780129"
 ---
 # <a name="nuget-51-release-notes"></a>NuGet 5.1 发行说明
 
@@ -35,7 +35,7 @@ NuGet 分发车辆：
   * 支持 "仅下载" 包方案和 PackageDownload- [#7339](https://github.com/NuGet/Home/issues/7339)
   * 使用 PackageType 从搜索结果中排除运行时和目标包 & 还原图形- [#7337](https://github.com/NuGet/Home/issues/7337)
 
-### <a name="issues-fixed-in-this-release"></a>此版本修复的问题
+### <a name="issues-fixed-in-this-release"></a>此版本中已修复的问题
 
 **Bug**
 

@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI 局部变量命令
 description: nuget.exe 局部变量命令的参考
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/19/2018
 ms.topic: reference
-ms.openlocfilehash: cdc2b760021ffc4a9e02edacb45beac01cc99bf1
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 25feb29c7b96c47681cedd8208b8595952d3ca49
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623053"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779205"
 ---
 # <a name="locals-command-nuget-cli"></a> (NuGet CLI 的局部变量命令) 
 
@@ -24,7 +24,7 @@ ms.locfileid: "88623053"
 nuget locals <folder> [options]
 ```
 
-其中 `<folder>` `all` ，是、 `http-cache` 、 `packages-cache` * (3.5 及更低版本) *、 `global-packages` `temp` * (3.4 +) *和 `plugins-cache` * (4.8 +) *。
+其中 `<folder>` `all` ，是、 `http-cache` 、 `packages-cache` *(3.5 及更低版本)*、 `global-packages` `temp` *(3.4 +)* 和 `plugins-cache` *(4.8 +)*。
 
 ## <a name="options"></a>选项
 
@@ -38,7 +38,7 @@ nuget locals <folder> [options]
 
 - **`-ForceEnglishOutput`**
 
-  * (3.5 +) * 使用固定的、基于英语的区域性强制运行 nuget.exe。
+  *(3.5 +)* 使用固定的、基于英语的区域性强制运行 nuget.exe。
 
 - **`-?|-help`**
 
@@ -46,7 +46,7 @@ nuget locals <folder> [options]
 
 - **`-List`**
 
-  列出指定文件夹的位置或所有文件夹在与 *all*一起使用时的位置。
+  列出指定文件夹的位置或所有文件夹在与 *all* 一起使用时的位置。
 
 - **`-NonInteractive`**
 

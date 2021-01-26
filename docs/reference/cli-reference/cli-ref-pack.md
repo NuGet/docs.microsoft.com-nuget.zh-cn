@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI 包命令
 description: nuget.exe pack 命令的参考
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 0483a75c7ee1fd851f935f44d96a417e2e86bf20
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: e2906d53119cb8c922df7d177cd686836ac50a5a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622949"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780046"
 ---
 # <a name="pack-command-nuget-cli"></a> (NuGet CLI) 打包命令
 
@@ -53,7 +53,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 - **`-ForceEnglishOutput`**
 
-  * (3.5 +) * 使用固定的、基于英语的区域性强制运行 nuget.exe。
+  *(3.5 +)* 使用固定的、基于英语的区域性强制运行 nuget.exe。
 
 - **`-?|-help`**
 
@@ -73,11 +73,11 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 - **`-MSBuildPath`**
 
-  * (4.0 +) * 指定要与命令一起使用的 MSBuild 的路径，优先于 `-MSBuildVersion` 。
+  *(4.0 +)* 指定要与命令一起使用的 MSBuild 的路径，优先于 `-MSBuildVersion` 。
 
 - **`-MSBuildVersion`**
 
-  * (3.2 +) * 指定要与此命令一起使用的 MSBuild 版本。 支持的值为4、12、14、15.1、15.3、15.4、15.5、15.6、15.7、15.8、15.9。 默认情况下，将选取路径中的 MSBuild，否则默认为已安装的最高版本的 MSBuild。
+  *(3.2 +)* 指定要与此命令一起使用的 MSBuild 版本。 支持的值为4、12、14、15.1、15.3、15.4、15.5、15.6、15.7、15.8、15.9。 默认情况下，将选取路径中的 MSBuild，否则默认为已安装的最高版本的 MSBuild。
 
 - **`-NoDefaultExcludes`**
 
@@ -105,7 +105,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 - **`-p|-Properties`**
 
-  应在其他选项后出现在命令行的最后。 指定重写项目文件中的值的属性的列表;请参阅属性名称的 [常用 MSBuild 项目属性](/visualstudio/msbuild/common-msbuild-project-properties) 。 此处的 Properties 参数是标记 = 值对列表，用分号分隔，其中每个 `$token$` 在文件中出现的 `.nuspec` 都将替换为给定的值。 值可以是用引号引起来的字符串。 请注意，对于 "配置" 属性，默认值为 "调试"。 若要更改为发布配置，请使用 `-Properties Configuration=Release` 。 **一般情况**下，属性应该与在相应的项目生成过程中使用的属性相同，以避免潜在的异常行为。
+  应在其他选项后出现在命令行的最后。 指定重写项目文件中的值的属性的列表;请参阅属性名称的 [常用 MSBuild 项目属性](/visualstudio/msbuild/common-msbuild-project-properties) 。 此处的 Properties 参数是标记 = 值对列表，用分号分隔，其中每个 `$token$` 在文件中出现的 `.nuspec` 都将替换为给定的值。 值可以是用引号引起来的字符串。 请注意，对于 "配置" 属性，默认值为 "调试"。 若要更改为发布配置，请使用 `-Properties Configuration=Release` 。 **一般情况** 下，属性应该与在相应的项目生成过程中使用的属性相同，以避免潜在的异常行为。
 
 - **`-SolutionDirectory`**
 
@@ -113,7 +113,7 @@ nuget pack <nuspecPath | projectPath> [options] [-Properties ...]
 
 - **`-Suffix`**
 
-  * (3.4.4 +) * 将后缀追加到内部生成的版本号，通常用于追加生成或其他预发行标识符。 例如，使用 `-suffix nightly` 将创建一个版本号与相同的包 `1.2.3-nightly` 。 后缀必须以字母开头，以避免与不同版本的 NuGet 和 NuGet 包管理器的警告、错误和可能的不兼容性。
+  *(3.4.4 +)* 将后缀追加到内部生成的版本号，通常用于追加生成或其他预发行标识符。 例如，使用 `-suffix nightly` 将创建一个版本号与相同的包 `1.2.3-nightly` 。 后缀必须以字母开头，以避免与不同版本的 NuGet 和 NuGet 包管理器的警告、错误和可能的不兼容性。
 
 - **`-SymbolPackageFormat`**
 

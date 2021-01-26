@@ -1,16 +1,16 @@
 ---
 title: NuGet Open-PackagePage PowerShell 参考
 description: Visual Studio 中的 NuGet 包管理器控制台中 Open-PackagePage PowerShell 命令参考。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: ba90e09c017ec66d73c35a60025474bc77cf65a7
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: d34a91007197f8004e4923deedb1cdb26d662d53
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238057"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780407"
 ---
 # <a name="open-packagepage-package-manager-console-in-visual-studio"></a>在 Visual Studio 中 Open-PackagePage (程序包管理器控制台) 
 
@@ -25,13 +25,13 @@ Open-PackagePage [-Id] <string> [-Version] [-Source] [-License] [-ReportAbuse]
     [-PassThru] [<CommonParameters>]
 ```
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | --- | --- |
 | ID | 所需包的包 ID。 -Id 开关本身是可选的。 |
 | 版本 | 包的版本，默认为最新版本。 |
-| 源 | 包源，默认为 "源" 下拉选项中的所选源。 |
+| Source | 包源，默认为 "源" 下拉选项中的所选源。 |
 | 许可证 | 打开浏览器，直至包的许可证 URL。 如果未指定-License 和-ReportAbuse，则浏览器将打开包的项目 URL。 |
 | ReportAbuse | 打开浏览器，指向包的 "报告滥用 URL"。 如果未指定-License 和-ReportAbuse，则浏览器将打开包的项目 URL。 |
 | PassThru | 显示 URL;使用 with-WhatIf 来禁止打开浏览器。 |

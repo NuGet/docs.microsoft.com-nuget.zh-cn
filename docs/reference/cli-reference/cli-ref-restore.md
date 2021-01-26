@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI restore 命令
 description: nuget.exe restore 命令的参考
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 108317aba2107948180ab0149c0c5ba5150cf9b8
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 49fabbd0ef0c1c0c16f13bdf741296575fa72359
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622824"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780025"
 ---
 # <a name="restore-command-nuget-cli"></a> (NuGet CLI 还原命令) 
 
@@ -36,7 +36,7 @@ nuget restore <projectPath> [options]
 
 - **`-DirectDownload`**
 
-  * (4.0 +) * 直接下载包，而不填充包含任何二进制文件或元数据的缓存。
+  *(4.0 +)* 直接下载包，而不填充包含任何二进制文件或元数据的缓存。
 
 - **`-DisableParallelProcessing`**
 
@@ -44,7 +44,7 @@ nuget restore <projectPath> [options]
 
 - **`-FallbackSource`**
 
-  * (3.2 +) * 在主或默认源中找不到包时要用作回退的包的列表。 使用分号分隔列表项。
+  *(3.2 +)* 在主或默认源中找不到包时要用作回退的包的列表。 使用分号分隔列表项。
 
 - **`-Force`**
 
@@ -52,7 +52,7 @@ nuget restore <projectPath> [options]
 
 - **`-ForceEnglishOutput`**
 
-  * (3.5 +) * 使用固定的、基于英语的区域性强制运行 nuget.exe。
+  *(3.5 +)* 使用固定的、基于英语的区域性强制运行 nuget.exe。
 
 - **`-ForceEvaluate`**
 
@@ -72,11 +72,11 @@ nuget restore <projectPath> [options]
 
 - **`-MSBuildPath`**
 
-   * (4.0 +) * 指定要与命令一起使用的 MSBuild 的路径，优先于 `-MSBuildVersion` 。
+   *(4.0 +)* 指定要与命令一起使用的 MSBuild 的路径，优先于 `-MSBuildVersion` 。
 
 - **`-MSBuildVersion`**
 
-  * (3.2 +) * 指定要与此命令一起使用的 MSBuild 版本。 支持的值为4、12、14、15.1、15.3、15.4、15.5、15.6、15.7、15.8、15.9。 默认情况下，将选取路径中的 MSBuild，否则默认为已安装的最高版本的 MSBuild。
+  *(3.2 +)* 指定要与此命令一起使用的 MSBuild 版本。 支持的值为4、12、14、15.1、15.3、15.4、15.5、15.6、15.7、15.8、15.9。 默认情况下，将选取路径中的 MSBuild，否则默认为已安装的最高版本的 MSBuild。
 
 - **`-NoCache`**
 
@@ -104,7 +104,7 @@ nuget restore <projectPath> [options]
 
 - **`-Recursive`**
 
-  * (4.0 +) * 还原 UWP 和 .NET Core 项目的所有引用项目。 不适用于使用 `packages.config` 的项目。
+  *(4.0 +)* 还原 UWP 和 .NET Core 项目的所有引用项目。 不适用于使用 `packages.config` 的项目。
 
 - **`-RequireConsent`**
 
@@ -128,7 +128,7 @@ nuget restore <projectPath> [options]
 
 另请参阅 [环境变量](cli-ref-environment-variables.md)
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 Restore 命令执行以下步骤：
 

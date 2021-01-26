@@ -1,16 +1,16 @@
 ---
 title: NuGet PowerShell 参考
 description: Visual Studio 中的 NuGet 包管理器控制台中提供的 PowerShell 命令的完整引用。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 10/02/2017
 ms.topic: reference
-ms.openlocfilehash: 4f8b42847cbc155393fe6d2afbe2e0857b619da3
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 98bea8a225f4864953f898ef57b26e9093f7c2e9
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93236875"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779363"
 ---
 # <a name="powershell-reference"></a>PowerShell 参考
 
@@ -20,7 +20,7 @@ ms.locfileid: "93236875"
 > 所有 PowerShell 命令仅与包消耗相关。 除了包还可以是其他包的使用者以外，没有任何 PowerShell 命令都与创建和发布包相关。
 
 > [!Important]
-> 此处列出的命令特定于 Visual Studio 中的包管理器控制台，不同于常规 PowerShell 环境中提供的 [包管理模块命令](/powershell/module/packagemanagement/?view=powershell-6) 。 具体而言，每个环境都有一些命令，这些命令在其他环境中不可用，并且其特定参数的名称相同的命令也可能不同。 使用 Visual Studio 中的包管理控制台时，适用于本主题中所述的命令和参数。
+> 此处列出的命令特定于 Visual Studio 中的包管理器控制台，它不同于常规 PowerShell 环境中提供的[包管理模块命令](/powershell/module/packagemanagement/?view=powershell-6)。 具体而言，每个环境都有一些命令，这些命令在其他环境中不可用，而具有相同名称的命令在其特定参数中也可能不同。 使用 Visual Studio 中的包管理控制台时，本主题中所述的命令和参数适用。
 
 | 常见命令 | 说明 | NuGet 版本 |
 | --- | --- | --- |
@@ -52,7 +52,7 @@ Get-Help <command> -full
 - OutBuffer
 - OutVariable
 - PipelineVariable
-- “详细”
+- 详细
 - WarningAction
 - WarningVariable
 

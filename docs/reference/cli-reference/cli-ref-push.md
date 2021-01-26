@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI push 命令
 description: nuget.exe push 命令的参考
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: d53a2e7f41219e68e59b195d1d5a9d1f62ad7c63
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 54a09361173ae10040433b05fcfae7304e39452e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622840"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779183"
 ---
 # <a name="push-command-nuget-cli"></a> (NuGet CLI 的推送命令) 
 
@@ -47,7 +47,7 @@ nuget push <packagePath> [options]
 
 - **`-ForceEnglishOutput`**
 
-  * (3.5 +) * 使用固定的、基于英语的区域性强制运行 nuget.exe。
+  *(3.5 +)* 使用固定的、基于英语的区域性强制运行 nuget.exe。
 
 - **`-?|-help`**
 
@@ -63,23 +63,23 @@ nuget push <packagePath> [options]
 
 - **`-NoSymbols`**
 
-  * (3.5 +) * 如果符号包存在，则不会将其推送到符号服务器。
+  *(3.5 +)* 如果符号包存在，则不会将其推送到符号服务器。
 
 - **`-src|-Source`**
 
-  指定服务器 URL。 NuGet 标识 UNC 或本地文件夹源，只是复制该文件，而不是使用 HTTP 推送它。  此外，从 NuGet 3.4.2 开始，这是必需的参数，除非该 `NuGet.Config` 文件指定了 *DefaultPushSource* 值 (请参阅 [配置 NuGet 行为](../../consume-packages/configuring-nuget-behavior.md)) 。
+  指定服务器 URL。 NuGet 标识 UNC 或本地文件夹源，只在其中复制文件，而不会使用 HTTP 进行推送。  此外，从 NuGet 3.4.2 开始，这是必需的参数，除非该 `NuGet.Config` 文件指定了 *DefaultPushSource* 值 (请参阅 [配置 NuGet 行为](../../consume-packages/configuring-nuget-behavior.md)) 。
 
 - **`-SkipDuplicate`**
 
-  * (5.1 +) * 如果包和版本已存在，则跳过它，并继续执行推送中的下一个包（如果有）。
+  *(5.1 +)* 如果包和版本已存在，则跳过它，并继续执行推送中的下一个包（如果有）。
 
 - **`-SymbolSource`**
 
-  * (3.5 +) * 指定符号服务器 URL;推送到 nuget.org 时使用 nuget.smbsrc.net
+  *(3.5 +)* 指定符号服务器 URL;推送到 nuget.org 时使用 nuget.smbsrc.net
 
 - **`-SymbolApiKey`**
 
-  * (3.5 +) * 为中指定的 URL 指定 API 密钥 `-SymbolSource` 。
+  *(3.5 +)* 为中指定的 URL 指定 API 密钥 `-SymbolSource` 。
 
 - **`-Timeout`**
 

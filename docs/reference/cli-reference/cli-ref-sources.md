@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI 源命令
 description: nuget.exe 源命令的参考
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 73c9cea8200a1ab1937d25a9a611ae7f2a943dba
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 0e9cbdd089c5c0f66d25e7588ece504feae63f2f
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622585"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780000"
 ---
 # <a name="sources-command-nuget-cli"></a>源命令 (NuGet CLI) 
 
@@ -26,7 +26,7 @@ ms.locfileid: "88622585"
 nuget sources <operation> -Name <name> -Source <source>
 ```
 
-其中 `<operation>` 是 *List、Add、Remove、Enable、Disable* 或 *Update*中的一个， `<name>` 是源的名称， `<source>` 是源的 URL。 一次只能在一个源上操作。
+其中 `<operation>` 是 *List、Add、Remove、Enable、Disable* 或 *Update* 中的一个， `<name>` 是源的名称， `<source>` 是源的 URL。 一次只能在一个源上操作。
 
 ## <a name="options"></a>选项
 
@@ -36,7 +36,7 @@ nuget sources <operation> -Name <name> -Source <source>
 
 - **`-ForceEnglishOutput`**
 
-  * (3.5 +) * 使用固定的、基于英语的区域性强制运行 nuget.exe。
+  *(3.5 +)* 使用固定的、基于英语的区域性强制运行 nuget.exe。
 
 - **`-Format`**
 

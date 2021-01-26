@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI 规范命令
 description: nuget.exe spec 命令的参考
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 17603fa30a75c7906f867c96c5d77f31732eaa59
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: b7780ee5d2e722da5e1623f44709059dd9aa3d45
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622559"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779141"
 ---
 # <a name="spec-command-nuget-cli"></a> (NuGet CLI 的 spec 命令) 
 
@@ -39,7 +39,7 @@ nuget spec [<packageID>] [options]
 
 - **`-ForceEnglishOutput`**
 
-  * (3.5 +) * 使用固定的、基于英语的区域性强制运行 nuget.exe。
+  *(3.5 +)* 使用固定的、基于英语的区域性强制运行 nuget.exe。
 
 - **`-?|-help`**
 

@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI 搜索命令
 description: nuget.exe 搜索命令的参考
-author: advay26
-ms.author: t-adtand
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/17/2020
 ms.topic: reference
-ms.openlocfilehash: 8d63efefb8f14c03fbe3986d8d7eebcc3eb5bcac
-ms.sourcegitcommit: 6cda91f135e58cf57a2471b0c7c4a2f748f40024
+ms.openlocfilehash: 6f4adcdf3981e5ec0e5e88337a8c3bcdd9158ca3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359677"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779159"
 ---
 # <a name="search-command-nuget-cli"></a> (NuGet CLI) 搜索命令
 
@@ -46,23 +46,23 @@ nuget search [search terms] [options]
 
 ## <a name="examples"></a>示例
 
-从默认源搜索与 *日志记录*相关的包：
+从默认源搜索与 *日志记录* 相关的包：
 ```
 nuget search logging
 ```
-搜索与 *日志记录*相关的包，详细详细说明：
+搜索与 *日志记录* 相关的包，详细详细说明：
 ```
 nuget search logging -Verbosity detailed
 ```
-搜索与 *日志记录*相关的包，只显示前5个结果：
+搜索与 *日志记录* 相关的包，只显示前5个结果：
 ```
 nuget search logging -Take 5
 ```
-从指定的源/源搜索与 *JSON*相关的包，包括预发布版本：
+从指定的源/源搜索与 *JSON* 相关的包，包括预发布版本：
 ```
 nuget search JSON -PreRelease -Source "https://api.nuget.org/v3/index.json"
 ```
-从多个源/源搜索 *JSON*相关的包：
+从多个源/源搜索 *JSON* 相关的包：
 ```
 nuget search JSON -Source "https://api.nuget.org/v3/index.json" -Source "https://other-feed-url-goes-here"
 ```

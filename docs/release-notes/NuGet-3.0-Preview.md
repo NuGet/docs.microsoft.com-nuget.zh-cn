@@ -1,128 +1,128 @@
 ---
 title: NuGet 3.0 预览版发行说明
-description: 包括已知的问题、 bug 修复、 新增的功能和 Dcr NuGet 3.0 Preview 的发行说明。
-author: karann-msft
-ms.author: karann
+description: NuGet 3.0 预览版的发行说明，包括已知问题、bug 修复、新增功能和 Dcr。
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 9389639476172d05556b95d589e429ddfe0e3026
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: ecaed21c5e689a488e033404f8042cd1f17eed0d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43546460"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780333"
 ---
 # <a name="nuget-30-preview-release-notes"></a>NuGet 3.0 预览版发行说明
 
-[NuGet 2.9 RC 发行说明](../release-notes/nuget-2.9-rc.md) | [NuGet 3.0 测试版发行说明](../release-notes/nuget-3.0-beta.md)
+[NuGet 2.9 RC 发行说明](../release-notes/nuget-2.9-rc.md)  | [NuGet 3.0 Beta 发行说明](../release-notes/nuget-3.0-beta.md)
 
-NuGet 3.0 预览版发布于 2014 年 11 月 12 日作为 Visual Studio 2015 预览版发布的一部分。 我们发布了 NuGet 3.0 预览版。 这是对我们很重要的版本 （尽管预览版），和我们高兴地开始获取反馈，我们更改。
+在 Visual Studio 2015 预览版中，NuGet 3.0 预览版于2014年11月12日发布。 我们发布了 NuGet 3.0 预览版。 这是一个很大的版本，我们 (虽然预览) ，但我们很高兴开始收到有关我们所做的更改的反馈。
 
-## <a name="visual-studio-2012"></a>Visual Studio 2012 和更高
+## <a name="visual-studio-2012"></a>Visual Studio 2012 +
 
-此 NuGet 3.0 预览版包括在 Visual Studio 2015 预览版中。 我们正在努力推出预览版删除 Visual Studio 2012 和 Visual Studio 2013 很快。 我们以前共享到我们的意图[停止更新适用于 Visual Studio 2010](http://blog.nuget.org/20141002/visual-studio-2010.html)，和我们未做出难以决定。
+此 NuGet 3.0 预览版包含在 Visual Studio 2015 预览版中。 我们正在努力获取 Visual Studio 2012 的预览版，并在不久后 Visual Studio 2013。 我们之前已经分享我们的意图来 [中止 Visual Studio 2010 的更新](http://blog.nuget.org/20141002/visual-studio-2010.html)，我们确实做出了这一难题。
 
-## <a name="brand-new-ui"></a>全新的 UI
+## <a name="brand-new-ui"></a>全新 UI
 
-你注意到有关 NuGet 3.0 Preview 的第一件事是我们全新的 UI。 它不再是一个模式对话框;它现在是一个完整的 Visual Studio 文档窗口。 这允许你在一次打开多个项目 （和/或解决方案） 的 UI，拉出到另一个监视器窗口中，将其固定，但您会喜欢，等等。
+有关 NuGet 3.0 预览版的第一件事是我们全新的 UI。 它不再是模式对话框;它现在是一个完整的 Visual Studio 文档窗口。 这样一来，您就可以同时打开多个项目的 UI (和/或解决方案) ，将窗口移出到另一个监视器，并将其停靠在您喜欢的位置等等。
 
-![新的 NuGet UI](./media/NuGet-3.0-Preview/new-ui.png)
+![新 NuGet UI](./media/NuGet-3.0-Preview/new-ui.png)
 
-除了可用性差异由于放弃模式对话框中，我们还在新 UI 有很多新功能。
+除了因放弃模式对话框以外的可用性不同之外，我们还在新的 UI 中提供了许多新功能。
 
 ### <a name="version-selection"></a>版本选择
 
-可能是最常请求的 UI 功能是允许版本选择的包的安装和更新-此功能现提供。
+可能是最常请求的 UI 功能是允许对包安装和更新进行版本选择-这现在可用。
 
-![包版本选择](./media/NuGet-3.0-Preview/version-selection.png)
+![选择包版本](./media/NuGet-3.0-Preview/version-selection.png)
 
-无论您是安装还是更新包，版本下拉列表中，可查看所有与提升轻松选择列表的顶部为一些值得注意版本可用于包的版本。 不再需要使用 PowerShell 控制台来获取不是最新的特定版本。
+不管是安装还是更新包，"版本" 下拉列表都允许您查看包的所有可用版本，其中有一些值得注意的版本升级到列表的顶部以便于选择。 不再需要使用 PowerShell 控制台来获取不是最新版本的特定版本。
 
-### <a name="combined-installedonlineupdates-workflows"></a>合并已安装/联机/更新工作流
+### <a name="combined-installedonlineupdates-workflows"></a>组合安装/联机/更新工作流
 
-我们以前的 UI 更新已安装，联机，以及有 3 个选项卡。 列出的包是特定于这些工作流，并且特定于工作流以及可用的操作。 虽然这看起来逻辑，我们听说过很多人通常会获取掣肘： 这种分离。
+以前的 UI 有3个选项卡用于安装、联机和更新。 列出的包特定于这些工作流，而可用的操作也是特定于工作流的。 虽然这种情况看似合乎逻辑，但我们听说，你们中的许多人通常会获得这种分离。
 
-现在，我们有组合的体验，可以在其中安装、 更新或卸载包而不考虑如何达到选择的包。 为了帮助与特定工作流，我们现在有一个筛选器下拉列表，可以筛选包可见，但然后可用包的操作保持一致。
+现在我们有了组合体验，你可以在其中安装、更新或卸载包，而不考虑选择包的方式。 为了帮助特定工作流，现在提供了一个筛选器下拉列表，使你可以筛选出可查看的包，但之后包的操作是一致的。
 
 ![卸载包](./media/NuGet-3.0-Preview/uninstall-package.png)
 
-通过使用"已安装"筛选器，然后，您可以轻松地看到哪些功能具有可用的更新，你已安装的包，然后你可以卸载或更改版本选择以查看更新包更改可用的操作。
+通过使用 "已安装" 筛选器，你可以轻松地查看已安装的包（其中有更新可用），然后可以通过更改版本选择来卸载或更新包，以查看更改操作可用。
 
-![更新的包](./media/NuGet-3.0-Preview/update-package.png)
+![更新包](./media/NuGet-3.0-Preview/update-package.png)
 
 ### <a name="version-consolidation"></a>版本合并
 
-它是常见的同一个包安装到您的解决方案内的多个项目。 有时安装到每个项目的版本可以偏离和需要合并中使用的版本。 NuGet 3.0 Preview 引入了新功能，可解决此类问题。
+在解决方案中将同一包安装到多个项目中是很常见的。 有时，安装在每个项目中的版本可能会偏离，并且需要合并所使用的版本。 NuGet 3.0 预览版为此方案引入了一项新功能。
 
-可以通过右键单击解决方案并选择为解决方案管理 NuGet 包访问解决方案级包管理窗口。 在这里，如果您选择安装到多个项目，但在使用中，不同版本的包的新的"合并"操作将变为可用。 在以下屏幕截图，`Newtonsoft.Json`安装到`SamplesClassLibrary`版本`6.0.4`且已安装到`SamplesConsoleApp`版本`5.0.4`。
+可以通过右键单击解决方案并选择 "管理解决方案的 NuGet 包" 来访问解决方案级包管理窗口。 在该版本中，如果选择安装到多个项目中的包，但使用不同的版本，则新的 "合并" 操作将可用。 在下面的屏幕截图中， `Newtonsoft.Json` 已安装到 `SamplesClassLibrary` with 版本中， `6.0.4` 并已安装到 `SamplesConsoleApp` 版本中 `5.0.4` 。
 
 ![合并版本](./media/NuGet-3.0-Preview/consolidate.png)
 
-下面是将合并到单个版本上的工作流。
+下面是用于合并到单个版本的工作流。
 
-1. 选择`Newtonsoft.Json`列表中的包
-1. 选择`Consolidate`从`Action`下拉列表中
-1. 使用`Version`下拉列表中选择要合并到的版本
-1. 选中的复选框应合并到该版本 （请注意，已在所选的版本上的项目将灰显） 的项目
-1. 单击`Consolidate`按钮以执行合并
+1. `Newtonsoft.Json`在列表中选择包
+1. `Consolidate`从 `Action` 下拉列表中选择
+1. 使用 `Version` 下拉列表选择要合并到的版本
+1. 选中应合并到该版本上的项目的复选框 (请注意，所选版本中已有的项目将灰显) 
+1. 单击 " `Consolidate` 执行合并" 按钮
 
 ### <a name="operation-previews"></a>操作预览
 
-无论哪个操作在执行-安装/更新/卸载-新用户界面现在提供了一种方法，若要预览将会对项目所做的更改。 此预览会显示任何新的包将安装包，将被更新，并且包将被卸载，以及在操作期间将保持不变的包。
+无论执行哪个操作（安装/更新/卸载），新的 UI 现在提供了一种方法来预览将对项目进行的更改。 此预览将显示要安装的任何新包、将更新的包、将卸载的包以及在操作过程中不会发生更改的包。
 
-在下面的示例中，我们可以看到，安装 Microsoft.AspNet.SignalR 会导致相当多的更改到项目。
+在下面的示例中，我们可以看到，安装 SignalR 会导致对项目进行很多更改。
 
-![预览版安装 SignalR](./media/NuGet-3.0-Preview/preview.png)
+![预览安装 SignalR](./media/NuGet-3.0-Preview/preview.png)
 
 ### <a name="installation-options"></a>安装选项
 
-使用 PowerShell 控制台，在过去的几个值得注意的安装选项控制。 现在，我们已引入 UI 还将这些功能。 现在可以控制如何选择版本的依赖项的依赖关系解析行为。
+使用 PowerShell 控制台，可以控制几个值得注意的安装选项。 现在，我们还将这些功能引入了 UI 中。 你现在可以控制如何选择依赖项版本的依赖关系解析行为。
 
-![依赖关系行为](./media/NuGet-3.0-Preview/dependency-behavior.png)
+![依赖项行为](./media/NuGet-3.0-Preview/dependency-behavior.png)
 
-此外可以指定当包中的内容文件与你的项目中的现有文件冲突时要执行的操作。
+你还可以指定当包中的内容文件与你的项目中已有的文件发生冲突时要执行的操作。
 
 ![文件冲突操作](./media/NuGet-3.0-Preview/file-conflict-action.png)
 
 ### <a name="infinite-scrolling"></a>无限滚动
 
-我们用于获取大量的反馈对我们的 UI 具有这两个滚动和列出的包时分页模式。 这是相当常见的要滚动到底部的短列表，请单击下一步的页码，再然后向下滚动。 使用新的用户界面，我们已实现无限滚动包列表中，以便只需要进行滚动-没有更多的分页。
+我们使用了在列出包时具有滚动和分页模式的 UI 上，可以获得相当多的反馈。 必须滚动到简短列表的底部，单击下一个页码，然后再次滚动，这相当常见。 利用新的 UI，我们在包列表中实现了无限滚动，只需滚动即可实现，而无需进行更多分页。
 
 ![无限滚动](./media/NuGet-3.0-Preview/infinite-scrolling.png)
 
-### <a name="make-it-work-make-it-fast-make-it-pretty"></a>使其工作，使其快速，使其美观
+### <a name="make-it-work-make-it-fast-make-it-pretty"></a>使其正常工作，使其更快，使其变得漂亮
 
-我们很高兴为您尝试推出此新 UI。在此预览阶段，我们已经遵循良好老话"使其工作，使其快速、 使其美观。" 在此预览版中，我们已完成大多数的这个第一个目标-其工作原理。 我们知道它非常快速还不是，我们知道它非常非常还不是。 我们将使用这些目标现在和 RC 版本之间的信任。 在此期间，我们期待倾听您的反馈意见*可用性*的新 UI-工作流、 操作、 以及如何它*感觉*以使用新的用户界面。
+我们很高兴能让你试用这个新的 UI。在此预览里程碑期间，我们已遵循了 "使其正常工作，使其变得更快，使其变得漂亮" 这一良好的言弃。 在此预览版中，我们已完成了上述第一个目标--它的工作原理。 我们知道，这并不是很快，而且我们还知道它并未太好。 相信，我们将在现在和 RC 版本之间处理这些目标。 同时，我们将很乐意倾听您对新 UI 的 *可用性*（工作流、操作和使用新 ui 的方式）的反馈。 
 
-有几个我们将删除与旧 UI 相比的函数。 其中一种是特意的和另一个只是未完成的时间。
+与旧的 UI 相比，我们已经删除了一些函数。 其中一项是有意的，而另一个则不是及时完成。
 
-#### <a name="searching-all-package-sources"></a>搜索"所有"包源
+#### <a name="searching-all-package-sources"></a>搜索 "所有" 包源
 
-旧 UI 允许您执行针对包源的所有包的搜索。 我们在 UI 中删除了该功能，我们将不会将其返回。 此功能，用于执行搜索操作针对所有包源，归纳到一起，，结果，然后尝试基于排序所选对结果进行排序。
+旧 UI 允许您对所有包源执行包搜索。 我们已在 UI 中删除该功能，我们不会将其返回。 此功能用于对所有包源执行搜索操作，将结果与组合在一起，并尝试根据排序选择对结果进行排序。
 
-我们发现很难归纳到一起，搜索相关性。 可以想象得到执行针对 Google 和必应搜索，以及一起编辑结果？ 此外，此功能是速度较慢且易于*意外*使用和我们认为它很少实际上非常有用。 由于问题的功能中引入，我们收到数可能永远不会得到了修复的 bug 报告在其上。
+我们发现，搜索相关性确实很难组合在一起。 您是否可以设想对 Google 和 Bing 执行搜索，并将结果结合在一起？ 此外，此功能的速度较慢，很容易 *意外* 使用，我们认为它很少真正有用。 由于此功能存在问题，我们在其上收到了大量可能从未修复的 bug 报告。
 
 #### <a name="update-all"></a>全部更新
 
-我们使用旧 ui 中有新的用户界面中尚不具有"更新全部"按钮。 我们将于我们的 RC 版本恢复此功能。
+过去，我们在旧 UI 中使用了 "全部更新" 按钮。 我们将为 RC 版本恢复此功能。
 
-## <a name="new-clientserver-api"></a>新的客户端/服务器 API
+## <a name="new-clientserver-api"></a>新建客户端/服务器 API
 
-除了所有我们新的包管理 UI 中的新功能，我们也一直在 NuGet 的客户端/服务器协议一些实现细节。 我们所做的工作是为 NuGet，专为高可用性的关键方案，例如包还原和安装包创建"API v3"。 新的 API 基于 REST 和超媒体和我们所选[JSON-LD](http://json-ld.org)作为我们的资源格式。
+除了新的包管理 UI 中的所有新功能，我们还在处理 NuGet 的客户端/服务器协议的一些实现细节。 我们所做的工作是创建 NuGet 的 "API v3"，这是针对关键方案（如包还原和安装包）的高可用性而设计的。 新 API 基于 REST 和超媒体，我们已选择 [JSON-LD](http://json-ld.org) 作为资源格式。
 
-在 NuGet 3.0 预览版位中，可以看到称为"preview.nuget.org"包源下拉列表中的新包源。 如果您选择的包源，我们将使用我们的新 API，而是要连接到 nuget.org。我们继续测试、 修订和改进的新 API 时，我们已使预览源 UI 中提供。 在 NuGet 3.0 RC 中，此新 API 基于 v3 的包源将替换基于 v2"nuget.org"包源。
+在 NuGet 3.0 预览位中，你会在 "包源" 下拉列表中看到一个名为 "preview.nuget.org" 的新包源。 如果选择此包源，我们将使用新的 API，而不是连接到 nuget.org。我们使预览源在 UI 中可用，同时我们继续测试、修改和改进新的 API。 在 NuGet 3.0 RC 中，这一基于 API v3 的新包源将替换基于 v2 的 "nuget.org" 包源。
 
-尽管我们正在将它们放入 API v3 的投资，我们已使所有这些新功能也适用于我们现有的 API v2 协议，这意味着它们将与现有以外还 nuget.org 的包源。
+尽管我们将投入使用 API v3，但我们已将所有这些新功能也用于我们的现有 API v2 协议，这意味着它们将适用于除 nuget.org 以外的现有包源。
 
-## <a name="new-features-coming"></a>新功能
+## <a name="new-features-coming"></a>新功能即将推出
 
-从现在到 3.0 的 RTM，我们还致力于一些基本之外的新 NuGet 功能，在 UI 中看到的内容。 下面是一个重要投资领域的简短列表：
+在现在和 3.0 RTM 之间，我们还将处理一些基本的新 NuGet 功能，而不仅仅是在 UI 中看到的内容。 下面是重要投资领域的简短列表：
 
-1. 我们正与 Visual Studio 合作，并由 MSBuild 团队以获取[深入到该平台的 NuGet](http://blog.nuget.org/20141014/in-the-platform.html)。
-1. 我们正在放弃安装时包约定，然后改为在打包时应用这些约定，通过引入一个新"权威"[包清单](http://blog.nuget.org/20141023/package-manifests.html)。
-1. 我们正在努力 NuGet 基本代码，以使 Visual Studio 中的包管理范围之外的不同域中的客户端和服务器组件可重用的重构。
-1. 我们正在研究的"专用依赖项"其中一个包可以指示它概念实现详细信息，其他包上具有依赖关系，这些依赖项不应显示为顶级依赖项。
+1. 我们与 Visual Studio 和 MSBuild 团队合作，使 [NuGet 更深入地进入平台](http://blog.nuget.org/20141014/in-the-platform.html)。
+1. 我们正在努力放弃安装时包约定，改为在打包时通过引入新的 "权威" [包清单](http://blog.nuget.org/20141023/package-manifests.html)来应用这些约定。
+1. 我们正在努力重构 NuGet 基本代码，使客户端和服务器组件可在不同的域中重复使用，而不是在 Visual Studio 中的包管理。
+1. 我们将调查 "专用依赖项" 的概念，其中包可以指示它在其他包上仅有依赖实现详细信息，不应将这些依赖项视为顶级依赖项。
 
-## <a name="stay-tuned"></a>请继续关注
+## <a name="stay-tuned"></a>保持关注
 
-请密切关注[我们的博客](http://blog.nuget.org)详细进度和 NuGet 3.0 的公告 ！
+有关 NuGet 3.0 的更多进度和公告，请关注 [我们的博客](http://blog.nuget.org) ！

@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI update 命令
 description: nuget.exe update 命令的参考
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 106c4027f03d8e8c1d19545b3ca9b6cd5263830e
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: cfa7fdcc6af46fd5f4030ba424754291f697bc43
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93236784"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779132"
 ---
 # <a name="update-command-nuget-cli"></a> (NuGet CLI) 更新命令
 
@@ -40,7 +40,7 @@ nuget update <configPath> [options]
   
 - **`-DependencyVersion [Lowest, HighestPatch, HighestMinor, Highest, Ignore]`**
 
-  指定要使用的依赖项包的版本，可以是下列项之一：<br/><ul><li>*最低* (默认) ：最低版本</li><li>*HighestPatch* ：最小主要、次要和最高修补程序的版本</li><li>*HighestMinor* ：最小主要版本号最高的版本，最高修补程序</li><li>*最高* ：最高版本</li><li>*忽略* ：将不使用任何依赖项包</li></ul>
+  指定要使用的依赖项包的版本，可以是下列项之一：<br/><ul><li>*最低* (默认) ：最低版本</li><li>*HighestPatch*：最小主要、次要和最高修补程序的版本</li><li>*HighestMinor*：最小主要版本号最高的版本，最高修补程序</li><li>*最高*：最高版本</li><li>*忽略*：将不使用任何依赖项包</li></ul>
 
 - **`-FileConflictAction [PromptUser, Overwrite, Ignore]`**
 

@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI 安装命令
 description: nuget.exe install 命令的参考
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 23856728d07d07183b5aedcd6218a56a444c410b
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 34b79bfa7a0dddf5da6b5c465293caec49129f6c
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623092"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779267"
 ---
 # <a name="install-command-nuget-cli"></a> (NuGet CLI 安装命令) 
 
@@ -45,7 +45,7 @@ nuget install <packageID | configFilePath> [options]
 
 - **`-DependencyVersion`**
 
-  * (4.4 +) * 要使用的依赖项包的版本，可以是下列项之一：<br/><ul><li>*最低* (默认) ：最低版本</li><li>*HighestPatch*：最小主要、次要和最高修补程序的版本</li><li>*HighestMinor*：最小主要版本号最高的版本，最高修补程序</li><li>*最高*：最高版本</li><li>*忽略*：将不使用任何依赖项包</li></ul>
+  *(4.4 +)* 要使用的依赖项包的版本，可以是下列项之一：<br/><ul><li>*最低* (默认) ：最低版本</li><li>*HighestPatch*：最小主要、次要和最高修补程序的版本</li><li>*HighestMinor*：最小主要版本号最高的版本，最高修补程序</li><li>*最高*：最高版本</li><li>*忽略*：将不使用任何依赖项包</li></ul>
 
 - **`-DirectDownload`**
 
@@ -61,15 +61,15 @@ nuget install <packageID | configFilePath> [options]
 
 - **`-FallbackSource`**
 
-  * (3.2 +) * 在主或默认源中找不到包时要用作回退的包的列表。
+  *(3.2 +)* 在主或默认源中找不到包时要用作回退的包的列表。
 
 - **`-ForceEnglishOutput`**
 
-  * (3.5 +) * 使用固定的、基于英语的区域性强制运行 nuget.exe。
+  *(3.5 +)* 使用固定的、基于英语的区域性强制运行 nuget.exe。
 
 - **`-Framework`**
 
-  * (4.4 +) * 用于选择依赖项的目标框架。 如果未指定，默认值为 "Any"。
+  *(4.4 +)* 用于选择依赖项的目标框架。 如果未指定，默认值为 "Any"。
 
 - **`-?|-help`**
 
@@ -93,7 +93,7 @@ nuget install <packageID | configFilePath> [options]
 
 - **`-PreRelease`**
 
-  允许安装预发行程序包。 当还原包时，不需要此标志 `packages.config` 。
+  允许安装预发行包。 当还原包时，不需要此标志 `packages.config` 。
 
 - **`-RequireConsent`**
 
