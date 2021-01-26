@@ -1,27 +1,27 @@
 ---
-title: 报告滥用 URL 模板，NuGet API
-description: 报告滥用 URL 模板允许客户端在其 UI 中显示的报告滥用行为链接。
+title: 报表滥用 URL 模板，NuGet API
+description: "\"报表滥用 URL\" 模板允许客户端在其用户界面中显示 \"报告滥用\" 链接。"
 author: joelverhagen
 ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: d0ff41b08eeba5a6e4bc7c44722b6bc57f502047
-ms.sourcegitcommit: 1d1406764c6af5fb7801d462e0c4afc9092fa569
+ms.openlocfilehash: b36058c9c841e2cca6eb61121ada8275f1525a8f
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43549334"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775225"
 ---
 # <a name="report-abuse-url-template"></a>报告滥用 URL 模板
 
-就可以生成可由用户报告滥用行为有关特定包的 URL 的客户端。 当包源想要启用所有客户端体验 （甚至是第三方） 委派对包源的滥用报告时，这很有用。
+客户端可能会生成一个 URL，用户可以使用该 URL 报告有关特定包的滥用。 当包源要启用所有客户端体验 (甚至第三方) 将滥用报表委托给包源时，此方法非常有用。
 
-用于生成此 URL 使用的资源是`ReportAbuseUriTemplate`资源中找到[服务索引](service-index.md)。
+用于生成此 URL 的资源是 `ReportAbuseUriTemplate` 在 [服务索引](service-index.md)中找到的资源。
 
-## <a name="versioning"></a>版本管理
+## <a name="versioning"></a>版本控制
 
-以下`@type`使用值：
+使用以下 `@type` 值：
 
 @type 值                       | 说明
 --------------------------------- | -----
@@ -30,31 +30,35 @@ ReportAbuseUriTemplate/3.0.0-rc   | 别名 `ReportAbuseUriTemplate/3.0.0-beta`
 
 ## <a name="url-template"></a>URL 模板
 
-以下 API 的 URL 是的值`@id`属性与前面提到的资源之一相关联`@type`值。
+以下 API 的 URL 是 `@id` 与上述某个资源值关联的属性的值 `@type` 。
 
 ## <a name="http-methods"></a>HTTP 方法
 
-尽管客户端不应代表用户向报告滥用 URL 发出请求，但应支持 web 页`GET`方法，以允许单击的 URL 来轻松地在 web 浏览器中打开。
+尽管客户端不打算代表用户向报表滥用 URL 发出请求，但网页应支持方法，以便 `GET` 在 web 浏览器中轻松地打开已单击的 url。
 
-## <a name="construct-the-url"></a>构造的 URL
+## <a name="construct-the-url"></a>构造 URL
 
-提供了已知的包 ID 和版本，客户端实现可以构造用于访问 web 界面的 URL。 客户端实现应显示给用户允许应用来打开 web 浏览器到 URL 并进行任何必要的滥用报告此构造的 URL （或可单击的链接）。 滥用报告表单的实现取决于服务器实现。
+给定已知的包 ID 和版本，客户端实现可以构造用于访问 web 界面的 URL。 客户端实现应显示此构造的 URL (或可单击的链接，) 用户允许用户在 URL 中打开 web 浏览器，并进行任何必要的滥用报告。 滥用报表窗体的实现由服务器实现确定。
 
-值`@id`是 URL 的字符串包含任何以下占位符标记：
+的值 `@id` 是包含以下任何占位符标记的 URL 字符串：
 
 ### <a name="url-placeholders"></a>URL 占位符
 
-name        | 类型    | 必需 | 说明
+名称        | 类型    | 必须 | 注释
 ----------- | ------- | -------- | -----
-`{id}`      | 字符串  | 否       | 将包 ID 与举报违规帖子
-`{version}` | 字符串  | 否       | 将包版本到举报违规帖子
+`{id}`      | string  | 否       | 要为其报告滥用行为的包 ID
+`{version}` | string  | 否       | 要为其报告滥用行为的包版本
 
-`{id}`和`{version}`解释服务器实现的值必须是不区分大小写和不敏感到是否规范化版本。
+`{id}` `{version}` 服务器实现解释的和值必须区分大小写，而不区分版本是否规范化。
 
-例如，nuget.org 的报告滥用行为模板如下所示：
+例如，nuget.exe 的报表滥用模板如下所示：
 
-    https://www.nuget.org/packages/{id}/{version}/ReportAbuse
+```
+https://www.nuget.org/packages/{id}/{version}/ReportAbuse
+```
 
-如果需要有关 NuGet.Versioning 4.3.0 报告滥用行为窗体显示的链接的客户端实现，它将产生以下 URL 并将其提供给用户：
+如果客户端实现需要显示4.3.0 的报表滥用窗体的链接，它将生成以下 URL，并将其提供给用户：
 
-    https://www.nuget.org/packages/NuGet.Versioning/4.3.0/ReportAbuse
+```
+https://www.nuget.org/packages/NuGet.Versioning/4.3.0/ReportAbuse
+```

@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI config 命令
 description: nuget.exe config 命令的参考
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 7d0c1c51f40cba9a5b69f209ffbd995451bfeb9f
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 3d50c12e34f71d7a62fe177da1dbb33eb702347a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622871"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775959"
 ---
 # <a name="config-command-nuget-cli"></a>配置命令 (NuGet CLI) 
 
@@ -44,7 +44,7 @@ nuget config -AsPath <name> [options]
 
 - **`-ForceEnglishOutput`**
 
-  * (3.5 +) * 使用固定的、基于英语的区域性强制运行 nuget.exe。
+  *(3.5 +)* 使用固定的、基于英语的区域性强制运行 nuget.exe。
 
 - **`-?|-help`**
 

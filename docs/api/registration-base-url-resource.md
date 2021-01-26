@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 852dca8c70b09d941e844b1f7cd03b38e2192481
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 403686de42bf4dc1fa94b9dd92ca6d33f3be2183
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237518"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775298"
 ---
 # <a name="package-metadata"></a>包元数据
 
@@ -23,7 +23,7 @@ ms.locfileid: "93237518"
 
 使用以下 `@type` 值：
 
-@type 值                     | 注释
+@type 值                     | 说明
 ------------------------------- | -----
 RegistrationsBaseUrl            | 初始版本
 RegistrationsBaseUrl/3.0.0-beta | 别名 `RegistrationsBaseUrl`
@@ -58,9 +58,9 @@ RegistrationsBaseUrl/3.6。0      | 包括 SemVer 2.0.0 包
 
 注册资源组按包 ID 包元数据。 一次不能获取有关多个包 ID 的数据。 此资源不提供任何方式来发现包 Id。 相反，假设客户端已经知道所需的包 ID。 每个包版本的可用元数据因服务器实现而异。 包注册 blob 具有以下层次结构：
 
-- **索引** ：包元数据的入口点，由具有相同包 ID 的源中的所有包共享。
-- **页面** ：包版本的分组。 页面中的包版本数由服务器实现定义。
-- **叶** ：特定于单个包版本的文档。
+- **索引**：包元数据的入口点，由具有相同包 ID 的源中的所有包共享。
+- **页面**：包版本的分组。 页面中的包版本数由服务器实现定义。
+- **叶**：特定于单个包版本的文档。
 
 注册索引的 URL 可预测，并且可以由客户端 `@id` 从服务索引中给定包 ID 和注册资源的值来确定。 通过检查注册索引发现注册页和叶的 Url。
 
@@ -72,15 +72,17 @@ RegistrationsBaseUrl/3.6。0      | 包括 SemVer 2.0.0 包
 
 Nuget.org 使用的试探法如下：如果包有128或更多版本，请将叶分成大小为64的页。 如果版本低于128，则将所有行都置于注册索引中。 请注意，这意味着65到127版本的包在索引中将有两页，但这两个页将被内联。
 
-    GET {@id}/{LOWER_ID}/index.json
+```
+GET {@id}/{LOWER_ID}/index.json
+```
 
 ### <a name="request-parameters"></a>请求参数
 
-名称     | 在     | 类型    | 必须 | 注释
+名称     | In     | 类型    | 必须 | 注释
 -------- | ------ | ------- | -------- | -----
-LOWER_ID | 代码    | string  | 是      | 包 ID lowercased
+LOWER_ID | URL    | string  | 是      | 包 ID lowercased
 
-`LOWER_ID`值是所需的包 ID lowercased，它使用由实现的规则。NET 的 [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant) 方法。
+`LOWER_ID`值是所需的包 ID lowercased，它使用由实现的规则。NET 的 [`System.String.ToLowerInvariant()`](/dotnet/api/system.string.tolowerinvariant?view=netstandard-2.0#System_String_ToLowerInvariant&preserve-view=true) 方法。
 
 ### <a name="response"></a>响应
 
@@ -124,7 +126,7 @@ Page 对象的数组中的每一项 `items` 都是一个表示注册叶及其关
 名称           | 类型   | 必须 | 注释
 -------------- | ------ | -------- | -----
 @id            | string | 是      | 注册叶的 URL
-catalogEntry   | 对象 (object) | 是      | 包含包元数据的目录条目
+catalogEntry   | object | 是      | 包含包元数据的目录条目
 packageContent | string | 是      | 包内容的 URL ( nupkg) 
 
 每个注册叶对象均表示与单个包版本关联的数据。
@@ -138,9 +140,9 @@ packageContent | string | 是      | 包内容的 URL ( nupkg)
 @id                      | string                     | 是      | 用于生成此对象的文档的 URL
 作者                  | 字符串或字符串数组 | 否       | 
 dependencyGroups         | 对象数组           | 否       | 包的依赖项，按目标框架分组
-弃用              | 对象 (object)                     | 否       | 与包关联的弃用
-description              | 字符串                     | 否       | 
-iconUrl                  | 字符串                     | 否       | 
+弃用              | object                     | 否       | 与包关联的弃用
+description              | string                     | 否       | 
+iconUrl                  | string                     | 否       | 
 id                       | string                     | 是      | 包的 ID
 licenseUrl               | string                     | 否       |
 licenseExpression        | string                     | 否       | 
@@ -151,7 +153,7 @@ published                | string                     | 否       | 一个字符
 requireLicenseAcceptance | boolean                    | 否       | 
 摘要                  | string                     | 否       | 
 标记                     | 字符串或字符串数组  | 否       | 
-title                    | 字符串                     | 否       | 
+title                    | string                     | 否       | 
 版本                  | string                     | 是      | 规范化后的完整版本字符串
 
 Package `version` 属性是规范化后的完整版本字符串。 这意味着，可以在此处包括 SemVer 2.0.0 生成数据。
@@ -183,7 +185,7 @@ targetFramework | string           | 否       | 这些依赖关系适用的目�
 名称         | 类型   | 必须 | 注释
 ------------ | ------ | -------- | -----
 id           | string | 是      | 包依赖项的 ID
-range        | 对象 (object) | 否       | 依赖项的允许[版本范围](../concepts/package-versioning.md#version-ranges)
+range        | object | 否       | 依赖项的允许[版本范围](../concepts/package-versioning.md#version-ranges)
 注册 | string | 否       | 此依赖项的注册索引的 URL
 
 如果 `range` 排除属性或空字符串，客户端应默认为版本范围 `(, )` 。 也就是说，允许使用任何版本的依赖项。 `*`对于属性，不允许使用的值 `range` 。
@@ -196,7 +198,7 @@ range        | 对象 (object) | 否       | 依赖项的允许[版本范围](..
 ---------------- | ---------------- | -------- | -----
 原因          | 字符串数组 | 是      | 弃用包的原因
 message          | string           | 否       | 有关此弃用的其他详细信息
-alternatePackage | 对象 (object)           | 否       | 应改为使用的备用包
+alternatePackage | object           | 否       | 应改为使用的备用包
 
 该 `reasons` 属性必须包含至少一个字符串，并且应仅包含下表中的字符串：
 
@@ -215,11 +217,13 @@ CriticalBugs | 包中的 bug 使其不适用于使用
 名称         | 类型   | 必须 | 注释
 ------------ | ------ | -------- | -----
 id           | string | 是      | 备用包的 ID
-range        | 对象 (object) | 否       | 允许的 [版本范围](../concepts/package-versioning.md#version-ranges)， `*` 如果允许任何版本则为
+range        | object | 否       | 允许的 [版本范围](../concepts/package-versioning.md#version-ranges)， `*` 如果允许任何版本则为
 
 ### <a name="sample-request"></a>示例请求
 
-    GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
+```
+GET https://api.nuget.org/v3/registration3/nuget.server.core/index.json
+```
 
 ### <a name="sample-response"></a>示例响应
 
@@ -249,7 +253,9 @@ upper  | string           | 是      | 页面中的 SemVer 2.0.0 的最高版本
 
 ## <a name="sample-request"></a>示例请求
 
-    GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
+```
+GET https://api.nuget.org/v3/registration3/ravendb.client/page/1.0.531/1.0.729-unstable.json
+```
 
 ## <a name="sample-response"></a>示例响应
 
@@ -280,7 +286,9 @@ published      | string  | 否       | 一个字符串，其中包含发布包�
 
 ### <a name="sample-request"></a>示例请求
 
-    GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
+```
+GET https://api.nuget.org/v3/registration3/nuget.versioning/4.3.0.json
+```
 
 ### <a name="sample-response"></a>示例响应
 

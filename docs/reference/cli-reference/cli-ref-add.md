@@ -1,20 +1,20 @@
 ---
 title: NuGet CLI 添加命令
 description: nuget.exe add 命令的参考
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: reference
-ms.openlocfilehash: 89d268946243e8eae07e482db48e809a15260c38
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 096d2f7a61a3c861ce2084368500ab8e8b21f212
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622897"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776089"
 ---
 # <a name="add-command-nuget-cli"></a> (NuGet CLI 添加命令) 
 
-**适用**于：包发布 &bullet; **支持的版本**： 3.3 +
+**适用** 于：包发布 &bullet; **支持的版本**： 3.3 +
 
 将指定的包添加到 (文件夹或 UNC 路径的非 HTTP 包源中) 在层次结构布局中，其中为包 ID 和版本号创建了文件夹。 例如：
 
@@ -51,7 +51,7 @@ nuget add <packagePath> -Source <sourcePath> [options]
 
 - **`-ForceEnglishOutput`**
 
-  * (3.5 +) * 使用固定的、基于英语的区域性强制运行 nuget.exe。
+  *(3.5 +)* 使用固定的、基于英语的区域性强制运行 nuget.exe。
 使用固定的、基于英语的区域性强制运行 nuget.exe。
 
 - **`-?|-help`**

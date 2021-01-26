@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 10/26/2017
 ms.topic: reference
 ms.reviewer: kraigb
-ms.openlocfilehash: 86c9d07cf90b84fffd09b04847d41772dd633b98
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 7047dfd48b7f93756bbb1491de1b7e65da2c12b4
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237869"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775410"
 ---
 # <a name="search"></a>搜索
 
@@ -21,7 +21,7 @@ ms.locfileid: "93237869"
 
 使用以下 `@type` 值：
 
-@type 值                   | 注释
+@type 值                   | 说明
 ----------------------------- | -----
 SearchQueryService            | 初始版本
 SearchQueryService/3.0.0-beta | 别名 `SearchQueryService`
@@ -45,18 +45,20 @@ SearchQueryService/3.5。0      | 支持 `packageType` 查询参数
 
 未列出的包决不会出现在搜索结果中。
 
-    GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
+GET {@id}?q={QUERY}&skip={SKIP}&take={TAKE}&prerelease={PRERELEASE}&semVerLevel={SEMVERLEVEL}&packageType={PACKAGETYPE}
+```
 
 ### <a name="request-parameters"></a>请求参数
 
-名称        | 在     | 类型    | 必须 | 注释
+名称        | In     | 类型    | 必须 | 注释
 ----------- | ------ | ------- | -------- | -----
-q           | 代码    | string  | 否       | 用于筛选包的搜索词
-skip        | 代码    | integer | 否       | 要跳过的结果数，用于分页
-take        | 代码    | integer | 否       | 要返回的结果数，用于分页
-prerelease  | 代码    | boolean | 否       | `true` 或 `false` 确定是否包括 [预发布包](../create-packages/prerelease-packages.md)
-semVerLevel | 代码    | string  | 否       | SemVer 1.0.0 版本字符串 
-packageType | 代码    | string  | 否       | 用于筛选包的包类型 (添加到 `SearchQueryService/3.5.0`) 
+q           | URL    | string  | 否       | 用于筛选包的搜索词
+skip        | URL    | integer | 否       | 要跳过的结果数，用于分页
+take        | URL    | integer | 否       | 要返回的结果数，用于分页
+prerelease  | URL    | boolean | 否       | `true` 或 `false` 确定是否包括 [预发布包](../create-packages/prerelease-packages.md)
+semVerLevel | URL    | string  | 否       | SemVer 1.0.0 版本字符串 
+packageType | URL    | string  | 否       | 用于筛选包的包类型 (添加到 `SearchQueryService/3.5.0`) 
 
 搜索查询按 `q` 服务器实现所定义的方式进行分析。 nuget.org 支持针对 [各种字段](../consume-packages/finding-and-choosing-packages.md#search-syntax)的基本筛选。 如果未 `q` 提供，则应在 skip 和 take 施加的边界内返回所有包。 这会启用 NuGet Visual Studio 体验中的 "浏览" 选项卡。
 
@@ -83,7 +85,7 @@ packageType | 代码    | string  | 否       | 用于筛选包的包类型 (添
 名称      | 类型             | 必须 | 注释
 --------- | ---------------- | -------- | -----
 totalHits | integer          | 是      | 匹配项的总数，忽略 `skip` 和 `take`
-数据      | 对象数组 | 是      | 请求匹配的搜索结果
+data      | 对象数组 | 是      | 请求匹配的搜索结果
 
 ### <a name="search-result"></a>搜索结果
 
@@ -94,17 +96,17 @@ totalHits | integer          | 是      | 匹配项的总数，忽略 `skip` 和
 -------------- | -------------------------- | -------- | -----
 id             | string                     | 是      | 匹配包的 ID
 版本        | string                     | 是      | 包 (的完整 SemVer 2.0.0 版本字符串可以包含生成元数据) 
-description    | 字符串                     | 否       | 
+description    | string                     | 否       | 
 versions       | 对象数组           | 是      | 与参数匹配的包的所有版本 `prerelease`
 作者        | 字符串或字符串数组 | 否       | 
-iconUrl        | 字符串                     | 否       | 
+iconUrl        | string                     | 否       | 
 licenseUrl     | string                     | 否       | 
 所有者         | 字符串或字符串数组 | 否       | 
 projectUrl     | string                     | 否       | 
 注册   | string                     | 否       | 关联[注册索引](registration-base-url-resource.md#registration-index)的绝对 URL
 摘要        | string                     | 否       | 
 标记           | 字符串或字符串数组 | 否       | 
-title          | 字符串                     | 否       | 
+title          | string                     | 否       | 
 totalDownloads | integer                    | 否       | 此值可由数组中的下载内容和 `versions`
 得到       | boolean                    | 否       | 一个 JSON 布尔值，指示是否[验证](../nuget-org/id-prefix-reservation.md)了包
 packageTypes   | 对象数组           | 是      | 包作者定义的包类型 (添加到 `SearchQueryService/3.5.0`) 
@@ -121,13 +123,15 @@ downloads | integer | 是      | 此特定包版本的下载数
 
 `packageTypes`数组始终包含至少一个 (1) 项。 给定包 ID 的包类型被认为是由最新版本的包（与其他搜索参数有关）定义的包类型。 数组中的每一项 `packageTypes` 都是具有以下属性的 JSON 对象：
 
-名称      | 类型    | 必须 | 注释
+名称      | 类型    | 必须 | 说明
 --------- | ------- | -------- | -----
 name      | string  | 是      | 包类型的名称。
 
 ### <a name="sample-request"></a>示例请求
 
-    GET https://azuresearch-usnc.nuget.org/query?q=NuGet.Versioning&prerelease=false&semVerLevel=2.0.0
+```
+GET https://azuresearch-usnc.nuget.org/query?q=NuGet.Versioning&prerelease=false&semVerLevel=2.0.0
+```
 
 ### <a name="sample-response"></a>示例响应
 

@@ -1,16 +1,16 @@
 ---
 title: NuGet 5.0 RTM 发行说明
 description: NuGet 5.0 的发行说明，包括已知问题、bug 修复、新增功能和 Dcr。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 04/02/2019
 ms.topic: conceptual
-ms.openlocfilehash: e4a6be7fb26e3cc4bd297eaf02999f6ac1389b77
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 637db1ae128ce020c33e54e56148c848a5f905a5
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93236797"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776227"
 ---
 # <a name="nuget-50-release-notes"></a>NuGet 5.0 发行说明
 

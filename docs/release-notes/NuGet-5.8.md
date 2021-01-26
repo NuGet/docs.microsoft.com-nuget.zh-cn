@@ -5,12 +5,12 @@ author: dominofire
 ms.author: feaguila
 ms.date: 11/9/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7f641c669cdb0cc979d698f6b219cbb4f2692a2e
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: 550971d77ed4b15129fdc58fef95e0cceda8d8d1
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235745"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776172"
 ---
 # <a name="nuget-58-release-notes"></a>NuGet 5.8 发行说明
 
@@ -34,13 +34,13 @@ NuGet 分发车辆：
 
 * 包管理器 UI 包详细信息窗格中显示包漏洞详细信息- [#9850](https://github.com/NuGet/Home/issues/9850)
 
-* 用新的命令 #8051 验证已签名 [`dotnet nuget verify`](https://docs.microsoft.com/dotnet/core/tools/dotnet-nuget-verify) 的[](https://github.com/NuGet/Home/issues/8051) NuGet 包
+* 用新的命令 #8051 验证已签名 [`dotnet nuget verify`](/dotnet/core/tools/dotnet-nuget-verify) 的[](https://github.com/NuGet/Home/issues/8051) NuGet 包
 
-* [`dotnet add package`](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package#:~:text=dotnet%20add%20package%201%20Name%202%20Synopsis%203,when%20targeting%20a%20specific%20framework.%20...%206%20Examples) 支持 `--prerelease` 添加包的最新版本的选项，其中包括预发行版本- [#4699](https://github.com/NuGet/Home/issues/4699)
+* [`dotnet add package`](/dotnet/core/tools/dotnet-add-package#:~:text=dotnet%20add%20package%201%20Name%202%20Synopsis%203,when%20targeting%20a%20specific%20framework.%20...%206%20Examples) 支持 `--prerelease` 添加包的最新版本的选项，其中包括预发行版本- [#4699](https://github.com/NuGet/Home/issues/4699)
 
-* 通过 [`nuget.exe search`](https://docs.microsoft.com/nuget/reference/cli-reference/cli-ref-search) 命令[#9704](https://github.com/NuGet/Home/issues/9704)在 CLI 中搜索包
+* 通过 [`nuget.exe search`](../reference/cli-reference/cli-ref-search.md) 命令[#9704](https://github.com/NuGet/Home/issues/9704)在 CLI 中搜索包
 
-* [`dotnet list package`](https://docs.microsoft.com/dotnet/core/tools/dotnet-list-package) 命令支持 `--verbosity` 选项 [#9600](https://github.com/NuGet/Home/issues/9600)
+* [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) 命令支持 `--verbosity` 选项 [#9600](https://github.com/NuGet/Home/issues/9600)
 
 * 在 Visual Studio 中为基于 PackageReference 的 .csproj 样式的项目启用快速 No-Op 还原优化- [#9565](https://github.com/NuGet/Home/issues/9565)
 
@@ -155,4 +155,4 @@ NuGet 分发车辆：
 ## <a name="feedback-welcome"></a>欢迎反馈
 
 反馈对我们非常重要。  如果此版本有任何问题，请查看有关现有问题的 [GitHub 问题](https://github.com/NuGet/Home/issues) 和 [Visual Studio 开发人员社区](https://developercommunity.visualstudio.com/) 。  对于 NuGet 中的新问题，请报告 [GitHub 问题](https://github.com/NuGet/Home/issues/new)。
-对于一般的 NuGet 体验问题，请通过 "帮助" 下的 "你喜欢的 IDE" 中的 " [报告问题](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio) " 选项告知我们 **> 报告问题**。
+对于一般的 NuGet 体验问题，请通过 "帮助" 下的 "你喜欢的 IDE" 中的 " [报告问题](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) " 选项告知我们 **> 报告问题**。
