@@ -1,16 +1,16 @@
 ---
 title: NuGet 1.2 发行说明
 description: NuGet 1.2 的发行说明，包括已知问题、bug 修复、新增功能和 Dcr。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 5d10d6bf27614980a144c30c3af6f9892a109061
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: af2248a41800f7641be9b77d7bb72e2a94d4ce47
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237176"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777202"
 ---
 # <a name="nuget-12-release-notes"></a>NuGet 1.2 发行说明
 
@@ -65,6 +65,6 @@ NuGet 1.2 于年3月 30 2011 日发布。
 
 ## <a name="known-issues"></a>已知问题
 
-* **1.2 包不兼容** ：使用最新版本的命令行工具生成的包，nuget.exe ( # A0 1.2) 将不适用于其他版本的 NuGet VS 外接程序 (例如 1.1) 。 如果遇到一条错误消息，指出不兼容的架构，则会遇到此错误。 请将 NuGet 更新到最新版本。
-* **NuGet。服务器不兼容性** ：如果你要使用 nuget.exe 服务器项目托管内部 nuget 源，则需要使用最新版本的 nuget 更新该项目。
-* **签名不匹配错误** ：如果在升级过程中遇到与签名不匹配有关的消息，则需要先卸载 NuGet，然后再进行安装。 这会在我们的 " [已知问题" 页](../release-notes/known-issues.md) 中列出，其中提供了更多详细信息。 此问题只会影响那些运行 Visual Studio 2010 SP1 的版本，并且安装的 NuGet 1.0 版本未正确签名。 此版本仅在 CodePlex 网站中提供一小段时间，因此，此问题不会影响太多人。
+* **1.2 包不兼容**：使用最新版本的命令行工具生成的包，nuget.exe ( # A0 1.2) 将不适用于其他版本的 NuGet VS 外接程序 (例如 1.1) 。 如果遇到一条错误消息，指出不兼容的架构，则会遇到此错误。 请将 NuGet 更新到最新版本。
+* **NuGet。服务器不兼容性**：如果你要使用 nuget.exe 服务器项目托管内部 nuget 源，则需要使用最新版本的 nuget 更新该项目。
+* **签名不匹配错误**：如果在升级过程中遇到与签名不匹配有关的消息，则需要先卸载 NuGet，然后再进行安装。 这会在我们的 " [已知问题" 页](../release-notes/known-issues.md) 中列出，其中提供了更多详细信息。 此问题只会影响那些运行 Visual Studio 2010 SP1 的版本，并且安装的 NuGet 1.0 版本未正确签名。 此版本仅在 CodePlex 网站中提供一小段时间，因此，此问题不会影响太多人。

@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 03/23/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7de3f0f1133a89848e9268d489751293fb3cbf25
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: 0c32978baf6146f10c262ba7af94f61fee22272d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235693"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777715"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>作为 MSBuild 目标的 NuGet 包和还原
 
@@ -40,75 +40,79 @@ NuGet 4.0+
 
 ## <a name="pack-target"></a>包目标
 
-对于使用 PackageReference 格式的 .NET Standard 项目，使用 `msbuild -t:pack` 可以从项目文件绘制输入，以在创建 NuGet 包时使用。
+对于使用格式的 .NET 项目 `PackageReference` ，使用 `msbuild -t:pack` 可以从项目文件中绘制输入，以在创建 NuGet 包时使用。
 
-下表描述了可以添加到项目文件第一个 `<PropertyGroup>` 节点中的 MSBuild 属性。 在 Visual Studio 2017 及更高版本中，通过右键单击项目并选择上下文菜单上的“编辑 {project_name}”，即可轻松进行这些编辑。 为方便起见，表按[ `.nuspec` 文件](../reference/nuspec.md)中的等效属性进行组织。
+下表描述了可添加到第一个节点内的项目文件中的 MSBuild 属性 `<PropertyGroup>` 。 在 Visual Studio 2017 及更高版本中，通过右键单击项目并选择上下文菜单上的“编辑 {project_name}”，即可轻松进行这些编辑。 为方便起见，表按[ `.nuspec` 文件](../reference/nuspec.md)中的等效属性进行组织。
 
 请注意，`.nuspec` 的 `Owners` 和 `Summary` 属性不受 MSBuild 支持。
 
 | 属性/NuSpec 值 | MSBuild 属性 | 默认 | 说明 |
 |--------|--------|--------|--------|
 | ID | PackageId | AssemblyName | MSBuild 的 $(AssemblyName) |
-| Version | PackageVersion | Version | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
+| 版本 | PackageVersion | 版本 | 这与 SemVer 兼容，例如，“1.0.0”、“1.0.0-beta”或“1.0.0-beta-00345” |
 | VersionPrefix | PackageVersionPrefix | empty | 设置 PackageVersion 会覆盖 PackageVersionPrefix |
 | VersionSuffix | PackageVersionSuffix | empty | MSBuild 的 $(VersionSuffix)。 设置 PackageVersion 会覆盖 PackageVersionSuffix |
-| Authors | Authors | 当前用户的用户名 | |
+| Authors | Authors | 当前用户的用户名 | 其中名称以分号分隔的包作者列表，其中名称与 nuget.org 上的配置文件名称匹配。这些信息显示在 nuget.org 上的 NuGet 库中，并用于交叉引用同一作者的包。 |
 | 所有者 | 空值 | NuSpec 中不存在 | |
-| Title | Title | PackageId| |
-| 说明 | 说明 | “包描述” | |
-| Copyright | Copyright | empty | |
-| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | |
-| license | PackageLicenseExpression | empty | 与 `<license type="expression">` |
-| license | PackageLicenseFile | empty | 对应到 `<license type="file">`。 需要显式打包所引用的许可证文件。 |
-| LicenseUrl | PackageLicenseUrl | empty | `PackageLicenseUrl` 已弃用，请使用 PackageLicenseExpression 或 PackageLicenseFile 属性 |
+| 标题 | 标题 | PackageId| 明了易用的包标题，通常用在 UI 显示中，如 nuget.org 上和 Visual Studio 中包管理器上的那样。 |
+| 说明 | 说明 | “包描述” | 程序集的详细说明。 如果未指定 `PackageDescription`，则此属性还可用作包的说明。 |
+| Copyright | Copyright | empty | 包的版权详细信息。 |
+| RequireLicenseAcceptance | PackageRequireLicenseAcceptance | false | 一个布尔值，指定客户端是否必须提示使用者接受包许可证后才可安装包。 |
+| license | PackageLicenseExpression | empty | 对应到 `<license type="expression">`。 请参阅 [打包许可证表达式或许可证文件](#packing-a-license-expression-or-a-license-file)。 |
+| license | PackageLicenseFile | empty | 如果使用的是未分配 SPDX 标识符的自定义许可证或许可证，则为包内的许可证文件的路径。 需要显式打包所引用的许可证文件。 对应到 `<license type="file">`。 请参阅 [打包许可证表达式或许可证文件](#packing-a-license-expression-or-a-license-file)。 |
+| LicenseUrl | PackageLicenseUrl | empty | `PackageLicenseUrl` 已弃用。 请改用 `PackageLicenseExpression` 或 `PackageLicenseFile`。 |
 | ProjectUrl | PackageProjectUrl | empty | |
-| 图标 | PackageIcon | empty | 需要显式打包所引用的图标图像文件。|
-| IconUrl | PackageIconUrl | empty | 为了获得最佳的下层体验， `PackageIconUrl` 除了指定外，还应该指定 `PackageIcon` 。 长期， `PackageIconUrl` 将被弃用。 |
-| 标记 | PackageTags | empty | 使用分号分隔标记。 |
-| ReleaseNotes | PackageReleaseNotes | empty | |
-| 存储库/Url | RepositoryUrl | empty | 用于克隆或检索源代码的存储库 URL。 实例 *https://github.com/NuGet/NuGet.Client.git* |
-| 存储库/类型 | RepositoryType | empty | 存储库类型。 示例： *git*、 *tfs*。 |
-| 存储库/分支 | RepositoryBranch | empty | 可选存储库分支信息。 还必须为此属性指定要包含的 *RepositoryUrl* 。 示例： *master* (NuGet 4.7.0 +)  |
-| 存储库/提交 | RepositoryCommit | empty | 可选的存储库提交或更改集，指示针对其生成包的源。 还必须为此属性指定要包含的 *RepositoryUrl* 。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +)  |
+| 图标 | PackageIcon | empty | 包中要用作包图标的图像的路径。 需要显式打包所引用的图标图像文件。 有关详细信息，请参阅[打包图标图像文件](#packing-an-icon-image-file)和[ `icon` 元数据](/nuget/reference/nuspec#icon)。 |
+| IconUrl | PackageIconUrl | empty | `PackageIconUrl` 对于，已弃用 `PackageIcon` 。 但是，为了获得最佳的下层体验，除了指定外，还应该指定 `PackageIconUrl` `PackageIcon` 。 |
+| Tags | PackageTags | empty | 标记的分号分隔列表，这些标记用于指定包。 |
+| ReleaseNotes | PackageReleaseNotes | empty | 包的发行说明。 |
+| 存储库/Url | RepositoryUrl | empty | 用于克隆或检索源代码的存储库 URL。 示例： *https://github.com/NuGet/NuGet.Client.git* 。 |
+| 存储库/类型 | RepositoryType | empty | 存储库类型。 示例： `git` (默认) ， `tfs` 。 |
+| 存储库/分支 | RepositoryBranch | empty | 可选存储库分支信息。 还必须指定 `RepositoryUrl` 才能包含此属性。 示例： *master* (NuGet 4.7.0 +) 。 |
+| 存储库/提交 | RepositoryCommit | empty | 可选的存储库提交或更改集，指示针对其生成包的源。 还必须指定 `RepositoryUrl` 才能包含此属性。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +) 。 |
 | PackageType | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
-| 摘要 | 不支持 | | |
+| 总结 | 不支持 | | |
 
 ### <a name="pack-target-inputs"></a>包目标输入
 
-- IsPackable
-- SuppressDependenciesWhenPacking
-- PackageVersion
-- PackageId
-- Authors
-- 说明
-- Copyright
-- PackageRequireLicenseAcceptance
-- DevelopmentDependency
-- PackageLicenseExpression
-- PackageLicenseFile
-- PackageLicenseUrl
-- PackageProjectUrl
-- PackageIconUrl
-- PackageReleaseNotes
-- PackageTags
-- PackageOutputPath
-- IncludeSymbols
-- IncludeSource
-- PackageTypes
-- IsTool
-- RepositoryUrl
-- RepositoryType
-- RepositoryBranch
-- RepositoryCommit
-- NoPackageAnalysis
-- MinClientVersion
-- IncludeBuildOutput
-- IncludeContentInPack
-- BuildOutputTargetFolder
-- ContentTargetFolders
-- NuspecFile
-- NuspecBasePath
-- NuspecProperties
+| properties | 说明 |
+| - | - |
+| IsPackable | 一个指定能否打包项目的布尔值。 默认值为 `true`。 |
+| SuppressDependenciesWhenPacking | 设置为 `true` 以从生成的 NuGet 包中取消包依赖项。 |
+| PackageVersion | 指定生成的包所具有的版本。 接受所有形式的 NuGet 版本字符串。 默认为值 `$(Version)`，即项目中 `Version` 属性的值。 |
+| PackageId | 指定生成的包的名称。 如果未指定，`pack` 操作将默认使用 `AssemblyName` 或目录名称作为包的名称。 |
+| PackageDescription | 用于 UI 显示的包的详细说明。 |
+| Authors | 其中名称以分号分隔的包作者列表，其中名称与 nuget.org 上的配置文件名称匹配。这些信息显示在 nuget.org 上的 NuGet 库中，并用于交叉引用同一作者的包。 |
+| Description | 程序集的详细说明。 如果未指定 `PackageDescription`，则此属性还可用作包的说明。 |
+| Copyright | 包的版权详细信息。 |
+| PackageRequireLicenseAcceptance | 一个布尔值，指定客户端是否必须提示使用者接受包许可证后才可安装包。 默认值为 `false`。 |
+| DevelopmentDependency | 一个布尔值，用于指定包是否被标记为仅开发依赖项，从而防止包作为依赖项包含到其他包中。 在 `PackageReference` (NuGet 4.8 +) 中，此标志还意味着编译时资产将从编译中排除。 有关详细信息，请参阅 [PackageReference 的 DevelopmentDependency 支持](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference)。 |
+| PackageLicenseExpression | [SPDX 许可证标识符](https://spdx.org/licenses/)或表达式，例如 `Apache-2.0` 。 有关详细信息，请参阅 [打包许可证表达式或许可证文件](#packing-a-license-expression-or-a-license-file)。 |
+| PackageLicenseFile | 如果使用的是未分配 SPDX 标识符的自定义许可证或许可证，则为包内的许可证文件的路径。 |
+| PackageLicenseUrl | `PackageLicenseUrl` 已弃用。 请改用 `PackageLicenseExpression` 或 `PackageLicenseFile`。 |
+| PackageProjectUrl | |
+| PackageIcon | 指定相对于包根的包图标路径。 有关详细信息，请参阅对 [图标图像文件进行打包](#packing-an-icon-image-file)。 |
+| PackageReleaseNotes| 包的发行说明。 |
+| PackageTags | 标记的分号分隔列表，这些标记用于指定包。 |
+| PackageOutputPath | 确定用于已打包的包的输出路径。 默认值为 `$(OutputPath)`。 |
+| IncludeSymbols | 此布尔值指示在打包项目时，包是否应创建一个附加的符号包。 符号包的格式由 `SymbolPackageFormat` 属性控制。 有关详细信息，请参阅 [IncludeSymbols](#includesymbols)。 |
+| IncludeSource | 此布尔值指示包进程是否应创建源包。 源包中包含库的源代码以及 PDB 文件。 源文件置于生成的包文件中的 `src/ProjectName` 目录下。 有关详细信息，请参阅 [IncludeSource](#includesource)。 |
+| PackageTypes
+| IsTool | 指定是否将所有输出文件复制到 *tools* 文件夹，而不是 *lib* 文件夹。 有关详细信息，请参阅 [IsTool](#istool)。 |
+| RepositoryUrl | 用于克隆或检索源代码的存储库 URL。 示例： *https://github.com/NuGet/NuGet.Client.git* 。 |
+| RepositoryType | 存储库类型。 示例： `git` (默认) ， `tfs` 。 |
+| RepositoryBranch | 可选存储库分支信息。 还必须指定 `RepositoryUrl` 才能包含此属性。 示例： *master* (NuGet 4.7.0 +) 。 |
+| RepositoryCommit | 可选的存储库提交或更改集，指示针对其生成包的源。 还必须指定 `RepositoryUrl` 才能包含此属性。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +) 。 |
+| SymbolPackageFormat | 指定符号包的格式。 如果是 "nupkg"，则会使用 *nupkg* 扩展（其中包含 Pdb、dll 和其他输出文件）创建旧的符号包。 如果是 "snupkg"，则会创建包含可移植 Pdb 的 snupkg 符号包。 默认值为 "nupkg"。 |
+| NoPackageAnalysis | 指定 `pack` 不应在生成包后运行包分析。 |
+| MinClientVersion | 指定可安装此包的最低 NuGet 客户端版本，并由 nuget.exe 和 Visual Studio 程序包管理器强制实施。 |
+| IncludeBuildOutput | 此布尔值指定是否应将生成输出程序集打包到 .nupkg 文件中  。 |
+| IncludeContentInPack | 此布尔值指定是否 `Content` 自动在生成的包中包含类型为的任何项。 默认值为 `true`。 |
+| BuildOutputTargetFolder | 指定放置输出程序集的文件夹。 输出程序集（和其他输出文件）会复制到各自的框架文件夹中。 有关详细信息，请参阅 [输出程序集](#output-assemblies)。 |
+| ContentTargetFolders | 指定不为其指定所有内容文件的默认位置 `PackagePath` 。 默认值为“content;contentFiles”。 有关详细信息，请参阅[在包中包含内容](#including-content-in-a-package)。 |
+| NuspecFile | 用于打包的 *.nuspec* 文件的相对或绝对路径。 如果已指定，则将 **专用** 于打包信息，并且不使用项目中的任何信息。 有关详细信息，请参阅 [使用 Nuspec 打包](#packing-using-a-nuspec)。 |
+| NuspecBasePath | *.nuspec* 文件的基路径。 有关详细信息，请参阅 [使用 Nuspec 打包](#packing-using-a-nuspec)。 |
+| NuspecProperties | 键=值对的分号分隔列表。 有关详细信息，请参阅 [使用 Nuspec 打包](#packing-using-a-nuspec)。 |
 
 ## <a name="pack-scenarios"></a>包方案
 
@@ -118,18 +122,16 @@ NuGet 4.0+
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
-`PackageIconUrl` 将不推荐使用新 [`PackageIcon`](#packageicon) 属性。
-
-从 NuGet 5.3 & Visual Studio 2019 版本16.3 开始， `pack` 如果包元数据仅指定，则将引发 [NU5048](./errors-and-warnings/nu5048.md) 警告 `PackageIconUrl` 。
+`PackageIconUrl` 对属性的支持已弃用 [`PackageIcon`](#packageicon) 。 从 NuGet 5.3 和 Visual Studio 2019 版本16.3 开始， `pack` 如果包元数据仅指定了，则会引发 [NU5048](./errors-and-warnings/nu5048.md) 警告 `PackageIconUrl` 。
 
 ### <a name="packageicon"></a>PackageIcon
 
 > [!Tip]
-> 你应同时指定 `PackageIcon` 和， `PackageIconUrl` 以便保持与尚不支持的客户端和源的向后兼容性 `PackageIcon` 。 `PackageIcon`在未来版本中，Visual Studio 将支持来自基于文件夹的源的包。
+> 若要保持与尚不支持的客户端和源的向后兼容性 `PackageIcon` ，请同时指定 `PackageIcon` 和 `PackageIconUrl` 。 Visual Studio 支持来自 `PackageIcon` 基于文件夹的源的包。
 
 #### <a name="packing-an-icon-image-file"></a>打包图标图像文件
 
-打包图标图像文件时，需要使用 `PackageIcon` 属性来指定包路径，相对于包的根。 此外，还需要确保文件已包含在包中。 图像文件大小限制为 1 MB。 支持的文件格式包括 JPEG 和 PNG。 建议使用128x128 的图像分辨率。
+打包图标图像文件时，请使用 `PackageIcon` 属性来指定图标文件路径，该路径相对于包的根。 此外，请确保该文件已包含在包中。 图像文件大小限制为 1 MB。 支持的文件格式包括 JPEG 和 PNG。 建议使用128x128 的图像分辨率。
 
 例如：
 
@@ -231,8 +233,7 @@ NuGet 4.0+
 
 ### <a name="packing-a-license-expression-or-a-license-file"></a>打包许可证表达式或许可证文件
 
-使用许可证表达式时，应使用 PackageLicenseExpression 属性。 
-[许可证表达式示例](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample)。
+使用许可证表达式时，请使用 `PackageLicenseExpression` 属性。 有关示例，请参阅 [许可证表达式示例](https://github.com/NuGet/Samples/tree/master/PackageLicenseExpressionExample)。
 
 ```xml
 <PropertyGroup>
@@ -240,9 +241,9 @@ NuGet 4.0+
 </PropertyGroup>
 ```
 
-[了解有关 NuGet.org 所接受的许可证表达式和许可证的详细信息](nuspec.md#license)。
+若要了解有关 NuGet.org 所接受的许可证表达式和许可证的详细信息，请参阅 [许可证元数据](nuspec.md#license)。
 
-打包许可证文件时，需要使用 PackageLicenseFile 属性来指定相对于包根的包路径。 此外，还需要确保文件已包含在包中。 例如：
+打包许可证文件时，请使用 `PackageLicenseFile` 属性来指定包路径，相对于包的根。 此外，请确保该文件已包含在包中。 例如：
 
 ```xml
 <PropertyGroup>
@@ -254,7 +255,10 @@ NuGet 4.0+
 </ItemGroup>
 ```
 
-[许可证文件示例](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample)。
+有关示例，请参阅 [许可证文件示例](https://github.com/NuGet/Samples/tree/master/PackageLicenseFileExample)。
+
+> [!NOTE]
+> `PackageLicenseExpression`一次只能指定、和中的一个 `PackageLicenseFile` `PackageLicenseUrl` 。
 
 ### <a name="packing-a-file-without-an-extension"></a>打包不带扩展名的文件
 
@@ -392,7 +396,7 @@ msbuild -t:pack <path to .csproj file> -p:NuspecFile=<path to nuspec file> -p:Nu
 
 其他的还原设置可能来自项目文件中的 MSBuild 属性。 还可以从命令行使用 `-p:` 开关设置值（请参阅以下示例）。
 
-| 属性 | 说明 |
+| properties | 说明 |
 |--------|--------|
 | RestoreSources | 以分号分隔的包源列表。 |
 | RestorePackagesPath | 用户包文件夹路径。 |

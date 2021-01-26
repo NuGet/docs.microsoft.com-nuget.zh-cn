@@ -1,16 +1,16 @@
 ---
 title: NuGet Uninstall-Package PowerShell 参考
 description: Visual Studio 中的 NuGet 包管理器控制台中 Uninstall-Package PowerShell 命令参考。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: d164176355e32e5bbe0a017fc2b291cbc9ef326a
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 961a9d68e5cba09030401fc871a93bf1145b23a3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237122"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777391"
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>在 Visual Studio 中 Uninstall-Package (程序包管理器控制台) 
 
@@ -27,7 +27,7 @@ Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [
 
 如果其他程序包依赖于该程序包，则除非指定了 –Force 选项，否则此命令将失败。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | --- | --- |

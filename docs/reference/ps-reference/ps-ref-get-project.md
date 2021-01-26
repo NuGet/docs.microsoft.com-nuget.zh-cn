@@ -1,16 +1,16 @@
 ---
 title: NuGet Get-Project PowerShell 参考
 description: Visual Studio 中的 NuGet 包管理器控制台中的 GetProject PowerShell 命令参考。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 6d9e1d48c8e1838f193878cab3483b1bfba7d7f0
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 16b3ffc0a375b8027c615020243a7289520715f8
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238070"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777474"
 ---
 # <a name="get-project-package-manager-console-in-visual-studio"></a>在 Visual Studio 中 Get-Project (程序包管理器控制台) 
 
@@ -24,7 +24,7 @@ ms.locfileid: "93238070"
 Get-Project [[-Name] <string>] [-All] [<CommonParameters>]
 ```
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | --- | --- |

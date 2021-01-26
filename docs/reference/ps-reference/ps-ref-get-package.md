@@ -1,16 +1,16 @@
 ---
 title: NuGet Get-Package PowerShell 参考
 description: Visual Studio 中的 NuGet 包管理器控制台中 Get-Package PowerShell 命令参考。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 1576e3f20eba1ecdd099b1e7c23aef6b1a1a0a4f
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 8394f888ec3d5e57eacd351a4867173da1070ead
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237226"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777491"
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>在 Visual Studio 中 Get-Package (程序包管理器控制台) 
 
@@ -28,11 +28,11 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
 
 在没有参数的情况下，将 `Get-Package` 显示默认项目中安装的包的列表。
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | --- | --- |
-| 源 | 包的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径，也可以是相对于当前文件夹的路径。 如果省略，则 `Get-Package` 搜索当前选定的包源。 当与-ListAvailable 一起使用时，默认为 nuget.org。 |
+| Source | 包的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径，也可以是相对于当前文件夹的路径。 如果省略，则 `Get-Package` 搜索当前选定的包源。 当与-ListAvailable 一起使用时，默认为 nuget.org。 |
 | ListAvailable | 列出包源中可用的包，默认为 nuget.org。显示默认的50包，除非指定了-PageSize 和/或-First。 |
 | 更新 | 列出具有包源中可用更新的包。 |
 | 项目名称 | 要从中获取已安装包的项目。 如果省略，则返回整个解决方案的已安装项目。 |

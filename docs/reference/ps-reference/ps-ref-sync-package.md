@@ -1,16 +1,16 @@
 ---
 title: NuGet Sync-Package PowerShell 参考
 description: Visual Studio 中的 NuGet 包管理器控制台中 Sync-Package PowerShell 命令参考。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: fc4c875b5dcb0b90e4d048daf5984ed265370090
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 4261b0a20a4fd4183f7b08096c3477e6f9d0a02d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238044"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777406"
 ---
 # <a name="sync-package-package-manager-console-in-visual-studio"></a>在 Visual Studio 中 Sync-Package (程序包管理器控制台) 
 
@@ -26,7 +26,7 @@ Sync-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-Ver
     [-WhatIf] [<CommonParameters>]
 ```
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | --- | --- |
@@ -34,10 +34,10 @@ Sync-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [[-Ver
 | IgnoreDependencies | 仅安装此程序包，而不安装其依赖项。 |
 | 项目名称 | 要从中同步包的项目，默认为默认项目。 |
 | 版本 | 要同步的包版本，默认为当前安装的版本。 |
-| 源 | 要搜索的包源的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径，也可以是相对于当前文件夹的路径。 如果省略，则 `Sync-Package` 搜索当前选定的包源。 |
+| Source | 要搜索的包源的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径，也可以是相对于当前文件夹的路径。 如果省略，则 `Sync-Package` 搜索当前选定的包源。 |
 | IncludePrerelease | 包括同步中的预发行包。 |
-| FileConflictAction | 当要求覆盖或忽略项目引用的现有文件时要执行的操作。 可能的值包括 *Overwrite、Ignore、None、OverwriteAll* 和 *(3.0 +)* *IgnoreAll* 。 |
-| DependencyVersion | 要使用的依赖项包的版本，可以是下列项之一：<br/><ul><li>*最低* (默认) ：最低版本</li><li>*HighestPatch* ：最小主要、次要和最高修补程序的版本</li><li>*HighestMinor* ：最小主要版本号最高的版本，最高修补程序</li><li>不带参数的 Update-Package 的 *最高* (默认值) ：最高版本</li></ul>您可以使用文件中的设置设置默认值 [`dependencyVersion`](../nuget-config-file.md#config-section) `Nuget.Config` 。 |
+| FileConflictAction | 当要求覆盖或忽略项目引用的现有文件时要执行的操作。 可能的值包括 *Overwrite、Ignore、None、OverwriteAll* 和 *(3.0 +)* *IgnoreAll*。 |
+| DependencyVersion | 要使用的依赖项包的版本，可以是下列项之一：<br/><ul><li>*最低* (默认) ：最低版本</li><li>*HighestPatch*：最小主要、次要和最高修补程序的版本</li><li>*HighestMinor*：最小主要版本号最高的版本，最高修补程序</li><li>不带参数的 Update-Package 的 *最高* (默认值) ：最高版本</li></ul>您可以使用文件中的设置设置默认值 [`dependencyVersion`](../nuget-config-file.md#config-section) `Nuget.Config` 。 |
 | WhatIf | 显示运行命令时，不实际执行同步的情况。 |
 
 这些参数都不接受管道输入或通配符。

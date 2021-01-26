@@ -1,16 +1,16 @@
 ---
 title: nuget.exe 凭据提供程序
 description: nuget.exe 凭据提供程序使用源进行身份验证，并以遵循特定约定的命令行可执行文件的形式实现。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: 41e3e63138351bafd5e3a56080268faef10d85a3
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 285504508fa88c96f5c7a23f15ef14d81ebc21e1
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238109"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777767"
 ---
 # <a name="authenticating-feeds-with-nugetexe-credential-providers"></a>通过 nuget.exe 凭据提供程序对源进行身份验证
 
@@ -22,11 +22,11 @@ ms.locfileid: "93238109"
 
 nuget.exe 凭据提供程序可通过3种方式使用：
 
-- **全局** ：若要使凭据提供程序可用于 `nuget.exe` 在当前用户的配置文件下运行的所有实例，请将其添加到中 `%LocalAppData%\NuGet\CredentialProviders` 。 可能需要创建该 `CredentialProviders` 文件夹。 凭据提供程序可以安装在文件夹的根目录 `CredentialProviders`  或子文件夹中。 如果凭据提供程序具有多个文件/程序集，则可以使用子文件夹来保持提供程序的组织。
+- **全局**：若要使凭据提供程序可用于 `nuget.exe` 在当前用户的配置文件下运行的所有实例，请将其添加到中 `%LocalAppData%\NuGet\CredentialProviders` 。 可能需要创建该 `CredentialProviders` 文件夹。 凭据提供程序可以安装在文件夹的根目录 `CredentialProviders`  或子文件夹中。 如果凭据提供程序具有多个文件/程序集，则可以使用子文件夹来保持提供程序的组织。
 
-- **从环境变量中** ：凭据提供程序可以存储在任何位置，并可 `nuget.exe` 通过将 `%NUGET_CREDENTIALPROVIDERS_PATH%` 环境变量设置为提供程序位置进行访问。 此变量可以是以分号分隔的列表 (例如， `path1;path2`) 如果有多个位置，则为。
+- **从环境变量中**：凭据提供程序可以存储在任何位置，并可 `nuget.exe` 通过将 `%NUGET_CREDENTIALPROVIDERS_PATH%` 环境变量设置为提供程序位置进行访问。 此变量可以是以分号分隔的列表 (例如， `path1;path2`) 如果有多个位置，则为。
 
-- 与 **nuget.exe** ： nuget.exe 凭据提供程序可以放在与相同的文件夹中 `nuget.exe` 。
+- 与 **nuget.exe**： nuget.exe 凭据提供程序可以放在与相同的文件夹中 `nuget.exe` 。
 
 加载凭据提供程序时， `nuget.exe` 会按顺序搜索上述位置，对于名为的任何文件 `credentialprovider*.exe` ，然后按找到的顺序加载这些文件。 如果同一文件夹中存在多个凭据提供程序，则按字母顺序加载它们。
 
@@ -65,14 +65,16 @@ nuget.exe 凭据提供程序可通过3种方式使用：
 | 属性 |注释|
 |----------------|-----------|
 | 用户名 | 经过身份验证的请求的用户名。|
-| 密码 | 经过身份验证的请求的密码。|
+| Password | 经过身份验证的请求的密码。|
 | 消息 | 有关响应的可选详细信息，仅用于显示故障情况下的其他详细信息。 |
 
 示例 stdout：
 
-    { "Username" : "freddy@example.com",
-      "Password" : "bwm3bcx6txhprzmxhl2x63mdsul6grctazoomtdb6kfbof7m3a3z",
-      "Message"  : "" }
+```
+{ "Username" : "freddy@example.com",
+    "Password" : "bwm3bcx6txhprzmxhl2x63mdsul6grctazoomtdb6kfbof7m3a3z",
+    "Message"  : "" }
+```
 
 ## <a name="troubleshooting-a-credential-provider"></a>凭据提供程序故障排除
 

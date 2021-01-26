@@ -1,16 +1,16 @@
 ---
-title: " (CLI) 参考的 NuGet 命令行界面"
+title: NuGet Command-Line 接口 (CLI) 参考
 description: nuget.exe CLI 的命令行参考索引
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/23/2018
 ms.topic: reference
-ms.openlocfilehash: e9343f1fdddcf839322849925372587e685aef4a
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: a9a5fc4d3b1e0f19fa3ea249ca7759c8ebc2d12e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623144"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777707"
 ---
 # <a name="nuget-cli-reference"></a>NuGet CLI 引用
 
@@ -47,7 +47,7 @@ ms.locfileid: "88623144"
 | [push](cli-reference/cli-ref-push.md) | 发布 | 全部 | 将包发布到包源。 |
 | [config](cli-reference/cli-ref-config.md) | 全部 | 全部 | 获取或设置 NuGet 配置值。 |
 | [help or ?](cli-reference/cli-ref-help.md) | 全部 | 全部 | 显示命令的帮助信息或帮助。 |
-| [locals](cli-reference/cli-ref-locals.md) | 消耗 | 3.3 + | 列出 *全局包*、 *http 缓存*和 *临时* 文件夹的位置，并清除这些文件夹的内容。 |
+| [locals](cli-reference/cli-ref-locals.md) | 消耗 | 3.3 + | 列出 *全局包*、 *http 缓存* 和 *临时* 文件夹的位置，并清除这些文件夹的内容。 |
 | [restore](cli-reference/cli-ref-restore.md) | 消耗 | 2.7+ | 还原使用中的包管理格式所引用的所有包。 在 Mono 上运行时，不支持使用 PackageReference 格式还原包。 |
 | [setapikey](cli-reference/cli-ref-setapikey.md) | 发布，消耗 | 全部 | 当包源需要访问密钥时，保存给定包源的 API 密钥。 |
 | [spec](cli-reference/cli-ref-spec.md) | 创建 | 全部 | `.nuspec`如果从 Visual Studio 项目生成文件，则使用标记生成一个文件。 |

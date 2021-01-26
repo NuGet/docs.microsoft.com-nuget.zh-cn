@@ -1,16 +1,16 @@
 ---
 title: NuGet Find-Package PowerShell 参考
 description: Visual Studio 中的 NuGet 包管理器控制台中 Find-Package PowerShell 命令参考。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 6/1/2017
 ms.topic: reference
-ms.openlocfilehash: 267dd3eb501cae6e419386a5ca5e0c1ab659f807
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 83d0d62bbda07d07ea1e3b58e531447e2001b680
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238083"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777509"
 ---
 # <a name="find-package-package-manager-console-in-visual-studio"></a>在 Visual Studio 中 Find-Package (程序包管理器控制台) 
 
@@ -25,12 +25,12 @@ Find-Package [-Id] <keywords> -Source <string> [-AllVersions] [-First [<int>]]
     [-Skip <int>] [-IncludePrerelease] [-ExactMatch] [-StartWith] [<CommonParameters>]
 ```
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | --- | --- |
 | Id &lt; 关键字&gt; |  (需要在搜索包源时使用) 关键字。 使用-ExactMatch 仅返回其包 ID 与关键字匹配的那些包。 如果未提供任何关键字，则 `Find-Package` 返回按下载项列出的前20个包的列表，或由-First 指定的数字。 请注意，-Id 是可选的，而不是操作。 |
-| 源 | 要搜索的包源的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径，也可以是相对于当前文件夹的路径。 如果省略，则 `Find-Package` 搜索当前选定的包源。 |
+| Source | 要搜索的包源的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径，也可以是相对于当前文件夹的路径。 如果省略，则 `Find-Package` 搜索当前选定的包源。 |
 | AllVersions | 显示每个包的所有可用版本，而不是仅显示最新版本。 |
 | First | 要从列表开头返回的包数;默认值为20。 |
 | 跳过 | 省略 &lt; &gt; 所显示列表中的第一个 int 包。  |

@@ -1,16 +1,16 @@
 ---
 title: NuGet 2.8 发行说明
 description: NuGet 2.8 的发行说明，包括已知问题、bug 修复、新增功能和 Dcr。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 98b8b7334738306e6d40ba7c455409a87c4bb822
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: cb77cf0f049b5b3cfe1039d83ab58e33457674bf
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237008"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776719"
 ---
 # <a name="nuget-28-release-notes"></a>NuGet 2.8 发行说明
 
@@ -42,15 +42,17 @@ NuGet 2.8 于2014年1月29日发布。
 
 ## <a name="patch-resolution-for-dependencies"></a>依赖项的修补程序解析
 
-解析包依赖关系时，NuGet 一直实现了一个策略，该策略选择满足包的依赖项的最低主要和次要包版本。 但与主要和次要版本不同的是，修补程序版本总是解析为最高版本。 尽管此行为是善意的，但它却缺乏了安装具有依赖项的包的确定性。 请考虑以下示例：
+解析包依赖关系时，NuGet 一直实现了一个策略，该策略选择满足包的依赖项的最低主要和次要包版本。 但与主要和次要版本不同的是，修补程序版本总是解析为最高版本。 尽管此行为是善意的，但它却缺乏了安装具有依赖项的包的确定性。 请看下面的示例：
 
-    PackageA@1.0.0 -[ >=1.0.0 ]-> PackageB@1.0.0
+```
+PackageA@1.0.0 -[ >=1.0.0 ]-> PackageB@1.0.0
 
-    Developer1 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.0
+Developer1 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.0
 
-    PackageB@1.0.1 is published
+PackageB@1.0.1 is published
 
-    Developer2 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.1
+Developer2 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.1
+```
 
 在此示例中，即使安装了 Developer1 和 Developer2 PackageA@1.0.0 ，每个都最终使用不同版本的 PackageB。 NuGet 2.8 更改此默认行为，以便修补程序版本的依赖关系解析行为与主版本和次要版本的行为一致。 在上面的示例中，将在 PackageB@1.0.0 安装时安装 PackageA@1.0.0 ，而不考虑较新的修补程序版本。
 
@@ -64,24 +66,28 @@ NuGet 2.8 于2014年1月29日发布。
 
 除了上面详细说明的-DependencyVersion 开关以外，还允许 NuGet 在定义默认值的情况下设置新 Nuget.Config 属性的功能，如果未在的调用中指定-DependencyVersion 开关。 任何安装包操作的 "NuGet 包管理器" 对话框也会遵守此值。 若要设置此值，请将以下属性添加到 Nuget.Config 文件：
 
-    <config>
-        <add key="dependencyversion" value="Highest" />
-    </config>
+```xml
+<config>
+    <add key="dependencyversion" value="Highest" />
+</config>
+```
 
 ## <a name="preview-nuget-operations-with--whatif"></a>预览具有-whatif 的 NuGet 操作
 
 某些 NuGet 包可能具有深层依赖项关系图，因此，在安装、卸载或更新操作过程中，它可帮助您首先了解将发生的情况。 NuGet 2.8 将标准 PowerShell whatif 交换机添加到安装包、卸载包和更新包命令中，以使将应用该命令的包的整个关闭可视化。 例如， `install-package Microsoft.AspNet.WebApi -whatif` 在空的 ASP.NET Web 应用程序中运行将生成以下项。
 
-    PM> install-package Microsoft.AspNet.WebApi -whatif
-    Attempting to resolve dependency 'Microsoft.AspNet.WebApi.WebHost (≥ 5.0.0)'.
-    Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Core (≥ 5.0.0)'.
-    Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Client (≥ 5.0.0)'.
-    Attempting to resolve dependency 'Newtonsoft.Json (≥ 4.5.11)'.
-    Install Newtonsoft.Json 4.5.11
-    Install Microsoft.AspNet.WebApi.Client 5.0.0
-    Install Microsoft.AspNet.WebApi.Core 5.0.0
-    Install Microsoft.AspNet.WebApi.WebHost 5.0.0
-    Install Microsoft.AspNet.WebApi 5.0.0
+```
+PM> install-package Microsoft.AspNet.WebApi -whatif
+Attempting to resolve dependency 'Microsoft.AspNet.WebApi.WebHost (≥ 5.0.0)'.
+Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Core (≥ 5.0.0)'.
+Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Client (≥ 5.0.0)'.
+Attempting to resolve dependency 'Newtonsoft.Json (≥ 4.5.11)'.
+Install Newtonsoft.Json 4.5.11
+Install Microsoft.AspNet.WebApi.Client 5.0.0
+Install Microsoft.AspNet.WebApi.Core 5.0.0
+Install Microsoft.AspNet.WebApi.WebHost 5.0.0
+Install Microsoft.AspNet.WebApi 5.0.0
+```
 
 ## <a name="downgrade-package"></a>降级包
 
@@ -101,12 +107,14 @@ NuGet 2.8 于2014年1月29日发布。
 
 尽管 NuGet 包通常是从使用网络连接 [的](http://www.nuget.org/) 远程库使用，但在很多情况下客户端未连接。 如果没有网络连接，NuGet 客户端将无法成功安装包-即使这些包已在本地 NuGet 缓存中的客户端计算机上。 NuGet 2.8 将自动缓存回退添加到程序包管理器控制台。 例如，断开网络适配器和安装 jQuery 时，控制台将显示以下内容：
 
-    PM> Install-Package jquery
-    The source at nuget.org [https://www.nuget.org/api/v2/] is unreachable. Falling back to NuGet Local Cache at C:\Users\me\AppData\Local\NuGet\Cache
-    Installing 'jQuery 2.0.3'.
-    Successfully installed 'jQuery 2.0.3'.
-    Adding 'jQuery 2.0.3' to WebApplication18.
-    Successfully added 'jQuery 2.0.3' to WebApplication18.
+```
+PM> Install-Package jquery
+The source at nuget.org [https://www.nuget.org/api/v2/] is unreachable. Falling back to NuGet Local Cache at C:\Users\me\AppData\Local\NuGet\Cache
+Installing 'jQuery 2.0.3'.
+Successfully installed 'jQuery 2.0.3'.
+Adding 'jQuery 2.0.3' to WebApplication18.
+Successfully added 'jQuery 2.0.3' to WebApplication18.
+```
 
 缓存回退功能不需要任何特定的命令参数。 此外，缓存回退当前仅在包管理器控制台中运行-"包管理器" 对话框中当前未使用该行为。
 

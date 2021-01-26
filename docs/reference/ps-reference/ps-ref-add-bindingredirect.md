@@ -1,16 +1,16 @@
 ---
 title: NuGet Add-BindingRedirect PowerShell 参考
 description: Visual Studio 中的 NuGet 包管理器控制台中 Add-BindingRedirect PowerShell 命令参考。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 382ba9b179428c70e3eb16db86a363e095207d61
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 62edf1bf8995a4e1ffb83acc7a7621a786cc53e4
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237252"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98777616"
 ---
 # <a name="add-bindingredirect-package-manager-console-in-visual-studio"></a>在 Visual Studio 中 Add-BindingRedirect (程序包管理器控制台) 
 
@@ -29,7 +29,7 @@ ms.locfileid: "93237252"
 Add-BindingRedirect [-ProjectName] <string> [<CommonParameters>]
 ```
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>参数
 
 | 参数 | 说明 |
 | --- | --- |
