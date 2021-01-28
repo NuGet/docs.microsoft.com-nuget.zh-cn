@@ -1,16 +1,16 @@
 ---
 title: 删除 nuget.org 的 NuGet 包
 description: 用于取消列出 nuget.org 的包的策略；除非包违反其他策略，否则不支持永久删除。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 3abe809d76e75801c2f936aba129d27ba7b64913
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e5c62177b40162cb8b6b37b0d272fb7a945156c1
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80581269"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775706"
 ---
 # <a name="deleting-packages"></a>删除包
 
@@ -21,7 +21,7 @@ nuget.org 支持[取消列出包](#unlisting-a-package)，此操作可在网站�
 - 如果与版本或依赖项约束匹配的最新可用包是取消列出的包，使用浮动版本（如 `1.0.0-*`）进行包还原。
 - 通过目录复制包（因为该目录也包含取消列出的包）。
 
-## <a name="exceptions"></a>异常
+## <a name="exceptions"></a>例外
 
 在侵犯版权和可能包含有害内容等例外情况下，NuGet 团队可以手动删除包。 可使用 NuGet.org 包详细信息页上的“报告滥用情况”按钮报告相关包。 如果你是包所有者，请登录 NuGet.org 帐户，使用 NuGet.org 包详细信息页上的“联系支持人员”按钮联系 NuGet 支持人员。
 
@@ -36,7 +36,7 @@ nuget.org 支持[取消列出包](#unlisting-a-package)，此操作可在网站�
 - 用于制止包标识符，包括包含零工作效率内容的包。 包必须包含代码，或所有者必须将标识符让与实际具有要运送的产品的某个人员。
 - 尝试让库执行设计明确意图以外的操作。
 
-如果发现违反以上任一项的包，请单击包详细信息页上的“报告滥用行为”链接并提交报告  。
+如果发现违反其中任何项的包，请单击该包详细信息页上的“报告滥用行为”  链接并提交报告。
 
 请注意，NuGet 团队和 .NET Foundation 保留随时更改这些条件的权利。
 
@@ -50,6 +50,6 @@ nuget.org 支持[取消列出包](#unlisting-a-package)，此操作可在网站�
 1. 展开“列表”部分，然后选择包版本
 1. 取消选中“在搜索结果中列出”，然后选择“保存”
 
-该包版本现在已取消列出。 若要进行验证，请从你的帐户注销，并导航到包页面（不包含版本部分），例如： https://www.nuget.org/packages/YOUR-PACKAGE-NAME/ 。 你将看到该程序包的所有版本都未列出  。 但是，包所有者登录时，可以看到所有版本及其列出状态。
+该包版本现在已取消列出。 若要进行验证，请从你的帐户注销，并导航到包页面（不包含版本部分），例如： https://www.nuget.org/packages/YOUR-PACKAGE-NAME/ 。 你将看到该程序包的所有版本都未列出。 但是，包所有者登录时，可以看到所有版本及其列出状态。
 
 还可以弃用包版本（如果无法删除包版本）。 有关弃用包版本的详细信息，请参阅[弃用包](../deprecate-packages.md)。
