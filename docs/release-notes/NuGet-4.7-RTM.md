@@ -1,16 +1,16 @@
 ---
 title: NuGet 4.7 RTM 发行说明
 description: NuGet 4.7.0 的发行说明，包括已知问题、bug 修复、新增功能和 DCR。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 5/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: 2290025d42dcd5704b6b019c17346201fe6a990d
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 143781cf0a95c6a156d4afcd83ad277f3e227711
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "76813788"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780161"
 ---
 # <a name="nuget-47-release-notes"></a>NuGet 4.7 发行说明
 

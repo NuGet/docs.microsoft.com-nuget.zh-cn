@@ -1,16 +1,16 @@
 ---
 title: 用户数据请求
 description: 请求用户数据导出和删除的策略
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: ef054f741755bccf56eedfd462915b8e9fd6931a
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e0ec429469a992c9558d1635890fd568398206a1
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "67426982"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775719"
 ---
 # <a name="user-data-requests"></a>用户数据请求
 

@@ -1,16 +1,16 @@
 ---
 title: 如何使用 NuGet 打包 UI 控件
 description: 如何创建包含 UWP 或 WPF 控件的 NuGet 包，包括必要的元数据和 Visual Studio 和 Blend 设计器的支持文件。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: 17062d83349fe1b8cd28e57dd888686a226ac9cb
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 317937b4d9d773d74384b8ebfcd2146062236ac1
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238018"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774319"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>以 NuGet 包形式创建 UI 控件
 
@@ -36,10 +36,12 @@ ms.locfileid: "93238018"
 
 要使 XAML 控件出现在 Visual Studio 中的 XAML 设计器工具箱和 Blend 的“资产”窗格中，请在包项目的 `tools` 文件夹根中创建 `VisualStudioToolsManifest.xml` 文件。 如果不需要控件显示在工具箱或“资产”窗格中，则不需要此文件。
 
-    \build
-    \lib
-    \tools
-        VisualStudioToolsManifest.xml
+```
+\build
+\lib
+\tools
+    VisualStudioToolsManifest.xml
+```
 
 文件的结构如下所示：
 
@@ -59,11 +61,11 @@ ms.locfileid: "93238018"
 
 其中：
 
-- *your_package_file* ：控件文件的名称，例如 `ManagedPackage.winmd`（“ManagedPackage”是本示例中随意起的名称，没有其他意义）。
-- *vs_category* ：Visual Studio 设计器工具箱中应出现控件的组的标签。 `VSCategory` 对控件出现在工具箱中是必要的。
-*ui_framework* ：框架的名称（例如“WPF”），请注意，Visual Studio 16.7 预览版 3 或更高版本的 ToolboxItems 节点上必须具有 `UIFramework` 属性，控件才能出现在工具箱中。
-- *blend_category* ：Blend 设计器的“资产”窗格中应出现控件的组的标签。 `BlendCategory` 对控件出现在“资产”中是必要的。
-- *type_full_name_n* ：每个控件的完全限定名称，包括命名空间，例如 `ManagedPackage.MyCustomControl`。 注意，点格式用于托管和本机类型。
+- *your_package_file*：控件文件的名称，例如 `ManagedPackage.winmd`（“ManagedPackage”是本示例中随意起的名称，没有其他意义）。
+- *vs_category*：Visual Studio 设计器工具箱中应出现控件的组的标签。 `VSCategory` 对控件出现在工具箱中是必要的。
+*ui_framework*：框架的名称（例如“WPF”），请注意，Visual Studio 16.7 预览版 3 或更高版本的 ToolboxItems 节点上必须具有 `UIFramework` 属性，控件才能出现在工具箱中。
+- *blend_category*：Blend 设计器的“资产”窗格中应出现控件的组的标签。 `BlendCategory` 对控件出现在“资产”中是必要的。
+- *type_full_name_n*：每个控件的完全限定名称，包括命名空间，例如 `ManagedPackage.MyCustomControl`。 注意，点格式用于托管和本机类型。
 
 在更高级的方案中，当单个包包含多个控件程序集时，还可以在 `<FileList>` 中包括多个 `<File>` 元素。 如果需要将控件整理为单独的分类，则还可以在单个 `<File>` 中有多个 `<ToolboxItems>` 节点。
 
@@ -109,38 +111,45 @@ UWP 包有 TargetPlatformVersion (TPV) 和 TargetPlatformMinVersion (TPMinV)，�
 
 例如，假如已将控件包的 TPMinV 设为 Windows 10 Anniversary Edition（10.0；版本 14393），因此需要确保仅与下限相匹配的 UWP 项目使用此包。 要使得包被 UWP 项目使用，你必须使用以下文件夹名称打包控件：
 
-    \lib\uap10.0.14393\*
-    \ref\uap10.0.14393\*
+```
+\lib\uap10.0.14393\*
+\ref\uap10.0.14393\*
+```
 
 NuGet 将自动检查正在使用项目的 TPMinV，如果低于 Windows 10 Anniversary Edition（10.0；版本 14393），则安装失败
 
 在 WPF 中，我们假设你希望 WPF 控件包由面向 .NET Framework v4.6.1 或更高版本的项目使用。 若要强制执行此操作，必须使用以下文件夹名称来打包控件：
 
-    \lib\net461\*
-    \ref\net461\*
+```
+\lib\net461\*
+\ref\net461\*
+```
 
 ## <a name="add-design-time-support"></a>添加设计时支持
 
 要配置控件属性在属性检查器中显示的位置、添加自定义装饰器等，请将 `design.dll` 文件放在目标平台对应的 `lib\uap10.0.14393\Design` 文件夹中。 此外，要确保[“编辑模板”>“编辑副本”](/windows/uwp/controls-and-patterns/xaml-styles#modify-the-default-system-styles)功能正常工作，必须包含 `Generic.xaml` 及其在 `<your_assembly_name>\Themes` 文件夹中合并的任何资源字典（同样，使用实际的程序集名称）。 （此文件对控件的运行时行为不产生影响。）文件夹结构将如下所示：
 
-    \lib
-      \uap10.0.14393
-        \Design
-          \MyControl.design.dll
-        \your_assembly_name
-          \Themes
-            Generic.xaml
-
+```
+\lib
+  \uap10.0.14393
+    \Design
+      \MyControl.design.dll
+    \your_assembly_name
+      \Themes
+        Generic.xaml
+```
 
 对于 WPF，请继续上述示例，即希望由面向 .NET Framework v4.6.1 或更高版本的项目来使用 WPF 控件包：
 
-    \lib
-      \net461
-        \Design
-          \MyControl.design.dll
-        \your_assembly_name
-          \Themes
-            Generic.xaml
+```
+\lib
+  \net461
+    \Design
+      \MyControl.design.dll
+    \your_assembly_name
+      \Themes
+        Generic.xaml
+```
 
 > [!Note]
 > 默认情况下，控件属性将显示在属性检查器的“杂项”类别下。

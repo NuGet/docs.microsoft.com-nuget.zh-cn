@@ -1,16 +1,16 @@
 ---
 title: 使用 dotnet CLI 创建和发布 NuGet 包
 description: 使用 .NET Core CLI dotnet 创建和发布 NuGet 包的演练教程。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: quickstart
-ms.openlocfilehash: a67c8cd92304c6c4abcffbb79ddbe964664d08fb
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: cb63257c874fc4752f3b3d59db4be5996d5ab81d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237479"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775760"
 ---
 # <a name="quickstart-create-and-publish-a-package-dotnet-cli"></a>快速入门：创建和发布包 (dotnet CLI)
 
@@ -124,7 +124,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 - [预发行包](../create-packages/Prerelease-Packages.md)
 - [支持多个目标框架](../create-packages/multiple-target-frameworks-project-file.md)
 - [包版本控制](../concepts/package-versioning.md)
-- [添加许可证表达式或文件](../reference/msbuild-targets#packing-a-license-expression-or-a-license-file)
+- [添加许可证表达式或文件](../reference/msbuild-targets.md#packing-a-license-expression-or-a-license-file)
 - [创建本地化包](../create-packages/creating-localized-packages.md)
 - [创建符号包](../create-packages/symbol-packages-snupkg.md)
 - [给包签名](../create-packages/Sign-a-package.md)

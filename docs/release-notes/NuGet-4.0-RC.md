@@ -1,17 +1,17 @@
 ---
 title: NuGet 4.0 RC 发行说明
 description: NuGet 4.0 RC 的发行说明，包括已知问题、bug 修复、新增功能和 DCR。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 02/03/2017
 ms.topic: conceptual
 ms.reviewer: ananguar
-ms.openlocfilehash: 2d0bb6356c0a20843bdc884b68f5f61838b82e73
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 44f15e2fc33cca8a3d88af17bf76f1dcc16ca860
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64496643"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780182"
 ---
 # <a name="nuget-40-rc-release-notes"></a>NuGet 4.0 RC 发行说明
 

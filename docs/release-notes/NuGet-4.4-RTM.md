@@ -1,17 +1,17 @@
 ---
 title: NuGet 4.4 RTM 发行说明
 description: NuGet 4.3 RTM 的发行说明，包括已知问题、bug 修复、新增功能和 DCR。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 3be24a86cc92c4e6d07fcae1dc625a150f28d7b4
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 970a920a401b8a74c04d84cbad9933c54e3cd19e
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64498700"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98776285"
 ---
 # <a name="nuget-44-release-notes"></a>NuGet 4.4 发行说明
 

@@ -1,16 +1,16 @@
 ---
 title: 重新安装并更新 NuGet 包
 description: 有关何时需要重新安装和更新包的详细信息，与 Visual Studio 中损坏的包引用一样。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: conceptual
-ms.openlocfilehash: 101c6d6b9d93da912f60c40b27559e80327154b8
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 588d546352e5733ba8198061beb8006a79ecedac
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237726"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774972"
 ---
 # <a name="how-to-reinstall-and-update-packages"></a>如何重新安装和更新包
 
@@ -36,11 +36,11 @@ Visual Studio 中的程序包管理器控制台提供了许多灵活的选项，
 
 ## <a name="when-to-reinstall-a-package"></a>何时重新安装包
 
-1. **包还原后的损坏引用** ：如果已打开项目并还原了 NuGet 包，但仍看见了损坏的引用，请尝试重新安装每个包。
-1. **项目因删除文件损坏** ：NuGet 不会阻止删除从包添加的项，因此很容易在无意中修改从包安装的内容并损坏项目。 要还原项目，请重新安装受影响的包。
-1. **包更新损坏了项目** ：如果包的更新损坏了项目，则故障通常由可能也已更新的依赖项包引起。 要还原依赖项的状态，请重新安装该特定包。
-1. **项目重定向或升级** ：这在项目已重定向或升级时并且如果包因为更改目标框架需要重新安装时有用。 NuGet 在项目重定向后立即显示该情况下的生成错误，后续生成警告会提醒你包可能需要重新安装。 对于项目升级，NuGet 显示项目升级日志中的错误。
-1. **开发期间重新安装包** ：包创作者常常需要重新安装与他们开发来测试行为的包版本相同的包。 `Install-Package` 命令不提供强制重新安装选项，所以换成使用 `Update-Package -reinstall`。
+1. **包还原后的损坏引用**：如果已打开项目并还原了 NuGet 包，但仍看见了损坏的引用，请尝试重新安装每个包。
+1. **项目因删除文件损坏**：NuGet 不会阻止删除从包添加的项，因此很容易在无意中修改从包安装的内容并损坏项目。 要还原项目，请重新安装受影响的包。
+1. **包更新损坏了项目**：如果包的更新损坏了项目，则故障通常由可能也已更新的依赖项包引起。 要还原依赖项的状态，请重新安装该特定包。
+1. **项目重定向或升级**：这在项目已重定向或升级时并且如果包因为更改目标框架需要重新安装时有用。 NuGet 在项目重定向后立即显示该情况下的生成错误，后续生成警告会提醒你包可能需要重新安装。 对于项目升级，NuGet 显示项目升级日志中的错误。
+1. **开发期间重新安装包**：包创作者常常需要重新安装与他们开发来测试行为的包版本相同的包。 `Install-Package` 命令不提供强制重新安装选项，所以换成使用 `Update-Package -reinstall`。
 
 ## <a name="constraining-upgrade-versions"></a>约束升级版本
 

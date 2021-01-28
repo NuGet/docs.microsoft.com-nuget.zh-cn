@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 11/02/2017
 ms.topic: tutorial
 ms.reviewer: kraigb
-ms.openlocfilehash: 749d9466976d51c7cb65332c8b149e3a30862e63
-ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
+ms.openlocfilehash: 7e611b568538e0acfcbad2e5d986a0f9382ac8fd
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97523400"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774121"
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>查询所有发布到 nuget.org 的包
 
@@ -54,7 +54,9 @@ DateTime cursor = DateTime.UtcNow.AddHours(-1);
 
 NuGet API 中每个资源（终结点）的位置应使用[服务索引](../../api/service-index.md)发现。 因为本指南重点介绍 nuget.org，所以我们使用 nuget.org 的服务索引。
 
-    GET https://api.nuget.org/v3/index.json
+```
+GET https://api.nuget.org/v3/index.json
+```
 
 服务文档是包含 nuget.org 上所有资源的 JSON 文档。查找具有 `Catalog/3.0.0` 的 `@type` 属性值的资源。 相关联的 `@id` 属性值是到目录索引本身的 URL。 
 
@@ -62,13 +64,17 @@ NuGet API 中每个资源（终结点）的位置应使用[服务索引](../../a
 
 使用前面步骤中找到的 `@id` 属性值下载目录索引：
 
-    GET https://api.nuget.org/v3/catalog0/index.json
+```
+GET https://api.nuget.org/v3/catalog0/index.json
+```
 
 反序列化[目录索引](../../api/catalog-resource.md#catalog-index)。 筛选出 `commitTimeStamp` 小于或等于当前游标值的所有[目录页对象](../../api/catalog-resource.md#catalog-page-object-in-the-index)。
 
 对于每个剩余的目录页，使用 `@id` 属性下载完整文档。
 
-    GET https://api.nuget.org/v3/catalog0/page2926.json
+```
+GET https://api.nuget.org/v3/catalog0/page2926.json
+```
 
 反序列化[目录页](../../api/catalog-resource.md#catalog-page)。 筛选出 `commitTimeStamp` 小于或等于当前游标值的所有[目录叶对象](../../api/catalog-resource.md#catalog-item-object-in-a-page)。
 
@@ -80,7 +86,9 @@ NuGet API 中每个资源（终结点）的位置应使用[服务索引](../../a
 
 如果对有关包的元数据感兴趣（例如描述、依赖项、.nupkg 大小等），则可以使用 `@id` 属性提取[目录叶文档](../../api/catalog-resource.md#catalog-leaf)。
 
-    GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
+```
+GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.storage.1.0.0.json
+```
 
 本文档不仅有[包元数据资源](../../api/registration-base-url-resource.md)中包含的所有元数据，而且还有更多内容！
 

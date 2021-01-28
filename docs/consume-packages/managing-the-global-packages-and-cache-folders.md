@@ -1,16 +1,16 @@
 ---
 title: 如何管理 NuGet 中的全局包、缓存、临时文件夹
 description: 如何管理计算机上存在的全局包安装文件夹、包缓存和临时文件夹，这些在安装、还原和更新包时将用到。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: e2672aa0bf57242526364639f0df74f9d1adb934
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: e5585267d4ce2563d77ff30ec5c31e196d98686a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237317"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774792"
 ---
 # <a name="managing-the-global-packages-cache-and-temp-folders"></a>管理全局包、缓存和临时文件夹
 

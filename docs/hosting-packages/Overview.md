@@ -1,17 +1,17 @@
 ---
 title: 承载自己的 NuGet 源概述
 description: 概述了本地或远程承载自己的 NuGet 包源或库的打开。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/25/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 81acf15ac69d78d39d2784e77c18ba38bfea126d
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 1b7bad6bcd897b746ea9eb6e89b80a88ee5e891a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "75385537"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774051"
 ---
 # <a name="hosting-your-own-nuget-feeds"></a>承载自己的 NuGet 源
 

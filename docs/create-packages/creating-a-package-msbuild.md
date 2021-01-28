@@ -1,16 +1,16 @@
 ---
 title: 使用 MSBuild 创建 NuGet 包
 description: 设计和创建 NuGet 包流程的详细指南，包含文件和版本控制等关键决策点。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 47a20c5566affec1cdc7772c86d8101dab162d85
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 48741668af932a532240f2796a9bf5d490ee8e35
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237966"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774441"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>使用 MSBuild 创建 NuGet 包
 

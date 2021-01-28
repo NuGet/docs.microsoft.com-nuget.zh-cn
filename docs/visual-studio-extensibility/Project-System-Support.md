@@ -1,16 +1,16 @@
 ---
 title: NuGet 对 Visual Studio 项目系统的支持
 description: 将 NuGet 集成到第三方项目类型的 Visual Studio 项目系统中。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: reference
-ms.openlocfilehash: 00a64d95c943e9e5cb3a279358a6495125a1bd87
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7af330f88b47352666933598719d9c8f8cb66a78
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "64495923"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98779407"
 ---
 # <a name="nuget-support-for-the-visual-studio-project-system"></a>NuGet 对 Visual Studio 项目系统的支持
 

@@ -1,16 +1,16 @@
 ---
 title: 如何创建本地化 NuGet 包
 description: 详细介绍创建本地化 NuGet 包的两种方法：将所有程序集包含在一个包中，或者发布单独的程序集。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 83414a824676844f9e44eab874e5eac788d50583
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: cb3f8a9df66f259b130996822f102c27636d5d2c
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73610942"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774752"
 ---
 # <a name="creating-localized-nuget-packages"></a>创建本地化 NuGet 包
 
@@ -27,34 +27,36 @@ ms.locfileid: "73610942"
 
 例如，以下文件夹结构支持德语 (de)、意大利语 (it)、日语 (ja)、俄语 (ru)、简体中文 (zh-Hans) 和繁体中文 (zh-Hant)：
 
-    lib
-    └───net40
-        │   Contoso.Utilities.dll
-        │   Contoso.Utilities.xml
-        │
-        ├───de
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───it
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───ja
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───ru
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        ├───zh-Hans
-        │       Contoso.Utilities.resources.dll
-        │       Contoso.Utilities.xml
-        │
-        └───zh-Hant
-                Contoso.Utilities.resources.dll
-                Contoso.Utilities.xml
+```
+lib
+└───net40
+    │   Contoso.Utilities.dll
+    │   Contoso.Utilities.xml
+    │
+    ├───de
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───it
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───ja
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───ru
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    ├───zh-Hans
+    │       Contoso.Utilities.resources.dll
+    │       Contoso.Utilities.xml
+    │
+    └───zh-Hant
+            Contoso.Utilities.resources.dll
+            Contoso.Utilities.xml
+```
 
 可以看到，这些语言全都列在 `net40` 目标框架文件夹下。 如果[支持多个框架](../create-packages/supporting-multiple-target-frameworks.md)，则 `lib` 下将有每个变体的文件夹。
 
@@ -92,10 +94,12 @@ ms.locfileid: "73610942"
 
 若要执行此操作，主包会使用命名约定 `{identifier}.{version}.nupkg` 并包含默认语言（如 en-US）的程序集。 例如，`ContosoUtilities.1.0.0.nupkg` 将包含以下结构：
 
-    lib
-    └───net40
-            ContosoUtilities.dll
-            ContosoUtilities.xml
+```
+lib
+└───net40
+        ContosoUtilities.dll
+        ContosoUtilities.xml
+```
 
 附属程序集然后会使用命名约定 `{identifier}.{language}.{version}.nupkg`，如 `ContosoUtilities.de.1.0.0.nupkg`。 标识符必须与主包完全匹配。 
 
@@ -105,11 +109,13 @@ ms.locfileid: "73610942"
 
 然后，附属包结构必须将资源程序集和 XML IntelliSense 包含在与包文件名中的 `{language}` 匹配的子文件夹中：
 
-    lib
-    └───net40
-        └───de
-                ContosoUtilities.resources.dll
-                ContosoUtilities.xml
+```
+lib
+└───net40
+    └───de
+            ContosoUtilities.resources.dll
+            ContosoUtilities.xml
+```
 
 注意：除非需要特定的子区域性（如 `ja-JP`），否则请始终使用更高级别的语言标识符，如 `ja`  。
 

@@ -1,16 +1,16 @@
 ---
 title: 在 Windows 上使用 Visual Studio 创建和发布 .NET Framework NuGet 包
 description: 在 Windows 上使用 Visual Studio 创建和发布 .NET Framework NuGet 包的演练教程。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/13/2018
 ms.topic: quickstart
-ms.openlocfilehash: e00aac83a710e2f745d5e4bb9aec741ee686e595
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 7c030db769973e3b3c41da6523d57ab2cd769a9d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "72380641"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775750"
 ---
 # <a name="quickstart-create-and-publish-a-package-using-visual-studio-net-framework-windows"></a>快速入门：使用 Visual Studio 创建和发布包（.NET Framework、Windows）
 

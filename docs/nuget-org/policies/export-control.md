@@ -1,16 +1,16 @@
 ---
 title: 出口管制政策
 description: 管理出口管制法律的政策
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 06/27/2019
 ms.topic: conceptual
-ms.openlocfilehash: 4ea2d2f23a02088b54982b825a5be3c872e27c37
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 9d8ba7043d3b855f43bee9b45d7316d1aaaa7985
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73611311"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775633"
 ---
 # <a name="export-control-policy"></a>出口管制政策
 

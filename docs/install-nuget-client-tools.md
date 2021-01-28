@@ -1,20 +1,20 @@
 ---
 title: 安装 NuGet 客户端工具
 description: 有关安装客户端工具、dotnet 和 nuget 命令行接口 (CLI) 以及 Visual Studio 软件包管理器的指导。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 06/20/2019
 ms.topic: quickstart
-ms.openlocfilehash: 2769f0ef0373b26eedb4bac6242fee0e814310c5
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 0e3938fc1ac748285ba26541a7d4e907c9a64156
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428461"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775894"
 ---
 # <a name="install-nuget-client-tools"></a>安装 NuGet 客户端工具
 
-> **打算安装包？请参阅[安装 NuGet 包的方式](consume-packages/overview-and-workflow.md#ways-to-install-a-nuget-package)**
+> **打算安装包？请参阅 [安装 NuGet 包的方式](consume-packages/overview-and-workflow.md#ways-to-install-a-nuget-package)**
 
 要使用 NuGet，作为软件包使用者或创建者，可以使用命令行接口 (CLI) 工具以及 Visual Studio 中的 NuGet 功能。 本文简要介绍了不同工具的功能，如何安装它们，以及它们[功能可用性](#feature-availability)的相对优势。 若要开始借助 NuGet 来使用包，请参阅[安装和使用包 (dotnet CLI)](quickstart/install-and-use-a-package-using-the-dotnet-cli.md) 以及[安装和使用包 (Visual Studio)](quickstart/install-and-use-a-package-in-visual-studio.md)。 若要开始创建 NuGet 包，请参阅[创建和发布 NET Standard 包 (dotnet CLI)](quickstart/create-and-publish-a-package-using-the-dotnet-cli.md) 以及[创建和发布 NET Standard 包 (Visual Studio)](quickstart/create-and-publish-a-package-using-visual-studio.md)。
 

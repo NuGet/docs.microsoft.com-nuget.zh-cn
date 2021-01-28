@@ -1,17 +1,17 @@
 ---
 title: 适用于 NuGet 包的源和配置文件转换
 description: 详细介绍在安装 NuGet 包时将包转换为源代码和配置 (XML) 文件的功能。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 04/24/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 8e3eade14c70782563ba82894f072f9b3a611923
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 5bd0e409f527fb668008204fb16ad002f4784c46
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237979"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774579"
 ---
 # <a name="transforming-source-code-and-configuration-files"></a>转换源代码和配置文件
 

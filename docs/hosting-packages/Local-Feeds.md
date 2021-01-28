@@ -1,16 +1,16 @@
 ---
 title: 设置本地 NuGet 源
 description: 如何在本地网络上使用文件夹创建 NuGet 包的本地源
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/06/2017
 ms.topic: conceptual
-ms.openlocfilehash: 42a5c30c058a9efb35338c1b484235b6ad111bd0
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 1eb194c9ddaee05281749c7a0420cbaf77044fe3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "68317594"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774034"
 ---
 # <a name="local-feeds"></a>本地源
 
@@ -25,11 +25,13 @@ ms.locfileid: "68317594"
 
 分层版本控制的文件夹树具有以下常规结构：
 
-    \\myserver\packages
-      └─<packageID>
-        └─<version>
-          ├─<packageID>.<version>.nupkg
-          └─<other files>
+```
+\\myserver\packages
+  └─<packageID>
+    └─<version>
+      ├─<packageID>.<version>.nupkg
+      └─<other files>
+```
 
 当使用 [`nuget add`](../reference/cli-reference/cli-ref-add.md) 命令将包复制到源时，NuGet 自动创建此结构：
 

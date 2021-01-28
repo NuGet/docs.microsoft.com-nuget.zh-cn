@@ -1,16 +1,16 @@
 ---
 title: 使用 NuGet.Server 托管 NuGet 源
 description: 如何使用 NuGet.Server 在运行 IIS 的任何服务器上创建和托管 NuGet 包源，从而通过 HTTP 和 OData 提供包。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7a806e6b586c63c701642c9e43865cb077d7999c
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 3a9fb843f071eda72b9469292a7276ad81f8c24d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88623040"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774072"
 ---
 # <a name="nugetserver"></a>NuGet.Server
 

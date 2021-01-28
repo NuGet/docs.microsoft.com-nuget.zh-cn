@@ -1,16 +1,16 @@
 ---
 title: NuGet 包与源代码管理
 description: 介绍有关以下内容的注意事项：如何在版本控制和源代码管理系统中处理 NuGet 包，以及如何使用 Git 和 TFVC 省略包。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9d9ea10ccd32bb65ad0d62b591f5e2cb58ea3427
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 9bae65573ca49c68d07250228c1923890e0f14ac
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "69019980"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775011"
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>在源代码管理系统中省略 NuGet 包
 

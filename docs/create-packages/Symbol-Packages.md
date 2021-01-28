@@ -1,17 +1,17 @@
 ---
 title: 创建旧式符号包 (.symbols.nupkg)
 description: 如何在 Visual Studio 中创建仅包含符号的 NuGet 包以支持调试其他 NuGet 包。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 09/12/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 374e9ccfc01cd06508e76529765db3f849342222
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: d9a96986bf80aa15423d7dcee6ea3fe59255252b
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "77476264"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774543"
 ---
 # <a name="creating-legacy-symbol-packages-symbolsnupkg"></a>创建旧式符号包 (.symbols.nupkg)
 
@@ -46,42 +46,48 @@ nuget pack MyProject.csproj -Symbols
 
 例如，面向 .NET 4.0 和 Silverlight 4 的旧式符号包具有以下布局：
 
-    \lib
-        \net40
-            \MyAssembly.dll
-            \MyAssembly.pdb
-        \sl40
-            \MyAssembly.dll
-            \MyAssembly.pdb
+```
+\lib
+    \net40
+        \MyAssembly.dll
+        \MyAssembly.pdb
+    \sl40
+        \MyAssembly.dll
+        \MyAssembly.pdb
+```
 
 然后，在名为 `src` 的单独的特殊文件夹中放入源文件，该文件夹必须遵循源存储库的相对结构。 这是因为 PDB 包含指向用于编译匹配 DLL 的源文件的绝对路径，在发布过程中需要找到这些路径。 可以去除基路径（通用路径前缀）。例如，假设从以下文件中生成一个库：
 
-    C:\Projects
-        \MyProject
-            \Common
-                \MyClass.cs
-            \Full
-                \Properties
-                    \AssemblyInfo.cs
-                \MyAssembly.csproj (producing \lib\net40\MyAssembly.dll)
-            \Silverlight
-                \Properties
-                    \AssemblyInfo.cs
-                \MySilverlightExtensions.cs
-                \MyAssembly.csproj (producing \lib\sl4\MyAssembly.dll)
-
-除了 `lib` 文件夹之外，旧式符号包需要包含以下布局：
-
-    \src
+```
+C:\Projects
+    \MyProject
         \Common
             \MyClass.cs
         \Full
             \Properties
                 \AssemblyInfo.cs
+            \MyAssembly.csproj (producing \lib\net40\MyAssembly.dll)
         \Silverlight
             \Properties
                 \AssemblyInfo.cs
             \MySilverlightExtensions.cs
+            \MyAssembly.csproj (producing \lib\sl4\MyAssembly.dll)
+```
+
+除了 `lib` 文件夹之外，旧式符号包需要包含以下布局：
+
+```
+\src
+    \Common
+        \MyClass.cs
+    \Full
+        \Properties
+            \AssemblyInfo.cs
+    \Silverlight
+        \Properties
+            \AssemblyInfo.cs
+        \MySilverlightExtensions.cs
+```
 
 ## <a name="referring-to-files-in-the-nuspec"></a>引用 nuspec 中的文件
 

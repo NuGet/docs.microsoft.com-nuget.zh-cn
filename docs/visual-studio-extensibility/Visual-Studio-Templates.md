@@ -1,16 +1,16 @@
 ---
 title: Visual Studio 模板中的 NuGet 包
 description: 在 Visual Studio 项目和项模板中添加 NuGet 包的说明。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/03/2018
 ms.topic: conceptual
-ms.openlocfilehash: 2dfbd793eee05169f051d9c8943bc065945b92da
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: 82a0121bb3144b7f28f677185039c0fe15cc2bf3
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622637"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780082"
 ---
 # <a name="packages-in-visual-studio-templates"></a>Visual Studio 模板中的包
 
@@ -119,7 +119,7 @@ VSIX 本身可用作模板所需包的源：
 1. 在 `.vstemplate` 文件的 `<packages>` 元素中，添加属性 `repository="registry"` 并在 `keyName` 属性中指定注册表项名称。
 
     - 如果已预先解压缩包，请使用 `isPreunzipped="true"` 属性。
-    - (NuGet 3.2 +) 如果希望在包安装结束时强制执行设计时生成，请添加 `forceDesignTimeBuild="true"` 属性。**
+    - (NuGet 3.2 +) 如果希望在包安装结束时强制执行设计时生成，请添加 `forceDesignTimeBuild="true"` 属性。
     - 作为优化，添加 `skipAssemblyReferences="true"`，因为模板本身已包括必要的引用。
 
         ```xml

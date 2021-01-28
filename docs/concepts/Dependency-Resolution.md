@@ -1,16 +1,16 @@
 ---
 title: NuGet 包依赖项解析
 description: 详细说明解析 NuGet 包的依赖项以及在 NuGet 2.x 和 NuGet 3.x+ 上安装依赖项的流程。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 4b95251e4b055523a9533b4125589b2650be932d
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 0ef309d95c6ef5437765c02791da6dab13794678
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237739"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775264"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet 如何解析包依赖项
 

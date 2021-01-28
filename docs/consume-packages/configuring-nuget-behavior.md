@@ -1,16 +1,16 @@
 ---
 title: 常见的 NuGet 配置
 description: NuGet.Config 文件同时以全局方式和基于每个项目的方式控制 NuGet 的行为，并且这些文件可使用 nuget config 命令进行修改。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: e81c380eab3f1a8635e50e62811c7ae463ec3653
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: 35339626b0a20ccfceafa89fef94fb3187013fd7
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699774"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774863"
 ---
 # <a name="common-nuget-configurations"></a>常见的 NuGet 配置
 
@@ -120,14 +120,16 @@ NuGet 在这些文件中找到设置时，设置将按如下方式应用：
 
 假设两个独立的驱动器上具有以下文件夹结构：
 
-    disk_drive_1
-        User
-    disk_drive_2
-       Project1
-         Source
-       Project2
-         Source
-       tmp
+```
+disk_drive_1
+    User
+disk_drive_2
+    Project1
+        Source
+    Project2
+        Source
+    tmp
+```
 
 随后以下位置上将有 4 个具有给定内容的 `NuGet.Config` 文件。 （此示例不包括计算机级文件，但其与用户级文件具有相似行为。）
 

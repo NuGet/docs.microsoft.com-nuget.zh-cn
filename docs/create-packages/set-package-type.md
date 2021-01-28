@@ -1,16 +1,16 @@
 ---
 title: 设置 NuGet 包类型
 description: 介绍包类型以指示包的预计用途。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1d869f616ce0291cf1c0a17b7ff20fc61e6a3bd5
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 990ac580f4031615566d78e359a24eaedaaf3e07
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78230819"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774367"
 ---
 # <a name="set-a-nuget-package-type"></a>设置 NuGet 包类型
 

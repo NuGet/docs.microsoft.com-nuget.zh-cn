@@ -1,16 +1,16 @@
 ---
 title: 适用于 NuGet 的 project.json 文件引用
 description: 在某些项目类型中，project.json 维护项目中使用的 NuGet 包列表。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/27/2017
 ms.topic: reference
-ms.openlocfilehash: 5ecbcd4855de8ea7b6301a5e307779216baf96fc
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 6665f4f3e688cb4a3989216c8c8f1a8655b61ed8
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "69488283"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775196"
 ---
 # <a name="projectjson-reference"></a>project.json 引用
 

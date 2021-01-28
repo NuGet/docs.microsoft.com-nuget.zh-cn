@@ -1,16 +1,16 @@
 ---
 title: 使用 Team Foundation 生成还原 NuGet 包的演练
 description: 演练如何使用 Team Foundation Build（TFS 和 Visual Studio Team Services）还原 NuGet 包。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: a86a58f8afb4b0f1affeddd47d6c5606fb465757
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 8b993106d439dc137fbe040b51fda373539de81a
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "73611005"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774985"
 ---
 # <a name="setting-up-package-restore-with-team-foundation-build"></a>使用 Team Foundation Build 设置包还原
 
@@ -54,26 +54,28 @@ nuget restore path\to\solution.sln
 
 存储库结构如下所示：
 
-    <Project>
-        │   .gitignore
-        │   .tfignore
-        │   build.proj
-        │
-        ├───src
-        │   │   BingSearcher.sln
-        │   │
-        │   └───BingSearcher
-        │       │   App.config
-        │       │   BingSearcher.csproj
-        │       │   packages.config
-        │       │   Program.cs
-        │       │
-        │       └───Properties
-        │               AssemblyInfo.cs
-        │
-        └───tools
-            └───NuGet
-                    nuget.exe
+```
+<Project>
+    │   .gitignore
+    │   .tfignore
+    │   build.proj
+    │
+    ├───src
+    │   │   BingSearcher.sln
+    │   │
+    │   └───BingSearcher
+    │       │   App.config
+    │       │   BingSearcher.csproj
+    │       │   packages.config
+    │       │   Program.cs
+    │       │
+    │       └───Properties
+    │               AssemblyInfo.cs
+    │
+    └───tools
+        └───NuGet
+                nuget.exe
+```
 
 可以看见我们既未签入 `packages` 文件夹，也未签入任何 `.targets` 文件。
 
@@ -94,37 +96,43 @@ nuget restore path\to\solution.sln
 </configuration>
 ```
 
-为了与不希望签入**包**文件夹的版本控制进行通信，我们还为 git (`.gitignore`) 和 TF 版本控制 (`.tfignore`) 添加了忽略文件。 这些文件描述不希望签入的文件模式。
+为了与不希望签入 **包** 文件夹的版本控制进行通信，我们还为 git (`.gitignore`) 和 TF 版本控制 (`.tfignore`) 添加了忽略文件。 这些文件描述不希望签入的文件模式。
 
 `.gitignore` 文件如下所示：
 
-    syntax: glob
-    *.user
-    *.suo
-    bin
-    obj
-    packages
-    *.nupkg
-    project.lock.json
-    project.assets.json
+```
+syntax: glob
+*.user
+*.suo
+bin
+obj
+packages
+*.nupkg
+project.lock.json
+project.assets.json
+```
 
 `.gitignore` 文件[非常强大](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html)。 例如，如果需要通常情况下不签入 `packages` 文件夹的内容，但需要遵循之前有关签入 `.targets` 文件的指南，则可以替换为以下规则：
 
-    packages
-    !packages/**/*.targets
+```
+packages
+!packages/**/*.targets
+```
 
 这将排除所有 `packages` 文件夹，但会重新包含所有包含的 `.targets` 文件。 顺便说一下，可以[在此](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore)找到专门针对 Visual Studio 开发人员需求定制的 `.gitignore` 文件模板。
 
 TF 版本控制通过 [.tfignore](/vsts/tfvc/add-files-server#customize-which-files-are-ignored-by-version-control) 文件支持相似的机制。 语法几乎是相同的：
 
-    *.user
-    *.suo
-    bin
-    obj
-    packages
-    *.nupkg
-    project.lock.json
-    project.assets.json
+```
+*.user
+*.suo
+bin
+obj
+packages
+*.nupkg
+project.lock.json
+project.assets.json
+```
 
 ## <a name="buildproj"></a>build.proj
 
