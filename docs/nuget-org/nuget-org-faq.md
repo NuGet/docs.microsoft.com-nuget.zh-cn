@@ -5,12 +5,12 @@ author: shishirx34
 ms.author: shishirh
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 7076378b53c439eef51a243fa6efcfb01b8cfa73
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: aa845464dbe939260d5fca3e4b89bd846df471a7
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237901"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775933"
 ---
 # <a name="nugetorg-frequently-asked-questions"></a>NuGet.org 常见问题解答
 
@@ -127,7 +127,7 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 1. 转到[登录页面](https://www.nuget.org/users/account/LogOn)，单击“Microsoft 登录”，然后使用当前关联的 Microsoft 帐户（即 `account1@outlook.com`）登录   。
 1. 登录后，请转到[帐户设置](https://www.nuget.org/account)页面。
 1. 展开“登录帐户”部分  。 单击“更改帐户”按钮  。
-1. 系统会重定向至 Microsoft 登录页面。 请使用要更改为关联帐户的帐户登录，即 `account2@outlook.com`。 **注意** ：登录过程中，可能需要单击“注销并使用另一个帐户登录”，才能使用其他 Microsoft 帐户登录  。
+1. 系统会重定向至 Microsoft 登录页面。 请使用要更改为关联帐户的帐户登录，即 `account2@outlook.com`。**注意**：登录过程中，可能需要单击“注销并使用另一个帐户登录”，才能使用其他 Microsoft 帐户登录  。
 1. 如果看到如下类似错误，请查看 [Microsoft 帐户已链接到另一个 NuGet.org 帐户](#microsoft-account-is-linked-with-another-nugetorg-account)，了解详细信息。
     >_无法将此 Microsoft 帐户更新为“account2 <account2@outlook.com>”。原因可能是该帐户已链接到另一个 NuGet 帐户。有关详细信息，请联系支持人员。_
 
@@ -188,11 +188,11 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 ### <a name="unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account"></a>无法使用 Microsoft 登录，如何恢复 NuGet.org 帐户？
 
 如果尝试使用[登录帮助](#which-microsoft-account-is-linked-to-my-nugetorg-account) , 但无权访问与 NuGet.org 帐户关联的 Microsoft 帐户，请按照下面的步骤将新的 Microsoft 帐户链接到你的 NuGet.org 帐户。
-1. **要求** ：有权访问某 Microsoft 帐户，此帐户并未关联到任何现有 NuGet.org 帐户。 如果没有帐户，请[创建](https://signup.live.com)帐户。
+1. **要求**：有权访问某 Microsoft 帐户，此帐户并未关联到任何现有 NuGet.org 帐户。 如果没有帐户，请[创建](https://signup.live.com)帐户。
 2. 如果忘记了 NuGet.org 帐户的用户名和密码，请按照[恢复密码登录的步骤](#how-to-recover-nugetorg-password-login)操作。
 3. 通过用户名/密码登录方法[登录 NuGet.org](https://www.nuget.org/users/account/LogOnNuGetAccount)。
 4. 登录后会弹出如下所示的对话框。 这是密码终止对话框。
-5. **注意** ：请忽略有关使用指定 Microsoft 帐户登录的说明。 现在可以将你的 NuGet.org 帐户链接到任何其他 Microsoft 登录名。
+5. **注意**：请忽略有关使用指定 Microsoft 帐户登录的说明。 现在可以将你的 NuGet.org 帐户链接到任何其他 Microsoft 登录名。
 6. 单击“Microsoft 登录”按钮，然后按步骤 1 所述，使用具有访问权限的 Microsoft 帐户登录  。
 7. 现在，你的帐户将链接到新 Microsoft 帐户，你可以使用它来登录 NuGet.org。
 
@@ -203,7 +203,7 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 如要将帐户转换为组织帐户，且此帐户已与 Microsoft 帐户登录关联，请按照 [nuget org 上的组织](organizations-on-nuget-org.md)文档中的步骤操作。
 
 但是，如果你的 NuGet.org 帐户未关联到 Microsoft 帐户，则可以按照以下步骤将此帐户转换为组织。
-1. **要求** ：需要首先在 NuGet.org 上创建一个个人帐户，以用作组织帐户的管理员。 如果没有，请[创建新的 NuGet.org 帐户](individual-accounts.md)
+1. **要求**：需要首先在 NuGet.org 上创建一个个人帐户，以用作组织帐户的管理员。 如果没有，请[创建新的 NuGet.org 帐户](individual-accounts.md)
 2. 如果使用密码登录，请按照[此处所述的步骤](#how-to-recover-nugetorg-password-login)为你的 NuGet.org 帐户恢复密码登录，否则请跳过此步骤。
 3. 通过用户名/密码登录方法[登录 NuGet.org](https://www.nuget.org/users/account/LogOnNuGetAccount)。
 4. 登录后会弹出如下所示的对话框。 这是密码终止对话框。 
@@ -220,9 +220,7 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 
 使用电子邮件帐户域 (@yourdomain.com) 登录过程中如果出现类似如下的错误，请参阅以下步骤恢复 NuGet.org 帐户。
 
-<p align="center">
-    <img src="media/unmanaged-aad-tenant.png" />
-</p>
+![登录 AAD 帐户时出错](media/unmanaged-aad-tenant.png)
 
 **登录过程中出现的“非托管”状态是什么？为什么会出现这种情况？** 
 
@@ -238,13 +236,13 @@ NuGet 使用 HTTP 下载包，因此较大包比较小包有更高的安装失�
 
 **我不想使用这种方法，还有什么其他方法可以恢复帐户？**
 
-可以[创建](https://www.microsoft.com/account)一个新的 Microsoft 帐户（其电子邮件未与 @yourdomain.com 关联）  。 请按照[恢复 NuGet.org 帐户](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account)部分所述的步骤操作。
+可以[创建](https://www.microsoft.com/account)一个新的 Microsoft 帐户（其电子邮件未与 @yourdomain.com 关联）。 请按照[恢复 NuGet.org 帐户](#unable-to-use-microsoft-login-how-do-i-recover-my-nugetorg-account)部分所述的步骤操作。
 
 ### <a name="how-do-i-change-my-nugetorg-account-username"></a>如何更改 NuGet.org 帐户用户名？
 
 无法更改。 根据策略，我们不允许更改用户名。 此外，对于已[根据包所有者定义包信任策略](../consume-packages/installing-signed-packages.md#trust-package-owners)的用户，这是一项重大更改。 更改用户名的唯一方式是创建采用所需用户名的新帐户。 创建新帐户之前，我们建议删除现有帐户，否则便可能无法重复使用已注册的 Microsoft 帐户。
 > [!Important]
-> 删除用户仍会保留 `username`  。 你将无法重复使用相同的用户名，即使更改大小写也不例外  。 例如，创建用户名为 `mycoolname` 的用户然后删除此用户后，要将此用户名改为 `MyCoolName`（大小写更改）是不可实现的。
+> 删除用户仍会保留 `username`。 你将无法重复使用相同的用户名，即使更改大小写也不例外。 例如，创建用户名为 `mycoolname` 的用户然后删除此用户后，要将此用户名改为 `MyCoolName`（大小写更改）是不可实现的。
 
 按照删除 [NuGet.org 帐户](#how-to-delete-my-nugetorg-account)部分中所述的步骤使用正确用户名[注册新用户](individual-accounts.md)。
 

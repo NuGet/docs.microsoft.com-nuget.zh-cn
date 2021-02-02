@@ -1,16 +1,16 @@
 ---
 title: NuGet 包的多目标
 description: 介绍从一个 NuGet 包中以多个 .NET Framework 版本为目标的各种方法。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 7c0da38ab4059b89c9693ecbece2bc8ed1a775ec
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: e919b11670589900d9e588db33fd68b8df592ac2
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237940"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774562"
 ---
 # <a name="support-multiple-net-versions"></a>支持多个 .NET 版本
 
@@ -24,7 +24,9 @@ ms.locfileid: "93237940"
 
 生成仅包含一个库版本或面向多个框架的包时，始终根据以下约定使用区分大小写的不同框架名称在 `lib` 下创建子文件夹：
 
-    lib\{framework name}[{version}]
+```
+lib\{framework name}[{version}]
+```
 
 有关支持的名称的完整列表，请参阅[目标框架引用](../reference/target-frameworks.md#supported-frameworks)。
 
@@ -32,15 +34,17 @@ ms.locfileid: "93237940"
 
 例如，以下文件夹结构支持特定于框架的程序集的四种版本：
 
-    \lib
-        \net46
-            \MyAssembly.dll
-        \net461
-            \MyAssembly.dll
-        \uap
-            \MyAssembly.dll
-        \netcore
-            \MyAssembly.dll
+```
+\lib
+    \net46
+        \MyAssembly.dll
+    \net461
+        \MyAssembly.dll
+    \uap
+        \MyAssembly.dll
+    \netcore
+        \MyAssembly.dll
+```
 
 若要在生成包时轻松包括所有这些文件，请在 `.nuspec` 的 `<files>` 部分中使用递归 `**` 通配符：
 
@@ -54,16 +58,18 @@ ms.locfileid: "93237940"
 
 如果具有特定于体系结构的程序集，即面向 ARM、x86 和 x64 的单独程序集，必须将它们放置在名为 `{platform}-{architecture}\lib\{framework}` 或 `{platform}-{architecture}\native` 的子文件夹内名为 `runtimes` 的文件夹中。 例如，以下文件夹结构可以容纳面向 Windows 10 的本机和托管 DLL 以及 `uap10.0` 框架：
 
-    \runtimes
-        \win10-arm
-            \native
-            \lib\uap10.0
-        \win10-x86
-            \native
-            \lib\uap10.0
-        \win10-x64
-            \native
-            \lib\uap10.0
+```
+\runtimes
+    \win10-arm
+        \native
+        \lib\uap10.0
+    \win10-x86
+        \native
+        \lib\uap10.0
+    \win10-x64
+        \native
+        \lib\uap10.0
+```
 
 这些程序集将仅在运行时可用，因此，如果你也想要提供相应的编译时程序集，则在 `/ref/{tfm}` 文件夹中设置 `AnyCPU` 程序集。 
 
@@ -81,11 +87,13 @@ NuGet 在安装具有多个程序集版本的包时，会尝试将程序集的�
 
 例如，假设包中具有以下文件夹结构：
 
-    \lib
-        \net45
-            \MyAssembly.dll
-        \net461
-            \MyAssembly.dll
+```
+\lib
+    \net45
+        \MyAssembly.dll
+    \net461
+        \MyAssembly.dll
+```
 
 当在面向 .NET Framework 4.6 的项目中安装此包时，NuGet 将在 `net45` 文件夹中安装程序集，因为它是小于或等于 4.6 的最高可用版本。
 
@@ -97,12 +105,14 @@ NuGet 在安装具有多个程序集版本的包时，会尝试将程序集的�
 
 NuGet 仅从包中的单个库文件夹中复制程序集。 例如，假设包具有以下文件夹结构：
 
-    \lib
-        \net40
-            \MyAssembly.dll (v1.0)
-            \MyAssembly.Core.dll (v1.0)
-        \net45
-            \MyAssembly.dll (v2.0)
+```
+\lib
+    \net40
+        \MyAssembly.dll (v1.0)
+        \MyAssembly.Core.dll (v1.0)
+    \net45
+        \MyAssembly.dll (v2.0)
+```
 
 当在面向 .NET Framework 4.5 的项目中安装包时，将仅安装 `MyAssembly.dll` (v2.0) 程序集。 不会安装 `MyAssembly.Core.dll` (v1.0)，因为它未在 `net45` 文件夹中列出。 NuGet 执行此操作的原因是 `MyAssembly.Core.dll` 可能已合并到 `MyAssembly.dll` 的 2.0 版本中。
 
@@ -112,7 +122,7 @@ NuGet 仅从包中的单个库文件夹中复制程序集。 例如，假设包�
 
 NuGet 还通过向文件夹末尾追加短划线和配置文件名称，支持以特定的框架配置文件为目标。
 
-    lib\{framework name}-{profile}
+lib\{framework name}-{profile}
 
 以下是支持的配置文件：
 
@@ -123,13 +133,13 @@ NuGet 还通过向文件夹末尾追加短划线和配置文件名称，支持�
 
 ## <a name="declaring-dependencies-advanced"></a>声明依赖项（高级）
 
-打程序包项目文件时，NuGet 尝试从项目自动生成依赖项。 此部分中的信息介绍了如何使用 .nuspec 文件声明依赖项，通常仅高级方案需要使用此信息。 
+打程序包项目文件时，NuGet 尝试从项目自动生成依赖项。 此部分中的信息介绍了如何使用 .nuspec 文件声明依赖项，通常仅高级方案需要使用此信息。
 
 *（版本 2.0+）* 可以使用 `<dependencies>` 元素中的 `<group>` 元素在目标项目的目标框架对应的 .nuspec 中声明程序包依赖项。 有关详细信息，请参阅[依赖项元素](../reference/nuspec.md#dependencies-element)。
 
 每个组都有一个名为 `targetFramework` 的特性，并包含零个或多个 `<dependency>` 元素。 当目标框架与项目的框架配置文件兼容时，将会一起安装这些依赖项。 有关确切的框架标识符，请参阅[目标框架](../reference/target-frameworks.md)。
 
-建议每个目标框架名字对象 (TFM) 将一个组用于 lib/ 和 ref/ 文件夹中的文件。  
+建议每个目标框架名字对象 (TFM) 将一个组用于 lib/ 和 ref/ 文件夹中的文件。
 
 以下示例显示了 `<group>` 元素的不同变体：
 
@@ -162,22 +172,24 @@ NuGet 还通过向文件夹末尾追加短划线和配置文件名称，支持�
 
 对于 `packages.config`，可以使用 `content` 和 `tools` 文件夹中的相同文件夹约定，通过目标框架对内容文件和 PowerShell 脚本进行分组。 例如：
 
-    \content
-        \net46
-            \MyContent.txt
-        \net461
-            \MyContent461.txt
-        \uap
-            \MyUWPContent.html
-        \netcore
-    \tools
-        init.ps1
-        \net46
-            install.ps1
-            uninstall.ps1
-        \uap
-            install.ps1
-            uninstall.ps1
+```
+\content
+    \net46
+        \MyContent.txt
+    \net461
+        \MyContent461.txt
+    \uap
+        \MyUWPContent.html
+    \netcore
+\tools
+    init.ps1
+    \net46
+        install.ps1
+        uninstall.ps1
+    \uap
+        install.ps1
+        uninstall.ps1
+```
 
 如果框架文件夹保留为空，NuGet 不会添加程序集引用或内容文件，也不会运行该框架的 PowerShell 脚本。
 

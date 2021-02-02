@@ -1,20 +1,20 @@
 ---
 title: 在 Visual Studio 中安装和使用 NuGet 包
 description: 有关如何在 Visual Studio 项目中安装并使用 NuGet 包的演练教程。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/24/2018
 ms.topic: quickstart
-ms.openlocfilehash: 10bc34653d294cf70b5c91ce79a79cf6532fba1b
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 55f6a64d90ce8ca628d1ac5c68f8133872a214e0
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80147482"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775530"
 ---
 # <a name="quickstart-install-and-use-a-package-in-visual-studio-windows-only"></a>快速入门：在 Visual Studio 中安装和使用包（仅适用于 Windows）
 
-NuGet 包包含其他开发人员提供的在项目中使用的可重用代码。 请参阅[什么是 NuGet？](../What-is-NuGet.md)，了解背景信息。 使用 NuGet 包管理器、[包管理器控制台](../consume-packages/install-use-packages-powershell)或 [dotnet CLI](install-and-use-a-package-using-the-dotnet-cli.md) 在 Visual Studio 项目中安装包。 本文介绍使用热门的 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) 包和 Windows Presentation Foundation (WPF) 项目的过程。 相同的过程适用于任何其他 .NET 或 .NET Core 项目。
+NuGet 包包含其他开发人员提供的在项目中使用的可重用代码。 请参阅[什么是 NuGet？](../What-is-NuGet.md)，了解背景信息。 使用 NuGet 包管理器、[包管理器控制台](../consume-packages/install-use-packages-powershell.md)或 [dotnet CLI](install-and-use-a-package-using-the-dotnet-cli.md) 在 Visual Studio 项目中安装包。 本文介绍使用热门的 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) 包和 Windows Presentation Foundation (WPF) 项目的过程。 相同的过程适用于任何其他 .NET 或 .NET Core 项目。
 
 安装完成后，请引用具有 `using <namespace>` 的代码中的包，其中 \<namespace\> 特定于正在使用的包。 建立引用后，可通过相应的 API 调用包。
 
@@ -67,7 +67,7 @@ Visual Studio 创建项目，该项目将在解决方案资源管理器中打开
 
 1. 控制台打开后，检查  “默认项目”下拉列表中是否显示在程序包中要安装的项目。 如果在解决方案中有一个项目，则它已被选中。
 
-    ![定位 Newtonsoft.Json 包](media/QS_Use-08-Console1.png)
+    ![为包选择项目](media/QS_Use-08-Console1.png)
 
 1. 输入命令 `Install-Package Newtonsoft.Json`（请参阅 [Install-Package](../reference/ps-reference/ps-ref-install-package.md)）。 控制台窗口会显示该命令的输出。 错误通常指示程序包与项目的目标框架不兼容。
 

@@ -1,40 +1,40 @@
 ---
 title: NuGet 及其功能介绍
 description: 全面介绍 NuGet 及其功能
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: overview
-ms.openlocfilehash: c326cf184ff20fb798a5770f0a4cf9bf42bed3f5
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 446a1ad4d07d0338a996ad93823ac20386620c0d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78230689"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98780095"
 ---
 # <a name="an-introduction-to-nuget"></a>NuGet 简介
 
 适用于任何现代开发平台的基本工具可充当一种机制，通过这种机制，开发人员可以创建、共享和使用有用的代码。 通常，此类代码捆绑到“包”中，其中包含编译的代码（如 DLL）以及在使用这些包的项目中所需的其他内容。
 
-对于 .NET（包括 .NET Core），Microsoft 支持的共享代码的机制为 NuGet  ，其定义如何创建、托管和使用面向 .NET 的包，并针对每个角色[提供适用工具](install-nuget-client-tools.md)。
+对于 .NET（包括 .NET Core），共享代码的 Microsoft 支持的机制则为 NuGet  ，其定义如何创建、托管和使用面向 .NET 的包，并针对每个角色[提供适用工具](install-nuget-client-tools.md)。
 
-简单来说，NuGet 包是具有 `.nupkg` 扩展的单个 ZIP 文件，此扩展包含编译代码 (Dll)、与该代码相关的其他文件以及描述性清单（包含包版本号等信息）。 使用代码的开发人员共享创建包，并将其发布到公有或私有主机。 包使用者从适合的主机获取这些包，将它们添加到项目，然后在其项目代码中调用包的功能。 随后，NuGet 自身负责处理所有中间详细信息。
+简单来说，NuGet 包是具有 `.nupkg` 扩展的单个 ZIP 文件，此扩展包含编译代码 (Dll)、与该代码相关的其他文件以及描述性清单（包含包版本号等信息）。 使用代码的开发人员共享创建包，并将其发布到公用或专用主机。 包使用者从适合的主机获取这些包，将它们添加到项目，然后在其项目代码中调用包的功能。 随后，NuGet 自身负责处理所有中间详细信息。
 
-由于 NuGet 支持公用 nuget.org 主机旁边的专用主机，因此，可以使用 NuGet 包来共享组织或工作组专用的代码。 此外，你还可以使用 NuGet 包作为一种便捷的方式，将自己的代码用于除你自己项目之外的任何其他项目。 简而言之，NuGet 包是可共享的代码单元，但也不意味着需要任何特定的共享方式。
+由于 NuGet 支持公用 nuget.org 主机旁边的专用主机，因此，可以使用 NuGet 包来共享组织或工作组专用的代码。 此外，你还可以使用 NuGet 包作为一种便捷的方式，将自己的代码用于除你自己项目之外的任何其他项目。 简而言之，NuGet 包是可共享的代码单元，但不需要暗示任何特定的共享方式。
 
-## <a name="the-flow-of-packages-between-creators-hosts-and-consumers"></a>创作者、主机和使用者之间的关系
+## <a name="the-flow-of-packages-between-creators-hosts-and-consumers"></a>包在创建者、主机和使用者之间的流
 
-作为公有主机角色时，NuGet 自身负责在 [nuget.org](https://www.nuget.org) 中维护包含 100,000 多个唯一包的中央存储库。这些包每天供数百万的 .NET/.Net Core 开发人员使用。 NuGet 还支持在云中（如在 Azure DevOps 上）、在私有网络中、甚至说还可以直接在本地文件系统以私密方式托管包。 通过这样做，这些程序包仅对那些有权访问主机的开发人员，使你能够将程序包提供给特定的一组用户。 [托管自己的 NuGet 源](hosting-packages/overview.md)中提供了对相关选项的说明。 通过配置选项，你还可以精确控制任何特定计算机可以访问的主机，从而确保程序包是从特定源（而不是像 nuget.org 这样的公有存储库）获取。
+作为公用主机角色时，NuGet 自身负责在 [nuget.org](https://www.nuget.org) 中维护包含 100,000 多个唯一包的中央存储库。这些包每天供数以百万的 .NET/.Net Core 开发人员使用。 NuGet 还支持在云中（如在 Azure DevOps 上）、在私有网络中或者甚至直接在本地文件系统以私密方式托管包。 通过这样做，这些程序包仅对那些有权访问主机的开发人员可用，使你能够将程序包提供给特定的一组用户。 [托管自己的 NuGet 源](hosting-packages/overview.md)中提供了对相关选项的说明。 通过配置选项，你还可以精确控制任何给定计算机可以访问的主机，从而确保程序包是从特定源（而不是像 nuget.org 这样的公用存储库）获取的。
 
-无论主机的本质是什么，它都可作为包创建者和包使用者之间的连接点   。 创建者生成有用的 NuGet 包并将其发布到主机。 然后，使用者可以在可访问的主机上搜索到有用的且兼容的包，下载包并将其包含在项目中。 在项目中安装包后，包的 API 将可用到该项目的代码中。
+无论主机的本质是什么，它都可作为包创建者和包使用者之间的连接点   。 创建者生成有用的 NuGet 包并将其发布到主机。 然后，使用者可以在可访问的主机上搜索有用且兼容的包，下载包并将其包含在项目中。 在项目中安装包后，包的 API 将可用于其余项目代码。
 
 ![包创建者、包主机和包使用者之间的关系](media/nuget-roles.png)
 
-## <a name="package-targeting-compatibility"></a>针对包兼容性
+## <a name="package-targeting-compatibility"></a>包定向兼容性
 
-“兼容”包指：此包所包含的程序集应至少针对与使用项目的目标框架兼容的一个目标 .NET Framework 而生成。 与 UWP 控件一样，开发人员可以创建特定于一个框架的程序包，也可以支持多个目标。 为了最大限度地利用程序包的兼容性，开发人员的目标是所有 .NET 和 .NET Core 项目都可以使用 [.NET Standard](/dotnet/standard/net-standard)。 对于创建者和使用者而言，这是最有效的方式，因为单个包（通常包含单个程序集）适用于所有使用项目。
+“兼容”包指：此包所包含的程序集应至少针对与使用项目的目标框架兼容的一个目标 .NET Framework 而生成。 与 UWP 控件一样，开发人员可以创建特定于一个框架的程序包，也可以支持更广泛的目标。 为了最大限度地利用程序包的兼容性，开发人员的目标是所有 .NET 和 .NET Core 项目都可以使用的 [.NET Standard](/dotnet/standard/net-standard)。 对于创建者和使用者而言，这是最有效的方式，因为单个包（通常包含单个程序集）适用于所有使用项目。
 
-另一方面，需要 .NET Standard 之外的 API 的程序包开发人员会为他们希望支持的不同目标框架创建单独的程序集，并将所有这些程序集包含在同一个程序包中（称为“多目标”）。 使用者安装此类包时，NuGet 将仅提取项目需要的程序集。 这能将包在该项目生成的最终应用程序或者程序集中的占用量降到最低。 当然，多目标包对创建者来说更难维护。
+另一方面，需要 .NET Standard 之外的 API 的程序包开发人员会为他们希望支持的不同目标框架创建单独的程序集，并将所有这些程序集包含在同一个程序包中（称为“多目标”）。 使用者安装此类包时，NuGet 将仅提取项目需要的程序集。 这能将包在该项目生成的最终应用程序和/或程序集中的占用量降到最低。 当然，多目标包对创建者来说更难维护。
 
 > [!Note]
 > 目标 .NET Standard 取代了以前使用各种可移植类库 (PCL) 目标的方法。 因此，此文档着重于为 .NET Standard 创建程序包。
@@ -76,7 +76,7 @@ ms.locfileid: "78230689"
 
 ![NuGet 引用列表在包安装时创建，可用于在其他位置还原包](media/nuget-restore.png)
 
-只需引用列表，随后NuGet即可随时从公有或私有主机重新安装&mdash;即“还原”  &mdash;所有这些包。 将项目提交到源代码管理存储库或将其以其他方式进行共享时，只需包含引用列表，不需要包含任何包二进制文件（请参阅[包和源代码管理](consume-packages/packages-and-source-control.md)）。
+只需引用列表，NuGet 随后即可随时从公共和/或私有主机重新安装&mdash;即“还原”  &mdash;所有这些包。 将项目提交到源代码管理存储库或将其以其他方式进行共享时，只需包含引用列表，不需要包含任何包二进制文件（请参阅[包和源代码管理](consume-packages/packages-and-source-control.md)）。
 
 接收项目的计算机（如获得项目副本并将其作为自动部署系统的一部分的生成服务器）仅会在需要时要求 NuGet 还原依赖项。 Azure DevOps 等生成系统会出于此确切目的提供“NuGet 还原”步骤。 同样，当开发人员获取项目副本（如克隆存储库时），他们可以调用 `nuget restore`(NuGet CLI)、`dotnet restore`(dotnet CLI) 或 `Install-Package`（程序包管理器控制台）类似的命令，以获得所有必要的程序包。 对于 Visual Studio 来说，它将在生成项目时自动还原包（前提是启用了自动还原，如[包还原](consume-packages/package-restore.md)中所述）。
 
@@ -86,7 +86,7 @@ ms.locfileid: "78230689"
 
 - [`packages.config`](reference/packages-config.md)：(NuGet 1.0+) 一种 XML 文件，用于维护项目中所有依赖项的简单列表，包括其他已安装包的依赖项  。 已安装或已还原的包存储在 `packages` 文件夹中。
 
-任何特定项目中所用的包管理格式取决于项目类型以及 NuGet（或 Visual Studio）的可用版本。 若要确认当前使用的格式，只需在安装第一个包后在项目根目录中查找 `packages.config`。 如果没有该文件，请直接在项目文件中查找 \<PackageReference\> 元素。
+任何特定项目中所用的包管理格式取决于项目类型以及 NuGet（和/或 Visual Studio）的可用版本。 若要确认当前使用的格式，只需在安装第一个包后在项目根目录中查找 `packages.config`。 如果没有该文件，请直接在项目文件中查找 \<PackageReference\> 元素。
 
 当进行选择时，我们建议使用 PackageReference。 出于与旧版兼容目的对 `packages.config` 进行维护，将不再主动对其进行开发。
 

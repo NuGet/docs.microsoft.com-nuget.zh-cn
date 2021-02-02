@@ -1,18 +1,18 @@
 ---
 title: 在 Visual Studio 中使用控制台安装和管理 NuGet 包
 description: 有关在 Visual Studio 中使用 NuGet 包管理器控制台以处理包的说明。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/08/2019
 ms.topic: conceptual
 f1_keywords:
 - vs.nuget.packagemanager.console
-ms.openlocfilehash: 31fa51bc017eaaf9306d5f267e5d4b0d7a15ec9c
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: 119bf32426e5cbc179c3713e60688c691e133c5d
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699830"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774903"
 ---
 # <a name="install-and-manage-packages-with-the-package-manager-console-in-visual-studio-powershell"></a>在 Visual Studio 中使用包管理器控制台安装和管理包 (PowerShell)
 
@@ -162,7 +162,7 @@ Visual Studio Code 中不包含包管理器控制台。
 
 通过 PowerShell 配置文件，可以在每次使用 PowerShell 时使用常用命令。 NuGet 支持通常位于以下位置的 NuGet 特定配置文件：
 
-    %UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
+%UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
 
 要查找配置文件，请在控制台中键入 `$profile`：
 

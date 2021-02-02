@@ -1,16 +1,16 @@
 ---
-title: 创建适用于通用 Windows 平台的 NuGet 包
+title: 创建适用于 UWP 平台的 NuGet 包 (C#)
 description: 从头到尾演练如何使用 C# 语言通过适用于通用 Windows 平台的 Windows 运行时组件创建 NuGet 包。
 author: rrelyea
 ms.author: rrelyea
 ms.date: 02/28/2020
 ms.topic: tutorial
-ms.openlocfilehash: 6f8037f439d627af158b6d5b7746a633b053e514
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 22df2cd6dc374ba265c79a019747191e797b774c
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93238005"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774292"
 ---
 # <a name="create-uwp-packages-c"></a>创建 UWP 包 (C#)
 

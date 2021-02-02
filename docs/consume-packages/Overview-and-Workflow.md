@@ -1,16 +1,16 @@
 ---
 title: 使用 NuGet 包的概述和工作流
 description: 概述在项目中使用 NuGet 包的流程，其中提供该流程其他特定部分的链接。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: ddd1d163e18ed4ce1e7cbf41ed152acc40c1c423
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: 5f1856940a988e0585c29ccfd581d823e4f69921
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428515"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98775071"
 ---
 # <a name="package-consumption-workflow"></a>包使用工作流
 

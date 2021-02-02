@@ -1,16 +1,16 @@
 ---
 title: 项目文件中 NuGet 包的多目标
-description: 介绍从一个 NuGet 包中以多个 .NET Framework 版本为目标的各种方法。
-author: karann-msft
-ms.author: karann
+description: 介绍从项目文件的一个 NuGet 包中以多个 .NET Framework 版本为目标的各种方法。
+author: JonDouglas
+ms.author: jodou
 ms.date: 07/15/2019
 ms.topic: conceptual
-ms.openlocfilehash: 1d23759433efb405fa5f0035049befced2c43d6b
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: a05d053340bb2fe795991dfa5a2b95d8625dfd44
+ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "72380679"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98774376"
 ---
 # <a name="support-multiple-net-framework-versions-in-your-project-file"></a>支持项目文件中的多个 .NET Framework 版本
 
