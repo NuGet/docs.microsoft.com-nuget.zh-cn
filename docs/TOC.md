@@ -35,9 +35,10 @@
 ## [创建包 (dotnet CLI)](create-packages/creating-a-package-dotnet-cli.md)
 ## [创建包 (nuget.exe CLI)](create-packages/creating-a-package.md)
 ## [创建包 (MSBuild)](create-packages/creating-a-package-msbuild.md)
-## [支持项目文件中包含多个目标框架](create-packages/multiple-target-frameworks-project-file.md)
+## [包创作最佳做法](create-packages/Package-authoring-best-practices.md)
 ## [构建预发行包](create-packages/prerelease-packages.md)
 ## [创建符号包](create-packages/symbol-packages-snupkg.md)
+## [支持项目文件中包含多个目标框架](create-packages/multiple-target-frameworks-project-file.md)
 ## 高级任务
 ### [支持多个目标框架](create-packages/supporting-multiple-target-frameworks.md)
 ### [修改源代码和配置文件](create-packages/source-and-config-file-transformations.md)
@@ -68,6 +69,7 @@
 ## [包安装过程](concepts/package-installation-process.md)
 ## [包版本控制](concepts/package-versioning.md)
 ## [依赖项解析](concepts/dependency-resolution.md)
+## [关于安全软件供应链的最佳做法](concepts/Security-Best-Practices.md)
 # 参考
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config 文件](reference/nuget-config-file.md)
