@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 09/07/2019
 ms.topic: reference
 ms.reviewer: karann
-ms.openlocfilehash: af9969df33c6bf7a62709e6e3535b8b886376e3e
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 428fd3d7b324f6eb825b17e4a87a662fbd84a2f0
+ms.sourcegitcommit: af059dc776cfdcbad20baab2919b5d6dc1e9022d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775920"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99990107"
 ---
 # <a name="package-id-prefix-reservation"></a>包 ID 前缀预留
 
@@ -31,9 +31,9 @@ ms.locfileid: "98775920"
 
 1. 每当包提交到 ID 与保留的 ID 前缀匹配的 [nuget.org](https://www.nuget.org/) 时，都会拒绝该包，除非它来自已保留 ID 前缀的所有者。
 
-1. 任何与保留 ID 前缀匹配并来自已保留 ID 前缀的所有者的包将在 Visual Studio 2017 15.4 或更高版本中和在 [nuget.org](https://www.nuget.org/) 上具有视觉提示，指示该包位于保留 ID 前缀下。 提交的新包和所有者名下的现有包都是如此。 **注意：** 仅当选择单个订阅源作为包来源时，Visual Studio 中才会出现标志。
+1. 任何与保留 ID 前缀匹配并来自已保留 ID 前缀的所有者的包将在 Visual Studio 2017 15.4 或更高版本中和在 [nuget.org](https://www.nuget.org/) 上具有视觉提示，指示该包位于保留 ID 前缀下。 提交的新包和所有者名下的现有包都是如此。 请注意：仅当选择单个源作为包来源时，Visual Studio 中才会出现标志。
 
-1. 所有先前存在的包如果与保留 ID 前缀匹配，但不属于保留前缀所有者，则将保持不变（它们依然会被列出，但没有视觉提示）  。 此外，这些包的所有者仍然可以向包提交新版本。
+1. 所有先前存在的包如果与保留 ID 前缀匹配，但不属于保留前缀所有者，则将保持不变（它们依然会被列出，但没有视觉提示）。 此外，这些包的所有者仍然可以向包提交新版本。
 
 这些更改基于以下条件，并附加了一些限制：
 
@@ -41,7 +41,7 @@ ms.locfileid: "98775920"
 
 - 如果一个包有多个所有者，其中一个或多个所有者具有保留前缀，而一个或多个所有者没有保留前缀，那么只有具有保留前缀的所有者才能移除具有保留前缀的其他所有者。 没有保留前缀的所有者无法移除保留了前缀的所有者。 他们仍然可以移除其他没有保留前缀的所有者。
 
-- 一旦包具有视觉提示，它应该始终具有视觉提示（确保至少有一个具有保留前缀的所有者始终保持所有者身份） 
+- 一旦包具有视觉提示，它应该始终具有视觉提示（确保至少有一个具有保留前缀的所有者始终保持所有者身份）
 
 ### <a name="advanced-prefix-reservation-scenarios"></a>高级前缀预留方案
 
@@ -49,7 +49,7 @@ ms.locfileid: "98775920"
 
 - 在前缀预留期间，所有者可以请求将前缀子集（或前缀）委托给其他所有者。 例如，如果“[Microsoft](https://www.nuget.org/profiles/microsoft)”具有“Microsoft.\*”，但“[aspnet](https://www.nuget.org/profiles/aspnet)”希望保留“Microsoft.AspNet.\*”，则“[Microsoft](https://www.nuget.org/profiles/microsoft)”可以选择将“Microsoft.AspNet.\*”委托给 [aspnet](https://www.nuget.org/profiles/aspnet) 帐户。
 
-- 在前缀预留期间，所有者可以选择设置公用前缀。 这仍将为他们提供视觉提示，显示包源自保留的前缀，但它以后不会对任何所有者的前缀阻止提交包  。 这对于有许多贡献者的开源项目很有用，顶级或核心贡献者可以保留前缀，但它仍然可以向所有贡献者开放。 
+- 在前缀预留期间，所有者可以选择设置公用前缀。 这仍将为他们提供视觉提示，显示包源自保留的前缀，但它以后不会对任何所有者的前缀阻止提交包。 这对于有许多贡献者的开源项目很有用，顶级或核心贡献者可以保留前缀，但它仍然可以向所有贡献者开放。 
 
 ### <a name="prefix-reservation-visual-indicator"></a>前缀预留视觉提示
 
@@ -73,23 +73,25 @@ ms.locfileid: "98775920"
 
 ### <a name="id-prefix-reservation-criteria"></a>ID 前缀预留标准
 
-在审核任何 ID 前缀预留申请时，[nuget.org](https://www.nuget.org/) 团队将根据以下标准评估申请。 并非所有标准均需满足才可保留前缀，但如没有确实证据证明满足标准（并给出解释），申请可能会被拒绝：
+在审核任何 ID 前缀预留申请时，[NuGet.org](https://www.nuget.org) 团队将根据以下标准评估申请。 请注意，并非所有标准均需满足才可保留前缀，但如没有确实证据证明满足标准（并给出解释），申请可能会被拒绝：
 
-1. 包 ID 前缀是否会正确且清楚地标识包所有者？
+1. 包 ID 前缀是否会正确且清楚地标识预留所有者？
 
-1. 是否让包所有者[启用了其 NuGet.org 帐户的 2FA](individual-accounts.md#enable-two-factor-authentication-2fa)？
-
-1. 所有者已提交的大量包是否已在包 ID 前缀下？
+1. 是否让所有者[启用了其 NuGet.org 帐户的 2FA](individual-accounts.md#enable-two-factor-authentication-2fa)？
 
 1. 包 ID 前缀是否为不应属于任何个人所有者或组织的常见内容？
 
-1. 不保留包 ID 前缀是否会给社区带来歧义和混淆  ？
+1. 不保留包 ID 前缀是否会给社区带来歧义、混淆或其他损害？
+
+在 ID 前缀预留范围内将包发布到 NuGet.org 时，必须考虑以下最佳做法：
 
 1. 与包 ID 前缀匹配的包的标识属性是否清晰且一致（尤其是包作者）？
 
 1. 包是否具有许可证（使用[许可证](../reference/nuspec.md#license)元数据元素而不是弃用的 licenseUrl？
 
-1. 如果包具有图标（使用 iconUrl 元数据元素），则这些包是否也使用该[图标](../reference/nuspec.md#icon) 元数据元素（不需要删除 iconUrl）？
+1. 如果包具有图标（使用 iconUrl 元数据元素），则这些包是否也使用该[图标](../reference/nuspec.md#icon)元数据元素？ 不需要删除 iconUrl，但必须使用嵌入的图标。
+ 
+除了上面的要点之外，还应考虑查看完整的[包创作最佳做法指南](../create-packages/package-authoring-best-practices.md)。
 
 ## <a name="third-party-feed-provider-scenarios"></a>第三方源提供程序方案
 
