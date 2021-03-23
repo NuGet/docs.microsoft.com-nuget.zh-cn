@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/13/2019
 ms.topic: reference
-ms.openlocfilehash: 60626a5a2a261241e0dce34421f73a86d815e454
-ms.sourcegitcommit: aeb9072f2fcaca73dc9de05b7fd643f1aa7c5821
+ms.openlocfilehash: afc06c81bf0344f2086efd19111cc60d24d7f723
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101101338"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859507"
 ---
 # <a name="nugetconfig-reference"></a>nuget.config 引用
 
@@ -29,7 +29,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 `dependencyVersion` 和 `repositoryPath` 仅适用于使用 `packages.config` 的项目。 `globalPackagesFolder` 仅适用于使用 PackageReference 格式的项目。
 
-| 密钥 | 值 |
+| 密钥 | “值” |
 | --- | --- |
 | dependencyVersion（仅限于 `packages.config`） | 包安装、还原和更新的默认 `DependencyVersion` 值（未直接指定 `-DependencyVersion` 开关时）。 NuGet 包管理器 UI 也使用此值。 值为 `Lowest`、`HighestPatch`、`HighestMinor`、`Highest`。 |
 | 仅使用 PackageReference (项目的 globalPackagesFolder)  | 默认全局包文件夹的位置。 默认值为 `%userprofile%\.nuget\packages` (Windows) 或 `~/.nuget/packages` (Mac/Linux)。 相对路径可在项目特定的 `nuget.config` 文件中使用。 此设置由 `NUGET_PACKAGES` 环境变量重写，该变量优先。 |
@@ -54,7 +54,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 在安装包时，配置 NuGet 是否执行自动绑定重定向。
 
-| 密钥 | 值 |
+| 密钥 | “值” |
 | --- | --- |
 | skip | 指示是否跳过自动绑定重定向的布尔。 默认值为 false。 |
 
@@ -70,7 +70,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 在生成期间控制包还原。
 
-| 密钥 | 值 |
+| 密钥 | “值” |
 | --- | --- |
 | enabled | 指示 NuGet 是否可执行自动还原的布尔。 还可以使用 `True` 的值设置 `EnableNuGetPackageRestore` 环境变量，而不是在配置文件中设置此密钥。 |
 | automatic | 指示 NuGet 是否应在生成期间检查缺少的包。 |
@@ -88,7 +88,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 控制解决方案的 `packages` 文件夹是否包括在源代码管理中。 此节仅适用于解决方案文件夹中的 `nuget.config` 文件。
 
-| 密钥 | 值 |
+| 密钥 | “值” |
 | --- | --- |
 | disableSourceControlIntegration | 指示在使用源代码管理时是否忽略包文件夹的布尔。 默认值为 false。 |
 
@@ -112,7 +112,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 列出所有已知包源。 在还原操作和任何使用 PackageReference 格式的项目中，将忽略此顺序。 NuGet 遵循使用的项目进行安装和更新操作的源顺序 `packages.config` 。
 
-| 密钥 | 值 |
+| 密钥 | “值” |
 | --- | --- |
 | （要分配给包源的名称） | 包源的路径或 URL。 |
 
@@ -209,7 +209,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 存储使用 API 密钥身份验证的源的密钥，使用[ `nuget setapikey` 命令](../reference/cli-reference/cli-ref-setapikey.md)进行设置。
 
-| 密钥 | 值 |
+| 密钥 | “值” |
 | --- | --- |
 | （源 URL） | 加密的 API 密钥。 |
 
@@ -225,7 +225,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 标识当前已禁用的源。 可能为空。
 
-| 密钥 | 值 |
+| 密钥 | “值” |
 | --- | --- |
 | （源名称） | 指示源是否禁用的布尔。 |
 
@@ -246,7 +246,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 标识到当前活动的源或指示所有源的聚合。
 
-| 密钥 | 值 |
+| 密钥 | “值” |
 | --- | --- |
 | （源名称）或 `All` | 如果密钥是源的名称，则值为源路径或 URL。 如果为 `All`，值应为 `(Aggregate source)`，从而组合其他未禁用的所有包源。 |
 
@@ -288,6 +288,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
     </author>
     <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
         <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+        <certificate fingerprint="5A2901D6ADA3D18260B9C6DFE2133C95D74B9EEF6AE0E5DC334C8454D1477DF4" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
         <owners>microsoft;aspnet;nuget</owners>
     </repository>
 </trustedSigners>
@@ -307,7 +308,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 如果找不到匹配项，NuGet 将检查文件源，然后检查 http 源，然后下载包。
 
-| 密钥 | 值 |
+| 密钥 | “值” |
 | --- | --- |
 | 后备文件夹 (名称)  | 回退文件夹的路径。 |
 
@@ -323,7 +324,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
 
 设置默认包管理格式， *packages.config* 或 PackageReference。 SDK 样式项目始终使用 PackageReference。
 
-| 密钥 | 值 |
+| 密钥 | “值” |
 | --- | --- |
 | format | 指示默认包管理格式的布尔值。 如果 `1` 为，则格式为 PackageReference。 如果 `0` 为，则 *packages.config* 格式。 |
 | disabled | 指示是否在第一次安装包时显示提示选择默认包格式的布尔值。 `False` 隐藏提示。 |
@@ -436,6 +437,7 @@ NuGet 行为由不同或文件中的设置控制 `NuGet.Config` `nuget.config` �
         </author>
         <repository name="nuget.org" serviceIndex="https://api.nuget.org/v3/index.json">
             <certificate fingerprint="0E5F38F57DC1BCC806D8494F4F90FBCEDD988B46760709CBEEC6F4219AA6157D" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
+            <certificate fingerprint="5A2901D6ADA3D18260B9C6DFE2133C95D74B9EEF6AE0E5DC334C8454D1477DF4" hashAlgorithm="SHA256" allowUntrustedRoot="false" />
             <owners>microsoft;aspnet;nuget</owners>
         </repository>
     </trustedSigners>

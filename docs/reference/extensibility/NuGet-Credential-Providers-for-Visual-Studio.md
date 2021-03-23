@@ -5,19 +5,19 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: f324f1e27e0d718571525152fcf16b55b900dbaa
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: ab3bde0d320375f854a8f0a98fb90acfecf54aa3
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777755"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859091"
 ---
 # <a name="authenticating-feeds-in-visual-studio-with-nuget-credential-providers"></a>在 Visual Studio 中通过 NuGet 凭据提供程序对源进行身份验证
 
 NuGet Visual Studio 扩展 3.6 + 支持凭据提供程序，这些提供程序允许 NuGet 使用经过身份验证的源。
 安装适用于 Visual Studio 的 NuGet 凭据提供程序后，NuGet Visual Studio 扩展会根据需要自动获取和刷新经过身份验证的源的凭据。
 
-可在 [VsCredentialProvider 示例](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider)中找到示例实现。
+可在 [VsCredentialProvider 示例](https://github.com/NuGet/Samples/tree/main/VsCredentialProvider)中找到示例实现。
 
 在 Visual Studio 中，NuGet 使用内部， `VsCredentialProviderImporter` 后者还会扫描插件凭据提供程序。 这些插件凭据提供程序必须可被发现为类型的 MEF 导出 `IVsCredentialProvider` 。
 
@@ -58,7 +58,7 @@ public interface IVsCredentialProvider
 }
 ```
 
-可在 [VsCredentialProvider 示例](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider)中找到示例实现。
+可在 [VsCredentialProvider 示例](https://github.com/NuGet/Samples/tree/main/VsCredentialProvider)中找到示例实现。
 
 适用于 Visual Studio 的每个 NuGet 凭据提供程序必须：
 
@@ -78,4 +78,4 @@ Visual Studio 的自定义 NuGet 凭据提供程序必须实现 `IVsCredentialPr
 | bool 非交互式 | 如果为 true，则凭据提供程序必须禁止显示所有用户提示并改用默认值。 |
 | CancellationToken cancellationToken | 应检查此取消标记以确定请求凭据的操作是否已取消。 |
 
-**返回值**：实现 [ `System.Net.ICredentials` 接口](/dotnet/api/system.net.icredentials?view=netstandard-2.0)的凭据对象。
+**返回值**：实现 [ `System.Net.ICredentials` 接口](/dotnet/api/system.net.icredentials)的凭据对象。

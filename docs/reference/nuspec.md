@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 6a68b07c42e6abf4ad57d0129fa76d7dd620145f
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 4028657862cfd56d0653b370e8344cab8392d69d
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777682"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859494"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -34,7 +34,7 @@ ms.locfileid: "98777682"
 
 - `.nuspec` (通常为 .Net Core 和 .NET Standard 使用[sdk 属性](/dotnet/core/tools/csproj#additions)) 的项目创建包[，](../resources/check-project-format.md)则不需要文件。  (请注意， `.nuspec` 当你创建包时将生成。 ) 
 
-   如果使用或创建包 `dotnet.exe pack` `msbuild pack target` ，则建议您在项目文件中的文件中 [包含通常包含的所有属性](../reference/msbuild-targets.md#pack-target) `.nuspec` 。 但是，可以改为选择[使用 `.nuspec` `dotnet.exe` 或 `msbuild pack target` 打包文件](../reference/msbuild-targets.md#packing-using-a-nuspec)。
+   如果使用或创建包 `dotnet.exe pack` `msbuild pack target` ，则建议您在项目文件中的文件中 [包含通常包含的所有属性](../reference/msbuild-targets.md#pack-target) `.nuspec` 。 但是，可以改为选择[使用 `.nuspec` `dotnet.exe` 或 `msbuild pack target` 打包文件](../reference/msbuild-targets.md#packing-using-a-nuspec-file)。
 
 - 对于从迁移 `packages.config` 到 [PackageReference](../consume-packages/package-references-in-project-files.md)的项目， `.nuspec` 不需要使用文件来创建包。 相反，请使用 [t:pack](../consume-packages/migrate-packages-config-to-package-reference.md#create-a-package-after-migration)。
 
@@ -78,7 +78,7 @@ Nuspec 文件中的所有 XML 元素名称都区分大小写，这与 XML 一般
 
 将包上传到 nuget.org 时， `id` 字段的长度限制为128个字符。
 
-#### <a name="version"></a>版本
+#### <a name="version"></a>version
 遵循 major.minor.patch 模式的包版本。 版本号可能包括预发布后缀，如[包版本控制](../concepts/package-versioning.md#pre-release-versions)中所述。 
 
 将包上传到 nuget.org 时， `version` 字段的长度限制为64个字符。
@@ -198,7 +198,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 </package>
 ```
 
-[包图标 nuspec 示例。](https://github.com/NuGet/Samples/tree/master/PackageIconNuspecExample)
+[包图标 nuspec 示例。](https://github.com/NuGet/Samples/tree/main/PackageIconNuspecExample)
 
 对于 MSBuild 等效项，请查看对 [图标图像文件进行打包](msbuild-targets.md#packing-an-icon-image-file)。
 
@@ -279,7 +279,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 #### <a name="contentfiles"></a>contentFiles
 (3.3+) `<files>` 元素的集合，用来标识包含在使用项目中的内容文件。 这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件。 请参阅下面的[指定包含在包中的文件](#specifying-files-to-include-in-the-package)。
 
-#### <a name="files"></a>文件 
+#### <a name="files"></a>files 
 `<package>`节点可能包含 `<files>` 作为同级的节点 `<metadata>` ，以及下的子节点 `<contentFiles>` `<metadata>` ，以指定要包含在包中的程序集和内容文件。 有关详细信息，请参阅本主题后面的[包含程序集文件](#including-assembly-files)和[包含内容文件](#including-content-files)。
 
 ### <a name="metadata-attributes"></a>metadata 特性
@@ -328,7 +328,7 @@ nuget pack MyProject.csproj
 
 除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
 
-| 标记 | 值源 | 值
+| 标记 | 值源 | “值”
 | --- | --- | ---
 | **$id $** | 项目文件 | 项目文件中的 AssemblyName (标题)  |
 | **$version $** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
@@ -370,12 +370,12 @@ nuget pack MyProject.csproj
 | 包括/排除标记 | 受影响的目标文件夹 |
 | --- | --- |
 | contentFiles | 内容 |
-| 运行库 | 运行时、资源和 FrameworkAssemblies |
+| Runtime — 运行时 | 运行时、资源和 FrameworkAssemblies |
 | 编译 | lib |
 | build | 生成（MSBuild 属性和目标） |
 | 本机 | 本机 |
 | 无 | 无文件夹 |
-| all | 全部文件夹 |
+| 全部 | 全部文件夹 |
 
 例如，以下行指示 `PackageA` 版本 1.1.0 或更高版本，以及 `PackageB` 版本 1.x 的依赖项。
 
@@ -528,7 +528,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 | --- | --- |
 | **src** | 文件或要包含的文件位置，受 `exclude` 特性指定排除规则约束。 路径是相对于 `.nuspec` 文件的路径，除非指定了绝对路径。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 | **目标** | 放置源文件的包中文件夹的相对路径，必须以 `lib`、`content`、`build` 或 `tools` 开头。 请参阅[从基于约定的工作目录创建 .nuspec](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)。 |
-| **排除** | 要从 `src` 位置排除的文件或文件模式的分号分隔列表。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
+| **延伸** | 要从 `src` 位置排除的文件或文件模式的分号分隔列表。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 
 ### <a name="examples"></a>示例
 
@@ -758,7 +758,7 @@ Packaged result:
 | 属性 | 说明 |
 | --- | --- |
 | **包括** | （必需）文件或要包含的文件位置，受 `exclude` 特性指定的排除规则约束。 路径相对于 `contentFiles` 文件夹，除非指定了绝对路径。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
-| **排除** | 要从 `src` 位置排除的文件或文件模式的分号分隔列表。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
+| **延伸** | 要从 `src` 位置排除的文件或文件模式的分号分隔列表。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 | **buildAction** | 要分配给 MSBuild 的内容项的生成操作，如、、、等 `Content` `None` `Embedded Resource` `Compile` 。默认值为 `Compile` 。 |
 | **copyToOutput** | 一个布尔值，该值指示是将内容项复制到生成 (还是发布) 输出文件夹。 默认值为 false。 |
 | **flatten** | 一个布尔值，用于指示是将内容项复制到生成输出中的单个文件夹 (true)，还是保留包中的文件夹结构 (false)。 此标志仅在 copyToOutput 标志设置为 true 时才有效。 默认值为 false。 |

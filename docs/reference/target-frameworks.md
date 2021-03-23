@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 12/11/2017
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 7671b50b84bf1447fe94e02896786d1f309425dd
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 9172aefb48ab3e542498f5a144f1d4f381ad55bd
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777319"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859481"
 ---
 # <a name="target-frameworks"></a>目标框架
 
@@ -23,13 +23,17 @@ NuGet 在各个地方使用目标框架引用，以特别标识和隔离包的�
 - [packages.config](../reference/packages-config.md)：依赖项的 `targetframework` 特性指定要安装的包的变体。
 
 > [!Note]
-> 计算下方表格的 NuGet 客户端源代码位于以下位置：
-> - 支持的框架名称：[FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
-> - Framework 优先级和映射：[DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
+> NuGet 支持所有新式 .NET 目标框架：
+> - 有关最新目标框架的列表，请参见 [SDK 样式项目文档中的目标框架](/dotnet/standard/frameworks) 。
 
 ## <a name="supported-frameworks"></a>支持的框架
 
 通常按简短的目标框架名字对象或 TFM 引用框架。 在 .NET Standard 这也通用化到了 *TxM* ，以允许单个引用多个框架。
+
+> [!Note]
+> 计算下方表格的 NuGet 客户端源代码位于以下位置：
+> - 支持的框架名称：[FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
+> - Framework 优先级和映射：[DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
 NuGet 客户端支持下表中的框架。 等效项显示在括号内 []。 请注意，某些工具（如 `dotnet`）可能会在某些文件中使用规范的 TFM 变体。 例如，`dotnet pack` 在 `.nuspec` 文件中使用 `.NETCoreApp2.0`，而非 `netcoreapp2.0` 文件。 各种 NuGet 客户端工具正确处理这些变体，但是在直接编辑文件时，应始终使用规范的 TFM。
 
