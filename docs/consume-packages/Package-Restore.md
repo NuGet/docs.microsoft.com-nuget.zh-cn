@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: bac4d88c29539f9fbe7b33b44ce11d350920d365
-ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
+ms.openlocfilehash: e5dfd9f8dd0439751ddd3863cad03f3b463e1487
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97523533"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859234"
 ---
 # <a name="restore-packages-using-package-restore"></a>使用“程序包还原”还原程序包
 
@@ -244,4 +244,4 @@ NuGet 通过任意方法还原包时，将遵守你在 `packages.config` 或项�
 
 ## <a name="troubleshooting"></a>疑难解答
 
-请参阅[程序包还原疑难解答](package-restore-troubleshooting.md)。
+请参阅[程序包还原疑难解答](Package-restore-troubleshooting.md)。

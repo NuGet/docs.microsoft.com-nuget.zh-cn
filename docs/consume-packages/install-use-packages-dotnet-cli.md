@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: 38455e61bd91f115df9f27df090ba47a029f6877
-ms.sourcegitcommit: cbc87fe51330cdd3eacaad3e8656eb4258882fc7
+ms.openlocfilehash: fecf14f0f04d5063f89080b2756f988739c1412c
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88622936"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859260"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>使用 dotnet CLI 安装和管理包
 
@@ -47,9 +47,9 @@ dotnet CLI 适用于 .NET Core 和 .NET Standard 项目（SDK 样式的项目类
    可以打开 `.csproj` 文件以查看添加的引用：
 
     ```xml
-   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-   </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    </ItemGroup>
     ```
 
 ## <a name="install-a-specific-version-of-a-package"></a>安装特定版本的包
@@ -60,7 +60,7 @@ dotnet CLI 适用于 .NET Core 和 .NET Standard 项目（SDK 样式的项目类
 dotnet add package <PACKAGE_NAME> --version <VERSION>
 ```
 
-例如，要添加 `Newtonsoft.Json` 包的 12.0.1 版，请使用以下命令：
+例如，要添加 12.0.1 版的 `Newtonsoft.Json` 包，请使用以下命令：
 
 ```dotnetcli
 dotnet add package Newtonsoft.Json --version 12.0.1
@@ -74,7 +74,7 @@ dotnet add package Newtonsoft.Json --version 12.0.1
 dotnet list package
 ```
 
-## <a name="remove-a-package"></a>删除包
+## <a name="remove-a-package"></a>移除包
 
 使用 [dotnet remove package](/dotnet/core/tools/dotnet-remove-package?tabs=netcore2x) 命令从项目文件中移除包引用。
 

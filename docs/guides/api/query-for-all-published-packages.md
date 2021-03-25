@@ -6,12 +6,12 @@ ms.author: jver
 ms.date: 11/02/2017
 ms.topic: tutorial
 ms.reviewer: kraigb
-ms.openlocfilehash: 7e611b568538e0acfcbad2e5d986a0f9382ac8fd
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 8f21aad93eb952035683314c10cd964f265ec4fd
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774121"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859338"
 ---
 # <a name="query-for-all-packages-published-to-nugetorg"></a>查询所有发布到 nuget.org 的包
 
@@ -110,7 +110,7 @@ GET https://api.nuget.org/v3/catalog0/data/2015.02.01.11.18.40/windowsazure.stor
 
 因为目录是可以通过 HTTP 获得的 JSON 文档集，所以可以使用有 HTTP 客户端和 JSON 反序列化程序的任意编程语言与之交互。
 
-C# 示例可在 [NuGet/示例存储库](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample)中获得。
+C# 示例可在 [NuGet/示例存储库](https://github.com/NuGet/Samples/tree/main/CatalogReaderExample)中获得。
 
 ```cli
 git clone https://github.com/NuGet/Samples.git
@@ -122,7 +122,7 @@ git clone https://github.com/NuGet/Samples.git
 
 可以将此包安装到与 `netstandard1.3` 或更高版本（例如 .NET Framework 4.6）兼容的项目。
 
-使用此包的示例可在 [NuGet.Protocol.Catalog.Sample 项目](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/NuGet.Protocol.Catalog.Sample)中的 GitHub 上获得。
+使用此包的示例可在 [NuGet.Protocol.Catalog.Sample 项目](https://github.com/NuGet/Samples/tree/main/CatalogReaderExample/NuGet.Protocol.Catalog.Sample)中的 GitHub 上获得。
 
 #### <a name="sample-output"></a>示例输出
 
@@ -160,9 +160,9 @@ warn: NuGet.Protocol.Catalog.CatalogProcessor[0]
 
 ### <a name="minimal-sample"></a>最小示例
 
-有关详细说明与目录交互的较少依赖项的示例，请参阅 [CatalogReaderExample 示例项目](https://github.com/NuGet/Samples/tree/master/CatalogReaderExample/CatalogReaderExample)。 项目面向 `netcoreapp2.0` 并依赖 [NuGet.Protocol 4.4.0](https://www.nuget.org/packages/NuGet.Protocol/4.4.0)（适用于解析服务索引）和 [Newtonsoft.Json 9.0.1](https://www.nuget.org/packages/Newtonsoft.Json/9.0.1)（适用于 JSON 序列化）。
+有关详细说明与目录交互的较少依赖项的示例，请参阅 [CatalogReaderExample 示例项目](https://github.com/NuGet/Samples/tree/main/CatalogReaderExample/CatalogReaderExample)。 项目面向 `netcoreapp2.0` 并依赖 [NuGet.Protocol 4.4.0](https://www.nuget.org/packages/NuGet.Protocol/4.4.0)（适用于解析服务索引）和 [Newtonsoft.Json 9.0.1](https://www.nuget.org/packages/Newtonsoft.Json/9.0.1)（适用于 JSON 序列化）。
 
-代码的主要逻辑在 [Program.cs 文件](https://github.com/NuGet/Samples/blob/master/CatalogReaderExample/CatalogReaderExample/Program.cs)中可见。
+代码的主要逻辑在 [Program.cs 文件](https://github.com/NuGet/Samples/blob/main/CatalogReaderExample/CatalogReaderExample/Program.cs)中可见。
 
 #### <a name="sample-output"></a>示例输出
 

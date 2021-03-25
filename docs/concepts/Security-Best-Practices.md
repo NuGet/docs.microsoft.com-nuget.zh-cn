@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 02/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: 125579832db2ac32217d24f6fc6fc1b555f54350
-ms.sourcegitcommit: aeb9072f2fcaca73dc9de05b7fd643f1aa7c5821
+ms.openlocfilehash: e0f235d99e41e23a4551fbf7577f6c42e3381f5b
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101101379"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859221"
 ---
 # <a name="best-practices-for-a-secure-software-supply-chain"></a>关于安全软件供应链的最佳做法
 
@@ -75,7 +75,7 @@ ms.locfileid: "101101379"
 -   [`packages.config`](../reference/packages-config.md) – 位于项目根目录中。
 -   [`<PackageReference>`](../consume-packages/package-references-in-project-files.md) – 位于项目根文件中。 
 
-根据你用来管理 NuGet 依赖项的方法，还可以使用 Visual Studio 在[解决方案资源管理器](/visualstudio/ide/solutions-and-projects-in-visual-studio?view=vs-2019#solution-explorer)或 [NuGet 包管理器](../consume-packages/install-use-packages-visual-studio.md)中直接查看依赖项。
+根据你用来管理 NuGet 依赖项的方法，还可以使用 Visual Studio 在[解决方案资源管理器](/visualstudio/ide/solutions-and-projects-in-visual-studio#solution-explorer)或 [NuGet 包管理器](../consume-packages/install-use-packages-visual-studio.md)中直接查看依赖项。
 
 在 CLI 环境中，可以使用 [`dotnet list package`](/dotnet/core/tools/dotnet-list-package) 命令列出项目或解决方案的依赖项。 
 
@@ -140,7 +140,7 @@ ms.locfileid: "101101379"
 
 锁定文件存储包内容的哈希。 如果要安装的包的内容哈希与锁定文件匹配，则将确保包的可重复性。
 
-若要启用锁定文件，[请参阅以下文档](../consume-packages/package-references-in-project-files#locking-dependencies)。
+若要启用锁定文件，[请参阅以下文档](../consume-packages/package-references-in-project-files.md#locking-dependencies)。
 
 ## <a name="monitor-your-supply-chain"></a>监视供应链
 

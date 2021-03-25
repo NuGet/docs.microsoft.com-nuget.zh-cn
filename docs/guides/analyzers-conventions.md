@@ -5,16 +5,16 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 01/09/2017
 ms.topic: conceptual
-ms.openlocfilehash: 63880b6b9bbfe6aac9cc6419d6a972062eea3495
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: ef1a2e68714618ac0195874996acd8263a3a6eb1
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774130"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859351"
 ---
 # <a name="analyzer-nuget-formats"></a>分析器 NuGet 格式
 
-借助 .NET Compiler Platform（也称为“Roslyn”），开发人员可创建 [分析器](https://github.com/dotnet/roslyn/blob/master/docs/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix.md)，用于在写入代码时检查其语法树和语义。 这为开发人员提供了创建域特定的分析工具（如帮助指导如何使用特定 API 或库的工具）的方法。 可以在 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub wiki 上找到详细信息。 另请参阅下文：MSDN 杂志中的[使用 Roslyn 编写 API 的实时代码分析器](/archive/msdn-magazine/2014/special-issue/csharp-and-visual-basic-use-roslyn-to-write-a-live-code-analyzer-for-your-api)
+借助 .NET Compiler Platform（也称为“Roslyn”），开发人员可创建 [分析器](https://github.com/dotnet/roslyn/blob/main/docs/wiki/How-To-Write-a-C%23-Analyzer-and-Code-Fix.md)，用于在写入代码时检查其语法树和语义。 这为开发人员提供了创建域特定的分析工具（如帮助指导如何使用特定 API 或库的工具）的方法。 可以在 [.NET/Roslyn](https://github.com/dotnet/roslyn/wiki) GitHub wiki 上找到详细信息。 另请参阅下文：MSDN 杂志中的[使用 Roslyn 编写 API 的实时代码分析器](/archive/msdn-magazine/2014/special-issue/csharp-and-visual-basic-use-roslyn-to-write-a-live-code-analyzer-for-your-api)
 
 分析器本身通常作为实现 API 或相关库的 NuGet 包的一部分进行打包和分发。
 
@@ -47,8 +47,8 @@ ms.locfileid: "98774130"
 $/analyzers/{framework_name}{version}/{supported_architecture}/{supported_language}/{analyzer_name}.dll
 ```
 
-- framework_name 和版本：所包含的 DLL 需要运行的 .NET framework 的可选 API 外围应用    。 `dotnet` 是目前唯一有效的值，因为 Roslyn 是唯一可运行分析器的主机。 如果未指定目标，则假定 DLL 适用于所有目标。 
-- **supported_language**：DLL 适用的语言，`cs` (C#)、`vb` (Visual Basic) 和 `fs` 中的一种。 语言表示应仅为使用该语言的项目加载分析器。 如果未指定任何语言，则假定 DLL 适用于支持分析器的所有语言  。
+- framework_name 和版本：所包含的 DLL 需要运行的 .NET framework 的可选 API 外围应用。 `dotnet` 是目前唯一有效的值，因为 Roslyn 是唯一可运行分析器的主机。 如果未指定目标，则假定 DLL 适用于所有目标。
+- **supported_language**：DLL 适用的语言，`cs` (C#)、`vb` (Visual Basic) 和 `fs` 中的一种。 语言表示应仅为使用该语言的项目加载分析器。 如果未指定任何语言，则假定 DLL 适用于支持分析器的所有语言。
 - **analyzer_name**：指定分析器的 DLL。 如果需要 DLL 以外的其他文件，必须通过目标或属性文件包括它们。
 
 

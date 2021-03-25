@@ -5,16 +5,16 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 05/23/2018
 ms.topic: tutorial
-ms.openlocfilehash: 317937b4d9d773d74384b8ebfcd2146062236ac1
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 7660203ec44db75b7764767b519c9ff10dd1122e
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774319"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859078"
 ---
 # <a name="creating-ui-controls-as-nuget-packages"></a>以 NuGet 包形式创建 UI 控件
 
-从 Visual Studio 2017 开始，可以利用在 NuGet 包中提供的 UWP 和 WPF 控件的附加功能。 本指南使用 [ExtensionSDKasNuGetPackage 示例](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)来演练 UWP 控件上下文中的这些功能。 这同样适用于 WPF 控件，除非另行指定。
+从 Visual Studio 2017 开始，可以利用在 NuGet 包中提供的 UWP 和 WPF 控件的附加功能。 本指南使用 [ExtensionSDKasNuGetPackage 示例](https://github.com/NuGet/Samples/tree/main/ExtensionSDKasNuGetPackage)来演练 UWP 控件上下文中的这些功能。 这同样适用于 WPF 控件，除非另行指定。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -90,7 +90,7 @@ ms.locfileid: "98774319"
 
 ## <a name="add-custom-icons-to-your-controls"></a>将自定义图标添加到控件
 
-要在工具箱/资产窗格中显示自定义图标，请将图像添加到项目或名为“Namespace.ControlName.extension”的对应 `design.dll` 项目，并将生成操作设为“嵌入资源”。 还必须确保关联的 `AssemblyInfo.cs` 指定 ProvideMetadata 属性 - `[assembly: ProvideMetadata(typeof(RegisterMetadata))]`。 请参阅此[示例](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20)。
+要在工具箱/资产窗格中显示自定义图标，请将图像添加到项目或名为“Namespace.ControlName.extension”的对应 `design.dll` 项目，并将生成操作设为“嵌入资源”。 还必须确保关联的 `AssemblyInfo.cs` 指定 ProvideMetadata 属性 - `[assembly: ProvideMetadata(typeof(RegisterMetadata))]`。 请参阅此[示例](https://github.com/NuGet/Samples/blob/main/ExtensionSDKasNuGetPackage/NativePackage.Design/Properties/AssemblyInfo.cs#L20)。
 
 支持的格式为 `.png`、`.jpg`、`.jpeg`、`.gif` 和 `.bmp`。 推荐格式为 16 x 16 像素 BMP24。
 
@@ -158,7 +158,7 @@ NuGet 将自动检查正在使用项目的 TPMinV，如果低于 Windows 10 Anni
 
 可以将字符创资源 (`.resw`) 嵌入在控件或者使用的 UWP 项目可使用的包中，将 `.resw` 文件的“生成操作”属性设为 PRIResource。
 
-有关示例，请参考 ExtensionSDKasNuGetPackage 示例中的 [MyCustomControl.cs](https://github.com/NuGet/Samples/blob/master/ExtensionSDKasNuGetPackage/ManagedPackage/MyCustomControl.cs)。
+有关示例，请参考 ExtensionSDKasNuGetPackage 示例中的 [MyCustomControl.cs](https://github.com/NuGet/Samples/blob/main/ExtensionSDKasNuGetPackage/ManagedPackage/MyCustomControl.cs)。
 
 > [!Note]
 > 这仅适用于 UWP 控件。
@@ -166,4 +166,4 @@ NuGet 将自动检查正在使用项目的 TPMinV，如果低于 Windows 10 Anni
 ## <a name="see-also"></a>另请参阅
 
 - [创建 UWP 包](create-uwp-packages.md)
-- [ExtensionSDKasNuGetPackage 示例](https://github.com/NuGet/Samples/tree/master/ExtensionSDKasNuGetPackage)
+- [ExtensionSDKasNuGetPackage 示例](https://github.com/NuGet/Samples/tree/main/ExtensionSDKasNuGetPackage)
