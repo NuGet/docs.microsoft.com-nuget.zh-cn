@@ -46,6 +46,12 @@
         "live": "live",
         "master": "master"
       }
+    },
+    {
+      "path_to_root": "nuget-samples",
+      "url": "https://github.com/NuGet/Samples",
+      "branch": "main",
+      "branch_mapping": {}
     }
   ],
   "branch_target_mapping": {
