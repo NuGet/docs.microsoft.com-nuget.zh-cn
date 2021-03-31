@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: 5f1856940a988e0585c29ccfd581d823e4f69921
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 92968236262f891106ab2d4cd3ba399f1644400b
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775071"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859208"
 ---
 # <a name="package-consumption-workflow"></a>包使用工作流
 
@@ -45,9 +45,9 @@ NuGet 还可以确保包支持的目标框架与你的项目兼容。 如果包�
 
 使用下表中的任何方法下载和安装 NuGet 包。
 
-| 工具 | 描述 |
-| --- | --- |
-| [dotnet.exe CLI](install-use-packages-dotnet-cli.md) | （所有平台）用于 .NET Core 和 .NET Standard 库，以及用于面向 .NET Framework 的 SDK 样式项目的 CLI 工具（请参阅 [SDK 属性](/dotnet/core/tools/csproj#additions)）。 检索由 \<package_name\> 标识的包，并添加对项目文件的引用。 同时还要检索和安装依赖项。 |
-| Visual Studio | （Windows 和 Mac）提供 UI，用户可以通过此 UI 浏览、选择包，并从指定包源将包及其依赖项安装到项目中。 将对已安装的程序包引用添加到项目文件。<ul><li>[使用 Visual Studio 安装和管理包](install-use-packages-visual-studio.md)</li><li>[在项目中包括 NuGet 包 (Mac)](/visualstudio/mac/nuget-walkthrough)</li></ul> |
-| [包管理器控制台 (Visual Studio)](install-use-packages-powershell.md) | （仅限 Windows）检索并将用 \<package_name\> 识别的包从所选源安装到解决方案的指定项目中，然后添加对项目文件的引用。 同时还要检索和安装依赖项。 |
-| [nuget.exe CLI](install-use-packages-nuget-cli.md) | （所有平台）用于 .NET Framework 库和面向 .NET Standard 库的非 SDK 样式项目的 CLI 工具。 检索用 \<package_name\> 识别的包，将其内容展开到当前目录下的文件夹中；还可以检索 `packages.config` 文件中列出的所有包。 同时还要检索和安装依赖项，但对项目文件或 `packages.config` 不作任何更改。 |
+| 工具 | 平台 | 描述 |
+| --- | --- | --- |
+| [dotnet CLI](install-use-packages-dotnet-cli.md) | 全部 | 用于 .NET Core 和 .NET Standard 库，以及用于面向 .NET Framework 的 SDK 样式项目的 CLI 工具（请参阅 [SDK 属性](/dotnet/core/tools/csproj#additions)）。 检索由 \<package_name\> 标识的包，并添加对项目文件的引用。 同时还要检索和安装依赖项。 |
+| Visual Studio | Windows 和 Mac | 提供 UI，用户可以通过此 UI 浏览、选择包，并从指定包源将包及其依赖项安装到项目中。 将对已安装的程序包引用添加到项目文件。<ul><li>[使用 Visual Studio 安装和管理包](install-use-packages-visual-studio.md)</li><li>[在项目中包括 NuGet 包 (Mac)](/visualstudio/mac/nuget-walkthrough)</li></ul> |
+| [包管理器控制台 (Visual Studio)](install-use-packages-powershell.md) | 仅限 Windows | 检索并将用 \<package_name\> 识别的包从所选源安装到解决方案的指定项目中，然后添加对项目文件的引用。 同时还要检索和安装依赖项。 |
+| [nuget.exe CLI](install-use-packages-nuget-cli.md) | 全部 | 用于 .NET Framework 库和面向 .NET Standard 库的非 SDK 样式项目的 CLI 工具。 检索用 \<package_name\> 识别的包，将其内容展开到当前目录下的文件夹中；还可以检索 `packages.config` 文件中列出的所有包。 同时还要检索和安装依赖项，但对项目文件或 `packages.config` 不作任何更改。 |

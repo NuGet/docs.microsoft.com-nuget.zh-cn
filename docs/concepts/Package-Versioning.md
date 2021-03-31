@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 03/23/2018
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 5ba7860fae1037c0c0eb4c55d2df12d98b1d77cf
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 77b96e83f8fc7afd391537d16120d037585dd379
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775118"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859195"
 ---
 # <a name="package-versioning"></a>包版本控制
 
@@ -106,7 +106,7 @@ ms.locfileid: "98775118"
 
 引用包依赖项时，NuGet 支持使用间隔表示法来指定版本范围，汇总如下：
 
-| Notation | 应用的规则 | 描述 |
+| Notation | 应用的规则 | 说明 |
 |----------|--------------|-------------|
 | 1.0 | x ≥ 1.0 | 最低版本（包含） |
 | (1.0,) | x > 1.0 | 最低版本（独占） |
@@ -245,3 +245,13 @@ ms.locfileid: "98775118"
 `pack` 和 `restore` 操作可尽可能规范化版本。 对于已生成的包，此规范化不会影响包本身的版本号；仅影响 NuGet 在解析依赖项时匹配版本的方式。
 
 但是，NuGet 包存储库必须以与 NuGet 相同的方式处理这些值，以防止包版本重复。 因此，包含包版本 1.0 的存储库还不应将版本 1.0.0 作为单独的不同包进行托管。
+
+## <a name="where-nugetversion-diverges-from-semantic-versioning"></a>其中，NuGetVersion 与语义化版本控制分离
+
+如果要以编程方式使用 NuGet 包版本，强烈建议使用[包 NuGet.Versioning](https://www.nuget.org/packages/NuGet.Versioning)。 静态方法 `NuGetVersion.Parse(string)` 可用于分析版本字符串，`VersionComparer` 可用于对 `NuGetVersion` 实例进行排序。
+
+如果要使用不在 .NET 上运行的语言来实现 NuGet 功能，可参考以下 `NuGetVersion` 和语义化版本控制的已知差异列表，以及现有语义化版本控制库可能不适用于已在 nuget.org 上发布的包的原因。
+
+1. `NuGetVersion` 支持第 4 个版本段，即 `Revision`，以兼容 [`System.Version`](/dotnet/api/system.version) 或作为其超集。 因此，除了预发行版和元数据标签，版本字符串为 `Major.Minor.Patch.Revision`。 根据上述版本规范，如果 `Revision` 为零，将从规范化版本字符串中省略它。
+2. `NuGetVersion` 只要求定义 major 段。 所有其他段都是可选的，等效于零。 这意味着 `1`、`1.0`、`1.0.0` 和 `1.0.0.0` 都是可接受并且相等的。
+3. 对于预发行组件，`NuGetVersion` 使用不区分大小写的字符串比较。 这意味着 `1.0.0-alpha` 和 `1.0.0-Alpha` 相等。

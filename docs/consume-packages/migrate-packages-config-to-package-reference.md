@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8161f4a39d4adfdb9efb25bcb840b20b85a58e07
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: fabfd76a46a38ff26acbc6439406d99eb3f85bf4
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774779"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859156"
 ---
 # <a name="migrate-from-packagesconfig-to-packagereference"></a>从 packages.config 迁移到 PackageReference
 
@@ -100,31 +100,27 @@ PackageReference 不支持 packages.config 支持的某些方面。 迁移程序
 
 ### <a name="installps1-scripts-are-ignored-when-the-package-is-installed-after-the-migration"></a>如果在迁移后安装了包，则将忽略“install.ps1”脚本
 
-| | |
-| --- | --- |
-| **说明** | 借助 PackageReference，安装或卸载包时不会执行 install.ps1 和 uninstall.ps1 PowerShell 脚本。 |
-| **潜在影响** | 依赖于这些脚本来配置目标项目中的某些行为的包可能无法按预期方式工作。 |
+* 描述：借助 PackageReference，安装或卸载包时不会执行 install.ps1 和 uninstall.ps1 PowerShell 脚本。
+
+* 潜在影响：依赖于这些脚本来配置目标项目中的某些行为的包可能无法按预期方式工作。
 
 ### <a name="content-assets-are-not-available-when-the-package-is-installed-after-the-migration"></a>如果在迁移后安装了包，则“内容”资产不可用
 
-| | |
-| --- | --- |
-| **说明** | 包的 `content` 文件夹中的资产不受 PackageReference 支持，并且将被忽略。 PackageReference 添加了对 `contentFiles` 的支持，以便获得更好的可传递支持和共享内容。  |
-| **潜在影响** | `content` 中的资产不会复制到项目中，依赖于这些资产的项目代码需要重构。  |
+* 描述：包的 `content` 文件夹中的资产不受 PackageReference 支持，并且将被忽略。 PackageReference 添加了对 `contentFiles` 的支持，以便获得更好的可传递支持和共享内容。
+
+* 潜在影响：`content` 中的资产不会复制到项目中，依赖于这些资产的项目代码需要重构。
 
 ### <a name="xdt-transforms-are-not-applied-when-the-package-is-installed-after-the-upgrade"></a>如果在升级后安装了包，则不会应用 XDT 转换
 
-| | |
-| --- | --- |
-| **说明** | PackageReference 不支持 XDT 转换，因此在安装或卸载包时将忽略 `.xdt` 文件。   |
-| **潜在影响** | XDT 转换不会应用于任何项目 XML 文件（最常见的是 `web.config.install.xdt` 和 `web.config.uninstall.xdt`），这意味着在安装或卸载包时不会更新项目的 ` web.config` 文件。 |
+* 描述：PackageReference 不支持 XDT 转换，因此在安装或卸载包时将忽略 `.xdt` 文件。
+
+* 潜在影响：XDT 转换不会应用于任何项目 XML 文件（最常见的是 `web.config.install.xdt` 和 `web.config.uninstall.xdt`），这意味着在安装或卸载包时不会更新项目的 ` web.config` 文件。
 
 ### <a name="assemblies-in-the-lib-root-are-ignored-when-the-package-is-installed-after-the-migration"></a>如果在迁移后安装了包，则将忽略 lib 根目录中的程序集
 
-| | |
-| --- | --- |
-| **说明** | 借助 PackageReference，将忽略无目标框架特定子文件夹的 `lib` 文件夹的根目录中的程序集。 NuGet 会查找与对应于项目的目标框架的目标框架名字对象 (TFM) 相匹配的子文件夹，并将匹配的程序集安装到项目中。 |
-| **潜在影响** | 没有与对应于项目的目标框架的目标框架名字对象 (TFM) 相匹配的子文件夹的包在迁移期间转换或安装失败后可能无法按预期方式工作 |
+* 描述：借助 PackageReference，将忽略无目标框架特定子文件夹的 `lib` 文件夹的根目录中的程序集。 NuGet 会查找与对应于项目的目标框架的目标框架名字对象 (TFM) 相匹配的子文件夹，并将匹配的程序集安装到项目中。
+
+* 潜在影响：没有与对应于项目的目标框架的目标框架名字对象 (TFM) 相匹配的子文件夹的包在迁移期间转换或安装失败后可能无法按预期方式工作。
 
 ## <a name="found-an-issue-report-it"></a>如果发现错误， 请将其报告！
 

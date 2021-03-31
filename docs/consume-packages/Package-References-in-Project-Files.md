@@ -5,14 +5,14 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: dcaed83ca54e3234702e963ffc2ebbde4cd75b28
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: df7c793d115622f04a148cbbc3ebf396a3e4ab69
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235758"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859182"
 ---
-# <a name="package-references-packagereference-in-project-files"></a>项目文件中的包引用 (PackageReference)
+# <a name="package-references-packagereference-in-project-files"></a>项目文件中的包参考 (`PackageReference`)
 
 使用 `PackageReference` 节点的包引用可直接在项目文件中管理 NuGet 依赖项（无需单独的 `packages.config` 文件）。 使用所谓的 PackageReference 不会影响 NuGet 的其他方面；例如，仍按照[常规 NuGet 配置](configuring-nuget-behavior.md)中的说明应用 `NuGet.config` 文件（包括包源）中的设置。
 
@@ -211,7 +211,7 @@ MSBuild 属性和包标识不具有相同的限制，因此包标识需要改为
 在某些极少数情况下，不同的包将包含相同命名空间中的类。 从 NuGet 5.7 和 Visual Studio 2019 Update 7 开始，等效于 ProjectReference，PackageReference 支持 [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases)。
 默认情况下，不提供别名。 指定别名后，需要使用别名来引用来自带批注的包的所有程序集。
 
-可以在 [NuGet\Samples](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample) 处查看示例用法。
+可以在 [NuGet\Samples](https://github.com/NuGet/Samples/tree/main/PackageReferenceAliasesExample) 处查看示例用法。
 
 在项目文件中，按如下所示指定别名：
 
