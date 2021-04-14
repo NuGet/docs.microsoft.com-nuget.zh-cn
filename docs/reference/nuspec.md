@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: 4028657862cfd56d0653b370e8344cab8392d69d
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: a8a8058032b0b6c6ddcd5eed1cf22e75f0e3af72
+ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859494"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107387408"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -78,7 +78,7 @@ Nuspec 文件中的所有 XML 元素名称都区分大小写，这与 XML 一般
 
 将包上传到 nuget.org 时， `id` 字段的长度限制为128个字符。
 
-#### <a name="version"></a>version
+#### <a name="version"></a>版本
 遵循 major.minor.patch 模式的包版本。 版本号可能包括预发布后缀，如[包版本控制](../concepts/package-versioning.md#pre-release-versions)中所述。 
 
 将包上传到 nuget.org 时， `version` 字段的长度限制为64个字符。
@@ -205,6 +205,29 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 > [!Tip]
 > 您可以同时指定 `icon` 和 `iconUrl` 来维护与不支持的源的向后兼容性 `icon` 。 `icon`在未来版本中，Visual Studio 将支持来自基于文件夹的源的包。
 
+#### <a name="readme"></a>自述文件
+
+打包自述文件时，需要使用 `readme` 元素来指定包路径，相对于包的根。 除此之外，还需要确保文件已包含在包中。 支持的文件格式仅包括 Markdown (*md*) 。
+
+例如，你可以将以下内容添加到 nuspec，以便将自述文件打包到你的项目中：
+
+```xml
+<package>
+  <metadata>
+    ...
+    <readme>docs\readme.md</readme>
+    ...
+  </metadata>
+  <files>
+    ...
+    <file src="..\readme.md" target="docs\" />
+    ...
+  </files>
+</package>
+```
+
+对于 MSBuild 等效项，请查看 [打包自述文件](msbuild-targets.md#packagereadmefile)。
+
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 一个布尔值，用于指定客户端是否必须提示使用者接受包许可证后才可安装包。
 
@@ -328,7 +351,7 @@ nuget pack MyProject.csproj
 
 除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
 
-| 标记 | 值源 | “值”
+| 标记 | 值源 | 值
 | --- | --- | ---
 | **$id $** | 项目文件 | 项目文件中的 AssemblyName (标题)  |
 | **$version $** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
@@ -358,7 +381,7 @@ nuget pack MyProject.csproj
 
 `<metadata>` 中的 `<dependencies>` 元素包含任意数量的 `<dependency>` 元素，用来标识顶级包所依赖的其他包。 每个 `<dependency>` 的特性如下所示：
 
-| 属性 | 说明 |
+| 特性 | 说明 |
 | --- | --- |
 | `id` | （必须）依赖项的包 ID，如“EntityFramework”和“NUnit”，同时也是 nuget.org 在包页面上显示的包名称。 |
 | `version` | （必需）可接受作为依赖项的版本范围。 有关准确语法，请参阅[包版本控制](../concepts/package-versioning.md#version-ranges)。 不支持浮动版本。 |
@@ -375,7 +398,7 @@ nuget pack MyProject.csproj
 | build | 生成（MSBuild 属性和目标） |
 | 本机 | 本机 |
 | 无 | 无文件夹 |
-| 全部 | 全部文件夹 |
+| all | 全部文件夹 |
 
 例如，以下行指示 `PackageA` 版本 1.1.0 或更高版本，以及 `PackageB` 版本 1.x 的依赖项。
 
@@ -484,7 +507,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 
 `<frameworkAssemblies>` 元素包含零个或多个 `<frameworkAssembly>` 元素，这些元素指定以下特性：
 
-| 属性 | 描述 |
+| 特性 | 描述 |
 | --- | --- |
 | **assemblyName** | （必需）完全限定程序集名称。 |
 | **targetFramework** | （可选）指定此引用适用的目标框架。 如果省略，则表示该引用适用于全部框架。 有关确切的框架标识符，请参阅[目标框架](../reference/target-frameworks.md)。 |
@@ -524,7 +547,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 
 每个 `<file>` 元素指定以下特性：
 
-| 属性 | 说明 |
+| 特性 | 说明 |
 | --- | --- |
 | **src** | 文件或要包含的文件位置，受 `exclude` 特性指定排除规则约束。 路径是相对于 `.nuspec` 文件的路径，除非指定了绝对路径。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 | **目标** | 放置源文件的包中文件夹的相对路径，必须以 `lib`、`content`、`build` 或 `tools` 开头。 请参阅[从基于约定的工作目录创建 .nuspec](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)。 |
@@ -755,7 +778,7 @@ Packaged result:
 
 这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件：
 
-| 属性 | 说明 |
+| 特性 | 说明 |
 | --- | --- |
 | **包括** | （必需）文件或要包含的文件位置，受 `exclude` 特性指定的排除规则约束。 路径相对于 `contentFiles` 文件夹，除非指定了绝对路径。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 | **延伸** | 要从 `src` 位置排除的文件或文件模式的分号分隔列表。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |

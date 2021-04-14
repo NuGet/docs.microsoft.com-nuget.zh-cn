@@ -10,12 +10,12 @@ no-loc:
 - MSBuild
 - .nuspec
 - nuspec
-ms.openlocfilehash: 9d40d43d972537ee1cb11d54194ed6450ccd0b6e
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 47411641db47884f79f2bc9a4aa00035fc79993b
+ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104858961"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107387369"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>NuGet作为目标打包和还原 MSBuild
 
@@ -68,8 +68,9 @@ ms.locfileid: "104858961"
 | `license` | `PackageLicenseFile` | empty | 如果使用的是未分配 SPDX 标识符的自定义许可证或许可证，则为包内的许可证文件的路径。 需要显式打包所引用的许可证文件。 对应到 `<license type="file">`。 请参阅 [打包许可证表达式或许可证文件](#packing-a-license-expression-or-a-license-file)。 |
 | `LicenseUrl` | `PackageLicenseUrl` | empty | `PackageLicenseUrl` 已弃用。 请改用 `PackageLicenseExpression` 或 `PackageLicenseFile`。 |
 | `ProjectUrl` | `PackageProjectUrl` | empty | |
-| `Icon` | `PackageIcon` | empty | 包中要用作包图标的图像的路径。 需要显式打包所引用的图标图像文件。 有关详细信息，请参阅[打包图标图像文件](#packing-an-icon-image-file)和[ `icon` 元数据](/nuget/reference/nuspec#icon)。 |
+| `Icon` | `PackageIcon` | empty | 包中要用作包图标的图像的路径。 需要显式打包所引用的图标图像文件。 有关详细信息，请参阅[打包图标图像文件](#packing-an-icon-image-file)和[ `icon` 元数据](./nuspec.md#icon)。 |
 | `IconUrl` | `PackageIconUrl` | empty | `PackageIconUrl` 对于，已弃用 `PackageIcon` 。 但是，为了获得最佳的下层体验，除了指定外，还应该指定 `PackageIconUrl` `PackageIcon` 。 |
+| `Readme` | `PackageReadmeFile` | empty | 需要显式打包所引用的自述文件。|
 | `Tags` | `PackageTags` | empty | 标记的分号分隔列表，这些标记用于指定包。 |
 | `ReleaseNotes` | `PackageReleaseNotes` | empty | 包的发行说明。 |
 | `Repository/Url` | `RepositoryUrl` | empty | 用于克隆或检索源代码的存储库 URL。 示例： *https://github.com/ NuGet / NuGet 。客户端*。 |
@@ -99,6 +100,7 @@ ms.locfileid: "104858961"
 | `PackageProjectUrl` | |
 | `PackageIcon` | 指定相对于包根的包图标路径。 有关详细信息，请参阅对 [图标图像文件进行打包](#packing-an-icon-image-file)。 |
 | `PackageReleaseNotes` | 包的发行说明。 |
+| `PackageReadmeFile` | 包的自述文件。 |
 | `PackageTags` | 标记的分号分隔列表，这些标记用于指定包。 |
 | `PackageOutputPath` | 确定用于已打包的包的输出路径。 默认值为 `$(OutputPath)`。 |
 | `IncludeSymbols` | 此布尔值指示在打包项目时，包是否应创建一个附加的符号包。 符号包的格式由 `SymbolPackageFormat` 属性控制。 有关详细信息，请参阅 [IncludeSymbols](#includesymbols)。 |
@@ -113,7 +115,7 @@ ms.locfileid: "104858961"
 | `NoPackageAnalysis` | 指定 `pack` 不应在生成包后运行包分析。 |
 | `MinClientVersion` | 指定 NuGet 可安装此包的客户端的最低版本，由 nuget.exe 和 Visual Studio 包管理器强制执行。 |
 | `IncludeBuildOutput` | 此布尔值指定是否应将生成输出程序集打包到 .nupkg 文件中  。 |
-| `IncludeContentInPack` | 此布尔值指定是否 `Content` 自动在生成的包中包含类型为的任何项。 默认值为 `true`。 |
+| `IncludeContentInPack` | 此布尔值指定是否 `Content` 自动在生成的包中包含类型为的任何项。 默认为 `true`。 |
 | `BuildOutputTargetFolder` | 指定放置输出程序集的文件夹。 输出程序集（和其他输出文件）会复制到各自的框架文件夹中。 有关详细信息，请参阅 [输出程序集](#output-assemblies)。 |
 | `ContentTargetFolders` | 指定不为其指定所有内容文件的默认位置 `PackagePath` 。 默认值为“content;contentFiles”。 有关详细信息，请参阅[在包中包含内容](#including-content-in-a-package)。 |
 | `NuspecFile` | 用于打包的文件的相对路径或绝对路径 *.nuspec* 。 如果已指定，则将 **专用** 于打包信息，并且不使用项目中的任何信息。 有关详细信息，请参阅[使用 .nuspec 打包](#packing-using-a-nuspec-file)。 |
@@ -158,6 +160,28 @@ ms.locfileid: "104858961"
 [包图标示例](https://github.com/NuGet/Samples/tree/main/PackageIconExample)。
 
 对于 nuspec 等效项，请查看[ nuspec 图标的参考](nuspec.md#icon)。
+
+### <a name="packagereadmefile"></a>PackageReadmeFile
+
+打包自述文件时，需要使用 `PackageReadmeFile` 属性来指定包路径，相对于包的根。 除此之外，还需要确保文件已包含在包中。 支持的文件格式仅包括 Markdown (*md*) 。
+
+例如：
+
+```xml
+<PropertyGroup>
+    ...
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    ...
+</PropertyGroup>
+
+<ItemGroup>
+    ...
+    <None Include="docs\readme.md" Pack="true" PackagePath="\"/>
+    ...
+</ItemGroup>
+```
+
+对于 nuspec 等效项，请查看[ nuspec 自述文件参考](nuspec.md#readme)。
 
 ### <a name="output-assemblies"></a>输出程序集
 
