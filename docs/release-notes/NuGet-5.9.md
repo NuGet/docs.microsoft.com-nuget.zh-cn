@@ -5,12 +5,12 @@ author: erdembayar
 ms.author: eryondon
 ms.date: 3/11/2021
 ms.topic: conceptual
-ms.openlocfilehash: 24933ebb51851da2583b03e7fd3e55fade5e8a18
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 50fd277a4f1f39b4a68a89cd07af4e21f0d3d831
+ms.sourcegitcommit: 1462f9f42ae36b3c990762ad4f02e38ab799ad09
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859523"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107508808"
 ---
 # <a name="nuget-59-release-notes"></a>NuGet 5.9 发行说明
 
@@ -18,12 +18,13 @@ NuGet 分发车辆：
 
 | NuGet 版本 | 适用于 Visual Studio 版本 | 适用于 .NET SDK |
 |:---|:---|:---|
-| [**5.9**](https://nuget.org/downloads) | [Visual Studio 2019 版本16。9](https://visualstudio.microsoft.com/downloads/) | [5.0](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.9.0**](https://nuget.org/downloads) | [Visual Studio 2019 版本16。9](https://visualstudio.microsoft.com/downloads/) | [5.0.200](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.9.1**](https://nuget.org/downloads) | [Visual Studio 2019 版本16。9](https://visualstudio.microsoft.com/downloads/) | [5.0.202](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
 
 <sup>1</sup> 与带有 .net Core 工作负载的 Visual Studio 2019 一起安装
   
 > [!NOTE]
-> Visual Studio 16.9、MSBuild 16.9 和 .NET 5.0.3 + 要求 NuGet.exe 5.9 或更高版本。
+> Visual Studio 16.9、MSBuild 16.9 和 .NET 5.0.200 + 要求 NuGet.exe 5.9 或更高版本。
 
 ## <a name="summary-whats-new-in-59"></a>摘要：5.9 中的新增功能
 
@@ -187,7 +188,6 @@ NuGet 分发车辆：
 
 * NuGetPackageFileService 修复-使用 for 可释放 memorystream- [#10503](https://github.com/NuGet/Home/issues/10503)
 
-
 **[此版本中已修复的所有问题的列表-5.9。0](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f6be8c10485c0236b7ef889)**
 
 **[此版本中的提交列表-5.9。0](https://github.com/NuGet/NuGet.Client/compare/5.8.1.7021...5.9.0.7134)**
@@ -211,6 +211,15 @@ NuGet 分发车辆：
 [rolfbjarne](https://github.com/rolfbjarne) | [3743](https://github.com/NuGet/NuGet.Client/pull/3743) | 重[#10198](https://github.com/NuGet/Home/issues/10198)定向时，输出将在 macOS 上的80个字符处换行
 [xen2](https://github.com/xen2) | [2861](https://github.com/NuGet/NuGet.Client/pull/2861) | 使 Nuget.exe 作为 .NET Standard 包提供 [#6150](https://github.com/NuGet/Home/issues/6150)
 [Anipik](https://github.com/Anipik) | [3810](https://github.com/NuGet/NuGet.Client/pull/3810) | 引入一个新的 msbuild 属性，以便在包任务期间排除特定 tfm 的生成输出- [#10396](https://github.com/NuGet/Home/issues/10396)
+
+## <a name="summary-whats-new-in-591"></a>摘要：5.9.1 中的新增功能
+
+* 第一次时，"dotnet nuget remove source nuget.org" 不起作用- [#10745](https://github.com/NuGet/Home/issues/10745)
+* 在 Linux 上禁用默认验证，但默认情况下在 Windows 上启用- [#10713](https://github.com/NuGet/Home/issues/10713)
+
+**[此版本中已修复的所有问题的列表-5.9。1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=6075f42efd068017639b4036)**
+
+**[此版本中的提交列表-5.9。1](https://github.com/NuGet/NuGet.Client/compare/5.9.0.7134...5.9.1.8)**
 
 ## <a name="feedback-welcome"></a>欢迎反馈
 

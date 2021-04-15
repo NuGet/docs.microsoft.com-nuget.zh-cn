@@ -5,12 +5,12 @@ author: chgill-msft
 ms.author: chgill
 ms.date: 8/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: 6c821091983ab0b5d59b759e1ee9930cf449fd9d
-ms.sourcegitcommit: 6cda91f135e58cf57a2471b0c7c4a2f748f40024
+ms.openlocfilehash: 58ab481f0c6a6cb5549c269788170b8c3ff6002f
+ms.sourcegitcommit: 1462f9f42ae36b3c990762ad4f02e38ab799ad09
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364149"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107508782"
 ---
 # <a name="nuget-57-release-notes"></a>NuGet 5.7 发行说明
 
@@ -19,6 +19,7 @@ NuGet 分发车辆：
 | NuGet 版本 | 适用于 Visual Studio 版本 | 适用于 .NET SDK |
 |:---|:---|:---|
 | [**5.7.0**](https://nuget.org/downloads) | [Visual Studio 2019 版本 16.7](https://visualstudio.microsoft.com/downloads/) | [3.1.401](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup> |
+| [**5.7.1**](https://nuget.org/downloads) | [Visual Studio 2019 版本 16.7](https://visualstudio.microsoft.com/downloads/) | [3.1.408](https://dotnet.microsoft.com/download/dotnet-core/3.1)<sup>1</sup> |
 
 <sup>1</sup> 与带有 .net Core 工作负载的 Visual Studio 2019 一起安装
 
@@ -30,7 +31,7 @@ NuGet 分发车辆：
 
 * 通过允许它们共享数据源并减少 resfreshing，在已安装和更新选项卡之间进行切换更快 [#8294](https://github.com/NuGet/Home/issues/8294)
 
-* 通过调用 MSBuild 静态图形 api ( # A0) - [#9644](https://github.com/NuGet/Home/issues/9644) ，提高还原速度
+* 通过)  (dotnet.exe 调用 MSBuild 静态 Graph api，提高还原速度： [#9644](https://github.com/NuGet/Home/issues/9644)
 
 * 为 PackageReference 项目添加了 Visual Studio 部分还原 (无操作 + +) - [#9513](https://github.com/NuGet/Home/issues/9513)
 
@@ -56,7 +57,7 @@ NuGet 分发车辆：
 
 * 在 dotnet CLI 还原中，启动凭据插件时，如果 `DOTNET_HOST_PATH`  未定义环境变量，则在系统路径上尝试使用 DOTNET CLI。 - [#7438](https://github.com/NuGet/Home/issues/7438)
 
-* nuget.exe 规范使用版权 YYYY 的硬编码文本而不是 #8696 生成版权标记 `$copyright$`  -  [#8696](https://github.com/NuGet/Home/issues/8696)
+* nuget.exe 规范使用版权 YYYY 的硬编码文本而不是 #8696 生成版权标记 `$copyright$`  -  [](https://github.com/NuGet/Home/issues/8696)
 
 * 如果更改了程序集名称，则在使用 assemblyinfo 时，如果更改了程序集名称，NuGet.exe 将引发在 .csproj 包中忽略占位符和特性[#4234](https://github.com/NuGet/Home/issues/4234)的异常 "
 
@@ -104,6 +105,18 @@ NuGet 分发车辆：
 |[Joseph Musser (jnm2) ](https://github.com/jnm2)|[3241](https://github.com/NuGet/NuGet.Client/pull/3241)|`<owners>`当元素为冗余时将其取消[#5134](https://github.com/NuGet/Home/issues/5134)|
 |[Volodymyr Shkolka (BlackGad) ](https://github.com/BlackGad)|[3273](https://github.com/NuGet/NuGet.Client/pull/3273)|NuGet 无法从需要客户端证书的 HTTPS 源还原- [#5773](https://github.com/NuGet/Home/issues/5773)|
 |[Marius Ungureanu (Therzok) ](https://github.com/Therzok)|[3357](https://github.com/NuGet/NuGet.Client/pull/3357)|HttpSourceAuthenticationHandler SemaphoreSlim 未来的校对- [#9463](https://github.com/NuGet/Home/issues/9463)|
-|[Sunner (SuNNjek) ](https://github.com/SuNNjek)|[3088](https://github.com/NuGet/NuGet.Client/pull/3088)|nuget.exe 规范使用版权 YYYY 的硬编码文本而不是 #8696 生成版权标记 `$copyright$`  -  [#8696](https://github.com/NuGet/Home/issues/8696)|
+|[Sunner (SuNNjek) ](https://github.com/SuNNjek)|[3088](https://github.com/NuGet/NuGet.Client/pull/3088)|nuget.exe 规范使用版权 YYYY 的硬编码文本而不是 #8696 生成版权标记 `$copyright$`  -  [](https://github.com/NuGet/Home/issues/8696)|
 |[Marc-olivier Spinelli (marc-olivier-Spinelli) ](https://github.com/olivier-spinelli)|[3335](https://github.com/NuGet/NuGet.Client/pull/3335)|在 dotnet CLI 还原中，启动凭据插件时，如果 `DOTNET_HOST_PATH`  未定义环境变量，则在系统路径上尝试使用 DOTNET CLI。 - [#7438](https://github.com/NuGet/Home/issues/7438)|
 |[goyzhang](https://github.com/goyzhang)|[3370](https://github.com/NuGet/NuGet.Client/pull/3370)|添加 `latest` 了 `-MSBuildVersion`  -  [#8808](https://github.com/NuGet/Home/issues/8808)的选项|
+
+## <a name="summary-whats-new-in-571"></a>摘要：5.7.1 中的新增功能
+
+* 扩展 nupkg 文件以包含安装源- [#10354](https://github.com/NuGet/Home/issues/10354)
+
+* 在提取) 期间 (还原日志记录期间记录包- [#10384](https://github.com/NuGet/Home/issues/10384)
+
+* 如果按正常的详细级别还原，请记录正在从中还原包的源 [#10461](https://github.com/NuGet/Home/issues/10461)
+
+**[此版本中已修复的所有问题的列表-5.7。1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=6075f5724f84579cc29a79ee)**
+
+**[此版本中的提交列表-5.7。1](https://github.com/NuGet/NuGet.Client/compare/80512866a2c127e52ce3e86fd803fff77e9b9b52...5.7.1.4)**

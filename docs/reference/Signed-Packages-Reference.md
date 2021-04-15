@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 05/18/2018
 ms.topic: reference
 ms.reviewer: ananguar
-ms.openlocfilehash: ac9efadc1d29bec86ca9b7821d5587e0171613aa
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: 85fdf7a41cc033d92bbd0326648142aec27a9970
+ms.sourcegitcommit: 1462f9f42ae36b3c990762ad4f02e38ab799ad09
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235706"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107508795"
 ---
 # <a name="signed-packages"></a>已签名的包
 
@@ -23,7 +23,7 @@ NuGet 包可以包含一个数字签名，该签名提供针对篡改内容的�
 - **作者签名**。 作者签名可保证自作者对包进行签名后包未修改，无论包传送到哪个存储库或传输方法。 此外，创作签名包还为 nuget.org 发布管道提供额外的身份验证机制，因为必须提前注册签名证书。 有关详细信息，请参阅 [注册证书](#signature-requirements-on-nugetorg)。
 - **存储库签名**。 存储库签名为存储库中的 **所有** 包提供完整性保证，无论它们是否为作者签名，即使这些包是从其签名的原始存储库以外的位置获取的。   
 
-有关创建作者签名包的详细信息，请参阅 [签署包](../create-packages/Sign-a-package.md) 和 [nuget 签名命令](../reference/cli-reference/cli-ref-sign.md)。 可以使用 [dotnet nuget 验证](/dotnet/core/tools/dotnet-nuget-verify.md) 或 [nuget 验证](../reference/cli-reference/cli-ref-verify.md) 命令验证包的签名。
+有关创建作者签名包的详细信息，请参阅 [签署包](../create-packages/Sign-a-package.md) 和 [nuget 签名命令](../reference/cli-reference/cli-ref-sign.md)。 可以使用 [dotnet nuget 验证](/dotnet/core/tools/dotnet-nuget-verify) 或 [nuget 验证](../reference/cli-reference/cli-ref-verify.md) 命令验证包的签名。
 
 > [!Important]
 > 目前仅支持 Windows 上的 nuget.exe 创作签名包。 但是，上传到 nuget.org 的所有包会自动存储存储库。
@@ -57,6 +57,6 @@ nuget.org 对接受签名的包有其他要求：
 ## <a name="related-articles"></a>相关文章
 
 - [对 NuGet 包进行签名](../create-packages/Sign-a-Package.md)
-- [使用 dotnet CLI 验证已签名的包](/dotnet/core/tools/dotnet-nuget-verify.md)
+- [使用 dotnet CLI 验证已签名的包](/dotnet/core/tools/dotnet-nuget-verify)
 - [使用 nuget.exe验证已签名的包 ](../reference/cli-reference/cli-ref-verify.md)
 - [管理包信任边界](../consume-packages/installing-signed-packages.md)
