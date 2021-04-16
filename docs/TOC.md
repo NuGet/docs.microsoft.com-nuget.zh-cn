@@ -70,6 +70,7 @@
 ## [包版本控制](concepts/package-versioning.md)
 ## [依赖项解析](concepts/dependency-resolution.md)
 ## [关于安全软件供应链的最佳做法](concepts/Security-Best-Practices.md)
+## [对安装包进行故障排除](concepts/troubleshooting-installed-packages.md)
 # 参考
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config 文件](reference/nuget-config-file.md)
