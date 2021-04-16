@@ -12,18 +12,18 @@ keywords: NuGet 符号包, NuGet 包调试, 支持 NuGet 调试, 包符号, 符�
 ms.reviewer:
 - anangaur
 - karann
-ms.openlocfilehash: 001637348fdd435e4ffd3a5a55e8128d1eab453c
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: a62996a28348bf95e4581af180597d72cd5aa298
+ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774578"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107387330"
 ---
 # <a name="creating-symbol-packages-snupkg"></a>创建符号包 (.snupkg)
 
 良好的调试体验依赖于调试符号的存在，因为它们提供了一些关键信息，例如已编译的代码与源代码之间的关联、局部变量的名称、堆栈跟踪等。 你可以使用符号包 (.snupkg) 来分发这些符号，并改善 NuGet 包的调试体验。
 
-> 请注意，符号包并不是使调试符号可用于库使用者的唯一策略。 还[可以通过以下项目属性在 `dll` 或 `exe` 中 `embed`](https://docs.microsoft.com/dotnet/core/deploying/single-file#include-pdb-files-inside-the-bundle) 它们：`<DebugType>embedded</DebugType>`
+> 请注意，符号包并不是使调试符号可用于库使用者的唯一策略。 还[可以通过以下项目属性在 `dll` 或 `exe` 中 `embed`](/dotnet/core/deploying/single-file#include-pdb-files-inside-the-bundle) 它们：`<DebugType>embedded</DebugType>`
 
 ## <a name="prerequisites"></a>必备条件
 
