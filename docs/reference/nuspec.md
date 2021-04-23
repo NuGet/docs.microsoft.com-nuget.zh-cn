@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 05/24/2019
 ms.topic: reference
 ms.reviewer: anangaur
-ms.openlocfilehash: a8a8058032b0b6c6ddcd5eed1cf22e75f0e3af72
-ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
+ms.openlocfilehash: ed865aad6f72752adcf3e3921287a20b961c4a8a
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107387408"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901806"
 ---
 # <a name="nuspec-reference"></a>.nuspec 引用
 
@@ -207,6 +207,8 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 
 #### <a name="readme"></a>自述文件
 
+*支持 **NuGet 5.10.0 preview 2** 及更高版本*
+
 打包自述文件时，需要使用 `readme` 元素来指定包路径，相对于包的根。 除此之外，还需要确保文件已包含在包中。 支持的文件格式仅包括 Markdown (*md*) 。
 
 例如，你可以将以下内容添加到 nuspec，以便将自述文件打包到你的项目中：
@@ -226,7 +228,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 </package>
 ```
 
-对于 MSBuild 等效项，请查看 [打包自述文件](msbuild-targets.md#packagereadmefile)。
+对于 MSBuild 等效项，请查看 [打包自述文件](msbuild-targets.md#packagereadmefile)。 
 
 #### <a name="requirelicenseacceptance"></a>requireLicenseAcceptance
 一个布尔值，用于指定客户端是否必须提示使用者接受包许可证后才可安装包。
@@ -351,7 +353,7 @@ nuget pack MyProject.csproj
 
 除 `$configuration$` 外，项目中的值优先于在命令行上分配给相同令牌的任何值。
 
-| 标记 | 值源 | 值
+| 标记 | 值源 | Value
 | --- | --- | ---
 | **$id $** | 项目文件 | 项目文件中的 AssemblyName (标题)  |
 | **$version $** | AssemblyInfo | AssemblyInformationalVersion（如果存在），否则为 AssemblyVersion |
@@ -381,7 +383,7 @@ nuget pack MyProject.csproj
 
 `<metadata>` 中的 `<dependencies>` 元素包含任意数量的 `<dependency>` 元素，用来标识顶级包所依赖的其他包。 每个 `<dependency>` 的特性如下所示：
 
-| 特性 | 说明 |
+| Attribute | 说明 |
 | --- | --- |
 | `id` | （必须）依赖项的包 ID，如“EntityFramework”和“NUnit”，同时也是 nuget.org 在包页面上显示的包名称。 |
 | `version` | （必需）可接受作为依赖项的版本范围。 有关准确语法，请参阅[包版本控制](../concepts/package-versioning.md#version-ranges)。 不支持浮动版本。 |
@@ -507,7 +509,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 
 `<frameworkAssemblies>` 元素包含零个或多个 `<frameworkAssembly>` 元素，这些元素指定以下特性：
 
-| 特性 | 描述 |
+| Attribute | 描述 |
 | --- | --- |
 | **assemblyName** | （必需）完全限定程序集名称。 |
 | **targetFramework** | （可选）指定此引用适用的目标框架。 如果省略，则表示该引用适用于全部框架。 有关确切的框架标识符，请参阅[目标框架](../reference/target-frameworks.md)。 |
@@ -547,7 +549,7 @@ Framework 程序集是 .NET Framework 的一部分，并已存在于任何给定
 
 每个 `<file>` 元素指定以下特性：
 
-| 特性 | 说明 |
+| Attribute | 说明 |
 | --- | --- |
 | **src** | 文件或要包含的文件位置，受 `exclude` 特性指定排除规则约束。 路径是相对于 `.nuspec` 文件的路径，除非指定了绝对路径。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 | **目标** | 放置源文件的包中文件夹的相对路径，必须以 `lib`、`content`、`build` 或 `tools` 开头。 请参阅[从基于约定的工作目录创建 .nuspec](../create-packages/creating-a-package.md#from-a-convention-based-working-directory)。 |
@@ -778,7 +780,7 @@ Packaged result:
 
 这些文件用一组特性指定，用于描述如何在项目系统中使用这些文件：
 
-| 特性 | 说明 |
+| Attribute | 说明 |
 | --- | --- |
 | **包括** | （必需）文件或要包含的文件位置，受 `exclude` 特性指定的排除规则约束。 路径相对于 `contentFiles` 文件夹，除非指定了绝对路径。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |
 | **延伸** | 要从 `src` 位置排除的文件或文件模式的分号分隔列表。 允许使用通配符 `*`，双通配符 `**` 意味着递归文件夹搜索。 |

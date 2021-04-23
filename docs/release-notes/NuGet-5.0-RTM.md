@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 04/02/2019
 ms.topic: conceptual
-ms.openlocfilehash: 637db1ae128ce020c33e54e56148c848a5f905a5
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 19173d2be7cd66b65651655385466b40f5e08352
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98776227"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901741"
 ---
 # <a name="nuget-50-release-notes"></a>NuGet 5.0 发行说明
 
@@ -27,7 +27,7 @@ NuGet 分发车辆：
 
 ## <a name="summary-whats-new-in-50"></a>摘要：5.0 中的新增功能
 
-* 支持在 Visual Studio 2019 中还原 [筛选的解决方案](/visualstudio/ide/filtered-solutions?view=vs-2019) - [#5820](https://github.com/NuGet/Home/issues/5820)
+* 支持在 Visual Studio 2019 中还原 [筛选的解决方案](/visualstudio/ide/filtered-solutions) - [#5820](https://github.com/NuGet/Home/issues/5820)
 * `BuildTransitive` 文件夹使包可以向主机项目传递目标/属性- [#6091](https://github.com/NuGet/Home/issues/6091)
 * 更好地支持 NuGet IVs Api 中的 PackageReference 方案- [#7005](https://github.com/NuGet/Home/issues/7005)、 [#7493](https://github.com/NuGet/Home/issues/7493)
 * `nuget.exe pack project.json` 已弃用- [#7928](https://github.com/NuGet/Home/issues/7928)

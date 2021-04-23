@@ -5,16 +5,16 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: 961a9d68e5cba09030401fc871a93bf1145b23a3
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 371e95c341efbce1c4a15facefc15cd51b266141
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777391"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901780"
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>在 Visual Studio 中 Uninstall-Package (程序包管理器控制台) 
 
-*本主题介绍 Windows 上 Visual Studio 中的 [包管理器控制台](../../consume-packages/install-use-packages-powershell.md) 内的命令。有关通用 PowerShell Uninstall-Package 命令，请参阅 [PowerShell PackageManagement 参考](/powershell/module/packagemanagement/?view=powershell-6)。*
+*本主题介绍 Windows 上 Visual Studio 中的 [包管理器控制台](../../consume-packages/install-use-packages-powershell.md) 内的命令。有关通用 PowerShell Uninstall-Package 命令，请参阅 [PowerShell PackageManagement 参考](/powershell/module/packagemanagement)。*
 
 从项目中删除包，并可以选择删除其依赖项。 如果其他程序包依赖于该程序包，则除非指定了 –Force 选项，否则此命令将失败。
 

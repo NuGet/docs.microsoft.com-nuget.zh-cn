@@ -5,16 +5,16 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: 110b41e830636d60741b14292c17840aa5a63dfd
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: ad551b8701cfc2061f7721fb050ed9b5a4fede32
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777450"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901689"
 ---
 # <a name="install-package-package-manager-console-in-visual-studio"></a>在 Visual Studio 中 Install-Package (程序包管理器控制台) 
 
-*本主题介绍 Windows 上 Visual Studio 中的 [包管理器控制台](../../consume-packages/install-use-packages-powershell.md) 内的命令。有关通用 PowerShell Install-Package 命令，请参阅 [PowerShell PackageManagement 参考](/powershell/module/packagemanagement/?view=powershell-6)。*
+*本主题介绍 Windows 上 Visual Studio 中的 [包管理器控制台](../../consume-packages/install-use-packages-powershell.md) 内的命令。有关通用 PowerShell Install-Package 命令，请参阅 [PowerShell PackageManagement 参考](/powershell/module/packagemanagement)。*
 
 将包及其依赖项安装到项目中。
 
@@ -39,7 +39,7 @@ Install-Package Microsoft.AspNet.MVC -Version 5.0.0.
 | ID | 需要 () 要安装的包的标识符。  (*3.0 +*) 该标识符可以是 `packages.config` 文件或文件的路径或 URL `.nupkg` 。 -Id 开关本身是可选的。 |
 | IgnoreDependencies | 仅安装此程序包，而不安装其依赖项。 |
 | 项目名称 | 要在其中安装包的项目，默认为默认项目。 |
-| Source | 要搜索的包源的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径，也可以是相对于当前文件夹的路径。 如果省略，则 `Install-Package` 搜索当前选定的包源。 |
+| 源 | 要搜索的包源的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径，也可以是相对于当前文件夹的路径。 如果省略，则 `Install-Package` 搜索当前选定的包源。 |
 | 版本 | 要安装的包的版本，默认为最新版本。 |
 | IncludePrerelease | 考虑安装的预发行程序包。 如果省略，则只考虑稳定程序包。 |
 | FileConflictAction | 当要求覆盖或忽略项目引用的现有文件时要执行的操作。 可能的值包括 *Overwrite、Ignore、None、OverwriteAll* 和 *(3.0 +)* *IgnoreAll*。 |

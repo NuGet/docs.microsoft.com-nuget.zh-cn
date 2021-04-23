@@ -10,12 +10,12 @@ no-loc:
 - MSBuild
 - .nuspec
 - nuspec
-ms.openlocfilehash: 47411641db47884f79f2bc9a4aa00035fc79993b
-ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
+ms.openlocfilehash: 0a10a6f1e4c71903232281c25a6c4b6bbc65fb34
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107387369"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901480"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>NuGet作为目标打包和还原 MSBuild
 
@@ -115,7 +115,7 @@ ms.locfileid: "107387369"
 | `NoPackageAnalysis` | 指定 `pack` 不应在生成包后运行包分析。 |
 | `MinClientVersion` | 指定 NuGet 可安装此包的客户端的最低版本，由 nuget.exe 和 Visual Studio 包管理器强制执行。 |
 | `IncludeBuildOutput` | 此布尔值指定是否应将生成输出程序集打包到 .nupkg 文件中  。 |
-| `IncludeContentInPack` | 此布尔值指定是否 `Content` 自动在生成的包中包含类型为的任何项。 默认为 `true`。 |
+| `IncludeContentInPack` | 此布尔值指定是否 `Content` 自动在生成的包中包含类型为的任何项。 默认值为 `true`。 |
 | `BuildOutputTargetFolder` | 指定放置输出程序集的文件夹。 输出程序集（和其他输出文件）会复制到各自的框架文件夹中。 有关详细信息，请参阅 [输出程序集](#output-assemblies)。 |
 | `ContentTargetFolders` | 指定不为其指定所有内容文件的默认位置 `PackagePath` 。 默认值为“content;contentFiles”。 有关详细信息，请参阅[在包中包含内容](#including-content-in-a-package)。 |
 | `NuspecFile` | 用于打包的文件的相对路径或绝对路径 *.nuspec* 。 如果已指定，则将 **专用** 于打包信息，并且不使用项目中的任何信息。 有关详细信息，请参阅[使用 .nuspec 打包](#packing-using-a-nuspec-file)。 |
@@ -162,6 +162,8 @@ ms.locfileid: "107387369"
 对于 nuspec 等效项，请查看[ nuspec 图标的参考](nuspec.md#icon)。
 
 ### <a name="packagereadmefile"></a>PackageReadmeFile
+
+*支持 **NuGet 5.10.0 preview 2**  /  **.net 5.0.3** 及更高版本*
 
 打包自述文件时，需要使用 `PackageReadmeFile` 属性来指定包路径，相对于包的根。 除此之外，还需要确保文件已包含在包中。 支持的文件格式仅包括 Markdown (*md*) 。
 

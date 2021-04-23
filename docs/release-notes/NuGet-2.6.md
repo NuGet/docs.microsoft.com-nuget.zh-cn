@@ -1,16 +1,16 @@
 ---
 title: NuGet 2.6 发行说明
-description: NuGet 2.6.1 for WebMatrix 的发行说明，包括已知问题、bug 修复、新增功能和 Dcr。
+description: NuGet 2.6 的发行说明，包括已知问题、bug 修复、新增功能和 Dcr。
 author: JonDouglas
 ms.author: jodou
 ms.date: 11/11/2016
 ms.topic: conceptual
-ms.openlocfilehash: 812a0e806e29c5a2141db4f2fbab4bf91b0983f9
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 6b25b9df062afc88466ad107e718f632878debfc
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98776836"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901416"
 ---
 # <a name="nuget-26-release-notes"></a>NuGet 2.6 发行说明
 

@@ -5,16 +5,16 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 8394f888ec3d5e57eacd351a4867173da1070ead
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 7c91faecaac2967c7a01dd81e72b9097e7bd6cae
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777491"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901728"
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>在 Visual Studio 中 Get-Package (程序包管理器控制台) 
 
-*本主题介绍 Windows 上 Visual Studio 中的 [包管理器控制台](../../consume-packages/install-use-packages-powershell.md) 内的命令。有关通用 PowerShell Get-Package 命令，请参阅 [PowerShell PackageManagement 参考](/powershell/module/packagemanagement/?view=powershell-6)。*
+*本主题介绍 Windows 上 Visual Studio 中的 [包管理器控制台](../../consume-packages/install-use-packages-powershell.md) 内的命令。有关通用 PowerShell Get-Package 命令，请参阅 [PowerShell PackageManagement 参考](/powershell/module/packagemanagement)。*
 
 检索本地存储库中安装的包的列表，列出包源中与-ListAvailable 开关一起使用时可用的包，或在与-Update 开关一起使用时列出可用的更新。
 
@@ -32,7 +32,7 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
 
 | 参数 | 说明 |
 | --- | --- |
-| Source | 包的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径，也可以是相对于当前文件夹的路径。 如果省略，则 `Get-Package` 搜索当前选定的包源。 当与-ListAvailable 一起使用时，默认为 nuget.org。 |
+| 源 | 包的 URL 或文件夹路径。 本地文件夹路径可以是绝对路径，也可以是相对于当前文件夹的路径。 如果省略，则 `Get-Package` 搜索当前选定的包源。 当与-ListAvailable 一起使用时，默认为 nuget.org。 |
 | ListAvailable | 列出包源中可用的包，默认为 nuget.org。显示默认的50包，除非指定了-PageSize 和/或-First。 |
 | 更新 | 列出具有包源中可用更新的包。 |
 | 项目名称 | 要从中获取已安装包的项目。 如果省略，则返回整个解决方案的已安装项目。 |
