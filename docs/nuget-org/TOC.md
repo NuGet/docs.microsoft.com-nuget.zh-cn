@@ -7,6 +7,7 @@
 ## [发布包](publish-a-package.md)
 ## [包 ID 前缀预留](id-prefix-reservation.md)
 ## [包弃用](deprecate-packages.md)
+## [包自述文件](package-readme-on-nuget-org.md)
 # 策略
 ## [数据请求](policies/Data-requests.md)
 ## [争议解决](policies/dispute-resolution.md)
