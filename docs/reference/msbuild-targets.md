@@ -10,12 +10,12 @@ no-loc:
 - MSBuild
 - .nuspec
 - nuspec
-ms.openlocfilehash: 0a10a6f1e4c71903232281c25a6c4b6bbc65fb34
-ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
+ms.openlocfilehash: 8ebf0329f9dc7af09a59f1498a934754842df365
+ms.sourcegitcommit: 08c5b2c956a1a45f0ea9fb3f50f55e41312d8ce3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2021
-ms.locfileid: "107901480"
+ms.lasthandoff: 04/27/2021
+ms.locfileid: "108067305"
 ---
 # <a name="nuget-pack-and-restore-as-msbuild-targets"></a>NuGet作为目标打包和还原 MSBuild
 
@@ -59,7 +59,7 @@ ms.locfileid: "107901480"
 | `VersionPrefix` | `PackageVersionPrefix` | empty | 设置 `PackageVersion` 覆盖 `PackageVersionPrefix` |
 | `VersionSuffix` | `PackageVersionSuffix` | empty | `$(VersionSuffix)` from MSBuild 。 设置 `PackageVersion` 覆盖 `PackageVersionSuffix` |
 | `Authors` | `Authors` | 当前用户的用户名 | 以分号分隔的包作者列表，与 nuget.org 上的配置文件名称匹配。它们显示在 nuget.org 的 NuGet 库中，并用于通过相同作者交叉引用包。 |
-| `Owners` | 空值 | 不存在于 nuspec | |
+| `Owners` | 不适用 | 不存在于 nuspec | |
 | `Title` | `Title` | `PackageId` | 明了易用的包标题，通常用在 UI 显示中，如 nuget.org 上和 Visual Studio 中包管理器上的那样。 |
 | `Description` | `Description` | “包描述” | 程序集的详细说明。 如果未指定 `PackageDescription`，则此属性还可用作包的说明。 |
 | `Copyright` | `Copyright` | empty | 包的版权详细信息。 |
@@ -77,7 +77,7 @@ ms.locfileid: "107901480"
 | `Repository/Type` | `RepositoryType` | empty | 存储库类型。 示例： `git` (默认) ， `tfs` 。 |
 | `Repository/Branch` | `RepositoryBranch` | empty | 可选存储库分支信息。 还必须指定 `RepositoryUrl` 才能包含此属性。 示例： *master* (NuGet 4.7.0 +) 。 |
 | `Repository/Commit` | `RepositoryCommit` | empty | 可选的存储库提交或更改集，指示针对其生成包的源。 还必须指定 `RepositoryUrl` 才能包含此属性。 示例： *0e4d1b598f350b3dc675018d539114d1328189ef* (NuGet 4.7.0 +) 。 |
-| `PackageType` | `<PackageType>DotNetCliTool, 1.0.0.0;Dependency, 2.0.0.0</PackageType>` | | |
+| `PackageType` | `<PackageType>CustomType1, 1.0.0.0;CustomType2</PackageType>` | | 指示包的预期用途。 包类型使用与包 Id 相同的格式，并由分隔 `;` 。 包类型可通过追加 `,` 和字符串进行版本控制 [`Version`](/dotnet/api/system.version) 。 请参阅 [设置 NuGet 包类型](../create-packages/set-package-type.md) (NuGet 3.5.0 +) 。 |
 | `Summary` | 不支持 | | |
 
 ### <a name="pack-target-inputs"></a>包目标输入
@@ -115,7 +115,7 @@ ms.locfileid: "107901480"
 | `NoPackageAnalysis` | 指定 `pack` 不应在生成包后运行包分析。 |
 | `MinClientVersion` | 指定 NuGet 可安装此包的客户端的最低版本，由 nuget.exe 和 Visual Studio 包管理器强制执行。 |
 | `IncludeBuildOutput` | 此布尔值指定是否应将生成输出程序集打包到 .nupkg 文件中  。 |
-| `IncludeContentInPack` | 此布尔值指定是否 `Content` 自动在生成的包中包含类型为的任何项。 默认值为 `true`。 |
+| `IncludeContentInPack` | 此布尔值指定是否 `Content` 自动在生成的包中包含类型为的任何项。 默认为 `true`。 |
 | `BuildOutputTargetFolder` | 指定放置输出程序集的文件夹。 输出程序集（和其他输出文件）会复制到各自的框架文件夹中。 有关详细信息，请参阅 [输出程序集](#output-assemblies)。 |
 | `ContentTargetFolders` | 指定不为其指定所有内容文件的默认位置 `PackagePath` 。 默认值为“content;contentFiles”。 有关详细信息，请参阅[在包中包含内容](#including-content-in-a-package)。 |
 | `NuspecFile` | 用于打包的文件的相对路径或绝对路径 *.nuspec* 。 如果已指定，则将 **专用** 于打包信息，并且不使用项目中的任何信息。 有关详细信息，请参阅[使用 .nuspec 打包](#packing-using-a-nuspec-file)。 |
@@ -163,7 +163,7 @@ ms.locfileid: "107901480"
 
 ### <a name="packagereadmefile"></a>PackageReadmeFile
 
-*支持 **NuGet 5.10.0 preview 2**  /  **.net 5.0.3** 及更高版本*
+*支持 **NuGet 5.10.0 preview 2**  /  **.net SDK 5.0.300** 及更高版本*
 
 打包自述文件时，需要使用 `PackageReadmeFile` 属性来指定包路径，相对于包的根。 除此之外，还需要确保文件已包含在包中。 支持的文件格式仅包括 Markdown (*md*) 。
 
