@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9bae65573ca49c68d07250228c1923890e0f14ac
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: fa3ec6992002224c9fb56a53aee9096e6d2c6fbb
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775011"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901663"
 ---
 # <a name="omitting-nuget-packages-in-source-control-systems"></a>在源代码管理系统中省略 NuGet 包
 
@@ -58,12 +58,12 @@ project.assets.json
 ## <a name="omitting-packages-with-team-foundation-version-control"></a>使用 Team Foundation 版本控制省略包
 
 > [!Note]
-> 向源代码管理添加项目之前，请尽量按照这些说明进行操作  。 否则，请手动删除存储库中的 `packages` 文件夹并签入该更改，然后才能继续。
+> 向源代码管理添加项目之前，请尽量按照这些说明进行操作。 否则，请手动删除存储库中的 `packages` 文件夹并签入该更改，然后才能继续。
 
 要使用 TFVC 为选定的文件禁用源代码管理集成，请执行以下操作：
 
 1. 在解决方案文件夹（`.sln` 文件所在的位置）中创建名为 `.nuget` 的文件夹。
-    - 提示：对于 Windows，若要在 Windows 资源管理器中创建此文件夹，请使用具有尾随点的名称 `.nuget.`  。
+    - 提示：对于 Windows，若要在 Windows 资源管理器中创建此文件夹，请使用具有尾随点的名称 `.nuget.` 。
 
 1. 在该文件夹中，创建名为 `NuGet.Config` 的文件，将其打开进行编辑。
 
@@ -80,7 +80,7 @@ project.assets.json
 
 1. 如果使用的是 TFS 2010 或更早版本，请掩蔽工作区映射中的 `packages` 文件夹。
 
-1. 对于 TFS 2012 或更高版本/Visual Studio Team Services，按照[将文件添加到服务器](/vsts/tfvc/add-files-server?view=vsts#tfignore)中所述操作来创建 `.tfignore` 文件。 在该文件中，包括以下内容以显式忽略对存储库级别上的 `\packages` 文件夹和其他几个中间文件的修改。 （可以使用具有尾随点的 `.tfignore.` 名称在 Windows 资源管理器中创建文件，但可能需要首先禁用“隐藏已知文件扩展名”选项。）：
+1. 对于 TFS 2012 或更高版本/Visual Studio Team Services，按照[将文件添加到服务器](/vsts/tfvc/add-files-server?view=vsts#tfignore&preserve-view=true)中所述操作来创建 `.tfignore` 文件。 在该文件中，包括以下内容以显式忽略对存储库级别上的 `\packages` 文件夹和其他几个中间文件的修改。 （可以使用具有尾随点的 `.tfignore.` 名称在 Windows 资源管理器中创建文件，但可能需要首先禁用“隐藏已知文件扩展名”选项。）：
 
    ```cli
    # Ignore NuGet Packages

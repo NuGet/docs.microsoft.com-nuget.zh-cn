@@ -5,12 +5,12 @@ author: nkolev92
 ms.author: nikolev
 ms.date: 02/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: bb624ec6987dd5c6ee38d5bb7e01200487dd4bed
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: e76fefaf4d3c86aa15cf279090c0adb8ed779aab
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78231739"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901507"
 ---
 # <a name="consuming-packages-from-authenticated-feeds"></a>使用经过身份验证的源中的包
 
@@ -61,7 +61,7 @@ Visual Studio 中有一个支持 Azure DevOps 的内置凭据提供程序。
 
 #### <a name="available-credential-providers-for-nugetexe"></a>nuget.exe 的可用凭据提供程序
 
-* [Azure DevOps V2 凭据提供程序](/azure/devops/artifacts/nuget/nuget-exe?view=azure-devops#add-a-feed-to-nuget-482-or-later)或 [Azure Artifacts 凭据提供程序](https://github.com/microsoft/artifacts-credprovider)
+* [Azure DevOps V2 凭据提供程序](/azure/devops/artifacts/nuget/nuget-exe#add-a-feed-to-nuget-482-or-later)或 [Azure Artifacts 凭据提供程序](https://github.com/microsoft/artifacts-credprovider)
 
 对于 Visual Studio 2017 15.9 及更高版本，Azure DevOps 凭据提供程序捆绑在 Visual Studio 中。
 如果 `nuget.exe` 使用来自该特定 Visual Studio 工具集的 MSBuild，则系统会自动发现该插件。
