@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 10/25/2017
 ms.topic: conceptual
-ms.openlocfilehash: 35339626b0a20ccfceafa89fef94fb3187013fd7
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 18e3af7145495b5753b5900915ffb4b07942b856
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774863"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901468"
 ---
 # <a name="common-nuget-configurations"></a>常见的 NuGet 配置
 
@@ -18,7 +18,7 @@ NuGet 的行为由一个或多个 `NuGet.Config` (XML) 文件（可存在于项�
 
 ## <a name="config-file-locations-and-uses"></a>配置文件的位置和使用
 
-| 范围 | NuGet.Config 文件的位置 | 描述 |
+| 范围 | `NuGet.Config` 文件位置 | 说明 |
 | --- | --- | --- |
 | 解决方案 | 当前文件夹（又称解决方案文件夹）或上至驱动器根目录的任何文件夹。| 在解决方案文件夹中，设置应用于子文件夹中的所有项目。 请注意，如果配置文件位于项目文件夹中，则对该项目没有任何影响。 |
 | 用户 | **Windows：** `%appdata%\NuGet\NuGet.Config`<br/>**Mac/Linux：** `~/.config/NuGet/NuGet.Config` 或 `~/.nuget/NuGet/NuGet.Config`（因 OS 发行版而异） <br/>所有平台都支持其他配置。 这些配置无法通过工具进行编辑。 </br> **Windows：** `%appdata%\NuGet\config\*.Config` <br/>**Mac/Linux：** `~/.config/NuGet/config/*.config` 或 `~/.nuget/config/*.config` | 设置应用于所有操作，但可被任何项目级的设置替代。 |
@@ -26,7 +26,7 @@ NuGet 的行为由一个或多个 `NuGet.Config` (XML) 文件（可存在于项�
 
 针对早期版本的 NuGet 的说明：
 - NuGet 3.3 及更早版本使用 `.nuget` 文件夹作为解决方案范围的设置。 NuGet 3.4+ 中不使用此文件夹。
-- 对于 NuGet 2.6 到 3.x 版本，Windows 上的计算机级配置文件位于 %ProgramData%\NuGet\Config[\\{IDE}[\\{Version}[\\{SKU}]]]\NuGet.Config，其中，{IDE} 可能为 VisualStudio，{Version} 为 Visual Studio 的版本（如 14.0），{SKU} 可能为 Community、Pro 或 Enterprise。 若要将设置迁移到 NuGet 4.0+，只需将配置文件复制到 %ProgramFiles(x86)%\NuGet\Config 即可。在 Linux 上，此位置以前为 /etc/opt；在 Mac 上为 /Library/Application Support。
+- 对于 NuGet 2.6 到 3.x，Windows 上计算机级别配置文件以前位于 `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}]]]\NuGet.Config`（`{IDE}` 是 `VisualStudio`，`{Version}` 是 Visual Studio 版本，例如 `14.0`，以及 `{SKU}` 是 `Community`、`Pro` 或 `Enterprise`）。 若要将设置迁移到 NuGet 4.0+，只需将配置文件复制到 `%ProgramFiles(x86)%\NuGet\Config` 即可。 在 Linux 上，此先前位置以前为 `/etc/opt`；在 Mac 上则为 `/Library/Application Support`。
 
 ## <a name="changing-config-settings"></a>更改配置设置
 
@@ -102,18 +102,16 @@ nuget config -set repositoryPath= -configfile /home/my.Config
 
 具体而言，NuGet 将按照以下顺序从不同配置文件加载设置：
 
-1. [NuGetDefaults.Config 文件](#nuget-defaults-file)，仅包含与包源相关的设置。
+1. [`NuGetDefaults.Config` 文件](#nuget-defaults-file)，仅包含与包源相关的设置。
 1. 计算机级文件。
 1. 用户级文件。
 1. 用 `-configFile` 指定的文件。
-1. 按照从驱动器根目录到当前文件夹（在此文件夹中调用 nuget.exe 或此文件夹包含 Visual Studio 项目）的路径，在其中的每个文件夹中找到的文件。 例如，如果在 c:\A\B\C 中调用命令，NuGet 将先后查找并加载 c:\,、c:\A、c:\A\B 和 c:\A\B\C 中的配置文件。
+1. 在从驱动器根到当前文件夹的路径中的每个文件夹中找到的文件（调用 `nuget.exe` 的位置或包含 Visual Studio 项目的文件夹）。 例如，如果在 `c:\A\B\C` 中调用命令，NuGet 将查找并加载 `c:\` 中的配置文件，然后是 `c:\A`、`c:\A\B`，最后是 `c:\A\B\C`。
 
 NuGet 在这些文件中找到设置时，设置将按如下方式应用：
 
 1. 对于单项元素，NuGet 将替换以前找到的具有相同键的值。 也就是说，“最靠近”当前文件夹或项目的设置将替代之前找到的任何其他设置。 例如，如果 `NuGetDefaults.Config` 中的 `defaultPushSource` 设置存在于任何其他配置文件中，则此设置将被替代。
-
 1. 对于集合元素（如 `<packageSources>`），NuGet 会将所有配置文件中的值合并到一个集合中。
-
 1. 当给定节点中存在 `<clear />` 时，NuGet 将忽略之前为该节点定义的配置值。
 
 ### <a name="settings-walkthrough"></a>设置演练
@@ -144,7 +142,7 @@ disk_drive_2
 </configuration>
 ```
 
-文件 B. disk_drive_2/NuGet.Config：
+文件 B. `disk_drive_2/NuGet.Config`：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -158,7 +156,7 @@ disk_drive_2
 </configuration>
 ```
 
-文件 C. disk_drive_2/Project1/NuGet.Config：
+文件 C. `disk_drive_2/Project1/NuGet.Config`：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -174,7 +172,7 @@ disk_drive_2
 </configuration>
 ```
 
-文件 D. disk_drive_2/Project2/NuGet.Config：
+文件 D. `disk_drive_2/Project2/NuGet.Config`：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -188,13 +186,13 @@ disk_drive_2
 
 接下来，NuGet 将按如下方式加载和应用设置，具体取决于调用设置的位置：
 
-- **从 disk_drive_1/users 调用**：仅使用用户级配置文件 (A) 中列出的默认存储库，因为这是在 disk_drive_1 中找到的唯一文件。
+- 从 `disk_drive_1/users` 调用：仅使用用户级配置文件 (A) 中列出的默认存储库，因为这是 `disk_drive_1` 中的唯一文件。
 
-- **从 disk_drive_2/ 或 disk_drive_/tmp 调用**：首先加载用户级文件 (A)，然后 NuGet 转到 disk_drive_2 的根目录并查找文件 (B)。 NuGet 还将在 /tmp 中查找配置文件，但不会找到此类文件。 因此，此时将使用 nuget.org 上的默认存储库、启用包还原并在 disk_drive_2/tmp 中展开包。
+- 从 `disk_drive_2/` 或 `disk_drive_/tmp` 调用：首先加载用户级文件 (A)，然后 NuGet 转到 `disk_drive_2` 的根目录并查找文件 (B)。 NuGet 还会在 `/tmp` 中查找配置文件，但找不到该文件。 因此，此时将使用 `nuget.org` 上的默认存储库、启用包还原并在 `disk_drive_2/tmp` 中展开包。
 
-- **从 disk_drive_2/Project1 或 disk_drive_2/Project1/Source 调用**：首先加载用户级文件 (A)，然后 NuGet 依次加载 disk_drive_2 根目录中的文件 (B) 和文件 (C)。 (C) 中的设置会替代 (B) 和 (A) 中的设置，因此安装包的 `repositoryPath` 将为 disk_drive_2/Project1/External/Packages，而非 disk_drive_2/tmp。 此外，由于 (C) 清除了 `<packageSources>`，因此 nuget.org 将不再可用作源，并仅留下 `https://MyPrivateRepo/ES/nuget`。
+- 从 `disk_drive_2/Project1` 或 `disk_drive_2/Project1/Source` 调用：首先加载用户级文件 (A)，然后 NuGet 从 `disk_drive_2` 的根目录依次加载文件 (B) 和文件 (C)。 (C) 中的设置会替代 (B) 和 (A) 中的设置，因此安装包的 `repositoryPath` 将为 `disk_drive_2/Project1/External/Packages`，而非 `disk_drive_2/tmp`。 此外，由于 (C) 清除了 `<packageSources>`，因此 nuget.org 将不再可用作源，并仅留下 `https://MyPrivateRepo/ES/nuget`。
 
-- **从 disk_drive_2/Project2 或 disk_drive_2/Project2/Source 调用**：首先加载用户级文件 (A)，然后依次加载文件 (B) 和文件 (D)。 由于未清除 `packageSources`，因此 `nuget.org` 和 `https://MyPrivateRepo/DQ/nuget` 都可用作源。 按 (B) 中的指定，包将在 disk_drive_2/tmp 中展开。
+- 从 `disk_drive_2/Project2` 或 `disk_drive_2/Project2/Source` 调用：首先加载用户级文件 (A)，然后依次加载文件 (B) 和文件 (D)。 由于未清除 `packageSources`，因此 `nuget.org` 和 `https://MyPrivateRepo/DQ/nuget` 都可用作源。 按 (B) 中的指定，包将在 `disk_drive_2/tmp` 中展开。
 
 ## <a name="additional-user-wide-configuration"></a>其他用户范围配置
 
@@ -217,11 +215,11 @@ disk_drive_2
 >
 > 此外，NuGet 中的 `NuGetDefaults.Config` 或任何其他机制都不会阻止访问 nuget.org 等包源。如果组织希望阻止此类访问，则必须通过其他方式（如防火墙）实现。
 
-### <a name="nugetdefaultsconfig-location"></a>NuGetDefaults.Config 的位置
+### <a name="nugetdefaultsconfig-location"></a>`NuGetDefaults.Config` 位置
 
 下表根据目标操作系统描述 `NuGetDefaults.Config` 文件应存储的位置：
 
-| OS 平台  | NuGetDefaults.Config 的位置 |
+| OS 平台  | `NuGetDefaults.Config` 位置 |
 | --- | --- |
 | Windows      | **Visual Studio 2017 或 NuGet 4.x+：** `%ProgramFiles(x86)%\NuGet\Config` <br />**Visual Studio 2015 及更低版本或 NuGet 3.x 及更低版本：** `%PROGRAMDATA%\NuGet` |
 | Mac/Linux    | `$XDG_DATA_HOME`（通常为 `~/.local/share` 或 `/usr/local/share`，具体视 OS 版本而定）|
@@ -230,9 +228,9 @@ disk_drive_2
 
 - `packageSources`：此集合与常规配置文件中的 `packageSources` 具有相同含义，并可指定默认源。 在使用 `packages.config` 管理格式的项目中安装或更新包时，NuGet 会按顺序使用源。 对于使用 PackageReference 格式的项目，NuGet 会先使用本地源，再使用网络共享上的源，最后使用 HTTP 源，而不管配置文件中的顺序如何。 NuGet 会始终忽略还原操作的源顺序。
 
-- `disabledPackageSources`：此集合还与在 `NuGet.Config` 文件中时具有相同含义，集合中将列出每个受影响源的名称，并用 true/false 值指示源是否已禁用。 这可使源名称和 URL 保留在 `packageSources` 中，但不会将其默认打开。 开发人员随后可在其他 `NuGet.Config` 文件中将源的值设置为 false，以便重新启用源，而无需再次寻找正确的 URL。 开发人员还可通过此方法获取组织的内部源 URL 完整列表，同时仅默认启用一个团队的源。
+- `disabledPackageSources`：此集合还与在 `NuGet.Config` 文件中时具有相同含义，集合中将列出每个受影响源的名称，并用 `true`/`false` 值指示源是否已禁用。 这可使源名称和 URL 保留在 `packageSources` 中，但不会将其默认打开。 单个开发人员随后可在其他 `NuGet.Config` 文件中将源的值设置为 `false`，以便重新启用源，而无需再次寻找正确的 URL。 开发人员还可通过此方法获取组织的内部源 URL 完整列表，同时仅默认启用一个团队的源。
 
-- `defaultPushSource`：指定 `nuget push` 操作的默认目标，同时替代 nuget.org 的内置默认值。管理员可部署此设置以避免误将内部包发布到公共 nuget.org，因为开发人员专门负责使用 `nuget push -Source` 向 nuget.org 发布。
+- `defaultPushSource`：指定 `nuget push` 操作的默认目标，同时替代 `nuget.org` 的内置默认值。 管理员可部署此设置以避免误将内部包发布到公共 `nuget.org`，因为开发人员专门负责使用 `nuget push -Source` 向 `nuget.org` 发布。
 
 ### <a name="example-nugetdefaultsconfig-and-application"></a>示例 NuGetDefaults.Config 和应用程序
 

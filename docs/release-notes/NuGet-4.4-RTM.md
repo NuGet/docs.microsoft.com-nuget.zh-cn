@@ -1,31 +1,31 @@
 ---
 title: NuGet 4.4 RTM 发行说明
-description: NuGet 4.3 RTM 的发行说明，包括已知问题、bug 修复、新增功能和 DCR。
+description: NuGet 4.4 RTM 的发行说明，包括已知问题、错误修复、新增功能和 DCR。
 author: JonDouglas
 ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 970a920a401b8a74c04d84cbad9933c54e3cd19e
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 980afffcd4202e019ffa87de5dccf947300a9c13
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98776285"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901702"
 ---
 # <a name="nuget-44-release-notes"></a>NuGet 4.4 发行说明
 
 [Visual Studio 2017 15.4 RTW](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes) 附带 NuGet 4.4 RTM。
 
-## <a name="summary-whats-new-in-440"></a>摘要:4.4.0 版中的新增功能
+## <a name="summary-whats-new-in-440"></a>摘要：4.4.0 中的新变化
 
-## <a name="summary-whats-new-in-442"></a>摘要:4.4.2 版中的新增功能
+## <a name="summary-whats-new-in-442"></a>摘要：4.4.2 中的新变化
 
-* 安全修复：~/.nuget 中针对所创建文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
+* 安全修补程序：~/.nuget 中针对所创建文件的权限过于开放 [#7673](https://github.com/NuGet/Home/issues/7673) [CVE-2019-0757](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0757)
 
-## <a name="summary-whats-new-in-443"></a>摘要:4.4.3 版中的新增功能
+## <a name="summary-whats-new-in-443"></a>摘要：4.4.3 中的新变化
 
-* 安全修复：NUPKGs 中的文件可以具有高于 NUPKG 目录的相对路径 [#7906](https://github.com/NuGet/Home/issues/7906)
+* 安全修补程序：NUPKG 中的文件存储可以具有高于 NUPKG 目录的相对路径 [#7906](https://github.com/NuGet/Home/issues/7906)
 
 ## <a name="known-issues"></a>已知问题
 
@@ -77,13 +77,13 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 [NuGet 4.3 RTM 发行说明](../release-notes/nuget-4.3-RTM.md)- 列出了 NuGet 4.3 RTM 已修复的所有问题
 
-### <a name="features"></a>特征
+### <a name="features"></a>功能
 
 - 支持 PMC 和 NuGet PM UI 方案中的轻量型解决方案加载 - [#5180](https://github.com/NuGet/Home/issues/5180)
 
 - msbuild 包目标应具有公共挂钩，以用于在其本身之前运行用户目标 - [#5143](https://github.com/NuGet/Home/issues/5143)
 
-- 功能：将 dependencyVersion 开关添加到 nuget install - [#1806](https://github.com/NuGet/Home/issues/1806)
+- 功能：将 dependencyVersion 开关添加到 nuget 安装 - [#1806](https://github.com/NuGet/Home/issues/1806)
 
 - uap10.0.TODO.0 应映射到适用于 NuGet 的 .NET Standard 2.0 - [#5684](https://github.com/NuGet/Home/issues/5684)
 
@@ -175,9 +175,9 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 - [警告和错误] NoWarn 不通过 P2P 引用间接流动 - [#5501](https://github.com/NuGet/Home/issues/5501)
 
-- 轻量级解决方案加载：PM UI、PMC 和 IV 的共同核心 - [#5057](https://github.com/NuGet/Home/issues/5057)
+- 轻量型解决方案加载：PM UI、PMC 和 IV 的共同核心- - [#5057](https://github.com/NuGet/Home/issues/5057)
 
-- 轻量级解决方案加载：支持 - PMC - [#5053](https://github.com/NuGet/Home/issues/5053)
+- 轻量型解决方案加载：支持 - PMC - [#5053](https://github.com/NuGet/Home/issues/5053)
 
 - 添加对 Visual Studio 触发的还原前 MSBuild 目标的支持 - [#4781](https://github.com/NuGet/Home/issues/4781)
 
@@ -193,7 +193,7 @@ NuGet 包管理器不显示，且不允许添加/更新 DotNetCLITools。 [NuGet
 
 - 文档中有关 NuGet 警告和错误的更新 - [#5857](https://github.com/NuGet/Home/issues/5857)
 
-## <a name="links-to-github-issues-fixed-in-44-rtm"></a>4\.4 RTM 中已修复 GitHub 问题的链接
+## <a name="links-to-github-issues-fixed-in-44-rtm"></a>4.4 RTM 中已修复 GitHub 问题的链接
 
 [问题列表 1](https://github.com/NuGet/Home/issues?q=is:issue+is:closed+milestone:"4.4")
 

@@ -5,18 +5,18 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: 12d12d5294a474c4d3e4f5d3cad468bb515d21d5
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: a3d2504528249f3545e2eb5d9bce7713029638db
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "67426942"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901585"
 ---
 # <a name="scoped-api-keys"></a>范围内的 API 密钥
 
 为了使 NuGet 成为一个更安全的包分发环境，可以通过添加范围来控制 API 密钥。
 
-借助向 API 密钥提供范围的功能可更好地控制 API。 可以：
+借助向 API 密钥提供范围的功能可更好地控制 API。 可以执行以下操作：
 
 - 创建多个范围内的 API 密钥，可用于具有不同到期时间表的不同包。
 - 安全地获取 API 密钥。
@@ -47,29 +47,29 @@ ms.locfileid: "67426942"
 
 ## <a name="use-glob-patterns"></a>使用 glob 模式
 
-如果处理多个包并且需要管理大量包，则可以选择使用通配模式同时选择多个包。 例如，如果希望为 ID 以 `Fabrikam.Service` 开头的所有包的键授予特定的范围，则可以在“Glob 模式”文本框中指定 `fabrikam.service.*`  。
+如果处理多个包并且需要管理大量包，则可以选择使用通配模式同时选择多个包。 例如，如果希望为 ID 以 `Fabrikam.Service` 开头的所有包的键授予特定的范围，则可以在“Glob 模式”文本框中指定 `fabrikam.service.*`。
 
-![创建 API 密钥](media/scoped-api-keys-glob-pattern.png)
+![创建 API 密钥 - 2](media/scoped-api-keys-glob-pattern.png)
 
 使用 glob 模式确定 API 密钥权限也适用于与 glob 模式匹配的新包。 例如，如果尝试推送名为 `Fabrikam.Service.Framework` 的新包，则可以使用之前创建的密钥执行此操作，因为该包与 glob 模式 `fabrikam.service.*` 匹配。
 
 ## <a name="obtain-api-keys-securely"></a>安全地获取 API 密钥
 
-为了安全起见，屏幕上永远不会显示新创建的密钥，只能使用“复制”按钮  。 同样，刷新页面后无法访问该密钥。
+为了安全起见，屏幕上永远不会显示新创建的密钥，只能使用“复制”按钮。 同样，刷新页面后无法访问该密钥。
 
-![创建 API 密钥](media/scoped-api-keys-obtain-keys.png)
+![创建 API 密钥 - 3](media/scoped-api-keys-obtain-keys.png)
 
 ## <a name="edit-existing-api-keys"></a>编辑现有 API 密钥
 
 你还可能希望在不更改密钥本身的情况下更新密钥权限和范围。 如果有一个针对单个包的具有特定范围的密钥，则可以选择向一个或多个其他包应用同一范围。
 
-![创建 API 密钥](media/scoped-api-keys-edit.png)
+![创建 API 密钥 - 4](media/scoped-api-keys-edit.png)
 
 ## <a name="refresh-or-delete-existing-api-keys"></a>刷新或删除现有 API 密钥
 
 帐户所有者可以选择刷新密钥，在这种情况下（对包的）权限、范围和到期日期保持不变，但是会发出一个新密钥，使旧密钥无法使用。 这有助于管理过时密钥，或者有助于可能存在 API 密钥泄漏的情况。
 
-![创建 API 密钥](media/scoped-api-keys-refresh.png)
+![创建 API 密钥 - 5](media/scoped-api-keys-refresh.png)
 
 如果不再需要这些密钥，也可以选择删除这些密钥。 删除密钥将移除密钥并使其无法使用。
 
@@ -88,15 +88,15 @@ ms.locfileid: "67426942"
 
 ### <a name="can-i-delete-my-legacy-api-key-or-discontinue-using-now"></a>我是否可以删除旧 API 密钥或立即停止使用？
 
-是的。 你可以并且应该删除你的旧 API 密钥。
+是。 你可以并且应该删除你的旧 API 密钥。
 
 ### <a name="can-i-get-back-my-api-key-that-i-deleted-by-mistake"></a>我是否可以找回错误删除的 API 密钥？
 
-不是。 删除后，你只能创建新密钥。 意外删除的密钥无法恢复。
+不能。 删除后，你只能创建新密钥。 意外删除的密钥无法恢复。
 
 ### <a name="does-the-old-api-key-continue-to-work-upon-api-key-refresh"></a>API 密钥刷新时是否可继续使用旧 API 密钥？
 
-不是。 刷新密钥后，将生成一个与旧密钥具有相同范围、权限和期限的新密钥。 旧密钥不复存在。
+不能。 刷新密钥后，将生成一个与旧密钥具有相同范围、权限和期限的新密钥。 旧密钥不复存在。
 
 ### <a name="can-i-give-more-permissions-to-an-existing-api-key"></a>我可以为现有 API 密钥授予更多权限吗？
 

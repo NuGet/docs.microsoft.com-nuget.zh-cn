@@ -6,12 +6,12 @@ ms.author: rmpablos
 ms.date: 03/06/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 64b28c29ae3b533bde7c8f41dd38a4ab0a5afef7
-ms.sourcegitcommit: 0cc6ac680c3202d0b036c0bed7910f6709215682
+ms.openlocfilehash: c0622520a325000d5fcb8fb884cb509ee4b641f4
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550370"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901897"
 ---
 # <a name="signing-nuget-packages"></a>对 NuGet 包进行签名
 
@@ -19,9 +19,9 @@ ms.locfileid: "94550370"
 
 ## <a name="get-a-code-signing-certificate"></a>获取代码签名证书
 
-可从以下公共证书颁发机构获取有效的证书：[Symantec](https://trustcenter.websecurity.symantec.com/process/trust/productOptions?productType=SoftwareValidationClass3)、[DigiCert](https://www.digicert.com/code-signing/)、[Go Daddy](https://www.godaddy.com/web-security/code-signing-certificate)、[Global Sign](https://www.globalsign.com/en/code-signing-certificate/)、[Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)、[Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 等。可从 [http://aka.ms/trustcertpartners](/security/trusted-root/participants-list) 获取 Windows 信任的证书颁发机构完整列表。
+可以从公共证书颁发机构获取有效证书，如 [DigiCert](https://www.digicert.com/code-signing/)、[Global Sign](https://www.globalsign.com/en/code-signing-certificate/)、[Comodo](https://www.comodo.com/e-commerce/code-signing/code-signing-certificate.php)、[Certum](https://www.certum.eu/certum/cert,offer_en_open_source_cs.xml) 等。可以从 [http://aka.ms/trustcertpartners](/security/trusted-root/participants-list) 获取 Windows 信任的证书颁发机构的完整列表。
 
-可使用自颁发证书进行测试。 但 NuGet.org 不接受使用自颁发证书签名的包。详细了解如何[创建测试证书](#create-a-test-certificate)
+可使用自颁发证书进行测试。 但是，NuGet.org 不接受使用自颁发证书签名的包。了解有关[创建测试证书](#create-a-test-certificate)的详细信息
 
 ## <a name="export-the-certificate-file"></a>导出证书文件
 
@@ -51,7 +51,7 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 
 ## <a name="register-the-certificate-on-nugetorg"></a>使用 NuGet.org 注册证书
 
-要发布已签名的包，必须先使用 NuGet.org 注册证书。需要将证书设置为二进制 DER 格式的 `.cer` 文件。
+若要发布已签名的包，必须先将证书注册到 NuGet.org。你需要将证书作为二进制 DER 格式的 `.cer` 文件。
 
 1. [登录](https://www.nuget.org/users/account/LogOn?returnUrl=%2F)到 NuGet.org。
 1. 转到 `Account settings`（如果希望使用组织帐户注册证书，则转到 `Manage Organization` **>** `Edit Organization`）。
@@ -61,12 +61,12 @@ nuget sign MyPackage.nupkg -CertificatePath <PathToTheCertificate> -Timestamper 
 
 **注意**
 * 一个用户可以提交多个证书并且多个用户可以注册同一个证书。
-* 用户注册证书之后，所有未来的包提交都必须  使用其中一个证书进行签名。 请参阅[管理 NuGet.org 上的包的签名要求](#manage-signing-requirements-for-your-package-on-nugetorg)
+* 用户注册证书之后，所有未来的包提交都必须使用其中一个证书进行签名。 请参阅[管理 NuGet.org 上的包的签名要求](#manage-signing-requirements-for-your-package-on-nugetorg)
 * 用户还可以从帐户中删除已注册的证书。 删除证书后，使用该证书签名的新包将在提交时失败。 现有包不会受到影响。
 
 ## <a name="publish-the-package"></a>发布包
 
-现在即可将包发布到 NuGet.org。请参阅[发布包](../nuget-org/Publish-a-package.md)。
+你现在即可将包发布到 NuGet.org。请参阅[发布包](../nuget-org/Publish-a-package.md)。
 
 ## <a name="create-a-test-certificate"></a>创建测试证书
 
@@ -104,4 +104,4 @@ New-SelfSignedCertificate -Subject "CN=NuGet Test Developer, OU=Use for testing 
 ## <a name="related-articles"></a>相关文章
 
 - [管理包信任边界](../consume-packages/installing-signed-packages.md)
-- [签名包引用](../reference/Signed-Packages-Reference.md)
+- [已签名的包参考](../reference/Signed-Packages-Reference.md)

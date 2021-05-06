@@ -1,16 +1,16 @@
 ---
 title: 使用 MSBuild 创建 NuGet 包
-description: 设计和创建 NuGet 包流程的详细指南，包含文件和版本控制等关键决策点。
+description: 有关使用 MSBulid 设计和创建 NuGet 包流程的详细指南，包含文件和版本控制等关键决策点。
 author: JonDouglas
 ms.author: jodou
 ms.date: 02/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 48741668af932a532240f2796a9bf5d490ee8e35
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 18e0da335f65fde99d035388b95f35160757ee84
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98774441"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901455"
 ---
 # <a name="create-a-nuget-package-using-msbuild"></a>使用 MSBuild 创建 NuGet 包
 
@@ -39,7 +39,7 @@ ms.locfileid: "98774441"
 
 - `PackageOutputPath`（调用 pack 时生成的包的输出文件夹）。
 
-在 Visual Studio 中，可以在项目属性中设置这些值（在解决方案资源管理器中右键单击项目，选择“属性”  ，然后选择“包”  选项卡）。 也可以直接在项目文件 (.csproj) 中设置这些属性  。
+在 Visual Studio 中，可以在项目属性中设置这些值（在解决方案资源管理器中右键单击项目，选择“属性”  ，然后选择“包”  选项卡）。 也可以直接在项目文件 (.csproj) 中设置这些属性。
 
 ```xml
 <PropertyGroup>

@@ -6,12 +6,12 @@ ms.author: jodou
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: 5be7a4d4c31df9f2f4bda7bdb1ff9f4887108578
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 05a16d8bf609d727aba3ddbc42959a3deb97b24b
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775985"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901910"
 ---
 # <a name="publishing-packages"></a>发布包
 
@@ -38,11 +38,9 @@ ms.locfileid: "98775985"
 
 1. nuget.org 告知包名称是否可用。 如果无法使用，则更改项目中的包标识符、重新生成，并重试上传。
 
-1. 如果包名称可用，nuget.org 将打开“验证”  部分，可以在其中查看包清单中的元数据。 若要更改任何元数据，请编辑项目（项目文件或 `.nuspec` 文件）、重新生成、重新创建包，然后再次上传。
+1. 如果包名称可用，nuget.org 将打开“验证”  部分，可以在其中查看包清单中的元数据。 如果包中包含[自述文件](/docs/nuget-org/package-readme-on-nuget-org.md)，请查看预览以确保正确呈现所有内容。 若要更改任何元数据，请编辑项目（项目文件或 `.nuspec` 文件）、重新生成、重新创建包，然后再次上传。
 
-1. 在“导入文档”  下，可以粘贴 Markdown、将 URL 指向文档，或上传文档文件。
-
-1. 当所有信息准备就绪后，选择“提交”  按钮
+2. 当所有信息准备就绪后，选择“提交”  按钮
 
 ### <a name="command-line"></a>命令行
 
