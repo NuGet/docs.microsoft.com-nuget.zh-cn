@@ -35,8 +35,8 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "feedback_system": "GitHub",
-      "feedback_github_repo": "NuGet/docs.microsoft.com-nuget.zh-cn",
+      "feedback_system": "None",
+      "feedback_github_repo": "",
       "feedback_product_url": "https://github.com/NuGet/Home/issues/",
       "breadcrumb_path": "~/_breadcrumb/toc.yml",
       "ROBOTS": "INDEX,FOLLOW",
