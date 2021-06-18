@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 12/12/2017
 ms.topic: conceptual
-ms.openlocfilehash: 285504508fa88c96f5c7a23f15ef14d81ebc21e1
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 4f0a5a2355b34c39a435d24691a3f8ea10ee9c00
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98777767"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323825"
 ---
 # <a name="authenticating-feeds-with-nugetexe-credential-providers"></a>通过 nuget.exe 凭据提供程序对源进行身份验证
 
@@ -37,7 +37,7 @@ nuget.exe 凭据提供程序可通过3种方式使用：
 提供程序必须执行以下操作：
 
 - 确定是否可以在启动凭据获取之前为目标 URI 提供凭据。 如果不是，则它应返回无凭据的状态代码1。
-- 不修改 `Nuget.Config` (如在) 设置凭据。
+- 不修改 `NuGet.Config` (如在) 设置凭据。
 - 自行处理 HTTP 代理配置，因为 NuGet 不向插件提供代理信息。
 - `nuget.exe`使用 utf-8 编码，通过编写 JSON 响应对象将凭据或错误详细信息返回到， (参见下面) 到 stdout。
 - （可选）向 stderr 发出附加跟踪日志记录。 不应将任何机密写入到 stderr，因为在详细级别 "正常" 或 "详细" 时，此类跟踪会回显到控制台。
@@ -65,7 +65,7 @@ nuget.exe 凭据提供程序可通过3种方式使用：
 | 属性 |注释|
 |----------------|-----------|
 | 用户名 | 经过身份验证的请求的用户名。|
-| Password | 经过身份验证的请求的密码。|
+| 密码 | 经过身份验证的请求的密码。|
 | 消息 | 有关响应的可选详细信息，仅用于显示故障情况下的其他详细信息。 |
 
 示例 stdout：

@@ -5,18 +5,18 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/17/2020
 ms.topic: reference
-ms.openlocfilehash: 6f4adcdf3981e5ec0e5e88337a8c3bcdd9158ca3
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 0b0d0445f21ae49bc4785a6de822f9b56ec5c453
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98779159"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323656"
 ---
 # <a name="search-command-nuget-cli"></a> (NuGet CLI) 搜索命令
 
 **适用于：** 包使用 &bullet; **受支持的版本：** 5.8 +
 
-使用提供的查询字符串搜索给定的源。 如果未指定任何源，将使用% AppData% \NuGet\NuGet.config 中定义的所有源。
+使用提供的查询字符串搜索给定的源。 如果未指定任何源，将使用% AppData% \NuGet\NuGet.Config 中定义的所有源。
 
 ## <a name="usage"></a>使用情况
 

@@ -5,12 +5,12 @@ author: erdembayar
 ms.author: eryondon
 ms.date: 3/11/2021
 ms.topic: conceptual
-ms.openlocfilehash: 50fd277a4f1f39b4a68a89cd07af4e21f0d3d831
-ms.sourcegitcommit: 1462f9f42ae36b3c990762ad4f02e38ab799ad09
+ms.openlocfilehash: 1152af99cf1421918a42d0d1faa33f1452f54a8f
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2021
-ms.locfileid: "107508808"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323877"
 ---
 # <a name="nuget-59-release-notes"></a>NuGet 5.9 发行说明
 
@@ -18,8 +18,8 @@ NuGet 分发车辆：
 
 | NuGet 版本 | 适用于 Visual Studio 版本 | 适用于 .NET SDK |
 |:---|:---|:---|
-| [**5.9.0**](https://nuget.org/downloads) | [Visual Studio 2019 版本16。9](https://visualstudio.microsoft.com/downloads/) | [5.0.200](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
-| [**5.9.1**](https://nuget.org/downloads) | [Visual Studio 2019 版本16。9](https://visualstudio.microsoft.com/downloads/) | [5.0.202](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.9.0**](https://nuget.org/downloads) | [Visual Studio 2019 版本 16.9](https://visualstudio.microsoft.com/downloads/) | [5.0.200](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
+| [**5.9.1**](https://nuget.org/downloads) | [Visual Studio 2019 版本 16.9](https://visualstudio.microsoft.com/downloads/) | [5.0.202](https://dotnet.microsoft.com/download/dotnet-core/5.0)<sup>1</sup> |
 
 <sup>1</sup> 与带有 .net Core 工作负载的 Visual Studio 2019 一起安装
   
@@ -186,42 +186,52 @@ NuGet 分发车辆：
 
 * V2FeedPackageInfo 中的复制粘贴错误- [#10480](https://github.com/NuGet/Home/issues/10480)
 
-* NuGetPackageFileService 修复-使用 for 可释放 memorystream- [#10503](https://github.com/NuGet/Home/issues/10503)
+* NuGetPackageFileService 修复 - 将 using 用于可释放内存流 - [#10503](https://github.com/NuGet/Home/issues/10503)
 
-**[此版本中已修复的所有问题的列表-5.9。0](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f6be8c10485c0236b7ef889)**
+**[此版本中已修复的所有问题的列表 - 5.9.0](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=5f6be8c10485c0236b7ef889)**
 
-**[此版本中的提交列表-5.9。0](https://github.com/NuGet/NuGet.Client/compare/5.8.1.7021...5.9.0.7134)**
+**[此版本中的提交列表 - 5.9.0](https://github.com/NuGet/NuGet.Client/compare/5.8.1.7021...5.9.0.7134)**
 
 ### <a name="community-contributions"></a>社区参与
 
-感谢所有有助于使此 NuGet 版本非常出色的参与者！
+感谢所有参与者，他们帮助使此 NuGet 版本变得出色！
 
-|谁|Pr|问题|
+|谁|拉/拉|问题|
 |----|----|----|
-[omajid](https://github.com/omajid) | [3865](https://github.com/NuGet/NuGet.Client/pull/3865) | V2FeedPackageInfo 中的复制粘贴错误- [#10480](https://github.com/NuGet/Home/issues/10480)
-[marcin-krystianc](https://github.com/marcin-krystianc) | [3812](https://github.com/NuGet/NuGet.Client/pull/3812) | 对于用 PrivateAssets = "All" 属性引用包的情况，缺少测试 [#10397](https://github.com/NuGet/Home/issues/10397)
-[marcin-krystianc](https://github.com/marcin-krystianc) | [3739](https://github.com/NuGet/NuGet.Client/pull/3739) | 添加了推送多个包的支持- [#4393](https://github.com/NuGet/Home/issues/4393)
-[marcin-krystianc](https://github.com/marcin-krystianc) | [3723](https://github.com/NuGet/NuGet.Client/pull/3723) | 禁用程序集签名时，NuGet 库的生成已断开- [#10173](https://github.com/NuGet/Home/issues/10173)
-[kant2002](https://github.com/kant2002) | [3807](https://github.com/NuGet/NuGet.Client/pull/3807) | 清理参与的文档- [#10399](https://github.com/NuGet/Home/issues/10399)
-[PathogenDavid](https://github.com/PathogenDavid) | [3754](https://github.com/NuGet/NuGet.Client/pull/3754) | 许可证和图标文件存在检查应始终使用区分大小写的比较 [#9817](https://github.com/NuGet/Home/issues/9817)
-[campersau](https://github.com/campersau) | [3677](https://github.com/NuGet/NuGet.Client/pull/3677) | 使用 DecodePixelWidth [#10037](https://github.com/NuGet/Home/issues/10037)时，请使用 IGNORECOLORPROFILE 解决 WPF 问题
-[bjorkstromm](https://github.com/bjorkstromm) | [3697](https://github.com/NuGet/NuGet.Client/pull/3697) | NuGet 中 Windows SDK 10 链接已断开。客户端贡献指南- [#10099](https://github.com/NuGet/Home/issues/10099)
-[bjorkstromm](https://github.com/bjorkstromm) | [3696](https://github.com/NuGet/NuGet.Client/pull/3696) | NuGet 中的相对链接断开。客户端调试指南- [#10100](https://github.com/NuGet/Home/issues/10100)
-[Nirmal4G](https://github.com/Nirmal4G) | [3637](https://github.com/NuGet/NuGet.Client/pull/3637) | 改善测试装置和相关的代码- [#9996](https://github.com/NuGet/Home/issues/9996)
-[rolfbjarne](https://github.com/rolfbjarne) | [3743](https://github.com/NuGet/NuGet.Client/pull/3743) | 重[#10198](https://github.com/NuGet/Home/issues/10198)定向时，输出将在 macOS 上的80个字符处换行
-[xen2](https://github.com/xen2) | [2861](https://github.com/NuGet/NuGet.Client/pull/2861) | 使 Nuget.exe 作为 .NET Standard 包提供 [#6150](https://github.com/NuGet/Home/issues/6150)
-[Anipik](https://github.com/Anipik) | [3810](https://github.com/NuGet/NuGet.Client/pull/3810) | 引入一个新的 msbuild 属性，以便在包任务期间排除特定 tfm 的生成输出- [#10396](https://github.com/NuGet/Home/issues/10396)
+[omajid](https://github.com/omajid) | [3865](https://github.com/NuGet/NuGet.Client/pull/3865) | V2FeedPackageInfo 中的复制粘贴错误 - [#10480](https://github.com/NuGet/Home/issues/10480)
+[marcin-krystianc](https://github.com/marcin-krystianc) | [3812](https://github.com/NuGet/NuGet.Client/pull/3812) | 缺少使用 PrivateAssets="All"属性引用包的情况的测试 - [#10397](https://github.com/NuGet/Home/issues/10397)
+[marcin-krystianc](https://github.com/marcin-krystianc) | [3739](https://github.com/NuGet/NuGet.Client/pull/3739) | 添加对推送多个包的支持 - [#4393](https://github.com/NuGet/Home/issues/4393)
+[marcin-krystianc](https://github.com/marcin-krystianc) | [3723](https://github.com/NuGet/NuGet.Client/pull/3723) | 禁用程序集签名时，NuGet 库的生成中断 - [#10173](https://github.com/NuGet/Home/issues/10173)
+[kant2002](https://github.com/kant2002) | [3807](https://github.com/NuGet/NuGet.Client/pull/3807) | 清理贡献文档 - [#10399](https://github.com/NuGet/Home/issues/10399)
+[已达维](https://github.com/PathogenDavid) | [3754](https://github.com/NuGet/NuGet.Client/pull/3754) | 许可证和图标文件是否存在检查应始终使用区分大小写的比较 - [#9817](https://github.com/NuGet/Home/issues/9817)
+[campersau](https://github.com/campersau) | [3677](https://github.com/NuGet/NuGet.Client/pull/3677) | 使用 DecodePixelWidth 时，使用 BitmapCreateOptions.IgnoreColorProfile 解决 WPF 问题 - [#10037](https://github.com/NuGet/Home/issues/10037)
+[bjorkstromm](https://github.com/bjorkstromm) | [3697](https://github.com/NuGet/NuGet.Client/pull/3697) | Windows SDK NuGet.Client 贡献指南中断开 10 链接 - [#10099](https://github.com/NuGet/Home/issues/10099)
+[bjorkstromm](https://github.com/bjorkstromm) | [3696](https://github.com/NuGet/NuGet.Client/pull/3696) | NuGet.Client 调试指南中的相对链接断开 - [#10100](https://github.com/NuGet/Home/issues/10100)
+[Nirmal4G](https://github.com/Nirmal4G) | [3637](https://github.com/NuGet/NuGet.Client/pull/3637) | 改进测试装置和相关代码 - [#9996](https://github.com/NuGet/Home/issues/9996)
+[rolfbjarne](https://github.com/rolfbjarne) | [3743](https://github.com/NuGet/NuGet.Client/pull/3743) | 重定向时，在 macOS 上以 80 个字符包装输出 - [#10198](https://github.com/NuGet/Home/issues/10198)
+[xen2](https://github.com/xen2) | [2861](https://github.com/NuGet/NuGet.Client/pull/2861) | 将 NuGet.PackageManagement 用作.NET Standard包 - [#6150](https://github.com/NuGet/Home/issues/6150)
+[Anipik](https://github.com/Anipik) | [3810](https://github.com/NuGet/NuGet.Client/pull/3810) | 引入新的 msbuild 属性，以排除包任务期间特定 tfm 的生成输出 - [#10396](https://github.com/NuGet/Home/issues/10396)
 
 ## <a name="summary-whats-new-in-591"></a>摘要：5.9.1 中的新增功能
 
-* 第一次时，"dotnet nuget remove source nuget.org" 不起作用- [#10745](https://github.com/NuGet/Home/issues/10745)
-* 在 Linux 上禁用默认验证，但默认情况下在 Windows 上启用- [#10713](https://github.com/NuGet/Home/issues/10713)
+* "dotnet nuget remove source nuget.org"第一次不起作用 - [#10745](https://github.com/NuGet/Home/issues/10745)
+* 在 Linux 上禁用默认验证，但在 Windows 上默认启用 - [#10713](https://github.com/NuGet/Home/issues/10713)
 
-**[此版本中已修复的所有问题的列表-5.9。1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=6075f42efd068017639b4036)**
+**[此版本中已修复的所有问题的列表 - 5.9.1](https://app.zenhub.com/workspaces/nuget-client-team-55aec9a240305cf007585881/reports/release?release=6075f42efd068017639b4036)**
 
-**[此版本中的提交列表-5.9。1](https://github.com/NuGet/NuGet.Client/compare/5.9.0.7134...5.9.1.8)**
+**[此版本中的提交列表 - 5.9.1](https://github.com/NuGet/NuGet.Client/compare/5.9.0.7134...5.9.1.8)**
+
+## <a name="known-issues"></a>已知问题
+
+### <a name="nuget-59-pack-raises-null-reference-exception---10685"></a>nuget 5.9 包引发 `Null Reference` 异常。 - [#10685](https://github.com/NuGet/Home/issues/10685)
+
+#### <a name="issue"></a>问题
+当使用文件时，如果指定了显式程序集引用，而不为面向 的项目添加任何引用，则版本 `pack` `.nuspec` `NuGet 5.9` `null reference` [](../reference/nuspec.md#explicit-assembly-references) `reference groups` 将引发异常 `multiple frameworks` 。
+
+#### <a name="workaround"></a>解决方法
+使用 `nuget.exe` [5.8.1](https://dist.nuget.org/win-x86-commandline/v5.8.1/nuget.exe)  或除 外的最新版本 `5.9.1` 。
 
 ## <a name="feedback-welcome"></a>欢迎反馈
 
-反馈对我们非常重要。  如果此版本有任何问题，请查看有关现有问题的 [GitHub 问题](https://github.com/NuGet/Home/issues) 和 [Visual Studio 开发人员社区](https://developercommunity.visualstudio.com/) 。  对于 NuGet 中的新问题，请报告 [GitHub 问题](https://github.com/NuGet/Home/issues/new)。
-对于一般的 NuGet 体验问题，请通过 "帮助" 下的 "你喜欢的 IDE" 中的 " [报告问题](/visualstudio/ide/how-to-report-a-problem-with-visual-studio) " 选项告知我们 **> 报告问题**。
+反馈对我们非常重要。  如果此版本存在任何问题，请查看 [GitHub 问题](https://github.com/NuGet/Home/issues) 并 [Visual Studio 开发者社区现有问题](https://developercommunity.visualstudio.com/) 。  对于 NuGet 中的新问题，请报告 [GitHub 问题](https://github.com/NuGet/Home/issues/new)。
+对于一般的 NuGet 体验问题，请通过 [](/visualstudio/ide/how-to-report-a-problem-with-visual-studio)"帮助和报告问题"下的"报告问题"选项> **IDE 中发现的问题**。

@@ -6,12 +6,12 @@ ms.author: patbel
 ms.date: 11/12/2018
 ms.topic: reference
 ms.reviewer: rmpablos
-ms.openlocfilehash: 9dd3fe3786c824c4a0a1cb252aa50cfc4458a483
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: a5f3564af8b96dfa673d2252aea2e77a79c184a4
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859416"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323585"
 ---
 # <a name="trusted-signers-command-nuget-cli"></a> (NuGet CLI 的受信任的签名者命令) 
 
@@ -62,14 +62,14 @@ Registered trusted signers:
 ## <a name="options-for-add-based-on-a-package"></a>基于包的 "添加" 选项
 
 ```cli
-nuget trusted-signers add <package(s)> -Name <name> [options]
+nuget trusted-signers add <package> -Name <name> [options]
 ```
 
-其中 `<package(s)>` ，是一个或多个 `.nupkg` 文件。
+其中 `<package>` ，是一个已签名的 `.nupkg` 文件。
 
 - **`-Author`**
 
-  指定应信任包 () 的作者签名。
+  指定应信任签名包的作者签名。
 
 - **`-AllowUntrustedRoot`**
 
@@ -81,7 +81,7 @@ nuget trusted-signers add <package(s)> -Name <name> [options]
 
 - **`-Repository`**
 
-  指定应信任包 (s) 的存储库签名或副署。
+  指定应信任签名包的存储库签名或副署。
 
 `-Author`不支持同时提供和 `-Repository` 。
 
