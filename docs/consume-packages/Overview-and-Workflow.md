@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: 92968236262f891106ab2d4cd3ba399f1644400b
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: d1d6df3bcc36d8a78fcee97099b301c9ffc440d9
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859208"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323630"
 ---
 # <a name="package-consumption-workflow"></a>包使用工作流
 
@@ -39,7 +39,7 @@ NuGet 还可以确保包支持的目标框架与你的项目兼容。 如果包�
 
 有时需要重新安装项目中已包含的包，这可能导致重新安装依赖项。 使用 `nuget reinstall` 命令或使用 NuGet 包管理器控制台可轻松执行此操作。 有关详细信息，请参阅[重新安装和更新包](../consume-packages/reinstalling-and-updating-packages.md)。
 
-最后一点，NuGet 的行为由 `Nuget.Config` 文件驱动。 有多个文件可用于集中处理不同级别的特定设置，如[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)中所述。
+最后一点，NuGet 的行为由 `NuGet.Config` 文件驱动。 有多个文件可用于集中处理不同级别的特定设置，如[配置 NuGet 行为](../consume-packages/configuring-nuget-behavior.md)中所述。
 
 ## <a name="ways-to-install-a-nuget-package"></a>安装 NuGet 包的方式
 

@@ -5,24 +5,24 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 0ef309d95c6ef5437765c02791da6dab13794678
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 69adbbad20debf2e53f247e85d638b3226c0491d
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775264"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323747"
 ---
 # <a name="how-nuget-resolves-package-dependencies"></a>NuGet 如何解析包依赖项
 
 每当安装或重新安装包（包括在[还原](../consume-packages/package-restore.md)过程中安装）时，NuGet 还会安装第一个包所依赖的任何其他包。
 
-这些直接依赖项可能本身也具有依赖项，并可能继续延伸到任意深度。 这便形成了所谓的“依赖项关系图”，用于说明各级包之间的关系  。
+这些直接依赖项可能本身也具有依赖项，并可能继续延伸到任意深度。 这便形成了所谓的“依赖项关系图”，用于说明各级包之间的关系。
 
 当多个包具有相同的依赖项时，同一个包 ID 会在关系图中多次出现且可能具有不同的版本约束。 但是，一个项目中只能使用给定包的一个版本，因此 NuGet 必须选择要使用的版本。 确切流程取决于要使用的包管理格式。
 
 ## <a name="dependency-resolution-with-packagereference"></a>利用 PackageReference 解析依赖项
 
-当将包安装到使用 PackageReference 格式的项目中时，NuGet 将添加对相应文件中的平面包关系图的引用并提前解决冲突。 此过程称为“传递还原”  。 重新安装或还原包指的是下载关系图中列出的包的过程，此过程可加快生成的速度和提高其可预测性。 还可以利用 2.8.\* 等可变版本，以避免为了能使用最新版本的包而修改项目。
+当将包安装到使用 PackageReference 格式的项目中时，NuGet 将添加对相应文件中的平面包关系图的引用并提前解决冲突。 此过程称为“传递还原”。 重新安装或还原包指的是下载关系图中列出的包的过程，此过程可加快生成的速度和提高其可预测性。 还可以利用 2.8.\* 等可变版本，以避免为了能使用最新版本的包而修改项目。
 
 当 NuGet 还原进程在生成之前运行时，它将首先解析内存中的依赖项，然后将生成的关系图写入名为 `project.assets.json` 的文件。 如果[启用了锁定文件功能](../consume-packages/package-references-in-project-files.md#locking-dependencies)，它还会将已解析的依赖项写入名为 `packages.lock.json` 的锁定文件。
 资产文件位于 `MSBuildProjectExtensionsPath`，它默认是项目的“obj”文件夹。 MSBuild 随后将读取此文件并将其转换成一组文件夹（可在其中找到潜在引用），然后将它们添加到内存中的项目树。
@@ -55,7 +55,7 @@ ms.locfileid: "98775264"
 
 #### <a name="floating-versions"></a>可变版本
 
-可变依赖项版本由 \* 字符指定。 例如，`6.0.*` 。 此版本规格表示“使用最新的 6.0.x 版本”；`4.*` 则表示“使用最新的 4.x 版本”。 使用可变版本可减少对项目文件的更改，同时确保始终使用最新版本的依赖项。
+可变依赖项版本由 \* 字符指定。 例如，`6.0.*`。 此版本规格表示“使用最新的 6.0.x 版本”；`4.*` 则表示“使用最新的 4.x 版本”。 使用可变版本可减少对项目文件的更改，同时保持更新依赖项的最新版本。
 
 使用可变版本时，NuGet 将解析与版本模式匹配的最高包版本，例如，请求 `6.0.*` 将获得以 6.0 开头的最高包版本：
 
@@ -100,9 +100,9 @@ ms.locfileid: "98775264"
 
 利用 `packages.config`，项目依赖项 将作为简单列表写入 `packages.config`。 这些包的所有依赖项也将写入同一列表。 安装包时，NuGet 可能还会修改 `.csproj` 文件、`app.config`、`web.config` 和其他单独文件。
 
-利用 `packages.config`，NuGet 可尝试解决在安装每个单独包期间出现的依赖项冲突。 也就是说，如果正在安装包 A 并且其依赖于包 B，同时包 B 已作为其他项的依赖项在 `packages.config` 中列出，则 NuGet 将比较所请求的包 B 版本，并尝试找到满足所有版本约束的版本。 具体而言，NuGet 将选择可满足依赖项的较低 major.minor 版本  。
+利用 `packages.config`，NuGet 可尝试解决在安装每个单独包期间出现的依赖项冲突。 也就是说，如果正在安装包 A 并且其依赖于包 B，同时包 B 已作为其他项的依赖项在 `packages.config` 中列出，则 NuGet 将比较所请求的包 B 版本，并尝试找到满足所有版本约束的版本。 具体而言，NuGet 将选择可满足依赖项的较低 major.minor 版本。
 
-默认情况下，NuGet 2.8 会查找最低的修补程序版本（请参阅 [NuGet 2.8 发行说明](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies)）。 可以通过 `Nuget.Config` 中的 `DependencyVersion` 属性和命令行上的 `-DependencyVersion` 开关控制此设置。  
+默认情况下，NuGet 2.8 会查找最低的修补程序版本（请参阅 [NuGet 2.8 发行说明](../release-notes/nuget-2.8.md#patch-resolution-for-dependencies)）。 可以通过 `NuGet.Config` 中的 `DependencyVersion` 属性和命令行上的 `-DependencyVersion` 开关控制此设置。  
 
 用于解析依赖项的 `packages.config` 进程会随着依赖项关系图的规模增大而愈加复杂。 每次安装新包都需要遍历整个关系图，并且可能引发版本冲突。 发生冲突时，安装将停止，此时项目处于不确定状态，很可能导致项目文件本身发生更改。 使用其他包管理格式时则不会出现此问题。
 
@@ -155,4 +155,4 @@ Package restore failed. Rolling back package changes for 'MyProject'.
 要解决不兼容问题，请执行下列操作之一：
 
 - 将项目重定向到要使用的包所支持的框架。
-- 联系包创建者并与其协作添加对所选框架的支持。 [nuget.org](https://www.nuget.org/) 中每个列出包的页面均针对此目的提供了“联系所有者”链接  。
+- 联系包创建者并与其协作添加对所选框架的支持。 [nuget.org](https://www.nuget.org/) 中每个列出包的页面均针对此目的提供了“联系所有者”链接。

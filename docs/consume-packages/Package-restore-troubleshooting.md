@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 05/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: f1c7c4ce2872e18b1ed35ccbf3355a6192ab4a9c
-ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
+ms.openlocfilehash: 0bd14104695a15d2e4c65a13b271143809c4ba8a
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98775032"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323617"
 ---
 # <a name="troubleshooting-package-restore-errors"></a>包还原错误疑难解答
 
@@ -31,7 +31,7 @@ ms.locfileid: "98775032"
 
 ![在“工具”/“选项”中启用 NuGet 包还原](../consume-packages/media/restore-01-autorestoreoptions.png)
 
-也可以在 `NuGet.config` 文件中更改这些设置；请参阅[同意](#consent)部分。 如果项目是使用集成 MSBuild 的包恢复的较老项目，那么可能需要[迁移](package-restore.md#migrate-to-automatic-package-restore-visual-studio)到自动包恢复。
+也可以在 `NuGet.Config` 文件中更改这些设置；请参阅[同意](#consent)部分。 如果项目是使用集成 MSBuild 的包恢复的较老项目，那么可能需要[迁移](package-restore.md#migrate-to-automatic-package-restore-visual-studio)到自动包恢复。
 
 <a name="missing"></a>
 
@@ -46,7 +46,7 @@ Use NuGet Package Restore to download them. The missing file is {name}.
 
 当你尝试生成包含对一个或多个 NuGet 包的引用的项目，但这些包当前未安装在计算机上或项目中时，发生了此错误。
 
-- 使用 [PackageReference](package-references-in-project-files.md) 管理格式时，此错误可能是在将 packages.config 迁移到 PackageReference 时遗留下来的，需要从项目文件中[手动删除](../resources/NuGet-FAQ.md#working-with-packages)。
+- 使用 [PackageReference](package-references-in-project-files.md) 管理格式时，此错误可能是在将 packages.config 迁移到 PackageReference 时遗留下来的，需要从项目文件中[手动删除](/nuget/resources/nuget-faq#working-with-packages)。
 - 当使用 [packages.config](../reference/packages-config.md) 时，此错误意味着程序包未安装在解决方案根目录中的 `packages` 文件夹中。
 
 当你从源代码管理或其他下载获得项目的源代码时，通常会发生这种情况。 包通常从源代码管理或下载中省略，因为它们可以从包源（例如 nuget.org）中还原（请参阅[包和源代码管理](Packages-and-Source-Control.md)）。 否则，包含它们会导致存储库膨胀或创建不必要的大型 .zip 文件。

@@ -10,139 +10,133 @@ metadata:
   author: JonDouglas
   ms.author: jodou
   ms.date: 01/13/2020
-  ms.openlocfilehash: 2a7d847f59f646b5a460f6233b721dcaf26e3fb5
-  ms.sourcegitcommit: ee6c3f203648a5561c809db54ebeb1d0f0598b68
-  ms.translationtype: HT
-  ms.contentlocale: zh-CN
-  ms.lasthandoff: 01/26/2021
-  ms.locfileid: "98775887"
 highlightedContent:
   items:
-  - title: 什么是 NuGet？
-    itemType: overview
-    url: ./what-is-nuget.md
-  - title: 安装 NuGet 客户端工具
-    itemType: download
-    url: ./install-nuget-client-tools.md
-  - title: 了解 NuGet
-    itemType: video
-    url: https://aka.ms/Nuget101
-  - title: NuGet.org
-    itemType: overview
-    url: ./nuget-org/overview-nuget-org.md
+    - title: 什么是 NuGet？
+      itemType: overview
+      url: ./what-is-nuget.md
+    - title: 安装 NuGet 客户端工具
+      itemType: download
+      url: ./install-nuget-client-tools.md
+    - title: 了解 NuGet
+      itemType: video
+      url: 'https://aka.ms/Nuget101'
+    - title: NuGet.org
+      itemType: overview
+      url: ./nuget-org/overview-nuget-org.md
 conceptualContent:
   title: 使用、创建和发布包
   items:
-  - title: 入门
-    links:
-    - text: 安装 NuGet 客户端工具
-      itemType: download
-      url: ./install-nuget-client-tools.md
-    - text: 安装并使用包 - dotnet CLI
-      itemType: quickstart
-      url: ./quickstart/install-and-use-a-package-using-the-dotnet-cli.md
-    - text: 安装并使用包 - Visual Studio
-      itemType: quickstart
-      url: ./quickstart/install-and-use-a-package-in-visual-studio.md
-    - text: 创建包 - dotnet CLI
-      itemType: quickstart
-      url: ./quickstart/create-and-publish-a-package-using-the-dotnet-cli.md
-    - text: 创建包 - Visual Studio
-      itemType: quickstart
-      url: ./quickstart/create-and-publish-a-package-using-visual-studio.md
-    - text: 创建 .NET Framework 包 - Visual Studio
-      itemType: quickstart
-      url: ./quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md
-  - title: 使用包
-    links:
-    - text: 工作流（概述）
-      itemType: overview
-      url: ./consume-packages/overview-and-workflow.md
-    - text: 查找和选择包
-      itemType: get-started
-      url: ./consume-packages/finding-and-choosing-packages.md
-    - text: 使用 Visual Studio
-      itemType: how-to-guide
-      url: ./consume-packages/install-use-packages-visual-studio.md
-    - text: 使用 dotnet CLI
-      itemType: how-to-guide
-      url: ./consume-packages/install-use-packages-dotnet-cli.md
-    - text: 使用 nuget.exe CLI
-      itemType: how-to-guide
-      url: ./consume-packages/install-use-packages-nuget-cli.md
-    - text: 使用包管理器控制台
-      itemType: how-to-guide
-      url: ./consume-packages/install-use-packages-powershell.md
-  - title: 创建包
-    links:
-    - text: 工作流（概述）
-      itemType: overview
-      url: ./create-packages/overview-and-workflow.md
-    - text: 使用 Visual Studio
-      itemType: how-to-guide
-      url: ./quickstart/create-and-publish-a-package-using-visual-studio.md
-    - text: 使用 dotnet CLI
-      itemType: how-to-guide
-      url: ./create-packages/creating-a-package-dotnet-cli.md
-    - text: 使用 nuget.exe CLI
-      itemType: how-to-guide
-      url: ./create-packages/creating-a-package.md
-    - text: 使用 MSBuild
-      itemType: how-to-guide
-      url: ./create-packages/creating-a-package-msbuild.md
-    - text: 支持多个目标框架
-      itemType: reference
-      url: ./create-packages/multiple-target-frameworks-project-file.md
-  - title: 发布包
-    links:
-    - text: 发布到 NuGet.org
-      itemType: overview
-      url: ./nuget-org/publish-a-package.md
-    - text: 发布到私有源
-      itemType: overview
-      url: ./hosting-packages/overview.md
+    - title: 入门
+      links:
+        - text: 安装 NuGet 客户端工具
+          itemType: download
+          url: ./install-nuget-client-tools.md
+        - text: 安装并使用包 - dotnet CLI
+          itemType: quickstart
+          url: ./quickstart/install-and-use-a-package-using-the-dotnet-cli.md
+        - text: 安装并使用包 - Visual Studio
+          itemType: quickstart
+          url: ./quickstart/install-and-use-a-package-in-visual-studio.md
+        - text: 创建包 - dotnet CLI
+          itemType: quickstart
+          url: ./quickstart/create-and-publish-a-package-using-the-dotnet-cli.md
+        - text: 创建包 - Visual Studio
+          itemType: quickstart
+          url: ./quickstart/create-and-publish-a-package-using-visual-studio.md
+        - text: 创建 .NET Framework 包 - Visual Studio
+          itemType: quickstart
+          url: ./quickstart/create-and-publish-a-package-using-visual-studio-net-framework.md
+    - title: 使用包
+      links:
+        - text: 工作流（概述）
+          itemType: overview
+          url: ./consume-packages/overview-and-workflow.md
+        - text: 查找和选择包
+          itemType: get-started
+          url: ./consume-packages/finding-and-choosing-packages.md
+        - text: 使用 Visual Studio
+          itemType: how-to-guide
+          url: ./consume-packages/install-use-packages-visual-studio.md
+        - text: 使用 dotnet CLI
+          itemType: how-to-guide
+          url: ./consume-packages/install-use-packages-dotnet-cli.md
+        - text: 使用 nuget.exe CLI
+          itemType: how-to-guide
+          url: ./consume-packages/install-use-packages-nuget-cli.md
+        - text: 使用包管理器控制台
+          itemType: how-to-guide
+          url: ./consume-packages/install-use-packages-powershell.md
+    - title: 创建包
+      links:
+        - text: 工作流（概述）
+          itemType: overview
+          url: ./create-packages/overview-and-workflow.md
+        - text: 使用 Visual Studio
+          itemType: how-to-guide
+          url: ./quickstart/create-and-publish-a-package-using-visual-studio.md
+        - text: 使用 dotnet CLI
+          itemType: how-to-guide
+          url: ./create-packages/creating-a-package-dotnet-cli.md
+        - text: 使用 nuget.exe CLI
+          itemType: how-to-guide
+          url: ./create-packages/creating-a-package.md
+        - text: 使用 MSBuild
+          itemType: how-to-guide
+          url: ./create-packages/creating-a-package-msbuild.md
+        - text: 支持多个目标框架
+          itemType: reference
+          url: ./create-packages/multiple-target-frameworks-project-file.md
+    - title: 发布包
+      links:
+        - text: 发布到 NuGet.org
+          itemType: overview
+          url: ./nuget-org/publish-a-package.md
+        - text: 发布到私有源
+          itemType: overview
+          url: ./hosting-packages/overview.md
 additionalContent:
   sections:
-  - title: 参考和资源
-    items:
-    - title: NuGet.org
-      links:
-      - text: 概述
-        url: ./nuget-org/overview-nuget-org.md
-      - text: 个人帐户
-        url: ./nuget-org/individual-accounts.md
-      - text: 组织
-        url: ./nuget-org/organizations-on-nuget-org.md
-      - text: API 密钥
-        url: ./nuget-org/scoped-api-keys.md
-      - text: 发布包
-        url: ./nuget-org/publish-a-package.md
-    - title: 参考
-      links:
-      - text: dotnet CLI
-        url: ./reference/dotnet-commands.md
-      - text: nuget.exe CLI
-        url: ./reference/nuget-exe-cli-reference.md
-      - text: 包引用
-        url: ./consume-packages/package-references-in-project-files.md
-      - text: 打包和还原为 MSBuild 目标
-        url: ./reference/msbuild-targets.md
-      - text: .nuspec
-        url: ./reference/nuspec.md
-      - text: nuget.config
-        url: ./reference/nuget-config-file.md
-      - text: NuGet API
-        url: ./api/overview.md
-    - title: 资源
-      links:
-      - text: 策略 - NuGet
-        url: ./policies/governance.md
-      - text: 策略 - NuGet.org
-        url: ./nuget-org/policies/data-requests.md
-      - text: 发行说明
-        url: ./release-notes/known-issues.md
-      - text: 常见问题解答 - NuGet
-        url: ./resources/nuget-faq.md
-      - text: 常见问题解答 - NuGet.org
-        url: ./nuget-org/nuget-org-faq.md
-  footer: '[博客](https://devblogs.microsoft.com/nuget/) - [Twitter](https://twitter.com/nuget) - [Stack Overflow](https://stackoverflow.com/questions/tagged/nuget)'
+    - title: 参考和资源
+      items:
+        - title: NuGet.org
+          links:
+            - text: 概述
+              url: ./nuget-org/overview-nuget-org.md
+            - text: 个人帐户
+              url: ./nuget-org/individual-accounts.md
+            - text: 组织
+              url: ./nuget-org/organizations-on-nuget-org.md
+            - text: API 密钥
+              url: ./nuget-org/scoped-api-keys.md
+            - text: 发布包
+              url: ./nuget-org/publish-a-package.md
+        - title: 参考
+          links:
+            - text: dotnet CLI
+              url: ./reference/dotnet-commands.md
+            - text: nuget.exe CLI
+              url: ./reference/nuget-exe-cli-reference.md
+            - text: 包引用
+              url: ./consume-packages/package-references-in-project-files.md
+            - text: 打包和还原为 MSBuild 目标
+              url: ./reference/msbuild-targets.md
+            - text: .nuspec
+              url: ./reference/nuspec.md
+            - text: nuget.config
+              url: ./reference/nuget-config-file.md
+            - text: NuGet API
+              url: ./api/overview.md
+        - title: 资源
+          links:
+            - text: 策略 - NuGet
+              url: ./policies/governance.md
+            - text: 策略 - NuGet.org
+              url: ./nuget-org/policies/data-requests.md
+            - text: 发行说明
+              url: ./release-notes/known-issues.md
+            - text: 常见问题解答 - NuGet
+              url: ./resources/nuget-faq.yml
+            - text: 常见问题解答 - NuGet.org
+              url: ./nuget-org/nuget-org-faq.yml
+  footer: '[Blogs](https://devblogs.microsoft.com/nuget/) - [Twitter](https://twitter.com/nuget) - [Stack Overflow](https://stackoverflow.com/questions/tagged/nuget)'

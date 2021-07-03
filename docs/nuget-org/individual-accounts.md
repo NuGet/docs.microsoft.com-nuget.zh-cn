@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 5224a4f5be519e1d72285562c1611d047582f7de
-ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
+ms.openlocfilehash: d032b69f6eb4cbd3687ca60190c15aed9b7a4d79
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2021
-ms.locfileid: "107901559"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323890"
 ---
 # <a name="individual-accounts-on-nugetorg"></a>NuGet.org 上的个人帐户
 
@@ -75,4 +75,4 @@ ms.locfileid: "107901559"
 
 ## <a name="delete-a-nugetorg-account"></a>删除 NuGet.org 帐户
 
-有关其他帐户相关任务（例如删除 NuGet.org 帐户）的帮助，请参阅 [NuGet.org 帐户管理](nuget-org-faq.md#nugetorg-account-management)。
+有关其他帐户相关任务（例如删除 NuGet.org 帐户）的帮助，请参阅 [NuGet.org 帐户管理](/nuget/nuget-org/nuget-org-faq#nuget.org-account-management)。
