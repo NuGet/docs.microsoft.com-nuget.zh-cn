@@ -5,12 +5,12 @@ author: mikejo5000
 ms.author: mikejo
 ms.date: 06/03/2019
 ms.topic: conceptual
-ms.openlocfilehash: fecf14f0f04d5063f89080b2756f988739c1412c
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 62c05aad388c25120d5b9f5143017a2f4f3b276b
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859260"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323604"
 ---
 # <a name="install-and-manage-packages-using-the-dotnet-cli"></a>使用 dotnet CLI 安装和管理包
 
@@ -30,7 +30,7 @@ dotnet CLI 适用于 .NET Core 和 .NET Standard 项目（SDK 样式的项目类
 
 1. 打开命令行并切换到包含项目文件的目录。
 
-2. 运行以下命令安装 Nuget 包：
+2. 运行以下命令安装 NuGet 包：
 
     ```dotnetcli
     dotnet add package <PACKAGE_NAME>
@@ -54,7 +54,7 @@ dotnet CLI 适用于 .NET Core 和 .NET Standard 项目（SDK 样式的项目类
 
 ## <a name="install-a-specific-version-of-a-package"></a>安装特定版本的包
 
-如果未指定版本，NuGet 将安装最新版本的包。 还可以使用 [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x) 命令安装特定版本的 Nuget 包：
+如果未指定版本，NuGet 将安装最新版本的包。 还可以使用 [dotnet add package](/dotnet/core/tools/dotnet-add-package?tabs=netcore2x) 命令安装特定版本的 NuGet 包：
 
 ```dotnetcli
 dotnet add package <PACKAGE_NAME> --version <VERSION>
