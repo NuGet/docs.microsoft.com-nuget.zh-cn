@@ -6,16 +6,16 @@ ms.author: chgill
 ms.date: 02/23/2021
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: a5d68329128c9e9d047fe10e08ce41f1ae0895b4
-ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
+ms.openlocfilehash: ac0e89c1f5ef9eb19c29646bcc76bcb0b460c5cd
+ms.sourcegitcommit: adb261dd4b2a8cd75447f7b5ea6a9e5a1a54d61d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2021
-ms.locfileid: "107902222"
+ms.lasthandoff: 08/16/2021
+ms.locfileid: "122209938"
 ---
 # <a name="package-readme-on-nugetorg"></a>NuGet.org 上的包自述文件
 
-[在 NuGet 包中加入自述文件](https://docs.microsoft.com/nuget/reference/msbuild-targets#packagereadmefile)，以进一步丰富你的包详细信息，并为用户提供更多信息！
+[在 NuGet 包中加入自述文件](/nuget/reference/msbuild-targets#packagereadmefile)，以进一步丰富你的包详细信息，并为用户提供更多信息！
 
 这很可能是用户在 NuGet.org 上查看包详细信息页时将看到的第一批元素之一，这是提供良好印象的必要操作！
 
@@ -36,7 +36,7 @@ ms.locfileid: "107902222"
 
 ## <a name="preview-your-readme"></a>预览自述文件
 
-若要在发布到 NuGet.org 之前预览自述文件，请使用 [NuGet.org 上的上传包 Web 门户](https://docs.microsoft.com/nuget/nuget-org/publish-a-package#web-portal-use-the-upload-package-tab-on-nugetorg)上传包，并向下滚动到元数据预览的“自述文件”部分。 结果应如下所示：
+若要在发布到 NuGet.org 之前预览自述文件，请使用 [NuGet.org 上的上传包 Web 门户](/nuget/nuget-org/publish-a-package#web-portal-use-the-upload-package-tab-on-nugetorg)上传包，并向下滚动到元数据预览的“自述文件”部分。 结果应如下所示：
 
 ![自述文件预览](media\readme-upload-preview.PNG)
 
@@ -48,6 +48,7 @@ ms.locfileid: "107902222"
 NuGet.org 允许呈现以下受信任域中的所有图像（包括徽章）：
 * api.bintray.com
 * api.codacy.com
+* app.codacy.com
 * api.codeclimate.com
 * api.dependabot.com
 * api.travis-ci.com
@@ -59,6 +60,7 @@ NuGet.org 允许呈现以下受信任域中的所有图像（包括徽章）：
 * bettercodehub.com
 * buildstats.info
 * camo.githubusercontent.com
+* cdn.jsdelivr.net
 * ci.appveyor.com
 * circleci.com
 * codecov.io
@@ -68,6 +70,7 @@ NuGet.org 允许呈现以下受信任域中的所有图像（包括徽章）：
 * github.com/.../workflows/.../badge.svg
 * gitlab.com
 * img.shields.io
+* i.imgur.com
 * isitmaintained.com
 * opencollective.com
 * raw.github.com

@@ -5,16 +5,18 @@ author: anangaur
 ms.author: anangaur
 ms.date: 08/14/2017
 ms.topic: conceptual
-ms.openlocfilehash: 853e60719c47a2855ef9638d1ff3ec13fc960c91
-ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
+ms.openlocfilehash: eaefc4be3a96c177dea53a1099937bee72e20db1
+ms.sourcegitcommit: 5f706c62c97b78bbe3d8c7e95659976535fe486f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2021
-ms.locfileid: "112323799"
+ms.lasthandoff: 08/23/2021
+ms.locfileid: "122726933"
 ---
 # <a name="release-notes"></a>发行说明
 
 [已知问题](../release-notes/known-issues.md)
+
+[NuGet 5.11](../release-notes/NuGet-5.11.md)
 
 [NuGet 5.10](../release-notes/NuGet-5.10.md)
 
