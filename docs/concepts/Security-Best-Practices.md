@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 02/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: e0f235d99e41e23a4551fbf7577f6c42e3381f5b
-ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
+ms.openlocfilehash: 4575d4779ed90150cec667489c85875b7fb87a8d
+ms.sourcegitcommit: 5f706c62c97b78bbe3d8c7e95659976535fe486f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104859221"
+ms.lasthandoff: 08/23/2021
+ms.locfileid: "122726972"
 ---
 # <a name="best-practices-for-a-secure-software-supply-chain"></a>关于安全软件供应链的最佳做法
 
@@ -124,7 +124,7 @@ ms.locfileid: "104859221"
 
 当使用多个公共和专用 NuGet 数据源的源时，可以从任何源下载包。 若要确保你的生成是可预测和安全的，且不受已知攻击（如[依赖项混淆](https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610)）的影响，最佳做法是了解包来自哪些特定的源。 可以使用具有上游追溯功能的单个源或专用源来提供保护。
 
-若要详细了解如何保护包源，请参阅[使用专用包源时降低风险的 3 种方法](https://azure.microsoft.com/en-us/resources/3-ways-to-mitigate-risk-using-private-package-feeds/)。
+若要详细了解如何保护包源，请参阅[使用专用包源时降低风险的 3 种方法](https://azure.microsoft.com/resources/3-ways-to-mitigate-risk-using-private-package-feeds/)。
 
 ### <a name="client-trust-policies"></a>客户端信任策略
 
